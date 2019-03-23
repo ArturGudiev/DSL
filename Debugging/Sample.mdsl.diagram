@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mobileDSLDiagram dslVersion="1.0.0.0" Id="c12f9d20-5c81-4b8d-992e-486413e5e347" absoluteBounds="0, 0, 11, 8.5" name="Sample">
+  <componentModelMoniker name="/A component model" />
+  <nestedChildShapes>
+    <commentBoxShape Id="7ff14456-c44a-4e5f-878b-9ad6a5a22a9a" absoluteBounds="3.5, 4, 1.5, 0.25">
+      <commentMoniker Id="3a94e57a-1e9a-4b8a-9026-05fc56939a06" />
+    </commentBoxShape>
+    <commentBoxShape Id="6649e3ca-5ac2-46e8-bb90-1d769b1d82a8" absoluteBounds="3.75, 1.875, 1.5, 0.25">
+      <commentMoniker Id="6a26d103-154b-4fe4-ba0e-4c7f782eb34d" />
+    </commentBoxShape>
+    <componentShape Id="75d70557-486e-45da-92cb-2bf8501aeee7" absoluteBounds="0.5, 0.5, 1.5, 0.625">
+      <componentMoniker name="/A component model/Component1" />
+      <relativeChildShapes>
+        <outPortShape Id="acb490bc-9946-4a7a-9658-463e62cd8f0f" absoluteBounds="1.9, 0.65625, 0.2, 0.2">
+          <outPortMoniker name="/A component model/Component1/OutPort1" />
+        </outPortShape>
+      </relativeChildShapes>
+    </componentShape>
+    <componentShape Id="ae404870-3845-41bd-8547-fd83b29623d3" absoluteBounds="4.875, 0.5, 1.5, 0.625">
+      <componentMoniker name="/A component model/Component2" />
+      <relativeChildShapes>
+        <inPortShape Id="a329ad8a-75b9-4185-8f18-0e0609be2195" absoluteBounds="4.775, 0.65625, 0.2, 0.2">
+          <inPortMoniker name="/A component model/Component2/InPort1" />
+        </inPortShape>
+        <inPortShape Id="fa2bea30-1cf8-43b0-b933-bf2838617b05" absoluteBounds="5.84375, 1.025, 0.2, 0.2">
+          <inPortMoniker name="/A component model/Component2/InPort2" />
+        </inPortShape>
+      </relativeChildShapes>
+    </componentShape>
+    <componentShape Id="714dbdf9-5525-4e44-b909-c44f5f5f3268" absoluteBounds="0.5, 3, 1.5, 0.5">
+      <componentMoniker name="/A component model/Component3" />
+      <relativeChildShapes>
+        <outPortShape Id="e1f01fa9-327c-424b-974c-c3d53079a2f2" absoluteBounds="1.6500000000000001, 2.9, 0.2, 0.2">
+          <outPortMoniker name="/A component model/Component3/OutPort1" />
+        </outPortShape>
+        <outPortShape Id="15443032-254b-44ab-8b03-102e0880aa19" absoluteBounds="1.9, 3.15, 0.2, 0.2">
+          <outPortMoniker name="/A component model/Component3/OutPort2" />
+        </outPortShape>
+      </relativeChildShapes>
+    </componentShape>
+    <commentLink Id="b3d21d42-6016-4f87-a98f-43ece5a4c43d" edgePoints="[(3.5 : 4); (2 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="31e7e1b6-72d5-4b13-817f-bf68bf8e2c33">
+      <nodes>
+        <commentBoxShapeMoniker Id="7ff14456-c44a-4e5f-878b-9ad6a5a22a9a" />
+        <componentShapeMoniker Id="714dbdf9-5525-4e44-b909-c44f5f5f3268" />
+      </nodes>
+    </commentLink>
+    <associationLink Id="ff312962-c68e-4f2c-a267-22d6af418609" edgePoints="[(2.1 : 0.75625); (4.775 : 0.75625)]" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="45737a8d-d11a-48aa-add8-61404cc73524" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="acb490bc-9946-4a7a-9658-463e62cd8f0f" />
+        <inPortShapeMoniker Id="a329ad8a-75b9-4185-8f18-0e0609be2195" />
+      </nodes>
+    </associationLink>
+    <generalizationLink Id="2fbe9a86-7610-41aa-a457-a2c354f896ac" edgePoints="[(1.04375 : 1.125); (1.04375 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="917a0ac8-6b72-4bd5-b12a-8ae82c35fc49">
+      <nodes>
+        <componentShapeMoniker Id="75d70557-486e-45da-92cb-2bf8501aeee7" />
+        <componentShapeMoniker Id="714dbdf9-5525-4e44-b909-c44f5f5f3268" />
+      </nodes>
+    </generalizationLink>
+    <associationLink Id="fcc4b6e2-f119-4951-ae46-d5dbafdb86c3" edgePoints="[(1.75 : 2.9); (1.75 : 1.35416666666667); (4.42008333333333 : 1.35416666666667); (4.42008333333333 : 0.75625); (4.775 : 0.75625)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="d92c684e-18d6-4988-9211-21560b882366" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="e1f01fa9-327c-424b-974c-c3d53079a2f2" />
+        <inPortShapeMoniker Id="a329ad8a-75b9-4185-8f18-0e0609be2195" />
+      </nodes>
+    </associationLink>
+    <associationLink Id="3e1a3632-6aea-4156-b17c-1bc0ca840cfb" edgePoints="[(2.1 : 3.25); (5.94375 : 3.25); (5.94375 : 1.225)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="ab67d485-010a-4643-93a4-e18465efb860" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="15443032-254b-44ab-8b03-102e0880aa19" />
+        <inPortShapeMoniker Id="fa2bea30-1cf8-43b0-b933-bf2838617b05" />
+      </nodes>
+    </associationLink>
+  </nestedChildShapes>
+</mobileDSLDiagram>

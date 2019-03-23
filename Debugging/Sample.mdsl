@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ed63d866-36c4-4172-a538-617a8958d038" name="A component model" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+  <comments>
+    <comment Id="3a94e57a-1e9a-4b8a-9026-05fc56939a06" text="a comment">
+      <subjects>
+        <componentMoniker name="/A component model/Component3" />
+      </subjects>
+    </comment>
+    <comment Id="6a26d103-154b-4fe4-ba0e-4c7f782eb34d" text="another comment" />
+  </comments>
+  <components>
+    <componentModelHasComponents Id="e6ba0a55-7c5c-46a1-827a-c95450ad233c">
+      <component Id="8408e39d-e6df-4cd1-9c4a-82aa1fb8ddfd" name="Component1">
+        <ports>
+          <outPort Id="ceae5c56-37e2-4ffe-b50c-8a46f78954d3" name="OutPort1">
+            <targets>
+              <connection Id="45737a8d-d11a-48aa-add8-61404cc73524">
+                <inPortMoniker name="/A component model/Component2/InPort1" />
+              </connection>
+            </targets>
+          </outPort>
+        </ports>
+        <subclasses>
+          <componentMoniker name="/A component model/Component3" />
+        </subclasses>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents Id="c816302b-31c6-4f55-b6dc-5c35e298fc8f">
+      <component Id="b087e25d-c5a6-485a-812a-40dbc61a865e" name="Component2">
+        <ports>
+          <inPort Id="69ca99bc-02dd-4536-a811-cab18457ce22" name="InPort1" />
+          <inPort Id="95162819-669f-4b9e-a44a-29fa48cc163c" name="InPort2" />
+        </ports>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents Id="d20c78fd-2345-440d-acce-97b03c4d1a16">
+      <component Id="cbdd0713-d689-4879-a920-c2b1cec734bc" name="Component3">
+        <ports>
+          <outPort Id="643b5397-392f-4575-aa92-795af31dd20b" name="OutPort1">
+            <targets>
+              <connection Id="d92c684e-18d6-4988-9211-21560b882366" sourceRoleName="trigger2" targetRoleName="stop">
+                <inPortMoniker name="/A component model/Component2/InPort1" />
+              </connection>
+            </targets>
+          </outPort>
+          <outPort Id="e909d089-9ff1-4a03-bd01-df225896fb3b" name="OutPort2">
+            <targets>
+              <connection Id="ab67d485-010a-4643-93a4-e18465efb860" sourceRoleName="trigger" targetRoleName="start">
+                <inPortMoniker name="/A component model/Component2/InPort2" />
+              </connection>
+            </targets>
+          </outPort>
+        </ports>
+      </component>
+    </componentModelHasComponents>
+  </components>
+</componentModel>
