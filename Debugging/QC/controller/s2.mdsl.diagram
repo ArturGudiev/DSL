@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mobileDSLDiagram dslVersion="1.0.0.0" Id="c9358ed6-9ffe-4135-9cf3-da1e10741217" absoluteBounds="0, 0, 11, 8.5" name="s2">
+  <componentModelMoniker name="/" />
+  <nestedChildShapes>
+    <controllerShape Id="94af7581-6c59-4d03-9d5e-73a0017495e9" absoluteBounds="6.125, 2.625, 1.5, 0.625">
+      <controllerMoniker name="//Controller1" />
+      <relativeChildShapes>
+        <inPortShape Id="3b6222c1-13f8-44ce-8d77-8f073f52178f" absoluteBounds="6.025, 2.78125, 0.2, 0.2">
+          <inPortMoniker name="//Controller1/InPort1" />
+        </inPortShape>
+      </relativeChildShapes>
+    </controllerShape>
+    <geometryShape1 Id="836af009-d7e6-4380-a91f-8be22b11aebb" absoluteBounds="1.5, 2.75, 1.5, 1">
+      <stateMoniker name="//Controller1/State1" />
+    </geometryShape1>
+    <tempShape Id="f190df66-66aa-40e9-b2d5-57e0ca634772" absoluteBounds="5.75, 3.75, 4.25, 1.75">
+      <tempClassMoniker Id="b1553673-a7a2-4d47-ad32-79eea6e3ad0a" />
+      <relativeChildShapes>
+        <statePortShape Id="aeec29c9-5177-4575-8585-dd9b9feaef0e" absoluteBounds="6.21875, 5.4, 0.2, 0.2">
+          <statePortMoniker name="/b1553673-a7a2-4d47-ad32-79eea6e3ad0a/StatePort1" />
+        </statePortShape>
+      </relativeChildShapes>
+    </tempShape>
+  </nestedChildShapes>
+</mobileDSLDiagram>

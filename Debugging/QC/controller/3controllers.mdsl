@@ -10,33 +10,13 @@
         <ports>
           <outPort Id="6093af69-c489-4f95-b78c-8a8bc166fcbe" name="OutPort1">
             <targets>
-              <connection Id="b132d7cd-413d-415e-82a9-13db2251bcbc">
+              <connection Id="07ae1331-9c9d-4e3f-bb00-d0e77a12f226">
                 <inPortMoniker name="/A component model/Controller2/InPort3" />
               </connection>
             </targets>
           </outPort>
           <inPort Id="4eb571bc-68bb-4ac2-a578-c0022c04b473" name="InPort1" />
         </ports>
-        <states>
-          <controllerHasStates Id="769445ff-d761-4128-bc45-5e7c7b75dca0">
-            <state Id="c6cf712a-8026-433a-b79a-b872aa93bd7e" name="Controller1FirstState" isFirstState="true">
-              <previousStates>
-                <stateReferencesPreviousStates Id="6ee09c9b-7026-4613-bb2d-902cd3536cc4">
-                  <stateMoniker name="/A component model/Controller1/State2" />
-                </stateReferencesPreviousStates>
-              </previousStates>
-            </state>
-          </controllerHasStates>
-          <controllerHasStates Id="dec6fb47-a0a5-4620-b7c8-425c581b52e3">
-            <state Id="6c331be4-c5d1-403d-b89f-3acb1dca98ba" name="State2" isFirstState="false">
-              <previousStates>
-                <stateReferencesPreviousStates Id="27d450fc-c00f-4757-9d1e-118d0631ee9a">
-                  <stateMoniker name="/A component model/Controller1/Controller1FirstState" />
-                </stateReferencesPreviousStates>
-              </previousStates>
-            </state>
-          </controllerHasStates>
-        </states>
       </controller>
     </componentModelHasControllers>
     <componentModelHasControllers Id="61b10294-9a10-49e5-99f1-1602303e47ee">
@@ -51,11 +31,6 @@
             </targets>
           </outPort>
         </ports>
-        <states>
-          <controllerHasStates Id="8819dbb9-5b04-49ca-9f04-6946af00c63b">
-            <state Id="8317ec32-295e-46d9-a528-f7e4513ca3fe" name="Controller2FirstState" isFirstState="true" />
-          </controllerHasStates>
-        </states>
       </controller>
     </componentModelHasControllers>
     <componentModelHasControllers Id="06bc1ffb-d5f9-46e2-aaa6-24d02e7c20e5">

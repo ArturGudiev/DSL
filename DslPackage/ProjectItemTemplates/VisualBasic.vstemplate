@@ -1,2 +1,17 @@
-<!-- Placeholder for content that will be generated when the solution is built for the first time -->
-<VSTemplate xmlns="http://schemas.microsoft.com/developer/vstemplate/2005"/>
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{fdb82d93-d3f6-485a-a7d6-0004ceb67c18}</TemplateID>
+		<Name Package="{54424d5f-5c62-4e39-b1f1-c4ea0a71f254}" ID="103"/>
+		<Description Package="{54424d5f-5c62-4e39-b1f1-c4ea0a71f254}" ID="102"/>
+		<Icon Package="{54424d5f-5c62-4e39-b1f1-c4ea0a71f254}" ID="201" />
+		<ProjectType>VisualBasic</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>MobileDSL.mdsl</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.mdsl">mdsl.mdsl</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.mdsl.diagram">mdsl.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

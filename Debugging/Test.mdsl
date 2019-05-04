@@ -1,1 +1,29 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="eda229d1-bd9e-4749-b492-13c01862a56e" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+  <controllers>
+    <componentModelHasControllers Id="ec1e803b-1870-4e7a-9e9f-3fb3afcc941f">
+      <controller Id="0e43fd52-e2c8-408c-a65d-d1142e46a86a" name="sdasd" isFirst="false">
+        <states>
+          <controllerHasStates Id="9181f5cd-1163-4382-ba7d-54bb4721a851">
+            <state Id="520859b8-4f49-40f2-a8a6-e833ddcb1a4c" name="State1" />
+          </controllerHasStates>
+          <controllerHasStates Id="1d0d3964-c610-4a09-9f49-6d7374aef30a">
+            <state Id="2be158a8-3278-4e27-a9bf-20664a561a07" name="State2" />
+          </controllerHasStates>
+          <controllerHasStates Id="16ce5446-b3c6-429f-8504-c9b7ea07df80">
+            <state Id="bef142e7-156c-4139-8967-f686c5db4c09" name="State3" />
+          </controllerHasStates>
+          <controllerHasStates Id="8159802b-fb4a-4148-8d3f-0ff6be276d0d">
+            <state Id="e67d0cb1-986a-474e-b631-8e2178b246d1" name="State4" />
+          </controllerHasStates>
+          <controllerHasStates Id="c15c0dba-f553-4b79-afea-cdc9b25626e2">
+            <state Id="653d6a42-592d-4773-b928-6c6cb8e55492" name="State5" />
+          </controllerHasStates>
+          <controllerHasStates Id="070d600c-9258-401f-8d3f-9e6a2483f4ac">
+            <state Id="1e90183c-791a-4931-bed5-5f89bc19bc44" name="State6" />
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+  </controllers>
+</componentModel>

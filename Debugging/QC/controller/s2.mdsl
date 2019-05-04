@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3e29acad-5cb1-4122-a526-0f07f3331d32" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+  <controllers>
+    <componentModelHasControllers Id="24b60fe9-3415-4ddc-838d-8a56bf3bd099">
+      <controller Id="f8180608-8e27-494d-b878-6dfadf7e1e5c" name="Controller1" isFirst="false">
+        <ports>
+          <inPort Id="abc83b62-7bbf-412f-ad4b-f87101f0b0af" name="InPort1" />
+        </ports>
+        <stated>
+          <controllerHasStated Id="49c2c808-eb36-45e5-a079-12fc0bcc1a0c">
+            <state Id="7a1683d7-89b2-4a1a-bd41-65f42cee7412" name="State1" />
+          </controllerHasStated>
+        </stated>
+      </controller>
+    </componentModelHasControllers>
+  </controllers>
+  <tempClassed>
+    <componentModelHasTempClassed Id="3621963b-9a6f-4864-baf0-ce91f0c1531c">
+      <tempClass Id="b1553673-a7a2-4d47-ad32-79eea6e3ad0a">
+        <statePorts>
+          <tempClassHasStatePorts Id="e6cbebbb-ec6e-40b0-bff9-04e22f6313dc">
+            <statePort Id="85bf4241-8606-4fbc-8823-a63f77c0ad09" name="StatePort1" />
+          </tempClassHasStatePorts>
+        </statePorts>
+      </tempClass>
+    </componentModelHasTempClassed>
+  </tempClassed>
+</componentModel>

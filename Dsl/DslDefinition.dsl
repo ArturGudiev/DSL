@@ -25,15 +25,23 @@
         </ElementMergeDirective>
         <ElementMergeDirective>
           <Index>
-            <DomainClassMoniker Name="Component" />
+            <DomainClassMoniker Name="Controller" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>ComponentModelHasComponents.Components</DomainPath>
+            <DomainPath>ComponentModelHasControllers.Controllers</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="TempClass" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ComponentModelHasTempClassed.TempClassed</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="bb8866e4-0364-4829-9370-590d91c53c94" Description="" Name="Component" DisplayName="Component" Namespace="Company.MobileDSL">
+    <DomainClass Id="bb8866e4-0364-4829-9370-590d91c53c94" Description="" Name="Controller" DisplayName="Controller" Namespace="Company.MobileDSL">
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
@@ -43,36 +51,123 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="bc8f3b2c-a70e-4f1e-86a8-c2f3baa4a214" Description="Description for Company.MobileDSL.Controller.Is First" Name="isFirst" DisplayName="Is First">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
       </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
-            <DomainClassMoniker Name="ComponentPort" />
+            <DomainClassMoniker Name="Port" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>ComponentHasPorts.Ports</DomainPath>
+            <DomainPath>ControllerHasPorts.Ports</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="State_old" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ControllerHasStates.States</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="State" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ControllerHasStated.Stated</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="11ad2be7-4a6f-4090-b8c9-29388fbc1406" Description="Description for Company.MobileDSL.ComponentPort" Name="ComponentPort" DisplayName="Component Port" InheritanceModifier="Abstract" Namespace="Company.MobileDSL">
+    <DomainClass Id="11ad2be7-4a6f-4090-b8c9-29388fbc1406" Description="Description for Company.MobileDSL.Port" Name="Port" DisplayName="Port" InheritanceModifier="Abstract" Namespace="Company.MobileDSL">
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
     </DomainClass>
     <DomainClass Id="1fe64f7d-f422-4778-8f00-f111d94e9d10" Description="" Name="InPort" DisplayName="In Port" Namespace="Company.MobileDSL">
       <BaseClass>
-        <DomainClassMoniker Name="ComponentPort" />
+        <DomainClassMoniker Name="Port" />
       </BaseClass>
     </DomainClass>
     <DomainClass Id="71899fcc-9a47-4fed-a025-7fc91b6a8ecd" Description="" Name="OutPort" DisplayName="Out Port" Namespace="Company.MobileDSL">
       <BaseClass>
-        <DomainClassMoniker Name="ComponentPort" />
+        <DomainClassMoniker Name="Port" />
       </BaseClass>
     </DomainClass>
     <DomainClass Id="407f28da-8152-46e0-84dc-b299c4578399" Description="" Name="Comment" DisplayName="Comment" Namespace="Company.MobileDSL">
       <Properties>
         <DomainProperty Id="6e548434-483b-48a6-b285-947b840e323f" Description="" Name="Text" DisplayName="Text" DefaultValue="">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="9d18e10e-3276-4fd5-9993-78854d051ee0" Description="Description for Company.MobileDSL.State_old" Name="State_old" DisplayName="State_old" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="NamedElement" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="cf27c57d-f48f-4dd8-8d37-bfa1720fdd86" Description="Description for Company.MobileDSL.State_old.Is First State" Name="isFirstState" DisplayName="Is First State">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Port" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>State_oldHasPorts.Ports</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="c10a167b-d931-4f22-913b-8b5210fdfade" Description="Description for Company.MobileDSL.State" Name="State" DisplayName="State" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="NamedElement" />
+      </BaseClass>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Port" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>StateHasPorts.Ports</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="9dc4f661-da0f-4455-a2e2-87c366c7bbd5" Description="Description for Company.MobileDSL.TempClass" Name="TempClass" DisplayName="Temp Class" Namespace="Company.MobileDSL">
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Port" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>TempClassHasPorts.Ports</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="StatePort" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>TempClassHasStatePorts.StatePorts</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="1b4a27fd-ba9d-4247-be99-fb1af96308ee" Description="Description for Company.MobileDSL.StatePort" Name="StatePort" DisplayName="State Port" Namespace="Company.MobileDSL">
+      <Properties>
+        <DomainProperty Id="9dbed3c5-cffe-410c-bce4-d91e9eacb4e6" Description="Description for Company.MobileDSL.StatePort.Name" Name="Name" DisplayName="Name" IsElementName="true">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -110,19 +205,19 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="cff9aad2-3668-4511-b25e-60455a5e26ad" Description="" Name="ComponentHasPorts" DisplayName="Component Has Ports" Namespace="Company.MobileDSL" IsEmbedding="true">
+    <DomainRelationship Id="cff9aad2-3668-4511-b25e-60455a5e26ad" Description="" Name="ControllerHasPorts" DisplayName="Controller Has Ports" Namespace="Company.MobileDSL" IsEmbedding="true">
       <Notes>The embedding between a Component and its InPorts and OutPorts.</Notes>
       <Source>
-        <DomainRole Id="0aaf0edc-5de1-44b5-9884-11dd71a510f9" Description="" Name="Component" DisplayName="Component" PropertyName="Ports" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ports">
+        <DomainRole Id="0aaf0edc-5de1-44b5-9884-11dd71a510f9" Description="" Name="Controller" DisplayName="Controller" PropertyName="Ports" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ports">
           <RolePlayer>
-            <DomainClassMoniker Name="Component" />
+            <DomainClassMoniker Name="Controller" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="8acbcb67-373d-446f-a518-03d7a0847858" Description="" Name="Port" DisplayName="Port" PropertyName="Component" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Component">
+        <DomainRole Id="8acbcb67-373d-446f-a518-03d7a0847858" Description="" Name="Port" DisplayName="Port" PropertyName="Controller" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Controller">
           <RolePlayer>
-            <DomainClassMoniker Name="ComponentPort" />
+            <DomainClassMoniker Name="Port" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -143,18 +238,18 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="4ff6ff8e-09a7-4de7-8308-3831ceeae9ef" Description="" Name="ComponentModelHasComponents" DisplayName="ComponentModelHasComponents" Namespace="Company.MobileDSL" IsEmbedding="true">
+    <DomainRelationship Id="4ff6ff8e-09a7-4de7-8308-3831ceeae9ef" Description="" Name="ComponentModelHasControllers" DisplayName="ComponentModelHasComponents" Namespace="Company.MobileDSL" IsEmbedding="true">
       <Source>
-        <DomainRole Id="9f8b5981-df84-46c1-a49d-1195a2a7f3b7" Description="" Name="ComponentModel" DisplayName="Component Model" PropertyName="Components" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Components">
+        <DomainRole Id="9f8b5981-df84-46c1-a49d-1195a2a7f3b7" Description="" Name="ComponentModel" DisplayName="Component Model" PropertyName="Controllers" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Controllers">
           <RolePlayer>
             <DomainClassMoniker Name="ComponentModel" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="57e38a67-81f4-4b58-a785-1fddb9756b66" Description="" Name="Component" DisplayName="Component" PropertyName="ComponentModel" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Component Model">
+        <DomainRole Id="57e38a67-81f4-4b58-a785-1fddb9756b66" Description="" Name="Controller" DisplayName="Controller" PropertyName="ComponentModel" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Component Model">
           <RolePlayer>
-            <DomainClassMoniker Name="Component" />
+            <DomainClassMoniker Name="Controller" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -163,14 +258,14 @@
       <Source>
         <DomainRole Id="c4ebe6fb-414d-48b4-9a58-8cb1e7173b53" Description="" Name="Superclass" DisplayName="Superclass" PropertyName="Subclasses" PropertyDisplayName="Subclasses">
           <RolePlayer>
-            <DomainClassMoniker Name="Component" />
+            <DomainClassMoniker Name="Controller" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
         <DomainRole Id="9a09e94e-208b-4601-83ed-553a093217e9" Description="" Name="Subclass" DisplayName="Subclass" PropertyName="Superclass" Multiplicity="ZeroOne" PropertyDisplayName="Superclass">
           <RolePlayer>
-            <DomainClassMoniker Name="Component" />
+            <DomainClassMoniker Name="Controller" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -186,7 +281,142 @@
       <Target>
         <DomainRole Id="60076c03-dea1-466c-a31d-435a83a40940" Description="" Name="Subject" DisplayName="Subject" PropertyName="Comments" PropertyDisplayName="Comments">
           <RolePlayer>
-            <DomainClassMoniker Name="Component" />
+            <DomainClassMoniker Name="Controller" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="351ce9cd-3d3a-4960-bb72-dbfc3e36b709" Description="Description for Company.MobileDSL.ControllerHasStates" Name="ControllerHasStates" DisplayName="Controller Has States" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="b80db3fc-3640-4f59-b4af-22a3406cf5c8" Description="Description for Company.MobileDSL.ControllerHasStates.Controller" Name="Controller" DisplayName="Controller" PropertyName="States" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="States">
+          <RolePlayer>
+            <DomainClassMoniker Name="Controller" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="57695418-58c6-4d82-8240-28a2b0db2319" Description="Description for Company.MobileDSL.ControllerHasStates.State_old" Name="State_old" DisplayName="State_old" PropertyName="Controller" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Controller">
+          <RolePlayer>
+            <DomainClassMoniker Name="State_old" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="df7e12a4-758d-4139-88eb-36e4c42867a5" Description="Description for Company.MobileDSL.State_oldReferencesPreviousStates" Name="State_oldReferencesPreviousStates" DisplayName="State_old References Previous States" Namespace="Company.MobileDSL">
+      <Properties>
+        <DomainProperty Id="03f3210a-1bf9-4073-9e35-db8d2d4e21e0" Description="Description for Company.MobileDSL.State_oldReferencesPreviousStates.Condition" Name="condition" DisplayName="Condition">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <Source>
+        <DomainRole Id="d31db177-6cea-481e-93ab-aab7b2e16998" Description="Description for Company.MobileDSL.State_oldReferencesPreviousStates.SourceState_old" Name="SourceState_old" DisplayName="Source State_old" PropertyName="PreviousStates" PropertyDisplayName="Previous States">
+          <RolePlayer>
+            <DomainClassMoniker Name="State_old" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="55a0653d-a6cd-4175-ad72-d5a40e572909" Description="Description for Company.MobileDSL.State_oldReferencesPreviousStates.TargetState_old" Name="TargetState_old" DisplayName="Target State_old" PropertyName="NextStates" PropertyDisplayName="Next States">
+          <RolePlayer>
+            <DomainClassMoniker Name="State_old" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="06d1a935-c83d-42eb-81b1-e8570d0bdd18" Description="Description for Company.MobileDSL.State_oldHasPorts" Name="State_oldHasPorts" DisplayName="State_old Has Ports" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="309d8570-fd15-4783-b6b9-5a86ff3128f9" Description="Description for Company.MobileDSL.State_oldHasPorts.State_old" Name="State_old" DisplayName="State_old" PropertyName="Ports" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="State_old" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="80654f03-ea88-44f7-954a-41f3aa46634f" Description="Description for Company.MobileDSL.State_oldHasPorts.Port" Name="Port" DisplayName="Port" PropertyName="State_old" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="State_old">
+          <RolePlayer>
+            <DomainClassMoniker Name="Port" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="32f7ed14-aa66-453d-8972-2d56f63d126f" Description="Description for Company.MobileDSL.ControllerHasStated" Name="ControllerHasStated" DisplayName="Controller Has Stated" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="efda5d5a-913f-4371-aea5-d26b52821d67" Description="Description for Company.MobileDSL.ControllerHasStated.Controller" Name="Controller" DisplayName="Controller" PropertyName="Stated" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Stated">
+          <RolePlayer>
+            <DomainClassMoniker Name="Controller" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="21a29bc7-c546-48d9-8b5a-5ff2dc320e58" Description="Description for Company.MobileDSL.ControllerHasStated.State" Name="State" DisplayName="State" PropertyName="Controller" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Controller">
+          <RolePlayer>
+            <DomainClassMoniker Name="State" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="326eeba9-bce9-4d92-94b6-4aa5d0907244" Description="Description for Company.MobileDSL.StateHasPorts" Name="StateHasPorts" DisplayName="State Has Ports" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="93e86296-657c-4417-9cc6-a418c2cedaed" Description="Description for Company.MobileDSL.StateHasPorts.State" Name="State" DisplayName="State" PropertyName="Ports" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="State" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="27b4f2c0-abb5-49ae-ad32-a50dd9aab0ab" Description="Description for Company.MobileDSL.StateHasPorts.Port" Name="Port" DisplayName="Port" PropertyName="State" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="State">
+          <RolePlayer>
+            <DomainClassMoniker Name="Port" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="c31188ac-6836-4424-8b49-a730a70a35fb" Description="Description for Company.MobileDSL.ComponentModelHasTempClassed" Name="ComponentModelHasTempClassed" DisplayName="Component Model Has Temp Classed" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="9bc2d481-2281-450e-8989-75812138d930" Description="Description for Company.MobileDSL.ComponentModelHasTempClassed.ComponentModel" Name="ComponentModel" DisplayName="Component Model" PropertyName="TempClassed" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Temp Classed">
+          <RolePlayer>
+            <DomainClassMoniker Name="ComponentModel" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="5852b40e-2248-4ca6-b068-b8457a6ffb73" Description="Description for Company.MobileDSL.ComponentModelHasTempClassed.TempClass" Name="TempClass" DisplayName="Temp Class" PropertyName="ComponentModel" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Component Model">
+          <RolePlayer>
+            <DomainClassMoniker Name="TempClass" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="5ba86898-81e5-4aff-b591-89da917215f2" Description="Description for Company.MobileDSL.TempClassHasPorts" Name="TempClassHasPorts" DisplayName="Temp Class Has Ports" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="3e38c4a8-7c00-4c66-9657-041cd7d2647a" Description="Description for Company.MobileDSL.TempClassHasPorts.TempClass" Name="TempClass" DisplayName="Temp Class" PropertyName="Ports" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="TempClass" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="4f43fe07-46cf-4a81-90d0-f17c89268c00" Description="Description for Company.MobileDSL.TempClassHasPorts.Port" Name="Port" DisplayName="Port" PropertyName="TempClass" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Temp Class">
+          <RolePlayer>
+            <DomainClassMoniker Name="Port" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="82dd35ca-6b14-4664-b8bb-401fd1a721de" Description="Description for Company.MobileDSL.TempClassHasStatePorts" Name="TempClassHasStatePorts" DisplayName="Temp Class Has State Ports" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="512fa2b6-9920-4916-a8a4-121666115e33" Description="Description for Company.MobileDSL.TempClassHasStatePorts.TempClass" Name="TempClass" DisplayName="Temp Class" PropertyName="StatePorts" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="State Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="TempClass" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="d1fe8a83-2fe0-46c6-9e79-0c5b8f511cfa" Description="Description for Company.MobileDSL.TempClassHasStatePorts.StatePort" Name="StatePort" DisplayName="State Port" PropertyName="TempClass" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Temp Class">
+          <RolePlayer>
+            <DomainClassMoniker Name="StatePort" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -220,7 +450,7 @@
         <IconDecorator Name="Image" DisplayName="Image" DefaultIcon="Resources\OutPortImage.bmp" />
       </ShapeHasDecorators>
     </Port>
-    <GeometryShape Id="8e6c22d8-c000-4e24-86bf-5aaaba4a36aa" Description="" Name="ComponentShape" DisplayName="Component Shape" Namespace="Company.MobileDSL" FixedTooltipText="Component Shape" FillColor="227, 226, 231" OutlineColor="113, 111, 110" InitialHeight="0.5" OutlineThickness="0.01" Geometry="Rectangle">
+    <GeometryShape Id="8e6c22d8-c000-4e24-86bf-5aaaba4a36aa" Description="" Name="ControllerShape" DisplayName="Controller Shape" Namespace="Company.MobileDSL" FixedTooltipText="Controller Shape" FillColor="227, 226, 231" OutlineColor="113, 111, 110" InitialHeight="0.5" OutlineThickness="0.01" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="EntityShapeNameDecorator" />
       </ShapeHasDecorators>
@@ -230,6 +460,18 @@
         <TextDecorator Name="Comment" DisplayName="Comment" DefaultText="" />
       </ShapeHasDecorators>
     </GeometryShape>
+    <GeometryShape Id="a4a4784b-3c12-46be-add1-f188d9d40b24" Description="Description for Company.MobileDSL.StateShape" Name="StateShape" DisplayName="State Shape" Namespace="Company.MobileDSL" FixedTooltipText="State Shape" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="7cc0d58f-c7f1-44ae-89b0-722bf7b7abd6" Description="Description for Company.MobileDSL.GeometryShape1" Name="GeometryShape1" DisplayName="Geometry Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Geometry Shape1" InitialHeight="1" Geometry="Rectangle" />
+    <GeometryShape Id="e97d3cc5-5950-4f47-92d4-767610ec5fab" Description="Description for Company.MobileDSL.TempShape" Name="TempShape" DisplayName="Temp Shape" Namespace="Company.MobileDSL" FixedTooltipText="Temp Shape" InitialHeight="1" Geometry="Rectangle" />
+    <Port Id="22195493-d9cb-4ab0-8c7d-5758238fd067" Description="Description for Company.MobileDSL.StatePortShape" Name="StatePortShape" DisplayName="State Port Shape" Namespace="Company.MobileDSL" FixedTooltipText="State Port Shape" InitialWidth="0.2" InitialHeight="0.2" OutlineThickness="0.01" Geometry="Rectangle">
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="Image" DisplayName="Image" DefaultIcon="Resources\InPortImage.bmp" />
+      </ShapeHasDecorators>
+    </Port>
   </Shapes>
   <Connectors>
     <Connector Id="66d5ac35-32f5-41a3-8eb2-a96e59751133" Description="" Name="AssociationLink" DisplayName="Association Link" Namespace="Company.MobileDSL" FixedTooltipText="Association Link" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -242,6 +484,11 @@
     </Connector>
     <Connector Id="2124349e-a79f-4dc2-ad74-5834d85abfe7" Description="" Name="GeneralizationLink" DisplayName="Generalization Link" Namespace="Company.MobileDSL" FixedTooltipText="Generalization Link" Color="113, 111, 110" SourceEndStyle="HollowArrow" Thickness="0.01" />
     <Connector Id="dff818a2-afca-44c0-8a8f-f1ca7aabf4b0" Description="" Name="CommentLink" DisplayName="Comment Link" Namespace="Company.MobileDSL" FixedTooltipText="Comment Link" Color="113, 111, 110" DashStyle="Dot" Thickness="0.01" RoutingStyle="Straight" />
+    <Connector Id="a1642c46-9d27-4935-baeb-5ab227c8628f" Description="Description for Company.MobileDSL.StateConnector" Name="StateConnector" DisplayName="State Connector" Namespace="Company.MobileDSL" FixedTooltipText="State Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
+      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
+        <TextDecorator Name="Condition" DisplayName="Condition" DefaultText="Condition" />
+      </ConnectorHasDecorators>
+    </Connector>
   </Connectors>
   <XmlSerializationBehavior Name="ComponentsSerializationBehavior" Namespace="Company.MobileDSL">
     <ClassData>
@@ -267,27 +514,39 @@
           <XmlRelationshipData RoleElementName="comments">
             <DomainRelationshipMoniker Name="ComponentModelHasComments" />
           </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="components">
-            <DomainRelationshipMoniker Name="ComponentModelHasComponents" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="controllers">
+            <DomainRelationshipMoniker Name="ComponentModelHasControllers" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="tempClassed">
+            <DomainRelationshipMoniker Name="ComponentModelHasTempClassed" />
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="Component" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentMoniker" ElementName="component" MonikerTypeName="ComponentMoniker">
-        <DomainClassMoniker Name="Component" />
+      <XmlClassData TypeName="Controller" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerMoniker" ElementName="controller" MonikerTypeName="ControllerMoniker">
+        <DomainClassMoniker Name="Controller" />
         <ElementData>
           <XmlPropertyData XmlName="kind">
-            <DomainPropertyMoniker Name="Component/Kind" />
+            <DomainPropertyMoniker Name="Controller/Kind" />
           </XmlPropertyData>
           <XmlRelationshipData RoleElementName="ports">
-            <DomainRelationshipMoniker Name="ComponentHasPorts" />
+            <DomainRelationshipMoniker Name="ControllerHasPorts" />
           </XmlRelationshipData>
           <XmlRelationshipData RoleElementName="subclasses">
             <DomainRelationshipMoniker Name="Generalization" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="isFirst">
+            <DomainPropertyMoniker Name="Controller/isFirst" />
+          </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="states">
+            <DomainRelationshipMoniker Name="ControllerHasStates" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="stated">
+            <DomainRelationshipMoniker Name="ControllerHasStated" />
+          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="ComponentPort" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentPortMoniker" ElementName="componentPort" MonikerTypeName="ComponentPortMoniker">
-        <DomainClassMoniker Name="ComponentPort" />
+      <XmlClassData TypeName="Port" MonikerAttributeName="" SerializeId="true" MonikerElementName="portMoniker" ElementName="port" MonikerTypeName="PortMoniker">
+        <DomainClassMoniker Name="Port" />
       </XmlClassData>
       <XmlClassData TypeName="InPort" MonikerAttributeName="" SerializeId="true" MonikerElementName="inPortMoniker" ElementName="inPort" MonikerTypeName="InPortMoniker">
         <DomainClassMoniker Name="InPort" />
@@ -314,14 +573,14 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="ComponentHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentHasPortsMoniker" ElementName="componentHasPorts" MonikerTypeName="ComponentHasPortsMoniker">
-        <DomainRelationshipMoniker Name="ComponentHasPorts" />
+      <XmlClassData TypeName="ControllerHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerHasPortsMoniker" ElementName="controllerHasPorts" MonikerTypeName="ControllerHasPortsMoniker">
+        <DomainRelationshipMoniker Name="ControllerHasPorts" />
       </XmlClassData>
       <XmlClassData TypeName="ComponentModelHasComments" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentModelHasCommentsMoniker" ElementName="componentModelHasComments" MonikerTypeName="ComponentModelHasCommentsMoniker">
         <DomainRelationshipMoniker Name="ComponentModelHasComments" />
       </XmlClassData>
-      <XmlClassData TypeName="ComponentModelHasComponents" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentModelHasComponentsMoniker" ElementName="componentModelHasComponents" MonikerTypeName="ComponentModelHasComponentsMoniker">
-        <DomainRelationshipMoniker Name="ComponentModelHasComponents" />
+      <XmlClassData TypeName="ComponentModelHasControllers" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentModelHasControllersMoniker" ElementName="componentModelHasControllers" MonikerTypeName="ComponentModelHasControllersMoniker">
+        <DomainRelationshipMoniker Name="ComponentModelHasControllers" />
       </XmlClassData>
       <XmlClassData TypeName="Generalization" MonikerAttributeName="" SerializeId="true" MonikerElementName="generalizationMoniker" ElementName="generalization" MonikerTypeName="GeneralizationMoniker">
         <DomainRelationshipMoniker Name="Generalization" />
@@ -335,8 +594,8 @@
       <XmlClassData TypeName="OutPortShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="outPortShapeMoniker" ElementName="outPortShape" MonikerTypeName="OutPortShapeMoniker">
         <PortMoniker Name="OutPortShape" />
       </XmlClassData>
-      <XmlClassData TypeName="ComponentShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentShapeMoniker" ElementName="componentShape" MonikerTypeName="ComponentShapeMoniker">
-        <GeometryShapeMoniker Name="ComponentShape" />
+      <XmlClassData TypeName="ControllerShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerShapeMoniker" ElementName="controllerShape" MonikerTypeName="ControllerShapeMoniker">
+        <GeometryShapeMoniker Name="ControllerShape" />
       </XmlClassData>
       <XmlClassData TypeName="CommentBoxShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="commentBoxShapeMoniker" ElementName="commentBoxShape" MonikerTypeName="CommentBoxShapeMoniker">
         <GeometryShapeMoniker Name="CommentBoxShape" />
@@ -352,6 +611,91 @@
       </XmlClassData>
       <XmlClassData TypeName="MobileDSLDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="mobileDSLDiagramMoniker" ElementName="mobileDSLDiagram" MonikerTypeName="MobileDSLDiagramMoniker">
         <DiagramMoniker Name="MobileDSLDiagram" />
+      </XmlClassData>
+      <XmlClassData TypeName="ControllerHasStates" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerHasStatesMoniker" ElementName="controllerHasStates" MonikerTypeName="ControllerHasStatesMoniker">
+        <DomainRelationshipMoniker Name="ControllerHasStates" />
+      </XmlClassData>
+      <XmlClassData TypeName="State_old" MonikerAttributeName="" SerializeId="true" MonikerElementName="state_oldMoniker" ElementName="state_old" MonikerTypeName="State_oldMoniker">
+        <DomainClassMoniker Name="State_old" />
+        <ElementData>
+          <XmlPropertyData XmlName="isFirstState">
+            <DomainPropertyMoniker Name="State_old/isFirstState" />
+          </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="previousStates">
+            <DomainRelationshipMoniker Name="State_oldReferencesPreviousStates" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="ports">
+            <DomainRelationshipMoniker Name="State_oldHasPorts" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="StateShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateShapeMoniker" ElementName="stateShape" MonikerTypeName="StateShapeMoniker">
+        <GeometryShapeMoniker Name="StateShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="State_oldReferencesPreviousStates" MonikerAttributeName="" SerializeId="true" MonikerElementName="state_oldReferencesPreviousStatesMoniker" ElementName="state_oldReferencesPreviousStates" MonikerTypeName="State_oldReferencesPreviousStatesMoniker">
+        <DomainRelationshipMoniker Name="State_oldReferencesPreviousStates" />
+        <ElementData>
+          <XmlPropertyData XmlName="condition">
+            <DomainPropertyMoniker Name="State_oldReferencesPreviousStates/condition" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="StateConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateConnectorMoniker" ElementName="stateConnector" MonikerTypeName="StateConnectorMoniker">
+        <ConnectorMoniker Name="StateConnector" />
+      </XmlClassData>
+      <XmlClassData TypeName="State_oldHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="state_oldHasPortsMoniker" ElementName="state_oldHasPorts" MonikerTypeName="State_oldHasPortsMoniker">
+        <DomainRelationshipMoniker Name="State_oldHasPorts" />
+      </XmlClassData>
+      <XmlClassData TypeName="ControllerHasStated" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerHasStatedMoniker" ElementName="controllerHasStated" MonikerTypeName="ControllerHasStatedMoniker">
+        <DomainRelationshipMoniker Name="ControllerHasStated" />
+      </XmlClassData>
+      <XmlClassData TypeName="State" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateMoniker" ElementName="state" MonikerTypeName="StateMoniker">
+        <DomainClassMoniker Name="State" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="ports">
+            <DomainRelationshipMoniker Name="StateHasPorts" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="GeometryShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="geometryShape1Moniker" ElementName="geometryShape1" MonikerTypeName="GeometryShape1Moniker">
+        <GeometryShapeMoniker Name="GeometryShape1" />
+      </XmlClassData>
+      <XmlClassData TypeName="StateHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasPortsMoniker" ElementName="stateHasPorts" MonikerTypeName="StateHasPortsMoniker">
+        <DomainRelationshipMoniker Name="StateHasPorts" />
+      </XmlClassData>
+      <XmlClassData TypeName="ComponentModelHasTempClassed" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentModelHasTempClassedMoniker" ElementName="componentModelHasTempClassed" MonikerTypeName="ComponentModelHasTempClassedMoniker">
+        <DomainRelationshipMoniker Name="ComponentModelHasTempClassed" />
+      </XmlClassData>
+      <XmlClassData TypeName="TempClass" MonikerAttributeName="" SerializeId="true" MonikerElementName="tempClassMoniker" ElementName="tempClass" MonikerTypeName="TempClassMoniker">
+        <DomainClassMoniker Name="TempClass" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="ports">
+            <DomainRelationshipMoniker Name="TempClassHasPorts" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="statePorts">
+            <DomainRelationshipMoniker Name="TempClassHasStatePorts" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="TempClassHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="tempClassHasPortsMoniker" ElementName="tempClassHasPorts" MonikerTypeName="TempClassHasPortsMoniker">
+        <DomainRelationshipMoniker Name="TempClassHasPorts" />
+      </XmlClassData>
+      <XmlClassData TypeName="TempShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="tempShapeMoniker" ElementName="tempShape" MonikerTypeName="TempShapeMoniker">
+        <GeometryShapeMoniker Name="TempShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="StatePort" MonikerAttributeName="name" SerializeId="true" MonikerElementName="statePortMoniker" ElementName="statePort" MonikerTypeName="StatePortMoniker">
+        <DomainClassMoniker Name="StatePort" />
+        <ElementData>
+          <XmlPropertyData XmlName="name" IsMonikerKey="true">
+            <DomainPropertyMoniker Name="StatePort/Name" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="TempClassHasStatePorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="tempClassHasStatePortsMoniker" ElementName="tempClassHasStatePorts" MonikerTypeName="TempClassHasStatePortsMoniker">
+        <DomainRelationshipMoniker Name="TempClassHasStatePorts" />
+      </XmlClassData>
+      <XmlClassData TypeName="StatePortShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="statePortShapeMoniker" ElementName="statePortShape" MonikerTypeName="StatePortShapeMoniker">
+        <PortMoniker Name="StatePortShape" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -382,14 +726,14 @@
         <SourceDirectives>
           <RolePlayerConnectDirective>
             <AcceptingClass>
-              <DomainClassMoniker Name="Component" />
+              <DomainClassMoniker Name="Controller" />
             </AcceptingClass>
           </RolePlayerConnectDirective>
         </SourceDirectives>
         <TargetDirectives>
           <RolePlayerConnectDirective>
             <AcceptingClass>
-              <DomainClassMoniker Name="Component" />
+              <DomainClassMoniker Name="Controller" />
             </AcceptingClass>
           </RolePlayerConnectDirective>
         </TargetDirectives>
@@ -408,7 +752,26 @@
         <TargetDirectives>
           <RolePlayerConnectDirective>
             <AcceptingClass>
-              <DomainClassMoniker Name="Component" />
+              <DomainClassMoniker Name="Controller" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
+    <ConnectionBuilder Name="State_oldReferencesPreviousStatesBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="State_oldReferencesPreviousStates" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="State_old" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="State_old" />
             </AcceptingClass>
           </RolePlayerConnectDirective>
         </TargetDirectives>
@@ -423,31 +786,31 @@
       <ShapeMap>
         <DomainClassMoniker Name="InPort" />
         <ParentElementPath>
-          <DomainPath>ComponentHasPorts.Component/!Component</DomainPath>
+          <DomainPath>ControllerHasPorts.Controller/!Controller</DomainPath>
         </ParentElementPath>
         <PortMoniker Name="InPortShape" />
       </ShapeMap>
       <ShapeMap>
         <DomainClassMoniker Name="OutPort" />
         <ParentElementPath>
-          <DomainPath>ComponentHasPorts.Component/!Component</DomainPath>
+          <DomainPath>ControllerHasPorts.Controller/!Controller</DomainPath>
         </ParentElementPath>
         <PortMoniker Name="OutPortShape" />
       </ShapeMap>
       <ShapeMap>
-        <DomainClassMoniker Name="Component" />
+        <DomainClassMoniker Name="Controller" />
         <ParentElementPath>
-          <DomainPath>ComponentModelHasComponents.ComponentModel/!ComponentModel</DomainPath>
+          <DomainPath>ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="ComponentShape/Name" />
+          <TextDecoratorMoniker Name="ControllerShape/Name" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="NamedElement/Name" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="ComponentShape" />
+        <GeometryShapeMoniker Name="ControllerShape" />
       </ShapeMap>
       <ShapeMap>
         <DomainClassMoniker Name="Comment" />
@@ -463,6 +826,42 @@
           </PropertyDisplayed>
         </DecoratorMap>
         <GeometryShapeMoniker Name="CommentBoxShape" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="State_old" />
+        <ParentElementPath>
+          <DomainPath>ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="StateShape/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="StateShape" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="State" />
+        <ParentElementPath>
+          <DomainPath>ControllerHasStated.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <GeometryShapeMoniker Name="GeometryShape1" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="TempClass" />
+        <ParentElementPath>
+          <DomainPath>ComponentModelHasTempClassed.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <GeometryShapeMoniker Name="TempShape" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="StatePort" />
+        <ParentElementPath>
+          <DomainPath>TempClassHasStatePorts.TempClass/!TempClass</DomainPath>
+        </ParentElementPath>
+        <PortMoniker Name="StatePortShape" />
       </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
@@ -494,6 +893,18 @@
         <ConnectorMoniker Name="GeneralizationLink" />
         <DomainRelationshipMoniker Name="Generalization" />
       </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="StateConnector" />
+        <DomainRelationshipMoniker Name="State_oldReferencesPreviousStates" />
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="StateConnector/Condition" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="State_oldReferencesPreviousStates/condition" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+      </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="mdsl" EditorGuid="5655060c-ef72-481b-b551-6d87cbd1b4bf">
@@ -504,8 +915,8 @@
       <XmlSerializationBehaviorMoniker Name="ComponentsSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="MobileDSL">
-      <ElementTool Name="Component" ToolboxIcon="Resources\ComponentTool.bmp" Caption="Component" Tooltip="Create a Component" HelpKeyword="CreateComponentF1Keyword">
-        <DomainClassMoniker Name="Component" />
+      <ElementTool Name="Controller" ToolboxIcon="Resources\ComponentTool.bmp" Caption="Controller" Tooltip="Create a Component" HelpKeyword="CreateComponentF1Keyword">
+        <DomainClassMoniker Name="Controller" />
       </ElementTool>
       <ElementTool Name="InPort" ToolboxIcon="Resources\InPortTool.bmp" Caption="Input Port" Tooltip="Add an Input Port to a Component." HelpKeyword="CreateInPortF1Keyword">
         <DomainClassMoniker Name="InPort" />
@@ -525,6 +936,21 @@
       <ConnectionTool Name="CommentConnector" ToolboxIcon="resources\CommentLinkTool.bmp" Caption="Comment Connector" Tooltip="Connect a Comment to its subject(s)." HelpKeyword="ConnectCommentsReferenceTypesF1Keyword">
         <ConnectionBuilderMoniker Name="MobileDSL/CommentReferencesSubjectsBuilder" />
       </ConnectionTool>
+      <ElementTool Name="State_old" ToolboxIcon="Resources\ComponentTool.bmp" Caption="State_old" Tooltip="State_old" HelpKeyword="State_old">
+        <DomainClassMoniker Name="State_old" />
+      </ElementTool>
+      <ConnectionTool Name="StateConnection" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="StateConnection" Tooltip="State Connection" HelpKeyword="StateConnection">
+        <ConnectionBuilderMoniker Name="MobileDSL/State_oldReferencesPreviousStatesBuilder" />
+      </ConnectionTool>
+      <ElementTool Name="State" ToolboxIcon="Resources\ComponentTool.bmp" Caption="State" Tooltip="State" HelpKeyword="State">
+        <DomainClassMoniker Name="State" />
+      </ElementTool>
+      <ElementTool Name="Temp" ToolboxIcon="Resources\ComponentTool.bmp" Caption="Temp" Tooltip="Temp" HelpKeyword="Temp">
+        <DomainClassMoniker Name="TempClass" />
+      </ElementTool>
+      <ElementTool Name="StatePort" ToolboxIcon="Resources\InPortTool.bmp" Caption="StatePort" Tooltip="State Port" HelpKeyword="StatePort">
+        <DomainClassMoniker Name="StatePort" />
+      </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="MobileDSLDiagram" />

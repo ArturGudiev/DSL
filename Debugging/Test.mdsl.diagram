@@ -1,1 +1,27 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mobileDSLDiagram dslVersion="1.0.0.0" Id="8e55289d-eb9b-4d3f-aa3d-a38f0c133afa" absoluteBounds="0, 0, 11, 8.5" name="Test">
+  <componentModelMoniker name="/" />
+  <nestedChildShapes>
+    <controllerShape Id="9bbd224c-db26-4b5a-a0a8-718ce9bdb352" absoluteBounds="3.875, 1.875, 5.375, 3.25">
+      <controllerMoniker name="//sdasd" />
+    </controllerShape>
+    <stateShape Id="c1b11847-0369-47fc-b594-39b64eba7140" absoluteBounds="4.5, 4.625, 1.5, 1">
+      <stateMoniker name="//sdasd/State1" />
+    </stateShape>
+    <stateShape Id="081d9dcd-bba8-46e6-9a3b-5ccd84e3276f" absoluteBounds="0.5, 2, 1.5, 1">
+      <stateMoniker name="//sdasd/State2" />
+    </stateShape>
+    <stateShape Id="1bfb0faa-4d9a-4659-a31f-601af437903f" absoluteBounds="4.5, 0.5, 1.5, 1">
+      <stateMoniker name="//sdasd/State3" />
+    </stateShape>
+    <stateShape Id="10733e60-a955-4383-ba2b-191f01d10a3d" absoluteBounds="2.5, 0.5, 1.5, 1">
+      <stateMoniker name="//sdasd/State4" />
+    </stateShape>
+    <stateShape Id="dcf7188f-0231-4de5-94f0-b9ad45dfe452" absoluteBounds="0.5, 3.5, 1.5, 1">
+      <stateMoniker name="//sdasd/State5" />
+    </stateShape>
+    <stateShape Id="1b5eebe0-efd3-4c9b-8608-595bbb3ed872" absoluteBounds="6.375, 2.625, 1.5, 1">
+      <stateMoniker name="//sdasd/State6" />
+    </stateShape>
+  </nestedChildShapes>
+</mobileDSLDiagram>

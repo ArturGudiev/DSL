@@ -1,0 +1,12 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".cs" #>
+<#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../Test.mdsl'"  #>
+
+<# foreach (Controller controller in this.ComponentModel.Controllers) { #>
+  <#=controller.Name#>	
+  <# foreach (State state in controller.States) { #> 
+    <#= state.Name #>
+  <#}#>
+
+<#}#>
+

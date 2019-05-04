@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mobileDSLDiagram dslVersion="1.0.0.0" Id="c12f9d20-5c81-4b8d-992e-486413e5e347" absoluteBounds="0, 0, 11.375, 8.5" name="Sample">
+  <componentModelMoniker name="/A component model" />
+  <nestedChildShapes>
+    <commentBoxShape Id="7ff14456-c44a-4e5f-878b-9ad6a5a22a9a" absoluteBounds="9.625, 3.625, 1.5, 0.25">
+      <commentMoniker Id="3a94e57a-1e9a-4b8a-9026-05fc56939a06" />
+    </commentBoxShape>
+    <commentBoxShape Id="6649e3ca-5ac2-46e8-bb90-1d769b1d82a8" absoluteBounds="4.5, 0.5, 1.5, 0.25">
+      <commentMoniker Id="6a26d103-154b-4fe4-ba0e-4c7f782eb34d" />
+    </commentBoxShape>
+    <controllerShape Id="017ff329-f825-4f5f-b2a3-bb2279886453" absoluteBounds="1.25, 0.875, 1.5, 2">
+      <controllerMoniker name="/A component model/Controller1" />
+      <relativeChildShapes>
+        <outPortShape Id="add8818d-5e14-4ad2-8f0c-1acfc5c1aaa0" absoluteBounds="2.65, 1.34375, 0.2, 0.2">
+          <outPortMoniker name="/A component model/Controller1/OutPort1" />
+        </outPortShape>
+        <inPortShape Id="e125c5ac-05bc-407e-b940-39b4458237be" absoluteBounds="2.03125, 2.775, 0.2, 0.2">
+          <inPortMoniker name="/A component model/Controller1/InPort1" />
+        </inPortShape>
+      </relativeChildShapes>
+    </controllerShape>
+    <controllerShape Id="2053576e-cd20-4f6c-b4b5-8a701711bad0" absoluteBounds="7, 0.5, 2.25, 2">
+      <controllerMoniker name="/A component model/Controller2" />
+      <relativeChildShapes>
+        <inPortShape Id="ba885330-c336-46a6-ad92-e2f609627555" absoluteBounds="6.9, 1.34375, 0.2, 0.2">
+          <inPortMoniker name="/A component model/Controller2/InPort3" />
+        </inPortShape>
+        <outPortShape Id="bbe474e3-5480-47bc-9c97-e7a83ce95a2d" absoluteBounds="7.84375, 2.4, 0.2, 0.2">
+          <outPortMoniker name="/A component model/Controller2/OutPort1" />
+        </outPortShape>
+      </relativeChildShapes>
+    </controllerShape>
+    <associationLink Id="d2c037dd-8961-492d-b64c-0c465c8d95d7" edgePoints="[(2.85 : 1.44375); (6.9 : 1.44375)]" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="07ae1331-9c9d-4e3f-bb00-d0e77a12f226" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="add8818d-5e14-4ad2-8f0c-1acfc5c1aaa0" />
+        <inPortShapeMoniker Id="ba885330-c336-46a6-ad92-e2f609627555" />
+      </nodes>
+    </associationLink>
+    <controllerShape Id="271be2ec-1ea0-4724-8551-df161ca1fd9a" absoluteBounds="3.75, 4.125, 2, 1.125">
+      <controllerMoniker name="/A component model/Controller3" />
+      <relativeChildShapes>
+        <inPortShape Id="1a011efd-3e4f-4215-880e-7f8178a500be" absoluteBounds="5.65, 4.5625, 0.2, 0.2">
+          <inPortMoniker name="/A component model/Controller3/InPort1" />
+        </inPortShape>
+        <outPortShape Id="0d904f5f-4995-4be5-b0cb-03d8ca54521c" absoluteBounds="3.65, 4.5625, 0.2, 0.2">
+          <outPortMoniker name="/A component model/Controller3/OutPort1" />
+        </outPortShape>
+      </relativeChildShapes>
+    </controllerShape>
+    <associationLink Id="00d9f5f8-5eda-4c30-8541-c60fa381f432" edgePoints="[(7.94375 : 2.6); (7.94375 : 4.6625); (5.85 : 4.6625)]" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="51365736-a616-4b12-b164-80f640c74790" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="bbe474e3-5480-47bc-9c97-e7a83ce95a2d" />
+        <inPortShapeMoniker Id="1a011efd-3e4f-4215-880e-7f8178a500be" />
+      </nodes>
+    </associationLink>
+    <associationLink Id="4c35d55c-1a18-43e9-9efa-a33a65d449ed" edgePoints="[(3.65 : 4.6625); (2.13125 : 4.6625); (2.13125 : 2.975)]" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="87fce2e8-5391-4c49-a2f0-cd02ae0208d9" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="0d904f5f-4995-4be5-b0cb-03d8ca54521c" />
+        <inPortShapeMoniker Id="e125c5ac-05bc-407e-b940-39b4458237be" />
+      </nodes>
+    </associationLink>
+  </nestedChildShapes>
+</mobileDSLDiagram>

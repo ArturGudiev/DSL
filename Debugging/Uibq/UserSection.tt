@@ -1,0 +1,46 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".cs" #>
+<#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../Sample.mdsl'"  #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Ubiq.Graphics;
+using System.Threading.Tasks;
+
+namespace Application0
+{
+    partial class Application0
+    {
+        public Controller currentController;
+       public bool changed = false;
+            
+        protected async Task UserSection()
+        {
+            currentController = <#getMainController();#>
+            for (; ; )
+            {
+                currentController.action();
+                while (changed){
+                    changed = false;
+                    currentController.action();
+                }
+                await Wait();
+            }
+        }
+        
+    }
+    
+}
+
+<#+  
+private void getMainController()  
+{  
+	foreach (Controller controller in this.ComponentModel.Controllers)
+        {
+            if(controller.isFirst){ #>
+<#= controller.Name #>.getInstance(this);
+<#+           
+            }
+            }
+}  
+#>
