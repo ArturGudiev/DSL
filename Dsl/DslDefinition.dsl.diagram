@@ -54,14 +54,14 @@
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape>
         <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape Id="b37330a4-a2a1-4ec0-b736-49f841fa3975" absoluteBounds="8.3, 6.7927718098958323, 1.3499999999999996, 0.80169108072916639">
-          <DomainRelationshipMoniker Name="/Company.MobileDSL/State_oldReferencesPreviousStates" />
+          <DomainRelationshipMoniker Name="/Company.MobileDSL/State_old2ReferencesPreviousStates" />
           <relativeChildShapes />
           <nestedChildShapes>
             <elementListCompartment Id="9acb4e5c-44d5-4676-ab1c-a6f2441694fd" absoluteBounds="8.3150000000000013, 7.0527718098958321, 1.3199999999999998, 0.44169108072916663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape>
         <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape Id="3a29715b-adf2-40c5-b7e8-e95429ca00f5" isExpanded="false" absoluteBounds="8.3, 7.8944628906249985, 1.35, 0.25">
-          <DomainRelationshipMoniker Name="/Company.MobileDSL/State_oldHasPorts" />
+          <DomainRelationshipMoniker Name="/Company.MobileDSL/State_old2HasPorts" />
           <relativeChildShapes />
           <nestedChildShapes>
             <elementListCompartment Id="e7c6c771-50f1-467c-a5a9-4de9aaf80f47" absoluteBounds="8.3, 7.8944628906249985, 0.125, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
@@ -775,17 +775,17 @@
             </SourceRoleNode>
             <InheritanceNode Id="5722dc63-7444-405a-9dce-a99b6875ceea" IsLeaf="true">
               <InheritanceLink>
-                <ClassHasBaseClassMoniker Name="/Company.MobileDSL/State_old" />
+                <ClassHasBaseClassMoniker Name="/Company.MobileDSL/State_old2" />
               </InheritanceLink>
             </InheritanceNode>
             <SourceRoleNode Id="44fb95cf-08ac-43a2-b356-3d30bc7fdfde" IsLeaf="true">
               <Role>
-                <DomainRoleMoniker Name="/Company.MobileDSL/State_oldReferencesPreviousStates/SourceState_old" />
+                <DomainRoleMoniker Name="/Company.MobileDSL/State_old2ReferencesPreviousStates/SourceState_old2" />
               </Role>
             </SourceRoleNode>
             <SourceRoleNode Id="d3639584-9ec7-4f53-bdad-8ce21a6eb60f" IsLeaf="true">
               <Role>
-                <DomainRoleMoniker Name="/Company.MobileDSL/State_oldHasPorts/State_old" />
+                <DomainRoleMoniker Name="/Company.MobileDSL/State_old2HasPorts/State_old2" />
               </Role>
             </SourceRoleNode>
             <SourceRoleNode Id="01ae82af-2ba0-407d-b5f4-4b57ac864ea6">
