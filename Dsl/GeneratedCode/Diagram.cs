@@ -221,7 +221,7 @@ namespace Company.MobileDSL
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Company.MobileDSL.State_old)
+			if(element is global::Company.MobileDSL.State_old2)
 			{
 				global::Company.MobileDSL.StateShape newShape = new global::Company.MobileDSL.StateShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
@@ -261,12 +261,7 @@ namespace Company.MobileDSL
 				global::Company.MobileDSL.CommentLink newShape = new global::Company.MobileDSL.CommentLink(this.Partition);
 				return newShape;
 			}
-			if(element is global::Company.MobileDSL.Generalization)
-			{
-				global::Company.MobileDSL.GeneralizationLink newShape = new global::Company.MobileDSL.GeneralizationLink(this.Partition);
-				return newShape;
-			}
-			if(element is global::Company.MobileDSL.State_oldReferencesPreviousStates)
+			if(element is global::Company.MobileDSL.State_old2ReferencesPreviousStates)
 			{
 				global::Company.MobileDSL.StateConnector newShape = new global::Company.MobileDSL.StateConnector(this.Partition);
 				return newShape;
@@ -377,7 +372,7 @@ namespace Company.MobileDSL
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.State_oldReferencesPreviousStates.conditionDomainPropertyId);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.State_old2ReferencesPreviousStates.conditionDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Condition").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
@@ -387,7 +382,6 @@ namespace Company.MobileDSL
 		#region Connect actions
 		private bool changingMouseAction;
 		private global::Company.MobileDSL.ConnectionConnectAction connectionConnectAction;
-		private global::Company.MobileDSL.GeneralizationConnectAction generalizationConnectAction;
 		private global::Company.MobileDSL.CommentConnectorConnectAction commentConnectorConnectAction;
 		private global::Company.MobileDSL.StateConnectionConnectAction stateConnectionConnectAction;
 		/// <summary>
@@ -420,15 +414,6 @@ namespace Company.MobileDSL
 						this.connectionConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
 					action = this.connectionConnectAction;
-				} 
-				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Company.MobileDSL.MobileDSLToolboxHelper.GeneralizationFilterString))
-				{
-					if (this.generalizationConnectAction == null)
-					{
-						this.generalizationConnectAction = new global::Company.MobileDSL.GeneralizationConnectAction(this);
-						this.generalizationConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
-					}
-					action = this.generalizationConnectAction;
 				} 
 				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Company.MobileDSL.MobileDSLToolboxHelper.CommentConnectorFilterString))
 				{
@@ -510,11 +495,6 @@ namespace Company.MobileDSL
 						this.connectionConnectAction.Dispose();
 						this.connectionConnectAction = null;
 					}
-					if(this.generalizationConnectAction != null)
-					{
-						this.generalizationConnectAction.Dispose();
-						this.generalizationConnectAction = null;
-					}
 					if(this.commentConnectorConnectAction != null)
 					{
 						this.commentConnectorConnectAction.Dispose();
@@ -581,15 +561,14 @@ namespace Company.MobileDSL
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.InPort), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.OutPort), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Controller), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old2), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Comment), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.TempClass), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.StatePort), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Connection), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Generalization), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_oldReferencesPreviousStates), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old2ReferencesPreviousStates), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -617,9 +596,9 @@ namespace Company.MobileDSL
 				{
 					parentElement = GetParentForController((global::Company.MobileDSL.Controller)childElement);
 				} else
-				if(childElement is global::Company.MobileDSL.State_old)
+				if(childElement is global::Company.MobileDSL.State_old2)
 				{
-					parentElement = GetParentForState_old((global::Company.MobileDSL.State_old)childElement);
+					parentElement = GetParentForState_old2((global::Company.MobileDSL.State_old2)childElement);
 				} else
 				if(childElement is global::Company.MobileDSL.State)
 				{
@@ -674,7 +653,7 @@ namespace Company.MobileDSL
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Company.MobileDSL.ComponentModel GetParentForState_old( global::Company.MobileDSL.State_old root )
+			public static global::Company.MobileDSL.ComponentModel GetParentForState_old2( global::Company.MobileDSL.State_old2 root )
 			{
 				// Segments 0 and 1
 				global::Company.MobileDSL.Controller root2 = root.Controller;
@@ -799,7 +778,7 @@ namespace Company.MobileDSL
 		/// so we can update the decorator host's bounds.
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Connection), InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_oldReferencesPreviousStates), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old2ReferencesPreviousStates), InitiallyDisabled=true)]
 		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
@@ -823,12 +802,12 @@ namespace Company.MobileDSL
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.Connection.DomainClassId);
 					}
 				}
-				else if (e.DomainProperty.Id == global::Company.MobileDSL.State_oldReferencesPreviousStates.conditionDomainPropertyId)
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.State_old2ReferencesPreviousStates.conditionDomainPropertyId)
 				{
 					DslDiagrams::Decorator decorator = global::Company.MobileDSL.StateConnector.FindStateConnectorDecorator("Condition");
 					if(decorator != null)
 					{
-						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.State_oldReferencesPreviousStates.DomainClassId);
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.State_old2ReferencesPreviousStates.DomainClassId);
 					}
 				}
 			}
@@ -839,8 +818,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Connection), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Generalization), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_oldReferencesPreviousStates), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old2ReferencesPreviousStates), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

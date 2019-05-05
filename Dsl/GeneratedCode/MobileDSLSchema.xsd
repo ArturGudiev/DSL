@@ -150,28 +150,6 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: Generalization -->
-          <xsd:element name="subclasses" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of Generalization</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
-                  <xsd:element ref="generalization">
-                    <xsd:annotation>
-                      <xsd:documentation>[Relationship deriving from Generalization needs to be serialized in full-form]</xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element ref="controllerMoniker" >
-                    <xsd:annotation>
-                      <xsd:documentation>[Target role-player]</xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:element>
-                </xsd:choice>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
           <!-- Relationship: ControllerHasStates -->
           <xsd:element name="states" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
@@ -385,37 +363,37 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- State_old -->
-  <xsd:element name="state_old" type="State_old" substitutionGroup="namedElement" />
-  <xsd:complexType name="State_old">
+  <!-- State_old2 -->
+  <xsd:element name="state_old2" type="State_old2" substitutionGroup="namedElement" />
+  <xsd:complexType name="State_old2">
     <xsd:complexContent>
       <xsd:extension base="NamedElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: State_oldReferencesPreviousStates -->
+          <!-- Relationship: State_old2ReferencesPreviousStates -->
           <xsd:element name="previousStates" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of State_oldReferencesPreviousStates</xsd:documentation>
+              <xsd:documentation>Instances of State_old2ReferencesPreviousStates</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="state_oldReferencesPreviousStates" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="state_old2ReferencesPreviousStates" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of State_oldReferencesPreviousStates needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of State_old2ReferencesPreviousStates needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: State_oldHasPorts -->
+          <!-- Relationship: State_old2HasPorts -->
           <xsd:element name="ports" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of State_oldHasPorts</xsd:documentation>
+              <xsd:documentation>Instances of State_old2HasPorts</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="state_oldHasPorts" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="state_old2HasPorts" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of State_oldHasPorts needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of State_old2HasPorts needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -434,11 +412,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- State_old Moniker -->
-  <xsd:element name="state_oldMoniker" type="State_oldMoniker" substitutionGroup="namedElementMoniker" />
-  <xsd:complexType name="State_oldMoniker">
+  <!-- State_old2 Moniker -->
+  <xsd:element name="state_old2Moniker" type="State_old2Moniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="State_old2Moniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for State_old instance.</xsd:documentation>
+      <xsd:documentation>Moniker for State_old2 instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="NamedElementMoniker">
@@ -752,46 +730,6 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- Generalization -->
-  <xsd:element name="generalization" abstract="true" type="Generalization" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="Generalization" abstract="true" >
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end Controller -->
-          <xsd:element ref="controllerMoniker" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- Generalization Moniker -->
-  <xsd:element name="generalizationMoniker" type="GeneralizationMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="GeneralizationMoniker">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for Generalization instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
   <!-- CommentReferencesSubjects -->
   <xsd:element name="commentReferencesSubjects" abstract="true" type="CommentReferencesSubjects" substitutionGroup="core:modelElement" />
   <xsd:complexType name="CommentReferencesSubjects" abstract="true" >
@@ -838,8 +776,8 @@
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end State_old -->
-          <xsd:element ref="state_old" minOccurs="1" maxOccurs="1">
+          <!-- Target end State_old2 -->
+          <xsd:element ref="state_old2" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -872,14 +810,14 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- State_oldReferencesPreviousStates -->
-  <xsd:element name="state_oldReferencesPreviousStates" type="State_oldReferencesPreviousStates" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="State_oldReferencesPreviousStates">
+  <!-- State_old2ReferencesPreviousStates -->
+  <xsd:element name="state_old2ReferencesPreviousStates" type="State_old2ReferencesPreviousStates" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="State_old2ReferencesPreviousStates">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end State_old -->
-          <xsd:element ref="state_oldMoniker" minOccurs="1" maxOccurs="1">
+          <!-- Target end State_old2 -->
+          <xsd:element ref="state_old2Moniker" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -897,11 +835,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- State_oldReferencesPreviousStates Moniker -->
-  <xsd:element name="state_oldReferencesPreviousStatesMoniker" type="State_oldReferencesPreviousStatesMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="State_oldReferencesPreviousStatesMoniker">
+  <!-- State_old2ReferencesPreviousStates Moniker -->
+  <xsd:element name="state_old2ReferencesPreviousStatesMoniker" type="State_old2ReferencesPreviousStatesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="State_old2ReferencesPreviousStatesMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for State_oldReferencesPreviousStates instance.</xsd:documentation>
+      <xsd:documentation>Moniker for State_old2ReferencesPreviousStates instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -914,9 +852,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- State_oldHasPorts -->
-  <xsd:element name="state_oldHasPorts" type="State_oldHasPorts" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="State_oldHasPorts">
+  <!-- State_old2HasPorts -->
+  <xsd:element name="state_old2HasPorts" type="State_old2HasPorts" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="State_old2HasPorts">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -937,11 +875,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- State_oldHasPorts Moniker -->
-  <xsd:element name="state_oldHasPortsMoniker" type="State_oldHasPortsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="State_oldHasPortsMoniker">
+  <!-- State_old2HasPorts Moniker -->
+  <xsd:element name="state_old2HasPortsMoniker" type="State_old2HasPortsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="State_old2HasPortsMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for State_oldHasPorts instance.</xsd:documentation>
+      <xsd:documentation>Moniker for State_old2HasPorts instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

@@ -61,21 +61,13 @@ namespace Company.MobileDSL
 					0xff00ff,
 					Index = 3)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
-					"@GeneralizationToolboxItem;Company.MobileDSL.Dsl.dll", 
-					"Company.MobileDSL.GeneralizationToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"ConnectGeneralizationF1Keyword", 
-					"@GeneralizationToolboxBitmap;Company.MobileDSL.Dsl.dll", 
-					0xff00ff,
-					Index = 4)]
-	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@CommentToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.CommentToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"ConnectCommentF1Keyword", 
 					"@CommentToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 5)]
+					Index = 4)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@CommentConnectorToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.CommentConnectorToolboxItem", 
@@ -83,7 +75,7 @@ namespace Company.MobileDSL
 					"ConnectCommentsReferenceTypesF1Keyword", 
 					"@CommentConnectorToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 6)]
+					Index = 5)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@State_oldToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.State_oldToolboxItem", 
@@ -91,7 +83,7 @@ namespace Company.MobileDSL
 					"State_old", 
 					"@State_oldToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 7)]
+					Index = 6)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@StateConnectionToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.StateConnectionToolboxItem", 
@@ -99,7 +91,7 @@ namespace Company.MobileDSL
 					"StateConnection", 
 					"@StateConnectionToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 8)]
+					Index = 7)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@StateToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.StateToolboxItem", 
@@ -107,7 +99,7 @@ namespace Company.MobileDSL
 					"State", 
 					"@StateToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 9)]
+					Index = 8)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@TempToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.TempToolboxItem", 
@@ -115,7 +107,7 @@ namespace Company.MobileDSL
 					"Temp", 
 					"@TempToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 10)]
+					Index = 9)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@StatePortToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.StatePortToolboxItem", 
@@ -123,7 +115,7 @@ namespace Company.MobileDSL
 					"StatePort", 
 					"@StatePortToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 11)]
+					Index = 10)]
 	[VSShell::ProvideEditorFactory(typeof(MobileDSLEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(MobileDSLEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(MobileDSLEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

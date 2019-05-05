@@ -31,14 +31,6 @@
             <DomainPath>ComponentModelHasControllers.Controllers</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
-        <ElementMergeDirective>
-          <Index>
-            <DomainClassMoniker Name="TempClass" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>ComponentModelHasTempClassed.TempClassed</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
     <DomainClass Id="bb8866e4-0364-4829-9370-590d91c53c94" Description="" Name="Controller" DisplayName="Controller" Namespace="Company.MobileDSL">
@@ -144,35 +136,6 @@
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
-    </DomainClass>
-    <DomainClass Id="9dc4f661-da0f-4455-a2e2-87c366c7bbd5" Description="Description for Company.MobileDSL.TempClass" Name="TempClass" DisplayName="Temp Class" Namespace="Company.MobileDSL">
-      <ElementMergeDirectives>
-        <ElementMergeDirective>
-          <Index>
-            <DomainClassMoniker Name="Port" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>TempClassHasPorts.Ports</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
-        <ElementMergeDirective>
-          <Index>
-            <DomainClassMoniker Name="StatePort" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>TempClassHasStatePorts.StatePorts</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
-      </ElementMergeDirectives>
-    </DomainClass>
-    <DomainClass Id="1b4a27fd-ba9d-4247-be99-fb1af96308ee" Description="Description for Company.MobileDSL.StatePort" Name="StatePort" DisplayName="State Port" Namespace="Company.MobileDSL">
-      <Properties>
-        <DomainProperty Id="9dbed3c5-cffe-410c-bce4-d91e9eacb4e6" Description="Description for Company.MobileDSL.StatePort.Name" Name="Name" DisplayName="Name" IsElementName="true">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-      </Properties>
     </DomainClass>
   </Classes>
   <Relationships>
@@ -357,54 +320,6 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="c31188ac-6836-4424-8b49-a730a70a35fb" Description="Description for Company.MobileDSL.ComponentModelHasTempClassed" Name="ComponentModelHasTempClassed" DisplayName="Component Model Has Temp Classed" Namespace="Company.MobileDSL" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="9bc2d481-2281-450e-8989-75812138d930" Description="Description for Company.MobileDSL.ComponentModelHasTempClassed.ComponentModel" Name="ComponentModel" DisplayName="Component Model" PropertyName="TempClassed" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Temp Classed">
-          <RolePlayer>
-            <DomainClassMoniker Name="ComponentModel" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="5852b40e-2248-4ca6-b068-b8457a6ffb73" Description="Description for Company.MobileDSL.ComponentModelHasTempClassed.TempClass" Name="TempClass" DisplayName="Temp Class" PropertyName="ComponentModel" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Component Model">
-          <RolePlayer>
-            <DomainClassMoniker Name="TempClass" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="5ba86898-81e5-4aff-b591-89da917215f2" Description="Description for Company.MobileDSL.TempClassHasPorts" Name="TempClassHasPorts" DisplayName="Temp Class Has Ports" Namespace="Company.MobileDSL" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="3e38c4a8-7c00-4c66-9657-041cd7d2647a" Description="Description for Company.MobileDSL.TempClassHasPorts.TempClass" Name="TempClass" DisplayName="Temp Class" PropertyName="Ports" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ports">
-          <RolePlayer>
-            <DomainClassMoniker Name="TempClass" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="4f43fe07-46cf-4a81-90d0-f17c89268c00" Description="Description for Company.MobileDSL.TempClassHasPorts.Port" Name="Port" DisplayName="Port" PropertyName="TempClass" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Temp Class">
-          <RolePlayer>
-            <DomainClassMoniker Name="Port" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="82dd35ca-6b14-4664-b8bb-401fd1a721de" Description="Description for Company.MobileDSL.TempClassHasStatePorts" Name="TempClassHasStatePorts" DisplayName="Temp Class Has State Ports" Namespace="Company.MobileDSL" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="512fa2b6-9920-4916-a8a4-121666115e33" Description="Description for Company.MobileDSL.TempClassHasStatePorts.TempClass" Name="TempClass" DisplayName="Temp Class" PropertyName="StatePorts" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="State Ports">
-          <RolePlayer>
-            <DomainClassMoniker Name="TempClass" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="d1fe8a83-2fe0-46c6-9e79-0c5b8f511cfa" Description="Description for Company.MobileDSL.TempClassHasStatePorts.StatePort" Name="StatePort" DisplayName="State Port" PropertyName="TempClass" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Temp Class">
-          <RolePlayer>
-            <DomainClassMoniker Name="StatePort" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -450,12 +365,6 @@
       </ShapeHasDecorators>
     </GeometryShape>
     <GeometryShape Id="7cc0d58f-c7f1-44ae-89b0-722bf7b7abd6" Description="Description for Company.MobileDSL.GeometryShape1" Name="GeometryShape1" DisplayName="Geometry Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Geometry Shape1" InitialHeight="1" Geometry="Rectangle" />
-    <GeometryShape Id="e97d3cc5-5950-4f47-92d4-767610ec5fab" Description="Description for Company.MobileDSL.TempShape" Name="TempShape" DisplayName="Temp Shape" Namespace="Company.MobileDSL" FixedTooltipText="Temp Shape" InitialHeight="1" Geometry="Rectangle" />
-    <Port Id="22195493-d9cb-4ab0-8c7d-5758238fd067" Description="Description for Company.MobileDSL.StatePortShape" Name="StatePortShape" DisplayName="State Port Shape" Namespace="Company.MobileDSL" FixedTooltipText="State Port Shape" InitialWidth="0.2" InitialHeight="0.2" OutlineThickness="0.01" Geometry="Rectangle">
-      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
-        <IconDecorator Name="Image" DisplayName="Image" DefaultIcon="Resources\InPortImage.bmp" />
-      </ShapeHasDecorators>
-    </Port>
   </Shapes>
   <Connectors>
     <Connector Id="66d5ac35-32f5-41a3-8eb2-a96e59751133" Description="" Name="AssociationLink" DisplayName="Association Link" Namespace="Company.MobileDSL" FixedTooltipText="Association Link" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -499,9 +408,6 @@
           </XmlRelationshipData>
           <XmlRelationshipData UseFullForm="true" RoleElementName="controllers">
             <DomainRelationshipMoniker Name="ComponentModelHasControllers" />
-          </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="tempClassed">
-            <DomainRelationshipMoniker Name="ComponentModelHasTempClassed" />
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
@@ -637,40 +543,6 @@
       <XmlClassData TypeName="StateHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasPortsMoniker" ElementName="stateHasPorts" MonikerTypeName="StateHasPortsMoniker">
         <DomainRelationshipMoniker Name="StateHasPorts" />
       </XmlClassData>
-      <XmlClassData TypeName="ComponentModelHasTempClassed" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentModelHasTempClassedMoniker" ElementName="componentModelHasTempClassed" MonikerTypeName="ComponentModelHasTempClassedMoniker">
-        <DomainRelationshipMoniker Name="ComponentModelHasTempClassed" />
-      </XmlClassData>
-      <XmlClassData TypeName="TempClass" MonikerAttributeName="" SerializeId="true" MonikerElementName="tempClassMoniker" ElementName="tempClass" MonikerTypeName="TempClassMoniker">
-        <DomainClassMoniker Name="TempClass" />
-        <ElementData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="ports">
-            <DomainRelationshipMoniker Name="TempClassHasPorts" />
-          </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="statePorts">
-            <DomainRelationshipMoniker Name="TempClassHasStatePorts" />
-          </XmlRelationshipData>
-        </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="TempClassHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="tempClassHasPortsMoniker" ElementName="tempClassHasPorts" MonikerTypeName="TempClassHasPortsMoniker">
-        <DomainRelationshipMoniker Name="TempClassHasPorts" />
-      </XmlClassData>
-      <XmlClassData TypeName="TempShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="tempShapeMoniker" ElementName="tempShape" MonikerTypeName="TempShapeMoniker">
-        <GeometryShapeMoniker Name="TempShape" />
-      </XmlClassData>
-      <XmlClassData TypeName="StatePort" MonikerAttributeName="name" SerializeId="true" MonikerElementName="statePortMoniker" ElementName="statePort" MonikerTypeName="StatePortMoniker">
-        <DomainClassMoniker Name="StatePort" />
-        <ElementData>
-          <XmlPropertyData XmlName="name" IsMonikerKey="true">
-            <DomainPropertyMoniker Name="StatePort/Name" />
-          </XmlPropertyData>
-        </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="TempClassHasStatePorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="tempClassHasStatePortsMoniker" ElementName="tempClassHasStatePorts" MonikerTypeName="TempClassHasStatePortsMoniker">
-        <DomainRelationshipMoniker Name="TempClassHasStatePorts" />
-      </XmlClassData>
-      <XmlClassData TypeName="StatePortShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="statePortShapeMoniker" ElementName="statePortShape" MonikerTypeName="StatePortShapeMoniker">
-        <PortMoniker Name="StatePortShape" />
-      </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="ComponentExplorer" />
@@ -804,20 +676,6 @@
         </ParentElementPath>
         <GeometryShapeMoniker Name="GeometryShape1" />
       </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="TempClass" />
-        <ParentElementPath>
-          <DomainPath>ComponentModelHasTempClassed.ComponentModel/!ComponentModel</DomainPath>
-        </ParentElementPath>
-        <GeometryShapeMoniker Name="TempShape" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="StatePort" />
-        <ParentElementPath>
-          <DomainPath>TempClassHasStatePorts.TempClass/!TempClass</DomainPath>
-        </ParentElementPath>
-        <PortMoniker Name="StatePortShape" />
-      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -892,12 +750,6 @@
       </ConnectionTool>
       <ElementTool Name="State" ToolboxIcon="Resources\ComponentTool.bmp" Caption="State" Tooltip="State" HelpKeyword="State">
         <DomainClassMoniker Name="State" />
-      </ElementTool>
-      <ElementTool Name="Temp" ToolboxIcon="Resources\ComponentTool.bmp" Caption="Temp" Tooltip="Temp" HelpKeyword="Temp">
-        <DomainClassMoniker Name="TempClass" />
-      </ElementTool>
-      <ElementTool Name="StatePort" ToolboxIcon="Resources\InPortTool.bmp" Caption="StatePort" Tooltip="State Port" HelpKeyword="StatePort">
-        <DomainClassMoniker Name="StatePort" />
       </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

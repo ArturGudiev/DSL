@@ -1662,18 +1662,6 @@ namespace Company.MobileDSL
 							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </ports>
 						}
 						break;
-					case "subclasses":	// Relationship "Generalization"
-						if (reader.IsEmptyElement)
-						{	// No instance of this relationship, just skip
-							DslModeling::SerializationUtilities.Skip(reader);
-						}
-						else
-						{
-							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <subclasses>
-							ReadGeneralizationInstances(serializationContext, element, reader);
-							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </subclasses>
-						}
-						break;
 					case "states":	// Relationship "ControllerHasStates"
 						if (reader.IsEmptyElement)
 						{	// No instance of this relationship, just skip
@@ -1755,55 +1743,6 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Reads all instances of relationship Generalization.
-		/// </summary>
-		/// <remarks>
-		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
-		/// either the first instance, or a bogus tag. This method will deserialize all instances and ignore all bogus tags. When the
-		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory Controller instance that will get the deserialized data.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806")]
-		private static void ReadGeneralizationInstances(DslModeling::SerializationContext serializationContext, Controller element, global::System.Xml.XmlReader reader)
-		{
-			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-			{
-				DslModeling::DomainClassXmlSerializer newControllerMonikerOfGeneralizationSerializer = serializationContext.Directory.GetSerializer(Controller.DomainClassId);
-				global::System.Diagnostics.Debug.Assert(newControllerMonikerOfGeneralizationSerializer != null, "Cannot find serializer for Controller!");
-				DslModeling::Moniker newControllerMonikerOfGeneralization = newControllerMonikerOfGeneralizationSerializer.TryCreateMonikerInstance(serializationContext, reader, element, Generalization.DomainClassId, element.Partition);
-				if (newControllerMonikerOfGeneralization != null)
-				{
-					new Generalization(element.Partition, new DslModeling::RoleAssignment(Generalization.SuperclassDomainRoleId, element), new DslModeling::RoleAssignment(Generalization.SubclassDomainRoleId, newControllerMonikerOfGeneralization));
-					DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
-				}
-				else
-				{
-					global::System.Type typeofGeneralization = typeof(Generalization);
-					DslModeling::DomainRelationshipXmlSerializer newGeneralizationSerializer = serializationContext.Directory.GetSerializer(Generalization.DomainClassId) as DslModeling::DomainRelationshipXmlSerializer;
-					global::System.Diagnostics.Debug.Assert(newGeneralizationSerializer != null, "Cannot find serializer for Generalization!");
-					Generalization newGeneralization = newGeneralizationSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as Generalization;
-					if (newGeneralization != null)
-					{
-						if (newGeneralization.GetType() == typeofGeneralization)
-						{	// The relationship should be serialized in short-form.
-							ComponentsSerializationBehaviorSerializationMessages.ExpectingShortFormRelationship(serializationContext, reader, typeof(Generalization));
-						}
-						DslModeling::DomainRoleInfo.SetRolePlayer (newGeneralization, Generalization.SuperclassDomainRoleId, element);
-						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newGeneralization.GetDomainClass().Id);	
-						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newGeneralization.GetDomainClass().Name + "!");
-						targetSerializer.Read(serializationContext, newGeneralization, reader);
-					}
-					else
-					{	// Unknown element, skip
-						DslModeling::SerializationUtilities.Skip(reader);
-					}
-				}
-			}
-		}
-	
-		/// <summary>
 		/// Reads all instances of relationship ControllerHasStates.
 		/// </summary>
 		/// <remarks>
@@ -1830,16 +1769,16 @@ namespace Company.MobileDSL
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
-					DslModeling::DomainClassXmlSerializer newState_oldOfControllerHasStatesSerializer = serializationContext.Directory.GetSerializer(State_old.DomainClassId);
-					global::System.Diagnostics.Debug.Assert(newState_oldOfControllerHasStatesSerializer != null, "Cannot find serializer for State_old!");
-					State_old newState_oldOfControllerHasStates = newState_oldOfControllerHasStatesSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as State_old;
-					if (newState_oldOfControllerHasStates != null)
+					DslModeling::DomainClassXmlSerializer newState_old2OfControllerHasStatesSerializer = serializationContext.Directory.GetSerializer(State_old2.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newState_old2OfControllerHasStatesSerializer != null, "Cannot find serializer for State_old2!");
+					State_old2 newState_old2OfControllerHasStates = newState_old2OfControllerHasStatesSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as State_old2;
+					if (newState_old2OfControllerHasStates != null)
 					{
 						ComponentsSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(ControllerHasStates));
-						element.States.Add(newState_oldOfControllerHasStates);
-						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newState_oldOfControllerHasStates.GetDomainClass().Id);	
-						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newState_oldOfControllerHasStates.GetDomainClass().Name + "!");
-						targetSerializer.Read(serializationContext, newState_oldOfControllerHasStates, reader);
+						element.States.Add(newState_old2OfControllerHasStates);
+						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newState_old2OfControllerHasStates.GetDomainClass().Id);	
+						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newState_old2OfControllerHasStates.GetDomainClass().Name + "!");
+						targetSerializer.Read(serializationContext, newState_old2OfControllerHasStates, reader);
 					}
 					else
 					{	// Unknown element, skip.
@@ -2359,37 +2298,6 @@ namespace Company.MobileDSL
 						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
 						global::System.Diagnostics.Debug.Assert(targetSerializer != null, "Cannot find serializer for " + targetElement.GetDomainClass().Name + "!");			
 						targetSerializer.Write(serializationContext, targetElement, writer);
-					}
-				}
-				writer.WriteEndElement();
-			}
-	
-			// Generalization
-			global::System.Collections.ObjectModel.ReadOnlyCollection<Generalization> allGeneralizationInstances = Generalization.GetLinksToSubclasses(element);
-			if (!serializationContext.Result.Failed && allGeneralizationInstances.Count > 0)
-			{
-				DslModeling::DomainRelationshipXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(Generalization.DomainClassId) as DslModeling::DomainRelationshipXmlSerializer;
-				global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for Generalization!");
-	
-				writer.WriteStartElement("subclasses");
-				global::System.Type typeofGeneralization = typeof(Generalization);
-				foreach (Generalization eachGeneralizationInstance in allGeneralizationInstances)
-				{
-					if (serializationContext.Result.Failed)
-						break;
-	
-					if (eachGeneralizationInstance.GetType() != typeofGeneralization)
-					{	// Derived relationships will be serialized in full-form.
-						DslModeling::DomainClassXmlSerializer derivedRelSerializer = serializationContext.Directory.GetSerializer(eachGeneralizationInstance.GetDomainClass().Id);
-						global::System.Diagnostics.Debug.Assert(derivedRelSerializer != null, "Cannot find serializer for " + eachGeneralizationInstance.GetDomainClass().Name + "!");			
-						derivedRelSerializer.Write(serializationContext, eachGeneralizationInstance, writer);
-					}
-					else
-					{	// No need to serialize the relationship itself, just serialize the role-player directly.
-						DslModeling::ModelElement targetElement = eachGeneralizationInstance.Subclass;
-						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
-						global::System.Diagnostics.Debug.Assert(targetSerializer != null, "Cannot find serializer for " + targetElement.GetDomainClass().Name + "!");			
-						targetSerializer.WriteMoniker(serializationContext, targetElement, writer, element, relSerializer);
 					}
 				}
 				writer.WriteEndElement();
@@ -5083,15 +4991,15 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// Serializer State_oldSerializer for DomainClass State_old.
+	/// Serializer State_old2Serializer for DomainClass State_old2.
 	/// </summary>
-	public partial class State_oldSerializer : NamedElementSerializer
+	public partial class State_old2Serializer : NamedElementSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// State_oldSerializer Constructor
+		/// State_old2Serializer Constructor
 		/// </summary>
-		public State_oldSerializer ()
+		public State_old2Serializer ()
 			: base ()
 		{
 		}
@@ -5117,25 +5025,25 @@ namespace Company.MobileDSL
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of State_old.
+		/// This is the XML tag name used to serialize an instance of State_old2.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"state_old"; }
+			get { return @"state_old2"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of State_old.
+		/// This is the XML tag name used to serialize a monikerized instance of State_old2.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"state_oldMoniker"; }
+			get { return @"state_old2Moniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of State_old in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of State_old2 in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -5146,16 +5054,16 @@ namespace Company.MobileDSL
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one State_old instance from XML.
+		/// Public Read() method that deserializes one State_old2 instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the State_old element that is about to be deserialized. 
+		/// of the State_old2 element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_old instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2 instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -5213,7 +5121,7 @@ namespace Company.MobileDSL
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_old instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2 instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -5221,8 +5129,8 @@ namespace Company.MobileDSL
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			State_old instanceOfState_old = element as State_old;
-			global::System.Diagnostics.Debug.Assert(instanceOfState_old != null, "Expecting an instance of State_old");
+			State_old2 instanceOfState_old2 = element as State_old2;
+			global::System.Diagnostics.Debug.Assert(instanceOfState_old2 != null, "Expecting an instance of State_old2");
 	
 			// isFirstState
 			if (!serializationContext.Result.Failed)
@@ -5233,7 +5141,7 @@ namespace Company.MobileDSL
 					global::System.Boolean valueOfisFirstState;
 					if (DslModeling::SerializationUtilities.TryGetValue<global::System.Boolean>(serializationContext, attribisFirstState, out valueOfisFirstState))
 					{
-						instanceOfState_old.isFirstState = valueOfisFirstState;
+						instanceOfState_old2.isFirstState = valueOfisFirstState;
 					}
 					else
 					{	// Invalid property value, ignored.
@@ -5257,19 +5165,19 @@ namespace Company.MobileDSL
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_old instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2 instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
 			// Always call the base class so any extensions are deserialized
 			base.ReadElements(serializationContext, element, reader);
 	
-			State_old instanceOfState_old = element as State_old;
-			global::System.Diagnostics.Debug.Assert(instanceOfState_old != null, "Expecting an instance of State_old!");
+			State_old2 instanceOfState_old2 = element as State_old2;
+			global::System.Diagnostics.Debug.Assert(instanceOfState_old2 != null, "Expecting an instance of State_old2!");
 	
 			// Read child model elements (which are always serialized as nested XML elements).
 			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-				ReadChildElements(serializationContext, instanceOfState_old, reader);
+				ReadChildElements(serializationContext, instanceOfState_old2, reader);
 		}
 	
 		/// <summary>
@@ -5286,14 +5194,14 @@ namespace Company.MobileDSL
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="element">In-memory State_old instance that will get the deserialized data.</param>
-		private static void ReadChildElements(DslModeling::SerializationContext serializationContext, State_old element, global::System.Xml.XmlReader reader)
+		/// <param name="element">In-memory State_old2 instance that will get the deserialized data.</param>
+		private static void ReadChildElements(DslModeling::SerializationContext serializationContext, State_old2 element, global::System.Xml.XmlReader reader)
 		{
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
 				switch (reader.LocalName)
 				{
-					case "previousStates":	// Relationship "State_oldReferencesPreviousStates"
+					case "previousStates":	// Relationship "State_old2ReferencesPreviousStates"
 						if (reader.IsEmptyElement)
 						{	// No instance of this relationship, just skip
 							DslModeling::SerializationUtilities.Skip(reader);
@@ -5301,11 +5209,11 @@ namespace Company.MobileDSL
 						else
 						{
 							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <previousStates>
-							ReadState_oldReferencesPreviousStatesInstances(serializationContext, element, reader);
+							ReadState_old2ReferencesPreviousStatesInstances(serializationContext, element, reader);
 							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </previousStates>
 						}
 						break;
-					case "ports":	// Relationship "State_oldHasPorts"
+					case "ports":	// Relationship "State_old2HasPorts"
 						if (reader.IsEmptyElement)
 						{	// No instance of this relationship, just skip
 							DslModeling::SerializationUtilities.Skip(reader);
@@ -5313,7 +5221,7 @@ namespace Company.MobileDSL
 						else
 						{
 							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <ports>
-							ReadState_oldHasPortsInstances(serializationContext, element, reader);
+							ReadState_old2HasPortsInstances(serializationContext, element, reader);
 							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </ports>
 						}
 						break;
@@ -5324,7 +5232,7 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Reads all instances of relationship State_oldReferencesPreviousStates.
+		/// Reads all instances of relationship State_old2ReferencesPreviousStates.
 		/// </summary>
 		/// <remarks>
 		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
@@ -5332,32 +5240,32 @@ namespace Company.MobileDSL
 		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_old instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2 instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806")]
-		private static void ReadState_oldReferencesPreviousStatesInstances(DslModeling::SerializationContext serializationContext, State_old element, global::System.Xml.XmlReader reader)
+		private static void ReadState_old2ReferencesPreviousStatesInstances(DslModeling::SerializationContext serializationContext, State_old2 element, global::System.Xml.XmlReader reader)
 		{
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				DslModeling::DomainClassXmlSerializer newState_oldReferencesPreviousStatesSerializer = serializationContext.Directory.GetSerializer(State_oldReferencesPreviousStates.DomainClassId);
-				global::System.Diagnostics.Debug.Assert(newState_oldReferencesPreviousStatesSerializer != null, "Cannot find serializer for State_oldReferencesPreviousStates!");
-				State_oldReferencesPreviousStates newState_oldReferencesPreviousStates = newState_oldReferencesPreviousStatesSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as State_oldReferencesPreviousStates;
-				if (newState_oldReferencesPreviousStates != null)
+				DslModeling::DomainClassXmlSerializer newState_old2ReferencesPreviousStatesSerializer = serializationContext.Directory.GetSerializer(State_old2ReferencesPreviousStates.DomainClassId);
+				global::System.Diagnostics.Debug.Assert(newState_old2ReferencesPreviousStatesSerializer != null, "Cannot find serializer for State_old2ReferencesPreviousStates!");
+				State_old2ReferencesPreviousStates newState_old2ReferencesPreviousStates = newState_old2ReferencesPreviousStatesSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as State_old2ReferencesPreviousStates;
+				if (newState_old2ReferencesPreviousStates != null)
 				{
-					DslModeling::DomainRoleInfo.SetRolePlayer (newState_oldReferencesPreviousStates, State_oldReferencesPreviousStates.SourceState_oldDomainRoleId, element);
-					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newState_oldReferencesPreviousStates.GetDomainClass().Id);	
-					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newState_oldReferencesPreviousStates.GetDomainClass().Name + "!");
-					targetSerializer.Read(serializationContext, newState_oldReferencesPreviousStates, reader);
+					DslModeling::DomainRoleInfo.SetRolePlayer (newState_old2ReferencesPreviousStates, State_old2ReferencesPreviousStates.SourceState_old2DomainRoleId, element);
+					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newState_old2ReferencesPreviousStates.GetDomainClass().Id);	
+					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newState_old2ReferencesPreviousStates.GetDomainClass().Name + "!");
+					targetSerializer.Read(serializationContext, newState_old2ReferencesPreviousStates, reader);
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
-					DslModeling::DomainClassXmlSerializer newState_oldMonikerOfState_oldReferencesPreviousStatesSerializer = serializationContext.Directory.GetSerializer(State_old.DomainClassId);
-					global::System.Diagnostics.Debug.Assert(newState_oldMonikerOfState_oldReferencesPreviousStatesSerializer != null, "Cannot find serializer for State_old!");
-					DslModeling::Moniker newState_oldMonikerOfState_oldReferencesPreviousStates = newState_oldMonikerOfState_oldReferencesPreviousStatesSerializer.TryCreateMonikerInstance(serializationContext, reader, element, State_oldReferencesPreviousStates.DomainClassId, element.Partition);
-					if (newState_oldMonikerOfState_oldReferencesPreviousStates != null)
+					DslModeling::DomainClassXmlSerializer newState_old2MonikerOfState_old2ReferencesPreviousStatesSerializer = serializationContext.Directory.GetSerializer(State_old2.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newState_old2MonikerOfState_old2ReferencesPreviousStatesSerializer != null, "Cannot find serializer for State_old2!");
+					DslModeling::Moniker newState_old2MonikerOfState_old2ReferencesPreviousStates = newState_old2MonikerOfState_old2ReferencesPreviousStatesSerializer.TryCreateMonikerInstance(serializationContext, reader, element, State_old2ReferencesPreviousStates.DomainClassId, element.Partition);
+					if (newState_old2MonikerOfState_old2ReferencesPreviousStates != null)
 					{
-						ComponentsSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(State_oldReferencesPreviousStates));
-						new State_oldReferencesPreviousStates(element.Partition, new DslModeling::RoleAssignment(State_oldReferencesPreviousStates.SourceState_oldDomainRoleId, element), new DslModeling::RoleAssignment(State_oldReferencesPreviousStates.TargetState_oldDomainRoleId, newState_oldMonikerOfState_oldReferencesPreviousStates));
+						ComponentsSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(State_old2ReferencesPreviousStates));
+						new State_old2ReferencesPreviousStates(element.Partition, new DslModeling::RoleAssignment(State_old2ReferencesPreviousStates.SourceState_old2DomainRoleId, element), new DslModeling::RoleAssignment(State_old2ReferencesPreviousStates.TargetState_old2DomainRoleId, newState_old2MonikerOfState_old2ReferencesPreviousStates));
 						DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
 					}
 					else
@@ -5369,7 +5277,7 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Reads all instances of relationship State_oldHasPorts.
+		/// Reads all instances of relationship State_old2HasPorts.
 		/// </summary>
 		/// <remarks>
 		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
@@ -5377,34 +5285,34 @@ namespace Company.MobileDSL
 		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_old instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2 instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		private static void ReadState_oldHasPortsInstances(DslModeling::SerializationContext serializationContext, State_old element, global::System.Xml.XmlReader reader)
+		private static void ReadState_old2HasPortsInstances(DslModeling::SerializationContext serializationContext, State_old2 element, global::System.Xml.XmlReader reader)
 		{
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				DslModeling::DomainClassXmlSerializer newState_oldHasPortsSerializer = serializationContext.Directory.GetSerializer(State_oldHasPorts.DomainClassId);
-				global::System.Diagnostics.Debug.Assert(newState_oldHasPortsSerializer != null, "Cannot find serializer for State_oldHasPorts!");
-				State_oldHasPorts newState_oldHasPorts = newState_oldHasPortsSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as State_oldHasPorts;
-				if (newState_oldHasPorts != null)
+				DslModeling::DomainClassXmlSerializer newState_old2HasPortsSerializer = serializationContext.Directory.GetSerializer(State_old2HasPorts.DomainClassId);
+				global::System.Diagnostics.Debug.Assert(newState_old2HasPortsSerializer != null, "Cannot find serializer for State_old2HasPorts!");
+				State_old2HasPorts newState_old2HasPorts = newState_old2HasPortsSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as State_old2HasPorts;
+				if (newState_old2HasPorts != null)
 				{
-					DslModeling::DomainRoleInfo.SetRolePlayer (newState_oldHasPorts, State_oldHasPorts.State_oldDomainRoleId, element);
-					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newState_oldHasPorts.GetDomainClass().Id);	
-					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newState_oldHasPorts.GetDomainClass().Name + "!");
-					targetSerializer.Read(serializationContext, newState_oldHasPorts, reader);
+					DslModeling::DomainRoleInfo.SetRolePlayer (newState_old2HasPorts, State_old2HasPorts.State_old2DomainRoleId, element);
+					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newState_old2HasPorts.GetDomainClass().Id);	
+					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newState_old2HasPorts.GetDomainClass().Name + "!");
+					targetSerializer.Read(serializationContext, newState_old2HasPorts, reader);
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
-					DslModeling::DomainClassXmlSerializer newPortOfState_oldHasPortsSerializer = serializationContext.Directory.GetSerializer(Port.DomainClassId);
-					global::System.Diagnostics.Debug.Assert(newPortOfState_oldHasPortsSerializer != null, "Cannot find serializer for Port!");
-					Port newPortOfState_oldHasPorts = newPortOfState_oldHasPortsSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as Port;
-					if (newPortOfState_oldHasPorts != null)
+					DslModeling::DomainClassXmlSerializer newPortOfState_old2HasPortsSerializer = serializationContext.Directory.GetSerializer(Port.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newPortOfState_old2HasPortsSerializer != null, "Cannot find serializer for Port!");
+					Port newPortOfState_old2HasPorts = newPortOfState_old2HasPortsSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as Port;
+					if (newPortOfState_old2HasPorts != null)
 					{
-						ComponentsSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(State_oldHasPorts));
-						element.Ports.Add(newPortOfState_oldHasPorts);
-						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newPortOfState_oldHasPorts.GetDomainClass().Id);	
-						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newPortOfState_oldHasPorts.GetDomainClass().Name + "!");
-						targetSerializer.Read(serializationContext, newPortOfState_oldHasPorts, reader);
+						ComponentsSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(State_old2HasPorts));
+						element.Ports.Add(newPortOfState_old2HasPorts);
+						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newPortOfState_old2HasPorts.GetDomainClass().Id);	
+						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newPortOfState_old2HasPorts.GetDomainClass().Name + "!");
+						targetSerializer.Read(serializationContext, newPortOfState_old2HasPorts, reader);
 					}
 					else
 					{	// Unknown element, skip.
@@ -5416,8 +5324,8 @@ namespace Company.MobileDSL
 	
 		#region TryCreateInstance
 		/// <summary>
-		/// This method creates a correct instance of State_old based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized State_old, a new State_old instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of State_old2 based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized State_old2, a new State_old2 instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -5427,7 +5335,7 @@ namespace Company.MobileDSL
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created State_old instance, or null if the reader is not pointing to a serialized State_old instance.</returns>
+		/// <returns>Created State_old2 instance, or null if the reader is not pointing to a serialized State_old2 instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -5447,18 +5355,18 @@ namespace Company.MobileDSL
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "State_old" instance.
+				{	// New "State_old2" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "State_old".
+				{	// Check for derived classes of "State_old2".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class instance.
-						State_oldSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_oldSerializer;
+						State_old2Serializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_old2Serializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -5469,8 +5377,8 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// This method creates an instance of State_old based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of State_old.
+		/// This method creates an instance of State_old2 based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of State_old2.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -5478,8 +5386,8 @@ namespace Company.MobileDSL
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new State_old instance should be created.</param>	
-		/// <returns>Created State_old instance.</returns>
+		/// <param name="partition">Partition in which new State_old2 instance should be created.</param>	
+		/// <returns>Created State_old2 instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -5495,7 +5403,7 @@ namespace Company.MobileDSL
 				{
 					id = new global::System.Guid (idStr);
 				}
-				return new State_old(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
+				return new State_old2(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
 			}
 			catch (global::System.ArgumentNullException /* anEx */)
 			{	
@@ -5513,12 +5421,12 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from State_old, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from State_old2, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from State_old.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from State_old2.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -5527,7 +5435,7 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_old.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_old2.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -5559,7 +5467,7 @@ namespace Company.MobileDSL
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including State_old itself) instance of State_old based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including State_old2 itself) instance of State_old2 based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -5593,18 +5501,18 @@ namespace Company.MobileDSL
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "State_old" moniker instance.
+				{	// New "State_old2" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "State_old".
+				{	// Check for derived classes of "State_old2".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						State_oldSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_oldSerializer;
+						State_old2Serializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_old2Serializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -5615,7 +5523,7 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of State_old based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of State_old2 based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -5638,7 +5546,7 @@ namespace Company.MobileDSL
 			}
 			DslModeling::DomainRelationshipXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(relDomainClassId) as DslModeling::DomainRelationshipXmlSerializer;
 			global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for DomainRelationship with Id " + relDomainClassId + "!");
-			DslModeling::Moniker result = relSerializer.MonikerizeReference(serializationContext, sourceRolePlayer, State_old.DomainClassId, monikerString, partition.Store);
+			DslModeling::Moniker result = relSerializer.MonikerizeReference(serializationContext, sourceRolePlayer, State_old2.DomainClassId, monikerString, partition.Store);
 			// Set location info if possible.
 			result.Location = serializationContext.Location;
 			global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -5651,12 +5559,12 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from State_old, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from State_old2, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from State_old.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from State_old2.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -5665,7 +5573,7 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_old.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_old2.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -5691,13 +5599,13 @@ namespace Company.MobileDSL
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized State_old instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized State_old2 instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_old instance to be monikerized.</param>
+		/// <param name="element">State_old2 instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the State_old instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the State_old instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the State_old2 instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the State_old2 instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -5726,10 +5634,10 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one State_old instance into XML.
+		/// Public Write() method that serializes one State_old2 instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_old instance to be serialized.</param>
+		/// <param name="element">State_old2 instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -5790,7 +5698,7 @@ namespace Company.MobileDSL
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_old instance to be serialized.</param>
+		/// <param name="element">State_old2 instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -5798,13 +5706,13 @@ namespace Company.MobileDSL
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			State_old instanceOfState_old = element as State_old;
-			global::System.Diagnostics.Debug.Assert(instanceOfState_old != null, "Expecting an instance of State_old");
+			State_old2 instanceOfState_old2 = element as State_old2;
+			global::System.Diagnostics.Debug.Assert(instanceOfState_old2 != null, "Expecting an instance of State_old2");
 	
 			// isFirstState
 			if (!serializationContext.Result.Failed)
 			{
-				global::System.Boolean propValue = instanceOfState_old.isFirstState;
+				global::System.Boolean propValue = instanceOfState_old2.isFirstState;
 				string serializedPropValue = DslModeling::SerializationUtilities.GetString<global::System.Boolean>(serializationContext, propValue);
 				if (!serializationContext.Result.Failed)
 				{
@@ -5817,15 +5725,15 @@ namespace Company.MobileDSL
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_old instance to be serialized.</param>
+		/// <param name="element">State_old2 instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
 			// Always call the base class so any extensions are serialized
 			base.WriteElements(serializationContext, element, writer);
 	
-			State_old instance = element as State_old;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old!");
+			State_old2 instance = element as State_old2;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old2!");
 	
 			// Write child model elements (which are always serialized as nested XML elements).
 			if (!serializationContext.Result.Failed)
@@ -5837,42 +5745,42 @@ namespace Company.MobileDSL
 		/// Serialize all child model elements.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_old instance to be serialized.</param>
+		/// <param name="element">State_old2 instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]		
-		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, State_old element, global::System.Xml.XmlWriter writer)
+		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, State_old2 element, global::System.Xml.XmlWriter writer)
 		{
-			// State_oldReferencesPreviousStates
-			global::System.Collections.ObjectModel.ReadOnlyCollection<State_oldReferencesPreviousStates> allState_oldReferencesPreviousStatesInstances = State_oldReferencesPreviousStates.GetLinksToPreviousStates(element);
-			if (!serializationContext.Result.Failed && allState_oldReferencesPreviousStatesInstances.Count > 0)
+			// State_old2ReferencesPreviousStates
+			global::System.Collections.ObjectModel.ReadOnlyCollection<State_old2ReferencesPreviousStates> allState_old2ReferencesPreviousStatesInstances = State_old2ReferencesPreviousStates.GetLinksToPreviousStates(element);
+			if (!serializationContext.Result.Failed && allState_old2ReferencesPreviousStatesInstances.Count > 0)
 			{
 				writer.WriteStartElement("previousStates");
-				foreach (State_oldReferencesPreviousStates eachState_oldReferencesPreviousStatesInstance in allState_oldReferencesPreviousStatesInstances)
+				foreach (State_old2ReferencesPreviousStates eachState_old2ReferencesPreviousStatesInstance in allState_old2ReferencesPreviousStatesInstances)
 				{
 					if (serializationContext.Result.Failed)
 						break;
 	
-					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachState_oldReferencesPreviousStatesInstance.GetDomainClass().Id);
-					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachState_oldReferencesPreviousStatesInstance.GetDomainClass().Name + "!");
-					relSerializer.Write(serializationContext, eachState_oldReferencesPreviousStatesInstance, writer);
+					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachState_old2ReferencesPreviousStatesInstance.GetDomainClass().Id);
+					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachState_old2ReferencesPreviousStatesInstance.GetDomainClass().Name + "!");
+					relSerializer.Write(serializationContext, eachState_old2ReferencesPreviousStatesInstance, writer);
 				}
 				writer.WriteEndElement();
 			}
 	
-			// State_oldHasPorts
-			global::System.Collections.ObjectModel.ReadOnlyCollection<State_oldHasPorts> allState_oldHasPortsInstances = State_oldHasPorts.GetLinksToPorts(element);
-			if (!serializationContext.Result.Failed && allState_oldHasPortsInstances.Count > 0)
+			// State_old2HasPorts
+			global::System.Collections.ObjectModel.ReadOnlyCollection<State_old2HasPorts> allState_old2HasPortsInstances = State_old2HasPorts.GetLinksToPorts(element);
+			if (!serializationContext.Result.Failed && allState_old2HasPortsInstances.Count > 0)
 			{
 				writer.WriteStartElement("ports");
-				foreach (State_oldHasPorts eachState_oldHasPortsInstance in allState_oldHasPortsInstances)
+				foreach (State_old2HasPorts eachState_old2HasPortsInstance in allState_old2HasPortsInstances)
 				{
 					if (serializationContext.Result.Failed)
 						break;
 	
-					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachState_oldHasPortsInstance.GetDomainClass().Id);
-					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachState_oldHasPortsInstance.GetDomainClass().Name + "!");
-					relSerializer.Write(serializationContext, eachState_oldHasPortsInstance, writer);
+					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachState_old2HasPortsInstance.GetDomainClass().Id);
+					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachState_old2HasPortsInstance.GetDomainClass().Name + "!");
+					relSerializer.Write(serializationContext, eachState_old2HasPortsInstance, writer);
 				}
 				writer.WriteEndElement();
 			}
@@ -5882,11 +5790,11 @@ namespace Company.MobileDSL
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given State_old instance.
+		/// This method calculates a moniker to a given State_old2 instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">State_old instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the State_old instance.</returns>
+		/// <param name="element">State_old2 instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the State_old2 instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -5898,8 +5806,8 @@ namespace Company.MobileDSL
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			State_old instance = element as State_old;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old!");
+			State_old2 instance = element as State_old2;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old2!");
 	
 			string key = instance.Name;
 			string containerMoniker = null;
@@ -5930,7 +5838,7 @@ namespace Company.MobileDSL
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">State_old instance to get moniker qualifier from.</param>
+		/// <param name="element">State_old2 instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -5946,8 +5854,8 @@ namespace Company.MobileDSL
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			State_old instance = element as State_old;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old!");
+			State_old2 instance = element as State_old2;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old2!");
 			DslModeling::ModelElement container = DslModeling::DomainClassInfo.FindEmbeddingElement(instance);
 			if(container != null)
 			{
@@ -11411,827 +11319,6 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// Serializer GeneralizationSerializer for DomainClass Generalization.
-	/// </summary>
-	public partial class GeneralizationSerializer : DslModeling::DomainRelationshipXmlSerializer
-	{
-		#region Constructor
-		/// <summary>
-		/// GeneralizationSerializer Constructor
-		/// </summary>
-		public GeneralizationSerializer ()
-			: base ()
-		{
-		}
-		#endregion
-	
-		
-		#region Miscellaneous methods
-	
-		/// <summary>
-		/// Reset the serializer
-		/// </summary>
-		/// <remarks>
-		/// Clear the cached information about any derived classes so that it is recalculated.
-		/// </remarks>
-		public override void Reset()
-		{
-			base.Reset();
-			this.derivedClasses = null;
-			this.derivedClassMonikers = null;
-		}
-	
-		#endregion
-	
-		#region Public Properties
-		/// <summary>
-		/// This is the XML tag name used to serialize an instance of Generalization.
-		/// </summary>
-		public override string XmlTagName
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"generalization"; }
-		}
-	
-		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of Generalization.
-		/// </summary>
-		public override string MonikerTagName
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"generalizationMoniker"; }
-		}
-		
-		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of Generalization in a serialized monikerized instance.
-		/// </summary>
-		public override string MonikerAttributeName
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"Id"; }
-		}
-		#endregion
-	
-		#region Read Methods
-		/// <summary>
-		/// Public Read() method that deserializes one Generalization instance from XML.
-		/// </summary>
-		/// <remarks>
-		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the Generalization element that is about to be deserialized. 
-		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
-		/// or the close tag of the parent element (or EOF).
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory Generalization instance that will get the deserialized data.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException ("element");
-			global::System.Diagnostics.Debug.Assert (reader != null);
-			if (reader == null)
-				throw new global::System.ArgumentNullException ("reader");
-			#endregion
-			
-			// Read properties serialized as XML attributes.
-			ReadPropertiesFromAttributes(serializationContext, element, reader);
-				
-			// Read nested XML elements, which include at least the monikerized instance of target role-player Subclass
-			if (!serializationContext.Result.Failed)
-			{
-				if (!reader.IsEmptyElement)
-				{
-					// Read to the start of the first child element.
-					DslModeling::SerializationUtilities.SkipToFirstChild(reader);
-					
-					// Read any extension element data under this XML element
-					MobileDSLSerializationHelper.Instance.ReadExtensions(serializationContext, element, reader);
-					
-					// Read target role-player Subclass.
-					ReadTargetRolePlayer(serializationContext, element, reader);
-	
-					// Read nested XML elements, they can be either properties serialized as XML elements, or child 
-					// model elements.
-					while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-					{
-						ReadElements(serializationContext, element, reader);
-						if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-						{
-							// Encountered one unknown XML element, skip it and keep reading.
-							ComponentsSerializationBehaviorSerializationMessages.UnexpectedXmlElement(serializationContext, reader);
-							DslModeling::SerializationUtilities.Skip(reader);
-						}
-					}
-				}
-				else
-				{
-					ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "Generalization");
-				}
-			}
-	
-			// Advance the reader to the next element (open tag of the next sibling, end tag of the parent, or EOF)
-			DslModeling::SerializationUtilities.Skip(reader);
-		}
-		
-	
-		/// <summary>
-		/// This method reads the target role player Subclass.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at the open tag of the first child XML element.
-		/// This method will read only one target role player instance. The method will skip any child XML element it encounters until it reaches:
-		/// 1) The open tag of the target role player.
-		/// 2) The end tag of the parent element (dangling relationship).
-		/// 3) EOF (dangling relationship).
-		/// After the call, the reader is positioned at:
-		/// 1) The open tag of the next child element after the target role player.
-		/// 2) The end tag of the parent element.
-		/// 3) EOF.
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory Generalization instance that will link to the target Controller instance.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException ("element");
-			global::System.Diagnostics.Debug.Assert (reader != null);
-			if (reader == null)
-				throw new global::System.ArgumentNullException ("reader");
-			#endregion
-	
-			// Read the monikerized instance of target role-player Subclass
-			DslModeling::Moniker targetRoleMoniker = null;
-			DslModeling::DomainClassXmlSerializer targetRoleSerializer = serializationContext.Directory.GetSerializer(Controller.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(targetRoleSerializer != null, "Cannot find serializer for Controller!");
-	
-			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-			{
-				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((Generalization)element).Superclass, Generalization.DomainClassId, element.Partition);
-				if (targetRoleMoniker != null)
-				{
-					// Attach the target role-player moniker.
-					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, Generalization.SubclassDomainRoleId, targetRoleMoniker);
-					// Moniker tag has no child XML elements in it, so just skip to the next element.
-					DslModeling::SerializationUtilities.Skip(reader);
-					break;
-				}
-				// Encountered one unknown XML element, skip it and keep reading.
-				ComponentsSerializationBehaviorSerializationMessages.UnexpectedXmlElement(serializationContext, reader);
-				DslModeling::SerializationUtilities.Skip(reader);
-			}
-			if (targetRoleMoniker == null)
-			{
-				ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "Generalization");
-			}
-		}
-	
-		/// <summary>
-		/// This method deserializes all properties that are serialized as XML attributes.
-		/// </summary>
-		/// <remarks>
-		/// Because this method only handles properties serialized as XML attributes, the passed-in reader shouldn't be moved inside this method.
-		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory Generalization instance that will get the deserialized data.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
-		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
-		{
-			// Always call the base class so any extensions are deserialized
-			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
-	
-			// There is no property to read; do nothing
-		}
-	
-		/// <summary>
-		/// This methods deserializes nested XML elements inside the passed-in element.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the current element does have nested XML elements, and the call will position the 
-		/// reader at the open tag of the first child XML element.
-		/// This method will read as many child XML elements as it can. It returns under three circumstances:
-		/// 1) When an unknown child XML element is encountered. In this case, this method will position the reader at the open 
-		///    tag of the unknown element. This implies that if the first child XML element is unknown, this method should return 
-		///    immediately and do nothing.
-		/// 2) When all child XML elemnets are read. In this case, the reader will be positioned at the end tag of the parent element.
-		/// 3) EOF.
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory Generalization instance that will get the deserialized data.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
-		{
-			// Always call the base class so any extensions are deserialized
-			base.ReadElements(serializationContext, element, reader);
-	
-		}
-	
-		#region TryCreateInstance & TryCreateDerivedInstance
-		/// <summary>
-		/// This method creates a correct instance of Generalization based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized Generalization, a new Generalization instance will be created in the given partition, otherwise 
-		/// null is returned.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
-		/// not move the reader; the reader should remain at the same position when this method returns.
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created Generalization instance, or null if the reader is not pointing to a serialized Generalization instance.</returns>
-		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (reader != null);
-			if (reader == null)
-				throw new global::System.ArgumentNullException ("reader");
-			global::System.Diagnostics.Debug.Assert (partition != null);
-			if (partition == null)
-				throw new global::System.ArgumentNullException ("partition");
-			#endregion
-	
-			return this.InternalTryCreateInstance(serializationContext, reader, partition, false /* include the type itself */);
-		}
-	
-		/// <summary>
-		/// This method creates a correct derived instance of Generalization based on the tag currently pointed by the reader.
-		/// Note that the difference between this method and the above one is that this method will never create an instance of the
-		/// Generalization type itself, only derived types are checked.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
-		/// not move the reader; the reader should remain at the same position when this method returns.
-		/// </remarks>		
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <returns>Created instance that derives from Generalization, or null if the reader is not pointing to such a serialized instance.</returns>
-		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (reader != null);
-			if (reader == null)
-				throw new global::System.ArgumentNullException ("reader");
-			global::System.Diagnostics.Debug.Assert (partition != null);
-			if (partition == null)
-				throw new global::System.ArgumentNullException ("partition");
-			#endregion
-	
-			return this.InternalTryCreateInstance(serializationContext, reader, partition, true /* derived types only */) as DslModeling::ElementLink;
-		}
-	
-		/// <summary>
-		/// Internal helper method for TryCreateInstance() and TryCreateDerivedInstance().
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <param name="derivedTypesOnly">If true, this method will only check derived types, but not the domain class iitself.</param>
-		private DslModeling::ModelElement InternalTryCreateInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition, bool derivedTypesOnly)
-		{
-			DslModeling::ModelElement result = null;
-			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-			{
-				string localName = reader.LocalName;
-				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "Generalization" instance.
-					result = this.CreateInstance(serializationContext, reader, partition);
-				}
-				else
-				{	// Check for derived classes of "Generalization".
-					if (this.derivedClasses == null)
-						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
-					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
-					DslModeling::DomainClassInfo derivedClass = null;
-					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
-					{	// New derived relationship instance.
-						GeneralizationSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as GeneralizationSerializer;
-						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
-						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
-					}
-				}
-			}
-	
-			return result;
-		}
-	
-		/// <summary>
-		/// This method creates an instance of Generalization based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of Generalization.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
-		/// not move the reader; the reader should remain at the same position when this method returns.
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new Generalization instance should be created.</param>	
-		/// <returns>Created Generalization instance.</returns>
-		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
-		{
-			string idStr = reader.GetAttribute ("Id");
-			try
-			{
-				global::System.Guid id;
-				if (string.IsNullOrEmpty(idStr))
-				{	// Create a default Id.
-					id = global::System.Guid.NewGuid();
-					ComponentsSerializationBehaviorSerializationMessages.MissingId(serializationContext, reader, id);
-				}
-				else
-				{
-					id = new global::System.Guid (idStr);
-				}
-				// Create the link with place-holder role-players.
-				return new Generalization(
-					partition,
-					new DslModeling::RoleAssignment[] {
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (Generalization.SuperclassDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (Generalization.SubclassDomainRoleId)
-					},
-					new DslModeling::PropertyAssignment[] {
-						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
-					}
-				);
-			}
-			catch (global::System.ArgumentNullException /* anEx */)
-			{	
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
-			}
-			catch (global::System.FormatException /* fEx */)
-			{
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
-			}
-			catch (global::System.OverflowException /* ofEx */)
-			{
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
-			}
-			return null;
-		}
-	
-		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from Generalization, created on demand.
-		/// </summary>
-		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
-	
-		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from Generalization.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
-		private void ConstructDerivedClassesLookupTable(DslModeling::SerializationContext serializationContext, DslModeling::DomainDataDirectory domainDataDirectory)
-		{
-			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
-			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
-	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(Generalization.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
-	
-			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
-			if (descendents != null)
-			{
-				foreach (DslModeling::DomainClassInfo descendent in descendents)
-				{
-					global::System.Type descendentType = descendent.ImplementationClass;
-					if (!descendentType.IsAbstract)
-					{
-						DslModeling::DomainClassXmlSerializer descendentSerializer = serializationContext.Directory.GetSerializer(descendent.Id);
-						if (descendentSerializer != null)
-						{
-							string descendentXmlTagName = descendentSerializer.XmlTagName;
-							if (!string.IsNullOrEmpty (descendentXmlTagName))
-							{
-								global::System.Diagnostics.Debug.Assert(!this.derivedClasses.ContainsKey (descendentXmlTagName));
-								this.derivedClasses.Add (descendentXmlTagName, descendent);
-							}
-						}
-					}
-					else
-					{   // Ignore abstract derived classes because they cannot be instantiated directly.
-					}
-				}
-			}
-		}
-		#endregion
-	
-		#region TryCreateMonikerInstance
-		/// <summary>
-		/// This method creates a Moniker of the correct derived (including Generalization itself) instance of Generalization based on the tag currently pointed by the reader.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
-		/// not move the reader; the reader should remain at the same position when this method returns.
-		/// </remarks>		
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="sourceRolePlayer">The source role-player instance from which the moniker being created is referenced.</param>
-		/// <param name="relDomainClassId">The DomainClass Id of the relationship that connects the sourceRolePlayer to the moniker being created.</param>
-		/// <param name="partition">The new Moniker should be created in the Store associated with this partition.</param>			
-		/// <returns>Created ModelRoot instance, or null if the reader is not pointing to a correct monikerized instance.</returns>
-		public override DslModeling::Moniker TryCreateMonikerInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::ModelElement sourceRolePlayer, global::System.Guid relDomainClassId, DslModeling::Partition partition)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (reader != null);
-			if (reader == null)
-				throw new global::System.ArgumentNullException ("reader");
-			global::System.Diagnostics.Debug.Assert (sourceRolePlayer != null);
-			if (sourceRolePlayer == null)
-				throw new global::System.ArgumentNullException ("sourceRolePlayer");
-			global::System.Diagnostics.Debug.Assert (partition != null);
-			if (partition == null)
-				throw new global::System.ArgumentNullException ("partition");
-			#endregion
-	
-			DslModeling::Moniker result = null;
-			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-			{
-				string localName = reader.LocalName;
-				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "Generalization" moniker instance.
-					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
-				}
-				else
-				{	// Check for derived classes of "Generalization".
-					if (this.derivedClassMonikers == null)
-						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
-					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
-					DslModeling::DomainClassInfo derivedClass = null;
-					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
-					{	// New derived class moniker instance.
-						GeneralizationSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as GeneralizationSerializer;
-						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
-						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
-					}
-				}
-			}
-	
-			return result;
-		}
-		
-		/// <summary>
-		/// This method creates a Moniker of Generalization based on the tag currently pointed by the reader.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
-		/// not move the reader; the reader should remain at the same position when this method returns.
-		/// </remarks>		
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="sourceRolePlayer">The source role-player instance from which the moniker being created is referenced.</param>
-		/// <param name="relDomainClassId">The DomainClass Id of the relationship that connects the sourceRolePlayer to the moniker being created.</param>
-		/// <param name="partition">The new Moniker should be created in the Store associated with this partition.</param>			
-		/// <returns>Created ModelRoot instance, or null if the reader is not pointing to a correct monikerized instance.</returns>
-		protected override DslModeling::Moniker CreateMonikerInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::ModelElement sourceRolePlayer, global::System.Guid relDomainClassId, DslModeling::Partition partition)
-		{
-			string monikerString = MobileDSLSerializationHelper.Instance.ReadAttribute(serializationContext, sourceRolePlayer, reader, this.MonikerAttributeName);
-	
-			if (string.IsNullOrEmpty(monikerString))
-			{	
-				ComponentsSerializationBehaviorSerializationMessages.MissingMoniker(serializationContext, reader, this.MonikerAttributeName);
-				return null;
-			}
-			try
-			{	// Normalize the Id.
-				global::System.Guid id = new global::System.Guid(monikerString);
-				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, Generalization.DomainClassId, partition.Store), partition.Store);
-				// Set location info if possible.
-				result.Location = serializationContext.Location;
-				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
-				if (xmlLineInfo != null)
-				{
-					result.Line = xmlLineInfo.LineNumber;
-					result.Column = xmlLineInfo.LinePosition;
-				}
-				return result;
-			}
-			catch (global::System.FormatException /* fEx */)
-			{
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, this.MonikerAttributeName, typeof(global::System.Guid), monikerString);
-				return null;
-			}
-			catch (global::System.OverflowException /* oEx */)
-			{	
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, this.MonikerAttributeName, typeof(global::System.Guid), monikerString);
-				return null;
-			}
-		}
-	
-		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from Generalization, created on demand.
-		/// </summary>
-		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
-	
-		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from Generalization.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
-		private void ConstructDerivedClassMonikersLookupTable(DslModeling::SerializationContext serializationContext, DslModeling::DomainDataDirectory domainDataDirectory)
-		{
-			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
-			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
-	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(Generalization.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
-	
-			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
-			if (descendents != null)
-			{
-				foreach (DslModeling::DomainClassInfo descendent in descendents)
-				{
-					DslModeling::DomainClassXmlSerializer descendentSerializer = serializationContext.Directory.GetSerializer(descendent.Id);
-					if (descendentSerializer != null)
-					{
-						string descendentMonikerTagName = descendentSerializer.MonikerTagName;
-						if (!string.IsNullOrEmpty (descendentMonikerTagName))
-						{
-							global::System.Diagnostics.Debug.Assert(!this.derivedClassMonikers.ContainsKey (descendentMonikerTagName));
-							this.derivedClassMonikers.Add (descendentMonikerTagName, descendent);
-						}
-					}
-				}
-			}
-		}
-		#endregion
-		#endregion
-	
-		#region Write Methods
-		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized Generalization instance into XML.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">Generalization instance to be monikerized.</param>
-		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the Generalization instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the Generalization instance being monikerized.</param>
-		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException ("element");
-			global::System.Diagnostics.Debug.Assert (writer != null);
-			if (writer == null)
-				throw new global::System.ArgumentNullException ("writer");
-			global::System.Diagnostics.Debug.Assert (sourceRolePlayer != null);
-			if (sourceRolePlayer == null)
-				throw new global::System.ArgumentNullException ("sourceRolePlayer");
-			global::System.Diagnostics.Debug.Assert (relSerializer != null);
-			if (relSerializer == null)
-				throw new global::System.ArgumentNullException ("relSerializer");
-			#endregion
-			
-			string monikerString = this.CalculateQualifiedName(serializationContext.Directory, element);
-			global::System.Diagnostics.Debug.Assert(!string.IsNullOrEmpty(monikerString));
-			writer.WriteStartElement(this.MonikerTagName);
-			MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, this.MonikerAttributeName, monikerString);
-			writer.WriteEndElement();
-		}
-		
-		/// <summary>
-		/// Public Write() method that serializes one Generalization instance into XML.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">Generalization instance to be serialized.</param>
-		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="rootElementSettings">
-		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
-		/// information like schema target namespace, version, etc.
-		/// This should only be passed for root-level elements. Null should be passed for rest elements (and ideally call the Write() method 
-		/// without this parameter).
-		/// </param>
-		public override void Write(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::RootElementSettings rootElementSettings)
-		{
-			throw new global::System.NotSupportedException();
-		}
-	
-		/// <summary>
-		/// Write all properties that need to be serialized as XML attributes.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">Generalization instance to be serialized.</param>
-		/// <param name="writer">XmlWriter to write serialized data to.</param> 
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
-		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
-		{
-			// Always call the base class so any extensions are serialized
-			base.WritePropertiesAsAttributes(serializationContext, element, writer);
-	
-			// There are no properties; do nothing
-		}
-	
-		/// <summary>
-		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">Generalization instance to be serialized.</param>
-		/// <param name="writer">XmlWriter to write serialized data to.</param>        
-		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
-		{
-			// Always call the base class so any extensions are serialized
-			base.WriteElements(serializationContext, element, writer);
-	
-		}
-		
-		#endregion
-	
-		#region Moniker Support
-		/// <summary>
-		/// This method calculates a moniker to a given Generalization instance.
-		/// </summary>
-		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">Generalization instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the Generalization instance.</returns>
-		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (directory != null);
-			if (directory == null)
-				throw new global::System.ArgumentNullException ("directory");
-			global::System.Diagnostics.Debug.Assert(element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException("element");
-			#endregion	
-			
-			Generalization instance = element as Generalization;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of Generalization!");
-	
-			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-		}
-	
-		/// <summary>
-		/// A domain class can be monikerized in different ways: standard /qualifier/key mechanism, custom moniker, or element ID. If the domain class is serialized
-		/// using standard /qualifier/key mechanism, this method returns the qualifier of the moniker; if the domain class uses other ways for monikerization, this method
-		/// returns empty string.
-		/// </summary>
-		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">Generalization instance to get moniker qualifier from.</param>
-		/// <returns>
-		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
-		/// element is not monikerized using standard /qualifier/key mechanism.
-		/// </returns>
-		public override string GetMonikerQualifier(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (directory != null);
-			if (directory == null)
-				throw new global::System.ArgumentNullException ("directory");
-			global::System.Diagnostics.Debug.Assert(element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException("element");
-			#endregion	
-			
-			return string.Empty;
-		}
-		#endregion
-	
-		#region Monikerization Support
-		/// <summary>
-		/// Calculates a Moniker, given a reference to a Controller
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="sourceElement">Instance of Controller that contains the given serialized reference</param>
-		/// <param name="domainClassId">DomainClassId of the model element that the given moniker string will be resolved to.</param>
-		/// <param name="monikerString">Serialized string reference to an instance of Controller</param>
-		/// <param name="store">Store where the Moniker will be created</param>
-		/// <returns>A Moniker encapsulating the serialized string reference of Controller instance</returns>
-		public override DslModeling::Moniker MonikerizeReference(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement sourceElement, global::System.Guid domainClassId, string monikerString, DslModeling::Store store)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert(serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException("serializationContext");
-			global::System.Diagnostics.Debug.Assert(sourceElement != null);
-			if (sourceElement == null)
-				throw new global::System.ArgumentNullException ("sourceElement");
-			global::System.Diagnostics.Debug.Assert (sourceElement is Controller, "Expecting an instance of Controller!");
-			global::System.Diagnostics.Debug.Assert (!string.IsNullOrEmpty (monikerString));
-			if (string.IsNullOrEmpty (monikerString))
-				throw new global::System.ArgumentNullException ("monikerString");
-			global::System.Diagnostics.Debug.Assert(store != null);
-			if (store == null)
-				throw new global::System.ArgumentNullException ("store");
-			#endregion
-			
-			DslModeling::MonikerKey key = null;
-			if (DslModeling::SimpleMonikerResolver.IsFullyQualified(monikerString))
-			{
-				key = new DslModeling::MonikerKey(monikerString, Generalization.DomainClassId, domainClassId, store);
-			}
-			else
-			{
-				DslModeling::DomainClassXmlSerializer sourceSerializer = serializationContext.Directory.GetSerializer(sourceElement.GetDomainClass().Id);
-				global::System.Diagnostics.Debug.Assert(sourceSerializer != null, "Cannot find serializer for " + sourceElement.GetDomainClass().Name + "!");
-				string sourceQualifier = sourceSerializer.GetMonikerQualifier(serializationContext.Directory, sourceElement);
-				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), Generalization.DomainClassId, domainClassId, store);
-			}
-			return new DslModeling::Moniker(key, store);
-		}
-	
-		/// <summary>
-		/// Calculates a monikerized string reference to a Controller.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="sourceElement">Source side of reference relationship. The referenced target element will be serialized.</param>
-		/// <param name="targetElement">Target side of relationship that will be serialized.</param>
-		/// <returns>A monikerized string reference to target element.</returns>		
-		public override string SerializeReference(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement sourceElement, DslModeling::ModelElement targetElement)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert(serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException("serializationContext");
-			global::System.Diagnostics.Debug.Assert(sourceElement != null);
-			if (sourceElement == null)
-				throw new global::System.ArgumentNullException ("sourceElement");
-			global::System.Diagnostics.Debug.Assert (sourceElement is Controller, "Expecting an instance of Controller!");
-			global::System.Diagnostics.Debug.Assert(targetElement != null);
-			if (targetElement == null)
-				throw new global::System.ArgumentNullException ("targetElement");
-			global::System.Diagnostics.Debug.Assert (targetElement is Controller, "Expecting an instance of Controller!");
-			#endregion
-			
-			// full form reference
-			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
-			global::System.Diagnostics.Debug.Assert(targetSerializer != null, "Cannot find serializer for " + targetElement.GetDomainClass().Name + "!");
-			string targetMoniker = targetSerializer.CalculateQualifiedName(serializationContext.Directory, targetElement);
-			string targetQualifier = targetSerializer.GetMonikerQualifier(serializationContext.Directory, targetElement);
-			
-			if (!string.IsNullOrEmpty(targetQualifier))
-			{
-				DslModeling::DomainClassXmlSerializer sourceSerializer = serializationContext.Directory.GetSerializer(sourceElement.GetDomainClass().Id);
-				global::System.Diagnostics.Debug.Assert(sourceSerializer != null, "Cannot find serializer for " + sourceElement.GetDomainClass().Name + "!");
-				string sourceQualifier = sourceSerializer.GetMonikerQualifier(serializationContext.Directory, sourceElement);
-				if (string.Compare(targetQualifier, sourceQualifier, global::System.StringComparison.CurrentCulture) == 0)
-				{
-					// See if we can create a short form reference by omitting the qualifier
-					global::System.Diagnostics.Debug.Assert(targetMoniker.StartsWith(targetQualifier + "/", global::System.StringComparison.CurrentCulture));
-					string shortFormTargetMoniker = targetMoniker.Substring(targetQualifier.Length + 1);
-					if (!DslModeling::SimpleMonikerResolver.IsFullyQualified(shortFormTargetMoniker))
-						targetMoniker = shortFormTargetMoniker;
-				}
-			}
-	
-			return targetMoniker;
-		}
-		#endregion
-		
-		#region Overrides to provide metadata at runtime
-		/// <summary>
-		/// Exposes whether serializers derived from this class are serializing Id.
-		/// </summary>
-		public override bool SerializesId
-		{
-			get
-			{
-				return true;
-			}
-		}
-	
-		/// <summary>
-		/// Exposes whether serializers derived from this class are serializing this relationship in full form.
-		/// </summary>
-		public override bool UsesFullForm
-		{
-			get
-			{
-				return false;
-			}
-		}
-		#endregion
-	}
-}
-
-namespace Company.MobileDSL
-{
-	/// <summary>
 	/// Serializer CommentReferencesSubjectsSerializer for DomainClass CommentReferencesSubjects.
 	/// </summary>
 	public partial class CommentReferencesSubjectsSerializer : DslModeling::DomainRelationshipXmlSerializer
@@ -13144,7 +12231,7 @@ namespace Company.MobileDSL
 			// Read properties serialized as XML attributes.
 			ReadPropertiesFromAttributes(serializationContext, element, reader);
 				
-			// Read nested XML elements, which include at least the instance of target role-player State_old
+			// Read nested XML elements, which include at least the instance of target role-player State_old2
 			if (!serializationContext.Result.Failed)
 			{
 				if (!reader.IsEmptyElement)
@@ -13155,7 +12242,7 @@ namespace Company.MobileDSL
 					// Read any extension element data under this XML element
 					MobileDSLSerializationHelper.Instance.ReadExtensions(serializationContext, element, reader);
 					
-					// Read target role-player State_old.
+					// Read target role-player State_old2.
 					ReadTargetRolePlayer(serializationContext, element, reader);
 	
 					// Read nested XML elements, they can be either properties serialized as XML elements, or child 
@@ -13183,7 +12270,7 @@ namespace Company.MobileDSL
 		
 	
 		/// <summary>
-		/// This method reads the target role player State_old.
+		/// This method reads the target role player State_old2.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at the open tag of the first child XML element.
@@ -13197,7 +12284,7 @@ namespace Company.MobileDSL
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory ControllerHasStates instance that will link to the target State_old instance.</param>
+		/// <param name="element">In-memory ControllerHasStates instance that will link to the target State_old2 instance.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -13213,10 +12300,10 @@ namespace Company.MobileDSL
 				throw new global::System.ArgumentNullException ("reader");
 			#endregion
 	
-			// Read the instance of target role-player State_old
+			// Read the instance of target role-player State_old2
 			DslModeling::ModelElement targetRolePlayer = null;
-			DslModeling::DomainClassXmlSerializer targetRoleSerializer = serializationContext.Directory.GetSerializer(State_old.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(targetRoleSerializer != null, "Cannot find serializer for State_old!");
+			DslModeling::DomainClassXmlSerializer targetRoleSerializer = serializationContext.Directory.GetSerializer(State_old2.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(targetRoleSerializer != null, "Cannot find serializer for State_old2!");
 	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
@@ -13224,7 +12311,7 @@ namespace Company.MobileDSL
 				if (targetRolePlayer != null)
 				{
 					// Attach the target role-player.
-					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, ControllerHasStates.State_oldDomainRoleId, targetRolePlayer);
+					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, ControllerHasStates.State_old2DomainRoleId, targetRolePlayer);
 					// Read target role-player.
 					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (targetRolePlayer.GetDomainClass().Id);	
 					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + targetRolePlayer.GetDomainClass().Name + "!");
@@ -13411,7 +12498,7 @@ namespace Company.MobileDSL
 					partition,
 					new DslModeling::RoleAssignment[] {
 						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (ControllerHasStates.ControllerDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (ControllerHasStates.State_oldDomainRoleId)
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (ControllerHasStates.State_old2DomainRoleId)
 					},
 					new DslModeling::PropertyAssignment[] {
 						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
@@ -13715,7 +12802,7 @@ namespace Company.MobileDSL
 			ControllerHasStates instance = element as ControllerHasStates;
 			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of ControllerHasStates!");
 	
-			DslModeling::ModelElement targetElement = instance.State_old;
+			DslModeling::ModelElement targetElement = instance.State_old2;
 			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
 			global::System.Diagnostics.Debug.Assert(targetSerializer != null, "Cannot find serializer for " + targetElement.GetDomainClass().Name + "!");
 			targetSerializer.Write(serializationContext, targetElement, writer);
@@ -13838,15 +12925,15 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// Serializer State_oldReferencesPreviousStatesSerializer for DomainClass State_oldReferencesPreviousStates.
+	/// Serializer State_old2ReferencesPreviousStatesSerializer for DomainClass State_old2ReferencesPreviousStates.
 	/// </summary>
-	public partial class State_oldReferencesPreviousStatesSerializer : DslModeling::DomainRelationshipXmlSerializer
+	public partial class State_old2ReferencesPreviousStatesSerializer : DslModeling::DomainRelationshipXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// State_oldReferencesPreviousStatesSerializer Constructor
+		/// State_old2ReferencesPreviousStatesSerializer Constructor
 		/// </summary>
-		public State_oldReferencesPreviousStatesSerializer ()
+		public State_old2ReferencesPreviousStatesSerializer ()
 			: base ()
 		{
 		}
@@ -13872,25 +12959,25 @@ namespace Company.MobileDSL
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of State_oldReferencesPreviousStates.
+		/// This is the XML tag name used to serialize an instance of State_old2ReferencesPreviousStates.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"state_oldReferencesPreviousStates"; }
+			get { return @"state_old2ReferencesPreviousStates"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of State_oldReferencesPreviousStates.
+		/// This is the XML tag name used to serialize a monikerized instance of State_old2ReferencesPreviousStates.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"state_oldReferencesPreviousStatesMoniker"; }
+			get { return @"state_old2ReferencesPreviousStatesMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of State_oldReferencesPreviousStates in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of State_old2ReferencesPreviousStates in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -13901,16 +12988,16 @@ namespace Company.MobileDSL
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one State_oldReferencesPreviousStates instance from XML.
+		/// Public Read() method that deserializes one State_old2ReferencesPreviousStates instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the State_oldReferencesPreviousStates element that is about to be deserialized. 
+		/// of the State_old2ReferencesPreviousStates element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_oldReferencesPreviousStates instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2ReferencesPreviousStates instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -13929,7 +13016,7 @@ namespace Company.MobileDSL
 			// Read properties serialized as XML attributes.
 			ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			// Read nested XML elements, which include at least the monikerized instance of target role-player TargetState_old
+			// Read nested XML elements, which include at least the monikerized instance of target role-player TargetState_old2
 			if (!serializationContext.Result.Failed)
 			{
 				if (!reader.IsEmptyElement)
@@ -13940,7 +13027,7 @@ namespace Company.MobileDSL
 					// Read any extension element data under this XML element
 					MobileDSLSerializationHelper.Instance.ReadExtensions(serializationContext, element, reader);
 					
-					// Read target role-player TargetState_old.
+					// Read target role-player TargetState_old2.
 					ReadTargetRolePlayer(serializationContext, element, reader);
 	
 					// Read nested XML elements, they can be either properties serialized as XML elements, or child 
@@ -13958,7 +13045,7 @@ namespace Company.MobileDSL
 				}
 				else
 				{
-					ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "State_oldReferencesPreviousStates");
+					ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "State_old2ReferencesPreviousStates");
 				}
 			}
 	
@@ -13968,7 +13055,7 @@ namespace Company.MobileDSL
 		
 	
 		/// <summary>
-		/// This method reads the target role player TargetState_old.
+		/// This method reads the target role player TargetState_old2.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at the open tag of the first child XML element.
@@ -13982,7 +13069,7 @@ namespace Company.MobileDSL
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_oldReferencesPreviousStates instance that will link to the target State_old instance.</param>
+		/// <param name="element">In-memory State_old2ReferencesPreviousStates instance that will link to the target State_old2 instance.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -13998,18 +13085,18 @@ namespace Company.MobileDSL
 				throw new global::System.ArgumentNullException ("reader");
 			#endregion
 	
-			// Read the monikerized instance of target role-player TargetState_old
+			// Read the monikerized instance of target role-player TargetState_old2
 			DslModeling::Moniker targetRoleMoniker = null;
-			DslModeling::DomainClassXmlSerializer targetRoleSerializer = serializationContext.Directory.GetSerializer(State_old.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(targetRoleSerializer != null, "Cannot find serializer for State_old!");
+			DslModeling::DomainClassXmlSerializer targetRoleSerializer = serializationContext.Directory.GetSerializer(State_old2.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(targetRoleSerializer != null, "Cannot find serializer for State_old2!");
 	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((State_oldReferencesPreviousStates)element).SourceState_old, State_oldReferencesPreviousStates.DomainClassId, element.Partition);
+				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((State_old2ReferencesPreviousStates)element).SourceState_old2, State_old2ReferencesPreviousStates.DomainClassId, element.Partition);
 				if (targetRoleMoniker != null)
 				{
 					// Attach the target role-player moniker.
-					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, State_oldReferencesPreviousStates.TargetState_oldDomainRoleId, targetRoleMoniker);
+					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, State_old2ReferencesPreviousStates.TargetState_old2DomainRoleId, targetRoleMoniker);
 					// Moniker tag has no child XML elements in it, so just skip to the next element.
 					DslModeling::SerializationUtilities.Skip(reader);
 					break;
@@ -14020,7 +13107,7 @@ namespace Company.MobileDSL
 			}
 			if (targetRoleMoniker == null)
 			{
-				ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "State_oldReferencesPreviousStates");
+				ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "State_old2ReferencesPreviousStates");
 			}
 		}
 	
@@ -14032,7 +13119,7 @@ namespace Company.MobileDSL
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_oldReferencesPreviousStates instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2ReferencesPreviousStates instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -14040,8 +13127,8 @@ namespace Company.MobileDSL
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			State_oldReferencesPreviousStates instanceOfState_oldReferencesPreviousStates = element as State_oldReferencesPreviousStates;
-			global::System.Diagnostics.Debug.Assert(instanceOfState_oldReferencesPreviousStates != null, "Expecting an instance of State_oldReferencesPreviousStates");
+			State_old2ReferencesPreviousStates instanceOfState_old2ReferencesPreviousStates = element as State_old2ReferencesPreviousStates;
+			global::System.Diagnostics.Debug.Assert(instanceOfState_old2ReferencesPreviousStates != null, "Expecting an instance of State_old2ReferencesPreviousStates");
 	
 			// condition
 			if (!serializationContext.Result.Failed)
@@ -14052,7 +13139,7 @@ namespace Company.MobileDSL
 					global::System.String valueOfcondition;
 					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribcondition, out valueOfcondition))
 					{
-						instanceOfState_oldReferencesPreviousStates.condition = valueOfcondition;
+						instanceOfState_old2ReferencesPreviousStates.condition = valueOfcondition;
 					}
 					else
 					{	// Invalid property value, ignored.
@@ -14076,7 +13163,7 @@ namespace Company.MobileDSL
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_oldReferencesPreviousStates instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2ReferencesPreviousStates instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -14087,8 +13174,8 @@ namespace Company.MobileDSL
 	
 		#region TryCreateInstance & TryCreateDerivedInstance
 		/// <summary>
-		/// This method creates a correct instance of State_oldReferencesPreviousStates based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized State_oldReferencesPreviousStates, a new State_oldReferencesPreviousStates instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of State_old2ReferencesPreviousStates based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized State_old2ReferencesPreviousStates, a new State_old2ReferencesPreviousStates instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -14098,7 +13185,7 @@ namespace Company.MobileDSL
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created State_oldReferencesPreviousStates instance, or null if the reader is not pointing to a serialized State_oldReferencesPreviousStates instance.</returns>
+		/// <returns>Created State_old2ReferencesPreviousStates instance, or null if the reader is not pointing to a serialized State_old2ReferencesPreviousStates instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -14117,9 +13204,9 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// This method creates a correct derived instance of State_oldReferencesPreviousStates based on the tag currently pointed by the reader.
+		/// This method creates a correct derived instance of State_old2ReferencesPreviousStates based on the tag currently pointed by the reader.
 		/// Note that the difference between this method and the above one is that this method will never create an instance of the
-		/// State_oldReferencesPreviousStates type itself, only derived types are checked.
+		/// State_old2ReferencesPreviousStates type itself, only derived types are checked.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -14128,7 +13215,7 @@ namespace Company.MobileDSL
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <returns>Created instance that derives from State_oldReferencesPreviousStates, or null if the reader is not pointing to such a serialized instance.</returns>
+		/// <returns>Created instance that derives from State_old2ReferencesPreviousStates, or null if the reader is not pointing to such a serialized instance.</returns>
 		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -14160,18 +13247,18 @@ namespace Company.MobileDSL
 			{
 				string localName = reader.LocalName;
 				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "State_oldReferencesPreviousStates" instance.
+				{	// New "State_old2ReferencesPreviousStates" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "State_oldReferencesPreviousStates".
+				{	// Check for derived classes of "State_old2ReferencesPreviousStates".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived relationship instance.
-						State_oldReferencesPreviousStatesSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_oldReferencesPreviousStatesSerializer;
+						State_old2ReferencesPreviousStatesSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_old2ReferencesPreviousStatesSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -14182,8 +13269,8 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// This method creates an instance of State_oldReferencesPreviousStates based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of State_oldReferencesPreviousStates.
+		/// This method creates an instance of State_old2ReferencesPreviousStates based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of State_old2ReferencesPreviousStates.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -14191,8 +13278,8 @@ namespace Company.MobileDSL
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new State_oldReferencesPreviousStates instance should be created.</param>	
-		/// <returns>Created State_oldReferencesPreviousStates instance.</returns>
+		/// <param name="partition">Partition in which new State_old2ReferencesPreviousStates instance should be created.</param>	
+		/// <returns>Created State_old2ReferencesPreviousStates instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -14209,11 +13296,11 @@ namespace Company.MobileDSL
 					id = new global::System.Guid (idStr);
 				}
 				// Create the link with place-holder role-players.
-				return new State_oldReferencesPreviousStates(
+				return new State_old2ReferencesPreviousStates(
 					partition,
 					new DslModeling::RoleAssignment[] {
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (State_oldReferencesPreviousStates.SourceState_oldDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (State_oldReferencesPreviousStates.TargetState_oldDomainRoleId)
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (State_old2ReferencesPreviousStates.SourceState_old2DomainRoleId), 
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (State_old2ReferencesPreviousStates.TargetState_old2DomainRoleId)
 					},
 					new DslModeling::PropertyAssignment[] {
 						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
@@ -14236,12 +13323,12 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from State_oldReferencesPreviousStates, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from State_old2ReferencesPreviousStates, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from State_oldReferencesPreviousStates.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from State_old2ReferencesPreviousStates.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -14250,7 +13337,7 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_oldReferencesPreviousStates.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_old2ReferencesPreviousStates.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -14282,7 +13369,7 @@ namespace Company.MobileDSL
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including State_oldReferencesPreviousStates itself) instance of State_oldReferencesPreviousStates based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including State_old2ReferencesPreviousStates itself) instance of State_old2ReferencesPreviousStates based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -14316,18 +13403,18 @@ namespace Company.MobileDSL
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "State_oldReferencesPreviousStates" moniker instance.
+				{	// New "State_old2ReferencesPreviousStates" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "State_oldReferencesPreviousStates".
+				{	// Check for derived classes of "State_old2ReferencesPreviousStates".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						State_oldReferencesPreviousStatesSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_oldReferencesPreviousStatesSerializer;
+						State_old2ReferencesPreviousStatesSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_old2ReferencesPreviousStatesSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -14338,7 +13425,7 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of State_oldReferencesPreviousStates based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of State_old2ReferencesPreviousStates based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -14363,7 +13450,7 @@ namespace Company.MobileDSL
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, State_oldReferencesPreviousStates.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, State_old2ReferencesPreviousStates.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -14387,12 +13474,12 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from State_oldReferencesPreviousStates, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from State_old2ReferencesPreviousStates, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from State_oldReferencesPreviousStates.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from State_old2ReferencesPreviousStates.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -14401,7 +13488,7 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_oldReferencesPreviousStates.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_old2ReferencesPreviousStates.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -14427,13 +13514,13 @@ namespace Company.MobileDSL
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized State_oldReferencesPreviousStates instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized State_old2ReferencesPreviousStates instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_oldReferencesPreviousStates instance to be monikerized.</param>
+		/// <param name="element">State_old2ReferencesPreviousStates instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the State_oldReferencesPreviousStates instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the State_oldReferencesPreviousStates instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the State_old2ReferencesPreviousStates instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the State_old2ReferencesPreviousStates instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -14462,10 +13549,10 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one State_oldReferencesPreviousStates instance into XML.
+		/// Public Write() method that serializes one State_old2ReferencesPreviousStates instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_oldReferencesPreviousStates instance to be serialized.</param>
+		/// <param name="element">State_old2ReferencesPreviousStates instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -14514,13 +13601,13 @@ namespace Company.MobileDSL
 			}
 	
 			// Write the target role-player instance.
-			State_oldReferencesPreviousStates instance = element as State_oldReferencesPreviousStates;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_oldReferencesPreviousStates!");
+			State_old2ReferencesPreviousStates instance = element as State_old2ReferencesPreviousStates;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old2ReferencesPreviousStates!");
 	
-			DslModeling::ModelElement targetElement = instance.TargetState_old;
+			DslModeling::ModelElement targetElement = instance.TargetState_old2;
 			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
 			global::System.Diagnostics.Debug.Assert(targetSerializer != null, "Cannot find serializer for " + targetElement.GetDomainClass().Name + "!");
-			targetSerializer.WriteMoniker(serializationContext, targetElement, writer, instance.SourceState_old, this);
+			targetSerializer.WriteMoniker(serializationContext, targetElement, writer, instance.SourceState_old2, this);
 	
 			if (!serializationContext.Result.Failed)
 			{
@@ -14535,7 +13622,7 @@ namespace Company.MobileDSL
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_oldReferencesPreviousStates instance to be serialized.</param>
+		/// <param name="element">State_old2ReferencesPreviousStates instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -14543,13 +13630,13 @@ namespace Company.MobileDSL
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			State_oldReferencesPreviousStates instanceOfState_oldReferencesPreviousStates = element as State_oldReferencesPreviousStates;
-			global::System.Diagnostics.Debug.Assert(instanceOfState_oldReferencesPreviousStates != null, "Expecting an instance of State_oldReferencesPreviousStates");
+			State_old2ReferencesPreviousStates instanceOfState_old2ReferencesPreviousStates = element as State_old2ReferencesPreviousStates;
+			global::System.Diagnostics.Debug.Assert(instanceOfState_old2ReferencesPreviousStates != null, "Expecting an instance of State_old2ReferencesPreviousStates");
 	
 			// condition
 			if (!serializationContext.Result.Failed)
 			{
-				global::System.String propValue = instanceOfState_oldReferencesPreviousStates.condition;
+				global::System.String propValue = instanceOfState_old2ReferencesPreviousStates.condition;
 				if (!serializationContext.Result.Failed)
 				{
 					if (!string.IsNullOrEmpty(propValue))
@@ -14563,7 +13650,7 @@ namespace Company.MobileDSL
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_oldReferencesPreviousStates instance to be serialized.</param>
+		/// <param name="element">State_old2ReferencesPreviousStates instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
@@ -14576,11 +13663,11 @@ namespace Company.MobileDSL
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given State_oldReferencesPreviousStates instance.
+		/// This method calculates a moniker to a given State_old2ReferencesPreviousStates instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">State_oldReferencesPreviousStates instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the State_oldReferencesPreviousStates instance.</returns>
+		/// <param name="element">State_old2ReferencesPreviousStates instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the State_old2ReferencesPreviousStates instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -14592,8 +13679,8 @@ namespace Company.MobileDSL
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			State_oldReferencesPreviousStates instance = element as State_oldReferencesPreviousStates;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_oldReferencesPreviousStates!");
+			State_old2ReferencesPreviousStates instance = element as State_old2ReferencesPreviousStates;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old2ReferencesPreviousStates!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -14604,7 +13691,7 @@ namespace Company.MobileDSL
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">State_oldReferencesPreviousStates instance to get moniker qualifier from.</param>
+		/// <param name="element">State_old2ReferencesPreviousStates instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -14626,14 +13713,14 @@ namespace Company.MobileDSL
 	
 		#region Monikerization Support
 		/// <summary>
-		/// Calculates a Moniker, given a reference to a State_old
+		/// Calculates a Moniker, given a reference to a State_old2
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="sourceElement">Instance of State_old that contains the given serialized reference</param>
+		/// <param name="sourceElement">Instance of State_old2 that contains the given serialized reference</param>
 		/// <param name="domainClassId">DomainClassId of the model element that the given moniker string will be resolved to.</param>
-		/// <param name="monikerString">Serialized string reference to an instance of State_old</param>
+		/// <param name="monikerString">Serialized string reference to an instance of State_old2</param>
 		/// <param name="store">Store where the Moniker will be created</param>
-		/// <returns>A Moniker encapsulating the serialized string reference of State_old instance</returns>
+		/// <returns>A Moniker encapsulating the serialized string reference of State_old2 instance</returns>
 		public override DslModeling::Moniker MonikerizeReference(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement sourceElement, global::System.Guid domainClassId, string monikerString, DslModeling::Store store)
 		{
 			#region Check Parameters
@@ -14643,7 +13730,7 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(sourceElement != null);
 			if (sourceElement == null)
 				throw new global::System.ArgumentNullException ("sourceElement");
-			global::System.Diagnostics.Debug.Assert (sourceElement is State_old, "Expecting an instance of State_old!");
+			global::System.Diagnostics.Debug.Assert (sourceElement is State_old2, "Expecting an instance of State_old2!");
 			global::System.Diagnostics.Debug.Assert (!string.IsNullOrEmpty (monikerString));
 			if (string.IsNullOrEmpty (monikerString))
 				throw new global::System.ArgumentNullException ("monikerString");
@@ -14655,20 +13742,20 @@ namespace Company.MobileDSL
 			DslModeling::MonikerKey key = null;
 			if (DslModeling::SimpleMonikerResolver.IsFullyQualified(monikerString))
 			{
-				key = new DslModeling::MonikerKey(monikerString, State_oldReferencesPreviousStates.DomainClassId, domainClassId, store);
+				key = new DslModeling::MonikerKey(monikerString, State_old2ReferencesPreviousStates.DomainClassId, domainClassId, store);
 			}
 			else
 			{
 				DslModeling::DomainClassXmlSerializer sourceSerializer = serializationContext.Directory.GetSerializer(sourceElement.GetDomainClass().Id);
 				global::System.Diagnostics.Debug.Assert(sourceSerializer != null, "Cannot find serializer for " + sourceElement.GetDomainClass().Name + "!");
 				string sourceQualifier = sourceSerializer.GetMonikerQualifier(serializationContext.Directory, sourceElement);
-				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), State_oldReferencesPreviousStates.DomainClassId, domainClassId, store);
+				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), State_old2ReferencesPreviousStates.DomainClassId, domainClassId, store);
 			}
 			return new DslModeling::Moniker(key, store);
 		}
 	
 		/// <summary>
-		/// Calculates a monikerized string reference to a State_old.
+		/// Calculates a monikerized string reference to a State_old2.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="sourceElement">Source side of reference relationship. The referenced target element will be serialized.</param>
@@ -14683,11 +13770,11 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(sourceElement != null);
 			if (sourceElement == null)
 				throw new global::System.ArgumentNullException ("sourceElement");
-			global::System.Diagnostics.Debug.Assert (sourceElement is State_old, "Expecting an instance of State_old!");
+			global::System.Diagnostics.Debug.Assert (sourceElement is State_old2, "Expecting an instance of State_old2!");
 			global::System.Diagnostics.Debug.Assert(targetElement != null);
 			if (targetElement == null)
 				throw new global::System.ArgumentNullException ("targetElement");
-			global::System.Diagnostics.Debug.Assert (targetElement is State_old, "Expecting an instance of State_old!");
+			global::System.Diagnostics.Debug.Assert (targetElement is State_old2, "Expecting an instance of State_old2!");
 			#endregion
 			
 			// full form reference
@@ -14744,15 +13831,15 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// Serializer State_oldHasPortsSerializer for DomainClass State_oldHasPorts.
+	/// Serializer State_old2HasPortsSerializer for DomainClass State_old2HasPorts.
 	/// </summary>
-	public partial class State_oldHasPortsSerializer : DslModeling::DomainRelationshipXmlSerializer
+	public partial class State_old2HasPortsSerializer : DslModeling::DomainRelationshipXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// State_oldHasPortsSerializer Constructor
+		/// State_old2HasPortsSerializer Constructor
 		/// </summary>
-		public State_oldHasPortsSerializer ()
+		public State_old2HasPortsSerializer ()
 			: base ()
 		{
 		}
@@ -14778,25 +13865,25 @@ namespace Company.MobileDSL
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of State_oldHasPorts.
+		/// This is the XML tag name used to serialize an instance of State_old2HasPorts.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"state_oldHasPorts"; }
+			get { return @"state_old2HasPorts"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of State_oldHasPorts.
+		/// This is the XML tag name used to serialize a monikerized instance of State_old2HasPorts.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"state_oldHasPortsMoniker"; }
+			get { return @"state_old2HasPortsMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of State_oldHasPorts in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of State_old2HasPorts in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -14807,16 +13894,16 @@ namespace Company.MobileDSL
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one State_oldHasPorts instance from XML.
+		/// Public Read() method that deserializes one State_old2HasPorts instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the State_oldHasPorts element that is about to be deserialized. 
+		/// of the State_old2HasPorts element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_oldHasPorts instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2HasPorts instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -14864,7 +13951,7 @@ namespace Company.MobileDSL
 				}
 				else
 				{
-					ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "State_oldHasPorts");
+					ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "State_old2HasPorts");
 				}
 			}
 	
@@ -14888,7 +13975,7 @@ namespace Company.MobileDSL
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_oldHasPorts instance that will link to the target Port instance.</param>
+		/// <param name="element">In-memory State_old2HasPorts instance that will link to the target Port instance.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -14915,7 +14002,7 @@ namespace Company.MobileDSL
 				if (targetRolePlayer != null)
 				{
 					// Attach the target role-player.
-					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, State_oldHasPorts.PortDomainRoleId, targetRolePlayer);
+					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, State_old2HasPorts.PortDomainRoleId, targetRolePlayer);
 					// Read target role-player.
 					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (targetRolePlayer.GetDomainClass().Id);	
 					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + targetRolePlayer.GetDomainClass().Name + "!");
@@ -14928,7 +14015,7 @@ namespace Company.MobileDSL
 			}
 			if (targetRolePlayer == null)
 			{
-				ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "State_oldHasPorts");
+				ComponentsSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "State_old2HasPorts");
 			}
 		}
 	
@@ -14940,7 +14027,7 @@ namespace Company.MobileDSL
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_oldHasPorts instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2HasPorts instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -14965,7 +14052,7 @@ namespace Company.MobileDSL
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory State_oldHasPorts instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory State_old2HasPorts instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -14976,8 +14063,8 @@ namespace Company.MobileDSL
 	
 		#region TryCreateInstance & TryCreateDerivedInstance
 		/// <summary>
-		/// This method creates a correct instance of State_oldHasPorts based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized State_oldHasPorts, a new State_oldHasPorts instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of State_old2HasPorts based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized State_old2HasPorts, a new State_old2HasPorts instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -14987,7 +14074,7 @@ namespace Company.MobileDSL
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created State_oldHasPorts instance, or null if the reader is not pointing to a serialized State_oldHasPorts instance.</returns>
+		/// <returns>Created State_old2HasPorts instance, or null if the reader is not pointing to a serialized State_old2HasPorts instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -15006,9 +14093,9 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// This method creates a correct derived instance of State_oldHasPorts based on the tag currently pointed by the reader.
+		/// This method creates a correct derived instance of State_old2HasPorts based on the tag currently pointed by the reader.
 		/// Note that the difference between this method and the above one is that this method will never create an instance of the
-		/// State_oldHasPorts type itself, only derived types are checked.
+		/// State_old2HasPorts type itself, only derived types are checked.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -15017,7 +14104,7 @@ namespace Company.MobileDSL
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <returns>Created instance that derives from State_oldHasPorts, or null if the reader is not pointing to such a serialized instance.</returns>
+		/// <returns>Created instance that derives from State_old2HasPorts, or null if the reader is not pointing to such a serialized instance.</returns>
 		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -15049,18 +14136,18 @@ namespace Company.MobileDSL
 			{
 				string localName = reader.LocalName;
 				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "State_oldHasPorts" instance.
+				{	// New "State_old2HasPorts" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "State_oldHasPorts".
+				{	// Check for derived classes of "State_old2HasPorts".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived relationship instance.
-						State_oldHasPortsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_oldHasPortsSerializer;
+						State_old2HasPortsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_old2HasPortsSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -15071,8 +14158,8 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// This method creates an instance of State_oldHasPorts based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of State_oldHasPorts.
+		/// This method creates an instance of State_old2HasPorts based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of State_old2HasPorts.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -15080,8 +14167,8 @@ namespace Company.MobileDSL
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new State_oldHasPorts instance should be created.</param>	
-		/// <returns>Created State_oldHasPorts instance.</returns>
+		/// <param name="partition">Partition in which new State_old2HasPorts instance should be created.</param>	
+		/// <returns>Created State_old2HasPorts instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -15098,11 +14185,11 @@ namespace Company.MobileDSL
 					id = new global::System.Guid (idStr);
 				}
 				// Create the link with place-holder role-players.
-				return new State_oldHasPorts(
+				return new State_old2HasPorts(
 					partition,
 					new DslModeling::RoleAssignment[] {
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (State_oldHasPorts.State_oldDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (State_oldHasPorts.PortDomainRoleId)
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (State_old2HasPorts.State_old2DomainRoleId), 
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (State_old2HasPorts.PortDomainRoleId)
 					},
 					new DslModeling::PropertyAssignment[] {
 						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
@@ -15125,12 +14212,12 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from State_oldHasPorts, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from State_old2HasPorts, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from State_oldHasPorts.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from State_old2HasPorts.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -15139,7 +14226,7 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_oldHasPorts.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_old2HasPorts.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -15171,7 +14258,7 @@ namespace Company.MobileDSL
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including State_oldHasPorts itself) instance of State_oldHasPorts based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including State_old2HasPorts itself) instance of State_old2HasPorts based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -15205,18 +14292,18 @@ namespace Company.MobileDSL
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "State_oldHasPorts" moniker instance.
+				{	// New "State_old2HasPorts" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "State_oldHasPorts".
+				{	// Check for derived classes of "State_old2HasPorts".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						State_oldHasPortsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_oldHasPortsSerializer;
+						State_old2HasPortsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as State_old2HasPortsSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -15227,7 +14314,7 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of State_oldHasPorts based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of State_old2HasPorts based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -15252,7 +14339,7 @@ namespace Company.MobileDSL
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, State_oldHasPorts.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, State_old2HasPorts.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -15276,12 +14363,12 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from State_oldHasPorts, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from State_old2HasPorts, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from State_oldHasPorts.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from State_old2HasPorts.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -15290,7 +14377,7 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_oldHasPorts.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(State_old2HasPorts.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -15316,13 +14403,13 @@ namespace Company.MobileDSL
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized State_oldHasPorts instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized State_old2HasPorts instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_oldHasPorts instance to be monikerized.</param>
+		/// <param name="element">State_old2HasPorts instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the State_oldHasPorts instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the State_oldHasPorts instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the State_old2HasPorts instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the State_old2HasPorts instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -15351,10 +14438,10 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one State_oldHasPorts instance into XML.
+		/// Public Write() method that serializes one State_old2HasPorts instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_oldHasPorts instance to be serialized.</param>
+		/// <param name="element">State_old2HasPorts instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -15403,8 +14490,8 @@ namespace Company.MobileDSL
 			}
 	
 			// Write the target role-player instance.
-			State_oldHasPorts instance = element as State_oldHasPorts;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_oldHasPorts!");
+			State_old2HasPorts instance = element as State_old2HasPorts;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old2HasPorts!");
 	
 			DslModeling::ModelElement targetElement = instance.Port;
 			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
@@ -15424,7 +14511,7 @@ namespace Company.MobileDSL
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_oldHasPorts instance to be serialized.</param>
+		/// <param name="element">State_old2HasPorts instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -15439,7 +14526,7 @@ namespace Company.MobileDSL
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">State_oldHasPorts instance to be serialized.</param>
+		/// <param name="element">State_old2HasPorts instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
@@ -15452,11 +14539,11 @@ namespace Company.MobileDSL
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given State_oldHasPorts instance.
+		/// This method calculates a moniker to a given State_old2HasPorts instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">State_oldHasPorts instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the State_oldHasPorts instance.</returns>
+		/// <param name="element">State_old2HasPorts instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the State_old2HasPorts instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -15468,8 +14555,8 @@ namespace Company.MobileDSL
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			State_oldHasPorts instance = element as State_oldHasPorts;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_oldHasPorts!");
+			State_old2HasPorts instance = element as State_old2HasPorts;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of State_old2HasPorts!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -15480,7 +14567,7 @@ namespace Company.MobileDSL
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">State_oldHasPorts instance to get moniker qualifier from.</param>
+		/// <param name="element">State_old2HasPorts instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -24521,569 +23608,6 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// Serializer GeneralizationLinkSerializer for DomainClass GeneralizationLink.
-	/// </summary>
-	public partial class GeneralizationLinkSerializer : DslDiagrams::BinaryLinkShapeSerializer
-	{
-		#region Constructor
-		/// <summary>
-		/// GeneralizationLinkSerializer Constructor
-		/// </summary>
-		public GeneralizationLinkSerializer ()
-			: base ()
-		{
-		}
-		#endregion
-	
-		
-		#region Miscellaneous methods
-	
-		/// <summary>
-		/// Reset the serializer
-		/// </summary>
-		/// <remarks>
-		/// Clear the cached information about any derived classes so that it is recalculated.
-		/// </remarks>
-		public override void Reset()
-		{
-			base.Reset();
-			this.derivedClasses = null;
-			this.derivedClassMonikers = null;
-		}
-	
-		#endregion
-	
-		#region Public Properties
-		/// <summary>
-		/// This is the XML tag name used to serialize an instance of GeneralizationLink.
-		/// </summary>
-		public override string XmlTagName
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"generalizationLink"; }
-		}
-	
-		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of GeneralizationLink.
-		/// </summary>
-		public override string MonikerTagName
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"generalizationLinkMoniker"; }
-		}
-		
-		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of GeneralizationLink in a serialized monikerized instance.
-		/// </summary>
-		public override string MonikerAttributeName
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"Id"; }
-		}
-		#endregion
-	
-		#region Read Methods
-		/// <summary>
-		/// Public Read() method that deserializes one GeneralizationLink instance from XML.
-		/// </summary>
-		/// <remarks>
-		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the GeneralizationLink element that is about to be deserialized. 
-		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
-		/// or the close tag of the parent element (or EOF).
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory GeneralizationLink instance that will get the deserialized data.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException ("element");
-			global::System.Diagnostics.Debug.Assert (reader != null);
-			if (reader == null)
-				throw new global::System.ArgumentNullException ("reader");
-			#endregion
-			
-			// Read properties serialized as XML attributes.
-			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
-	
-			// Read nested XML elements.
-			if (!serializationContext.Result.Failed)
-			{
-				if (!reader.IsEmptyElement)
-				{
-					// Read to the start of the first child element.
-					DslModeling::SerializationUtilities.SkipToFirstChild(reader);
-					
-					// Read any extension element data under this XML element
-					MobileDSLSerializationHelper.Instance.ReadExtensions(serializationContext, element, reader);
-					
-					// Read nested XML elements, they can be either properties serialized as XML elements, or child 
-					// model elements.
-					while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-					{
-						base.ReadElements(serializationContext, element, reader);
-						if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-						{
-							// Encountered one unknown XML element, skip it and keep reading.
-							ComponentsSerializationBehaviorSerializationMessages.UnexpectedXmlElement(serializationContext, reader);
-							DslModeling::SerializationUtilities.Skip(reader);
-						}
-					}
-				}
-			}
-	
-			// Advance the reader to the next element (open tag of the next sibling, end tag of the parent, or EOF)
-			DslModeling::SerializationUtilities.Skip(reader);
-		}
-		
-	
-		#region TryCreateInstance
-		/// <summary>
-		/// This method creates a correct instance of GeneralizationLink based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized GeneralizationLink, a new GeneralizationLink instance will be created in the given partition, otherwise 
-		/// null is returned.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
-		/// not move the reader; the reader should remain at the same position when this method returns.
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created GeneralizationLink instance, or null if the reader is not pointing to a serialized GeneralizationLink instance.</returns>
-		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (reader != null);
-			if (reader == null)
-				throw new global::System.ArgumentNullException ("reader");
-			global::System.Diagnostics.Debug.Assert (partition != null);
-			if (partition == null)
-				throw new global::System.ArgumentNullException ("partition");
-			#endregion
-	
-			DslModeling::ModelElement result = null;
-			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-			{
-				string localName = reader.LocalName;
-				if (string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "GeneralizationLink" instance.
-					result = this.CreateInstance(serializationContext, reader, partition);
-				}
-				else
-				{	// Check for derived classes of "GeneralizationLink".
-					if (this.derivedClasses == null)
-						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
-					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
-					DslModeling::DomainClassInfo derivedClass = null;
-					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
-					{	// New derived class instance.
-						GeneralizationLinkSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as GeneralizationLinkSerializer;
-						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
-						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
-					}
-				}
-			}
-	
-			return result;
-		}
-	
-		/// <summary>
-		/// This method creates an instance of GeneralizationLink based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of GeneralizationLink.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
-		/// not move the reader; the reader should remain at the same position when this method returns.
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new GeneralizationLink instance should be created.</param>	
-		/// <returns>Created GeneralizationLink instance.</returns>
-		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
-		{
-			string idStr = reader.GetAttribute ("Id");
-			try
-			{
-				global::System.Guid id;
-				if (string.IsNullOrEmpty(idStr))
-				{	// Create a default Id.
-					id = global::System.Guid.NewGuid();
-					ComponentsSerializationBehaviorSerializationMessages.MissingId(serializationContext, reader, id);
-				}
-				else
-				{
-					id = new global::System.Guid (idStr);
-				}
-				return new GeneralizationLink(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
-			}
-			catch (global::System.ArgumentNullException /* anEx */)
-			{	
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
-			}
-			catch (global::System.FormatException /* fEx */)
-			{
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
-			}
-			catch (global::System.OverflowException /* ofEx */)
-			{
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
-			}
-			return null;
-		}
-	
-		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from GeneralizationLink, created on demand.
-		/// </summary>
-		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
-	
-		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from GeneralizationLink.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
-		private void ConstructDerivedClassesLookupTable(DslModeling::SerializationContext serializationContext, DslModeling::DomainDataDirectory domainDataDirectory)
-		{
-			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
-			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
-	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(GeneralizationLink.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
-	
-			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
-			if (descendents != null)
-			{
-				foreach (DslModeling::DomainClassInfo descendent in descendents)
-				{
-					global::System.Type descendentType = descendent.ImplementationClass;
-					if (!descendentType.IsAbstract)
-					{
-						DslModeling::DomainClassXmlSerializer descendentSerializer = serializationContext.Directory.GetSerializer(descendent.Id);
-						if (descendentSerializer != null)
-						{
-							string descendentXmlTagName = descendentSerializer.XmlTagName;
-							if (!string.IsNullOrEmpty (descendentXmlTagName))
-							{
-								global::System.Diagnostics.Debug.Assert(!this.derivedClasses.ContainsKey (descendentXmlTagName));
-								this.derivedClasses.Add (descendentXmlTagName, descendent);
-							}
-						}
-					}
-					else
-					{   // Ignore abstract derived classes because they cannot be instantiated directly.
-					}
-				}
-			}
-		}
-		#endregion
-	
-		#region TryCreateMonikerInstance
-		/// <summary>
-		/// This method creates a Moniker of the correct derived (including GeneralizationLink itself) instance of GeneralizationLink based on the tag currently pointed by the reader.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
-		/// not move the reader; the reader should remain at the same position when this method returns.
-		/// </remarks>		
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="sourceRolePlayer">The source role-player instance from which the moniker being created is referenced.</param>
-		/// <param name="relDomainClassId">The DomainClass Id of the relationship that connects the sourceRolePlayer to the moniker being created.</param>
-		/// <param name="partition">The new Moniker should be created in the Store associated with this partition.</param>			
-		/// <returns>Created ModelRoot instance, or null if the reader is not pointing to a correct monikerized instance.</returns>
-		public override DslModeling::Moniker TryCreateMonikerInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::ModelElement sourceRolePlayer, global::System.Guid relDomainClassId, DslModeling::Partition partition)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (reader != null);
-			if (reader == null)
-				throw new global::System.ArgumentNullException ("reader");
-			global::System.Diagnostics.Debug.Assert (sourceRolePlayer != null);
-			if (sourceRolePlayer == null)
-				throw new global::System.ArgumentNullException ("sourceRolePlayer");
-			global::System.Diagnostics.Debug.Assert (partition != null);
-			if (partition == null)
-				throw new global::System.ArgumentNullException ("partition");
-			#endregion
-	
-			DslModeling::Moniker result = null;
-			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-			{
-				string localName = reader.LocalName;
-				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "GeneralizationLink" moniker instance.
-					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
-				}
-				else
-				{	// Check for derived classes of "GeneralizationLink".
-					if (this.derivedClassMonikers == null)
-						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
-					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
-					DslModeling::DomainClassInfo derivedClass = null;
-					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
-					{	// New derived class moniker instance.
-						GeneralizationLinkSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as GeneralizationLinkSerializer;
-						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
-						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
-					}
-				}
-			}
-	
-			return result;
-		}
-		
-		/// <summary>
-		/// This method creates a Moniker of GeneralizationLink based on the tag currently pointed by the reader.
-		/// </summary>
-		/// <remarks>
-		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
-		/// not move the reader; the reader should remain at the same position when this method returns.
-		/// </remarks>		
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="sourceRolePlayer">The source role-player instance from which the moniker being created is referenced.</param>
-		/// <param name="relDomainClassId">The DomainClass Id of the relationship that connects the sourceRolePlayer to the moniker being created.</param>
-		/// <param name="partition">The new Moniker should be created in the Store associated with this partition.</param>			
-		/// <returns>Created ModelRoot instance, or null if the reader is not pointing to a correct monikerized instance.</returns>
-		protected override DslModeling::Moniker CreateMonikerInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::ModelElement sourceRolePlayer, global::System.Guid relDomainClassId, DslModeling::Partition partition)
-		{
-			string monikerString = MobileDSLSerializationHelper.Instance.ReadAttribute(serializationContext, sourceRolePlayer, reader, this.MonikerAttributeName);
-	
-			if (string.IsNullOrEmpty(monikerString))
-			{	
-				ComponentsSerializationBehaviorSerializationMessages.MissingMoniker(serializationContext, reader, this.MonikerAttributeName);
-				return null;
-			}
-			try
-			{	// Normalize the Id.
-				global::System.Guid id = new global::System.Guid(monikerString);
-				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, GeneralizationLink.DomainClassId, partition.Store), partition.Store);
-				// Set location info if possible.
-				result.Location = serializationContext.Location;
-				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
-				if (xmlLineInfo != null)
-				{
-					result.Line = xmlLineInfo.LineNumber;
-					result.Column = xmlLineInfo.LinePosition;
-				}
-				return result;
-			}
-			catch (global::System.FormatException /* fEx */)
-			{
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, this.MonikerAttributeName, typeof(global::System.Guid), monikerString);
-				return null;
-			}
-			catch (global::System.OverflowException /* oEx */)
-			{	
-				ComponentsSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, this.MonikerAttributeName, typeof(global::System.Guid), monikerString);
-				return null;
-			}
-		}
-	
-		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from GeneralizationLink, created on demand.
-		/// </summary>
-		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
-	
-		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from GeneralizationLink.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
-		private void ConstructDerivedClassMonikersLookupTable(DslModeling::SerializationContext serializationContext, DslModeling::DomainDataDirectory domainDataDirectory)
-		{
-			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
-			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
-	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(GeneralizationLink.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
-	
-			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
-			if (descendents != null)
-			{
-				foreach (DslModeling::DomainClassInfo descendent in descendents)
-				{
-					DslModeling::DomainClassXmlSerializer descendentSerializer = serializationContext.Directory.GetSerializer(descendent.Id);
-					if (descendentSerializer != null)
-					{
-						string descendentMonikerTagName = descendentSerializer.MonikerTagName;
-						if (!string.IsNullOrEmpty (descendentMonikerTagName))
-						{
-							global::System.Diagnostics.Debug.Assert(!this.derivedClassMonikers.ContainsKey (descendentMonikerTagName));
-							this.derivedClassMonikers.Add (descendentMonikerTagName, descendent);
-						}
-					}
-				}
-			}
-		}
-		#endregion
-		#endregion
-	
-		#region Write Methods
-		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized GeneralizationLink instance into XML.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">GeneralizationLink instance to be monikerized.</param>
-		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the GeneralizationLink instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the GeneralizationLink instance being monikerized.</param>
-		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException ("element");
-			global::System.Diagnostics.Debug.Assert (writer != null);
-			if (writer == null)
-				throw new global::System.ArgumentNullException ("writer");
-			global::System.Diagnostics.Debug.Assert (sourceRolePlayer != null);
-			if (sourceRolePlayer == null)
-				throw new global::System.ArgumentNullException ("sourceRolePlayer");
-			global::System.Diagnostics.Debug.Assert (relSerializer != null);
-			if (relSerializer == null)
-				throw new global::System.ArgumentNullException ("relSerializer");
-			#endregion
-			
-			string monikerString = this.CalculateQualifiedName(serializationContext.Directory, element);
-			global::System.Diagnostics.Debug.Assert(!string.IsNullOrEmpty(monikerString));
-			writer.WriteStartElement(this.MonikerTagName);
-			MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, this.MonikerAttributeName, monikerString);
-			writer.WriteEndElement();
-		}
-		
-		/// <summary>
-		/// Public Write() method that serializes one GeneralizationLink instance into XML.
-		/// </summary>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">GeneralizationLink instance to be serialized.</param>
-		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="rootElementSettings">
-		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
-		/// information like schema target namespace, version, etc.
-		/// This should only be passed for root-level elements. Null should be passed for rest elements (and ideally call the Write() method 
-		/// without this parameter).
-		/// </param>
-		public override void Write(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::RootElementSettings rootElementSettings)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (serializationContext != null);
-			if (serializationContext == null)
-				throw new global::System.ArgumentNullException ("serializationContext");
-			global::System.Diagnostics.Debug.Assert (element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException ("element");
-			global::System.Diagnostics.Debug.Assert (writer != null);
-			if (writer == null)
-				throw new global::System.ArgumentNullException ("writer");
-			#endregion
-	
-			// Write start of element, including schema target namespace if specified.
-			if (rootElementSettings != null && !string.IsNullOrEmpty(rootElementSettings.SchemaTargetNamespace))
-			{
-				writer.WriteStartElement(this.XmlTagName, rootElementSettings.SchemaTargetNamespace);
-				DslModeling::SerializationUtilities.WriteDomainModelNamespaces(serializationContext.Directory, writer, rootElementSettings.SchemaTargetNamespace);
-			}
-			else
-			{
-				writer.WriteStartElement(this.XmlTagName);
-			}
-				
-			// Write version info (in the format 1.2.3.4), if necessary
-			if (rootElementSettings != null && rootElementSettings.Version != null)
-				writer.WriteAttributeString("dslVersion", rootElementSettings.Version.ToString(4));
-	
-			// Write out element Id.
-			writer.WriteAttributeString("Id", element.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture));
-	
-			base.WritePropertiesAsAttributes(serializationContext, element, writer);
-	
-			// Write out any extension data if this is the root element
-			if (rootElementSettings != null && !serializationContext.Result.Failed)
-			{
-				MobileDSLSerializationHelper.Instance.WriteExtensions(serializationContext, element, writer);
-			}
-	
-			if (!serializationContext.Result.Failed)
-			{
-				// Write 1) properties serialized as nested XML elements and 2) child model elements into XML.
-				base.WriteElements(serializationContext, element, writer);
-			}
-	
-			writer.WriteEndElement();
-		}
-		#endregion
-	
-		#region Moniker Support
-		/// <summary>
-		/// This method calculates a moniker to a given GeneralizationLink instance.
-		/// </summary>
-		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">GeneralizationLink instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the GeneralizationLink instance.</returns>
-		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (directory != null);
-			if (directory == null)
-				throw new global::System.ArgumentNullException ("directory");
-			global::System.Diagnostics.Debug.Assert(element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException("element");
-			#endregion	
-			
-			GeneralizationLink instance = element as GeneralizationLink;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of GeneralizationLink!");
-	
-			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-		}
-	
-		/// <summary>
-		/// A domain class can be monikerized in different ways: standard /qualifier/key mechanism, custom moniker, or element ID. If the domain class is serialized
-		/// using standard /qualifier/key mechanism, this method returns the qualifier of the moniker; if the domain class uses other ways for monikerization, this method
-		/// returns empty string.
-		/// </summary>
-		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">GeneralizationLink instance to get moniker qualifier from.</param>
-		/// <returns>
-		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
-		/// element is not monikerized using standard /qualifier/key mechanism.
-		/// </returns>
-		public override string GetMonikerQualifier(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
-		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert (directory != null);
-			if (directory == null)
-				throw new global::System.ArgumentNullException ("directory");
-			global::System.Diagnostics.Debug.Assert(element != null);
-			if (element == null)
-				throw new global::System.ArgumentNullException("element");
-			#endregion	
-			
-			return string.Empty;
-		}
-		#endregion
-	}
-}
-
-namespace Company.MobileDSL
-{
-	/// <summary>
 	/// Serializer CommentLinkSerializer for DomainClass CommentLink.
 	/// </summary>
 	public partial class CommentLinkSerializer : DslDiagrams::BinaryLinkShapeSerializer
@@ -26832,7 +25356,7 @@ namespace Company.MobileDSL
 				{
 					global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainXmlSerializerDirectoryEntry> customSerializerTypes = this.CustomSerializerTypes;
 					int customSerializerCount = (customSerializerTypes == null ? 0 : customSerializerTypes.Count);
-					ComponentsSerializationBehavior.serializerTypes = new global::System.Collections.Generic.List<DslModeling::DomainXmlSerializerDirectoryEntry>(38 + customSerializerCount);
+					ComponentsSerializationBehavior.serializerTypes = new global::System.Collections.Generic.List<DslModeling::DomainXmlSerializerDirectoryEntry>(36 + customSerializerCount);
 	
 					#region Serializers defined in this model
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(NamedElement.DomainClassId, typeof(NamedElementSerializer)));
@@ -26842,7 +25366,7 @@ namespace Company.MobileDSL
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(InPort.DomainClassId, typeof(InPortSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(OutPort.DomainClassId, typeof(OutPortSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(Comment.DomainClassId, typeof(CommentSerializer)));
-					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(State_old.DomainClassId, typeof(State_oldSerializer)));
+					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(State_old2.DomainClassId, typeof(State_old2Serializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(State.DomainClassId, typeof(StateSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(TempClass.DomainClassId, typeof(TempClassSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(StatePort.DomainClassId, typeof(StatePortSerializer)));
@@ -26850,11 +25374,10 @@ namespace Company.MobileDSL
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ControllerHasPorts.DomainClassId, typeof(ControllerHasPortsSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ComponentModelHasComments.DomainClassId, typeof(ComponentModelHasCommentsSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ComponentModelHasControllers.DomainClassId, typeof(ComponentModelHasControllersSerializer)));
-					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(Generalization.DomainClassId, typeof(GeneralizationSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(CommentReferencesSubjects.DomainClassId, typeof(CommentReferencesSubjectsSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ControllerHasStates.DomainClassId, typeof(ControllerHasStatesSerializer)));
-					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(State_oldReferencesPreviousStates.DomainClassId, typeof(State_oldReferencesPreviousStatesSerializer)));
-					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(State_oldHasPorts.DomainClassId, typeof(State_oldHasPortsSerializer)));
+					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(State_old2ReferencesPreviousStates.DomainClassId, typeof(State_old2ReferencesPreviousStatesSerializer)));
+					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(State_old2HasPorts.DomainClassId, typeof(State_old2HasPortsSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ControllerHasStated.DomainClassId, typeof(ControllerHasStatedSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(StateHasPorts.DomainClassId, typeof(StateHasPortsSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ComponentModelHasTempClassed.DomainClassId, typeof(ComponentModelHasTempClassedSerializer)));
@@ -26869,7 +25392,6 @@ namespace Company.MobileDSL
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(TempShape.DomainClassId, typeof(TempShapeSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(StatePortShape.DomainClassId, typeof(StatePortShapeSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(AssociationLink.DomainClassId, typeof(AssociationLinkSerializer)));
-					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(GeneralizationLink.DomainClassId, typeof(GeneralizationLinkSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(CommentLink.DomainClassId, typeof(CommentLinkSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(StateConnector.DomainClassId, typeof(StateConnectorSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(MobileDSLDiagram.DomainClassId, typeof(MobileDSLDiagramSerializer)));
