@@ -824,6 +824,21 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
+		#region ShowForms opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of ShowForms.
+		/// Description for Company.MobileDSL.InPortReferencesShowForms.InPort
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<ShowForm> ShowForms
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ShowForm>, ShowForm>(global::Company.MobileDSL.InPortReferencesShowForms.InPortDomainRoleId);
+			}
+		}
+		#endregion
 	}
 }
 namespace Company.MobileDSL
@@ -875,6 +890,21 @@ namespace Company.MobileDSL
 			get
 			{
 				return GetRoleCollection<DslModeling::LinkedElementCollection<InPort>, InPort>(global::Company.MobileDSL.Connection.SourceDomainRoleId);
+			}
+		}
+		#endregion
+		#region ShowFormed opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of ShowFormed.
+		/// Description for Company.MobileDSL.ShowFormReferencesOutPorts.OutPort
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<ShowForm> ShowFormed
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ShowForm>, ShowForm>(global::Company.MobileDSL.ShowFormReferencesOutPorts.OutPortDomainRoleId);
 			}
 		}
 		#endregion
@@ -1618,6 +1648,36 @@ namespace Company.MobileDSL
 			get
 			{
 				return GetRoleCollection<DslModeling::LinkedElementCollection<Primitive>, Primitive>(global::Company.MobileDSL.ShowFormHasPrimitives.ShowFormDomainRoleId);
+			}
+		}
+		#endregion
+		#region InPorts opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of InPorts.
+		/// Description for Company.MobileDSL.InPortReferencesShowForms.ShowForm
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<InPort> InPorts
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<InPort>, InPort>(global::Company.MobileDSL.InPortReferencesShowForms.ShowFormDomainRoleId);
+			}
+		}
+		#endregion
+		#region OutPorts opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of OutPorts.
+		/// Description for Company.MobileDSL.ShowFormReferencesOutPorts.ShowForm
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<OutPort> OutPorts
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<OutPort>, OutPort>(global::Company.MobileDSL.ShowFormReferencesOutPorts.ShowFormDomainRoleId);
 			}
 		}
 		#endregion

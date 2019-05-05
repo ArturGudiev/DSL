@@ -365,6 +365,50 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
+    <DomainRelationship Id="140c738b-1e37-411b-9691-b16f252ef2ac" Description="Description for Company.MobileDSL.InPortReferencesShowForms" Name="InPortReferencesShowForms" DisplayName="In Port References Show Forms" Namespace="Company.MobileDSL">
+      <Source>
+        <DomainRole Id="8994a32b-3ab6-42b1-947a-c6e6e5127330" Description="Description for Company.MobileDSL.InPortReferencesShowForms.InPort" Name="InPort" DisplayName="In Port" PropertyName="ShowForms" PropertyDisplayName="Show Forms">
+          <RolePlayer>
+            <DomainClassMoniker Name="InPort" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="8d7a5dd4-5610-46df-9c6d-96ba6f2cfb4d" Description="Description for Company.MobileDSL.InPortReferencesShowForms.ShowForm" Name="ShowForm" DisplayName="Show Form" PropertyName="InPorts" PropertyDisplayName="In Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="ShowForm" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="4b8bdd94-50b7-4d4d-85c1-b1d49ce24e36" Description="Description for Company.MobileDSL.ShowFormReferencesOutPorts" Name="ShowFormReferencesOutPorts" DisplayName="Show Form References Out Ports" Namespace="Company.MobileDSL">
+      <Properties>
+        <DomainProperty Id="6f32becc-d096-4062-856f-f3f7da8ea8c3" Description="Description for Company.MobileDSL.ShowFormReferencesOutPorts.From Event" Name="FromEvent" DisplayName="From Event">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="ee1a3986-c4b5-4919-a8d5-284bc231d7eb" Description="Description for Company.MobileDSL.ShowFormReferencesOutPorts.Next State" Name="nextState" DisplayName="Next State">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <Source>
+        <DomainRole Id="3b1c925f-6270-4143-93f3-dfd410571380" Description="Description for Company.MobileDSL.ShowFormReferencesOutPorts.ShowForm" Name="ShowForm" DisplayName="Show Form" PropertyName="OutPorts" PropertyDisplayName="Out Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="ShowForm" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="884b151b-6319-4176-836c-2ccbfad7e780" Description="Description for Company.MobileDSL.ShowFormReferencesOutPorts.OutPort" Name="OutPort" DisplayName="Out Port" PropertyName="ShowFormed" PropertyDisplayName="Show Formed">
+          <RolePlayer>
+            <DomainClassMoniker Name="OutPort" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -404,12 +448,16 @@
         <TextDecorator Name="Comment" DisplayName="Comment" DefaultText="" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <GeometryShape Id="a4a4784b-3c12-46be-add1-f188d9d40b24" Description="Description for Company.MobileDSL.StateShape" Name="StateShape" DisplayName="State Shape" Namespace="Company.MobileDSL" FixedTooltipText="State Shape" InitialHeight="1" Geometry="Rectangle">
+    <GeometryShape Id="a4a4784b-3c12-46be-add1-f188d9d40b24" Description="Description for Company.MobileDSL.StateOldShape" Name="StateOldShape" DisplayName="State Old Shape" Namespace="Company.MobileDSL" FixedTooltipText="State Old Shape" InitialHeight="1" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <GeometryShape Id="7cc0d58f-c7f1-44ae-89b0-722bf7b7abd6" Description="Description for Company.MobileDSL.GeometryShape1" Name="GeometryShape1" DisplayName="Geometry Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Geometry Shape1" InitialHeight="1" Geometry="Rectangle" />
+    <GeometryShape Id="7cc0d58f-c7f1-44ae-89b0-722bf7b7abd6" Description="Description for Company.MobileDSL.StateShape" Name="StateShape" DisplayName="State Shape" Namespace="Company.MobileDSL" FixedTooltipText="State Shape" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
+      </ShapeHasDecorators>
+    </GeometryShape>
     <CompartmentShape Id="cb5171d3-7ac6-479c-b7ce-d1474ea444eb" Description="Description for Company.MobileDSL.CompartmentShape1" Name="CompartmentShape1" DisplayName="Compartment Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Compartment Shape1" InitialHeight="1" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
@@ -431,6 +479,12 @@
     <Connector Id="a1642c46-9d27-4935-baeb-5ab227c8628f" Description="Description for Company.MobileDSL.StateConnector" Name="StateConnector" DisplayName="State Connector" Namespace="Company.MobileDSL" FixedTooltipText="State Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
         <TextDecorator Name="Condition" DisplayName="Condition" DefaultText="Condition" />
+      </ConnectorHasDecorators>
+    </Connector>
+    <Connector Id="96228b80-8d49-460b-b5c3-1c99d8599d60" Description="Description for Company.MobileDSL.InportConnections" Name="InportConnections" DisplayName="Inport Connections" Namespace="Company.MobileDSL" FixedTooltipText="Inport Connections" TargetEndStyle="FilledArrow" Thickness="0.01" />
+    <Connector Id="1e6bc545-de7b-41b1-97b1-0cf721bd02d1" Description="Description for Company.MobileDSL.ShowFormToPortConnection" Name="ShowFormToPortConnection" DisplayName="Show Form To Port Connection" Namespace="Company.MobileDSL" FixedTooltipText="Show Form To Port Connection" TargetEndStyle="FilledArrow" Thickness="0.01">
+      <ConnectorHasDecorators Position="TargetTop" OffsetFromShape="0" OffsetFromLine="0">
+        <TextDecorator Name="nextStateDecorator" DisplayName="Next State Decorator" DefaultText="nextStateDecorator" />
       </ConnectorHasDecorators>
     </Connector>
   </Connectors>
@@ -485,6 +539,11 @@
       </XmlClassData>
       <XmlClassData TypeName="InPort" MonikerAttributeName="" SerializeId="true" MonikerElementName="inPortMoniker" ElementName="inPort" MonikerTypeName="InPortMoniker">
         <DomainClassMoniker Name="InPort" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="showForms">
+            <DomainRelationshipMoniker Name="InPortReferencesShowForms" />
+          </XmlRelationshipData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="Comment" MonikerAttributeName="" SerializeId="true" MonikerElementName="commentMoniker" ElementName="comment" MonikerTypeName="CommentMoniker">
         <DomainClassMoniker Name="Comment" />
@@ -552,8 +611,8 @@
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="StateShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateShapeMoniker" ElementName="stateShape" MonikerTypeName="StateShapeMoniker">
-        <GeometryShapeMoniker Name="StateShape" />
+      <XmlClassData TypeName="StateOldShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateOldShapeMoniker" ElementName="stateOldShape" MonikerTypeName="StateOldShapeMoniker">
+        <GeometryShapeMoniker Name="StateOldShape" />
       </XmlClassData>
       <XmlClassData TypeName="State_old2ReferencesPreviousStates" MonikerAttributeName="" SerializeId="true" MonikerElementName="state_old2ReferencesPreviousStatesMoniker" ElementName="state_old2ReferencesPreviousStates" MonikerTypeName="State_old2ReferencesPreviousStatesMoniker">
         <DomainRelationshipMoniker Name="State_old2ReferencesPreviousStates" />
@@ -577,8 +636,8 @@
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="GeometryShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="geometryShape1Moniker" ElementName="geometryShape1" MonikerTypeName="GeometryShape1Moniker">
-        <GeometryShapeMoniker Name="GeometryShape1" />
+      <XmlClassData TypeName="StateShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateShapeMoniker" ElementName="stateShape" MonikerTypeName="StateShapeMoniker">
+        <GeometryShapeMoniker Name="StateShape" />
       </XmlClassData>
       <XmlClassData TypeName="ClassWithPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="classWithPortsMoniker" ElementName="classWithPorts" MonikerTypeName="ClassWithPortsMoniker">
         <DomainClassMoniker Name="ClassWithPorts" />
@@ -603,6 +662,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="primitives">
             <DomainRelationshipMoniker Name="ShowFormHasPrimitives" />
           </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="outPorts">
+            <DomainRelationshipMoniker Name="ShowFormReferencesOutPorts" />
+          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="CompartmentShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="compartmentShape1Moniker" ElementName="compartmentShape1" MonikerTypeName="CompartmentShape1Moniker">
@@ -619,6 +681,26 @@
       </XmlClassData>
       <XmlClassData TypeName="Primitive" MonikerAttributeName="" SerializeId="true" MonikerElementName="primitiveMoniker" ElementName="primitive" MonikerTypeName="PrimitiveMoniker">
         <DomainClassMoniker Name="Primitive" />
+      </XmlClassData>
+      <XmlClassData TypeName="InPortReferencesShowForms" MonikerAttributeName="" SerializeId="true" MonikerElementName="inPortReferencesShowFormsMoniker" ElementName="inPortReferencesShowForms" MonikerTypeName="InPortReferencesShowFormsMoniker">
+        <DomainRelationshipMoniker Name="InPortReferencesShowForms" />
+      </XmlClassData>
+      <XmlClassData TypeName="InportConnections" MonikerAttributeName="" SerializeId="true" MonikerElementName="inportConnectionsMoniker" ElementName="inportConnections" MonikerTypeName="InportConnectionsMoniker">
+        <ConnectorMoniker Name="InportConnections" />
+      </XmlClassData>
+      <XmlClassData TypeName="ShowFormReferencesOutPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormReferencesOutPortsMoniker" ElementName="showFormReferencesOutPorts" MonikerTypeName="ShowFormReferencesOutPortsMoniker">
+        <DomainRelationshipMoniker Name="ShowFormReferencesOutPorts" />
+        <ElementData>
+          <XmlPropertyData XmlName="fromEvent">
+            <DomainPropertyMoniker Name="ShowFormReferencesOutPorts/FromEvent" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="nextState">
+            <DomainPropertyMoniker Name="ShowFormReferencesOutPorts/nextState" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ShowFormToPortConnection" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormToPortConnectionMoniker" ElementName="showFormToPortConnection" MonikerTypeName="ShowFormToPortConnectionMoniker">
+        <ConnectorMoniker Name="ShowFormToPortConnection" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -681,6 +763,44 @@
         </TargetDirectives>
       </LinkConnectDirective>
     </ConnectionBuilder>
+    <ConnectionBuilder Name="InPortReferencesShowFormsBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="InPortReferencesShowForms" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="InPort" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="ShowForm" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
+    <ConnectionBuilder Name="ShowFormReferencesOutPortsBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="ShowFormReferencesOutPorts" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="ShowForm" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="OutPort" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
   </ConnectionBuilders>
   <Diagram Id="7ef6236b-987a-4e87-a593-50661f5d96cb" Description="" Name="MobileDSLDiagram" DisplayName="MobileDSL Diagram" Namespace="Company.MobileDSL">
     <Class>
@@ -737,7 +857,22 @@
           <DomainPath>ControllerHasStates2.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="StateShape/Name" />
+          <TextDecoratorMoniker Name="StateOldShape/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="StateOldShape" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="State" />
+        <ParentElementPath>
+          <DomainPath>ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="StateShape/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="NamedElement/Name" />
@@ -746,18 +881,19 @@
         </DecoratorMap>
         <GeometryShapeMoniker Name="StateShape" />
       </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="State" />
-        <ParentElementPath>
-          <DomainPath>ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
-        </ParentElementPath>
-        <GeometryShapeMoniker Name="GeometryShape1" />
-      </ShapeMap>
       <CompartmentShapeMap>
         <DomainClassMoniker Name="ShowForm" />
         <ParentElementPath>
           <DomainPath>StateHasShowForms.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
         </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="CompartmentShape1/NameDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
         <CompartmentShapeMoniker Name="CompartmentShape1" />
         <CompartmentMap>
           <CompartmentMoniker Name="CompartmentShape1/UIEventsCompartment" />
@@ -820,6 +956,22 @@
           </PropertyDisplayed>
         </DecoratorMap>
       </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="InportConnections" />
+        <DomainRelationshipMoniker Name="InPortReferencesShowForms" />
+      </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="ShowFormToPortConnection" />
+        <DomainRelationshipMoniker Name="ShowFormReferencesOutPorts" />
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ShowFormToPortConnection/nextStateDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="ShowFormReferencesOutPorts/nextState" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+      </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="mdsl" EditorGuid="5655060c-ef72-481b-b551-6d87cbd1b4bf">
@@ -857,6 +1009,12 @@
       <ElementTool Name="State" ToolboxIcon="Resources\ComponentTool.bmp" Caption="State" Tooltip="State" HelpKeyword="State">
         <DomainClassMoniker Name="State" />
       </ElementTool>
+      <ConnectionTool Name="InPortConnection" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="InPortConnection" Tooltip="In Port Connection" HelpKeyword="InPortConnection">
+        <ConnectionBuilderMoniker Name="MobileDSL/InPortReferencesShowFormsBuilder" />
+      </ConnectionTool>
+      <ConnectionTool Name="ShowFormToPortConnection" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="ShowFormToPortConnection" Tooltip="Show Form To Port Connection" HelpKeyword="ShowFormToPortConnection">
+        <ConnectionBuilderMoniker Name="MobileDSL/ShowFormReferencesOutPortsBuilder" />
+      </ConnectionTool>
     </ToolboxTab>
     <ToolboxTab TabText="UI Forms">
       <ElementTool Name="Event" ToolboxIcon="Resources\flash2.bmp" Caption="Event" Tooltip="Event" HelpKeyword="Event">

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ed63d866-36c4-4172-a538-617a8958d038" name="A component model" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+  <controllers>
+    <componentModelHasControllers Id="da24122f-8fe3-4bf6-a281-31441b0dc7f9">
+      <controller Id="6b2c3e4e-cb07-419a-a0a9-ef7ca4e84254" name="Controller1" isFirst="false">
+        <states>
+          <controllerHasStates Id="365468a1-380b-4e57-9841-b5e43572e282">
+            <state Id="3409c032-b657-4d67-a9d8-b7bcc499f891" name="State1">
+              <ports>
+                <classWithPortsHasPorts Id="cc712b38-7c00-4b38-842a-65915043d534">
+                  <inPort Id="38047b7d-8eb7-4255-9945-b148945a1d16" name="InPort1">
+                    <showForms>
+                      <inPortReferencesShowForms Id="e9889056-f314-40eb-8d8a-74f8d5db86d6">
+                        <showFormMoniker name="/A component model/Controller1/State1/Form1" />
+                      </inPortReferencesShowForms>
+                    </showForms>
+                  </inPort>
+                </classWithPortsHasPorts>
+                <classWithPortsHasPorts Id="7eab1104-e0c0-4454-b3ca-9bdb70003c2d">
+                  <outPort Id="70a07f10-20b4-49e4-95ae-de29ef5c4d5f" name="OutPort1">
+                    <targets>
+                      <connection Id="926f6054-fa0a-46bf-8399-d3a661539ad4">
+                        <inPortMoniker name="/A component model/Controller1/State2/InPort1" />
+                      </connection>
+                    </targets>
+                  </outPort>
+                </classWithPortsHasPorts>
+              </ports>
+              <showForms>
+                <stateHasShowForms Id="c384bb15-d668-421b-8a56-7613c8c5cef6">
+                  <showForm Id="1d536968-3829-43cb-af39-88efab32bd9d" name="Form1">
+                    <events>
+                      <showFormHasEvents Id="3a18adf3-5dfd-4cf2-ba53-1e019f3c35ac">
+                        <event Id="35c0176b-c10a-4fb6-a1f2-30dd12401da3" name="Event1" />
+                      </showFormHasEvents>
+                    </events>
+                    <primitives>
+                      <showFormHasPrimitives Id="85e5e15c-d537-4ff9-aa82-9a7248387877">
+                        <primitive Id="a7ca79c0-d663-4949-af1b-c7f1a27b5291" name="Primitive1" />
+                      </showFormHasPrimitives>
+                    </primitives>
+                    <outPorts>
+                      <showFormReferencesOutPorts Id="999e5476-adc2-4588-9872-ed8c5fcda00b" nextState="State2">
+                        <outPortMoniker name="/A component model/Controller1/State1/OutPort1" />
+                      </showFormReferencesOutPorts>
+                    </outPorts>
+                  </showForm>
+                </stateHasShowForms>
+              </showForms>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="5f1622a7-82a9-4442-8e28-d1452c0c76ea">
+            <state Id="8347c836-38af-48d1-90c8-d3aef1b0add5" name="State2">
+              <ports>
+                <classWithPortsHasPorts Id="ce7044a2-9682-4f69-93b6-9e478f653b9c">
+                  <inPort Id="ccfa8411-a49c-4949-ba40-20f31ee0d4de" name="InPort1">
+                    <showForms>
+                      <inPortReferencesShowForms Id="cc4196bf-0bf2-4e80-b58a-d09c8bf2a71e">
+                        <showFormMoniker name="/A component model/Controller1/State2/Form2" />
+                      </inPortReferencesShowForms>
+                    </showForms>
+                  </inPort>
+                </classWithPortsHasPorts>
+                <classWithPortsHasPorts Id="c30b6fa6-7d9f-4e24-9f96-c89f7955a4e2">
+                  <outPort Id="d59f365d-9fe6-470a-b23c-3bf5ae8622cf" name="OutPort1">
+                    <targets>
+                      <connection Id="785258d8-176e-4bc8-91c8-49b4bd78ac12">
+                        <inPortMoniker name="/A component model/Controller1/State1/InPort1" />
+                      </connection>
+                    </targets>
+                  </outPort>
+                </classWithPortsHasPorts>
+              </ports>
+              <showForms>
+                <stateHasShowForms Id="4bbc8521-10ee-4583-9193-b3c2b93640d4">
+                  <showForm Id="40af81d0-bb68-4e98-95f1-8776aeae255e" name="Form2">
+                    <events>
+                      <showFormHasEvents Id="63090157-f13d-49db-af40-59001d04e537">
+                        <event Id="8da9ab99-80d9-4eb9-81e8-1d82d92252a7" name="Event1" />
+                      </showFormHasEvents>
+                    </events>
+                    <primitives>
+                      <showFormHasPrimitives Id="3357028d-4dec-409f-8f59-c41c8d66b8e9">
+                        <primitive Id="8a10dc61-acc7-44a7-b4e0-dba67932295e" name="Primitive1" />
+                      </showFormHasPrimitives>
+                    </primitives>
+                    <outPorts>
+                      <showFormReferencesOutPorts Id="e069b4b2-e2a0-4a27-8162-ef574de6def3" nextState="State1">
+                        <outPortMoniker name="/A component model/Controller1/State2/OutPort1" />
+                      </showFormReferencesOutPorts>
+                    </outPorts>
+                  </showForm>
+                </stateHasShowForms>
+              </showForms>
+            </state>
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+  </controllers>
+</componentModel>

@@ -91,14 +91,18 @@ namespace Company.MobileDSL
 				typeof(StateHasShowForms),
 				typeof(ShowFormHasEvents),
 				typeof(ShowFormHasPrimitives),
+				typeof(InPortReferencesShowForms),
+				typeof(ShowFormReferencesOutPorts),
 				typeof(MobileDSLDiagram),
 				typeof(AssociationLink),
 				typeof(CommentLink),
 				typeof(StateConnector),
+				typeof(InportConnections),
+				typeof(ShowFormToPortConnection),
 				typeof(ControllerShape),
 				typeof(CommentBoxShape),
+				typeof(StateOldShape),
 				typeof(StateShape),
-				typeof(GeometryShape1),
 				typeof(CompartmentShape1),
 				typeof(InPortShape),
 				typeof(OutPortShape),
@@ -129,6 +133,8 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(Connection), "SourceRoleName", Connection.SourceRoleNameDomainPropertyId, typeof(Connection.SourceRoleNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Connection), "TargetRoleName", Connection.TargetRoleNameDomainPropertyId, typeof(Connection.TargetRoleNamePropertyHandler)),
 				new DomainMemberInfo(typeof(State_old2ReferencesPreviousStates), "condition", State_old2ReferencesPreviousStates.conditionDomainPropertyId, typeof(State_old2ReferencesPreviousStates.conditionPropertyHandler)),
+				new DomainMemberInfo(typeof(ShowFormReferencesOutPorts), "FromEvent", ShowFormReferencesOutPorts.FromEventDomainPropertyId, typeof(ShowFormReferencesOutPorts.FromEventPropertyHandler)),
+				new DomainMemberInfo(typeof(ShowFormReferencesOutPorts), "nextState", ShowFormReferencesOutPorts.nextStateDomainPropertyId, typeof(ShowFormReferencesOutPorts.nextStatePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -161,6 +167,10 @@ namespace Company.MobileDSL
 				new DomainRolePlayerInfo(typeof(ShowFormHasEvents), "Event", ShowFormHasEvents.EventDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ShowFormHasPrimitives), "ShowForm", ShowFormHasPrimitives.ShowFormDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ShowFormHasPrimitives), "Primitive", ShowFormHasPrimitives.PrimitiveDomainRoleId),
+				new DomainRolePlayerInfo(typeof(InPortReferencesShowForms), "InPort", InPortReferencesShowForms.InPortDomainRoleId),
+				new DomainRolePlayerInfo(typeof(InPortReferencesShowForms), "ShowForm", InPortReferencesShowForms.ShowFormDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ShowFormReferencesOutPorts), "ShowForm", ShowFormReferencesOutPorts.ShowFormDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ShowFormReferencesOutPorts), "OutPort", ShowFormReferencesOutPorts.OutPortDomainRoleId),
 			};
 		}
 		#endregion
@@ -182,7 +192,7 @@ namespace Company.MobileDSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(24);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(26);
 				createElementMap.Add(typeof(ComponentModel), 0);
 				createElementMap.Add(typeof(Controller), 1);
 				createElementMap.Add(typeof(InPort), 2);
@@ -197,13 +207,15 @@ namespace Company.MobileDSL
 				createElementMap.Add(typeof(AssociationLink), 11);
 				createElementMap.Add(typeof(CommentLink), 12);
 				createElementMap.Add(typeof(StateConnector), 13);
-				createElementMap.Add(typeof(ControllerShape), 14);
-				createElementMap.Add(typeof(CommentBoxShape), 15);
-				createElementMap.Add(typeof(StateShape), 16);
-				createElementMap.Add(typeof(GeometryShape1), 17);
-				createElementMap.Add(typeof(CompartmentShape1), 18);
-				createElementMap.Add(typeof(InPortShape), 19);
-				createElementMap.Add(typeof(OutPortShape), 20);
+				createElementMap.Add(typeof(InportConnections), 14);
+				createElementMap.Add(typeof(ShowFormToPortConnection), 15);
+				createElementMap.Add(typeof(ControllerShape), 16);
+				createElementMap.Add(typeof(CommentBoxShape), 17);
+				createElementMap.Add(typeof(StateOldShape), 18);
+				createElementMap.Add(typeof(StateShape), 19);
+				createElementMap.Add(typeof(CompartmentShape1), 20);
+				createElementMap.Add(typeof(InPortShape), 21);
+				createElementMap.Add(typeof(OutPortShape), 22);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -231,13 +243,15 @@ namespace Company.MobileDSL
 				case 11: return new AssociationLink(partition, propertyAssignments);
 				case 12: return new CommentLink(partition, propertyAssignments);
 				case 13: return new StateConnector(partition, propertyAssignments);
-				case 14: return new ControllerShape(partition, propertyAssignments);
-				case 15: return new CommentBoxShape(partition, propertyAssignments);
-				case 16: return new StateShape(partition, propertyAssignments);
-				case 17: return new GeometryShape1(partition, propertyAssignments);
-				case 18: return new CompartmentShape1(partition, propertyAssignments);
-				case 19: return new InPortShape(partition, propertyAssignments);
-				case 20: return new OutPortShape(partition, propertyAssignments);
+				case 14: return new InportConnections(partition, propertyAssignments);
+				case 15: return new ShowFormToPortConnection(partition, propertyAssignments);
+				case 16: return new ControllerShape(partition, propertyAssignments);
+				case 17: return new CommentBoxShape(partition, propertyAssignments);
+				case 18: return new StateOldShape(partition, propertyAssignments);
+				case 19: return new StateShape(partition, propertyAssignments);
+				case 20: return new CompartmentShape1(partition, propertyAssignments);
+				case 21: return new InPortShape(partition, propertyAssignments);
+				case 22: return new OutPortShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -260,7 +274,7 @@ namespace Company.MobileDSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(11);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(13);
 				createElementLinkMap.Add(typeof(Connection), 0);
 				createElementLinkMap.Add(typeof(ComponentModelHasComments), 1);
 				createElementLinkMap.Add(typeof(ComponentModelHasControllers), 2);
@@ -272,6 +286,8 @@ namespace Company.MobileDSL
 				createElementLinkMap.Add(typeof(StateHasShowForms), 8);
 				createElementLinkMap.Add(typeof(ShowFormHasEvents), 9);
 				createElementLinkMap.Add(typeof(ShowFormHasPrimitives), 10);
+				createElementLinkMap.Add(typeof(InPortReferencesShowForms), 11);
+				createElementLinkMap.Add(typeof(ShowFormReferencesOutPorts), 12);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -297,6 +313,8 @@ namespace Company.MobileDSL
 				case 8: return new StateHasShowForms(partition, roleAssignments, propertyAssignments);
 				case 9: return new ShowFormHasEvents(partition, roleAssignments, propertyAssignments);
 				case 10: return new ShowFormHasPrimitives(partition, roleAssignments, propertyAssignments);
+				case 11: return new InPortReferencesShowForms(partition, roleAssignments, propertyAssignments);
+				case 12: return new ShowFormReferencesOutPorts(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}

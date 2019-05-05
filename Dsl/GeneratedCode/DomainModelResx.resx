@@ -645,6 +645,86 @@
     <value>Show Form</value>
     <comment>PropertyDisplayName for DomainRole &apos;Primitive&apos; on DomainRelationship &apos;ShowFormHasPrimitives&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.InPortReferencesShowForms.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.InPortReferencesShowForms</value>
+    <comment>Description for DomainClass &apos;InPortReferencesShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.InPortReferencesShowForms.DisplayName" xml:space="preserve">
+    <value>In Port References Show Forms</value>
+    <comment>DisplayName for DomainClass &apos;InPortReferencesShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.InPortReferencesShowForms/InPort.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.InPortReferencesShowForms.InPort</value>
+    <comment>Description for DomainRole &apos;InPort&apos; on DomainRelationship &apos;InPortReferencesShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.InPortReferencesShowForms/InPort.DisplayName" xml:space="preserve">
+    <value>In Port</value>
+    <comment>DisplayName for DomainRole &apos;InPort&apos; on DomainRelationship &apos;InPortReferencesShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.InPortReferencesShowForms/InPort.PropertyDisplayName" xml:space="preserve">
+    <value>Show Forms</value>
+    <comment>PropertyDisplayName for DomainRole &apos;InPort&apos; on DomainRelationship &apos;InPortReferencesShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.InPortReferencesShowForms/ShowForm.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.InPortReferencesShowForms.ShowForm</value>
+    <comment>Description for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;InPortReferencesShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.InPortReferencesShowForms/ShowForm.DisplayName" xml:space="preserve">
+    <value>Show Form</value>
+    <comment>DisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;InPortReferencesShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.InPortReferencesShowForms/ShowForm.PropertyDisplayName" xml:space="preserve">
+    <value>In Ports</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;InPortReferencesShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormReferencesOutPorts</value>
+    <comment>Description for DomainClass &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts.DisplayName" xml:space="preserve">
+    <value>Show Form References Out Ports</value>
+    <comment>DisplayName for DomainClass &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/FromEvent.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormReferencesOutPorts.From Event</value>
+    <comment>Description for DomainProperty &apos;FromEvent&apos; on DomainClass &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/FromEvent.DisplayName" xml:space="preserve">
+    <value>From Event</value>
+    <comment>DisplayName for DomainProperty &apos;FromEvent&apos; on DomainClass &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/nextState.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormReferencesOutPorts.Next State</value>
+    <comment>Description for DomainProperty &apos;nextState&apos; on DomainClass &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/nextState.DisplayName" xml:space="preserve">
+    <value>Next State</value>
+    <comment>DisplayName for DomainProperty &apos;nextState&apos; on DomainClass &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/ShowForm.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormReferencesOutPorts.ShowForm</value>
+    <comment>Description for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/ShowForm.DisplayName" xml:space="preserve">
+    <value>Show Form</value>
+    <comment>DisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/ShowForm.PropertyDisplayName" xml:space="preserve">
+    <value>Out Ports</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/OutPort.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormReferencesOutPorts.OutPort</value>
+    <comment>Description for DomainRole &apos;OutPort&apos; on DomainRelationship &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/OutPort.DisplayName" xml:space="preserve">
+    <value>Out Port</value>
+    <comment>DisplayName for DomainRole &apos;OutPort&apos; on DomainRelationship &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormReferencesOutPorts/OutPort.PropertyDisplayName" xml:space="preserve">
+    <value>Show Formed</value>
+    <comment>PropertyDisplayName for DomainRole &apos;OutPort&apos; on DomainRelationship &apos;ShowFormReferencesOutPorts&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.InPortShape.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.InPortShape</value>
     <comment>Description for DomainClass &apos;InPortShape&apos;</comment>
@@ -681,6 +761,18 @@
     <value>Comment Box Shape</value>
     <comment>DisplayName for DomainClass &apos;CommentBoxShape&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.StateOldShape.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateOldShape</value>
+    <comment>Description for DomainClass &apos;StateOldShape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateOldShape.DisplayName" xml:space="preserve">
+    <value>State Old Shape</value>
+    <comment>DisplayName for DomainClass &apos;StateOldShape&apos;</comment>
+  </data>
+  <data name="StateOldShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="Company.MobileDSL.StateShape.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.StateShape</value>
     <comment>Description for DomainClass &apos;StateShape&apos;</comment>
@@ -689,17 +781,9 @@
     <value>State Shape</value>
     <comment>DisplayName for DomainClass &apos;StateShape&apos;</comment>
   </data>
-  <data name="StateShapeNameDefaultText" xml:space="preserve">
-    <value>Name</value>
+  <data name="StateShapeNameDecoratorDefaultText" xml:space="preserve">
+    <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
-  </data>
-  <data name="Company.MobileDSL.GeometryShape1.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.GeometryShape1</value>
-    <comment>Description for DomainClass &apos;GeometryShape1&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.GeometryShape1.DisplayName" xml:space="preserve">
-    <value>Geometry Shape1</value>
-    <comment>DisplayName for DomainClass &apos;GeometryShape1&apos;</comment>
   </data>
   <data name="Company.MobileDSL.CompartmentShape1.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.CompartmentShape1</value>
@@ -755,6 +839,26 @@
   </data>
   <data name="StateConnectorConditionDefaultText" xml:space="preserve">
     <value>Condition</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Company.MobileDSL.InportConnections.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.InportConnections</value>
+    <comment>Description for DomainClass &apos;InportConnections&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.InportConnections.DisplayName" xml:space="preserve">
+    <value>Inport Connections</value>
+    <comment>DisplayName for DomainClass &apos;InportConnections&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormToPortConnection.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormToPortConnection</value>
+    <comment>Description for DomainClass &apos;ShowFormToPortConnection&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormToPortConnection.DisplayName" xml:space="preserve">
+    <value>Show Form To Port Connection</value>
+    <comment>DisplayName for DomainClass &apos;ShowFormToPortConnection&apos;</comment>
+  </data>
+  <data name="ShowFormToPortConnectionnextStateDecoratorDefaultText" xml:space="preserve">
+    <value>nextStateDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="FormatList" xml:space="preserve">
@@ -847,6 +951,22 @@
   </data>
   <data name="StateToolboxTooltip" xml:space="preserve">
     <value>State</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="InPortConnectionToolboxItem" xml:space="preserve">
+    <value>InPortConnection</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="InPortConnectionToolboxTooltip" xml:space="preserve">
+    <value>In Port Connection</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ShowFormToPortConnectionToolboxItem" xml:space="preserve">
+    <value>ShowFormToPortConnection</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ShowFormToPortConnectionToolboxTooltip" xml:space="preserve">
+    <value>Show Form To Port Connection</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UI FormsToolboxTab" xml:space="preserve">
@@ -1044,6 +1164,14 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="StateToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ComponentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="InPortConnectionToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ConnectionTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ShowFormToPortConnectionToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ConnectionTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="EventToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">

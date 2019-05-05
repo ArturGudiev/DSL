@@ -100,6 +100,22 @@ namespace Company.MobileDSL
 					"@StateToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
 					Index = 8)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
+					"@InPortConnectionToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.InPortConnectionToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"InPortConnection", 
+					"@InPortConnectionToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 9)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
+					"@ShowFormToPortConnectionToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.ShowFormToPortConnectionToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ShowFormToPortConnection", 
+					"@ShowFormToPortConnectionToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 10)]
 	[VSShell::ProvideStaticToolboxGroup("@UI FormsToolboxTab;Company.MobileDSL.Dsl.dll", "Company.MobileDSL.UI FormsToolboxTab")]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
 					"@EventToolboxItem;Company.MobileDSL.Dsl.dll", 
@@ -108,7 +124,7 @@ namespace Company.MobileDSL
 					"Event", 
 					"@EventToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 9)]
+					Index = 11)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
 					"@ShowFormToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.ShowFormToolboxItem", 
@@ -116,7 +132,7 @@ namespace Company.MobileDSL
 					"ShowForm", 
 					"@ShowFormToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 10)]
+					Index = 12)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
 					"@PrimitiveToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.PrimitiveToolboxItem", 
@@ -124,7 +140,7 @@ namespace Company.MobileDSL
 					"Primitive", 
 					"@PrimitiveToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 11)]
+					Index = 13)]
 	[VSShell::ProvideEditorFactory(typeof(MobileDSLEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(MobileDSLEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(MobileDSLEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

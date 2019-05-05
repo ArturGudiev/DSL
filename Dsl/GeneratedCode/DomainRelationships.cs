@@ -2832,3 +2832,617 @@ namespace Company.MobileDSL
 		#endregion
 	}
 }
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainRelationship InPortReferencesShowForms
+	/// Description for Company.MobileDSL.InPortReferencesShowForms
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.InPortReferencesShowForms.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.InPortReferencesShowForms.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("140c738b-1e37-411b-9691-b16f252ef2ac")]
+	public partial class InPortReferencesShowForms : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// InPortReferencesShowForms domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x140c738b, 0x1e37, 0x411b, 0x96, 0x91, 0xb1, 0x6f, 0x25, 0x2e, 0xf2, 0xac);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a InPortReferencesShowForms link in the same Partition as the given InPort
+		/// </summary>
+		/// <param name="source">InPort to use as the source of the relationship.</param>
+		/// <param name="target">ShowForm to use as the target of the relationship.</param>
+		public InPortReferencesShowForms(InPort source, ShowForm target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(InPortReferencesShowForms.InPortDomainRoleId, source), new DslModeling::RoleAssignment(InPortReferencesShowForms.ShowFormDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public InPortReferencesShowForms(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public InPortReferencesShowForms(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public InPortReferencesShowForms(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public InPortReferencesShowForms(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region InPort domain role code
+		
+		/// <summary>
+		/// InPort domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid InPortDomainRoleId = new global::System.Guid(0x8994a32b, 0x3ab6, 0x42b1, 0x94, 0x7a, 0xc6, 0xe6, 0xe5, 0x12, 0x73, 0x30);
+		
+		/// <summary>
+		/// DomainRole InPort
+		/// Description for Company.MobileDSL.InPortReferencesShowForms.InPort
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.InPortReferencesShowForms/InPort.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.InPortReferencesShowForms/InPort.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ShowForms", PropertyDisplayNameKey="Company.MobileDSL.InPortReferencesShowForms/InPort.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("8994a32b-3ab6-42b1-947a-c6e6e5127330")]
+		public virtual InPort InPort
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (InPort)DslModeling::DomainRoleInfo.GetRolePlayer(this, InPortDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, InPortDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access InPorts of a ShowForm
+		/// <summary>
+		/// Gets a list of InPorts.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<InPort> GetInPorts(ShowForm element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<InPort>, InPort>(element, ShowFormDomainRoleId);
+		}
+		#endregion
+		#region ShowForm domain role code
+		
+		/// <summary>
+		/// ShowForm domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ShowFormDomainRoleId = new global::System.Guid(0x8d7a5dd4, 0x5610, 0x46df, 0x9c, 0x6d, 0x96, 0xba, 0x6f, 0x2c, 0xfb, 0x4d);
+		
+		/// <summary>
+		/// DomainRole ShowForm
+		/// Description for Company.MobileDSL.InPortReferencesShowForms.ShowForm
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.InPortReferencesShowForms/ShowForm.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.InPortReferencesShowForms/ShowForm.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "InPorts", PropertyDisplayNameKey="Company.MobileDSL.InPortReferencesShowForms/ShowForm.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("8d7a5dd4-5610-46df-9c6d-96ba6f2cfb4d")]
+		public virtual ShowForm ShowForm
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ShowForm)DslModeling::DomainRoleInfo.GetRolePlayer(this, ShowFormDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ShowFormDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ShowForms of a InPort
+		/// <summary>
+		/// Gets a list of ShowForms.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<ShowForm> GetShowForms(InPort element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<ShowForm>, ShowForm>(element, InPortDomainRoleId);
+		}
+		#endregion
+		#region InPort link accessor
+		/// <summary>
+		/// Get the list of InPortReferencesShowForms links to a InPort.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.InPortReferencesShowForms> GetLinksToShowForms ( global::Company.MobileDSL.InPort inPortInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.InPortReferencesShowForms>(inPortInstance, global::Company.MobileDSL.InPortReferencesShowForms.InPortDomainRoleId);
+		}
+		#endregion
+		#region ShowForm link accessor
+		/// <summary>
+		/// Get the list of InPortReferencesShowForms links to a ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.InPortReferencesShowForms> GetLinksToInPorts ( global::Company.MobileDSL.ShowForm showFormInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.InPortReferencesShowForms>(showFormInstance, global::Company.MobileDSL.InPortReferencesShowForms.ShowFormDomainRoleId);
+		}
+		#endregion
+		#region InPortReferencesShowForms instance accessors
+		
+		/// <summary>
+		/// Get any InPortReferencesShowForms links between a given InPort and a ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.InPortReferencesShowForms> GetLinks( global::Company.MobileDSL.InPort source, global::Company.MobileDSL.ShowForm target )
+		{
+			global::System.Collections.Generic.List<global::Company.MobileDSL.InPortReferencesShowForms> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.InPortReferencesShowForms>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.InPortReferencesShowForms> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.InPortReferencesShowForms>(source, global::Company.MobileDSL.InPortReferencesShowForms.InPortDomainRoleId);
+			foreach ( global::Company.MobileDSL.InPortReferencesShowForms link in links )
+			{
+				if ( target.Equals(link.ShowForm) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one InPortReferencesShowForms link between a given InPortand a ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.InPortReferencesShowForms GetLink( global::Company.MobileDSL.InPort source, global::Company.MobileDSL.ShowForm target )
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.InPortReferencesShowForms> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.InPortReferencesShowForms>(source, global::Company.MobileDSL.InPortReferencesShowForms.InPortDomainRoleId);
+			foreach ( global::Company.MobileDSL.InPortReferencesShowForms link in links )
+			{
+				if ( target.Equals(link.ShowForm) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainRelationship ShowFormReferencesOutPorts
+	/// Description for Company.MobileDSL.ShowFormReferencesOutPorts
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormReferencesOutPorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormReferencesOutPorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("4b8bdd94-50b7-4d4d-85c1-b1d49ce24e36")]
+	public partial class ShowFormReferencesOutPorts : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// ShowFormReferencesOutPorts domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4b8bdd94, 0x50b7, 0x4d4d, 0x85, 0xc1, 0xb1, 0xd4, 0x9c, 0xe2, 0x4e, 0x36);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a ShowFormReferencesOutPorts link in the same Partition as the given ShowForm
+		/// </summary>
+		/// <param name="source">ShowForm to use as the source of the relationship.</param>
+		/// <param name="target">OutPort to use as the target of the relationship.</param>
+		public ShowFormReferencesOutPorts(ShowForm source, OutPort target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ShowFormReferencesOutPorts.ShowFormDomainRoleId, source), new DslModeling::RoleAssignment(ShowFormReferencesOutPorts.OutPortDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ShowFormReferencesOutPorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ShowFormReferencesOutPorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ShowFormReferencesOutPorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ShowFormReferencesOutPorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ShowForm domain role code
+		
+		/// <summary>
+		/// ShowForm domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ShowFormDomainRoleId = new global::System.Guid(0x3b1c925f, 0x6270, 0x4143, 0x93, 0xf3, 0xdf, 0xd4, 0x10, 0x57, 0x13, 0x80);
+		
+		/// <summary>
+		/// DomainRole ShowForm
+		/// Description for Company.MobileDSL.ShowFormReferencesOutPorts.ShowForm
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormReferencesOutPorts/ShowForm.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormReferencesOutPorts/ShowForm.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "OutPorts", PropertyDisplayNameKey="Company.MobileDSL.ShowFormReferencesOutPorts/ShowForm.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("3b1c925f-6270-4143-93f3-dfd410571380")]
+		public virtual ShowForm ShowForm
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ShowForm)DslModeling::DomainRoleInfo.GetRolePlayer(this, ShowFormDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ShowFormDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ShowFormed of a OutPort
+		/// <summary>
+		/// Gets a list of ShowFormed.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<ShowForm> GetShowFormed(OutPort element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<ShowForm>, ShowForm>(element, OutPortDomainRoleId);
+		}
+		#endregion
+		#region OutPort domain role code
+		
+		/// <summary>
+		/// OutPort domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid OutPortDomainRoleId = new global::System.Guid(0x884b151b, 0x6319, 0x4176, 0x83, 0x6c, 0x2c, 0xcb, 0xfa, 0xd7, 0xe7, 0x80);
+		
+		/// <summary>
+		/// DomainRole OutPort
+		/// Description for Company.MobileDSL.ShowFormReferencesOutPorts.OutPort
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormReferencesOutPorts/OutPort.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormReferencesOutPorts/OutPort.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ShowFormed", PropertyDisplayNameKey="Company.MobileDSL.ShowFormReferencesOutPorts/OutPort.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("884b151b-6319-4176-836c-2ccbfad7e780")]
+		public virtual OutPort OutPort
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (OutPort)DslModeling::DomainRoleInfo.GetRolePlayer(this, OutPortDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, OutPortDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access OutPorts of a ShowForm
+		/// <summary>
+		/// Gets a list of OutPorts.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<OutPort> GetOutPorts(ShowForm element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<OutPort>, OutPort>(element, ShowFormDomainRoleId);
+		}
+		#endregion
+		#region FromEvent domain property code
+		
+		/// <summary>
+		/// FromEvent domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid FromEventDomainPropertyId = new global::System.Guid(0x6f32becc, 0xd096, 0x4062, 0x85, 0x6f, 0xf3, 0xf7, 0xda, 0x8e, 0xa8, 0xc3);
+		
+		/// <summary>
+		/// Storage for FromEvent
+		/// </summary>
+		private global::System.String fromEventPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of FromEvent domain property.
+		/// Description for Company.MobileDSL.ShowFormReferencesOutPorts.From Event
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormReferencesOutPorts/FromEvent.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormReferencesOutPorts/FromEvent.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("6f32becc-d096-4062-856f-f3f7da8ea8c3")]
+		public global::System.String FromEvent
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return fromEventPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				FromEventPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ShowFormReferencesOutPorts.FromEvent domain property.
+		/// </summary>
+		internal sealed partial class FromEventPropertyHandler : DslModeling::DomainPropertyValueHandler<ShowFormReferencesOutPorts, global::System.String>
+		{
+			private FromEventPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ShowFormReferencesOutPorts.FromEvent domain property value handler.
+			/// </summary>
+			public static readonly FromEventPropertyHandler Instance = new FromEventPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ShowFormReferencesOutPorts.FromEvent domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return FromEventDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ShowFormReferencesOutPorts element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.fromEventPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ShowFormReferencesOutPorts element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.fromEventPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region nextState domain property code
+		
+		/// <summary>
+		/// nextState domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid nextStateDomainPropertyId = new global::System.Guid(0xee1a3986, 0xc4b5, 0x4919, 0xa8, 0xd5, 0x28, 0x4b, 0xc2, 0x31, 0xd7, 0xeb);
+		
+		/// <summary>
+		/// Storage for nextState
+		/// </summary>
+		private global::System.String nextStatePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of nextState domain property.
+		/// Description for Company.MobileDSL.ShowFormReferencesOutPorts.Next State
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormReferencesOutPorts/nextState.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormReferencesOutPorts/nextState.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("ee1a3986-c4b5-4919-a8d5-284bc231d7eb")]
+		public global::System.String nextState
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return nextStatePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				nextStatePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ShowFormReferencesOutPorts.nextState domain property.
+		/// </summary>
+		internal sealed partial class nextStatePropertyHandler : DslModeling::DomainPropertyValueHandler<ShowFormReferencesOutPorts, global::System.String>
+		{
+			private nextStatePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ShowFormReferencesOutPorts.nextState domain property value handler.
+			/// </summary>
+			public static readonly nextStatePropertyHandler Instance = new nextStatePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ShowFormReferencesOutPorts.nextState domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return nextStateDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ShowFormReferencesOutPorts element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.nextStatePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ShowFormReferencesOutPorts element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.nextStatePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ShowForm link accessor
+		/// <summary>
+		/// Get the list of ShowFormReferencesOutPorts links to a ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ShowFormReferencesOutPorts> GetLinksToOutPorts ( global::Company.MobileDSL.ShowForm showFormInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormReferencesOutPorts>(showFormInstance, global::Company.MobileDSL.ShowFormReferencesOutPorts.ShowFormDomainRoleId);
+		}
+		#endregion
+		#region OutPort link accessor
+		/// <summary>
+		/// Get the list of ShowFormReferencesOutPorts links to a OutPort.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ShowFormReferencesOutPorts> GetLinksToShowFormed ( global::Company.MobileDSL.OutPort outPortInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormReferencesOutPorts>(outPortInstance, global::Company.MobileDSL.ShowFormReferencesOutPorts.OutPortDomainRoleId);
+		}
+		#endregion
+		#region ShowFormReferencesOutPorts instance accessors
+		
+		/// <summary>
+		/// Get any ShowFormReferencesOutPorts links between a given ShowForm and a OutPort.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ShowFormReferencesOutPorts> GetLinks( global::Company.MobileDSL.ShowForm source, global::Company.MobileDSL.OutPort target )
+		{
+			global::System.Collections.Generic.List<global::Company.MobileDSL.ShowFormReferencesOutPorts> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ShowFormReferencesOutPorts>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ShowFormReferencesOutPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormReferencesOutPorts>(source, global::Company.MobileDSL.ShowFormReferencesOutPorts.ShowFormDomainRoleId);
+			foreach ( global::Company.MobileDSL.ShowFormReferencesOutPorts link in links )
+			{
+				if ( target.Equals(link.OutPort) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one ShowFormReferencesOutPorts link between a given ShowFormand a OutPort.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.ShowFormReferencesOutPorts GetLink( global::Company.MobileDSL.ShowForm source, global::Company.MobileDSL.OutPort target )
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ShowFormReferencesOutPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormReferencesOutPorts>(source, global::Company.MobileDSL.ShowFormReferencesOutPorts.ShowFormDomainRoleId);
+			foreach ( global::Company.MobileDSL.ShowFormReferencesOutPorts link in links )
+			{
+				if ( target.Equals(link.OutPort) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}

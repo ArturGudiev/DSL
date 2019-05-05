@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mobileDSLDiagram dslVersion="1.0.0.0" Id="c12f9d20-5c81-4b8d-992e-486413e5e347" absoluteBounds="0, 0, 12.5, 8.5" name="Sample">
+  <componentModelMoniker name="/A component model" />
+  <nestedChildShapes>
+    <controllerShape Id="5f473e63-4399-4d88-9dde-331abddf18c6" absoluteBounds="2.875, 1.375, 9.375, 5.625">
+      <controllerMoniker name="/A component model/Controller1" />
+    </controllerShape>
+    <stateShape Id="a6e805ce-7b74-4b7d-ba71-afd78d28e02a" absoluteBounds="3.25, 2.125, 3.25, 3.625">
+      <stateMoniker name="/A component model/Controller1/State1" />
+      <relativeChildShapes>
+        <inPortShape Id="7363dd82-37ed-48e9-bc25-97458a1e1186" absoluteBounds="6.4, 2.8125, 0.2, 0.2">
+          <inPortMoniker name="/A component model/Controller1/State1/InPort1" />
+        </inPortShape>
+        <outPortShape Id="51802b10-d4a1-4a68-8867-7cbaaeb35ec1" absoluteBounds="6.4, 3.75, 0.2, 0.2">
+          <outPortMoniker name="/A component model/Controller1/State1/OutPort1" />
+        </outPortShape>
+      </relativeChildShapes>
+    </stateShape>
+    <stateShape Id="d3940112-0099-4b87-b32a-30214ce1f4af" absoluteBounds="8.625, 2.125, 3.25, 3.5">
+      <stateMoniker name="/A component model/Controller1/State2" />
+      <relativeChildShapes>
+        <inPortShape Id="f46062a4-1d79-4b9f-953c-88ad46d45ab4" absoluteBounds="8.525, 3.75, 0.2, 0.2">
+          <inPortMoniker name="/A component model/Controller1/State2/InPort1" />
+        </inPortShape>
+        <outPortShape Id="245c02c2-47b5-4b73-9460-869b87d65b1e" absoluteBounds="8.525, 2.8125, 0.2, 0.2">
+          <outPortMoniker name="/A component model/Controller1/State2/OutPort1" />
+        </outPortShape>
+      </relativeChildShapes>
+    </stateShape>
+    <associationLink Id="275ca26c-b548-41de-9765-babf4e74fc2f" edgePoints="[(6.6 : 3.85); (8.525 : 3.85)]" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="926f6054-fa0a-46bf-8399-d3a661539ad4" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="51802b10-d4a1-4a68-8867-7cbaaeb35ec1" />
+        <inPortShapeMoniker Id="f46062a4-1d79-4b9f-953c-88ad46d45ab4" />
+      </nodes>
+    </associationLink>
+    <associationLink Id="b41bf7d6-5840-438d-97a3-6df4411acce5" edgePoints="[(8.525 : 2.9125); (6.6 : 2.9125)]" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="785258d8-176e-4bc8-91c8-49b4bd78ac12" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="245c02c2-47b5-4b73-9460-869b87d65b1e" />
+        <inPortShapeMoniker Id="7363dd82-37ed-48e9-bc25-97458a1e1186" />
+      </nodes>
+    </associationLink>
+    <compartmentShape1 Id="4ed3ea85-9ccb-4e4e-bf27-49a2b0ea2ffb" absoluteBounds="3.625, 3.25, 1.5, 2.0033821614583331">
+      <showFormMoniker name="/A component model/Controller1/State1/Form1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ac76e91-1377-46aa-819f-8b1ebcb4b0ed" absoluteBounds="3.6399999999999997, 4.26, 1.4700000000000002, 0.44169108072916663" name="UIEventsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="60c4013e-03f5-4c2b-851a-9f22aac97667" absoluteBounds="3.64, 4.7116910807291665, 1.4700000000000002, 0.44169108072916674" name="UIPrimitives" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </compartmentShape1>
+    <compartmentShape1 Id="ff3d6ef6-d775-45e5-bd65-8ecf4654d2ed" absoluteBounds="9.75, 3.125, 1.5, 2.0033821614583331">
+      <showFormMoniker name="/A component model/Controller1/State2/Form2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d824360d-ca65-43cf-a3fe-802c42591380" absoluteBounds="9.765, 4.135, 1.4700000000000002, 0.44169108072916663" name="UIEventsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f7f0faed-b07b-40e9-89fb-17bf1a94da00" absoluteBounds="9.765, 4.5866910807291665, 1.4700000000000002, 0.44169108072916674" name="UIPrimitives" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </compartmentShape1>
+    <showFormToPortConnection Id="fb98394b-23c1-43db-83f4-51c79c4ffa8f" edgePoints="[(5.125 : 4.25169108072917); (5.5 : 4.25169108072917); (5.5 : 3.85); (6.4 : 3.85)]" fixedFrom="NotFixed" fixedTo="Caller">
+      <showFormReferencesOutPortsMoniker Id="999e5476-adc2-4588-9872-ed8c5fcda00b" />
+      <relativeChildShapes />
+      <nodes>
+        <compartmentShape1Moniker Id="4ed3ea85-9ccb-4e4e-bf27-49a2b0ea2ffb" />
+        <outPortShapeMoniker Id="51802b10-d4a1-4a68-8867-7cbaaeb35ec1" />
+      </nodes>
+    </showFormToPortConnection>
+    <inportConnections Id="8e3bb9c5-684d-4592-8fb2-ea7e06c458da" edgePoints="[(6.4 : 2.9125); (4.375 : 2.9125); (4.375 : 3.25)]" fixedFrom="Caller" fixedTo="NotFixed">
+      <inPortReferencesShowFormsMoniker Id="e9889056-f314-40eb-8d8a-74f8d5db86d6" />
+      <nodes>
+        <inPortShapeMoniker Id="7363dd82-37ed-48e9-bc25-97458a1e1186" />
+        <compartmentShape1Moniker Id="4ed3ea85-9ccb-4e4e-bf27-49a2b0ea2ffb" />
+      </nodes>
+    </inportConnections>
+    <inportConnections Id="eb25fe9d-e884-414c-87ef-2382bea08fe5" edgePoints="[(8.725 : 3.85); (8.9 : 3.85); (8.9 : 4.12669108072917); (9.75 : 4.12669108072917)]" fixedFrom="Caller" fixedTo="NotFixed">
+      <inPortReferencesShowFormsMoniker Id="cc4196bf-0bf2-4e80-b58a-d09c8bf2a71e" />
+      <nodes>
+        <inPortShapeMoniker Id="f46062a4-1d79-4b9f-953c-88ad46d45ab4" />
+        <compartmentShape1Moniker Id="ff3d6ef6-d775-45e5-bd65-8ecf4654d2ed" />
+      </nodes>
+    </inportConnections>
+    <showFormToPortConnection Id="e96f936d-6e36-4880-b428-782bb79e700e" edgePoints="[(10.5 : 3.125); (10.5 : 2.9125); (8.725 : 2.9125)]" fixedFrom="NotFixed" fixedTo="Caller">
+      <showFormReferencesOutPortsMoniker Id="e069b4b2-e2a0-4a27-8162-ef574de6def3" />
+      <relativeChildShapes />
+      <nodes>
+        <compartmentShape1Moniker Id="ff3d6ef6-d775-45e5-bd65-8ecf4654d2ed" />
+        <outPortShapeMoniker Id="245c02c2-47b5-4b73-9460-869b87d65b1e" />
+      </nodes>
+    </showFormToPortConnection>
+  </nestedChildShapes>
+</mobileDSLDiagram>

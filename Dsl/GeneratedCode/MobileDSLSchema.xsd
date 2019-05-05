@@ -202,6 +202,23 @@
   <xsd:complexType name="InPort">
     <xsd:complexContent>
       <xsd:extension base="Port">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: InPortReferencesShowForms -->
+          <xsd:element name="showForms" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of InPortReferencesShowForms</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="inPortReferencesShowForms" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of InPortReferencesShowForms needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
@@ -491,6 +508,21 @@
                 <xsd:element ref="showFormHasPrimitives" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
                     <xsd:documentation>[Instance of ShowFormHasPrimitives needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: ShowFormReferencesOutPorts -->
+          <xsd:element name="outPorts" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ShowFormReferencesOutPorts</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="showFormReferencesOutPorts" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ShowFormReferencesOutPorts needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -1007,6 +1039,90 @@
   <xsd:complexType name="ShowFormHasPrimitivesMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for ShowFormHasPrimitives instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- InPortReferencesShowForms -->
+  <xsd:element name="inPortReferencesShowForms" type="InPortReferencesShowForms" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="InPortReferencesShowForms">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ShowForm -->
+          <xsd:element ref="showFormMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- InPortReferencesShowForms Moniker -->
+  <xsd:element name="inPortReferencesShowFormsMoniker" type="InPortReferencesShowFormsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="InPortReferencesShowFormsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for InPortReferencesShowForms instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ShowFormReferencesOutPorts -->
+  <xsd:element name="showFormReferencesOutPorts" type="ShowFormReferencesOutPorts" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ShowFormReferencesOutPorts">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end OutPort -->
+          <xsd:element ref="outPortMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: FromEvent -->
+        <xsd:attribute name="fromEvent" type="xsd:string" />
+        <!-- Property: nextState -->
+        <xsd:attribute name="nextState" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ShowFormReferencesOutPorts Moniker -->
+  <xsd:element name="showFormReferencesOutPortsMoniker" type="ShowFormReferencesOutPortsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ShowFormReferencesOutPortsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ShowFormReferencesOutPorts instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

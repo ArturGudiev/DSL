@@ -68,13 +68,13 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MobileDSLReportVB.txt</LastGenOutput>
     </None>
+    <None Include="QC\controller\e1.mdsl" />
+    <None Include="QC\controller\e1.mdsl.diagram">
+      <DependentUpon>e1.mdsl</DependentUpon>
+    </None>
     <None Include="QC\controller\3controllers.mdsl" />
     <None Include="QC\controller\3controllers.mdsl.diagram">
       <DependentUpon>3controllers.mdsl</DependentUpon>
-    </None>
-    <None Include="QC\controller\s2.mdsl" />
-    <None Include="QC\controller\s2.mdsl.diagram">
-      <DependentUpon>s2.mdsl</DependentUpon>
     </None>
     <None Include="Sample.mdsl" />
     <None Include="Sample.mdsl.diagram">
