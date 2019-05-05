@@ -254,22 +254,6 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="917a0ac8-6b72-4bd5-b12a-8ae82c35fc49" Description="" Name="Generalization" DisplayName="Generalization" Namespace="Company.MobileDSL">
-      <Source>
-        <DomainRole Id="c4ebe6fb-414d-48b4-9a58-8cb1e7173b53" Description="" Name="Superclass" DisplayName="Superclass" PropertyName="Subclasses" PropertyDisplayName="Subclasses">
-          <RolePlayer>
-            <DomainClassMoniker Name="Controller" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="9a09e94e-208b-4601-83ed-553a093217e9" Description="" Name="Subclass" DisplayName="Subclass" PropertyName="Superclass" Multiplicity="ZeroOne" PropertyDisplayName="Superclass">
-          <RolePlayer>
-            <DomainClassMoniker Name="Controller" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
     <DomainRelationship Id="31e7e1b6-72d5-4b13-817f-bf68bf8e2c33" Description="" Name="CommentReferencesSubjects" DisplayName="Comment References Subjects" Namespace="Company.MobileDSL">
       <Source>
         <DomainRole Id="72288923-b38e-46ce-92ff-76acf9e66266" Description="" Name="Comment" DisplayName="Comment" PropertyName="Subjects" PropertyDisplayName="Subjects">
@@ -482,7 +466,6 @@
         <TextDecorator Name="SourceRoleName" DisplayName="Source Role Name" DefaultText="SourceRoleName" />
       </ConnectorHasDecorators>
     </Connector>
-    <Connector Id="2124349e-a79f-4dc2-ad74-5834d85abfe7" Description="" Name="GeneralizationLink" DisplayName="Generalization Link" Namespace="Company.MobileDSL" FixedTooltipText="Generalization Link" Color="113, 111, 110" SourceEndStyle="HollowArrow" Thickness="0.01" />
     <Connector Id="dff818a2-afca-44c0-8a8f-f1ca7aabf4b0" Description="" Name="CommentLink" DisplayName="Comment Link" Namespace="Company.MobileDSL" FixedTooltipText="Comment Link" Color="113, 111, 110" DashStyle="Dot" Thickness="0.01" RoutingStyle="Straight" />
     <Connector Id="a1642c46-9d27-4935-baeb-5ab227c8628f" Description="Description for Company.MobileDSL.StateConnector" Name="StateConnector" DisplayName="State Connector" Namespace="Company.MobileDSL" FixedTooltipText="State Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
@@ -530,9 +513,6 @@
           </XmlPropertyData>
           <XmlRelationshipData RoleElementName="ports">
             <DomainRelationshipMoniker Name="ControllerHasPorts" />
-          </XmlRelationshipData>
-          <XmlRelationshipData RoleElementName="subclasses">
-            <DomainRelationshipMoniker Name="Generalization" />
           </XmlRelationshipData>
           <XmlPropertyData XmlName="isFirst">
             <DomainPropertyMoniker Name="Controller/isFirst" />
@@ -582,9 +562,6 @@
       <XmlClassData TypeName="ComponentModelHasControllers" MonikerAttributeName="" SerializeId="true" MonikerElementName="componentModelHasControllersMoniker" ElementName="componentModelHasControllers" MonikerTypeName="ComponentModelHasControllersMoniker">
         <DomainRelationshipMoniker Name="ComponentModelHasControllers" />
       </XmlClassData>
-      <XmlClassData TypeName="Generalization" MonikerAttributeName="" SerializeId="true" MonikerElementName="generalizationMoniker" ElementName="generalization" MonikerTypeName="GeneralizationMoniker">
-        <DomainRelationshipMoniker Name="Generalization" />
-      </XmlClassData>
       <XmlClassData TypeName="CommentReferencesSubjects" MonikerAttributeName="" SerializeId="true" MonikerElementName="commentReferencesSubjectsMoniker" ElementName="commentReferencesSubjects" MonikerTypeName="CommentReferencesSubjectsMoniker">
         <DomainRelationshipMoniker Name="CommentReferencesSubjects" />
       </XmlClassData>
@@ -602,9 +579,6 @@
       </XmlClassData>
       <XmlClassData TypeName="AssociationLink" MonikerAttributeName="" SerializeId="true" MonikerElementName="associationLinkMoniker" ElementName="associationLink" MonikerTypeName="AssociationLinkMoniker">
         <ConnectorMoniker Name="AssociationLink" />
-      </XmlClassData>
-      <XmlClassData TypeName="GeneralizationLink" MonikerAttributeName="" SerializeId="true" MonikerElementName="generalizationLinkMoniker" ElementName="generalizationLink" MonikerTypeName="GeneralizationLinkMoniker">
-        <ConnectorMoniker Name="GeneralizationLink" />
       </XmlClassData>
       <XmlClassData TypeName="CommentLink" MonikerAttributeName="" SerializeId="true" MonikerElementName="commentLinkMoniker" ElementName="commentLink" MonikerTypeName="CommentLinkMoniker">
         <ConnectorMoniker Name="CommentLink" />
@@ -715,25 +689,6 @@
           <RolePlayerConnectDirective>
             <AcceptingClass>
               <DomainClassMoniker Name="InPort" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </TargetDirectives>
-      </LinkConnectDirective>
-    </ConnectionBuilder>
-    <ConnectionBuilder Name="GeneralizationBuilder">
-      <LinkConnectDirective>
-        <DomainRelationshipMoniker Name="Generalization" />
-        <SourceDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="Controller" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </SourceDirectives>
-        <TargetDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="Controller" />
             </AcceptingClass>
           </RolePlayerConnectDirective>
         </TargetDirectives>
@@ -890,10 +845,6 @@
         <DomainRelationshipMoniker Name="CommentReferencesSubjects" />
       </ConnectorMap>
       <ConnectorMap>
-        <ConnectorMoniker Name="GeneralizationLink" />
-        <DomainRelationshipMoniker Name="Generalization" />
-      </ConnectorMap>
-      <ConnectorMap>
         <ConnectorMoniker Name="StateConnector" />
         <DomainRelationshipMoniker Name="State_old2ReferencesPreviousStates" />
         <DecoratorMap>
@@ -926,9 +877,6 @@
       </ElementTool>
       <ConnectionTool Name="Connection" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="Connection" Tooltip="Connect an Output Port to an Input Port." HelpKeyword="ConnectAssociationF1Keyword">
         <ConnectionBuilderMoniker Name="MobileDSL/ConnectionBuilder" />
-      </ConnectionTool>
-      <ConnectionTool Name="Generalization" ToolboxIcon="resources\GeneralizationTool.bmp" Caption="Generalization" Tooltip="Connect a Component to a base component." HelpKeyword="ConnectGeneralizationF1Keyword" ReversesDirection="true">
-        <ConnectionBuilderMoniker Name="MobileDSL/GeneralizationBuilder" />
       </ConnectionTool>
       <ElementTool Name="Comment" ToolboxIcon="resources\CommentTool.bmp" Caption="Comment" Tooltip="Create a Comment" HelpKeyword="ConnectCommentF1Keyword">
         <DomainClassMoniker Name="Comment" />
