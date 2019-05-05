@@ -31,12 +31,12 @@
                   <showForm Id="1d536968-3829-43cb-af39-88efab32bd9d" name="Form1">
                     <events>
                       <showFormHasEvents Id="3a18adf3-5dfd-4cf2-ba53-1e019f3c35ac">
-                        <event Id="35c0176b-c10a-4fb6-a1f2-30dd12401da3" name="Event1" />
+                        <event Id="35c0176b-c10a-4fb6-a1f2-30dd12401da3" name="Button1Clicked" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
-                      <showFormHasPrimitives Id="85e5e15c-d537-4ff9-aa82-9a7248387877">
-                        <primitive Id="a7ca79c0-d663-4949-af1b-c7f1a27b5291" name="Primitive1" />
+                      <showFormHasPrimitives Id="c6a2eeb3-1972-4def-a2ef-ce2234d1ba07">
+                        <button Id="e297947d-2a18-4590-9147-8673169bb686" name="Button1" />
                       </showFormHasPrimitives>
                     </primitives>
                     <outPorts>
@@ -76,12 +76,12 @@
                   <showForm Id="40af81d0-bb68-4e98-95f1-8776aeae255e" name="Form2">
                     <events>
                       <showFormHasEvents Id="63090157-f13d-49db-af40-59001d04e537">
-                        <event Id="8da9ab99-80d9-4eb9-81e8-1d82d92252a7" name="Event1" />
+                        <event Id="8da9ab99-80d9-4eb9-81e8-1d82d92252a7" name="Button2Clicked" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
-                      <showFormHasPrimitives Id="3357028d-4dec-409f-8f59-c41c8d66b8e9">
-                        <primitive Id="8a10dc61-acc7-44a7-b4e0-dba67932295e" name="Primitive1" />
+                      <showFormHasPrimitives Id="6f57586d-1403-4eb3-b313-605969cb15e5">
+                        <button Id="518f3b33-ff6f-4524-8b65-570c5b04ae34" name="Button2" />
                       </showFormHasPrimitives>
                     </primitives>
                     <outPorts>

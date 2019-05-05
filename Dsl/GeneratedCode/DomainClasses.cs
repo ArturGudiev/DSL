@@ -1928,3 +1928,44 @@ namespace Company.MobileDSL
 		#endregion
 	}
 }
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass Button
+	/// Description for Company.MobileDSL.Button
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.Button.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.Button.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("2cd5ac2a-a515-4672-a062-bac6b88fce79")]
+	public partial class Button : Primitive
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Button domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2cd5ac2a, 0xa515, 0x4672, 0xa0, 0x62, 0xba, 0xc6, 0xb8, 0x8f, 0xce, 0x79);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Button(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Button(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}

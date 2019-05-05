@@ -397,6 +397,22 @@ namespace Company.MobileDSL
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
+				case "Company.MobileDSL.ButtonToolboxItem":
+					// Add Button shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Company.MobileDSL.ButtonToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						4, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("ButtonToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ButtonToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Company.MobileDSL.UI FormsToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("UI FormsToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Button", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ButtonToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Company.MobileDSL.Button.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
 				default:
 					break;
 			} // end switch

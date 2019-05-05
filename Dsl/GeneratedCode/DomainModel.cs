@@ -80,6 +80,7 @@ namespace Company.MobileDSL
 				typeof(ShowForm),
 				typeof(Event),
 				typeof(Primitive),
+				typeof(Button),
 				typeof(Connection),
 				typeof(ComponentModelHasComments),
 				typeof(ComponentModelHasControllers),
@@ -192,7 +193,7 @@ namespace Company.MobileDSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(26);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(27);
 				createElementMap.Add(typeof(ComponentModel), 0);
 				createElementMap.Add(typeof(Controller), 1);
 				createElementMap.Add(typeof(InPort), 2);
@@ -203,19 +204,20 @@ namespace Company.MobileDSL
 				createElementMap.Add(typeof(ShowForm), 7);
 				createElementMap.Add(typeof(Event), 8);
 				createElementMap.Add(typeof(Primitive), 9);
-				createElementMap.Add(typeof(MobileDSLDiagram), 10);
-				createElementMap.Add(typeof(AssociationLink), 11);
-				createElementMap.Add(typeof(CommentLink), 12);
-				createElementMap.Add(typeof(StateConnector), 13);
-				createElementMap.Add(typeof(InportConnections), 14);
-				createElementMap.Add(typeof(ShowFormToPortConnection), 15);
-				createElementMap.Add(typeof(ControllerShape), 16);
-				createElementMap.Add(typeof(CommentBoxShape), 17);
-				createElementMap.Add(typeof(StateOldShape), 18);
-				createElementMap.Add(typeof(StateShape), 19);
-				createElementMap.Add(typeof(CompartmentShape1), 20);
-				createElementMap.Add(typeof(InPortShape), 21);
-				createElementMap.Add(typeof(OutPortShape), 22);
+				createElementMap.Add(typeof(Button), 10);
+				createElementMap.Add(typeof(MobileDSLDiagram), 11);
+				createElementMap.Add(typeof(AssociationLink), 12);
+				createElementMap.Add(typeof(CommentLink), 13);
+				createElementMap.Add(typeof(StateConnector), 14);
+				createElementMap.Add(typeof(InportConnections), 15);
+				createElementMap.Add(typeof(ShowFormToPortConnection), 16);
+				createElementMap.Add(typeof(ControllerShape), 17);
+				createElementMap.Add(typeof(CommentBoxShape), 18);
+				createElementMap.Add(typeof(StateOldShape), 19);
+				createElementMap.Add(typeof(StateShape), 20);
+				createElementMap.Add(typeof(CompartmentShape1), 21);
+				createElementMap.Add(typeof(InPortShape), 22);
+				createElementMap.Add(typeof(OutPortShape), 23);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -239,19 +241,20 @@ namespace Company.MobileDSL
 				case 7: return new ShowForm(partition, propertyAssignments);
 				case 8: return new Event(partition, propertyAssignments);
 				case 9: return new Primitive(partition, propertyAssignments);
-				case 10: return new MobileDSLDiagram(partition, propertyAssignments);
-				case 11: return new AssociationLink(partition, propertyAssignments);
-				case 12: return new CommentLink(partition, propertyAssignments);
-				case 13: return new StateConnector(partition, propertyAssignments);
-				case 14: return new InportConnections(partition, propertyAssignments);
-				case 15: return new ShowFormToPortConnection(partition, propertyAssignments);
-				case 16: return new ControllerShape(partition, propertyAssignments);
-				case 17: return new CommentBoxShape(partition, propertyAssignments);
-				case 18: return new StateOldShape(partition, propertyAssignments);
-				case 19: return new StateShape(partition, propertyAssignments);
-				case 20: return new CompartmentShape1(partition, propertyAssignments);
-				case 21: return new InPortShape(partition, propertyAssignments);
-				case 22: return new OutPortShape(partition, propertyAssignments);
+				case 10: return new Button(partition, propertyAssignments);
+				case 11: return new MobileDSLDiagram(partition, propertyAssignments);
+				case 12: return new AssociationLink(partition, propertyAssignments);
+				case 13: return new CommentLink(partition, propertyAssignments);
+				case 14: return new StateConnector(partition, propertyAssignments);
+				case 15: return new InportConnections(partition, propertyAssignments);
+				case 16: return new ShowFormToPortConnection(partition, propertyAssignments);
+				case 17: return new ControllerShape(partition, propertyAssignments);
+				case 18: return new CommentBoxShape(partition, propertyAssignments);
+				case 19: return new StateOldShape(partition, propertyAssignments);
+				case 20: return new StateShape(partition, propertyAssignments);
+				case 21: return new CompartmentShape1(partition, propertyAssignments);
+				case 22: return new InPortShape(partition, propertyAssignments);
+				case 23: return new OutPortShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}

@@ -141,6 +141,14 @@ namespace Company.MobileDSL
 					"@PrimitiveToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
 					Index = 13)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
+					"@ButtonToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.ButtonToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Button", 
+					"@ButtonToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 14)]
 	[VSShell::ProvideEditorFactory(typeof(MobileDSLEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(MobileDSLEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(MobileDSLEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

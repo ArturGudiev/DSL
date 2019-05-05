@@ -47,14 +47,14 @@
       <showFormMoniker name="/A component model/Controller1/State1/Form1" />
       <nestedChildShapes>
         <elementListCompartment Id="7ac76e91-1377-46aa-819f-8b1ebcb4b0ed" absoluteBounds="3.6399999999999997, 4.26, 1.4700000000000002, 0.44169108072916663" name="UIEventsCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="60c4013e-03f5-4c2b-851a-9f22aac97667" absoluteBounds="3.64, 4.7116910807291665, 1.4700000000000002, 0.44169108072916674" name="UIPrimitives" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="60c4013e-03f5-4c2b-851a-9f22aac97667" absoluteBounds="3.64, 4.7116910807291665, 1.4700000000000002, 0.44169108072916663" name="UIPrimitives" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </compartmentShape1>
     <compartmentShape1 Id="ff3d6ef6-d775-45e5-bd65-8ecf4654d2ed" absoluteBounds="9.75, 3.125, 1.5, 2.0033821614583331">
       <showFormMoniker name="/A component model/Controller1/State2/Form2" />
       <nestedChildShapes>
         <elementListCompartment Id="d824360d-ca65-43cf-a3fe-802c42591380" absoluteBounds="9.765, 4.135, 1.4700000000000002, 0.44169108072916663" name="UIEventsCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="f7f0faed-b07b-40e9-89fb-17bf1a94da00" absoluteBounds="9.765, 4.5866910807291665, 1.4700000000000002, 0.44169108072916674" name="UIPrimitives" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f7f0faed-b07b-40e9-89fb-17bf1a94da00" absoluteBounds="9.765, 4.5866910807291665, 1.4700000000000002, 0.44169108072916663" name="UIPrimitives" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </compartmentShape1>
     <showFormToPortConnection Id="fb98394b-23c1-43db-83f4-51c79c4ffa8f" edgePoints="[(5.125 : 4.25169108072917); (5.5 : 4.25169108072917); (5.5 : 3.85); (6.4 : 3.85)]" fixedFrom="NotFixed" fixedTo="Caller">

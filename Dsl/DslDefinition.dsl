@@ -167,6 +167,11 @@
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
     </DomainClass>
+    <DomainClass Id="2cd5ac2a-a515-4672-a062-bac6b88fce79" Description="Description for Company.MobileDSL.Button" Name="Button" DisplayName="Button" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Primitive" />
+      </BaseClass>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="33242001-847f-4706-be82-b1731835df99" Description="" Name="Connection" DisplayName="Connection" Namespace="Company.MobileDSL">
@@ -702,6 +707,9 @@
       <XmlClassData TypeName="ShowFormToPortConnection" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormToPortConnectionMoniker" ElementName="showFormToPortConnection" MonikerTypeName="ShowFormToPortConnectionMoniker">
         <ConnectorMoniker Name="ShowFormToPortConnection" />
       </XmlClassData>
+      <XmlClassData TypeName="Button" MonikerAttributeName="" SerializeId="true" MonikerElementName="buttonMoniker" ElementName="button" MonikerTypeName="ButtonMoniker">
+        <DomainClassMoniker Name="Button" />
+      </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="ComponentExplorer" />
@@ -1025,6 +1033,9 @@
       </ElementTool>
       <ElementTool Name="Primitive" ToolboxIcon="Resources\flash2.bmp" Caption="Primitive" Tooltip="Primitive" HelpKeyword="Primitive">
         <DomainClassMoniker Name="Primitive" />
+      </ElementTool>
+      <ElementTool Name="Button" ToolboxIcon="Resources\example.bmp" Caption="Button" Tooltip="Button" HelpKeyword="Button">
+        <DomainClassMoniker Name="Button" />
       </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

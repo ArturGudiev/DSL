@@ -605,6 +605,33 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- Button -->
+  <xsd:element name="button" type="Button" substitutionGroup="primitive" />
+  <xsd:complexType name="Button">
+    <xsd:complexContent>
+      <xsd:extension base="Primitive">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Button Moniker -->
+  <xsd:element name="buttonMoniker" type="ButtonMoniker" substitutionGroup="primitiveMoniker" />
+  <xsd:complexType name="ButtonMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Button instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="PrimitiveMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- Connection -->
   <xsd:element name="connection" type="Connection" substitutionGroup="core:modelElement" />
   <xsd:complexType name="Connection">

@@ -269,6 +269,14 @@
     <value>Primitive</value>
     <comment>DisplayName for DomainClass &apos;Primitive&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.Button.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Button</value>
+    <comment>Description for DomainClass &apos;Button&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Button.DisplayName" xml:space="preserve">
+    <value>Button</value>
+    <comment>DisplayName for DomainClass &apos;Button&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.Connection.Description" xml:space="preserve">
     <value></value>
     <comment>Description for DomainClass &apos;Connection&apos;</comment>
@@ -997,6 +1005,14 @@
     <value>Primitive</value>
     <comment>Toolbox tooltip text</comment>
   </data>
+  <data name="ButtonToolboxItem" xml:space="preserve">
+    <value>Button</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ButtonToolboxTooltip" xml:space="preserve">
+    <value>Button</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
     <value>ToolboxItem {0} was not found</value>
     <comment>Invalid toolId</comment>
@@ -1184,6 +1200,10 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="PrimitiveToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\flash2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ButtonToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>
