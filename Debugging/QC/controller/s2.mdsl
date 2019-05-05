@@ -1,12 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3e29acad-5cb1-4122-a526-0f07f3331d32" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
   <controllers>
-    <componentModelHasControllers Id="1dbc37cb-2ac2-4aa3-a59f-3fcb5708ea9e">
-      <controller Id="058a7e69-91cf-4792-b076-4c9adf9ce354" name="Controller1" isFirst="false">
+    <componentModelHasControllers Id="6bc14cfe-7f25-4a5e-8a86-aa761cb0049b">
+      <controller Id="38c4d5fd-323f-4c85-a544-bd298289923e" name="Controller1" isFirst="false">
         <ports>
-          <inPort Id="183070c2-6ac5-4cf8-83e7-f77768e219ed" name="InPort1" />
-          <outPort Id="d5b22422-734d-4cb5-abf0-3cf5ad94f767" name="OutPort1" />
+          <classWithPortsHasPorts Id="bcf6c4a6-c0cd-4b09-b8f4-eb417a745ba6">
+            <inPort Id="a9f71321-845c-41f4-8b21-6af7a7f919de" name="InPort1" />
+          </classWithPortsHasPorts>
+          <classWithPortsHasPorts Id="987f3a34-2f40-41a6-b36e-342b1ddd3759">
+            <outPort Id="da53fdf3-328a-46d6-a955-f4161029094d" name="OutPort1" />
+          </classWithPortsHasPorts>
         </ports>
+        <stated>
+          <controllerHasStated Id="b9917979-6285-4bd8-9a96-832452a4c72a">
+            <state Id="68d0a44d-7cd3-49cc-ac14-a9f2207ff533" name="State1">
+              <ports>
+                <classWithPortsHasPorts Id="4d602b76-a2f5-4a53-bfdd-94e3f142da41">
+                  <inPort Id="431f045a-7320-4430-a5e6-c8e702472b25" name="InPort1" />
+                </classWithPortsHasPorts>
+                <classWithPortsHasPorts Id="ce653275-8f4a-45b7-8b40-bd625c29ffad">
+                  <outPort Id="1d835196-b6ea-4a39-8cc0-25801bb4881e" name="OutPort1">
+                    <targets>
+                      <connection Id="1512e183-4f8c-4e3d-b18d-aedd130fb41a">
+                        <inPortMoniker name="//Controller1/State2/InPort1" />
+                      </connection>
+                    </targets>
+                  </outPort>
+                </classWithPortsHasPorts>
+              </ports>
+            </state>
+          </controllerHasStated>
+          <controllerHasStated Id="23cc5c18-b5d5-4400-b7f4-a76c4611e261">
+            <state Id="b5f0a9b1-26fc-4d6d-ab8e-c56928a14881" name="State2">
+              <ports>
+                <classWithPortsHasPorts Id="3f6ee22a-a7ac-4a53-bdb4-9361cf5d73fd">
+                  <inPort Id="d0c529a4-a651-44b1-b97c-e2e8e5eaaa94" name="InPort1" />
+                </classWithPortsHasPorts>
+                <classWithPortsHasPorts Id="04230c5e-4be6-47d3-9f01-30dc69aab73d">
+                  <outPort Id="4b3bb523-0725-4e5d-b086-a2b2f3468f2c" name="OutPort1">
+                    <targets>
+                      <connection Id="4bf010d8-d522-42d5-a5ad-febbace50d31">
+                        <inPortMoniker name="//Controller1/State1/InPort1" />
+                      </connection>
+                    </targets>
+                  </outPort>
+                </classWithPortsHasPorts>
+              </ports>
+            </state>
+          </controllerHasStated>
+        </stated>
       </controller>
     </componentModelHasControllers>
   </controllers>

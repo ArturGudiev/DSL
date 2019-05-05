@@ -403,242 +403,6 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainRelationship ControllerHasPorts
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasPorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasPorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("cff9aad2-3668-4511-b25e-60455a5e26ad")]
-	public partial class ControllerHasPorts : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// ControllerHasPorts domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xcff9aad2, 0x3668, 0x4511, 0xb2, 0x5e, 0x60, 0x45, 0x5a, 0x5e, 0x26, 0xad);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a ControllerHasPorts link in the same Partition as the given Controller
-		/// </summary>
-		/// <param name="source">Controller to use as the source of the relationship.</param>
-		/// <param name="target">Port to use as the target of the relationship.</param>
-		public ControllerHasPorts(Controller source, Port target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ControllerHasPorts.ControllerDomainRoleId, source), new DslModeling::RoleAssignment(ControllerHasPorts.PortDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ControllerHasPorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ControllerHasPorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ControllerHasPorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ControllerHasPorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region Controller domain role code
-		
-		/// <summary>
-		/// Controller domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ControllerDomainRoleId = new global::System.Guid(0x0aaf0edc, 0x5de1, 0x44b5, 0x98, 0x84, 0x11, 0xdd, 0x71, 0xa5, 0x10, 0xf9);
-		
-		/// <summary>
-		/// DomainRole Controller
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasPorts/Controller.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasPorts/Controller.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Ports", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasPorts/Controller.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("0aaf0edc-5de1-44b5-9884-11dd71a510f9")]
-		public virtual Controller Controller
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (Controller)DslModeling::DomainRoleInfo.GetRolePlayer(this, ControllerDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ControllerDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access Controller of a Port
-		/// <summary>
-		/// Gets Controller.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static Controller GetController(Port element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PortDomainRoleId) as Controller;
-		}
-		
-		/// <summary>
-		/// Sets Controller.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetController(Port element, Controller newController)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, PortDomainRoleId, newController);
-		}
-		#endregion
-		#region Port domain role code
-		
-		/// <summary>
-		/// Port domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid PortDomainRoleId = new global::System.Guid(0x8acbcb67, 0x373d, 0x446f, 0xa5, 0x18, 0x03, 0xd7, 0xa0, 0x84, 0x78, 0x58);
-		
-		/// <summary>
-		/// DomainRole Port
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasPorts/Port.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasPorts/Port.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Controller", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasPorts/Port.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("8acbcb67-373d-446f-a518-03d7a0847858")]
-		public virtual Port Port
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (Port)DslModeling::DomainRoleInfo.GetRolePlayer(this, PortDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, PortDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access Ports of a Controller
-		/// <summary>
-		/// Gets a list of Ports.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<Port> GetPorts(Controller element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(element, ControllerDomainRoleId);
-		}
-		#endregion
-		#region Controller link accessor
-		/// <summary>
-		/// Get the list of ControllerHasPorts links to a Controller.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasPorts> GetLinksToPorts ( global::Company.MobileDSL.Controller controllerInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasPorts>(controllerInstance, global::Company.MobileDSL.ControllerHasPorts.ControllerDomainRoleId);
-		}
-		#endregion
-		#region Port link accessor
-		/// <summary>
-		/// Get the ControllerHasPorts link to a Port.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.ControllerHasPorts GetLinkToController (global::Company.MobileDSL.Port portInstance)
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasPorts>(portInstance, global::Company.MobileDSL.ControllerHasPorts.PortDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Port not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region ControllerHasPorts instance accessors
-		
-		/// <summary>
-		/// Get any ControllerHasPorts links between a given Controller and a Port.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasPorts> GetLinks( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.Port target )
-		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasPorts> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasPorts>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasPorts>(source, global::Company.MobileDSL.ControllerHasPorts.ControllerDomainRoleId);
-			foreach ( global::Company.MobileDSL.ControllerHasPorts link in links )
-			{
-				if ( target.Equals(link.Port) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one ControllerHasPorts link between a given Controllerand a Port.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.ControllerHasPorts GetLink( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.Port target )
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasPorts>(source, global::Company.MobileDSL.ControllerHasPorts.ControllerDomainRoleId);
-			foreach ( global::Company.MobileDSL.ControllerHasPorts link in links )
-			{
-				if ( target.Equals(link.Port) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
 	/// DomainRelationship ComponentModelHasComments
 	/// </summary>
 	[DslDesign::DisplayNameResource("Company.MobileDSL.ComponentModelHasComments.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
@@ -1876,245 +1640,6 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainRelationship State_old2HasPorts
-	/// Description for Company.MobileDSL.State_old2HasPorts
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.State_old2HasPorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.State_old2HasPorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("06d1a935-c83d-42eb-81b1-e8570d0bdd18")]
-	public partial class State_old2HasPorts : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// State_old2HasPorts domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x06d1a935, 0xc83d, 0x42eb, 0x81, 0xb1, 0xe8, 0x57, 0x0d, 0x0b, 0xdd, 0x18);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a State_old2HasPorts link in the same Partition as the given State_old2
-		/// </summary>
-		/// <param name="source">State_old2 to use as the source of the relationship.</param>
-		/// <param name="target">Port to use as the target of the relationship.</param>
-		public State_old2HasPorts(State_old2 source, Port target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(State_old2HasPorts.State_old2DomainRoleId, source), new DslModeling::RoleAssignment(State_old2HasPorts.PortDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public State_old2HasPorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public State_old2HasPorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public State_old2HasPorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public State_old2HasPorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region State_old2 domain role code
-		
-		/// <summary>
-		/// State_old2 domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid State_old2DomainRoleId = new global::System.Guid(0x309d8570, 0xfd15, 0x4783, 0xb6, 0xb9, 0x5a, 0x86, 0xff, 0x31, 0x28, 0xf9);
-		
-		/// <summary>
-		/// DomainRole State_old2
-		/// Description for Company.MobileDSL.State_old2HasPorts.State_old2
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.State_old2HasPorts/State_old2.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.State_old2HasPorts/State_old2.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Ports", PropertyDisplayNameKey="Company.MobileDSL.State_old2HasPorts/State_old2.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("309d8570-fd15-4783-b6b9-5a86ff3128f9")]
-		public virtual State_old2 State_old2
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (State_old2)DslModeling::DomainRoleInfo.GetRolePlayer(this, State_old2DomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, State_old2DomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access State_old2 of a Port
-		/// <summary>
-		/// Gets State_old2.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static State_old2 GetState_old2(Port element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PortDomainRoleId) as State_old2;
-		}
-		
-		/// <summary>
-		/// Sets State_old2.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetState_old2(Port element, State_old2 newState_old2)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, PortDomainRoleId, newState_old2);
-		}
-		#endregion
-		#region Port domain role code
-		
-		/// <summary>
-		/// Port domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid PortDomainRoleId = new global::System.Guid(0x80654f03, 0xea88, 0x44f7, 0x95, 0x4a, 0x41, 0xf3, 0xaa, 0x46, 0x63, 0x4f);
-		
-		/// <summary>
-		/// DomainRole Port
-		/// Description for Company.MobileDSL.State_old2HasPorts.Port
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.State_old2HasPorts/Port.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.State_old2HasPorts/Port.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "State_old2", PropertyDisplayNameKey="Company.MobileDSL.State_old2HasPorts/Port.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("80654f03-ea88-44f7-954a-41f3aa46634f")]
-		public virtual Port Port
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (Port)DslModeling::DomainRoleInfo.GetRolePlayer(this, PortDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, PortDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access Ports of a State_old2
-		/// <summary>
-		/// Gets a list of Ports.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<Port> GetPorts(State_old2 element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(element, State_old2DomainRoleId);
-		}
-		#endregion
-		#region State_old2 link accessor
-		/// <summary>
-		/// Get the list of State_old2HasPorts links to a State_old2.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.State_old2HasPorts> GetLinksToPorts ( global::Company.MobileDSL.State_old2 state_old2Instance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.State_old2HasPorts>(state_old2Instance, global::Company.MobileDSL.State_old2HasPorts.State_old2DomainRoleId);
-		}
-		#endregion
-		#region Port link accessor
-		/// <summary>
-		/// Get the State_old2HasPorts link to a Port.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.State_old2HasPorts GetLinkToState_old2 (global::Company.MobileDSL.Port portInstance)
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.State_old2HasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.State_old2HasPorts>(portInstance, global::Company.MobileDSL.State_old2HasPorts.PortDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Port not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region State_old2HasPorts instance accessors
-		
-		/// <summary>
-		/// Get any State_old2HasPorts links between a given State_old2 and a Port.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.State_old2HasPorts> GetLinks( global::Company.MobileDSL.State_old2 source, global::Company.MobileDSL.Port target )
-		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.State_old2HasPorts> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.State_old2HasPorts>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.State_old2HasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.State_old2HasPorts>(source, global::Company.MobileDSL.State_old2HasPorts.State_old2DomainRoleId);
-			foreach ( global::Company.MobileDSL.State_old2HasPorts link in links )
-			{
-				if ( target.Equals(link.Port) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one State_old2HasPorts link between a given State_old2and a Port.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.State_old2HasPorts GetLink( global::Company.MobileDSL.State_old2 source, global::Company.MobileDSL.Port target )
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.State_old2HasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.State_old2HasPorts>(source, global::Company.MobileDSL.State_old2HasPorts.State_old2DomainRoleId);
-			foreach ( global::Company.MobileDSL.State_old2HasPorts link in links )
-			{
-				if ( target.Equals(link.Port) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
 	/// DomainRelationship ControllerHasStated
 	/// Description for Company.MobileDSL.ControllerHasStated
 	/// </summary>
@@ -2354,33 +1879,33 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainRelationship StateHasPorts
-	/// Description for Company.MobileDSL.StateHasPorts
+	/// DomainRelationship ClassWithPortsHasPorts
+	/// Description for Company.MobileDSL.ClassWithPortsHasPorts
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasPorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.StateHasPorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ClassWithPortsHasPorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ClassWithPortsHasPorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("326eeba9-bce9-4d92-94b6-4aa5d0907244")]
-	public partial class StateHasPorts : DslModeling::ElementLink
+	[DslModeling::DomainObjectId("3bcb252f-f98b-4997-9c55-d7131fb1ce0b")]
+	public partial class ClassWithPortsHasPorts : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// StateHasPorts domain class Id.
+		/// ClassWithPortsHasPorts domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x326eeba9, 0xbce9, 0x4d92, 0x94, 0xb6, 0x4a, 0xa5, 0xd0, 0x90, 0x72, 0x44);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x3bcb252f, 0xf98b, 0x4997, 0x9c, 0x55, 0xd7, 0x13, 0x1f, 0xb1, 0xce, 0x0b);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a StateHasPorts link in the same Partition as the given State
+		/// Creates a ClassWithPortsHasPorts link in the same Partition as the given ClassWithPorts
 		/// </summary>
-		/// <param name="source">State to use as the source of the relationship.</param>
+		/// <param name="source">ClassWithPorts to use as the source of the relationship.</param>
 		/// <param name="target">Port to use as the target of the relationship.</param>
-		public StateHasPorts(State source, Port target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(StateHasPorts.StateDomainRoleId, source), new DslModeling::RoleAssignment(StateHasPorts.PortDomainRoleId, target)}, null)
+		public ClassWithPortsHasPorts(ClassWithPorts source, Port target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ClassWithPortsHasPorts.ClassWithPortsDomainRoleId, source), new DslModeling::RoleAssignment(ClassWithPortsHasPorts.PortDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -2389,7 +1914,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public StateHasPorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public ClassWithPortsHasPorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -2400,7 +1925,7 @@ namespace Company.MobileDSL
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public StateHasPorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ClassWithPortsHasPorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -2410,7 +1935,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public StateHasPorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public ClassWithPortsHasPorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -2421,60 +1946,60 @@ namespace Company.MobileDSL
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public StateHasPorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ClassWithPortsHasPorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
 		#endregion
-		#region State domain role code
+		#region ClassWithPorts domain role code
 		
 		/// <summary>
-		/// State domain role Id.
+		/// ClassWithPorts domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid StateDomainRoleId = new global::System.Guid(0x93e86296, 0x657c, 0x4417, 0x9c, 0xc6, 0xa4, 0x18, 0xc2, 0xce, 0xda, 0xed);
+		public static readonly global::System.Guid ClassWithPortsDomainRoleId = new global::System.Guid(0x5b4fd3d5, 0x3c3d, 0x4ffd, 0x9b, 0xfb, 0xc3, 0xf7, 0x07, 0xb1, 0x58, 0xed);
 		
 		/// <summary>
-		/// DomainRole State
-		/// Description for Company.MobileDSL.StateHasPorts.State
+		/// DomainRole ClassWithPorts
+		/// Description for Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPorts
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasPorts/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasPorts/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Ports", PropertyDisplayNameKey="Company.MobileDSL.StateHasPorts/State.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("93e86296-657c-4417-9cc6-a418c2cedaed")]
-		public virtual State State
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ClassWithPortsHasPorts/ClassWithPorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ClassWithPortsHasPorts/ClassWithPorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Ports", PropertyDisplayNameKey="Company.MobileDSL.ClassWithPortsHasPorts/ClassWithPorts.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("5b4fd3d5-3c3d-4ffd-9bfb-c3f707b158ed")]
+		public virtual ClassWithPorts ClassWithPorts
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (State)DslModeling::DomainRoleInfo.GetRolePlayer(this, StateDomainRoleId);
+				return (ClassWithPorts)DslModeling::DomainRoleInfo.GetRolePlayer(this, ClassWithPortsDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, StateDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ClassWithPortsDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access State of a Port
+		#region Static methods to access ClassWithPorts of a Port
 		/// <summary>
-		/// Gets State.
+		/// Gets ClassWithPorts.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static State GetState(Port element)
+		public static ClassWithPorts GetClassWithPorts(Port element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PortDomainRoleId) as State;
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PortDomainRoleId) as ClassWithPorts;
 		}
 		
 		/// <summary>
-		/// Sets State.
+		/// Sets ClassWithPorts.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetState(Port element, State newState)
+		public static void SetClassWithPorts(Port element, ClassWithPorts newClassWithPorts)
 		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, PortDomainRoleId, newState);
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, PortDomainRoleId, newClassWithPorts);
 		}
 		#endregion
 		#region Port domain role code
@@ -2482,16 +2007,16 @@ namespace Company.MobileDSL
 		/// <summary>
 		/// Port domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid PortDomainRoleId = new global::System.Guid(0x27b4f2c0, 0xabb5, 0x49ae, 0xad, 0x32, 0xa5, 0x0d, 0xd9, 0xaa, 0xb0, 0xab);
+		public static readonly global::System.Guid PortDomainRoleId = new global::System.Guid(0x1ad04d77, 0xeced, 0x42cf, 0xac, 0xea, 0x41, 0xde, 0x88, 0xa1, 0x4c, 0x82);
 		
 		/// <summary>
 		/// DomainRole Port
-		/// Description for Company.MobileDSL.StateHasPorts.Port
+		/// Description for Company.MobileDSL.ClassWithPortsHasPorts.Port
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasPorts/Port.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasPorts/Port.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "State", PropertyDisplayNameKey="Company.MobileDSL.StateHasPorts/Port.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("27b4f2c0-abb5-49ae-ad32-a50dd9aab0ab")]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ClassWithPortsHasPorts/Port.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ClassWithPortsHasPorts/Port.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ClassWithPorts", PropertyDisplayNameKey="Company.MobileDSL.ClassWithPortsHasPorts/Port.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("1ad04d77-eced-42cf-acea-41de88a14c82")]
 		public virtual Port Port
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -2507,37 +2032,37 @@ namespace Company.MobileDSL
 		}
 				
 		#endregion
-		#region Static methods to access Ports of a State
+		#region Static methods to access Ports of a ClassWithPorts
 		/// <summary>
 		/// Gets a list of Ports.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<Port> GetPorts(State element)
+		public static DslModeling::LinkedElementCollection<Port> GetPorts(ClassWithPorts element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(element, StateDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(element, ClassWithPortsDomainRoleId);
 		}
 		#endregion
-		#region State link accessor
+		#region ClassWithPorts link accessor
 		/// <summary>
-		/// Get the list of StateHasPorts links to a State.
+		/// Get the list of ClassWithPortsHasPorts links to a ClassWithPorts.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasPorts> GetLinksToPorts ( global::Company.MobileDSL.State stateInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ClassWithPortsHasPorts> GetLinksToPorts ( global::Company.MobileDSL.ClassWithPorts classWithPortsInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasPorts>(stateInstance, global::Company.MobileDSL.StateHasPorts.StateDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ClassWithPortsHasPorts>(classWithPortsInstance, global::Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPortsDomainRoleId);
 		}
 		#endregion
 		#region Port link accessor
 		/// <summary>
-		/// Get the StateHasPorts link to a Port.
+		/// Get the ClassWithPortsHasPorts link to a Port.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.StateHasPorts GetLinkToState (global::Company.MobileDSL.Port portInstance)
+		public static global::Company.MobileDSL.ClassWithPortsHasPorts GetLinkToClassWithPorts (global::Company.MobileDSL.Port portInstance)
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasPorts>(portInstance, global::Company.MobileDSL.StateHasPorts.PortDomainRoleId);
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ClassWithPortsHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ClassWithPortsHasPorts>(portInstance, global::Company.MobileDSL.ClassWithPortsHasPorts.PortDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Port not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -2549,18 +2074,18 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region StateHasPorts instance accessors
+		#region ClassWithPortsHasPorts instance accessors
 		
 		/// <summary>
-		/// Get any StateHasPorts links between a given State and a Port.
+		/// Get any ClassWithPortsHasPorts links between a given ClassWithPorts and a Port.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasPorts> GetLinks( global::Company.MobileDSL.State source, global::Company.MobileDSL.Port target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ClassWithPortsHasPorts> GetLinks( global::Company.MobileDSL.ClassWithPorts source, global::Company.MobileDSL.Port target )
 		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasPorts> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasPorts>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasPorts>(source, global::Company.MobileDSL.StateHasPorts.StateDomainRoleId);
-			foreach ( global::Company.MobileDSL.StateHasPorts link in links )
+			global::System.Collections.Generic.List<global::Company.MobileDSL.ClassWithPortsHasPorts> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ClassWithPortsHasPorts>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ClassWithPortsHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ClassWithPortsHasPorts>(source, global::Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPortsDomainRoleId);
+			foreach ( global::Company.MobileDSL.ClassWithPortsHasPorts link in links )
 			{
 				if ( target.Equals(link.Port) )
 				{
@@ -2570,733 +2095,16 @@ namespace Company.MobileDSL
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one StateHasPorts link between a given Stateand a Port.
+		/// Get the one ClassWithPortsHasPorts link between a given ClassWithPortsand a Port.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.StateHasPorts GetLink( global::Company.MobileDSL.State source, global::Company.MobileDSL.Port target )
+		public static global::Company.MobileDSL.ClassWithPortsHasPorts GetLink( global::Company.MobileDSL.ClassWithPorts source, global::Company.MobileDSL.Port target )
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasPorts>(source, global::Company.MobileDSL.StateHasPorts.StateDomainRoleId);
-			foreach ( global::Company.MobileDSL.StateHasPorts link in links )
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ClassWithPortsHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ClassWithPortsHasPorts>(source, global::Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPortsDomainRoleId);
+			foreach ( global::Company.MobileDSL.ClassWithPortsHasPorts link in links )
 			{
 				if ( target.Equals(link.Port) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
-	/// DomainRelationship ComponentModelHasTempClassed
-	/// Description for Company.MobileDSL.ComponentModelHasTempClassed
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.ComponentModelHasTempClassed.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.ComponentModelHasTempClassed.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("c31188ac-6836-4424-8b49-a730a70a35fb")]
-	public partial class ComponentModelHasTempClassed : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// ComponentModelHasTempClassed domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xc31188ac, 0x6836, 0x4424, 0x8b, 0x49, 0xa7, 0x30, 0xa7, 0x0a, 0x35, 0xfb);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a ComponentModelHasTempClassed link in the same Partition as the given ComponentModel
-		/// </summary>
-		/// <param name="source">ComponentModel to use as the source of the relationship.</param>
-		/// <param name="target">TempClass to use as the target of the relationship.</param>
-		public ComponentModelHasTempClassed(ComponentModel source, TempClass target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ComponentModelHasTempClassed.ComponentModelDomainRoleId, source), new DslModeling::RoleAssignment(ComponentModelHasTempClassed.TempClassDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ComponentModelHasTempClassed(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ComponentModelHasTempClassed(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ComponentModelHasTempClassed(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ComponentModelHasTempClassed(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region ComponentModel domain role code
-		
-		/// <summary>
-		/// ComponentModel domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ComponentModelDomainRoleId = new global::System.Guid(0x9bc2d481, 0x2281, 0x450e, 0x89, 0x89, 0x75, 0x81, 0x21, 0x38, 0xd9, 0x30);
-		
-		/// <summary>
-		/// DomainRole ComponentModel
-		/// Description for Company.MobileDSL.ComponentModelHasTempClassed.ComponentModel
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ComponentModelHasTempClassed/ComponentModel.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ComponentModelHasTempClassed/ComponentModel.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "TempClassed", PropertyDisplayNameKey="Company.MobileDSL.ComponentModelHasTempClassed/ComponentModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("9bc2d481-2281-450e-8989-75812138d930")]
-		public virtual ComponentModel ComponentModel
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (ComponentModel)DslModeling::DomainRoleInfo.GetRolePlayer(this, ComponentModelDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ComponentModelDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access ComponentModel of a TempClass
-		/// <summary>
-		/// Gets ComponentModel.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ComponentModel GetComponentModel(TempClass element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, TempClassDomainRoleId) as ComponentModel;
-		}
-		
-		/// <summary>
-		/// Sets ComponentModel.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetComponentModel(TempClass element, ComponentModel newComponentModel)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, TempClassDomainRoleId, newComponentModel);
-		}
-		#endregion
-		#region TempClass domain role code
-		
-		/// <summary>
-		/// TempClass domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid TempClassDomainRoleId = new global::System.Guid(0x5852b40e, 0x2248, 0x4ca6, 0xb0, 0x68, 0xb8, 0x45, 0x7a, 0x6f, 0xfb, 0x73);
-		
-		/// <summary>
-		/// DomainRole TempClass
-		/// Description for Company.MobileDSL.ComponentModelHasTempClassed.TempClass
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ComponentModelHasTempClassed/TempClass.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ComponentModelHasTempClassed/TempClass.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ComponentModel", PropertyDisplayNameKey="Company.MobileDSL.ComponentModelHasTempClassed/TempClass.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("5852b40e-2248-4ca6-b068-b8457a6ffb73")]
-		public virtual TempClass TempClass
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (TempClass)DslModeling::DomainRoleInfo.GetRolePlayer(this, TempClassDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, TempClassDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access TempClassed of a ComponentModel
-		/// <summary>
-		/// Gets a list of TempClassed.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<TempClass> GetTempClassed(ComponentModel element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<TempClass>, TempClass>(element, ComponentModelDomainRoleId);
-		}
-		#endregion
-		#region ComponentModel link accessor
-		/// <summary>
-		/// Get the list of ComponentModelHasTempClassed links to a ComponentModel.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ComponentModelHasTempClassed> GetLinksToTempClassed ( global::Company.MobileDSL.ComponentModel componentModelInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ComponentModelHasTempClassed>(componentModelInstance, global::Company.MobileDSL.ComponentModelHasTempClassed.ComponentModelDomainRoleId);
-		}
-		#endregion
-		#region TempClass link accessor
-		/// <summary>
-		/// Get the ComponentModelHasTempClassed link to a TempClass.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.ComponentModelHasTempClassed GetLinkToComponentModel (global::Company.MobileDSL.TempClass tempClassInstance)
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ComponentModelHasTempClassed> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ComponentModelHasTempClassed>(tempClassInstance, global::Company.MobileDSL.ComponentModelHasTempClassed.TempClassDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of TempClass not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region ComponentModelHasTempClassed instance accessors
-		
-		/// <summary>
-		/// Get any ComponentModelHasTempClassed links between a given ComponentModel and a TempClass.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ComponentModelHasTempClassed> GetLinks( global::Company.MobileDSL.ComponentModel source, global::Company.MobileDSL.TempClass target )
-		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.ComponentModelHasTempClassed> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ComponentModelHasTempClassed>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ComponentModelHasTempClassed> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ComponentModelHasTempClassed>(source, global::Company.MobileDSL.ComponentModelHasTempClassed.ComponentModelDomainRoleId);
-			foreach ( global::Company.MobileDSL.ComponentModelHasTempClassed link in links )
-			{
-				if ( target.Equals(link.TempClass) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one ComponentModelHasTempClassed link between a given ComponentModeland a TempClass.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.ComponentModelHasTempClassed GetLink( global::Company.MobileDSL.ComponentModel source, global::Company.MobileDSL.TempClass target )
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ComponentModelHasTempClassed> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ComponentModelHasTempClassed>(source, global::Company.MobileDSL.ComponentModelHasTempClassed.ComponentModelDomainRoleId);
-			foreach ( global::Company.MobileDSL.ComponentModelHasTempClassed link in links )
-			{
-				if ( target.Equals(link.TempClass) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
-	/// DomainRelationship TempClassHasPorts
-	/// Description for Company.MobileDSL.TempClassHasPorts
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.TempClassHasPorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.TempClassHasPorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("5ba86898-81e5-4aff-b591-89da917215f2")]
-	public partial class TempClassHasPorts : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// TempClassHasPorts domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x5ba86898, 0x81e5, 0x4aff, 0xb5, 0x91, 0x89, 0xda, 0x91, 0x72, 0x15, 0xf2);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a TempClassHasPorts link in the same Partition as the given TempClass
-		/// </summary>
-		/// <param name="source">TempClass to use as the source of the relationship.</param>
-		/// <param name="target">Port to use as the target of the relationship.</param>
-		public TempClassHasPorts(TempClass source, Port target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(TempClassHasPorts.TempClassDomainRoleId, source), new DslModeling::RoleAssignment(TempClassHasPorts.PortDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public TempClassHasPorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public TempClassHasPorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public TempClassHasPorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public TempClassHasPorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region TempClass domain role code
-		
-		/// <summary>
-		/// TempClass domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid TempClassDomainRoleId = new global::System.Guid(0x3e38c4a8, 0x7c00, 0x4c66, 0x96, 0x57, 0x04, 0x1c, 0xd7, 0xd2, 0x64, 0x7a);
-		
-		/// <summary>
-		/// DomainRole TempClass
-		/// Description for Company.MobileDSL.TempClassHasPorts.TempClass
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.TempClassHasPorts/TempClass.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.TempClassHasPorts/TempClass.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Ports", PropertyDisplayNameKey="Company.MobileDSL.TempClassHasPorts/TempClass.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("3e38c4a8-7c00-4c66-9657-041cd7d2647a")]
-		public virtual TempClass TempClass
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (TempClass)DslModeling::DomainRoleInfo.GetRolePlayer(this, TempClassDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, TempClassDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access TempClass of a Port
-		/// <summary>
-		/// Gets TempClass.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static TempClass GetTempClass(Port element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PortDomainRoleId) as TempClass;
-		}
-		
-		/// <summary>
-		/// Sets TempClass.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetTempClass(Port element, TempClass newTempClass)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, PortDomainRoleId, newTempClass);
-		}
-		#endregion
-		#region Port domain role code
-		
-		/// <summary>
-		/// Port domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid PortDomainRoleId = new global::System.Guid(0x4f43fe07, 0x46cf, 0x4a81, 0x90, 0xd0, 0xf1, 0x7c, 0x89, 0x26, 0x8c, 0x00);
-		
-		/// <summary>
-		/// DomainRole Port
-		/// Description for Company.MobileDSL.TempClassHasPorts.Port
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.TempClassHasPorts/Port.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.TempClassHasPorts/Port.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "TempClass", PropertyDisplayNameKey="Company.MobileDSL.TempClassHasPorts/Port.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("4f43fe07-46cf-4a81-90d0-f17c89268c00")]
-		public virtual Port Port
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (Port)DslModeling::DomainRoleInfo.GetRolePlayer(this, PortDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, PortDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access Ports of a TempClass
-		/// <summary>
-		/// Gets a list of Ports.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<Port> GetPorts(TempClass element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(element, TempClassDomainRoleId);
-		}
-		#endregion
-		#region TempClass link accessor
-		/// <summary>
-		/// Get the list of TempClassHasPorts links to a TempClass.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.TempClassHasPorts> GetLinksToPorts ( global::Company.MobileDSL.TempClass tempClassInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.TempClassHasPorts>(tempClassInstance, global::Company.MobileDSL.TempClassHasPorts.TempClassDomainRoleId);
-		}
-		#endregion
-		#region Port link accessor
-		/// <summary>
-		/// Get the TempClassHasPorts link to a Port.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.TempClassHasPorts GetLinkToTempClass (global::Company.MobileDSL.Port portInstance)
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.TempClassHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.TempClassHasPorts>(portInstance, global::Company.MobileDSL.TempClassHasPorts.PortDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Port not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region TempClassHasPorts instance accessors
-		
-		/// <summary>
-		/// Get any TempClassHasPorts links between a given TempClass and a Port.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.TempClassHasPorts> GetLinks( global::Company.MobileDSL.TempClass source, global::Company.MobileDSL.Port target )
-		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.TempClassHasPorts> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.TempClassHasPorts>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.TempClassHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.TempClassHasPorts>(source, global::Company.MobileDSL.TempClassHasPorts.TempClassDomainRoleId);
-			foreach ( global::Company.MobileDSL.TempClassHasPorts link in links )
-			{
-				if ( target.Equals(link.Port) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one TempClassHasPorts link between a given TempClassand a Port.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.TempClassHasPorts GetLink( global::Company.MobileDSL.TempClass source, global::Company.MobileDSL.Port target )
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.TempClassHasPorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.TempClassHasPorts>(source, global::Company.MobileDSL.TempClassHasPorts.TempClassDomainRoleId);
-			foreach ( global::Company.MobileDSL.TempClassHasPorts link in links )
-			{
-				if ( target.Equals(link.Port) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
-	/// DomainRelationship TempClassHasStatePorts
-	/// Description for Company.MobileDSL.TempClassHasStatePorts
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.TempClassHasStatePorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.TempClassHasStatePorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("82dd35ca-6b14-4664-b8bb-401fd1a721de")]
-	public partial class TempClassHasStatePorts : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// TempClassHasStatePorts domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x82dd35ca, 0x6b14, 0x4664, 0xb8, 0xbb, 0x40, 0x1f, 0xd1, 0xa7, 0x21, 0xde);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a TempClassHasStatePorts link in the same Partition as the given TempClass
-		/// </summary>
-		/// <param name="source">TempClass to use as the source of the relationship.</param>
-		/// <param name="target">StatePort to use as the target of the relationship.</param>
-		public TempClassHasStatePorts(TempClass source, StatePort target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(TempClassHasStatePorts.TempClassDomainRoleId, source), new DslModeling::RoleAssignment(TempClassHasStatePorts.StatePortDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public TempClassHasStatePorts(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public TempClassHasStatePorts(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public TempClassHasStatePorts(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public TempClassHasStatePorts(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region TempClass domain role code
-		
-		/// <summary>
-		/// TempClass domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid TempClassDomainRoleId = new global::System.Guid(0x512fa2b6, 0x9920, 0x4916, 0xa8, 0xa4, 0x12, 0x16, 0x66, 0x11, 0x5e, 0x33);
-		
-		/// <summary>
-		/// DomainRole TempClass
-		/// Description for Company.MobileDSL.TempClassHasStatePorts.TempClass
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.TempClassHasStatePorts/TempClass.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.TempClassHasStatePorts/TempClass.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "StatePorts", PropertyDisplayNameKey="Company.MobileDSL.TempClassHasStatePorts/TempClass.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("512fa2b6-9920-4916-a8a4-121666115e33")]
-		public virtual TempClass TempClass
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (TempClass)DslModeling::DomainRoleInfo.GetRolePlayer(this, TempClassDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, TempClassDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access TempClass of a StatePort
-		/// <summary>
-		/// Gets TempClass.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static TempClass GetTempClass(StatePort element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, StatePortDomainRoleId) as TempClass;
-		}
-		
-		/// <summary>
-		/// Sets TempClass.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetTempClass(StatePort element, TempClass newTempClass)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, StatePortDomainRoleId, newTempClass);
-		}
-		#endregion
-		#region StatePort domain role code
-		
-		/// <summary>
-		/// StatePort domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid StatePortDomainRoleId = new global::System.Guid(0xd1fe8a83, 0x2fe0, 0x46c6, 0x9e, 0x79, 0x0c, 0x5b, 0x8f, 0x51, 0x1c, 0xfa);
-		
-		/// <summary>
-		/// DomainRole StatePort
-		/// Description for Company.MobileDSL.TempClassHasStatePorts.StatePort
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.TempClassHasStatePorts/StatePort.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.TempClassHasStatePorts/StatePort.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "TempClass", PropertyDisplayNameKey="Company.MobileDSL.TempClassHasStatePorts/StatePort.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("d1fe8a83-2fe0-46c6-9e79-0c5b8f511cfa")]
-		public virtual StatePort StatePort
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (StatePort)DslModeling::DomainRoleInfo.GetRolePlayer(this, StatePortDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, StatePortDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access StatePorts of a TempClass
-		/// <summary>
-		/// Gets a list of StatePorts.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<StatePort> GetStatePorts(TempClass element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<StatePort>, StatePort>(element, TempClassDomainRoleId);
-		}
-		#endregion
-		#region TempClass link accessor
-		/// <summary>
-		/// Get the list of TempClassHasStatePorts links to a TempClass.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.TempClassHasStatePorts> GetLinksToStatePorts ( global::Company.MobileDSL.TempClass tempClassInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.TempClassHasStatePorts>(tempClassInstance, global::Company.MobileDSL.TempClassHasStatePorts.TempClassDomainRoleId);
-		}
-		#endregion
-		#region StatePort link accessor
-		/// <summary>
-		/// Get the TempClassHasStatePorts link to a StatePort.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.TempClassHasStatePorts GetLinkToTempClass (global::Company.MobileDSL.StatePort statePortInstance)
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.TempClassHasStatePorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.TempClassHasStatePorts>(statePortInstance, global::Company.MobileDSL.TempClassHasStatePorts.StatePortDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of StatePort not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region TempClassHasStatePorts instance accessors
-		
-		/// <summary>
-		/// Get any TempClassHasStatePorts links between a given TempClass and a StatePort.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.TempClassHasStatePorts> GetLinks( global::Company.MobileDSL.TempClass source, global::Company.MobileDSL.StatePort target )
-		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.TempClassHasStatePorts> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.TempClassHasStatePorts>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.TempClassHasStatePorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.TempClassHasStatePorts>(source, global::Company.MobileDSL.TempClassHasStatePorts.TempClassDomainRoleId);
-			foreach ( global::Company.MobileDSL.TempClassHasStatePorts link in links )
-			{
-				if ( target.Equals(link.StatePort) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one TempClassHasStatePorts link between a given TempClassand a StatePort.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.TempClassHasStatePorts GetLink( global::Company.MobileDSL.TempClass source, global::Company.MobileDSL.StatePort target )
-		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.TempClassHasStatePorts> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.TempClassHasStatePorts>(source, global::Company.MobileDSL.TempClassHasStatePorts.TempClassDomainRoleId);
-			foreach ( global::Company.MobileDSL.TempClassHasStatePorts link in links )
-			{
-				if ( target.Equals(link.StatePort) )
 				{
 					return link;
 				}

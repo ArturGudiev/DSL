@@ -237,29 +237,13 @@
     <value>State</value>
     <comment>DisplayName for DomainClass &apos;State&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.TempClass.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.TempClass</value>
-    <comment>Description for DomainClass &apos;TempClass&apos;</comment>
+  <data name="Company.MobileDSL.ClassWithPorts.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPorts</value>
+    <comment>Description for DomainClass &apos;ClassWithPorts&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.TempClass.DisplayName" xml:space="preserve">
-    <value>Temp Class</value>
-    <comment>DisplayName for DomainClass &apos;TempClass&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.StatePort.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StatePort</value>
-    <comment>Description for DomainClass &apos;StatePort&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.StatePort.DisplayName" xml:space="preserve">
-    <value>State Port</value>
-    <comment>DisplayName for DomainClass &apos;StatePort&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.StatePort/Name.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StatePort.Name</value>
-    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;StatePort&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.StatePort/Name.DisplayName" xml:space="preserve">
-    <value>Name</value>
-    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;StatePort&apos;</comment>
+  <data name="Company.MobileDSL.ClassWithPorts.DisplayName" xml:space="preserve">
+    <value>Class With Ports</value>
+    <comment>DisplayName for DomainClass &apos;ClassWithPorts&apos;</comment>
   </data>
   <data name="Company.MobileDSL.Connection.Description" xml:space="preserve">
     <value></value>
@@ -308,38 +292,6 @@
   <data name="Company.MobileDSL.Connection/Target.PropertyDisplayName" xml:space="preserve">
     <value>Sources</value>
     <comment>PropertyDisplayName for DomainRole &apos;Target&apos; on DomainRelationship &apos;Connection&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ControllerHasPorts.Description" xml:space="preserve">
-    <value></value>
-    <comment>Description for DomainClass &apos;ControllerHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ControllerHasPorts.DisplayName" xml:space="preserve">
-    <value>Controller Has Ports</value>
-    <comment>DisplayName for DomainClass &apos;ControllerHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ControllerHasPorts/Controller.Description" xml:space="preserve">
-    <value></value>
-    <comment>Description for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ControllerHasPorts/Controller.DisplayName" xml:space="preserve">
-    <value>Controller</value>
-    <comment>DisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ControllerHasPorts/Controller.PropertyDisplayName" xml:space="preserve">
-    <value>Ports</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ControllerHasPorts/Port.Description" xml:space="preserve">
-    <value></value>
-    <comment>Description for DomainRole &apos;Port&apos; on DomainRelationship &apos;ControllerHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ControllerHasPorts/Port.DisplayName" xml:space="preserve">
-    <value>Port</value>
-    <comment>DisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;ControllerHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ControllerHasPorts/Port.PropertyDisplayName" xml:space="preserve">
-    <value>Controller</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;ControllerHasPorts&apos;</comment>
   </data>
   <data name="Company.MobileDSL.ComponentModelHasComments.Description" xml:space="preserve">
     <value></value>
@@ -509,38 +461,6 @@
     <value>Next States</value>
     <comment>PropertyDisplayName for DomainRole &apos;TargetState_old2&apos; on DomainRelationship &apos;State_old2ReferencesPreviousStates&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.State_old2HasPorts.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.State_old2HasPorts</value>
-    <comment>Description for DomainClass &apos;State_old2HasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.State_old2HasPorts.DisplayName" xml:space="preserve">
-    <value>State_old2 Has Ports</value>
-    <comment>DisplayName for DomainClass &apos;State_old2HasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.State_old2HasPorts/State_old2.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.State_old2HasPorts.State_old2</value>
-    <comment>Description for DomainRole &apos;State_old2&apos; on DomainRelationship &apos;State_old2HasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.State_old2HasPorts/State_old2.DisplayName" xml:space="preserve">
-    <value>State_old2</value>
-    <comment>DisplayName for DomainRole &apos;State_old2&apos; on DomainRelationship &apos;State_old2HasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.State_old2HasPorts/State_old2.PropertyDisplayName" xml:space="preserve">
-    <value>Ports</value>
-    <comment>PropertyDisplayName for DomainRole &apos;State_old2&apos; on DomainRelationship &apos;State_old2HasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.State_old2HasPorts/Port.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.State_old2HasPorts.Port</value>
-    <comment>Description for DomainRole &apos;Port&apos; on DomainRelationship &apos;State_old2HasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.State_old2HasPorts/Port.DisplayName" xml:space="preserve">
-    <value>Port</value>
-    <comment>DisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;State_old2HasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.State_old2HasPorts/Port.PropertyDisplayName" xml:space="preserve">
-    <value>State_old2</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;State_old2HasPorts&apos;</comment>
-  </data>
   <data name="Company.MobileDSL.ControllerHasStated.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.ControllerHasStated</value>
     <comment>Description for DomainClass &apos;ControllerHasStated&apos;</comment>
@@ -573,133 +493,37 @@
     <value>Controller</value>
     <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;ControllerHasStated&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasPorts.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasPorts</value>
-    <comment>Description for DomainClass &apos;StateHasPorts&apos;</comment>
+  <data name="Company.MobileDSL.ClassWithPortsHasPorts.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPortsHasPorts</value>
+    <comment>Description for DomainClass &apos;ClassWithPortsHasPorts&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasPorts.DisplayName" xml:space="preserve">
-    <value>State Has Ports</value>
-    <comment>DisplayName for DomainClass &apos;StateHasPorts&apos;</comment>
+  <data name="Company.MobileDSL.ClassWithPortsHasPorts.DisplayName" xml:space="preserve">
+    <value>Class With Ports Has Ports</value>
+    <comment>DisplayName for DomainClass &apos;ClassWithPortsHasPorts&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasPorts/State.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasPorts.State</value>
-    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasPorts&apos;</comment>
+  <data name="Company.MobileDSL.ClassWithPortsHasPorts/ClassWithPorts.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPorts</value>
+    <comment>Description for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasPorts&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasPorts/State.DisplayName" xml:space="preserve">
-    <value>State</value>
-    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasPorts&apos;</comment>
+  <data name="Company.MobileDSL.ClassWithPortsHasPorts/ClassWithPorts.DisplayName" xml:space="preserve">
+    <value>Class With Ports</value>
+    <comment>DisplayName for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasPorts&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasPorts/State.PropertyDisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.ClassWithPortsHasPorts/ClassWithPorts.PropertyDisplayName" xml:space="preserve">
     <value>Ports</value>
-    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasPorts&apos;</comment>
+    <comment>PropertyDisplayName for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasPorts&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasPorts/Port.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasPorts.Port</value>
-    <comment>Description for DomainRole &apos;Port&apos; on DomainRelationship &apos;StateHasPorts&apos;</comment>
+  <data name="Company.MobileDSL.ClassWithPortsHasPorts/Port.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPortsHasPorts.Port</value>
+    <comment>Description for DomainRole &apos;Port&apos; on DomainRelationship &apos;ClassWithPortsHasPorts&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasPorts/Port.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.ClassWithPortsHasPorts/Port.DisplayName" xml:space="preserve">
     <value>Port</value>
-    <comment>DisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;StateHasPorts&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;ClassWithPortsHasPorts&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasPorts/Port.PropertyDisplayName" xml:space="preserve">
-    <value>State</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;StateHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ComponentModelHasTempClassed.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ComponentModelHasTempClassed</value>
-    <comment>Description for DomainClass &apos;ComponentModelHasTempClassed&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ComponentModelHasTempClassed.DisplayName" xml:space="preserve">
-    <value>Component Model Has Temp Classed</value>
-    <comment>DisplayName for DomainClass &apos;ComponentModelHasTempClassed&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ComponentModelHasTempClassed/ComponentModel.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ComponentModelHasTempClassed.ComponentModel</value>
-    <comment>Description for DomainRole &apos;ComponentModel&apos; on DomainRelationship &apos;ComponentModelHasTempClassed&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ComponentModelHasTempClassed/ComponentModel.DisplayName" xml:space="preserve">
-    <value>Component Model</value>
-    <comment>DisplayName for DomainRole &apos;ComponentModel&apos; on DomainRelationship &apos;ComponentModelHasTempClassed&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ComponentModelHasTempClassed/ComponentModel.PropertyDisplayName" xml:space="preserve">
-    <value>Temp Classed</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ComponentModel&apos; on DomainRelationship &apos;ComponentModelHasTempClassed&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ComponentModelHasTempClassed/TempClass.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ComponentModelHasTempClassed.TempClass</value>
-    <comment>Description for DomainRole &apos;TempClass&apos; on DomainRelationship &apos;ComponentModelHasTempClassed&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ComponentModelHasTempClassed/TempClass.DisplayName" xml:space="preserve">
-    <value>Temp Class</value>
-    <comment>DisplayName for DomainRole &apos;TempClass&apos; on DomainRelationship &apos;ComponentModelHasTempClassed&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ComponentModelHasTempClassed/TempClass.PropertyDisplayName" xml:space="preserve">
-    <value>Component Model</value>
-    <comment>PropertyDisplayName for DomainRole &apos;TempClass&apos; on DomainRelationship &apos;ComponentModelHasTempClassed&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasPorts.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.TempClassHasPorts</value>
-    <comment>Description for DomainClass &apos;TempClassHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasPorts.DisplayName" xml:space="preserve">
-    <value>Temp Class Has Ports</value>
-    <comment>DisplayName for DomainClass &apos;TempClassHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasPorts/TempClass.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.TempClassHasPorts.TempClass</value>
-    <comment>Description for DomainRole &apos;TempClass&apos; on DomainRelationship &apos;TempClassHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasPorts/TempClass.DisplayName" xml:space="preserve">
-    <value>Temp Class</value>
-    <comment>DisplayName for DomainRole &apos;TempClass&apos; on DomainRelationship &apos;TempClassHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasPorts/TempClass.PropertyDisplayName" xml:space="preserve">
-    <value>Ports</value>
-    <comment>PropertyDisplayName for DomainRole &apos;TempClass&apos; on DomainRelationship &apos;TempClassHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasPorts/Port.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.TempClassHasPorts.Port</value>
-    <comment>Description for DomainRole &apos;Port&apos; on DomainRelationship &apos;TempClassHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasPorts/Port.DisplayName" xml:space="preserve">
-    <value>Port</value>
-    <comment>DisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;TempClassHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasPorts/Port.PropertyDisplayName" xml:space="preserve">
-    <value>Temp Class</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;TempClassHasPorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasStatePorts.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.TempClassHasStatePorts</value>
-    <comment>Description for DomainClass &apos;TempClassHasStatePorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasStatePorts.DisplayName" xml:space="preserve">
-    <value>Temp Class Has State Ports</value>
-    <comment>DisplayName for DomainClass &apos;TempClassHasStatePorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasStatePorts/TempClass.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.TempClassHasStatePorts.TempClass</value>
-    <comment>Description for DomainRole &apos;TempClass&apos; on DomainRelationship &apos;TempClassHasStatePorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasStatePorts/TempClass.DisplayName" xml:space="preserve">
-    <value>Temp Class</value>
-    <comment>DisplayName for DomainRole &apos;TempClass&apos; on DomainRelationship &apos;TempClassHasStatePorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasStatePorts/TempClass.PropertyDisplayName" xml:space="preserve">
-    <value>State Ports</value>
-    <comment>PropertyDisplayName for DomainRole &apos;TempClass&apos; on DomainRelationship &apos;TempClassHasStatePorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasStatePorts/StatePort.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.TempClassHasStatePorts.StatePort</value>
-    <comment>Description for DomainRole &apos;StatePort&apos; on DomainRelationship &apos;TempClassHasStatePorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasStatePorts/StatePort.DisplayName" xml:space="preserve">
-    <value>State Port</value>
-    <comment>DisplayName for DomainRole &apos;StatePort&apos; on DomainRelationship &apos;TempClassHasStatePorts&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempClassHasStatePorts/StatePort.PropertyDisplayName" xml:space="preserve">
-    <value>Temp Class</value>
-    <comment>PropertyDisplayName for DomainRole &apos;StatePort&apos; on DomainRelationship &apos;TempClassHasStatePorts&apos;</comment>
+  <data name="Company.MobileDSL.ClassWithPortsHasPorts/Port.PropertyDisplayName" xml:space="preserve">
+    <value>Class With Ports</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;ClassWithPortsHasPorts&apos;</comment>
   </data>
   <data name="Company.MobileDSL.InPortShape.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.InPortShape</value>
@@ -756,22 +580,6 @@
   <data name="Company.MobileDSL.GeometryShape1.DisplayName" xml:space="preserve">
     <value>Geometry Shape1</value>
     <comment>DisplayName for DomainClass &apos;GeometryShape1&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempShape.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.TempShape</value>
-    <comment>Description for DomainClass &apos;TempShape&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.TempShape.DisplayName" xml:space="preserve">
-    <value>Temp Shape</value>
-    <comment>DisplayName for DomainClass &apos;TempShape&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.StatePortShape.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StatePortShape</value>
-    <comment>Description for DomainClass &apos;StatePortShape&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.StatePortShape.DisplayName" xml:space="preserve">
-    <value>State Port Shape</value>
-    <comment>DisplayName for DomainClass &apos;StatePortShape&apos;</comment>
   </data>
   <data name="Company.MobileDSL.AssociationLink.Description" xml:space="preserve">
     <value></value>
@@ -899,22 +707,6 @@
   </data>
   <data name="StateToolboxTooltip" xml:space="preserve">
     <value>State</value>
-    <comment>Toolbox tooltip text</comment>
-  </data>
-  <data name="TempToolboxItem" xml:space="preserve">
-    <value>Temp</value>
-    <comment>Toolbox item name</comment>
-  </data>
-  <data name="TempToolboxTooltip" xml:space="preserve">
-    <value>Temp</value>
-    <comment>Toolbox tooltip text</comment>
-  </data>
-  <data name="StatePortToolboxItem" xml:space="preserve">
-    <value>StatePort</value>
-    <comment>Toolbox item name</comment>
-  </data>
-  <data name="StatePortToolboxTooltip" xml:space="preserve">
-    <value>State Port</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -1050,10 +842,6 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\OutPortImage.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
-  <data name="StatePortShapeImageDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\InPortImage.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Icon decorator default image</comment>
-  </data>
   <data name="ControllerToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ComponentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
@@ -1088,14 +876,6 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="StateToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ComponentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Toolbox item image</comment>
-  </data>
-  <data name="TempToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ComponentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Toolbox item image</comment>
-  </data>
-  <data name="StatePortToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\InPortTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

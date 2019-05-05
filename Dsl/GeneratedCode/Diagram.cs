@@ -221,33 +221,21 @@ namespace Company.MobileDSL
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Company.MobileDSL.State_old2)
-			{
-				global::Company.MobileDSL.StateShape newShape = new global::Company.MobileDSL.StateShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::Company.MobileDSL.State)
 			{
 				global::Company.MobileDSL.GeometryShape1 newShape = new global::Company.MobileDSL.GeometryShape1(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::Company.MobileDSL.State_old2)
+			{
+				global::Company.MobileDSL.StateShape newShape = new global::Company.MobileDSL.StateShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::Company.MobileDSL.Comment)
 			{
 				global::Company.MobileDSL.CommentBoxShape newShape = new global::Company.MobileDSL.CommentBoxShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Company.MobileDSL.TempClass)
-			{
-				global::Company.MobileDSL.TempShape newShape = new global::Company.MobileDSL.TempShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Company.MobileDSL.StatePort)
-			{
-				global::Company.MobileDSL.StatePortShape newShape = new global::Company.MobileDSL.StatePortShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -561,11 +549,9 @@ namespace Company.MobileDSL
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.InPort), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.OutPort), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Controller), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old2), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old2), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Comment), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.TempClass), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.StatePort), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Connection), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old2ReferencesPreviousStates), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
@@ -596,25 +582,17 @@ namespace Company.MobileDSL
 				{
 					parentElement = GetParentForController((global::Company.MobileDSL.Controller)childElement);
 				} else
-				if(childElement is global::Company.MobileDSL.State_old2)
-				{
-					parentElement = GetParentForState_old2((global::Company.MobileDSL.State_old2)childElement);
-				} else
 				if(childElement is global::Company.MobileDSL.State)
 				{
 					parentElement = GetParentForState((global::Company.MobileDSL.State)childElement);
 				} else
+				if(childElement is global::Company.MobileDSL.State_old2)
+				{
+					parentElement = GetParentForState_old2((global::Company.MobileDSL.State_old2)childElement);
+				} else
 				if(childElement is global::Company.MobileDSL.Comment)
 				{
 					parentElement = GetParentForComment((global::Company.MobileDSL.Comment)childElement);
-				} else
-				if(childElement is global::Company.MobileDSL.TempClass)
-				{
-					parentElement = GetParentForTempClass((global::Company.MobileDSL.TempClass)childElement);
-				} else
-				if(childElement is global::Company.MobileDSL.StatePort)
-				{
-					parentElement = GetParentForStatePort((global::Company.MobileDSL.StatePort)childElement);
 				} else
 				{
 					parentElement = null;
@@ -625,17 +603,17 @@ namespace Company.MobileDSL
 					DslDiagrams::Diagram.FixUpDiagram(parentElement, childElement);
 				}
 			}
-			public static global::Company.MobileDSL.Controller GetParentForInPort( global::Company.MobileDSL.Port root )
+			public static global::Company.MobileDSL.ClassWithPorts GetParentForInPort( global::Company.MobileDSL.Port root )
 			{
 				// Segments 0 and 1
-				global::Company.MobileDSL.Controller result = root.Controller;
+				global::Company.MobileDSL.ClassWithPorts result = root.ClassWithPorts;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Company.MobileDSL.Controller GetParentForOutPort( global::Company.MobileDSL.Port root )
+			public static global::Company.MobileDSL.ClassWithPorts GetParentForOutPort( global::Company.MobileDSL.Port root )
 			{
 				// Segments 0 and 1
-				global::Company.MobileDSL.Controller result = root.Controller;
+				global::Company.MobileDSL.ClassWithPorts result = root.ClassWithPorts;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -670,20 +648,6 @@ namespace Company.MobileDSL
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
 				global::Company.MobileDSL.ComponentModel result = root2.ComponentModel;
-				if ( result == null ) return null;
-				return result;
-			}
-			public static global::Company.MobileDSL.ComponentModel GetParentForTempClass( global::Company.MobileDSL.TempClass root )
-			{
-				// Segments 0 and 1
-				global::Company.MobileDSL.ComponentModel result = root.ComponentModel;
-				if ( result == null ) return null;
-				return result;
-			}
-			public static global::Company.MobileDSL.TempClass GetParentForStatePort( global::Company.MobileDSL.StatePort root )
-			{
-				// Segments 0 and 1
-				global::Company.MobileDSL.TempClass result = root.TempClass;
 				if ( result == null ) return null;
 				return result;
 			}

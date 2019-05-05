@@ -2,16 +2,54 @@
 <mobileDSLDiagram dslVersion="1.0.0.0" Id="c9358ed6-9ffe-4135-9cf3-da1e10741217" absoluteBounds="0, 0, 11, 8.5" name="s2">
   <componentModelMoniker name="/" />
   <nestedChildShapes>
-    <controllerShape Id="7f545d3e-7c31-45ae-9907-06b977196a02" absoluteBounds="2.125, 1.75, 1.5, 2.25">
+    <controllerShape Id="28d53093-d17f-4cbd-8f04-26c27ee0c5da" absoluteBounds="3.25, 1.5, 7.25, 3.5">
       <controllerMoniker name="//Controller1" />
       <relativeChildShapes>
-        <inPortShape Id="824f2a0f-5269-4d19-a158-3ef52c2880f3" absoluteBounds="2.025, 1.9, 0.2, 0.2">
+        <inPortShape Id="0a31ea56-f22d-4e40-85e0-46e429ae9b6f" absoluteBounds="3.40625, 4.9, 0.2, 0.2">
           <inPortMoniker name="//Controller1/InPort1" />
         </inPortShape>
-        <outPortShape Id="7e8cd7c7-82b9-4574-b8fa-315766e5bb70" absoluteBounds="3.525, 1.9, 0.2, 0.2">
+        <outPortShape Id="be896e9d-3ee6-4f5a-a2eb-59573674e07e" absoluteBounds="4.40625, 4.9, 0.2, 0.2">
           <outPortMoniker name="//Controller1/OutPort1" />
         </outPortShape>
       </relativeChildShapes>
     </controllerShape>
+    <geometryShape1 Id="fea3c4e4-79bd-4e42-a79c-fa95155bd432" absoluteBounds="4, 2.375, 1.5, 1">
+      <stateMoniker name="//Controller1/State1" />
+      <relativeChildShapes>
+        <inPortShape Id="ac8295bb-412e-423b-909e-97778e1c64f4" absoluteBounds="3.9, 2.78125, 0.2, 0.2">
+          <inPortMoniker name="//Controller1/State1/InPort1" />
+        </inPortShape>
+        <outPortShape Id="ed961fe0-a614-4731-ae3a-30731d919d7b" absoluteBounds="5.4, 2.8125, 0.2, 0.2">
+          <outPortMoniker name="//Controller1/State1/OutPort1" />
+        </outPortShape>
+      </relativeChildShapes>
+    </geometryShape1>
+    <geometryShape1 Id="a3864145-95c1-4a0b-b3c8-a486b67bb8dc" absoluteBounds="7.375, 2.375, 1.5, 1">
+      <stateMoniker name="//Controller1/State2" />
+      <relativeChildShapes>
+        <inPortShape Id="a16fc8ee-1c0e-4e81-85d8-61048f32f597" absoluteBounds="7.275, 2.84375, 0.2, 0.2">
+          <inPortMoniker name="//Controller1/State2/InPort1" />
+        </inPortShape>
+        <outPortShape Id="2bac58b7-af09-4b4b-a219-45096573ef3b" absoluteBounds="8.775, 2.84375, 0.2, 0.2">
+          <outPortMoniker name="//Controller1/State2/OutPort1" />
+        </outPortShape>
+      </relativeChildShapes>
+    </geometryShape1>
+    <associationLink Id="efb06613-7af3-4105-aebb-a3bfa0dcfe2e" edgePoints="[(5.6 : 2.9125); (5.975 : 2.9125); (5.975 : 2.94375); (7.275 : 2.94375)]" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="1512e183-4f8c-4e3d-b18d-aedd130fb41a" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="ed961fe0-a614-4731-ae3a-30731d919d7b" />
+        <inPortShapeMoniker Id="a16fc8ee-1c0e-4e81-85d8-61048f32f597" />
+      </nodes>
+    </associationLink>
+    <associationLink Id="e7c0e57a-3d90-4f15-8f77-fa8f103764b3" edgePoints="[(8.975 : 2.94375); (9.35 : 2.94375); (9.35 : 3.75); (3.525 : 3.75); (3.525 : 2.88125); (3.9 : 2.88125)]" fixedFrom="Caller" fixedTo="Caller">
+      <connectionMoniker Id="4bf010d8-d522-42d5-a5ad-febbace50d31" />
+      <relativeChildShapes />
+      <nodes>
+        <outPortShapeMoniker Id="2bac58b7-af09-4b4b-a219-45096573ef3b" />
+        <inPortShapeMoniker Id="ac8295bb-412e-423b-909e-97778e1c64f4" />
+      </nodes>
+    </associationLink>
   </nestedChildShapes>
 </mobileDSLDiagram>

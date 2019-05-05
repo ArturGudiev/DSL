@@ -194,21 +194,6 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region TempClassed opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of TempClassed.
-		/// Description for Company.MobileDSL.ComponentModelHasTempClassed.ComponentModel
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<TempClass> TempClassed
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<TempClass>, TempClass>(global::Company.MobileDSL.ComponentModelHasTempClassed.ComponentModelDomainRoleId);
-			}
-		}
-		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -235,11 +220,6 @@ namespace Company.MobileDSL
 				}
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.Comment.DomainClassId)) 
-				{
-					return true;
-				}
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.TempClass.DomainClassId)) 
 				{
 					return true;
 				}
@@ -282,15 +262,6 @@ namespace Company.MobileDSL
 			{
 				// Create link for path ComponentModelHasComments.Comments
 				this.Comments.Add(sourceComment2);
-
-				return;
-			}
-				
-			global::Company.MobileDSL.TempClass sourceTempClass3 = sourceElement as global::Company.MobileDSL.TempClass;
-			if (sourceTempClass3 != null)
-			{
-				// Create link for path ComponentModelHasTempClassed.TempClassed
-				this.TempClassed.Add(sourceTempClass3);
 
 				return;
 			}
@@ -344,20 +315,6 @@ namespace Company.MobileDSL
 
 				return;
 			}
-				
-			global::Company.MobileDSL.TempClass sourceTempClass3 = sourceElement as global::Company.MobileDSL.TempClass;
-			if (sourceTempClass3 != null)
-			{
-				// Delete link for path ComponentModelHasTempClassed.TempClassed
-				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ComponentModelHasTempClassed.GetLinks((global::Company.MobileDSL.ComponentModel)this, sourceTempClass3))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.ComponentModelHasTempClassed.ComponentModelDomainRoleId, global::Company.MobileDSL.ComponentModelHasTempClassed.TempClassDomainRoleId);
-				}
-
-				return;
-			}
 			// Fall through to base class if this class hasn't handled the unmerge.
 			base.MergeDisconnect(sourceElement);
 		}
@@ -374,7 +331,7 @@ namespace Company.MobileDSL
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("bb8866e4-0364-4829-9370-590d91c53c94")]
-	public partial class Controller : NamedElement
+	public partial class Controller : ClassWithPorts
 	{
 		#region Constructors, domain class Id
 	
@@ -576,20 +533,6 @@ namespace Company.MobileDSL
 		}
 		
 		#endregion
-		#region Ports opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of Ports.
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<Port> Ports
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(global::Company.MobileDSL.ControllerHasPorts.ControllerDomainRoleId);
-			}
-		}
-		#endregion
 		#region ComponentModel opposite domain role accessor
 		/// <summary>
 		/// Gets or sets ComponentModel.
@@ -672,17 +615,12 @@ namespace Company.MobileDSL
 			{
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.Port.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.State.DomainClassId)) 
 				{
 					return true;
 				}
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.State_old2.DomainClassId)) 
-				{
-					return true;
-				}
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.State.DomainClassId)) 
 				{
 					return true;
 				}
@@ -711,11 +649,11 @@ namespace Company.MobileDSL
 			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
 		
 				
-			global::Company.MobileDSL.Port sourcePort1 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort1 != null)
+			global::Company.MobileDSL.State sourceState1 = sourceElement as global::Company.MobileDSL.State;
+			if (sourceState1 != null)
 			{
-				// Create link for path ControllerHasPorts.Ports
-				this.Ports.Add(sourcePort1);
+				// Create link for path ControllerHasStated.Stated
+				this.Stated.Add(sourceState1);
 
 				return;
 			}
@@ -725,15 +663,6 @@ namespace Company.MobileDSL
 			{
 				// Create link for path ControllerHasStates.States
 				this.States.Add(sourceState_old22);
-
-				return;
-			}
-				
-			global::Company.MobileDSL.State sourceState3 = sourceElement as global::Company.MobileDSL.State;
-			if (sourceState3 != null)
-			{
-				// Create link for path ControllerHasStated.Stated
-				this.Stated.Add(sourceState3);
 
 				return;
 			}
@@ -760,15 +689,15 @@ namespace Company.MobileDSL
 		{
 			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
 				
-			global::Company.MobileDSL.Port sourcePort1 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort1 != null)
+			global::Company.MobileDSL.State sourceState1 = sourceElement as global::Company.MobileDSL.State;
+			if (sourceState1 != null)
 			{
-				// Delete link for path ControllerHasPorts.Ports
+				// Delete link for path ControllerHasStated.Stated
 				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ControllerHasPorts.GetLinks((global::Company.MobileDSL.Controller)this, sourcePort1))
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ControllerHasStated.GetLinks((global::Company.MobileDSL.Controller)this, sourceState1))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.ControllerHasPorts.ControllerDomainRoleId, global::Company.MobileDSL.ControllerHasPorts.PortDomainRoleId);
+					link.Delete(global::Company.MobileDSL.ControllerHasStated.ControllerDomainRoleId, global::Company.MobileDSL.ControllerHasStated.StateDomainRoleId);
 				}
 
 				return;
@@ -783,20 +712,6 @@ namespace Company.MobileDSL
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Company.MobileDSL.ControllerHasStates.ControllerDomainRoleId, global::Company.MobileDSL.ControllerHasStates.State_old2DomainRoleId);
-				}
-
-				return;
-			}
-				
-			global::Company.MobileDSL.State sourceState3 = sourceElement as global::Company.MobileDSL.State;
-			if (sourceState3 != null)
-			{
-				// Delete link for path ControllerHasStated.Stated
-				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ControllerHasStated.GetLinks((global::Company.MobileDSL.Controller)this, sourceState3))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.ControllerHasStated.ControllerDomainRoleId, global::Company.MobileDSL.ControllerHasStated.StateDomainRoleId);
 				}
 
 				return;
@@ -836,78 +751,22 @@ namespace Company.MobileDSL
 		{
 		}
 		#endregion
-		#region Controller opposite domain role accessor
+		#region ClassWithPorts opposite domain role accessor
 		/// <summary>
-		/// Gets or sets Controller.
+		/// Gets or sets ClassWithPorts.
+		/// Description for Company.MobileDSL.ClassWithPortsHasPorts.Port
 		/// </summary>
-		public virtual Controller Controller
+		public virtual ClassWithPorts ClassWithPorts
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ControllerHasPorts.PortDomainRoleId) as Controller;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasPorts.PortDomainRoleId) as ClassWithPorts;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ControllerHasPorts.PortDomainRoleId, value);
-			}
-		}
-		#endregion
-		#region State_old2 opposite domain role accessor
-		/// <summary>
-		/// Gets or sets State_old2.
-		/// Description for Company.MobileDSL.State_old2HasPorts.Port
-		/// </summary>
-		public virtual State_old2 State_old2
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.State_old2HasPorts.PortDomainRoleId) as State_old2;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.State_old2HasPorts.PortDomainRoleId, value);
-			}
-		}
-		#endregion
-		#region State opposite domain role accessor
-		/// <summary>
-		/// Gets or sets State.
-		/// Description for Company.MobileDSL.StateHasPorts.Port
-		/// </summary>
-		public virtual State State
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasPorts.PortDomainRoleId) as State;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasPorts.PortDomainRoleId, value);
-			}
-		}
-		#endregion
-		#region TempClass opposite domain role accessor
-		/// <summary>
-		/// Gets or sets TempClass.
-		/// Description for Company.MobileDSL.TempClassHasPorts.Port
-		/// </summary>
-		public virtual TempClass TempClass
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.TempClassHasPorts.PortDomainRoleId) as TempClass;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.TempClassHasPorts.PortDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasPorts.PortDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -1357,118 +1216,6 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region Ports opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of Ports.
-		/// Description for Company.MobileDSL.State_old2HasPorts.State_old2
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<Port> Ports
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(global::Company.MobileDSL.State_old2HasPorts.State_old2DomainRoleId);
-			}
-		}
-		#endregion
-		#region ElementGroupPrototype Merge methods
-		/// <summary>
-		/// Returns a value indicating whether the source element represented by the
-		/// specified root ProtoElement can be added to this element.
-		/// </summary>
-		/// <param name="rootElement">
-		/// The root ProtoElement representing a source element.  This can be null, 
-		/// in which case the ElementGroupPrototype does not contain an ProtoElements
-		/// and the code should inspect the ElementGroupPrototype context information.
-		/// </param>
-		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
-		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
-		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
-		{
-			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
-			
-			if (rootElement != null)
-			{
-				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.Port.DomainClassId)) 
-				{
-					return true;
-				}
-			}
-			return base.CanMerge(rootElement, elementGroupPrototype);
-		}
-		
-		/// <summary>
-		/// Called by the Merge process to create a relationship between 
-		/// this target element and the specified source element. 
-		/// Typically, a parent-child relationship is established
-		/// between the target element (the parent) and the source element 
-		/// (the child), but any relationship can be established.
-		/// </summary>
-		/// <param name="sourceElement">The element that is to be related to this model element.</param>
-		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
-		/// <remarks>
-		/// This method is overriden to create the relationship between the target element and the specified source element.
-		/// The base method does nothing.
-		/// </remarks>
-		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
-		{
-			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
-			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
-			// need to support this case.
-			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
-		
-				
-			global::Company.MobileDSL.Port sourcePort1 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort1 != null)
-			{
-				// Create link for path State_old2HasPorts.Ports
-				this.Ports.Add(sourcePort1);
-
-				return;
-			}
-		
-			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
-			// during a "Paste".
-			if (sourceElement is DslModeling::ExtensionElement
-				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
-			{
-				return;
-			}
-		
-			// Fall through to base class if this class hasn't handled the merge.
-			base.MergeRelate(sourceElement, elementGroup);
-		}
-		
-		/// <summary>
-		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
-		/// element from the current one (removes links created by MergeRelate).
-		/// </summary>
-		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
-		{
-			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
-				
-			global::Company.MobileDSL.Port sourcePort1 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort1 != null)
-			{
-				// Delete link for path State_old2HasPorts.Ports
-				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.State_old2HasPorts.GetLinks((global::Company.MobileDSL.State_old2)this, sourcePort1))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.State_old2HasPorts.State_old2DomainRoleId, global::Company.MobileDSL.State_old2HasPorts.PortDomainRoleId);
-				}
-
-				return;
-			}
-			// Fall through to base class if this class hasn't handled the unmerge.
-			base.MergeDisconnect(sourceElement);
-		}
-		#endregion
 	}
 }
 namespace Company.MobileDSL
@@ -1482,7 +1229,7 @@ namespace Company.MobileDSL
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("c10a167b-d931-4f22-913b-8b5210fdfade")]
-	public partial class State : NamedElement
+	public partial class State : ClassWithPorts
 	{
 		#region Constructors, domain class Id
 	
@@ -1529,18 +1276,49 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass ClassWithPorts
+	/// Description for Company.MobileDSL.ClassWithPorts
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ClassWithPorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ClassWithPorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("16729cd6-c0c9-434a-bb76-365e4d7fbbc5")]
+	public abstract partial class ClassWithPorts : NamedElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ClassWithPorts domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x16729cd6, 0xc0c9, 0x434a, 0xbb, 0x76, 0x36, 0x5e, 0x4d, 0x7f, 0xbb, 0xc5);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected ClassWithPorts(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
 		#region Ports opposite domain role accessor
 		
 		/// <summary>
 		/// Gets a list of Ports.
-		/// Description for Company.MobileDSL.StateHasPorts.State
+		/// Description for Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPorts
 		/// </summary>
 		public virtual DslModeling::LinkedElementCollection<Port> Ports
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(global::Company.MobileDSL.StateHasPorts.StateDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(global::Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPortsDomainRoleId);
 			}
 		}
 		#endregion
@@ -1596,7 +1374,7 @@ namespace Company.MobileDSL
 			global::Company.MobileDSL.Port sourcePort1 = sourceElement as global::Company.MobileDSL.Port;
 			if (sourcePort1 != null)
 			{
-				// Create link for path StateHasPorts.Ports
+				// Create link for path ClassWithPortsHasPorts.Ports
 				this.Ports.Add(sourcePort1);
 
 				return;
@@ -1627,382 +1405,18 @@ namespace Company.MobileDSL
 			global::Company.MobileDSL.Port sourcePort1 = sourceElement as global::Company.MobileDSL.Port;
 			if (sourcePort1 != null)
 			{
-				// Delete link for path StateHasPorts.Ports
+				// Delete link for path ClassWithPortsHasPorts.Ports
 				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasPorts.GetLinks((global::Company.MobileDSL.State)this, sourcePort1))
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ClassWithPortsHasPorts.GetLinks((global::Company.MobileDSL.ClassWithPorts)this, sourcePort1))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.StateHasPorts.StateDomainRoleId, global::Company.MobileDSL.StateHasPorts.PortDomainRoleId);
+					link.Delete(global::Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPortsDomainRoleId, global::Company.MobileDSL.ClassWithPortsHasPorts.PortDomainRoleId);
 				}
 
 				return;
 			}
 			// Fall through to base class if this class hasn't handled the unmerge.
 			base.MergeDisconnect(sourceElement);
-		}
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
-	/// DomainClass TempClass
-	/// Description for Company.MobileDSL.TempClass
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.TempClass.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.TempClass.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("9dc4f661-da0f-4455-a2e2-87c366c7bbd5")]
-	public partial class TempClass : DslModeling::ModelElement
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// TempClass domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x9dc4f661, 0xda0f, 0x4455, 0xa2, 0xe2, 0x87, 0xc3, 0x66, 0xc7, 0xbb, 0xd5);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public TempClass(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public TempClass(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region ComponentModel opposite domain role accessor
-		/// <summary>
-		/// Gets or sets ComponentModel.
-		/// Description for Company.MobileDSL.ComponentModelHasTempClassed.TempClass
-		/// </summary>
-		public virtual ComponentModel ComponentModel
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ComponentModelHasTempClassed.TempClassDomainRoleId) as ComponentModel;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ComponentModelHasTempClassed.TempClassDomainRoleId, value);
-			}
-		}
-		#endregion
-		#region Ports opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of Ports.
-		/// Description for Company.MobileDSL.TempClassHasPorts.TempClass
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<Port> Ports
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(global::Company.MobileDSL.TempClassHasPorts.TempClassDomainRoleId);
-			}
-		}
-		#endregion
-		#region StatePorts opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of StatePorts.
-		/// Description for Company.MobileDSL.TempClassHasStatePorts.TempClass
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<StatePort> StatePorts
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<StatePort>, StatePort>(global::Company.MobileDSL.TempClassHasStatePorts.TempClassDomainRoleId);
-			}
-		}
-		#endregion
-		#region ElementGroupPrototype Merge methods
-		/// <summary>
-		/// Returns a value indicating whether the source element represented by the
-		/// specified root ProtoElement can be added to this element.
-		/// </summary>
-		/// <param name="rootElement">
-		/// The root ProtoElement representing a source element.  This can be null, 
-		/// in which case the ElementGroupPrototype does not contain an ProtoElements
-		/// and the code should inspect the ElementGroupPrototype context information.
-		/// </param>
-		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
-		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
-		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
-		{
-			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
-			
-			if (rootElement != null)
-			{
-				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.Port.DomainClassId)) 
-				{
-					return true;
-				}
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.StatePort.DomainClassId)) 
-				{
-					return true;
-				}
-			}
-			return base.CanMerge(rootElement, elementGroupPrototype);
-		}
-		
-		/// <summary>
-		/// Called by the Merge process to create a relationship between 
-		/// this target element and the specified source element. 
-		/// Typically, a parent-child relationship is established
-		/// between the target element (the parent) and the source element 
-		/// (the child), but any relationship can be established.
-		/// </summary>
-		/// <param name="sourceElement">The element that is to be related to this model element.</param>
-		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
-		/// <remarks>
-		/// This method is overriden to create the relationship between the target element and the specified source element.
-		/// The base method does nothing.
-		/// </remarks>
-		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
-		{
-			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
-			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
-			// need to support this case.
-			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
-		
-				
-			global::Company.MobileDSL.Port sourcePort1 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort1 != null)
-			{
-				// Create link for path TempClassHasPorts.Ports
-				this.Ports.Add(sourcePort1);
-
-				return;
-			}
-				
-			global::Company.MobileDSL.StatePort sourceStatePort2 = sourceElement as global::Company.MobileDSL.StatePort;
-			if (sourceStatePort2 != null)
-			{
-				// Create link for path TempClassHasStatePorts.StatePorts
-				this.StatePorts.Add(sourceStatePort2);
-
-				return;
-			}
-		
-			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
-			// during a "Paste".
-			if (sourceElement is DslModeling::ExtensionElement
-				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
-			{
-				return;
-			}
-		
-			// Fall through to base class if this class hasn't handled the merge.
-			base.MergeRelate(sourceElement, elementGroup);
-		}
-		
-		/// <summary>
-		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
-		/// element from the current one (removes links created by MergeRelate).
-		/// </summary>
-		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
-		{
-			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
-				
-			global::Company.MobileDSL.Port sourcePort1 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort1 != null)
-			{
-				// Delete link for path TempClassHasPorts.Ports
-				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.TempClassHasPorts.GetLinks((global::Company.MobileDSL.TempClass)this, sourcePort1))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.TempClassHasPorts.TempClassDomainRoleId, global::Company.MobileDSL.TempClassHasPorts.PortDomainRoleId);
-				}
-
-				return;
-			}
-				
-			global::Company.MobileDSL.StatePort sourceStatePort2 = sourceElement as global::Company.MobileDSL.StatePort;
-			if (sourceStatePort2 != null)
-			{
-				// Delete link for path TempClassHasStatePorts.StatePorts
-				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.TempClassHasStatePorts.GetLinks((global::Company.MobileDSL.TempClass)this, sourceStatePort2))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.TempClassHasStatePorts.TempClassDomainRoleId, global::Company.MobileDSL.TempClassHasStatePorts.StatePortDomainRoleId);
-				}
-
-				return;
-			}
-			// Fall through to base class if this class hasn't handled the unmerge.
-			base.MergeDisconnect(sourceElement);
-		}
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
-	/// DomainClass StatePort
-	/// Description for Company.MobileDSL.StatePort
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.StatePort.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.StatePort.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (Name = {namePropertyStorage})")]
-	[DslModeling::DomainObjectId("1b4a27fd-ba9d-4247-be99-fb1af96308ee")]
-	public partial class StatePort : DslModeling::ModelElement
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// StatePort domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1b4a27fd, 0xba9d, 0x4247, 0xbe, 0x99, 0xfb, 0x1a, 0xf9, 0x63, 0x08, 0xee);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public StatePort(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public StatePort(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region Name domain property code
-		
-		/// <summary>
-		/// Name domain property Id.
-		/// </summary>
-		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0x9dbed3c5, 0xcffe, 0x410c, 0xbc, 0xe4, 0xd9, 0x1e, 0x9e, 0xac, 0xb4, 0xe6);
-		
-		/// <summary>
-		/// Storage for Name
-		/// </summary>
-		private global::System.String namePropertyStorage = string.Empty;
-		
-		/// <summary>
-		/// Gets or sets the value of Name domain property.
-		/// Description for Company.MobileDSL.StatePort.Name
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.StatePort/Name.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.StatePort/Name.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::ElementName]
-		[DslModeling::DomainObjectId("9dbed3c5-cffe-410c-bce4-d91e9eacb4e6")]
-		public global::System.String Name
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return namePropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				NamePropertyHandler.Instance.SetValue(this, value);
-			}
-		}
-		/// <summary>
-		/// Value handler for the StatePort.Name domain property.
-		/// </summary>
-		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<StatePort, global::System.String>
-		{
-			private NamePropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the StatePort.Name domain property value handler.
-			/// </summary>
-			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the StatePort.Name domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
-			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return NameDomainPropertyId;
-				}
-			}
-			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(StatePort element)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.namePropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(StatePort element, global::System.String newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				global::System.String oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.namePropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
-		}
-		
-		#endregion
-		#region TempClass opposite domain role accessor
-		/// <summary>
-		/// Gets or sets TempClass.
-		/// Description for Company.MobileDSL.TempClassHasStatePorts.StatePort
-		/// </summary>
-		public virtual TempClass TempClass
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.TempClassHasStatePorts.StatePortDomainRoleId) as TempClass;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.TempClassHasStatePorts.StatePortDomainRoleId, value);
-			}
 		}
 		#endregion
 	}
