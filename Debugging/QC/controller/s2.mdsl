@@ -11,44 +11,60 @@
             <outPort Id="da53fdf3-328a-46d6-a955-f4161029094d" name="OutPort1" />
           </classWithPortsHasPorts>
         </ports>
-        <stated>
-          <controllerHasStated Id="b9917979-6285-4bd8-9a96-832452a4c72a">
-            <state Id="68d0a44d-7cd3-49cc-ac14-a9f2207ff533" name="State1">
+        <states>
+          <controllerHasStates Id="0ad58b1b-bdd2-4514-9801-f16a82c776d7">
+            <state Id="32ed472f-ee88-4300-8158-71fae21236a3" name="State1">
               <ports>
-                <classWithPortsHasPorts Id="4d602b76-a2f5-4a53-bfdd-94e3f142da41">
-                  <inPort Id="431f045a-7320-4430-a5e6-c8e702472b25" name="InPort1" />
+                <classWithPortsHasPorts Id="5eb18101-b043-4854-a612-93636f7cf065">
+                  <inPort Id="4f275592-8e4e-4307-95f2-0260c8a8e3df" name="InPort1" />
                 </classWithPortsHasPorts>
-                <classWithPortsHasPorts Id="ce653275-8f4a-45b7-8b40-bd625c29ffad">
-                  <outPort Id="1d835196-b6ea-4a39-8cc0-25801bb4881e" name="OutPort1">
+                <classWithPortsHasPorts Id="87705ccb-d3f4-4b90-8617-27605e409332">
+                  <outPort Id="d13f67fb-46e9-44ef-b009-acafe1de673b" name="OutPort1">
                     <targets>
-                      <connection Id="1512e183-4f8c-4e3d-b18d-aedd130fb41a">
+                      <connection Id="3cecbc04-9ea5-4ab6-8e59-9e4f711eedd2">
                         <inPortMoniker name="//Controller1/State2/InPort1" />
                       </connection>
                     </targets>
                   </outPort>
                 </classWithPortsHasPorts>
               </ports>
+              <showForms>
+                <stateHasShowForms Id="32676b23-e37d-47e3-b23b-4b158df3a629">
+                  <showForm Id="1619fc1d-ec45-4109-9d55-d8fb14169647" name="ShowForm1">
+                    <events>
+                      <showFormHasEvents Id="012ffc6f-b289-4540-a321-264e635971c3">
+                        <event Id="0753f618-21dc-47fd-afbb-a9e6c0c13d98" name="Event1" />
+                      </showFormHasEvents>
+                      <showFormHasEvents Id="b960e951-d6d5-4d64-abdf-fc55004bda3b">
+                        <event Id="e821feac-1004-44c0-865a-5ce01ed5cd52" name="Event2" />
+                      </showFormHasEvents>
+                    </events>
+                    <primitives>
+                      <showFormHasPrimitives Id="56fa5607-8c71-4a33-a9b8-15a57decc65b">
+                        <primitive Id="221c7b2b-5b7c-4b43-ba19-3f3653f75070" name="Primitive1" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="80213511-2aa9-48ea-b234-8aa281398fac">
+                        <primitive Id="8ee08a52-dc7b-4cb0-9b42-0e61c5fda6ba" name="Primitive2" />
+                      </showFormHasPrimitives>
+                    </primitives>
+                  </showForm>
+                </stateHasShowForms>
+              </showForms>
             </state>
-          </controllerHasStated>
-          <controllerHasStated Id="23cc5c18-b5d5-4400-b7f4-a76c4611e261">
-            <state Id="b5f0a9b1-26fc-4d6d-ab8e-c56928a14881" name="State2">
+          </controllerHasStates>
+          <controllerHasStates Id="c021fc5a-f300-4ee4-afe2-3e7e21e06baf">
+            <state Id="51ffbd10-970a-45ce-a59c-fa1611b4a2ab" name="State2">
               <ports>
-                <classWithPortsHasPorts Id="3f6ee22a-a7ac-4a53-bdb4-9361cf5d73fd">
-                  <inPort Id="d0c529a4-a651-44b1-b97c-e2e8e5eaaa94" name="InPort1" />
+                <classWithPortsHasPorts Id="93a6676c-36df-4341-8722-c5fd8fa73421">
+                  <inPort Id="81cd2f37-cd2b-4988-82b1-1c34416647e0" name="InPort1" />
                 </classWithPortsHasPorts>
-                <classWithPortsHasPorts Id="04230c5e-4be6-47d3-9f01-30dc69aab73d">
-                  <outPort Id="4b3bb523-0725-4e5d-b086-a2b2f3468f2c" name="OutPort1">
-                    <targets>
-                      <connection Id="4bf010d8-d522-42d5-a5ad-febbace50d31">
-                        <inPortMoniker name="//Controller1/State1/InPort1" />
-                      </connection>
-                    </targets>
-                  </outPort>
+                <classWithPortsHasPorts Id="65332afa-d17d-4aff-b383-0c81901150df">
+                  <outPort Id="c402e852-fe21-49d2-89a9-40abd28a6948" name="OutPort1" />
                 </classWithPortsHasPorts>
               </ports>
             </state>
-          </controllerHasStated>
-        </stated>
+          </controllerHasStates>
+        </states>
       </controller>
     </componentModelHasControllers>
   </controllers>

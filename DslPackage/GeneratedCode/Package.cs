@@ -100,6 +100,31 @@ namespace Company.MobileDSL
 					"@StateToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
 					Index = 8)]
+	[VSShell::ProvideStaticToolboxGroup("@UI FormsToolboxTab;Company.MobileDSL.Dsl.dll", "Company.MobileDSL.UI FormsToolboxTab")]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
+					"@EventToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.EventToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Event", 
+					"@EventToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 9)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
+					"@ShowFormToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.ShowFormToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ShowForm", 
+					"@ShowFormToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 10)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
+					"@PrimitiveToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.PrimitiveToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Primitive", 
+					"@PrimitiveToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 11)]
 	[VSShell::ProvideEditorFactory(typeof(MobileDSLEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(MobileDSLEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(MobileDSLEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

@@ -98,6 +98,88 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
+		#region Compartment support
+		/// <summary>
+		/// Whether compartment items change events are subscribed to.
+		/// </summary>
+		private bool subscribedCompartmentItemsEvents;
+		
+		/// <summary>
+		/// Subscribe to events fired when compartment items changes.
+		/// </summary>
+		public void SubscribeCompartmentItemsEvents()
+		{
+			if (!subscribedCompartmentItemsEvents && this.Store != null)
+			{
+				subscribedCompartmentItemsEvents = true;
+				this.Store.EventManagerDirectory.ElementAdded.Add(new global::System.EventHandler<DslModeling::ElementAddedEventArgs>(this.CompartmentItemAdded));
+				this.Store.EventManagerDirectory.ElementDeleted.Add(new global::System.EventHandler<DslModeling::ElementDeletedEventArgs>(this.CompartmentItemDeleted));
+				this.Store.EventManagerDirectory.ElementPropertyChanged.Add(new global::System.EventHandler<DslModeling::ElementPropertyChangedEventArgs>(this.CompartmentItemPropertyChanged));
+				this.Store.EventManagerDirectory.RolePlayerChanged.Add(new global::System.EventHandler<DslModeling::RolePlayerChangedEventArgs>(this.CompartmentItemRolePlayerChanged));
+				this.Store.EventManagerDirectory.RolePlayerOrderChanged.Add(new global::System.EventHandler<DslModeling::RolePlayerOrderChangedEventArgs>(this.CompartmentItemRolePlayerOrderChanged));
+			}
+		}
+		
+		/// <summary>
+		/// Unsubscribe to events fired when compartment items changes.
+		/// </summary>
+		public void UnsubscribeCompartmentItemsEvents()
+		{
+			if (subscribedCompartmentItemsEvents)
+			{
+				this.Store.EventManagerDirectory.ElementAdded.Remove(new global::System.EventHandler<DslModeling::ElementAddedEventArgs>(this.CompartmentItemAdded));
+				this.Store.EventManagerDirectory.ElementDeleted.Remove(new global::System.EventHandler<DslModeling::ElementDeletedEventArgs>(this.CompartmentItemDeleted));
+				this.Store.EventManagerDirectory.ElementPropertyChanged.Remove(new global::System.EventHandler<DslModeling::ElementPropertyChangedEventArgs>(this.CompartmentItemPropertyChanged));
+				this.Store.EventManagerDirectory.RolePlayerChanged.Remove(new global::System.EventHandler<DslModeling::RolePlayerChangedEventArgs>(this.CompartmentItemRolePlayerChanged));
+				this.Store.EventManagerDirectory.RolePlayerOrderChanged.Remove(new global::System.EventHandler<DslModeling::RolePlayerOrderChangedEventArgs>(this.CompartmentItemRolePlayerOrderChanged));
+				subscribedCompartmentItemsEvents = false;
+			}
+		}
+		
+		#region Event handlers
+		/// <summary>
+		/// Event for element added.
+		/// </summary>
+		private void CompartmentItemAdded(object sender, DslModeling::ElementAddedEventArgs e)
+		{
+			// If in Undo, Redo or Rollback the compartment item rules are not run so we must refresh the compartment list at this point if required
+			bool repaintOnly = !e.ModelElement.Store.InUndoRedoOrRollback;
+			CompartmentItemAddRule.ElementAdded(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for element deleted.
+		/// </summary>
+		private void CompartmentItemDeleted(object sender, DslModeling::ElementDeletedEventArgs e)
+		{
+			bool repaintOnly = !e.ModelElement.Store.InUndoRedoOrRollback;
+			CompartmentItemDeleteRule.ElementDeleted(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for element property changed.
+		/// </summary>
+		private void CompartmentItemPropertyChanged(object sender, DslModeling::ElementPropertyChangedEventArgs e)
+		{
+			bool repaintOnly = !e.ModelElement.Store.InUndoRedoOrRollback;
+			CompartmentItemChangeRule.ElementPropertyChanged(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for role-player changed.
+		/// </summary>
+		private void CompartmentItemRolePlayerChanged(object sender, DslModeling::RolePlayerChangedEventArgs e)
+		{
+			bool repaintOnly = !e.ElementLink.Store.InUndoRedoOrRollback;
+			CompartmentItemRolePlayerChangeRule.RolePlayerChanged(e, repaintOnly);
+		}
+		/// <summary>
+		/// Event for role-player order changed.
+		/// </summary>
+		private void CompartmentItemRolePlayerOrderChanged(object sender, DslModeling::RolePlayerOrderChangedEventArgs e)
+		{
+			bool repaintOnly = !e.Link.Store.InUndoRedoOrRollback;
+			CompartmentItemRolePlayerPositionChangeRule.RolePlayerPositionChanged(e, repaintOnly);
+		}
+		#endregion
+		#endregion
 		#region Shape mapping
 		/// <summary>
 		/// Called during view fixup to ask the parent whether a shape should be created for the given child element.
@@ -230,6 +312,12 @@ namespace Company.MobileDSL
 			if(element is global::Company.MobileDSL.State_old2)
 			{
 				global::Company.MobileDSL.StateShape newShape = new global::Company.MobileDSL.StateShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.MobileDSL.ShowForm)
+			{
+				global::Company.MobileDSL.CompartmentShape1 newShape = new global::Company.MobileDSL.CompartmentShape1(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -493,6 +581,7 @@ namespace Company.MobileDSL
 						this.stateConnectionConnectAction.Dispose();
 						this.stateConnectionConnectAction = null;
 					}
+					this.UnsubscribeCompartmentItemsEvents();
 				}
 			}
 			finally
@@ -551,6 +640,7 @@ namespace Company.MobileDSL
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Controller), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old2), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowForm), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Comment), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Connection), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
@@ -589,6 +679,10 @@ namespace Company.MobileDSL
 				if(childElement is global::Company.MobileDSL.State_old2)
 				{
 					parentElement = GetParentForState_old2((global::Company.MobileDSL.State_old2)childElement);
+				} else
+				if(childElement is global::Company.MobileDSL.ShowForm)
+				{
+					parentElement = GetParentForShowForm((global::Company.MobileDSL.ShowForm)childElement);
 				} else
 				if(childElement is global::Company.MobileDSL.Comment)
 				{
@@ -648,6 +742,19 @@ namespace Company.MobileDSL
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
 				global::Company.MobileDSL.ComponentModel result = root2.ComponentModel;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.MobileDSL.ComponentModel GetParentForShowForm( global::Company.MobileDSL.ShowForm root )
+			{
+				// Segments 0 and 1
+				global::Company.MobileDSL.State root2 = root.State;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.MobileDSL.Controller root4 = root2.Controller;
+				if ( root4 == null ) return null;
+				// Segments 4 and 5
+				global::Company.MobileDSL.ComponentModel result = root4.ComponentModel;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -736,6 +843,287 @@ namespace Company.MobileDSL
 			}
 		}
 		
+		/// <summary>
+		/// Rule to update compartments when an item is added to the list
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasEvents), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasPrimitives), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemAddRule : DslModeling::AddRule
+		{
+			/// <summary>
+			/// Called when an element is added. 
+			/// </summary>
+			/// <param name="e"></param>
+			public override void ElementAdded(DslModeling::ElementAddedEventArgs e)
+			{
+				ElementAdded(e, false);
+			}
+	
+			internal static void ElementAdded(DslModeling::ElementAddedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if (e.ModelElement.IsDeleted)
+					return;
+				if(e.ModelElement is global::Company.MobileDSL.ShowFormHasEvents)
+				{
+					global::System.Collections.IEnumerable elements = GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink((global::Company.MobileDSL.ShowFormHasEvents)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+				}
+				if(e.ModelElement is global::Company.MobileDSL.ShowFormHasPrimitives)
+				{
+					global::System.Collections.IEnumerable elements = GetShowFormForCompartmentShape1UIPrimitivesFromLastLink((global::Company.MobileDSL.ShowFormHasPrimitives)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+				}
+			}
+			
+			#region static DomainPath traversal methods to get the list of compartments to update
+			internal static global::System.Collections.ICollection GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink(global::Company.MobileDSL.ShowFormHasEvents root)
+			{
+				// Segment 0
+				global::Company.MobileDSL.ShowForm result = root.ShowForm;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetShowFormForCompartmentShape1UIEventsCompartment(global::Company.MobileDSL.Event root)
+			{
+				// Segments 1 and 0
+				global::Company.MobileDSL.ShowForm result = root.ShowForm;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetShowFormForCompartmentShape1UIPrimitivesFromLastLink(global::Company.MobileDSL.ShowFormHasPrimitives root)
+			{
+				// Segment 0
+				global::Company.MobileDSL.ShowForm result = root.ShowForm;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetShowFormForCompartmentShape1UIPrimitives(global::Company.MobileDSL.Primitive root)
+			{
+				// Segments 1 and 0
+				global::Company.MobileDSL.ShowForm result = root.ShowForm;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			#endregion
+	
+			#region helper method to update compartments 
+			/// <summary>
+			/// Updates the compartments for the shapes associated to the given list of model elements
+			/// </summary>
+			/// <param name="elements">List of model elements</param>
+			/// <param name="shapeType">The type of shape that needs updating</param>
+			/// <param name="compartmentName">The name of the compartment to update</param>
+			/// <param name="repaintOnly">If true, the method will only invalidate the shape for a repaint, without re-initializing the shape.</param>
+			internal static void UpdateCompartments(global::System.Collections.IEnumerable elements, global::System.Type shapeType, string compartmentName, bool repaintOnly)
+			{
+				foreach (DslModeling::ModelElement element in elements)
+				{
+					DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+					foreach (DslDiagrams::PresentationElement pel in pels)
+					{
+						DslDiagrams::CompartmentShape compartmentShape = pel as DslDiagrams::CompartmentShape;
+						if (compartmentShape != null && shapeType.IsAssignableFrom(compartmentShape.GetType()))
+						{
+							if (repaintOnly)
+							{
+								compartmentShape.Invalidate();
+							}
+							else
+							{
+								foreach(DslDiagrams::CompartmentMapping mapping in compartmentShape.GetCompartmentMappings())
+								{
+									if(mapping.CompartmentId==compartmentName)
+									{
+										mapping.InitializeCompartmentShape(compartmentShape);
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			#endregion
+		}
+		
+		/// <summary>
+		/// Rule to update compartments when an items is removed from the list
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasEvents), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasPrimitives), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemDeleteRule : DslModeling::DeleteRule
+		{
+			/// <summary>
+			/// Called when an element is deleted
+			/// </summary>
+			/// <param name="e"></param>
+			public override void ElementDeleted(DslModeling::ElementDeletedEventArgs e)
+			{
+				ElementDeleted(e, false);
+			}
+			
+			internal static void ElementDeleted(DslModeling::ElementDeletedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(e.ModelElement is global::Company.MobileDSL.ShowFormHasEvents)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink((global::Company.MobileDSL.ShowFormHasEvents)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+				}
+				if(e.ModelElement is global::Company.MobileDSL.ShowFormHasPrimitives)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitivesFromLastLink((global::Company.MobileDSL.ShowFormHasPrimitives)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Rule to update compartments when the property on an item being displayed changes.
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Event), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Primitive), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemChangeRule : DslModeling::ChangeRule 
+		{
+			/// <summary>
+			/// Called when an element is changed
+			/// </summary>
+			/// <param name="e"></param>
+			public override void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e)
+			{
+				ElementPropertyChanged(e, false);
+			}
+			
+			internal static void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(e.ModelElement is global::Company.MobileDSL.Event && e.DomainProperty.Id == global::Company.MobileDSL.Event.NameDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartment((global::Company.MobileDSL.Event)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+				}
+				if(e.ModelElement is global::Company.MobileDSL.Primitive && e.DomainProperty.Id == global::Company.MobileDSL.Primitive.NameDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitives((global::Company.MobileDSL.Primitive)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Rule to update compartments when a roleplayer change happens
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasEvents), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasPrimitives), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemRolePlayerChangeRule : DslModeling::RolePlayerChangeRule 
+		{
+			/// <summary>
+			/// Called when the roleplayer on a link changes.
+			/// </summary>
+			/// <param name="e"></param>
+			public override void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e)
+			{
+				RolePlayerChanged(e, false);
+			}
+			
+			internal static void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(typeof(global::Company.MobileDSL.ShowFormHasEvents).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink((global::Company.MobileDSL.Event)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::Company.MobileDSL.CompartmentShape1 compartmentShape = pel as global::Company.MobileDSL.CompartmentShape1;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink((global::Company.MobileDSL.ShowFormHasEvents)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartment((global::Company.MobileDSL.Event)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+					}
+				}
+				if(typeof(global::Company.MobileDSL.ShowFormHasPrimitives).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitivesFromLastLink((global::Company.MobileDSL.Primitive)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::Company.MobileDSL.CompartmentShape1 compartmentShape = pel as global::Company.MobileDSL.CompartmentShape1;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[1].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitivesFromLastLink((global::Company.MobileDSL.ShowFormHasPrimitives)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitives((global::Company.MobileDSL.Primitive)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+					}
+				}
+			}
+		}
+	
+		/// <summary>
+		/// Rule to update compartments when the order of items in the list changes.
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasEvents), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasPrimitives), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		internal sealed class CompartmentItemRolePlayerPositionChangeRule : DslModeling::RolePlayerPositionChangeRule 
+		{
+			/// <summary>
+			/// Called when the order of a roleplayer in a relationship changes
+			/// </summary>
+			/// <param name="e"></param>
+			public override void RolePlayerPositionChanged(DslModeling::RolePlayerOrderChangedEventArgs e)
+			{
+				RolePlayerPositionChanged(e, false);
+			}
+			
+			internal static void RolePlayerPositionChanged(DslModeling::RolePlayerOrderChangedEventArgs e, bool repaintOnly)
+			{
+				if(e==null) throw new global::System.ArgumentNullException("e");
+				if(typeof(global::Company.MobileDSL.ShowFormHasEvents).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartment((global::Company.MobileDSL.Event)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+					}
+				}
+				if(typeof(global::Company.MobileDSL.ShowFormHasPrimitives).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitives((global::Company.MobileDSL.Primitive)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+					}
+				}
+			}
+		}
 	
 		/// <summary>
 		/// A rule which fires when data mapped to outer text decorators has changed,

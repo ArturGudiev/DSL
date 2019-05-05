@@ -245,6 +245,30 @@
     <value>Class With Ports</value>
     <comment>DisplayName for DomainClass &apos;ClassWithPorts&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.ShowForm.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowForm</value>
+    <comment>Description for DomainClass &apos;ShowForm&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowForm.DisplayName" xml:space="preserve">
+    <value>Show Form</value>
+    <comment>DisplayName for DomainClass &apos;ShowForm&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Event.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Event</value>
+    <comment>Description for DomainClass &apos;Event&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Event.DisplayName" xml:space="preserve">
+    <value>Event</value>
+    <comment>DisplayName for DomainClass &apos;Event&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Primitive.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Primitive</value>
+    <comment>Description for DomainClass &apos;Primitive&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Primitive.DisplayName" xml:space="preserve">
+    <value>Primitive</value>
+    <comment>DisplayName for DomainClass &apos;Primitive&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.Connection.Description" xml:space="preserve">
     <value></value>
     <comment>Description for DomainClass &apos;Connection&apos;</comment>
@@ -389,37 +413,37 @@
     <value>Comments</value>
     <comment>PropertyDisplayName for DomainRole &apos;Subject&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStates.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ControllerHasStates</value>
-    <comment>Description for DomainClass &apos;ControllerHasStates&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates2.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ControllerHasStates2</value>
+    <comment>Description for DomainClass &apos;ControllerHasStates2&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStates.DisplayName" xml:space="preserve">
-    <value>Controller Has States</value>
-    <comment>DisplayName for DomainClass &apos;ControllerHasStates&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates2.DisplayName" xml:space="preserve">
+    <value>Controller Has States2</value>
+    <comment>DisplayName for DomainClass &apos;ControllerHasStates2&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStates/Controller.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ControllerHasStates.Controller</value>
-    <comment>Description for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates2/Controller.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ControllerHasStates2.Controller</value>
+    <comment>Description for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStates2&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStates/Controller.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.ControllerHasStates2/Controller.DisplayName" xml:space="preserve">
     <value>Controller</value>
-    <comment>DisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStates2&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStates/Controller.PropertyDisplayName" xml:space="preserve">
-    <value>States</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates2/Controller.PropertyDisplayName" xml:space="preserve">
+    <value>States2</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStates2&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStates/State_old2.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ControllerHasStates.State_old2</value>
-    <comment>Description for DomainRole &apos;State_old2&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates2/State_old2.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ControllerHasStates2.State_old2</value>
+    <comment>Description for DomainRole &apos;State_old2&apos; on DomainRelationship &apos;ControllerHasStates2&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStates/State_old2.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.ControllerHasStates2/State_old2.DisplayName" xml:space="preserve">
     <value>State_old2</value>
-    <comment>DisplayName for DomainRole &apos;State_old2&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;State_old2&apos; on DomainRelationship &apos;ControllerHasStates2&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStates/State_old2.PropertyDisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.ControllerHasStates2/State_old2.PropertyDisplayName" xml:space="preserve">
     <value>Controller</value>
-    <comment>PropertyDisplayName for DomainRole &apos;State_old2&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
+    <comment>PropertyDisplayName for DomainRole &apos;State_old2&apos; on DomainRelationship &apos;ControllerHasStates2&apos;</comment>
   </data>
   <data name="Company.MobileDSL.State_old2ReferencesPreviousStates.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.State_old2ReferencesPreviousStates</value>
@@ -461,37 +485,37 @@
     <value>Next States</value>
     <comment>PropertyDisplayName for DomainRole &apos;TargetState_old2&apos; on DomainRelationship &apos;State_old2ReferencesPreviousStates&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStated.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ControllerHasStated</value>
-    <comment>Description for DomainClass &apos;ControllerHasStated&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ControllerHasStates</value>
+    <comment>Description for DomainClass &apos;ControllerHasStates&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStated.DisplayName" xml:space="preserve">
-    <value>Controller Has Stated</value>
-    <comment>DisplayName for DomainClass &apos;ControllerHasStated&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates.DisplayName" xml:space="preserve">
+    <value>Controller Has States</value>
+    <comment>DisplayName for DomainClass &apos;ControllerHasStates&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStated/Controller.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ControllerHasStated.Controller</value>
-    <comment>Description for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStated&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates/Controller.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ControllerHasStates.Controller</value>
+    <comment>Description for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStated/Controller.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.ControllerHasStates/Controller.DisplayName" xml:space="preserve">
     <value>Controller</value>
-    <comment>DisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStated&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStated/Controller.PropertyDisplayName" xml:space="preserve">
-    <value>Stated</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStated&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates/Controller.PropertyDisplayName" xml:space="preserve">
+    <value>States</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStated/State.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ControllerHasStated.State</value>
-    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;ControllerHasStated&apos;</comment>
+  <data name="Company.MobileDSL.ControllerHasStates/State.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ControllerHasStates.State</value>
+    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStated/State.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.ControllerHasStates/State.DisplayName" xml:space="preserve">
     <value>State</value>
-    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;ControllerHasStated&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ControllerHasStated/State.PropertyDisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.ControllerHasStates/State.PropertyDisplayName" xml:space="preserve">
     <value>Controller</value>
-    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;ControllerHasStated&apos;</comment>
+    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;ControllerHasStates&apos;</comment>
   </data>
   <data name="Company.MobileDSL.ClassWithPortsHasPorts.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.ClassWithPortsHasPorts</value>
@@ -524,6 +548,102 @@
   <data name="Company.MobileDSL.ClassWithPortsHasPorts/Port.PropertyDisplayName" xml:space="preserve">
     <value>Class With Ports</value>
     <comment>PropertyDisplayName for DomainRole &apos;Port&apos; on DomainRelationship &apos;ClassWithPortsHasPorts&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateHasShowForms.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasShowForms</value>
+    <comment>Description for DomainClass &apos;StateHasShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateHasShowForms.DisplayName" xml:space="preserve">
+    <value>State Has Show Forms</value>
+    <comment>DisplayName for DomainClass &apos;StateHasShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateHasShowForms/State.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasShowForms.State</value>
+    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateHasShowForms/State.DisplayName" xml:space="preserve">
+    <value>State</value>
+    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateHasShowForms/State.PropertyDisplayName" xml:space="preserve">
+    <value>Show Forms</value>
+    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateHasShowForms/ShowForm.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasShowForms.ShowForm</value>
+    <comment>Description for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;StateHasShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateHasShowForms/ShowForm.DisplayName" xml:space="preserve">
+    <value>Show Form</value>
+    <comment>DisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;StateHasShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateHasShowForms/ShowForm.PropertyDisplayName" xml:space="preserve">
+    <value>State</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;StateHasShowForms&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasEvents.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormHasEvents</value>
+    <comment>Description for DomainClass &apos;ShowFormHasEvents&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasEvents.DisplayName" xml:space="preserve">
+    <value>Show Form Has Events</value>
+    <comment>DisplayName for DomainClass &apos;ShowFormHasEvents&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasEvents/ShowForm.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormHasEvents.ShowForm</value>
+    <comment>Description for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;ShowFormHasEvents&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasEvents/ShowForm.DisplayName" xml:space="preserve">
+    <value>Show Form</value>
+    <comment>DisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;ShowFormHasEvents&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasEvents/ShowForm.PropertyDisplayName" xml:space="preserve">
+    <value>Events</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;ShowFormHasEvents&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasEvents/Event.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormHasEvents.Event</value>
+    <comment>Description for DomainRole &apos;Event&apos; on DomainRelationship &apos;ShowFormHasEvents&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasEvents/Event.DisplayName" xml:space="preserve">
+    <value>Event</value>
+    <comment>DisplayName for DomainRole &apos;Event&apos; on DomainRelationship &apos;ShowFormHasEvents&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasEvents/Event.PropertyDisplayName" xml:space="preserve">
+    <value>Show Form</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Event&apos; on DomainRelationship &apos;ShowFormHasEvents&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasPrimitives.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormHasPrimitives</value>
+    <comment>Description for DomainClass &apos;ShowFormHasPrimitives&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasPrimitives.DisplayName" xml:space="preserve">
+    <value>Show Form Has Primitives</value>
+    <comment>DisplayName for DomainClass &apos;ShowFormHasPrimitives&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasPrimitives/ShowForm.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormHasPrimitives.ShowForm</value>
+    <comment>Description for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;ShowFormHasPrimitives&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasPrimitives/ShowForm.DisplayName" xml:space="preserve">
+    <value>Show Form</value>
+    <comment>DisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;ShowFormHasPrimitives&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasPrimitives/ShowForm.PropertyDisplayName" xml:space="preserve">
+    <value>Primitives</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ShowForm&apos; on DomainRelationship &apos;ShowFormHasPrimitives&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasPrimitives/Primitive.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ShowFormHasPrimitives.Primitive</value>
+    <comment>Description for DomainRole &apos;Primitive&apos; on DomainRelationship &apos;ShowFormHasPrimitives&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasPrimitives/Primitive.DisplayName" xml:space="preserve">
+    <value>Primitive</value>
+    <comment>DisplayName for DomainRole &apos;Primitive&apos; on DomainRelationship &apos;ShowFormHasPrimitives&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ShowFormHasPrimitives/Primitive.PropertyDisplayName" xml:space="preserve">
+    <value>Show Form</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Primitive&apos; on DomainRelationship &apos;ShowFormHasPrimitives&apos;</comment>
   </data>
   <data name="Company.MobileDSL.InPortShape.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.InPortShape</value>
@@ -580,6 +700,26 @@
   <data name="Company.MobileDSL.GeometryShape1.DisplayName" xml:space="preserve">
     <value>Geometry Shape1</value>
     <comment>DisplayName for DomainClass &apos;GeometryShape1&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.CompartmentShape1.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.CompartmentShape1</value>
+    <comment>Description for DomainClass &apos;CompartmentShape1&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.CompartmentShape1.DisplayName" xml:space="preserve">
+    <value>Compartment Shape1</value>
+    <comment>DisplayName for DomainClass &apos;CompartmentShape1&apos;</comment>
+  </data>
+  <data name="CompartmentShape1UIEventsCompartmentTitle" xml:space="preserve">
+    <value></value>
+    <comment>Compartment title</comment>
+  </data>
+  <data name="CompartmentShape1UIPrimitivesTitle" xml:space="preserve">
+    <value></value>
+    <comment>Compartment title</comment>
+  </data>
+  <data name="CompartmentShape1NameDecoratorDefaultText" xml:space="preserve">
+    <value>NameDecorator</value>
+    <comment>Text decorator default text</comment>
   </data>
   <data name="Company.MobileDSL.AssociationLink.Description" xml:space="preserve">
     <value></value>
@@ -707,6 +847,34 @@
   </data>
   <data name="StateToolboxTooltip" xml:space="preserve">
     <value>State</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="UI FormsToolboxTab" xml:space="preserve">
+    <value>UI Forms</value>
+    <comment>Toolbox item tab name</comment>
+  </data>
+  <data name="EventToolboxItem" xml:space="preserve">
+    <value>Event</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="EventToolboxTooltip" xml:space="preserve">
+    <value>Event</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ShowFormToolboxItem" xml:space="preserve">
+    <value>ShowForm</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ShowFormToolboxTooltip" xml:space="preserve">
+    <value>Show Form</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="PrimitiveToolboxItem" xml:space="preserve">
+    <value>Primitive</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="PrimitiveToolboxTooltip" xml:space="preserve">
+    <value>Primitive</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -876,6 +1044,18 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="StateToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ComponentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="EventToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\flash2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ShowFormToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ComponentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="PrimitiveToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\flash2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

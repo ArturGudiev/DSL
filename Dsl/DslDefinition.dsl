@@ -55,7 +55,7 @@
             <DomainClassMoniker Name="State_old2" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>ControllerHasStates.States</DomainPath>
+            <DomainPath>ControllerHasStates2.States2</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
         <ElementMergeDirective>
@@ -63,7 +63,7 @@
             <DomainClassMoniker Name="State" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>ControllerHasStated.Stated</DomainPath>
+            <DomainPath>ControllerHasStates.States</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
@@ -108,6 +108,16 @@
       <BaseClass>
         <DomainClassMoniker Name="ClassWithPorts" />
       </BaseClass>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="ShowForm" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>StateHasShowForms.ShowForms</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
     </DomainClass>
     <DomainClass Id="16729cd6-c0c9-434a-bb76-365e4d7fbbc5" Description="Description for Company.MobileDSL.ClassWithPorts" Name="ClassWithPorts" DisplayName="Class With Ports" InheritanceModifier="Abstract" Namespace="Company.MobileDSL">
       <BaseClass>
@@ -123,6 +133,39 @@
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="76a7e1be-9811-436f-8303-39f4017eb70b" Description="Description for Company.MobileDSL.ShowForm" Name="ShowForm" DisplayName="Show Form" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="NamedElement" />
+      </BaseClass>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Event" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ShowFormHasEvents.Events</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Primitive" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ShowFormHasPrimitives.Primitives</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="2128d4b7-e13d-48f5-9561-10606246a672" Description="Description for Company.MobileDSL.Event" Name="Event" DisplayName="Event" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="NamedElement" />
+      </BaseClass>
+    </DomainClass>
+    <DomainClass Id="b26e8379-0ad9-4800-8dd8-0570ed78c99e" Description="Description for Company.MobileDSL.Primitive" Name="Primitive" DisplayName="Primitive" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="NamedElement" />
+      </BaseClass>
     </DomainClass>
   </Classes>
   <Relationships>
@@ -203,16 +246,16 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="351ce9cd-3d3a-4960-bb72-dbfc3e36b709" Description="Description for Company.MobileDSL.ControllerHasStates" Name="ControllerHasStates" DisplayName="Controller Has States" Namespace="Company.MobileDSL" IsEmbedding="true">
+    <DomainRelationship Id="351ce9cd-3d3a-4960-bb72-dbfc3e36b709" Description="Description for Company.MobileDSL.ControllerHasStates2" Name="ControllerHasStates2" DisplayName="Controller Has States2" Namespace="Company.MobileDSL" IsEmbedding="true">
       <Source>
-        <DomainRole Id="b80db3fc-3640-4f59-b4af-22a3406cf5c8" Description="Description for Company.MobileDSL.ControllerHasStates.Controller" Name="Controller" DisplayName="Controller" PropertyName="States" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="States">
+        <DomainRole Id="b80db3fc-3640-4f59-b4af-22a3406cf5c8" Description="Description for Company.MobileDSL.ControllerHasStates2.Controller" Name="Controller" DisplayName="Controller" PropertyName="States2" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="States2">
           <RolePlayer>
             <DomainClassMoniker Name="Controller" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="57695418-58c6-4d82-8240-28a2b0db2319" Description="Description for Company.MobileDSL.ControllerHasStates.State_old2" Name="State_old2" DisplayName="State_old2" PropertyName="Controller" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Controller">
+        <DomainRole Id="57695418-58c6-4d82-8240-28a2b0db2319" Description="Description for Company.MobileDSL.ControllerHasStates2.State_old2" Name="State_old2" DisplayName="State_old2" PropertyName="Controller" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Controller">
           <RolePlayer>
             <DomainClassMoniker Name="State_old2" />
           </RolePlayer>
@@ -242,16 +285,16 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="32f7ed14-aa66-453d-8972-2d56f63d126f" Description="Description for Company.MobileDSL.ControllerHasStated" Name="ControllerHasStated" DisplayName="Controller Has Stated" Namespace="Company.MobileDSL" IsEmbedding="true">
+    <DomainRelationship Id="32f7ed14-aa66-453d-8972-2d56f63d126f" Description="Description for Company.MobileDSL.ControllerHasStates" Name="ControllerHasStates" DisplayName="Controller Has States" Namespace="Company.MobileDSL" IsEmbedding="true">
       <Source>
-        <DomainRole Id="efda5d5a-913f-4371-aea5-d26b52821d67" Description="Description for Company.MobileDSL.ControllerHasStated.Controller" Name="Controller" DisplayName="Controller" PropertyName="Stated" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Stated">
+        <DomainRole Id="efda5d5a-913f-4371-aea5-d26b52821d67" Description="Description for Company.MobileDSL.ControllerHasStates.Controller" Name="Controller" DisplayName="Controller" PropertyName="States" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="States">
           <RolePlayer>
             <DomainClassMoniker Name="Controller" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="21a29bc7-c546-48d9-8b5a-5ff2dc320e58" Description="Description for Company.MobileDSL.ControllerHasStated.State" Name="State" DisplayName="State" PropertyName="Controller" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Controller">
+        <DomainRole Id="21a29bc7-c546-48d9-8b5a-5ff2dc320e58" Description="Description for Company.MobileDSL.ControllerHasStates.State" Name="State" DisplayName="State" PropertyName="Controller" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Controller">
           <RolePlayer>
             <DomainClassMoniker Name="State" />
           </RolePlayer>
@@ -270,6 +313,54 @@
         <DomainRole Id="1ad04d77-eced-42cf-acea-41de88a14c82" Description="Description for Company.MobileDSL.ClassWithPortsHasPorts.Port" Name="Port" DisplayName="Port" PropertyName="ClassWithPorts" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Class With Ports">
           <RolePlayer>
             <DomainClassMoniker Name="Port" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="ef2de89a-c88a-494d-b1c0-b92e77db6ca0" Description="Description for Company.MobileDSL.StateHasShowForms" Name="StateHasShowForms" DisplayName="State Has Show Forms" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="bd269575-5527-42a6-ad5a-4601456489be" Description="Description for Company.MobileDSL.StateHasShowForms.State" Name="State" DisplayName="State" PropertyName="ShowForms" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Show Forms">
+          <RolePlayer>
+            <DomainClassMoniker Name="State" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="e52f87d9-5d4d-4130-96b7-440ae098fd2c" Description="Description for Company.MobileDSL.StateHasShowForms.ShowForm" Name="ShowForm" DisplayName="Show Form" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
+          <RolePlayer>
+            <DomainClassMoniker Name="ShowForm" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="7e7a78c3-7244-40e4-8915-56627fa52331" Description="Description for Company.MobileDSL.ShowFormHasEvents" Name="ShowFormHasEvents" DisplayName="Show Form Has Events" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="edfd54e4-5e8c-4361-9a72-416651a73347" Description="Description for Company.MobileDSL.ShowFormHasEvents.ShowForm" Name="ShowForm" DisplayName="Show Form" PropertyName="Events" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Events">
+          <RolePlayer>
+            <DomainClassMoniker Name="ShowForm" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="ab92a9f6-1e83-4916-908a-6b17b1acbd42" Description="Description for Company.MobileDSL.ShowFormHasEvents.Event" Name="Event" DisplayName="Event" PropertyName="ShowForm" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Show Form">
+          <RolePlayer>
+            <DomainClassMoniker Name="Event" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="e19886bd-1044-498e-8ebc-6c82d9a682dc" Description="Description for Company.MobileDSL.ShowFormHasPrimitives" Name="ShowFormHasPrimitives" DisplayName="Show Form Has Primitives" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="b7b5f667-d913-46cd-b59c-f1db31a45a34" Description="Description for Company.MobileDSL.ShowFormHasPrimitives.ShowForm" Name="ShowForm" DisplayName="Show Form" PropertyName="Primitives" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Primitives">
+          <RolePlayer>
+            <DomainClassMoniker Name="ShowForm" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="37569c31-c9ed-4acb-a760-2ba21e6b9922" Description="Description for Company.MobileDSL.ShowFormHasPrimitives.Primitive" Name="Primitive" DisplayName="Primitive" PropertyName="ShowForm" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Show Form">
+          <RolePlayer>
+            <DomainClassMoniker Name="Primitive" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -319,6 +410,13 @@
       </ShapeHasDecorators>
     </GeometryShape>
     <GeometryShape Id="7cc0d58f-c7f1-44ae-89b0-722bf7b7abd6" Description="Description for Company.MobileDSL.GeometryShape1" Name="GeometryShape1" DisplayName="Geometry Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Geometry Shape1" InitialHeight="1" Geometry="Rectangle" />
+    <CompartmentShape Id="cb5171d3-7ac6-479c-b7ce-d1474ea444eb" Description="Description for Company.MobileDSL.CompartmentShape1" Name="CompartmentShape1" DisplayName="Compartment Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Compartment Shape1" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
+      </ShapeHasDecorators>
+      <Compartment Name="UIEventsCompartment" />
+      <Compartment Name="UIPrimitives" />
+    </CompartmentShape>
   </Shapes>
   <Connectors>
     <Connector Id="66d5ac35-32f5-41a3-8eb2-a96e59751133" Description="" Name="AssociationLink" DisplayName="Association Link" Namespace="Company.MobileDSL" FixedTooltipText="Association Link" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -374,11 +472,11 @@
           <XmlPropertyData XmlName="isFirst">
             <DomainPropertyMoniker Name="Controller/isFirst" />
           </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="states2">
+            <DomainRelationshipMoniker Name="ControllerHasStates2" />
+          </XmlRelationshipData>
           <XmlRelationshipData UseFullForm="true" RoleElementName="states">
             <DomainRelationshipMoniker Name="ControllerHasStates" />
-          </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="stated">
-            <DomainRelationshipMoniker Name="ControllerHasStated" />
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
@@ -440,8 +538,8 @@
       <XmlClassData TypeName="MobileDSLDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="mobileDSLDiagramMoniker" ElementName="mobileDSLDiagram" MonikerTypeName="MobileDSLDiagramMoniker">
         <DiagramMoniker Name="MobileDSLDiagram" />
       </XmlClassData>
-      <XmlClassData TypeName="ControllerHasStates" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerHasStatesMoniker" ElementName="controllerHasStates" MonikerTypeName="ControllerHasStatesMoniker">
-        <DomainRelationshipMoniker Name="ControllerHasStates" />
+      <XmlClassData TypeName="ControllerHasStates2" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerHasStates2Moniker" ElementName="controllerHasStates2" MonikerTypeName="ControllerHasStates2Moniker">
+        <DomainRelationshipMoniker Name="ControllerHasStates2" />
       </XmlClassData>
       <XmlClassData TypeName="State_old2" MonikerAttributeName="" SerializeId="true" MonikerElementName="state_old2Moniker" ElementName="state_old2" MonikerTypeName="State_old2Moniker">
         <DomainClassMoniker Name="State_old2" />
@@ -468,11 +566,16 @@
       <XmlClassData TypeName="StateConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateConnectorMoniker" ElementName="stateConnector" MonikerTypeName="StateConnectorMoniker">
         <ConnectorMoniker Name="StateConnector" />
       </XmlClassData>
-      <XmlClassData TypeName="ControllerHasStated" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerHasStatedMoniker" ElementName="controllerHasStated" MonikerTypeName="ControllerHasStatedMoniker">
-        <DomainRelationshipMoniker Name="ControllerHasStated" />
+      <XmlClassData TypeName="ControllerHasStates" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerHasStatesMoniker" ElementName="controllerHasStates" MonikerTypeName="ControllerHasStatesMoniker">
+        <DomainRelationshipMoniker Name="ControllerHasStates" />
       </XmlClassData>
       <XmlClassData TypeName="State" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateMoniker" ElementName="state" MonikerTypeName="StateMoniker">
         <DomainClassMoniker Name="State" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="showForms">
+            <DomainRelationshipMoniker Name="StateHasShowForms" />
+          </XmlRelationshipData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="GeometryShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="geometryShape1Moniker" ElementName="geometryShape1" MonikerTypeName="GeometryShape1Moniker">
         <GeometryShapeMoniker Name="GeometryShape1" />
@@ -487,6 +590,35 @@
       </XmlClassData>
       <XmlClassData TypeName="ClassWithPortsHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="classWithPortsHasPortsMoniker" ElementName="classWithPortsHasPorts" MonikerTypeName="ClassWithPortsHasPortsMoniker">
         <DomainRelationshipMoniker Name="ClassWithPortsHasPorts" />
+      </XmlClassData>
+      <XmlClassData TypeName="StateHasShowForms" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasShowFormsMoniker" ElementName="stateHasShowForms" MonikerTypeName="StateHasShowFormsMoniker">
+        <DomainRelationshipMoniker Name="StateHasShowForms" />
+      </XmlClassData>
+      <XmlClassData TypeName="ShowForm" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormMoniker" ElementName="showForm" MonikerTypeName="ShowFormMoniker">
+        <DomainClassMoniker Name="ShowForm" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="events">
+            <DomainRelationshipMoniker Name="ShowFormHasEvents" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="primitives">
+            <DomainRelationshipMoniker Name="ShowFormHasPrimitives" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="CompartmentShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="compartmentShape1Moniker" ElementName="compartmentShape1" MonikerTypeName="CompartmentShape1Moniker">
+        <CompartmentShapeMoniker Name="CompartmentShape1" />
+      </XmlClassData>
+      <XmlClassData TypeName="ShowFormHasEvents" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormHasEventsMoniker" ElementName="showFormHasEvents" MonikerTypeName="ShowFormHasEventsMoniker">
+        <DomainRelationshipMoniker Name="ShowFormHasEvents" />
+      </XmlClassData>
+      <XmlClassData TypeName="Event" MonikerAttributeName="" SerializeId="true" MonikerElementName="eventMoniker" ElementName="event" MonikerTypeName="EventMoniker">
+        <DomainClassMoniker Name="Event" />
+      </XmlClassData>
+      <XmlClassData TypeName="ShowFormHasPrimitives" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormHasPrimitivesMoniker" ElementName="showFormHasPrimitives" MonikerTypeName="ShowFormHasPrimitivesMoniker">
+        <DomainRelationshipMoniker Name="ShowFormHasPrimitives" />
+      </XmlClassData>
+      <XmlClassData TypeName="Primitive" MonikerAttributeName="" SerializeId="true" MonikerElementName="primitiveMoniker" ElementName="primitive" MonikerTypeName="PrimitiveMoniker">
+        <DomainClassMoniker Name="Primitive" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -602,7 +734,7 @@
       <ShapeMap>
         <DomainClassMoniker Name="State_old2" />
         <ParentElementPath>
-          <DomainPath>ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+          <DomainPath>ControllerHasStates2.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
           <TextDecoratorMoniker Name="StateShape/Name" />
@@ -617,10 +749,39 @@
       <ShapeMap>
         <DomainClassMoniker Name="State" />
         <ParentElementPath>
-          <DomainPath>ControllerHasStated.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+          <DomainPath>ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
         </ParentElementPath>
         <GeometryShapeMoniker Name="GeometryShape1" />
       </ShapeMap>
+      <CompartmentShapeMap>
+        <DomainClassMoniker Name="ShowForm" />
+        <ParentElementPath>
+          <DomainPath>StateHasShowForms.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <CompartmentShapeMoniker Name="CompartmentShape1" />
+        <CompartmentMap>
+          <CompartmentMoniker Name="CompartmentShape1/UIEventsCompartment" />
+          <ElementsDisplayed>
+            <DomainPath>ShowFormHasEvents.Events/!Event</DomainPath>
+          </ElementsDisplayed>
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </CompartmentMap>
+        <CompartmentMap>
+          <CompartmentMoniker Name="CompartmentShape1/UIPrimitives" />
+          <ElementsDisplayed>
+            <DomainPath>ShowFormHasPrimitives.Primitives/!Primitive</DomainPath>
+          </ElementsDisplayed>
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </CompartmentMap>
+      </CompartmentShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -695,6 +856,17 @@
       </ConnectionTool>
       <ElementTool Name="State" ToolboxIcon="Resources\ComponentTool.bmp" Caption="State" Tooltip="State" HelpKeyword="State">
         <DomainClassMoniker Name="State" />
+      </ElementTool>
+    </ToolboxTab>
+    <ToolboxTab TabText="UI Forms">
+      <ElementTool Name="Event" ToolboxIcon="Resources\flash2.bmp" Caption="Event" Tooltip="Event" HelpKeyword="Event">
+        <DomainClassMoniker Name="Event" />
+      </ElementTool>
+      <ElementTool Name="ShowForm" ToolboxIcon="Resources\ComponentTool.bmp" Caption="ShowForm" Tooltip="Show Form" HelpKeyword="ShowForm">
+        <DomainClassMoniker Name="ShowForm" />
+      </ElementTool>
+      <ElementTool Name="Primitive" ToolboxIcon="Resources\flash2.bmp" Caption="Primitive" Tooltip="Primitive" HelpKeyword="Primitive">
+        <DomainClassMoniker Name="Primitive" />
       </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

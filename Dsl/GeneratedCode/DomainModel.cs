@@ -77,14 +77,20 @@ namespace Company.MobileDSL
 				typeof(State_old2),
 				typeof(State),
 				typeof(ClassWithPorts),
+				typeof(ShowForm),
+				typeof(Event),
+				typeof(Primitive),
 				typeof(Connection),
 				typeof(ComponentModelHasComments),
 				typeof(ComponentModelHasControllers),
 				typeof(CommentReferencesSubjects),
-				typeof(ControllerHasStates),
+				typeof(ControllerHasStates2),
 				typeof(State_old2ReferencesPreviousStates),
-				typeof(ControllerHasStated),
+				typeof(ControllerHasStates),
 				typeof(ClassWithPortsHasPorts),
+				typeof(StateHasShowForms),
+				typeof(ShowFormHasEvents),
+				typeof(ShowFormHasPrimitives),
 				typeof(MobileDSLDiagram),
 				typeof(AssociationLink),
 				typeof(CommentLink),
@@ -93,11 +99,17 @@ namespace Company.MobileDSL
 				typeof(CommentBoxShape),
 				typeof(StateShape),
 				typeof(GeometryShape1),
+				typeof(CompartmentShape1),
 				typeof(InPortShape),
 				typeof(OutPortShape),
 				typeof(global::Company.MobileDSL.FixUpDiagram),
 				typeof(global::Company.MobileDSL.DecoratorPropertyChanged),
 				typeof(global::Company.MobileDSL.ConnectorRolePlayerChanged),
+				typeof(global::Company.MobileDSL.CompartmentItemAddRule),
+				typeof(global::Company.MobileDSL.CompartmentItemDeleteRule),
+				typeof(global::Company.MobileDSL.CompartmentItemRolePlayerChangeRule),
+				typeof(global::Company.MobileDSL.CompartmentItemRolePlayerPositionChangeRule),
+				typeof(global::Company.MobileDSL.CompartmentItemChangeRule),
 			};
 		}
 		/// <summary>
@@ -135,14 +147,20 @@ namespace Company.MobileDSL
 				new DomainRolePlayerInfo(typeof(ComponentModelHasControllers), "Controller", ComponentModelHasControllers.ControllerDomainRoleId),
 				new DomainRolePlayerInfo(typeof(CommentReferencesSubjects), "Comment", CommentReferencesSubjects.CommentDomainRoleId),
 				new DomainRolePlayerInfo(typeof(CommentReferencesSubjects), "Subject", CommentReferencesSubjects.SubjectDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ControllerHasStates), "Controller", ControllerHasStates.ControllerDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ControllerHasStates), "State_old2", ControllerHasStates.State_old2DomainRoleId),
+				new DomainRolePlayerInfo(typeof(ControllerHasStates2), "Controller", ControllerHasStates2.ControllerDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ControllerHasStates2), "State_old2", ControllerHasStates2.State_old2DomainRoleId),
 				new DomainRolePlayerInfo(typeof(State_old2ReferencesPreviousStates), "SourceState_old2", State_old2ReferencesPreviousStates.SourceState_old2DomainRoleId),
 				new DomainRolePlayerInfo(typeof(State_old2ReferencesPreviousStates), "TargetState_old2", State_old2ReferencesPreviousStates.TargetState_old2DomainRoleId),
-				new DomainRolePlayerInfo(typeof(ControllerHasStated), "Controller", ControllerHasStated.ControllerDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ControllerHasStated), "State", ControllerHasStated.StateDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ControllerHasStates), "Controller", ControllerHasStates.ControllerDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ControllerHasStates), "State", ControllerHasStates.StateDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ClassWithPortsHasPorts), "ClassWithPorts", ClassWithPortsHasPorts.ClassWithPortsDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ClassWithPortsHasPorts), "Port", ClassWithPortsHasPorts.PortDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasShowForms), "State", StateHasShowForms.StateDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasShowForms), "ShowForm", StateHasShowForms.ShowFormDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ShowFormHasEvents), "ShowForm", ShowFormHasEvents.ShowFormDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ShowFormHasEvents), "Event", ShowFormHasEvents.EventDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ShowFormHasPrimitives), "ShowForm", ShowFormHasPrimitives.ShowFormDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ShowFormHasPrimitives), "Primitive", ShowFormHasPrimitives.PrimitiveDomainRoleId),
 			};
 		}
 		#endregion
@@ -164,7 +182,7 @@ namespace Company.MobileDSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(20);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(24);
 				createElementMap.Add(typeof(ComponentModel), 0);
 				createElementMap.Add(typeof(Controller), 1);
 				createElementMap.Add(typeof(InPort), 2);
@@ -172,16 +190,20 @@ namespace Company.MobileDSL
 				createElementMap.Add(typeof(Comment), 4);
 				createElementMap.Add(typeof(State_old2), 5);
 				createElementMap.Add(typeof(State), 6);
-				createElementMap.Add(typeof(MobileDSLDiagram), 7);
-				createElementMap.Add(typeof(AssociationLink), 8);
-				createElementMap.Add(typeof(CommentLink), 9);
-				createElementMap.Add(typeof(StateConnector), 10);
-				createElementMap.Add(typeof(ControllerShape), 11);
-				createElementMap.Add(typeof(CommentBoxShape), 12);
-				createElementMap.Add(typeof(StateShape), 13);
-				createElementMap.Add(typeof(GeometryShape1), 14);
-				createElementMap.Add(typeof(InPortShape), 15);
-				createElementMap.Add(typeof(OutPortShape), 16);
+				createElementMap.Add(typeof(ShowForm), 7);
+				createElementMap.Add(typeof(Event), 8);
+				createElementMap.Add(typeof(Primitive), 9);
+				createElementMap.Add(typeof(MobileDSLDiagram), 10);
+				createElementMap.Add(typeof(AssociationLink), 11);
+				createElementMap.Add(typeof(CommentLink), 12);
+				createElementMap.Add(typeof(StateConnector), 13);
+				createElementMap.Add(typeof(ControllerShape), 14);
+				createElementMap.Add(typeof(CommentBoxShape), 15);
+				createElementMap.Add(typeof(StateShape), 16);
+				createElementMap.Add(typeof(GeometryShape1), 17);
+				createElementMap.Add(typeof(CompartmentShape1), 18);
+				createElementMap.Add(typeof(InPortShape), 19);
+				createElementMap.Add(typeof(OutPortShape), 20);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -202,16 +224,20 @@ namespace Company.MobileDSL
 				case 4: return new Comment(partition, propertyAssignments);
 				case 5: return new State_old2(partition, propertyAssignments);
 				case 6: return new State(partition, propertyAssignments);
-				case 7: return new MobileDSLDiagram(partition, propertyAssignments);
-				case 8: return new AssociationLink(partition, propertyAssignments);
-				case 9: return new CommentLink(partition, propertyAssignments);
-				case 10: return new StateConnector(partition, propertyAssignments);
-				case 11: return new ControllerShape(partition, propertyAssignments);
-				case 12: return new CommentBoxShape(partition, propertyAssignments);
-				case 13: return new StateShape(partition, propertyAssignments);
-				case 14: return new GeometryShape1(partition, propertyAssignments);
-				case 15: return new InPortShape(partition, propertyAssignments);
-				case 16: return new OutPortShape(partition, propertyAssignments);
+				case 7: return new ShowForm(partition, propertyAssignments);
+				case 8: return new Event(partition, propertyAssignments);
+				case 9: return new Primitive(partition, propertyAssignments);
+				case 10: return new MobileDSLDiagram(partition, propertyAssignments);
+				case 11: return new AssociationLink(partition, propertyAssignments);
+				case 12: return new CommentLink(partition, propertyAssignments);
+				case 13: return new StateConnector(partition, propertyAssignments);
+				case 14: return new ControllerShape(partition, propertyAssignments);
+				case 15: return new CommentBoxShape(partition, propertyAssignments);
+				case 16: return new StateShape(partition, propertyAssignments);
+				case 17: return new GeometryShape1(partition, propertyAssignments);
+				case 18: return new CompartmentShape1(partition, propertyAssignments);
+				case 19: return new InPortShape(partition, propertyAssignments);
+				case 20: return new OutPortShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -234,15 +260,18 @@ namespace Company.MobileDSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(8);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(11);
 				createElementLinkMap.Add(typeof(Connection), 0);
 				createElementLinkMap.Add(typeof(ComponentModelHasComments), 1);
 				createElementLinkMap.Add(typeof(ComponentModelHasControllers), 2);
 				createElementLinkMap.Add(typeof(CommentReferencesSubjects), 3);
-				createElementLinkMap.Add(typeof(ControllerHasStates), 4);
+				createElementLinkMap.Add(typeof(ControllerHasStates2), 4);
 				createElementLinkMap.Add(typeof(State_old2ReferencesPreviousStates), 5);
-				createElementLinkMap.Add(typeof(ControllerHasStated), 6);
+				createElementLinkMap.Add(typeof(ControllerHasStates), 6);
 				createElementLinkMap.Add(typeof(ClassWithPortsHasPorts), 7);
+				createElementLinkMap.Add(typeof(StateHasShowForms), 8);
+				createElementLinkMap.Add(typeof(ShowFormHasEvents), 9);
+				createElementLinkMap.Add(typeof(ShowFormHasPrimitives), 10);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -261,10 +290,13 @@ namespace Company.MobileDSL
 				case 1: return new ComponentModelHasComments(partition, roleAssignments, propertyAssignments);
 				case 2: return new ComponentModelHasControllers(partition, roleAssignments, propertyAssignments);
 				case 3: return new CommentReferencesSubjects(partition, roleAssignments, propertyAssignments);
-				case 4: return new ControllerHasStates(partition, roleAssignments, propertyAssignments);
+				case 4: return new ControllerHasStates2(partition, roleAssignments, propertyAssignments);
 				case 5: return new State_old2ReferencesPreviousStates(partition, roleAssignments, propertyAssignments);
-				case 6: return new ControllerHasStated(partition, roleAssignments, propertyAssignments);
+				case 6: return new ControllerHasStates(partition, roleAssignments, propertyAssignments);
 				case 7: return new ClassWithPortsHasPorts(partition, roleAssignments, propertyAssignments);
+				case 8: return new StateHasShowForms(partition, roleAssignments, propertyAssignments);
+				case 9: return new ShowFormHasEvents(partition, roleAssignments, propertyAssignments);
+				case 10: return new ShowFormHasPrimitives(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -387,6 +419,11 @@ namespace Company.MobileDSL
 			ruleManager.EnableRule(typeof(global::Company.MobileDSL.FixUpDiagram));
 			ruleManager.EnableRule(typeof(global::Company.MobileDSL.DecoratorPropertyChanged));
 			ruleManager.EnableRule(typeof(global::Company.MobileDSL.ConnectorRolePlayerChanged));
+			ruleManager.EnableRule(typeof(global::Company.MobileDSL.CompartmentItemAddRule));
+			ruleManager.EnableRule(typeof(global::Company.MobileDSL.CompartmentItemDeleteRule));
+			ruleManager.EnableRule(typeof(global::Company.MobileDSL.CompartmentItemRolePlayerChangeRule));
+			ruleManager.EnableRule(typeof(global::Company.MobileDSL.CompartmentItemRolePlayerPositionChangeRule));
+			ruleManager.EnableRule(typeof(global::Company.MobileDSL.CompartmentItemChangeRule));
 		}
 		
 		/// <summary>
@@ -400,6 +437,11 @@ namespace Company.MobileDSL
 			ruleManager.DisableRule(typeof(global::Company.MobileDSL.FixUpDiagram));
 			ruleManager.DisableRule(typeof(global::Company.MobileDSL.DecoratorPropertyChanged));
 			ruleManager.DisableRule(typeof(global::Company.MobileDSL.ConnectorRolePlayerChanged));
+			ruleManager.DisableRule(typeof(global::Company.MobileDSL.CompartmentItemAddRule));
+			ruleManager.DisableRule(typeof(global::Company.MobileDSL.CompartmentItemDeleteRule));
+			ruleManager.DisableRule(typeof(global::Company.MobileDSL.CompartmentItemRolePlayerChangeRule));
+			ruleManager.DisableRule(typeof(global::Company.MobileDSL.CompartmentItemRolePlayerPositionChangeRule));
+			ruleManager.DisableRule(typeof(global::Company.MobileDSL.CompartmentItemChangeRule));
 		}
 		#endregion
 	}
@@ -437,9 +479,12 @@ namespace Company.MobileDSL
 			#region Initialize DomainData Table
 			DomainRoles.Add(global::Company.MobileDSL.ComponentModelHasComments.CommentDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.ComponentModelHasControllers.ControllerDomainRoleId, true);
-			DomainRoles.Add(global::Company.MobileDSL.ControllerHasStates.State_old2DomainRoleId, true);
-			DomainRoles.Add(global::Company.MobileDSL.ControllerHasStated.StateDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.ControllerHasStates2.State_old2DomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.ControllerHasStates.StateDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.ClassWithPortsHasPorts.PortDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.StateHasShowForms.ShowFormDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.ShowFormHasEvents.EventDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.ShowFormHasPrimitives.PrimitiveDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

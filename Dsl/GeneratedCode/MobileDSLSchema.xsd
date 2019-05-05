@@ -113,6 +113,21 @@
     <xsd:complexContent>
       <xsd:extension base="ClassWithPorts">
         <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ControllerHasStates2 -->
+          <xsd:element name="states2" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ControllerHasStates2</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="controllerHasStates2" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ControllerHasStates2 needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
           <!-- Relationship: ControllerHasStates -->
           <xsd:element name="states" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
@@ -123,21 +138,6 @@
                 <xsd:element ref="controllerHasStates" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
                     <xsd:documentation>[Instance of ControllerHasStates needs to be serialized in full-form]</xsd:documentation>
-                  </xsd:annotation>
-                </xsd:element>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
-          <!-- Relationship: ControllerHasStated -->
-          <xsd:element name="stated" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of ControllerHasStated</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element ref="controllerHasStated" minOccurs="0" maxOccurs="unbounded">
-                  <xsd:annotation>
-                    <xsd:documentation>[Instance of ControllerHasStated needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -377,6 +377,23 @@
   <xsd:complexType name="State">
     <xsd:complexContent>
       <xsd:extension base="ClassWithPorts">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: StateHasShowForms -->
+          <xsd:element name="showForms" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of StateHasShowForms</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="stateHasShowForms" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of StateHasShowForms needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
@@ -436,6 +453,119 @@
   <xsd:complexType name="ClassWithPortsMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for ClassWithPorts instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ShowForm -->
+  <xsd:element name="showForm" type="ShowForm" substitutionGroup="namedElement" />
+  <xsd:complexType name="ShowForm">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ShowFormHasEvents -->
+          <xsd:element name="events" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ShowFormHasEvents</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="showFormHasEvents" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ShowFormHasEvents needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: ShowFormHasPrimitives -->
+          <xsd:element name="primitives" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ShowFormHasPrimitives</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="showFormHasPrimitives" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ShowFormHasPrimitives needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ShowForm Moniker -->
+  <xsd:element name="showFormMoniker" type="ShowFormMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="ShowFormMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ShowForm instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Event -->
+  <xsd:element name="event" type="Event" substitutionGroup="namedElement" />
+  <xsd:complexType name="Event">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Event Moniker -->
+  <xsd:element name="eventMoniker" type="EventMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="EventMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Event instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Primitive -->
+  <xsd:element name="primitive" type="Primitive" substitutionGroup="namedElement" />
+  <xsd:complexType name="Primitive">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Primitive Moniker -->
+  <xsd:element name="primitiveMoniker" type="PrimitiveMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="PrimitiveMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Primitive instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="NamedElementMoniker">
@@ -607,9 +737,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ControllerHasStates -->
-  <xsd:element name="controllerHasStates" type="ControllerHasStates" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ControllerHasStates">
+  <!-- ControllerHasStates2 -->
+  <xsd:element name="controllerHasStates2" type="ControllerHasStates2" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ControllerHasStates2">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -630,11 +760,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ControllerHasStates Moniker -->
-  <xsd:element name="controllerHasStatesMoniker" type="ControllerHasStatesMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ControllerHasStatesMoniker">
+  <!-- ControllerHasStates2 Moniker -->
+  <xsd:element name="controllerHasStates2Moniker" type="ControllerHasStates2Moniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ControllerHasStates2Moniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ControllerHasStates instance.</xsd:documentation>
+      <xsd:documentation>Moniker for ControllerHasStates2 instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -689,9 +819,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ControllerHasStated -->
-  <xsd:element name="controllerHasStated" type="ControllerHasStated" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ControllerHasStated">
+  <!-- ControllerHasStates -->
+  <xsd:element name="controllerHasStates" type="ControllerHasStates" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ControllerHasStates">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -712,11 +842,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ControllerHasStated Moniker -->
-  <xsd:element name="controllerHasStatedMoniker" type="ControllerHasStatedMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ControllerHasStatedMoniker">
+  <!-- ControllerHasStates Moniker -->
+  <xsd:element name="controllerHasStatesMoniker" type="ControllerHasStatesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ControllerHasStatesMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ControllerHasStated instance.</xsd:documentation>
+      <xsd:documentation>Moniker for ControllerHasStates instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -757,6 +887,126 @@
   <xsd:complexType name="ClassWithPortsHasPortsMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for ClassWithPortsHasPorts instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateHasShowForms -->
+  <xsd:element name="stateHasShowForms" type="StateHasShowForms" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateHasShowForms">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ShowForm -->
+          <xsd:element ref="showForm" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateHasShowForms Moniker -->
+  <xsd:element name="stateHasShowFormsMoniker" type="StateHasShowFormsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateHasShowFormsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for StateHasShowForms instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ShowFormHasEvents -->
+  <xsd:element name="showFormHasEvents" type="ShowFormHasEvents" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ShowFormHasEvents">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Event -->
+          <xsd:element ref="event" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ShowFormHasEvents Moniker -->
+  <xsd:element name="showFormHasEventsMoniker" type="ShowFormHasEventsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ShowFormHasEventsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ShowFormHasEvents instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ShowFormHasPrimitives -->
+  <xsd:element name="showFormHasPrimitives" type="ShowFormHasPrimitives" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ShowFormHasPrimitives">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Primitive -->
+          <xsd:element ref="primitive" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ShowFormHasPrimitives Moniker -->
+  <xsd:element name="showFormHasPrimitivesMoniker" type="ShowFormHasPrimitivesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ShowFormHasPrimitivesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ShowFormHasPrimitives instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

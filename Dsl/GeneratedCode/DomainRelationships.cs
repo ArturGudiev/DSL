@@ -1092,33 +1092,33 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainRelationship ControllerHasStates
-	/// Description for Company.MobileDSL.ControllerHasStates
+	/// DomainRelationship ControllerHasStates2
+	/// Description for Company.MobileDSL.ControllerHasStates2
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStates.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStates.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStates2.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStates2.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
 	[DslModeling::DomainObjectId("351ce9cd-3d3a-4960-bb72-dbfc3e36b709")]
-	public partial class ControllerHasStates : DslModeling::ElementLink
+	public partial class ControllerHasStates2 : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// ControllerHasStates domain class Id.
+		/// ControllerHasStates2 domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x351ce9cd, 0x3d3a, 0x4960, 0xbb, 0x72, 0xdb, 0xfc, 0x3e, 0x36, 0xb7, 0x09);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a ControllerHasStates link in the same Partition as the given Controller
+		/// Creates a ControllerHasStates2 link in the same Partition as the given Controller
 		/// </summary>
 		/// <param name="source">Controller to use as the source of the relationship.</param>
 		/// <param name="target">State_old2 to use as the target of the relationship.</param>
-		public ControllerHasStates(Controller source, State_old2 target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ControllerHasStates.ControllerDomainRoleId, source), new DslModeling::RoleAssignment(ControllerHasStates.State_old2DomainRoleId, target)}, null)
+		public ControllerHasStates2(Controller source, State_old2 target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ControllerHasStates2.ControllerDomainRoleId, source), new DslModeling::RoleAssignment(ControllerHasStates2.State_old2DomainRoleId, target)}, null)
 		{
 		}
 		
@@ -1127,7 +1127,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ControllerHasStates(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public ControllerHasStates2(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -1138,7 +1138,7 @@ namespace Company.MobileDSL
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ControllerHasStates(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ControllerHasStates2(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -1148,7 +1148,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ControllerHasStates(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public ControllerHasStates2(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -1159,7 +1159,7 @@ namespace Company.MobileDSL
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ControllerHasStates(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ControllerHasStates2(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -1173,11 +1173,11 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// DomainRole Controller
-		/// Description for Company.MobileDSL.ControllerHasStates.Controller
+		/// Description for Company.MobileDSL.ControllerHasStates2.Controller
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStates/Controller.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStates/Controller.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "States", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasStates/Controller.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStates2/Controller.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStates2/Controller.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "States2", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasStates2/Controller.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("b80db3fc-3640-4f59-b4af-22a3406cf5c8")]
 		public virtual Controller Controller
 		{
@@ -1224,11 +1224,11 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// DomainRole State_old2
-		/// Description for Company.MobileDSL.ControllerHasStates.State_old2
+		/// Description for Company.MobileDSL.ControllerHasStates2.State_old2
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStates/State_old2.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStates/State_old2.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Controller", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasStates/State_old2.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStates2/State_old2.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStates2/State_old2.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Controller", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasStates2/State_old2.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
 		[DslModeling::DomainObjectId("57695418-58c6-4d82-8240-28a2b0db2319")]
 		public virtual State_old2 State_old2
 		{
@@ -1245,37 +1245,37 @@ namespace Company.MobileDSL
 		}
 				
 		#endregion
-		#region Static methods to access States of a Controller
+		#region Static methods to access States2 of a Controller
 		/// <summary>
-		/// Gets a list of States.
+		/// Gets a list of States2.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<State_old2> GetStates(Controller element)
+		public static DslModeling::LinkedElementCollection<State_old2> GetStates2(Controller element)
 		{
 			return GetRoleCollection<DslModeling::LinkedElementCollection<State_old2>, State_old2>(element, ControllerDomainRoleId);
 		}
 		#endregion
 		#region Controller link accessor
 		/// <summary>
-		/// Get the list of ControllerHasStates links to a Controller.
+		/// Get the list of ControllerHasStates2 links to a Controller.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasStates> GetLinksToStates ( global::Company.MobileDSL.Controller controllerInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasStates2> GetLinksToStates2 ( global::Company.MobileDSL.Controller controllerInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates>(controllerInstance, global::Company.MobileDSL.ControllerHasStates.ControllerDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates2>(controllerInstance, global::Company.MobileDSL.ControllerHasStates2.ControllerDomainRoleId);
 		}
 		#endregion
 		#region State_old2 link accessor
 		/// <summary>
-		/// Get the ControllerHasStates link to a State_old2.
+		/// Get the ControllerHasStates2 link to a State_old2.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.ControllerHasStates GetLinkToController (global::Company.MobileDSL.State_old2 state_old2Instance)
+		public static global::Company.MobileDSL.ControllerHasStates2 GetLinkToController (global::Company.MobileDSL.State_old2 state_old2Instance)
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStates> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates>(state_old2Instance, global::Company.MobileDSL.ControllerHasStates.State_old2DomainRoleId);
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStates2> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates2>(state_old2Instance, global::Company.MobileDSL.ControllerHasStates2.State_old2DomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of State_old2 not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -1287,18 +1287,18 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region ControllerHasStates instance accessors
+		#region ControllerHasStates2 instance accessors
 		
 		/// <summary>
-		/// Get any ControllerHasStates links between a given Controller and a State_old2.
+		/// Get any ControllerHasStates2 links between a given Controller and a State_old2.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasStates> GetLinks( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.State_old2 target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasStates2> GetLinks( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.State_old2 target )
 		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasStates> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasStates>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStates> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates>(source, global::Company.MobileDSL.ControllerHasStates.ControllerDomainRoleId);
-			foreach ( global::Company.MobileDSL.ControllerHasStates link in links )
+			global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasStates2> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasStates2>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStates2> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates2>(source, global::Company.MobileDSL.ControllerHasStates2.ControllerDomainRoleId);
+			foreach ( global::Company.MobileDSL.ControllerHasStates2 link in links )
 			{
 				if ( target.Equals(link.State_old2) )
 				{
@@ -1308,14 +1308,14 @@ namespace Company.MobileDSL
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one ControllerHasStates link between a given Controllerand a State_old2.
+		/// Get the one ControllerHasStates2 link between a given Controllerand a State_old2.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.ControllerHasStates GetLink( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.State_old2 target )
+		public static global::Company.MobileDSL.ControllerHasStates2 GetLink( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.State_old2 target )
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStates> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates>(source, global::Company.MobileDSL.ControllerHasStates.ControllerDomainRoleId);
-			foreach ( global::Company.MobileDSL.ControllerHasStates link in links )
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStates2> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates2>(source, global::Company.MobileDSL.ControllerHasStates2.ControllerDomainRoleId);
+			foreach ( global::Company.MobileDSL.ControllerHasStates2 link in links )
 			{
 				if ( target.Equals(link.State_old2) )
 				{
@@ -1640,33 +1640,33 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainRelationship ControllerHasStated
-	/// Description for Company.MobileDSL.ControllerHasStated
+	/// DomainRelationship ControllerHasStates
+	/// Description for Company.MobileDSL.ControllerHasStates
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStated.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStated.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStates.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStates.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
 	[DslModeling::DomainObjectId("32f7ed14-aa66-453d-8972-2d56f63d126f")]
-	public partial class ControllerHasStated : DslModeling::ElementLink
+	public partial class ControllerHasStates : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// ControllerHasStated domain class Id.
+		/// ControllerHasStates domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x32f7ed14, 0xaa66, 0x453d, 0x89, 0x72, 0x2d, 0x56, 0xf6, 0x3d, 0x12, 0x6f);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a ControllerHasStated link in the same Partition as the given Controller
+		/// Creates a ControllerHasStates link in the same Partition as the given Controller
 		/// </summary>
 		/// <param name="source">Controller to use as the source of the relationship.</param>
 		/// <param name="target">State to use as the target of the relationship.</param>
-		public ControllerHasStated(Controller source, State target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ControllerHasStated.ControllerDomainRoleId, source), new DslModeling::RoleAssignment(ControllerHasStated.StateDomainRoleId, target)}, null)
+		public ControllerHasStates(Controller source, State target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ControllerHasStates.ControllerDomainRoleId, source), new DslModeling::RoleAssignment(ControllerHasStates.StateDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -1675,7 +1675,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ControllerHasStated(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public ControllerHasStates(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -1686,7 +1686,7 @@ namespace Company.MobileDSL
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ControllerHasStated(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ControllerHasStates(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -1696,7 +1696,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ControllerHasStated(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public ControllerHasStates(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -1707,7 +1707,7 @@ namespace Company.MobileDSL
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ControllerHasStated(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ControllerHasStates(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -1721,11 +1721,11 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// DomainRole Controller
-		/// Description for Company.MobileDSL.ControllerHasStated.Controller
+		/// Description for Company.MobileDSL.ControllerHasStates.Controller
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStated/Controller.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStated/Controller.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Stated", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasStated/Controller.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStates/Controller.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStates/Controller.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "States", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasStates/Controller.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("efda5d5a-913f-4371-aea5-d26b52821d67")]
 		public virtual Controller Controller
 		{
@@ -1772,11 +1772,11 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// DomainRole State
-		/// Description for Company.MobileDSL.ControllerHasStated.State
+		/// Description for Company.MobileDSL.ControllerHasStates.State
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStated/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStated/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Controller", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasStated/State.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ControllerHasStates/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ControllerHasStates/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Controller", PropertyDisplayNameKey="Company.MobileDSL.ControllerHasStates/State.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
 		[DslModeling::DomainObjectId("21a29bc7-c546-48d9-8b5a-5ff2dc320e58")]
 		public virtual State State
 		{
@@ -1793,37 +1793,37 @@ namespace Company.MobileDSL
 		}
 				
 		#endregion
-		#region Static methods to access Stated of a Controller
+		#region Static methods to access States of a Controller
 		/// <summary>
-		/// Gets a list of Stated.
+		/// Gets a list of States.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<State> GetStated(Controller element)
+		public static DslModeling::LinkedElementCollection<State> GetStates(Controller element)
 		{
 			return GetRoleCollection<DslModeling::LinkedElementCollection<State>, State>(element, ControllerDomainRoleId);
 		}
 		#endregion
 		#region Controller link accessor
 		/// <summary>
-		/// Get the list of ControllerHasStated links to a Controller.
+		/// Get the list of ControllerHasStates links to a Controller.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasStated> GetLinksToStated ( global::Company.MobileDSL.Controller controllerInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasStates> GetLinksToStates ( global::Company.MobileDSL.Controller controllerInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStated>(controllerInstance, global::Company.MobileDSL.ControllerHasStated.ControllerDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates>(controllerInstance, global::Company.MobileDSL.ControllerHasStates.ControllerDomainRoleId);
 		}
 		#endregion
 		#region State link accessor
 		/// <summary>
-		/// Get the ControllerHasStated link to a State.
+		/// Get the ControllerHasStates link to a State.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.ControllerHasStated GetLinkToController (global::Company.MobileDSL.State stateInstance)
+		public static global::Company.MobileDSL.ControllerHasStates GetLinkToController (global::Company.MobileDSL.State stateInstance)
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStated> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStated>(stateInstance, global::Company.MobileDSL.ControllerHasStated.StateDomainRoleId);
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStates> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates>(stateInstance, global::Company.MobileDSL.ControllerHasStates.StateDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of State not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -1835,18 +1835,18 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region ControllerHasStated instance accessors
+		#region ControllerHasStates instance accessors
 		
 		/// <summary>
-		/// Get any ControllerHasStated links between a given Controller and a State.
+		/// Get any ControllerHasStates links between a given Controller and a State.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasStated> GetLinks( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.State target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ControllerHasStates> GetLinks( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.State target )
 		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasStated> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasStated>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStated> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStated>(source, global::Company.MobileDSL.ControllerHasStated.ControllerDomainRoleId);
-			foreach ( global::Company.MobileDSL.ControllerHasStated link in links )
+			global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasStates> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ControllerHasStates>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStates> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates>(source, global::Company.MobileDSL.ControllerHasStates.ControllerDomainRoleId);
+			foreach ( global::Company.MobileDSL.ControllerHasStates link in links )
 			{
 				if ( target.Equals(link.State) )
 				{
@@ -1856,14 +1856,14 @@ namespace Company.MobileDSL
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one ControllerHasStated link between a given Controllerand a State.
+		/// Get the one ControllerHasStates link between a given Controllerand a State.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.ControllerHasStated GetLink( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.State target )
+		public static global::Company.MobileDSL.ControllerHasStates GetLink( global::Company.MobileDSL.Controller source, global::Company.MobileDSL.State target )
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStated> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStated>(source, global::Company.MobileDSL.ControllerHasStated.ControllerDomainRoleId);
-			foreach ( global::Company.MobileDSL.ControllerHasStated link in links )
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ControllerHasStates> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ControllerHasStates>(source, global::Company.MobileDSL.ControllerHasStates.ControllerDomainRoleId);
+			foreach ( global::Company.MobileDSL.ControllerHasStates link in links )
 			{
 				if ( target.Equals(link.State) )
 				{
@@ -2105,6 +2105,723 @@ namespace Company.MobileDSL
 			foreach ( global::Company.MobileDSL.ClassWithPortsHasPorts link in links )
 			{
 				if ( target.Equals(link.Port) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainRelationship StateHasShowForms
+	/// Description for Company.MobileDSL.StateHasShowForms
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasShowForms.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.StateHasShowForms.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("ef2de89a-c88a-494d-b1c0-b92e77db6ca0")]
+	public partial class StateHasShowForms : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// StateHasShowForms domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xef2de89a, 0xc88a, 0x494d, 0xb1, 0xc0, 0xb9, 0x2e, 0x77, 0xdb, 0x6c, 0xa0);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a StateHasShowForms link in the same Partition as the given State
+		/// </summary>
+		/// <param name="source">State to use as the source of the relationship.</param>
+		/// <param name="target">ShowForm to use as the target of the relationship.</param>
+		public StateHasShowForms(State source, ShowForm target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(StateHasShowForms.StateDomainRoleId, source), new DslModeling::RoleAssignment(StateHasShowForms.ShowFormDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public StateHasShowForms(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public StateHasShowForms(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public StateHasShowForms(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public StateHasShowForms(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region State domain role code
+		
+		/// <summary>
+		/// State domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid StateDomainRoleId = new global::System.Guid(0xbd269575, 0x5527, 0x42a6, 0xad, 0x5a, 0x46, 0x01, 0x45, 0x64, 0x89, 0xbe);
+		
+		/// <summary>
+		/// DomainRole State
+		/// Description for Company.MobileDSL.StateHasShowForms.State
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasShowForms/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasShowForms/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ShowForms", PropertyDisplayNameKey="Company.MobileDSL.StateHasShowForms/State.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("bd269575-5527-42a6-ad5a-4601456489be")]
+		public virtual State State
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (State)DslModeling::DomainRoleInfo.GetRolePlayer(this, StateDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, StateDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access State of a ShowForm
+		/// <summary>
+		/// Gets State.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static State GetState(ShowForm element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ShowFormDomainRoleId) as State;
+		}
+		
+		/// <summary>
+		/// Sets State.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetState(ShowForm element, State newState)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ShowFormDomainRoleId, newState);
+		}
+		#endregion
+		#region ShowForm domain role code
+		
+		/// <summary>
+		/// ShowForm domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ShowFormDomainRoleId = new global::System.Guid(0xe52f87d9, 0x5d4d, 0x4130, 0x96, 0xb7, 0x44, 0x0a, 0xe0, 0x98, 0xfd, 0x2c);
+		
+		/// <summary>
+		/// DomainRole ShowForm
+		/// Description for Company.MobileDSL.StateHasShowForms.ShowForm
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasShowForms/ShowForm.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasShowForms/ShowForm.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "State", PropertyDisplayNameKey="Company.MobileDSL.StateHasShowForms/ShowForm.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("e52f87d9-5d4d-4130-96b7-440ae098fd2c")]
+		public virtual ShowForm ShowForm
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ShowForm)DslModeling::DomainRoleInfo.GetRolePlayer(this, ShowFormDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ShowFormDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ShowForms of a State
+		/// <summary>
+		/// Gets a list of ShowForms.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<ShowForm> GetShowForms(State element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<ShowForm>, ShowForm>(element, StateDomainRoleId);
+		}
+		#endregion
+		#region State link accessor
+		/// <summary>
+		/// Get the list of StateHasShowForms links to a State.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasShowForms> GetLinksToShowForms ( global::Company.MobileDSL.State stateInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasShowForms>(stateInstance, global::Company.MobileDSL.StateHasShowForms.StateDomainRoleId);
+		}
+		#endregion
+		#region ShowForm link accessor
+		/// <summary>
+		/// Get the StateHasShowForms link to a ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.StateHasShowForms GetLinkToState (global::Company.MobileDSL.ShowForm showFormInstance)
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasShowForms> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasShowForms>(showFormInstance, global::Company.MobileDSL.StateHasShowForms.ShowFormDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of ShowForm not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region StateHasShowForms instance accessors
+		
+		/// <summary>
+		/// Get any StateHasShowForms links between a given State and a ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasShowForms> GetLinks( global::Company.MobileDSL.State source, global::Company.MobileDSL.ShowForm target )
+		{
+			global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasShowForms> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasShowForms>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasShowForms> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasShowForms>(source, global::Company.MobileDSL.StateHasShowForms.StateDomainRoleId);
+			foreach ( global::Company.MobileDSL.StateHasShowForms link in links )
+			{
+				if ( target.Equals(link.ShowForm) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one StateHasShowForms link between a given Stateand a ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.StateHasShowForms GetLink( global::Company.MobileDSL.State source, global::Company.MobileDSL.ShowForm target )
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasShowForms> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasShowForms>(source, global::Company.MobileDSL.StateHasShowForms.StateDomainRoleId);
+			foreach ( global::Company.MobileDSL.StateHasShowForms link in links )
+			{
+				if ( target.Equals(link.ShowForm) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainRelationship ShowFormHasEvents
+	/// Description for Company.MobileDSL.ShowFormHasEvents
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormHasEvents.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormHasEvents.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("7e7a78c3-7244-40e4-8915-56627fa52331")]
+	public partial class ShowFormHasEvents : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// ShowFormHasEvents domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7e7a78c3, 0x7244, 0x40e4, 0x89, 0x15, 0x56, 0x62, 0x7f, 0xa5, 0x23, 0x31);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a ShowFormHasEvents link in the same Partition as the given ShowForm
+		/// </summary>
+		/// <param name="source">ShowForm to use as the source of the relationship.</param>
+		/// <param name="target">Event to use as the target of the relationship.</param>
+		public ShowFormHasEvents(ShowForm source, Event target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ShowFormHasEvents.ShowFormDomainRoleId, source), new DslModeling::RoleAssignment(ShowFormHasEvents.EventDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ShowFormHasEvents(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ShowFormHasEvents(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ShowFormHasEvents(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ShowFormHasEvents(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ShowForm domain role code
+		
+		/// <summary>
+		/// ShowForm domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ShowFormDomainRoleId = new global::System.Guid(0xedfd54e4, 0x5e8c, 0x4361, 0x9a, 0x72, 0x41, 0x66, 0x51, 0xa7, 0x33, 0x47);
+		
+		/// <summary>
+		/// DomainRole ShowForm
+		/// Description for Company.MobileDSL.ShowFormHasEvents.ShowForm
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormHasEvents/ShowForm.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormHasEvents/ShowForm.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Events", PropertyDisplayNameKey="Company.MobileDSL.ShowFormHasEvents/ShowForm.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("edfd54e4-5e8c-4361-9a72-416651a73347")]
+		public virtual ShowForm ShowForm
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ShowForm)DslModeling::DomainRoleInfo.GetRolePlayer(this, ShowFormDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ShowFormDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ShowForm of a Event
+		/// <summary>
+		/// Gets ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static ShowForm GetShowForm(Event element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, EventDomainRoleId) as ShowForm;
+		}
+		
+		/// <summary>
+		/// Sets ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetShowForm(Event element, ShowForm newShowForm)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, EventDomainRoleId, newShowForm);
+		}
+		#endregion
+		#region Event domain role code
+		
+		/// <summary>
+		/// Event domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid EventDomainRoleId = new global::System.Guid(0xab92a9f6, 0x1e83, 0x4916, 0x90, 0x8a, 0x6b, 0x17, 0xb1, 0xac, 0xbd, 0x42);
+		
+		/// <summary>
+		/// DomainRole Event
+		/// Description for Company.MobileDSL.ShowFormHasEvents.Event
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormHasEvents/Event.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormHasEvents/Event.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ShowForm", PropertyDisplayNameKey="Company.MobileDSL.ShowFormHasEvents/Event.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("ab92a9f6-1e83-4916-908a-6b17b1acbd42")]
+		public virtual Event Event
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Event)DslModeling::DomainRoleInfo.GetRolePlayer(this, EventDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, EventDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Events of a ShowForm
+		/// <summary>
+		/// Gets a list of Events.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Event> GetEvents(ShowForm element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Event>, Event>(element, ShowFormDomainRoleId);
+		}
+		#endregion
+		#region ShowForm link accessor
+		/// <summary>
+		/// Get the list of ShowFormHasEvents links to a ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ShowFormHasEvents> GetLinksToEvents ( global::Company.MobileDSL.ShowForm showFormInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormHasEvents>(showFormInstance, global::Company.MobileDSL.ShowFormHasEvents.ShowFormDomainRoleId);
+		}
+		#endregion
+		#region Event link accessor
+		/// <summary>
+		/// Get the ShowFormHasEvents link to a Event.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.ShowFormHasEvents GetLinkToShowForm (global::Company.MobileDSL.Event eventInstance)
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ShowFormHasEvents> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormHasEvents>(eventInstance, global::Company.MobileDSL.ShowFormHasEvents.EventDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Event not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region ShowFormHasEvents instance accessors
+		
+		/// <summary>
+		/// Get any ShowFormHasEvents links between a given ShowForm and a Event.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ShowFormHasEvents> GetLinks( global::Company.MobileDSL.ShowForm source, global::Company.MobileDSL.Event target )
+		{
+			global::System.Collections.Generic.List<global::Company.MobileDSL.ShowFormHasEvents> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ShowFormHasEvents>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ShowFormHasEvents> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormHasEvents>(source, global::Company.MobileDSL.ShowFormHasEvents.ShowFormDomainRoleId);
+			foreach ( global::Company.MobileDSL.ShowFormHasEvents link in links )
+			{
+				if ( target.Equals(link.Event) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one ShowFormHasEvents link between a given ShowFormand a Event.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.ShowFormHasEvents GetLink( global::Company.MobileDSL.ShowForm source, global::Company.MobileDSL.Event target )
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ShowFormHasEvents> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormHasEvents>(source, global::Company.MobileDSL.ShowFormHasEvents.ShowFormDomainRoleId);
+			foreach ( global::Company.MobileDSL.ShowFormHasEvents link in links )
+			{
+				if ( target.Equals(link.Event) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainRelationship ShowFormHasPrimitives
+	/// Description for Company.MobileDSL.ShowFormHasPrimitives
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormHasPrimitives.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormHasPrimitives.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("e19886bd-1044-498e-8ebc-6c82d9a682dc")]
+	public partial class ShowFormHasPrimitives : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// ShowFormHasPrimitives domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xe19886bd, 0x1044, 0x498e, 0x8e, 0xbc, 0x6c, 0x82, 0xd9, 0xa6, 0x82, 0xdc);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a ShowFormHasPrimitives link in the same Partition as the given ShowForm
+		/// </summary>
+		/// <param name="source">ShowForm to use as the source of the relationship.</param>
+		/// <param name="target">Primitive to use as the target of the relationship.</param>
+		public ShowFormHasPrimitives(ShowForm source, Primitive target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ShowFormHasPrimitives.ShowFormDomainRoleId, source), new DslModeling::RoleAssignment(ShowFormHasPrimitives.PrimitiveDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ShowFormHasPrimitives(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ShowFormHasPrimitives(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ShowFormHasPrimitives(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ShowFormHasPrimitives(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ShowForm domain role code
+		
+		/// <summary>
+		/// ShowForm domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ShowFormDomainRoleId = new global::System.Guid(0xb7b5f667, 0xd913, 0x46cd, 0xb5, 0x9c, 0xf1, 0xdb, 0x31, 0xa4, 0x5a, 0x34);
+		
+		/// <summary>
+		/// DomainRole ShowForm
+		/// Description for Company.MobileDSL.ShowFormHasPrimitives.ShowForm
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormHasPrimitives/ShowForm.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormHasPrimitives/ShowForm.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Primitives", PropertyDisplayNameKey="Company.MobileDSL.ShowFormHasPrimitives/ShowForm.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("b7b5f667-d913-46cd-b59c-f1db31a45a34")]
+		public virtual ShowForm ShowForm
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ShowForm)DslModeling::DomainRoleInfo.GetRolePlayer(this, ShowFormDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ShowFormDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ShowForm of a Primitive
+		/// <summary>
+		/// Gets ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static ShowForm GetShowForm(Primitive element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PrimitiveDomainRoleId) as ShowForm;
+		}
+		
+		/// <summary>
+		/// Sets ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetShowForm(Primitive element, ShowForm newShowForm)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, PrimitiveDomainRoleId, newShowForm);
+		}
+		#endregion
+		#region Primitive domain role code
+		
+		/// <summary>
+		/// Primitive domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid PrimitiveDomainRoleId = new global::System.Guid(0x37569c31, 0xc9ed, 0x4acb, 0xa7, 0x60, 0x2b, 0xa2, 0x1e, 0x6b, 0x99, 0x22);
+		
+		/// <summary>
+		/// DomainRole Primitive
+		/// Description for Company.MobileDSL.ShowFormHasPrimitives.Primitive
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormHasPrimitives/Primitive.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormHasPrimitives/Primitive.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ShowForm", PropertyDisplayNameKey="Company.MobileDSL.ShowFormHasPrimitives/Primitive.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("37569c31-c9ed-4acb-a760-2ba21e6b9922")]
+		public virtual Primitive Primitive
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Primitive)DslModeling::DomainRoleInfo.GetRolePlayer(this, PrimitiveDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, PrimitiveDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Primitives of a ShowForm
+		/// <summary>
+		/// Gets a list of Primitives.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Primitive> GetPrimitives(ShowForm element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Primitive>, Primitive>(element, ShowFormDomainRoleId);
+		}
+		#endregion
+		#region ShowForm link accessor
+		/// <summary>
+		/// Get the list of ShowFormHasPrimitives links to a ShowForm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ShowFormHasPrimitives> GetLinksToPrimitives ( global::Company.MobileDSL.ShowForm showFormInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormHasPrimitives>(showFormInstance, global::Company.MobileDSL.ShowFormHasPrimitives.ShowFormDomainRoleId);
+		}
+		#endregion
+		#region Primitive link accessor
+		/// <summary>
+		/// Get the ShowFormHasPrimitives link to a Primitive.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.ShowFormHasPrimitives GetLinkToShowForm (global::Company.MobileDSL.Primitive primitiveInstance)
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ShowFormHasPrimitives> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormHasPrimitives>(primitiveInstance, global::Company.MobileDSL.ShowFormHasPrimitives.PrimitiveDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Primitive not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region ShowFormHasPrimitives instance accessors
+		
+		/// <summary>
+		/// Get any ShowFormHasPrimitives links between a given ShowForm and a Primitive.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ShowFormHasPrimitives> GetLinks( global::Company.MobileDSL.ShowForm source, global::Company.MobileDSL.Primitive target )
+		{
+			global::System.Collections.Generic.List<global::Company.MobileDSL.ShowFormHasPrimitives> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ShowFormHasPrimitives>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ShowFormHasPrimitives> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormHasPrimitives>(source, global::Company.MobileDSL.ShowFormHasPrimitives.ShowFormDomainRoleId);
+			foreach ( global::Company.MobileDSL.ShowFormHasPrimitives link in links )
+			{
+				if ( target.Equals(link.Primitive) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one ShowFormHasPrimitives link between a given ShowFormand a Primitive.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.ShowFormHasPrimitives GetLink( global::Company.MobileDSL.ShowForm source, global::Company.MobileDSL.Primitive target )
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ShowFormHasPrimitives> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ShowFormHasPrimitives>(source, global::Company.MobileDSL.ShowFormHasPrimitives.ShowFormDomainRoleId);
+			foreach ( global::Company.MobileDSL.ShowFormHasPrimitives link in links )
+			{
+				if ( target.Equals(link.Primitive) )
 				{
 					return link;
 				}
