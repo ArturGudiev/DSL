@@ -161,6 +161,13 @@
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="04573062-e67a-4c0e-bcbe-b341f020cd80" Description="Description for Company.MobileDSL.Event.Primitive Name" Name="PrimitiveName" DisplayName="Primitive Name">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
     <DomainClass Id="b26e8379-0ad9-4800-8dd8-0570ed78c99e" Description="Description for Company.MobileDSL.Primitive" Name="Primitive" DisplayName="Primitive" Namespace="Company.MobileDSL">
       <BaseClass>
@@ -171,6 +178,15 @@
       <BaseClass>
         <DomainClassMoniker Name="Primitive" />
       </BaseClass>
+    </DomainClass>
+    <DomainClass Id="f1b4bcf4-342c-4add-9ba3-61b04e56d3d8" Description="Description for Company.MobileDSL.Connectable" Name="Connectable" DisplayName="Connectable" InheritanceModifier="Abstract" Namespace="Company.MobileDSL">
+      <Properties>
+        <DomainProperty Id="eaf85a3d-4318-4454-a63e-04794bf86a48" Description="Description for Company.MobileDSL.Connectable.Name" Name="Name" DisplayName="Name">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
   </Classes>
   <Relationships>
@@ -680,6 +696,11 @@
       </XmlClassData>
       <XmlClassData TypeName="Event" MonikerAttributeName="" SerializeId="true" MonikerElementName="eventMoniker" ElementName="event" MonikerTypeName="EventMoniker">
         <DomainClassMoniker Name="Event" />
+        <ElementData>
+          <XmlPropertyData XmlName="primitiveName">
+            <DomainPropertyMoniker Name="Event/PrimitiveName" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ShowFormHasPrimitives" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormHasPrimitivesMoniker" ElementName="showFormHasPrimitives" MonikerTypeName="ShowFormHasPrimitivesMoniker">
         <DomainRelationshipMoniker Name="ShowFormHasPrimitives" />
@@ -709,6 +730,14 @@
       </XmlClassData>
       <XmlClassData TypeName="Button" MonikerAttributeName="" SerializeId="true" MonikerElementName="buttonMoniker" ElementName="button" MonikerTypeName="ButtonMoniker">
         <DomainClassMoniker Name="Button" />
+      </XmlClassData>
+      <XmlClassData TypeName="Connectable" MonikerAttributeName="" SerializeId="true" MonikerElementName="connectableMoniker" ElementName="connectable" MonikerTypeName="ConnectableMoniker">
+        <DomainClassMoniker Name="Connectable" />
+        <ElementData>
+          <XmlPropertyData XmlName="name">
+            <DomainPropertyMoniker Name="Connectable/Name" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>

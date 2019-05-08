@@ -1847,6 +1847,93 @@ namespace Company.MobileDSL
 		{
 		}
 		#endregion
+		#region PrimitiveName domain property code
+		
+		/// <summary>
+		/// PrimitiveName domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid PrimitiveNameDomainPropertyId = new global::System.Guid(0x04573062, 0xe67a, 0x4c0e, 0xbc, 0xbe, 0xb3, 0x41, 0xf0, 0x20, 0xcd, 0x80);
+		
+		/// <summary>
+		/// Storage for PrimitiveName
+		/// </summary>
+		private global::System.String primitiveNamePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of PrimitiveName domain property.
+		/// Description for Company.MobileDSL.Event.Primitive Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.Event/PrimitiveName.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.Event/PrimitiveName.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("04573062-e67a-4c0e-bcbe-b341f020cd80")]
+		public global::System.String PrimitiveName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return primitiveNamePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				PrimitiveNamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Event.PrimitiveName domain property.
+		/// </summary>
+		internal sealed partial class PrimitiveNamePropertyHandler : DslModeling::DomainPropertyValueHandler<Event, global::System.String>
+		{
+			private PrimitiveNamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Event.PrimitiveName domain property value handler.
+			/// </summary>
+			public static readonly PrimitiveNamePropertyHandler Instance = new PrimitiveNamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Event.PrimitiveName domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return PrimitiveNameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Event element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.primitiveNamePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Event element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.primitiveNamePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region ShowForm opposite domain role accessor
 		/// <summary>
 		/// Gets or sets ShowForm.
@@ -1963,6 +2050,47 @@ namespace Company.MobileDSL
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
 		public Button(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass Connectable
+	/// Description for Company.MobileDSL.Connectable
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.Connectable.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.Connectable.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("f1b4bcf4-342c-4add-9ba3-61b04e56d3d8")]
+	public partial class Connectable : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Connectable domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf1b4bcf4, 0x342c, 0x4add, 0x9b, 0xa3, 0x61, 0xb0, 0x4e, 0x56, 0xd3, 0xd8);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Connectable(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Connectable(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

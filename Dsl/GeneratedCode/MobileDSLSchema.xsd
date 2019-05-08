@@ -562,6 +562,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: PrimitiveName -->
+        <xsd:attribute name="primitiveName" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -628,6 +630,38 @@
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="PrimitiveMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Connectable -->
+  <xsd:element name="connectable" type="Connectable" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Connectable">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Connectable Moniker -->
+  <xsd:element name="connectableMoniker" type="ConnectableMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ConnectableMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Connectable instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

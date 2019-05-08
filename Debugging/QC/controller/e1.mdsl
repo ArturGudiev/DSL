@@ -31,7 +31,7 @@
                   <showForm Id="1d536968-3829-43cb-af39-88efab32bd9d" name="Form1">
                     <events>
                       <showFormHasEvents Id="3a18adf3-5dfd-4cf2-ba53-1e019f3c35ac">
-                        <event Id="35c0176b-c10a-4fb6-a1f2-30dd12401da3" name="Button1Clicked" />
+                        <event Id="35c0176b-c10a-4fb6-a1f2-30dd12401da3" name="Button1Clicked" primitiveName="Button1" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
@@ -76,7 +76,7 @@
                   <showForm Id="40af81d0-bb68-4e98-95f1-8776aeae255e" name="Form2">
                     <events>
                       <showFormHasEvents Id="63090157-f13d-49db-af40-59001d04e537">
-                        <event Id="8da9ab99-80d9-4eb9-81e8-1d82d92252a7" name="Button2Clicked" />
+                        <event Id="8da9ab99-80d9-4eb9-81e8-1d82d92252a7" name="Button2Clicked" primitiveName="Button2" />
                       </showFormHasEvents>
                     </events>
                     <primitives>

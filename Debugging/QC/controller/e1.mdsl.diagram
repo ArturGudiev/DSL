@@ -2,7 +2,7 @@
 <mobileDSLDiagram dslVersion="1.0.0.0" Id="c12f9d20-5c81-4b8d-992e-486413e5e347" absoluteBounds="0, 0, 12.5, 8.5" name="Sample">
   <componentModelMoniker name="/A component model" />
   <nestedChildShapes>
-    <controllerShape Id="5f473e63-4399-4d88-9dde-331abddf18c6" absoluteBounds="2.875, 1.375, 9.375, 5.625">
+    <controllerShape Id="5f473e63-4399-4d88-9dde-331abddf18c6" absoluteBounds="2.875, 1.375, 9.375, 5.125">
       <controllerMoniker name="/A component model/Controller1" />
     </controllerShape>
     <stateShape Id="a6e805ce-7b74-4b7d-ba71-afd78d28e02a" absoluteBounds="3.25, 2.125, 3.25, 3.625">
