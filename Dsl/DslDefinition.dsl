@@ -68,11 +68,7 @@
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="11ad2be7-4a6f-4090-b8c9-29388fbc1406" Description="Description for Company.MobileDSL.Port" Name="Port" DisplayName="Port" InheritanceModifier="Abstract" Namespace="Company.MobileDSL">
-      <BaseClass>
-        <DomainClassMoniker Name="NamedElement" />
-      </BaseClass>
-    </DomainClass>
+    <DomainClass Id="11ad2be7-4a6f-4090-b8c9-29388fbc1406" Description="Description for Company.MobileDSL.Port" Name="Port" DisplayName="Port" InheritanceModifier="Abstract" Namespace="Company.MobileDSL" />
     <DomainClass Id="1fe64f7d-f422-4778-8f00-f111d94e9d10" Description="" Name="InPort" DisplayName="In Port" Namespace="Company.MobileDSL">
       <BaseClass>
         <DomainClassMoniker Name="Port" />
@@ -132,12 +128,27 @@
             <DomainPath>ClassWithPortsHasPorts.Ports</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="P" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ClassWithPortsHasPs.Ps</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
     <DomainClass Id="76a7e1be-9811-436f-8303-39f4017eb70b" Description="Description for Company.MobileDSL.ShowForm" Name="ShowForm" DisplayName="Show Form" Namespace="Company.MobileDSL">
       <BaseClass>
-        <DomainClassMoniker Name="NamedElement" />
+        <DomainClassMoniker Name="Connectable" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="f266cd47-2168-4d9e-bcac-c5ce3c1483d9" Description="Description for Company.MobileDSL.ShowForm.Name" Name="Name" DisplayName="Name">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
@@ -179,14 +190,28 @@
         <DomainClassMoniker Name="Primitive" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="f1b4bcf4-342c-4add-9ba3-61b04e56d3d8" Description="Description for Company.MobileDSL.Connectable" Name="Connectable" DisplayName="Connectable" InheritanceModifier="Abstract" Namespace="Company.MobileDSL">
+    <DomainClass Id="f1b4bcf4-342c-4add-9ba3-61b04e56d3d8" Description="Description for Company.MobileDSL.Connectable" Name="Connectable" DisplayName="Connectable" InheritanceModifier="Abstract" Namespace="Company.MobileDSL" />
+    <DomainClass Id="685d0d71-73ac-45b5-9c2c-d4f9fe9ec82a" Description="Description for Company.MobileDSL.P" Name="P" DisplayName="P" InheritanceModifier="Abstract" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Connectable" />
+      </BaseClass>
       <Properties>
-        <DomainProperty Id="eaf85a3d-4318-4454-a63e-04794bf86a48" Description="Description for Company.MobileDSL.Connectable.Name" Name="Name" DisplayName="Name">
+        <DomainProperty Id="efeedc42-e06a-43de-8d62-5ad091aa9e68" Description="Description for Company.MobileDSL.P.Name" Name="Name" DisplayName="Name">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
       </Properties>
+    </DomainClass>
+    <DomainClass Id="73c256cd-6ab2-44b7-9f91-d7913b2944a4" Description="Description for Company.MobileDSL.IP" Name="IP" DisplayName="IP" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="P" />
+      </BaseClass>
+    </DomainClass>
+    <DomainClass Id="3c815762-8367-46c1-8840-47ea0a56e01d" Description="Description for Company.MobileDSL.OP" Name="OP" DisplayName="OP" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="P" />
+      </BaseClass>
     </DomainClass>
   </Classes>
   <Relationships>
@@ -430,6 +455,50 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
+    <DomainRelationship Id="ee05d04b-d0f3-4d78-bb40-d28818ad2d77" Description="Description for Company.MobileDSL.ClassWithPortsHasPs" Name="ClassWithPortsHasPs" DisplayName="Class With Ports Has Ps" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="787afdfa-bf91-4982-a08d-8418fdc54d94" Description="Description for Company.MobileDSL.ClassWithPortsHasPs.ClassWithPorts" Name="ClassWithPorts" DisplayName="Class With Ports" PropertyName="Ps" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ps">
+          <RolePlayer>
+            <DomainClassMoniker Name="ClassWithPorts" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="ab791f93-7b08-46a5-94ca-0ec129b5f6cb" Description="Description for Company.MobileDSL.ClassWithPortsHasPs.P" Name="P" DisplayName="P" PropertyName="ClassWithPorts" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Class With Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="P" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="3a5f4dbb-c6dc-4517-84cc-899be56dd27b" Description="Description for Company.MobileDSL.C" Name="C" DisplayName="C" Namespace="Company.MobileDSL">
+      <Properties>
+        <DomainProperty Id="05c26bec-c1ce-4c13-90f9-92af6478e394" Description="Description for Company.MobileDSL.C.From Event" Name="FromEvent" DisplayName="From Event">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="fbc21502-b9bc-454b-8540-ecc2728924db" Description="Description for Company.MobileDSL.C.Next State" Name="NextState" DisplayName="Next State">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <Source>
+        <DomainRole Id="24ae03ea-39bb-4ed1-b150-46e8a9413ed6" Description="Description for Company.MobileDSL.C.SourceConnectable" Name="SourceConnectable" DisplayName="Source Connectable" PropertyName="ParentConnections" PropertyDisplayName="Parent Connections">
+          <RolePlayer>
+            <DomainClassMoniker Name="Connectable" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="70c6bff3-b71b-4c3a-8ce7-bc4e109da23b" Description="Description for Company.MobileDSL.C.TargetConnectable" Name="TargetConnectable" DisplayName="Target Connectable" PropertyName="ChildConnections" PropertyDisplayName="Child Connections">
+          <RolePlayer>
+            <DomainClassMoniker Name="Connectable" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -486,6 +555,16 @@
       <Compartment Name="UIEventsCompartment" />
       <Compartment Name="UIPrimitives" />
     </CompartmentShape>
+    <Port Id="f83602a3-02ae-4c1a-aa76-5d5782f998f4" Description="Description for Company.MobileDSL.IPShape" Name="IPShape" DisplayName="IPShape" Namespace="Company.MobileDSL" FixedTooltipText="IPShape" InitialWidth="0.2" InitialHeight="0.2" Geometry="Rectangle">
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="Image" DisplayName="Image" DefaultIcon="Resources\InPortImage.bmp" />
+      </ShapeHasDecorators>
+    </Port>
+    <Port Id="403b4f45-924b-4c1c-99df-5d781728bb80" Description="Description for Company.MobileDSL.OPShape" Name="OPShape" DisplayName="OPShape" Namespace="Company.MobileDSL" FixedTooltipText="OPShape" InitialWidth="0.2" InitialHeight="0.2" Geometry="Rectangle">
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="Image" DisplayName="Image" DefaultIcon="Resources\OutPortImage.bmp" />
+      </ShapeHasDecorators>
+    </Port>
   </Shapes>
   <Connectors>
     <Connector Id="66d5ac35-32f5-41a3-8eb2-a96e59751133" Description="" Name="AssociationLink" DisplayName="Association Link" Namespace="Company.MobileDSL" FixedTooltipText="Association Link" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -506,6 +585,11 @@
     <Connector Id="1e6bc545-de7b-41b1-97b1-0cf721bd02d1" Description="Description for Company.MobileDSL.ShowFormToPortConnection" Name="ShowFormToPortConnection" DisplayName="Show Form To Port Connection" Namespace="Company.MobileDSL" FixedTooltipText="Show Form To Port Connection" TargetEndStyle="FilledArrow" Thickness="0.01">
       <ConnectorHasDecorators Position="TargetTop" OffsetFromShape="0" OffsetFromLine="0">
         <TextDecorator Name="nextStateDecorator" DisplayName="Next State Decorator" DefaultText="nextStateDecorator" />
+      </ConnectorHasDecorators>
+    </Connector>
+    <Connector Id="61d3f54d-7cb2-4808-906d-997c06378aff" Description="Description for Company.MobileDSL.CConnector" Name="CConnector" DisplayName="CConnector" Namespace="Company.MobileDSL" FixedTooltipText="CConnector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
+      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
+        <TextDecorator Name="NextStateDecorator" DisplayName="Next State Decorator" DefaultText="NextStateDecorator" />
       </ConnectorHasDecorators>
     </Connector>
   </Connectors>
@@ -666,6 +750,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="ports">
             <DomainRelationshipMoniker Name="ClassWithPortsHasPorts" />
           </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="ps">
+            <DomainRelationshipMoniker Name="ClassWithPortsHasPs" />
+          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ClassWithPortsHasPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="classWithPortsHasPortsMoniker" ElementName="classWithPortsHasPorts" MonikerTypeName="ClassWithPortsHasPortsMoniker">
@@ -686,6 +773,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="outPorts">
             <DomainRelationshipMoniker Name="ShowFormReferencesOutPorts" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="name">
+            <DomainPropertyMoniker Name="ShowForm/Name" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="CompartmentShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="compartmentShape1Moniker" ElementName="compartmentShape1" MonikerTypeName="CompartmentShape1Moniker">
@@ -734,10 +824,47 @@
       <XmlClassData TypeName="Connectable" MonikerAttributeName="" SerializeId="true" MonikerElementName="connectableMoniker" ElementName="connectable" MonikerTypeName="ConnectableMoniker">
         <DomainClassMoniker Name="Connectable" />
         <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="parentConnections">
+            <DomainRelationshipMoniker Name="C" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="P" MonikerAttributeName="" SerializeId="true" MonikerElementName="pMoniker" ElementName="p" MonikerTypeName="PMoniker">
+        <DomainClassMoniker Name="P" />
+        <ElementData>
           <XmlPropertyData XmlName="name">
-            <DomainPropertyMoniker Name="Connectable/Name" />
+            <DomainPropertyMoniker Name="P/Name" />
           </XmlPropertyData>
         </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="IP" MonikerAttributeName="" SerializeId="true" MonikerElementName="iPMoniker" ElementName="iP" MonikerTypeName="IPMoniker">
+        <DomainClassMoniker Name="IP" />
+      </XmlClassData>
+      <XmlClassData TypeName="OP" MonikerAttributeName="" SerializeId="true" MonikerElementName="oPMoniker" ElementName="oP" MonikerTypeName="OPMoniker">
+        <DomainClassMoniker Name="OP" />
+      </XmlClassData>
+      <XmlClassData TypeName="ClassWithPortsHasPs" MonikerAttributeName="" SerializeId="true" MonikerElementName="classWithPortsHasPsMoniker" ElementName="classWithPortsHasPs" MonikerTypeName="ClassWithPortsHasPsMoniker">
+        <DomainRelationshipMoniker Name="ClassWithPortsHasPs" />
+      </XmlClassData>
+      <XmlClassData TypeName="IPShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="iPShapeMoniker" ElementName="iPShape" MonikerTypeName="IPShapeMoniker">
+        <PortMoniker Name="IPShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="OPShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="oPShapeMoniker" ElementName="oPShape" MonikerTypeName="OPShapeMoniker">
+        <PortMoniker Name="OPShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="C" MonikerAttributeName="" SerializeId="true" MonikerElementName="cMoniker" ElementName="c" MonikerTypeName="CMoniker">
+        <DomainRelationshipMoniker Name="C" />
+        <ElementData>
+          <XmlPropertyData XmlName="fromEvent">
+            <DomainPropertyMoniker Name="C/FromEvent" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="nextState">
+            <DomainPropertyMoniker Name="C/NextState" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="CConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="cConnectorMoniker" ElementName="cConnector" MonikerTypeName="CConnectorMoniker">
+        <ConnectorMoniker Name="CConnector" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -838,6 +965,25 @@
         </TargetDirectives>
       </LinkConnectDirective>
     </ConnectionBuilder>
+    <ConnectionBuilder Name="CBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="C" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Connectable" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Connectable" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
   </ConnectionBuilders>
   <Diagram Id="7ef6236b-987a-4e87-a593-50661f5d96cb" Description="" Name="MobileDSLDiagram" DisplayName="MobileDSL Diagram" Namespace="Company.MobileDSL">
     <Class>
@@ -927,7 +1073,7 @@
           <TextDecoratorMoniker Name="CompartmentShape1/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="NamedElement/Name" />
+              <DomainPropertyMoniker Name="ShowForm/Name" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
@@ -955,6 +1101,20 @@
           </PropertyDisplayed>
         </CompartmentMap>
       </CompartmentShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="IP" />
+        <ParentElementPath>
+          <DomainPath>ClassWithPortsHasPs.ClassWithPorts/!ClassWithPorts</DomainPath>
+        </ParentElementPath>
+        <PortMoniker Name="IPShape" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="OP" />
+        <ParentElementPath>
+          <DomainPath>ClassWithPortsHasPs.ClassWithPorts/!ClassWithPorts</DomainPath>
+        </ParentElementPath>
+        <PortMoniker Name="OPShape" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -1009,6 +1169,18 @@
           </PropertyDisplayed>
         </DecoratorMap>
       </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="CConnector" />
+        <DomainRelationshipMoniker Name="C" />
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="CConnector/NextStateDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="C/NextState" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+      </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="mdsl" EditorGuid="5655060c-ef72-481b-b551-6d87cbd1b4bf">
@@ -1051,6 +1223,15 @@
       </ConnectionTool>
       <ConnectionTool Name="ShowFormToPortConnection" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="ShowFormToPortConnection" Tooltip="Show Form To Port Connection" HelpKeyword="ShowFormToPortConnection">
         <ConnectionBuilderMoniker Name="MobileDSL/ShowFormReferencesOutPortsBuilder" />
+      </ConnectionTool>
+      <ElementTool Name="IP" ToolboxIcon="Resources\InPortTool.bmp" Caption="IP" Tooltip="IP" HelpKeyword="IP">
+        <DomainClassMoniker Name="IP" />
+      </ElementTool>
+      <ElementTool Name="OP" ToolboxIcon="Resources\OutPortTool.bmp" Caption="OP" Tooltip="OP" HelpKeyword="OP">
+        <DomainClassMoniker Name="OP" />
+      </ElementTool>
+      <ConnectionTool Name="C" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="C" Tooltip="C" HelpKeyword="C">
+        <ConnectionBuilderMoniker Name="MobileDSL/CBuilder" />
       </ConnectionTool>
     </ToolboxTab>
     <ToolboxTab TabText="UI Forms">

@@ -1,94 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ed63d866-36c4-4172-a538-617a8958d038" name="A component model" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0694217e-bc4e-49cf-bdf9-19eba2bc63cc" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
   <controllers>
-    <componentModelHasControllers Id="da24122f-8fe3-4bf6-a281-31441b0dc7f9">
-      <controller Id="6b2c3e4e-cb07-419a-a0a9-ef7ca4e84254" name="Controller1" isFirst="false">
+    <componentModelHasControllers Id="1e46121a-81e3-47a9-97e2-fc8054e85ed1">
+      <controller Id="10d9e1c8-d8d3-4b35-ae10-36931e6b92b2" name="Controller1" isFirst="false">
+        <ps>
+          <classWithPortsHasPs Id="3a231e83-09e5-49e5-bd0f-350d65f02359">
+            <iP Id="88853e71-33ae-4aa0-8cf8-f724ec2a77c6">
+              <parentConnections>
+                <c Id="b685f0f3-29da-40d3-9b13-1ed18679c123">
+                  <iPMoniker Id="dbb2ce76-6eec-48d3-8193-840352b7f4c0" />
+                </c>
+              </parentConnections>
+            </iP>
+          </classWithPortsHasPs>
+          <classWithPortsHasPs Id="04b15863-dd67-448b-ab42-f131cfefef90">
+            <oP Id="6541eedd-4027-467f-8760-e61d2db51d40" />
+          </classWithPortsHasPs>
+        </ps>
         <states>
-          <controllerHasStates Id="365468a1-380b-4e57-9841-b5e43572e282">
-            <state Id="3409c032-b657-4d67-a9d8-b7bcc499f891" name="State1">
-              <ports>
-                <classWithPortsHasPorts Id="cc712b38-7c00-4b38-842a-65915043d534">
-                  <inPort Id="38047b7d-8eb7-4255-9945-b148945a1d16" name="InPort1">
-                    <showForms>
-                      <inPortReferencesShowForms Id="e9889056-f314-40eb-8d8a-74f8d5db86d6">
-                        <showFormMoniker name="/A component model/Controller1/State1/Form1" />
-                      </inPortReferencesShowForms>
-                    </showForms>
-                  </inPort>
-                </classWithPortsHasPorts>
-                <classWithPortsHasPorts Id="7eab1104-e0c0-4454-b3ca-9bdb70003c2d">
-                  <outPort Id="70a07f10-20b4-49e4-95ae-de29ef5c4d5f" name="OutPort1">
-                    <targets>
-                      <connection Id="926f6054-fa0a-46bf-8399-d3a661539ad4">
-                        <inPortMoniker name="/A component model/Controller1/State2/InPort1" />
-                      </connection>
-                    </targets>
-                  </outPort>
-                </classWithPortsHasPorts>
-              </ports>
+          <controllerHasStates Id="d63ce2f0-bfdb-4a2a-b685-428e6fab9b34">
+            <state Id="e985a042-ece8-47af-ac10-461a4b32d53c" name="State1">
+              <ps>
+                <classWithPortsHasPs Id="804faaa1-f947-497d-9700-5c8d1354b629">
+                  <iP Id="dbb2ce76-6eec-48d3-8193-840352b7f4c0" />
+                </classWithPortsHasPs>
+                <classWithPortsHasPs Id="5cbbd306-d862-4eb7-bbdc-75393d6f917d">
+                  <oP Id="043b7ba9-ef13-489e-ad53-c5f6066f2040">
+                    <parentConnections>
+                      <c Id="e7b3d4c2-7694-48a8-87e0-4ec6d34733dc">
+                        <iPMoniker Id="a26636ca-a844-41a0-a209-2481c3f81138" />
+                      </c>
+                    </parentConnections>
+                  </oP>
+                </classWithPortsHasPs>
+              </ps>
               <showForms>
-                <stateHasShowForms Id="c384bb15-d668-421b-8a56-7613c8c5cef6">
-                  <showForm Id="1d536968-3829-43cb-af39-88efab32bd9d" name="Form1">
+                <stateHasShowForms Id="8dbb37f9-b877-4d72-bf69-f8b40b11b419">
+                  <showForm Id="154d169a-ba76-4814-b928-43cc53d6be7b" name="Form1">
+                    <parentConnections>
+                      <c Id="d31e84e4-451a-488c-a339-938020a4afce" nextState="State2">
+                        <oPMoniker Id="043b7ba9-ef13-489e-ad53-c5f6066f2040" />
+                      </c>
+                    </parentConnections>
                     <events>
-                      <showFormHasEvents Id="3a18adf3-5dfd-4cf2-ba53-1e019f3c35ac">
-                        <event Id="35c0176b-c10a-4fb6-a1f2-30dd12401da3" name="Button1Clicked" primitiveName="Button1" />
+                      <showFormHasEvents Id="828b5cd0-6f5c-405b-8ec0-aba079608ec9">
+                        <event Id="5898e865-7a4e-4b24-95ab-86f3d327f8d6" name="Button1Clicked" primitiveName="Button1" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
-                      <showFormHasPrimitives Id="c6a2eeb3-1972-4def-a2ef-ce2234d1ba07">
-                        <button Id="e297947d-2a18-4590-9147-8673169bb686" name="Button1" />
+                      <showFormHasPrimitives Id="987cc864-345d-4f6d-85e1-e68f571312cd">
+                        <button Id="4c56840e-a35d-4526-be9e-837f3aa1860d" name="Button1" />
                       </showFormHasPrimitives>
                     </primitives>
-                    <outPorts>
-                      <showFormReferencesOutPorts Id="999e5476-adc2-4588-9872-ed8c5fcda00b" nextState="State2">
-                        <outPortMoniker name="/A component model/Controller1/State1/OutPort1" />
-                      </showFormReferencesOutPorts>
-                    </outPorts>
                   </showForm>
                 </stateHasShowForms>
               </showForms>
             </state>
           </controllerHasStates>
-          <controllerHasStates Id="5f1622a7-82a9-4442-8e28-d1452c0c76ea">
-            <state Id="8347c836-38af-48d1-90c8-d3aef1b0add5" name="State2">
-              <ports>
-                <classWithPortsHasPorts Id="ce7044a2-9682-4f69-93b6-9e478f653b9c">
-                  <inPort Id="ccfa8411-a49c-4949-ba40-20f31ee0d4de" name="InPort1">
-                    <showForms>
-                      <inPortReferencesShowForms Id="cc4196bf-0bf2-4e80-b58a-d09c8bf2a71e">
-                        <showFormMoniker name="/A component model/Controller1/State2/Form2" />
-                      </inPortReferencesShowForms>
-                    </showForms>
-                  </inPort>
-                </classWithPortsHasPorts>
-                <classWithPortsHasPorts Id="c30b6fa6-7d9f-4e24-9f96-c89f7955a4e2">
-                  <outPort Id="d59f365d-9fe6-470a-b23c-3bf5ae8622cf" name="OutPort1">
-                    <targets>
-                      <connection Id="785258d8-176e-4bc8-91c8-49b4bd78ac12">
-                        <inPortMoniker name="/A component model/Controller1/State1/InPort1" />
-                      </connection>
-                    </targets>
-                  </outPort>
-                </classWithPortsHasPorts>
-              </ports>
+          <controllerHasStates Id="7e380024-e004-4cee-ae1e-a6debfe1c780">
+            <state Id="722a21d1-a6da-4116-aaf4-1a8073ea3695" name="State2">
+              <ps>
+                <classWithPortsHasPs Id="f8ef031e-7115-48c5-a156-ee23ffbf377c">
+                  <iP Id="a26636ca-a844-41a0-a209-2481c3f81138">
+                    <parentConnections>
+                      <c Id="baffeca0-eb71-417c-b741-26b51836616d">
+                        <showFormMoniker Id="4aeb8f5c-4d2d-417a-8adb-eb1521c299ec" />
+                      </c>
+                    </parentConnections>
+                  </iP>
+                </classWithPortsHasPs>
+                <classWithPortsHasPs Id="9a7eaeb2-4690-4d66-a049-cf2195e6a722">
+                  <oP Id="7958477b-2641-41ae-985f-7b90ff173c5a">
+                    <parentConnections>
+                      <c Id="7cbaafb4-7ed7-4369-8204-4f4467859e3e">
+                        <iPMoniker Id="dbb2ce76-6eec-48d3-8193-840352b7f4c0" />
+                      </c>
+                    </parentConnections>
+                  </oP>
+                </classWithPortsHasPs>
+              </ps>
               <showForms>
-                <stateHasShowForms Id="4bbc8521-10ee-4583-9193-b3c2b93640d4">
-                  <showForm Id="40af81d0-bb68-4e98-95f1-8776aeae255e" name="Form2">
+                <stateHasShowForms Id="367f9a6d-8e19-4ac3-9b94-b53b9f868567">
+                  <showForm Id="4aeb8f5c-4d2d-417a-8adb-eb1521c299ec" name="Form2">
+                    <parentConnections>
+                      <c Id="ac4a3f08-e2c5-427c-a832-35f187650f6e" nextState="State1">
+                        <oPMoniker Id="7958477b-2641-41ae-985f-7b90ff173c5a" />
+                      </c>
+                    </parentConnections>
                     <events>
-                      <showFormHasEvents Id="63090157-f13d-49db-af40-59001d04e537">
-                        <event Id="8da9ab99-80d9-4eb9-81e8-1d82d92252a7" name="Button2Clicked" primitiveName="Button2" />
+                      <showFormHasEvents Id="91d76234-d009-477f-b482-68acbeed1a24">
+                        <event Id="c785f690-53c2-4644-a81f-e4364064aaec" name="Button2Clicked" primitiveName="Button2" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
-                      <showFormHasPrimitives Id="6f57586d-1403-4eb3-b313-605969cb15e5">
-                        <button Id="518f3b33-ff6f-4524-8b65-570c5b04ae34" name="Button2" />
+                      <showFormHasPrimitives Id="521362da-d53c-437f-99c0-ea36bf533c0c">
+                        <button Id="b954e698-76ae-491c-a1b3-219532cd603a" name="Button2" />
                       </showFormHasPrimitives>
                     </primitives>
-                    <outPorts>
-                      <showFormReferencesOutPorts Id="e069b4b2-e2a0-4a27-8162-ef574de6def3" nextState="State1">
-                        <outPortMoniker name="/A component model/Controller1/State2/OutPort1" />
-                      </showFormReferencesOutPorts>
-                    </outPorts>
                   </showForm>
                 </stateHasShowForms>
               </showForms>

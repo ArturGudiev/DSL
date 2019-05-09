@@ -3446,3 +3446,636 @@ namespace Company.MobileDSL
 		#endregion
 	}
 }
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainRelationship ClassWithPortsHasPs
+	/// Description for Company.MobileDSL.ClassWithPortsHasPs
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ClassWithPortsHasPs.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ClassWithPortsHasPs.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("ee05d04b-d0f3-4d78-bb40-d28818ad2d77")]
+	public partial class ClassWithPortsHasPs : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// ClassWithPortsHasPs domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xee05d04b, 0xd0f3, 0x4d78, 0xbb, 0x40, 0xd2, 0x88, 0x18, 0xad, 0x2d, 0x77);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a ClassWithPortsHasPs link in the same Partition as the given ClassWithPorts
+		/// </summary>
+		/// <param name="source">ClassWithPorts to use as the source of the relationship.</param>
+		/// <param name="target">P to use as the target of the relationship.</param>
+		public ClassWithPortsHasPs(ClassWithPorts source, P target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ClassWithPortsHasPs.ClassWithPortsDomainRoleId, source), new DslModeling::RoleAssignment(ClassWithPortsHasPs.PDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ClassWithPortsHasPs(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ClassWithPortsHasPs(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ClassWithPortsHasPs(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ClassWithPortsHasPs(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ClassWithPorts domain role code
+		
+		/// <summary>
+		/// ClassWithPorts domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ClassWithPortsDomainRoleId = new global::System.Guid(0x787afdfa, 0xbf91, 0x4982, 0xa0, 0x8d, 0x84, 0x18, 0xfd, 0xc5, 0x4d, 0x94);
+		
+		/// <summary>
+		/// DomainRole ClassWithPorts
+		/// Description for Company.MobileDSL.ClassWithPortsHasPs.ClassWithPorts
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ClassWithPortsHasPs/ClassWithPorts.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ClassWithPortsHasPs/ClassWithPorts.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Ps", PropertyDisplayNameKey="Company.MobileDSL.ClassWithPortsHasPs/ClassWithPorts.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("787afdfa-bf91-4982-a08d-8418fdc54d94")]
+		public virtual ClassWithPorts ClassWithPorts
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ClassWithPorts)DslModeling::DomainRoleInfo.GetRolePlayer(this, ClassWithPortsDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ClassWithPortsDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ClassWithPorts of a P
+		/// <summary>
+		/// Gets ClassWithPorts.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static ClassWithPorts GetClassWithPorts(P element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PDomainRoleId) as ClassWithPorts;
+		}
+		
+		/// <summary>
+		/// Sets ClassWithPorts.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetClassWithPorts(P element, ClassWithPorts newClassWithPorts)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, PDomainRoleId, newClassWithPorts);
+		}
+		#endregion
+		#region P domain role code
+		
+		/// <summary>
+		/// P domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid PDomainRoleId = new global::System.Guid(0xab791f93, 0x7b08, 0x46a5, 0x94, 0xca, 0x0e, 0xc1, 0x29, 0xb5, 0xf6, 0xcb);
+		
+		/// <summary>
+		/// DomainRole P
+		/// Description for Company.MobileDSL.ClassWithPortsHasPs.P
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ClassWithPortsHasPs/P.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ClassWithPortsHasPs/P.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ClassWithPorts", PropertyDisplayNameKey="Company.MobileDSL.ClassWithPortsHasPs/P.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("ab791f93-7b08-46a5-94ca-0ec129b5f6cb")]
+		public virtual P P
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (P)DslModeling::DomainRoleInfo.GetRolePlayer(this, PDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, PDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Ps of a ClassWithPorts
+		/// <summary>
+		/// Gets a list of Ps.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<P> GetPs(ClassWithPorts element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<P>, P>(element, ClassWithPortsDomainRoleId);
+		}
+		#endregion
+		#region ClassWithPorts link accessor
+		/// <summary>
+		/// Get the list of ClassWithPortsHasPs links to a ClassWithPorts.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ClassWithPortsHasPs> GetLinksToPs ( global::Company.MobileDSL.ClassWithPorts classWithPortsInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ClassWithPortsHasPs>(classWithPortsInstance, global::Company.MobileDSL.ClassWithPortsHasPs.ClassWithPortsDomainRoleId);
+		}
+		#endregion
+		#region P link accessor
+		/// <summary>
+		/// Get the ClassWithPortsHasPs link to a P.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.ClassWithPortsHasPs GetLinkToClassWithPorts (global::Company.MobileDSL.P pInstance)
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ClassWithPortsHasPs> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ClassWithPortsHasPs>(pInstance, global::Company.MobileDSL.ClassWithPortsHasPs.PDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of P not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region ClassWithPortsHasPs instance accessors
+		
+		/// <summary>
+		/// Get any ClassWithPortsHasPs links between a given ClassWithPorts and a P.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.ClassWithPortsHasPs> GetLinks( global::Company.MobileDSL.ClassWithPorts source, global::Company.MobileDSL.P target )
+		{
+			global::System.Collections.Generic.List<global::Company.MobileDSL.ClassWithPortsHasPs> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.ClassWithPortsHasPs>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ClassWithPortsHasPs> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ClassWithPortsHasPs>(source, global::Company.MobileDSL.ClassWithPortsHasPs.ClassWithPortsDomainRoleId);
+			foreach ( global::Company.MobileDSL.ClassWithPortsHasPs link in links )
+			{
+				if ( target.Equals(link.P) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one ClassWithPortsHasPs link between a given ClassWithPortsand a P.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.ClassWithPortsHasPs GetLink( global::Company.MobileDSL.ClassWithPorts source, global::Company.MobileDSL.P target )
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.ClassWithPortsHasPs> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.ClassWithPortsHasPs>(source, global::Company.MobileDSL.ClassWithPortsHasPs.ClassWithPortsDomainRoleId);
+			foreach ( global::Company.MobileDSL.ClassWithPortsHasPs link in links )
+			{
+				if ( target.Equals(link.P) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainRelationship C
+	/// Description for Company.MobileDSL.C
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.C.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.C.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("3a5f4dbb-c6dc-4517-84cc-899be56dd27b")]
+	public partial class C : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// C domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x3a5f4dbb, 0xc6dc, 0x4517, 0x84, 0xcc, 0x89, 0x9b, 0xe5, 0x6d, 0xd2, 0x7b);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a C link in the same Partition as the given Connectable
+		/// </summary>
+		/// <param name="source">Connectable to use as the source of the relationship.</param>
+		/// <param name="target">Connectable to use as the target of the relationship.</param>
+		public C(Connectable source, Connectable target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(C.SourceConnectableDomainRoleId, source), new DslModeling::RoleAssignment(C.TargetConnectableDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public C(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public C(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public C(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public C(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region SourceConnectable domain role code
+		
+		/// <summary>
+		/// SourceConnectable domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid SourceConnectableDomainRoleId = new global::System.Guid(0x24ae03ea, 0x39bb, 0x4ed1, 0xb1, 0x50, 0x46, 0xe8, 0xa9, 0x41, 0x3e, 0xd6);
+		
+		/// <summary>
+		/// DomainRole SourceConnectable
+		/// Description for Company.MobileDSL.C.SourceConnectable
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.C/SourceConnectable.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.C/SourceConnectable.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ParentConnections", PropertyDisplayNameKey="Company.MobileDSL.C/SourceConnectable.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("24ae03ea-39bb-4ed1-b150-46e8a9413ed6")]
+		public virtual Connectable SourceConnectable
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Connectable)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceConnectableDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceConnectableDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ChildConnections of a Connectable
+		/// <summary>
+		/// Gets a list of ChildConnections.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Connectable> GetChildConnections(Connectable element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Connectable>, Connectable>(element, TargetConnectableDomainRoleId);
+		}
+		#endregion
+		#region TargetConnectable domain role code
+		
+		/// <summary>
+		/// TargetConnectable domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid TargetConnectableDomainRoleId = new global::System.Guid(0x70c6bff3, 0xb71b, 0x4c3a, 0x8c, 0xe7, 0xbc, 0x4e, 0x10, 0x9d, 0xa2, 0x3b);
+		
+		/// <summary>
+		/// DomainRole TargetConnectable
+		/// Description for Company.MobileDSL.C.TargetConnectable
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.C/TargetConnectable.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.C/TargetConnectable.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ChildConnections", PropertyDisplayNameKey="Company.MobileDSL.C/TargetConnectable.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("70c6bff3-b71b-4c3a-8ce7-bc4e109da23b")]
+		public virtual Connectable TargetConnectable
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Connectable)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetConnectableDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetConnectableDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ParentConnections of a Connectable
+		/// <summary>
+		/// Gets a list of ParentConnections.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Connectable> GetParentConnections(Connectable element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Connectable>, Connectable>(element, SourceConnectableDomainRoleId);
+		}
+		#endregion
+		#region FromEvent domain property code
+		
+		/// <summary>
+		/// FromEvent domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid FromEventDomainPropertyId = new global::System.Guid(0x05c26bec, 0xc1ce, 0x4c13, 0x90, 0xf9, 0x92, 0xaf, 0x64, 0x78, 0xe3, 0x94);
+		
+		/// <summary>
+		/// Storage for FromEvent
+		/// </summary>
+		private global::System.String fromEventPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of FromEvent domain property.
+		/// Description for Company.MobileDSL.C.From Event
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.C/FromEvent.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.C/FromEvent.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("05c26bec-c1ce-4c13-90f9-92af6478e394")]
+		public global::System.String FromEvent
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return fromEventPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				FromEventPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the C.FromEvent domain property.
+		/// </summary>
+		internal sealed partial class FromEventPropertyHandler : DslModeling::DomainPropertyValueHandler<C, global::System.String>
+		{
+			private FromEventPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the C.FromEvent domain property value handler.
+			/// </summary>
+			public static readonly FromEventPropertyHandler Instance = new FromEventPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the C.FromEvent domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return FromEventDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(C element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.fromEventPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(C element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.fromEventPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region NextState domain property code
+		
+		/// <summary>
+		/// NextState domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NextStateDomainPropertyId = new global::System.Guid(0xfbc21502, 0xb9bc, 0x454b, 0x85, 0x40, 0xec, 0xc2, 0x72, 0x89, 0x24, 0xdb);
+		
+		/// <summary>
+		/// Storage for NextState
+		/// </summary>
+		private global::System.String nextStatePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of NextState domain property.
+		/// Description for Company.MobileDSL.C.Next State
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.C/NextState.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.C/NextState.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("fbc21502-b9bc-454b-8540-ecc2728924db")]
+		public global::System.String NextState
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return nextStatePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NextStatePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the C.NextState domain property.
+		/// </summary>
+		internal sealed partial class NextStatePropertyHandler : DslModeling::DomainPropertyValueHandler<C, global::System.String>
+		{
+			private NextStatePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the C.NextState domain property value handler.
+			/// </summary>
+			public static readonly NextStatePropertyHandler Instance = new NextStatePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the C.NextState domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NextStateDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(C element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.nextStatePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(C element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.nextStatePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region SourceConnectable link accessor
+		/// <summary>
+		/// Get the list of C links to a Connectable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.C> GetLinksToParentConnections ( global::Company.MobileDSL.Connectable sourceConnectableInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.C>(sourceConnectableInstance, global::Company.MobileDSL.C.SourceConnectableDomainRoleId);
+		}
+		#endregion
+		#region TargetConnectable link accessor
+		/// <summary>
+		/// Get the list of C links to a Connectable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.C> GetLinksToChildConnections ( global::Company.MobileDSL.Connectable targetConnectableInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.C>(targetConnectableInstance, global::Company.MobileDSL.C.TargetConnectableDomainRoleId);
+		}
+		#endregion
+		#region C instance accessors
+		
+		/// <summary>
+		/// Get any C links between a given Connectable and a Connectable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.C> GetLinks( global::Company.MobileDSL.Connectable source, global::Company.MobileDSL.Connectable target )
+		{
+			global::System.Collections.Generic.List<global::Company.MobileDSL.C> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.C>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.C> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.C>(source, global::Company.MobileDSL.C.SourceConnectableDomainRoleId);
+			foreach ( global::Company.MobileDSL.C link in links )
+			{
+				if ( target.Equals(link.TargetConnectable) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one C link between a given Connectableand a Connectable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.MobileDSL.C GetLink( global::Company.MobileDSL.Connectable source, global::Company.MobileDSL.Connectable target )
+		{
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.C> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.C>(source, global::Company.MobileDSL.C.SourceConnectableDomainRoleId);
+			foreach ( global::Company.MobileDSL.C link in links )
+			{
+				if ( target.Equals(link.TargetConnectable) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
