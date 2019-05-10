@@ -1,0 +1,22 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".cs" #>
+<#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../QC/controller/e1.mdsl'"  #>
+//Generated material. Generating code in C#.
+
+<# foreach (Controller controller in this.ComponentModel.Controllers) { #>
+
+	public class <#= controller.Name #>  : Controller{ 
+
+	enum <#= controller.Name #>State { 
+      <# foreach (State state in controller.States) { #>
+            <#= state.Name #>,
+      <#}#>
+    }
+    private <#=controller.Name#>State controllerState ; //get first state
+
+<#}#>
+
+}
+
+
+

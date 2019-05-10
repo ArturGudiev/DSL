@@ -44,6 +44,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Uibq\test.cs">
+      <DependentUpon>test.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Uibq\UserSection.cs">
       <DependentUpon>UserSection.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -76,7 +81,9 @@
     <None Include="QC\controller\3controllers.mdsl.diagram">
       <DependentUpon>3controllers.mdsl</DependentUpon>
     </None>
-    <None Include="Sample.mdsl" />
+    <None Include="Sample.mdsl">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Sample.mdsl.diagram">
       <DependentUpon>Sample.mdsl</DependentUpon>
     </None>
@@ -96,6 +103,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MobileDSLReportVB.tt</DependentUpon>
     </Content>
+    <None Include="Uibq\test.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>test.cs</LastGenOutput>
+    </None>
     <None Include="TestGenerator\test.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>test.cs</LastGenOutput>

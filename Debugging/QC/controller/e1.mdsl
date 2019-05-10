@@ -38,7 +38,7 @@
                 <stateHasShowForms Id="8dbb37f9-b877-4d72-bf69-f8b40b11b419">
                   <showForm Id="154d169a-ba76-4814-b928-43cc53d6be7b" name="Form1">
                     <parentConnections>
-                      <c Id="d31e84e4-451a-488c-a339-938020a4afce" nextState="State2" data="str=&quot;123&quot;;a=5;">
+                      <c Id="d31e84e4-451a-488c-a339-938020a4afce" nextState="State2">
                         <oPMoniker Id="043b7ba9-ef13-489e-ad53-c5f6066f2040" />
                       </c>
                     </parentConnections>
@@ -50,21 +50,6 @@
                     <primitives>
                       <showFormHasPrimitives Id="987cc864-345d-4f6d-85e1-e68f571312cd">
                         <button Id="4c56840e-a35d-4526-be9e-837f3aa1860d" name="Button1" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="19a0c47d-2fff-4bff-b821-33de0a1a1a91">
-                        <label Id="4b35d156-efea-4581-addf-21957fd641bb" name="Label1" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="bebe90d7-05dd-4d4a-8536-0145b560fdbf">
-                        <comboBox Id="b65679da-fad4-4d4c-ae72-900f1546379e" name="ComboBox1" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="9cbc42d7-6b22-4017-922b-eec6eb1523b4">
-                        <listBox Id="fde55b14-2f69-451d-afc1-155cfb5e0b1c" name="ListBox1" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="6b75d221-9ff1-479e-a6f2-8e843c434dc4">
-                        <stackPanel Id="c51f2db1-c0ee-47b8-bbc4-f2eb29c08c41" name="StackPanel1" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="aa76d6e3-4b3b-4ea9-a028-a3142c9fbbb2">
-                        <input Id="dfe68ab9-27e4-4ab1-b4d0-c4dfe3fa762e" name="Input1" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>
@@ -110,18 +95,6 @@
                     <primitives>
                       <showFormHasPrimitives Id="521362da-d53c-437f-99c0-ea36bf533c0c">
                         <button Id="b954e698-76ae-491c-a1b3-219532cd603a" name="Button2" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="1696eb29-65f3-4704-ae7b-413c83dcd1c9">
-                        <comboBox Id="98f2e951-44c3-464f-bfe4-ffbb196819ac" name="ComboBox1" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="67fd3962-8af4-4be4-ba7e-ea91913bb72e">
-                        <listBox Id="fa6926d9-f668-4a04-bba3-1bd0d80352e2" name="ListBox1" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="6a26a354-ec59-4bd0-a987-3c91b6dada9e">
-                        <listBox Id="7474fd62-216d-4589-9a58-f13ae5ec66ee" name="ListBox2" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="b92408fd-6a18-4b35-bbdb-a34a2b8a52ad">
-                        <input Id="f5c3240a-de06-4ddf-9a91-3b3d66037501" name="Input1" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>
