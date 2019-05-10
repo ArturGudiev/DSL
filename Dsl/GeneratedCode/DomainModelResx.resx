@@ -293,6 +293,14 @@
     <value>Button</value>
     <comment>DisplayName for DomainClass &apos;Button&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.Button/Text.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Button.Text</value>
+    <comment>Description for DomainProperty &apos;Text&apos; on DomainClass &apos;Button&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Button/Text.DisplayName" xml:space="preserve">
+    <value>Text</value>
+    <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;Button&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.Connectable.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.Connectable</value>
     <comment>Description for DomainClass &apos;Connectable&apos;</comment>
@@ -340,6 +348,86 @@
   <data name="Company.MobileDSL.DLink.DisplayName" xml:space="preserve">
     <value>DLink</value>
     <comment>DisplayName for DomainClass &apos;DLink&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Label.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Label</value>
+    <comment>Description for DomainClass &apos;Label&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Label.DisplayName" xml:space="preserve">
+    <value>Label</value>
+    <comment>DisplayName for DomainClass &apos;Label&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Label/Text.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Label.Text</value>
+    <comment>Description for DomainProperty &apos;Text&apos; on DomainClass &apos;Label&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Label/Text.DisplayName" xml:space="preserve">
+    <value>Text</value>
+    <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;Label&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ComboBox.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ComboBox</value>
+    <comment>Description for DomainClass &apos;ComboBox&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ComboBox.DisplayName" xml:space="preserve">
+    <value>Combo Box</value>
+    <comment>DisplayName for DomainClass &apos;ComboBox&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ComboBox/Items.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ComboBox.Items</value>
+    <comment>Description for DomainProperty &apos;Items&apos; on DomainClass &apos;ComboBox&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ComboBox/Items.DisplayName" xml:space="preserve">
+    <value>Items</value>
+    <comment>DisplayName for DomainProperty &apos;Items&apos; on DomainClass &apos;ComboBox&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ListBox.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ListBox</value>
+    <comment>Description for DomainClass &apos;ListBox&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ListBox.DisplayName" xml:space="preserve">
+    <value>List Box</value>
+    <comment>DisplayName for DomainClass &apos;ListBox&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ListBox/Items.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ListBox.Items</value>
+    <comment>Description for DomainProperty &apos;Items&apos; on DomainClass &apos;ListBox&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ListBox/Items.DisplayName" xml:space="preserve">
+    <value>Items</value>
+    <comment>DisplayName for DomainProperty &apos;Items&apos; on DomainClass &apos;ListBox&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StackPanel.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StackPanel</value>
+    <comment>Description for DomainClass &apos;StackPanel&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StackPanel.DisplayName" xml:space="preserve">
+    <value>Stack Panel</value>
+    <comment>DisplayName for DomainClass &apos;StackPanel&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StackPanel/Orientation.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StackPanel.Orientation</value>
+    <comment>Description for DomainProperty &apos;Orientation&apos; on DomainClass &apos;StackPanel&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StackPanel/Orientation.DisplayName" xml:space="preserve">
+    <value>Orientation</value>
+    <comment>DisplayName for DomainProperty &apos;Orientation&apos; on DomainClass &apos;StackPanel&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Input.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Input</value>
+    <comment>Description for DomainClass &apos;Input&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Input.DisplayName" xml:space="preserve">
+    <value>Input</value>
+    <comment>DisplayName for DomainClass &apos;Input&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Input/Text.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Input.Text</value>
+    <comment>Description for DomainProperty &apos;Text&apos; on DomainClass &apos;Input&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Input/Text.DisplayName" xml:space="preserve">
+    <value>Text</value>
+    <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;Input&apos;</comment>
   </data>
   <data name="Company.MobileDSL.Connection.Description" xml:space="preserve">
     <value></value>
@@ -1221,6 +1309,46 @@
     <value>Button</value>
     <comment>Toolbox tooltip text</comment>
   </data>
+  <data name="LabelToolboxItem" xml:space="preserve">
+    <value>Label</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="LabelToolboxTooltip" xml:space="preserve">
+    <value>Label</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ComboBoxToolboxItem" xml:space="preserve">
+    <value>ComboBox</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ComboBoxToolboxTooltip" xml:space="preserve">
+    <value>Combo Box</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ListBoxToolboxItem" xml:space="preserve">
+    <value>ListBox</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ListBoxToolboxTooltip" xml:space="preserve">
+    <value>List Box</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="StackPanelToolboxItem" xml:space="preserve">
+    <value>StackPanel</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="StackPanelToolboxTooltip" xml:space="preserve">
+    <value>Stack Panel</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="InputToolboxItem" xml:space="preserve">
+    <value>Input</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="InputToolboxTooltip" xml:space="preserve">
+    <value>Input</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
     <value>ToolboxItem {0} was not found</value>
     <comment>Invalid toolId</comment>
@@ -1431,6 +1559,26 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="ButtonToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="LabelToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ComboBoxToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ListBoxToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="StackPanelToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="InputToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

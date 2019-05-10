@@ -86,6 +86,11 @@ namespace Company.MobileDSL
 				typeof(IP),
 				typeof(OP),
 				typeof(DLink),
+				typeof(Label),
+				typeof(ComboBox),
+				typeof(ListBox),
+				typeof(StackPanel),
+				typeof(Input),
 				typeof(Connection),
 				typeof(ComponentModelHasComments),
 				typeof(ComponentModelHasControllers),
@@ -143,7 +148,13 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(State_old2), "isFirstState", State_old2.isFirstStateDomainPropertyId, typeof(State_old2.isFirstStatePropertyHandler)),
 				new DomainMemberInfo(typeof(ShowForm), "Name", ShowForm.NameDomainPropertyId, typeof(ShowForm.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Event), "PrimitiveName", Event.PrimitiveNameDomainPropertyId, typeof(Event.PrimitiveNamePropertyHandler)),
+				new DomainMemberInfo(typeof(Button), "Text", Button.TextDomainPropertyId, typeof(Button.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(P), "Name", P.NameDomainPropertyId, typeof(P.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Label), "Text", Label.TextDomainPropertyId, typeof(Label.TextPropertyHandler)),
+				new DomainMemberInfo(typeof(ComboBox), "Items", ComboBox.ItemsDomainPropertyId, typeof(ComboBox.ItemsPropertyHandler)),
+				new DomainMemberInfo(typeof(ListBox), "Items", ListBox.ItemsDomainPropertyId, typeof(ListBox.ItemsPropertyHandler)),
+				new DomainMemberInfo(typeof(StackPanel), "Orientation", StackPanel.OrientationDomainPropertyId, typeof(StackPanel.OrientationPropertyHandler)),
+				new DomainMemberInfo(typeof(Input), "Text", Input.TextDomainPropertyId, typeof(Input.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(Connection), "SourceRoleName", Connection.SourceRoleNameDomainPropertyId, typeof(Connection.SourceRoleNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Connection), "TargetRoleName", Connection.TargetRoleNameDomainPropertyId, typeof(Connection.TargetRoleNamePropertyHandler)),
 				new DomainMemberInfo(typeof(State_old2ReferencesPreviousStates), "condition", State_old2ReferencesPreviousStates.conditionDomainPropertyId, typeof(State_old2ReferencesPreviousStates.conditionPropertyHandler)),
@@ -213,7 +224,7 @@ namespace Company.MobileDSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(35);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(40);
 				createElementMap.Add(typeof(ComponentModel), 0);
 				createElementMap.Add(typeof(Controller), 1);
 				createElementMap.Add(typeof(InPort), 2);
@@ -228,22 +239,27 @@ namespace Company.MobileDSL
 				createElementMap.Add(typeof(IP), 11);
 				createElementMap.Add(typeof(OP), 12);
 				createElementMap.Add(typeof(DLink), 13);
-				createElementMap.Add(typeof(MobileDSLDiagram), 14);
-				createElementMap.Add(typeof(AssociationLink), 15);
-				createElementMap.Add(typeof(CommentLink), 16);
-				createElementMap.Add(typeof(StateConnector), 17);
-				createElementMap.Add(typeof(InportConnections), 18);
-				createElementMap.Add(typeof(ShowFormToPortConnection), 19);
-				createElementMap.Add(typeof(CConnector), 20);
-				createElementMap.Add(typeof(ControllerShape), 21);
-				createElementMap.Add(typeof(CommentBoxShape), 22);
-				createElementMap.Add(typeof(StateOldShape), 23);
-				createElementMap.Add(typeof(StateShape), 24);
-				createElementMap.Add(typeof(CompartmentShape1), 25);
-				createElementMap.Add(typeof(InPortShape), 26);
-				createElementMap.Add(typeof(OutPortShape), 27);
-				createElementMap.Add(typeof(IPShape), 28);
-				createElementMap.Add(typeof(OPShape), 29);
+				createElementMap.Add(typeof(Label), 14);
+				createElementMap.Add(typeof(ComboBox), 15);
+				createElementMap.Add(typeof(ListBox), 16);
+				createElementMap.Add(typeof(StackPanel), 17);
+				createElementMap.Add(typeof(Input), 18);
+				createElementMap.Add(typeof(MobileDSLDiagram), 19);
+				createElementMap.Add(typeof(AssociationLink), 20);
+				createElementMap.Add(typeof(CommentLink), 21);
+				createElementMap.Add(typeof(StateConnector), 22);
+				createElementMap.Add(typeof(InportConnections), 23);
+				createElementMap.Add(typeof(ShowFormToPortConnection), 24);
+				createElementMap.Add(typeof(CConnector), 25);
+				createElementMap.Add(typeof(ControllerShape), 26);
+				createElementMap.Add(typeof(CommentBoxShape), 27);
+				createElementMap.Add(typeof(StateOldShape), 28);
+				createElementMap.Add(typeof(StateShape), 29);
+				createElementMap.Add(typeof(CompartmentShape1), 30);
+				createElementMap.Add(typeof(InPortShape), 31);
+				createElementMap.Add(typeof(OutPortShape), 32);
+				createElementMap.Add(typeof(IPShape), 33);
+				createElementMap.Add(typeof(OPShape), 34);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -271,22 +287,27 @@ namespace Company.MobileDSL
 				case 11: return new IP(partition, propertyAssignments);
 				case 12: return new OP(partition, propertyAssignments);
 				case 13: return new DLink(partition, propertyAssignments);
-				case 14: return new MobileDSLDiagram(partition, propertyAssignments);
-				case 15: return new AssociationLink(partition, propertyAssignments);
-				case 16: return new CommentLink(partition, propertyAssignments);
-				case 17: return new StateConnector(partition, propertyAssignments);
-				case 18: return new InportConnections(partition, propertyAssignments);
-				case 19: return new ShowFormToPortConnection(partition, propertyAssignments);
-				case 20: return new CConnector(partition, propertyAssignments);
-				case 21: return new ControllerShape(partition, propertyAssignments);
-				case 22: return new CommentBoxShape(partition, propertyAssignments);
-				case 23: return new StateOldShape(partition, propertyAssignments);
-				case 24: return new StateShape(partition, propertyAssignments);
-				case 25: return new CompartmentShape1(partition, propertyAssignments);
-				case 26: return new InPortShape(partition, propertyAssignments);
-				case 27: return new OutPortShape(partition, propertyAssignments);
-				case 28: return new IPShape(partition, propertyAssignments);
-				case 29: return new OPShape(partition, propertyAssignments);
+				case 14: return new Label(partition, propertyAssignments);
+				case 15: return new ComboBox(partition, propertyAssignments);
+				case 16: return new ListBox(partition, propertyAssignments);
+				case 17: return new StackPanel(partition, propertyAssignments);
+				case 18: return new Input(partition, propertyAssignments);
+				case 19: return new MobileDSLDiagram(partition, propertyAssignments);
+				case 20: return new AssociationLink(partition, propertyAssignments);
+				case 21: return new CommentLink(partition, propertyAssignments);
+				case 22: return new StateConnector(partition, propertyAssignments);
+				case 23: return new InportConnections(partition, propertyAssignments);
+				case 24: return new ShowFormToPortConnection(partition, propertyAssignments);
+				case 25: return new CConnector(partition, propertyAssignments);
+				case 26: return new ControllerShape(partition, propertyAssignments);
+				case 27: return new CommentBoxShape(partition, propertyAssignments);
+				case 28: return new StateOldShape(partition, propertyAssignments);
+				case 29: return new StateShape(partition, propertyAssignments);
+				case 30: return new CompartmentShape1(partition, propertyAssignments);
+				case 31: return new InPortShape(partition, propertyAssignments);
+				case 32: return new OutPortShape(partition, propertyAssignments);
+				case 33: return new IPShape(partition, propertyAssignments);
+				case 34: return new OPShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}

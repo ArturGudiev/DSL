@@ -173,6 +173,46 @@ namespace Company.MobileDSL
 					"@ButtonToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
 					Index = 17)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
+					"@LabelToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.LabelToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Label", 
+					"@LabelToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 18)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
+					"@ComboBoxToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.ComboBoxToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ComboBox", 
+					"@ComboBoxToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 19)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
+					"@ListBoxToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.ListBoxToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ListBox", 
+					"@ListBoxToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 20)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
+					"@StackPanelToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.StackPanelToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"StackPanel", 
+					"@StackPanelToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 21)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
+					"@InputToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.InputToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Input", 
+					"@InputToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 22)]
 	[VSShell::ProvideEditorFactory(typeof(MobileDSLEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(MobileDSLEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(MobileDSLEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

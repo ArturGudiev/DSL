@@ -189,6 +189,13 @@
       <BaseClass>
         <DomainClassMoniker Name="Primitive" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="1c061650-c8c8-4162-b5f1-a1b79c558db8" Description="Description for Company.MobileDSL.Button.Text" Name="Text" DisplayName="Text">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
     <DomainClass Id="f1b4bcf4-342c-4add-9ba3-61b04e56d3d8" Description="Description for Company.MobileDSL.Connectable" Name="Connectable" DisplayName="Connectable" InheritanceModifier="Abstract" Namespace="Company.MobileDSL" />
     <DomainClass Id="685d0d71-73ac-45b5-9c2c-d4f9fe9ec82a" Description="Description for Company.MobileDSL.P" Name="P" DisplayName="P" InheritanceModifier="Abstract" Namespace="Company.MobileDSL">
@@ -214,6 +221,66 @@
       </BaseClass>
     </DomainClass>
     <DomainClass Id="ce50c746-904b-421f-9442-e45bb29770d0" Description="Description for Company.MobileDSL.DLink" Name="DLink" DisplayName="DLink" Namespace="Company.MobileDSL" />
+    <DomainClass Id="2b39b25e-3438-47d1-bddb-0baffa09fcfe" Description="Description for Company.MobileDSL.Label" Name="Label" DisplayName="Label" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Primitive" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="802a9656-97fe-462a-995c-2bf7e7b56eae" Description="Description for Company.MobileDSL.Label.Text" Name="Text" DisplayName="Text">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="a99f9383-f7ca-41c3-8d17-b9e2c7b69df4" Description="Description for Company.MobileDSL.ComboBox" Name="ComboBox" DisplayName="Combo Box" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Primitive" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="a2949787-a41c-4dc5-a614-a1119fe866ae" Description="Description for Company.MobileDSL.ComboBox.Items" Name="Items" DisplayName="Items">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="162f2d84-ddf1-4770-a098-126cca0bdc79" Description="Description for Company.MobileDSL.ListBox" Name="ListBox" DisplayName="List Box" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Primitive" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="59cd6859-8705-4449-8035-890ad4a346be" Description="Description for Company.MobileDSL.ListBox.Items" Name="Items" DisplayName="Items">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="456b78d5-ab34-4e27-bad2-154cd4cb0cba" Description="Description for Company.MobileDSL.StackPanel" Name="StackPanel" DisplayName="Stack Panel" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Primitive" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="ada35620-8fa5-4378-a3a9-7a48200ec596" Description="Description for Company.MobileDSL.StackPanel.Orientation" Name="Orientation" DisplayName="Orientation">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="872613ae-9407-4d6c-966a-9dd050af480c" Description="Description for Company.MobileDSL.Input" Name="Input" DisplayName="Input" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Primitive" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="554a36b7-b740-45ad-b41c-dde1a563956e" Description="Description for Company.MobileDSL.Input.Text" Name="Text" DisplayName="Text">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="33242001-847f-4706-be82-b1731835df99" Description="" Name="Connection" DisplayName="Connection" Namespace="Company.MobileDSL">
@@ -829,6 +896,11 @@
       </XmlClassData>
       <XmlClassData TypeName="Button" MonikerAttributeName="" SerializeId="true" MonikerElementName="buttonMoniker" ElementName="button" MonikerTypeName="ButtonMoniker">
         <DomainClassMoniker Name="Button" />
+        <ElementData>
+          <XmlPropertyData XmlName="text">
+            <DomainPropertyMoniker Name="Button/Text" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="Connectable" MonikerAttributeName="" SerializeId="true" MonikerElementName="connectableMoniker" ElementName="connectable" MonikerTypeName="ConnectableMoniker">
         <DomainClassMoniker Name="Connectable" />
@@ -880,6 +952,46 @@
       </XmlClassData>
       <XmlClassData TypeName="DLink" MonikerAttributeName="" SerializeId="true" MonikerElementName="dLinkMoniker" ElementName="dLink" MonikerTypeName="DLinkMoniker">
         <DomainClassMoniker Name="DLink" />
+      </XmlClassData>
+      <XmlClassData TypeName="Label" MonikerAttributeName="" SerializeId="true" MonikerElementName="labelMoniker" ElementName="label" MonikerTypeName="LabelMoniker">
+        <DomainClassMoniker Name="Label" />
+        <ElementData>
+          <XmlPropertyData XmlName="text">
+            <DomainPropertyMoniker Name="Label/Text" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ComboBox" MonikerAttributeName="" SerializeId="true" MonikerElementName="comboBoxMoniker" ElementName="comboBox" MonikerTypeName="ComboBoxMoniker">
+        <DomainClassMoniker Name="ComboBox" />
+        <ElementData>
+          <XmlPropertyData XmlName="items">
+            <DomainPropertyMoniker Name="ComboBox/Items" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ListBox" MonikerAttributeName="" SerializeId="true" MonikerElementName="listBoxMoniker" ElementName="listBox" MonikerTypeName="ListBoxMoniker">
+        <DomainClassMoniker Name="ListBox" />
+        <ElementData>
+          <XmlPropertyData XmlName="items">
+            <DomainPropertyMoniker Name="ListBox/Items" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="StackPanel" MonikerAttributeName="" SerializeId="true" MonikerElementName="stackPanelMoniker" ElementName="stackPanel" MonikerTypeName="StackPanelMoniker">
+        <DomainClassMoniker Name="StackPanel" />
+        <ElementData>
+          <XmlPropertyData XmlName="orientation">
+            <DomainPropertyMoniker Name="StackPanel/Orientation" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="Input" MonikerAttributeName="" SerializeId="true" MonikerElementName="inputMoniker" ElementName="input" MonikerTypeName="InputMoniker">
+        <DomainClassMoniker Name="Input" />
+        <ElementData>
+          <XmlPropertyData XmlName="text">
+            <DomainPropertyMoniker Name="Input/Text" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -1269,6 +1381,21 @@
       </ElementTool>
       <ElementTool Name="Button" ToolboxIcon="Resources\example.bmp" Caption="Button" Tooltip="Button" HelpKeyword="Button">
         <DomainClassMoniker Name="Button" />
+      </ElementTool>
+      <ElementTool Name="Label" ToolboxIcon="Resources\example.bmp" Caption="Label" Tooltip="Label" HelpKeyword="Label">
+        <DomainClassMoniker Name="Label" />
+      </ElementTool>
+      <ElementTool Name="ComboBox" ToolboxIcon="Resources\example.bmp" Caption="ComboBox" Tooltip="Combo Box" HelpKeyword="ComboBox">
+        <DomainClassMoniker Name="ComboBox" />
+      </ElementTool>
+      <ElementTool Name="ListBox" ToolboxIcon="Resources\example.bmp" Caption="ListBox" Tooltip="List Box" HelpKeyword="ListBox">
+        <DomainClassMoniker Name="ListBox" />
+      </ElementTool>
+      <ElementTool Name="StackPanel" ToolboxIcon="Resources\example.bmp" Caption="StackPanel" Tooltip="Stack Panel" HelpKeyword="StackPanel">
+        <DomainClassMoniker Name="StackPanel" />
+      </ElementTool>
+      <ElementTool Name="Input" ToolboxIcon="Resources\example.bmp" Caption="Input" Tooltip="Input" HelpKeyword="Input">
+        <DomainClassMoniker Name="Input" />
       </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

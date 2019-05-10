@@ -467,6 +467,86 @@ namespace Company.MobileDSL
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
+				case "Company.MobileDSL.LabelToolboxItem":
+					// Add Label shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Company.MobileDSL.LabelToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						5, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("LabelToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("LabelToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Company.MobileDSL.UI FormsToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("UI FormsToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Label", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("LabelToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Company.MobileDSL.Label.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Company.MobileDSL.ComboBoxToolboxItem":
+					// Add ComboBox shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Company.MobileDSL.ComboBoxToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						6, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("ComboBoxToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ComboBoxToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Company.MobileDSL.UI FormsToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("UI FormsToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"ComboBox", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ComboBoxToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Company.MobileDSL.ComboBox.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Company.MobileDSL.ListBoxToolboxItem":
+					// Add ListBox shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Company.MobileDSL.ListBoxToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						7, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("ListBoxToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ListBoxToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Company.MobileDSL.UI FormsToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("UI FormsToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"ListBox", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ListBoxToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Company.MobileDSL.ListBox.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Company.MobileDSL.StackPanelToolboxItem":
+					// Add StackPanel shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Company.MobileDSL.StackPanelToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						8, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("StackPanelToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("StackPanelToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Company.MobileDSL.UI FormsToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("UI FormsToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"StackPanel", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("StackPanelToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Company.MobileDSL.StackPanel.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Company.MobileDSL.InputToolboxItem":
+					// Add Input shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Company.MobileDSL.InputToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						9, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("InputToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("InputToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Company.MobileDSL.UI FormsToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("UI FormsToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Input", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("InputToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Company.MobileDSL.Input.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
 				default:
 					break;
 			} // end switch

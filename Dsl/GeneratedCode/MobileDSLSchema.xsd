@@ -640,6 +640,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Text -->
+        <xsd:attribute name="text" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -816,6 +818,151 @@
             <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Label -->
+  <xsd:element name="label" type="Label" substitutionGroup="primitive" />
+  <xsd:complexType name="Label">
+    <xsd:complexContent>
+      <xsd:extension base="Primitive">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Text -->
+        <xsd:attribute name="text" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Label Moniker -->
+  <xsd:element name="labelMoniker" type="LabelMoniker" substitutionGroup="primitiveMoniker" />
+  <xsd:complexType name="LabelMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Label instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="PrimitiveMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ComboBox -->
+  <xsd:element name="comboBox" type="ComboBox" substitutionGroup="primitive" />
+  <xsd:complexType name="ComboBox">
+    <xsd:complexContent>
+      <xsd:extension base="Primitive">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Items -->
+        <xsd:attribute name="items" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ComboBox Moniker -->
+  <xsd:element name="comboBoxMoniker" type="ComboBoxMoniker" substitutionGroup="primitiveMoniker" />
+  <xsd:complexType name="ComboBoxMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ComboBox instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="PrimitiveMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ListBox -->
+  <xsd:element name="listBox" type="ListBox" substitutionGroup="primitive" />
+  <xsd:complexType name="ListBox">
+    <xsd:complexContent>
+      <xsd:extension base="Primitive">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Items -->
+        <xsd:attribute name="items" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ListBox Moniker -->
+  <xsd:element name="listBoxMoniker" type="ListBoxMoniker" substitutionGroup="primitiveMoniker" />
+  <xsd:complexType name="ListBoxMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ListBox instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="PrimitiveMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StackPanel -->
+  <xsd:element name="stackPanel" type="StackPanel" substitutionGroup="primitive" />
+  <xsd:complexType name="StackPanel">
+    <xsd:complexContent>
+      <xsd:extension base="Primitive">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Orientation -->
+        <xsd:attribute name="orientation" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StackPanel Moniker -->
+  <xsd:element name="stackPanelMoniker" type="StackPanelMoniker" substitutionGroup="primitiveMoniker" />
+  <xsd:complexType name="StackPanelMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for StackPanel instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="PrimitiveMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Input -->
+  <xsd:element name="input" type="Input" substitutionGroup="primitive" />
+  <xsd:complexType name="Input">
+    <xsd:complexContent>
+      <xsd:extension base="Primitive">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Text -->
+        <xsd:attribute name="text" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Input Moniker -->
+  <xsd:element name="inputMoniker" type="InputMoniker" substitutionGroup="primitiveMoniker" />
+  <xsd:complexType name="InputMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Input instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="PrimitiveMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
