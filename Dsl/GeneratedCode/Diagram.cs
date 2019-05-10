@@ -553,6 +553,9 @@ namespace Company.MobileDSL
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.C.NextStateDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NextStateDecorator").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.C.DataDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "DataLinkDecorator").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -1350,6 +1353,14 @@ namespace Company.MobileDSL
 				else if (e.DomainProperty.Id == global::Company.MobileDSL.C.NextStateDomainPropertyId)
 				{
 					DslDiagrams::Decorator decorator = global::Company.MobileDSL.CConnector.FindCConnectorDecorator("NextStateDecorator");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.C.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.C.DataDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.CConnector.FindCConnectorDecorator("DataLinkDecorator");
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.C.DomainClassId);

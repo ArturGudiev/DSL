@@ -788,6 +788,38 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- DLink -->
+  <xsd:element name="dLink" type="DLink" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DLink">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DLink Moniker -->
+  <xsd:element name="dLinkMoniker" type="DLinkMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DLinkMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DLink instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- Connection -->
   <xsd:element name="connection" type="Connection" substitutionGroup="core:modelElement" />
   <xsd:complexType name="Connection">
@@ -1381,6 +1413,8 @@
         <xsd:attribute name="fromEvent" type="xsd:string" />
         <!-- Property: NextState -->
         <xsd:attribute name="nextState" type="xsd:string" />
+        <!-- Property: Data -->
+        <xsd:attribute name="data" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

@@ -38,7 +38,7 @@
                 <stateHasShowForms Id="8dbb37f9-b877-4d72-bf69-f8b40b11b419">
                   <showForm Id="154d169a-ba76-4814-b928-43cc53d6be7b" name="Form1">
                     <parentConnections>
-                      <c Id="d31e84e4-451a-488c-a339-938020a4afce" nextState="State2">
+                      <c Id="d31e84e4-451a-488c-a339-938020a4afce" nextState="State2" data="str=&quot;123&quot;;a=5;">
                         <oPMoniker Id="043b7ba9-ef13-489e-ad53-c5f6066f2040" />
                       </c>
                     </parentConnections>

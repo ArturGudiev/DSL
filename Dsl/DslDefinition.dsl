@@ -213,6 +213,7 @@
         <DomainClassMoniker Name="P" />
       </BaseClass>
     </DomainClass>
+    <DomainClass Id="ce50c746-904b-421f-9442-e45bb29770d0" Description="Description for Company.MobileDSL.DLink" Name="DLink" DisplayName="DLink" Namespace="Company.MobileDSL" />
   </Classes>
   <Relationships>
     <DomainRelationship Id="33242001-847f-4706-be82-b1731835df99" Description="" Name="Connection" DisplayName="Connection" Namespace="Company.MobileDSL">
@@ -483,6 +484,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="48fc92a5-ce5b-4324-a675-f6c1716e3421" Description="Description for Company.MobileDSL.C.Data" Name="Data" DisplayName="Data">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
       <Source>
         <DomainRole Id="24ae03ea-39bb-4ed1-b150-46e8a9413ed6" Description="Description for Company.MobileDSL.C.SourceConnectable" Name="SourceConnectable" DisplayName="Source Connectable" PropertyName="ParentConnections" PropertyDisplayName="Parent Connections">
@@ -590,6 +596,9 @@
     <Connector Id="61d3f54d-7cb2-4808-906d-997c06378aff" Description="Description for Company.MobileDSL.CConnector" Name="CConnector" DisplayName="CConnector" Namespace="Company.MobileDSL" FixedTooltipText="CConnector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
         <TextDecorator Name="NextStateDecorator" DisplayName="Next State Decorator" DefaultText="NextStateDecorator" />
+      </ConnectorHasDecorators>
+      <ConnectorHasDecorators Position="SourceBottom" OffsetFromShape="0" OffsetFromLine="0">
+        <TextDecorator Name="DataLinkDecorator" DisplayName="Data Link Decorator" DefaultText="DataLinkDecorator" />
       </ConnectorHasDecorators>
     </Connector>
   </Connectors>
@@ -861,10 +870,16 @@
           <XmlPropertyData XmlName="nextState">
             <DomainPropertyMoniker Name="C/NextState" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="data">
+            <DomainPropertyMoniker Name="C/Data" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="CConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="cConnectorMoniker" ElementName="cConnector" MonikerTypeName="CConnectorMoniker">
         <ConnectorMoniker Name="CConnector" />
+      </XmlClassData>
+      <XmlClassData TypeName="DLink" MonikerAttributeName="" SerializeId="true" MonikerElementName="dLinkMoniker" ElementName="dLink" MonikerTypeName="DLinkMoniker">
+        <DomainClassMoniker Name="DLink" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -1177,6 +1192,14 @@
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="C/NextState" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="CConnector/DataLinkDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="C/Data" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>

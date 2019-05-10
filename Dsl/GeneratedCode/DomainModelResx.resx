@@ -333,6 +333,14 @@
     <value>OP</value>
     <comment>DisplayName for DomainClass &apos;OP&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.DLink.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.DLink</value>
+    <comment>Description for DomainClass &apos;DLink&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.DLink.DisplayName" xml:space="preserve">
+    <value>DLink</value>
+    <comment>DisplayName for DomainClass &apos;DLink&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.Connection.Description" xml:space="preserve">
     <value></value>
     <comment>Description for DomainClass &apos;Connection&apos;</comment>
@@ -845,6 +853,14 @@
     <value>Next State</value>
     <comment>DisplayName for DomainProperty &apos;NextState&apos; on DomainClass &apos;C&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.C/Data.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.C.Data</value>
+    <comment>Description for DomainProperty &apos;Data&apos; on DomainClass &apos;C&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.C/Data.DisplayName" xml:space="preserve">
+    <value>Data</value>
+    <comment>DisplayName for DomainProperty &apos;Data&apos; on DomainClass &apos;C&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.C/SourceConnectable.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.C.SourceConnectable</value>
     <comment>Description for DomainRole &apos;SourceConnectable&apos; on DomainRelationship &apos;C&apos;</comment>
@@ -1031,6 +1047,10 @@
   </data>
   <data name="CConnectorNextStateDecoratorDefaultText" xml:space="preserve">
     <value>NextStateDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="CConnectorDataLinkDecoratorDefaultText" xml:space="preserve">
+    <value>DataLinkDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="FormatList" xml:space="preserve">

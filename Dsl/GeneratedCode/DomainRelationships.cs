@@ -4016,6 +4016,93 @@ namespace Company.MobileDSL
 		}
 		
 		#endregion
+		#region Data domain property code
+		
+		/// <summary>
+		/// Data domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid DataDomainPropertyId = new global::System.Guid(0x48fc92a5, 0xce5b, 0x4324, 0xa6, 0x75, 0xf6, 0xc1, 0x71, 0x6e, 0x34, 0x21);
+		
+		/// <summary>
+		/// Storage for Data
+		/// </summary>
+		private global::System.String dataPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Data domain property.
+		/// Description for Company.MobileDSL.C.Data
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.C/Data.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.C/Data.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("48fc92a5-ce5b-4324-a675-f6c1716e3421")]
+		public global::System.String Data
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return dataPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DataPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the C.Data domain property.
+		/// </summary>
+		internal sealed partial class DataPropertyHandler : DslModeling::DomainPropertyValueHandler<C, global::System.String>
+		{
+			private DataPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the C.Data domain property value handler.
+			/// </summary>
+			public static readonly DataPropertyHandler Instance = new DataPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the C.Data domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return DataDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(C element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.dataPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(C element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.dataPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region SourceConnectable link accessor
 		/// <summary>
 		/// Get the list of C links to a Connectable.
