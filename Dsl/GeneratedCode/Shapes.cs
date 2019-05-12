@@ -1284,6 +1284,8 @@ namespace Company.MobileDSL
 			}
 		}
 		
+		private global::System.Drawing.Drawing2D.LinearGradientMode fillGradientMode = global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+		
 		/// <summary>
 		/// Indicates the direction of the gradient.
 		/// </summary>
@@ -1291,9 +1293,78 @@ namespace Company.MobileDSL
 		{
 			get
 			{
-				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+				return this.fillGradientMode;
 			}
 		}
+		#endregion
+		#region Custom storage for shape properties that appear in the property grid
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private global::System.Drawing.Color GetFillColorValue()
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeBackground);
+			if(settings != null && settings.IsOverridden(DslDiagrams::BrushSettingsFlags.Color))
+			{
+				return settings.Color;
+			}
+			return global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White);
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private void SetFillColorValue(global::System.Drawing.Color newValue)
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeBackground);
+			if(settings == null) settings = new DslDiagrams::BrushSettings();
+			settings.Color = newValue;
+			this.StyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, settings);
+			this.Invalidate();
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private global::System.Drawing.Color GetTextColorValue()
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeText);
+			if(settings != null && settings.IsOverridden(DslDiagrams::BrushSettingsFlags.Color))
+			{
+				return settings.Color;
+			}
+			return global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Black);
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private void SetTextColorValue(global::System.Drawing.Color newValue)
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeText);
+			if(settings == null) settings = new DslDiagrams::BrushSettings();
+			settings.Color = newValue;
+			this.StyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeText, settings);
+			this.Invalidate();
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property FillGradientMode.
+		/// </summary>
+		private global::System.Drawing.Drawing2D.LinearGradientMode GetFillGradientModeValue()
+		{
+			return this.fillGradientMode;
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property FillGradientMode.
+		/// </summary>
+		private void SetFillGradientModeValue(global::System.Drawing.Drawing2D.LinearGradientMode newValue)
+		{
+			this.fillGradientMode = newValue;
+			this.Invalidate();
+		}
+		
 		#endregion
 		#region Decorators
 		/// <summary>
@@ -1373,6 +1444,273 @@ namespace Company.MobileDSL
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region FillColor domain property code
+		
+		/// <summary>
+		/// FillColor domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid FillColorDomainPropertyId = new global::System.Guid(0x93dc990d, 0x1722, 0x4778, 0xbe, 0x3c, 0xe8, 0x23, 0x47, 0x44, 0x63, 0x1e);
+		
+		/// <summary>
+		/// Gets or sets the value of FillColor domain property.
+		/// Description for Company.MobileDSL.StateShape.Fill Color
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateShape/FillColor.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateShape/FillColor.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
+		[DslModeling::DomainObjectId("93dc990d-1722-4778-be3c-e8234744631e")]
+		public global::System.Drawing.Color FillColor
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return FillColorPropertyHandler.Instance.GetValue(this);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				FillColorPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the StateShape.FillColor domain property.
+		/// </summary>
+		internal sealed partial class FillColorPropertyHandler : DslModeling::DomainPropertyValueHandler<StateShape, global::System.Drawing.Color>
+		{
+			private FillColorPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the StateShape.FillColor domain property value handler.
+			/// </summary>
+			public static readonly FillColorPropertyHandler Instance = new FillColorPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the StateShape.FillColor domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return FillColorDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Drawing.Color GetValue(StateShape element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for FillColor because its Kind is
+				// set to CustomStorage. Please provide the GetFillColorValue()
+				// method on the domain class.
+				return element.GetFillColorValue();
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(StateShape element, global::System.Drawing.Color newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Drawing.Color oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					// There is no storage for FillColor because its Kind is
+					// set to CustomStorage. Please provide the SetFillColorValue()
+					// method on the domain class.
+					element.SetFillColorValue(newValue);
+					ValueChanged(element, oldValue, GetValue(element));
+				}
+			}
+		}
+		
+		#endregion
+		#region TextColor domain property code
+		
+		/// <summary>
+		/// TextColor domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TextColorDomainPropertyId = new global::System.Guid(0x30261d0b, 0xda44, 0x493e, 0x99, 0x04, 0x3d, 0xc9, 0xb8, 0xf2, 0xfd, 0xb7);
+		
+		/// <summary>
+		/// Gets or sets the value of TextColor domain property.
+		/// Description for Company.MobileDSL.StateShape.Text Color
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateShape/TextColor.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateShape/TextColor.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
+		[DslModeling::DomainObjectId("30261d0b-da44-493e-9904-3dc9b8f2fdb7")]
+		public global::System.Drawing.Color TextColor
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return TextColorPropertyHandler.Instance.GetValue(this);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TextColorPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the StateShape.TextColor domain property.
+		/// </summary>
+		internal sealed partial class TextColorPropertyHandler : DslModeling::DomainPropertyValueHandler<StateShape, global::System.Drawing.Color>
+		{
+			private TextColorPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the StateShape.TextColor domain property value handler.
+			/// </summary>
+			public static readonly TextColorPropertyHandler Instance = new TextColorPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the StateShape.TextColor domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TextColorDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Drawing.Color GetValue(StateShape element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for TextColor because its Kind is
+				// set to CustomStorage. Please provide the GetTextColorValue()
+				// method on the domain class.
+				return element.GetTextColorValue();
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(StateShape element, global::System.Drawing.Color newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Drawing.Color oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					// There is no storage for TextColor because its Kind is
+					// set to CustomStorage. Please provide the SetTextColorValue()
+					// method on the domain class.
+					element.SetTextColorValue(newValue);
+					ValueChanged(element, oldValue, GetValue(element));
+				}
+			}
+		}
+		
+		#endregion
+		#region FillGradientMode domain property code
+		
+		/// <summary>
+		/// FillGradientMode domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid FillGradientModeDomainPropertyId = new global::System.Guid(0xa03c1f19, 0xbc62, 0x4b0f, 0xbb, 0x14, 0x78, 0xbc, 0xc2, 0x68, 0x91, 0xe6);
+		
+		/// <summary>
+		/// Gets or sets the value of FillGradientMode domain property.
+		/// Description for Company.MobileDSL.StateShape.Fill Gradient Mode
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateShape/FillGradientMode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateShape/FillGradientMode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
+		[DslModeling::DomainObjectId("a03c1f19-bc62-4b0f-bb14-78bcc26891e6")]
+		public global::System.Drawing.Drawing2D.LinearGradientMode FillGradientMode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return FillGradientModePropertyHandler.Instance.GetValue(this);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				FillGradientModePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the StateShape.FillGradientMode domain property.
+		/// </summary>
+		internal sealed partial class FillGradientModePropertyHandler : DslModeling::DomainPropertyValueHandler<StateShape, global::System.Drawing.Drawing2D.LinearGradientMode>
+		{
+			private FillGradientModePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the StateShape.FillGradientMode domain property value handler.
+			/// </summary>
+			public static readonly FillGradientModePropertyHandler Instance = new FillGradientModePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the StateShape.FillGradientMode domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return FillGradientModeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Drawing.Drawing2D.LinearGradientMode GetValue(StateShape element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for FillGradientMode because its Kind is
+				// set to CustomStorage. Please provide the GetFillGradientModeValue()
+				// method on the domain class.
+				return element.GetFillGradientModeValue();
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(StateShape element, global::System.Drawing.Drawing2D.LinearGradientMode newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Drawing.Drawing2D.LinearGradientMode oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					// There is no storage for FillGradientMode because its Kind is
+					// set to CustomStorage. Please provide the SetFillGradientModeValue()
+					// method on the domain class.
+					element.SetFillGradientModeValue(newValue);
+					ValueChanged(element, oldValue, GetValue(element));
+				}
+			}
+		}
+		
 		#endregion
 	}
 }

@@ -104,8 +104,9 @@ namespace Company.MobileDSL
 				typeof(ShowFormHasPrimitives),
 				typeof(InPortReferencesShowForms),
 				typeof(ShowFormReferencesOutPorts),
-				typeof(ClassWithPortsHasPs),
 				typeof(C),
+				typeof(ClassWithPortsHasIP),
+				typeof(ClassWithPortsHasOP),
 				typeof(MobileDSLDiagram),
 				typeof(AssociationLink),
 				typeof(CommentLink),
@@ -163,6 +164,9 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(C), "FromEvent", C.FromEventDomainPropertyId, typeof(C.FromEventPropertyHandler)),
 				new DomainMemberInfo(typeof(C), "NextState", C.NextStateDomainPropertyId, typeof(C.NextStatePropertyHandler)),
 				new DomainMemberInfo(typeof(C), "Data", C.DataDomainPropertyId, typeof(C.DataPropertyHandler)),
+				new DomainMemberInfo(typeof(StateShape), "FillColor", StateShape.FillColorDomainPropertyId, typeof(StateShape.FillColorPropertyHandler)),
+				new DomainMemberInfo(typeof(StateShape), "TextColor", StateShape.TextColorDomainPropertyId, typeof(StateShape.TextColorPropertyHandler)),
+				new DomainMemberInfo(typeof(StateShape), "FillGradientMode", StateShape.FillGradientModeDomainPropertyId, typeof(StateShape.FillGradientModePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -199,10 +203,12 @@ namespace Company.MobileDSL
 				new DomainRolePlayerInfo(typeof(InPortReferencesShowForms), "ShowForm", InPortReferencesShowForms.ShowFormDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ShowFormReferencesOutPorts), "ShowForm", ShowFormReferencesOutPorts.ShowFormDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ShowFormReferencesOutPorts), "OutPort", ShowFormReferencesOutPorts.OutPortDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ClassWithPortsHasPs), "ClassWithPorts", ClassWithPortsHasPs.ClassWithPortsDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ClassWithPortsHasPs), "P", ClassWithPortsHasPs.PDomainRoleId),
 				new DomainRolePlayerInfo(typeof(C), "SourceConnectable", C.SourceConnectableDomainRoleId),
 				new DomainRolePlayerInfo(typeof(C), "TargetConnectable", C.TargetConnectableDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClassWithPortsHasIP), "ClassWithPorts", ClassWithPortsHasIP.ClassWithPortsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClassWithPortsHasIP), "IP", ClassWithPortsHasIP.IPDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClassWithPortsHasOP), "ClassWithPorts", ClassWithPortsHasOP.ClassWithPortsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClassWithPortsHasOP), "OP", ClassWithPortsHasOP.OPDomainRoleId),
 			};
 		}
 		#endregion
@@ -330,7 +336,7 @@ namespace Company.MobileDSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(15);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(16);
 				createElementLinkMap.Add(typeof(Connection), 0);
 				createElementLinkMap.Add(typeof(ComponentModelHasComments), 1);
 				createElementLinkMap.Add(typeof(ComponentModelHasControllers), 2);
@@ -344,8 +350,9 @@ namespace Company.MobileDSL
 				createElementLinkMap.Add(typeof(ShowFormHasPrimitives), 10);
 				createElementLinkMap.Add(typeof(InPortReferencesShowForms), 11);
 				createElementLinkMap.Add(typeof(ShowFormReferencesOutPorts), 12);
-				createElementLinkMap.Add(typeof(ClassWithPortsHasPs), 13);
-				createElementLinkMap.Add(typeof(C), 14);
+				createElementLinkMap.Add(typeof(C), 13);
+				createElementLinkMap.Add(typeof(ClassWithPortsHasIP), 14);
+				createElementLinkMap.Add(typeof(ClassWithPortsHasOP), 15);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -373,8 +380,9 @@ namespace Company.MobileDSL
 				case 10: return new ShowFormHasPrimitives(partition, roleAssignments, propertyAssignments);
 				case 11: return new InPortReferencesShowForms(partition, roleAssignments, propertyAssignments);
 				case 12: return new ShowFormReferencesOutPorts(partition, roleAssignments, propertyAssignments);
-				case 13: return new ClassWithPortsHasPs(partition, roleAssignments, propertyAssignments);
-				case 14: return new C(partition, roleAssignments, propertyAssignments);
+				case 13: return new C(partition, roleAssignments, propertyAssignments);
+				case 14: return new ClassWithPortsHasIP(partition, roleAssignments, propertyAssignments);
+				case 15: return new ClassWithPortsHasOP(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -563,7 +571,8 @@ namespace Company.MobileDSL
 			DomainRoles.Add(global::Company.MobileDSL.StateHasShowForms.ShowFormDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.ShowFormHasEvents.EventDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.ShowFormHasPrimitives.PrimitiveDomainRoleId, true);
-			DomainRoles.Add(global::Company.MobileDSL.ClassWithPortsHasPs.PDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.ClassWithPortsHasIP.IPDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.ClassWithPortsHasOP.OPDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

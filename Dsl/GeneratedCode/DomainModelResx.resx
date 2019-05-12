@@ -885,38 +885,6 @@
     <value>Show Formed</value>
     <comment>PropertyDisplayName for DomainRole &apos;OutPort&apos; on DomainRelationship &apos;ShowFormReferencesOutPorts&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ClassWithPortsHasPs.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ClassWithPortsHasPs</value>
-    <comment>Description for DomainClass &apos;ClassWithPortsHasPs&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ClassWithPortsHasPs.DisplayName" xml:space="preserve">
-    <value>Class With Ports Has Ps</value>
-    <comment>DisplayName for DomainClass &apos;ClassWithPortsHasPs&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ClassWithPortsHasPs/ClassWithPorts.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ClassWithPortsHasPs.ClassWithPorts</value>
-    <comment>Description for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasPs&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ClassWithPortsHasPs/ClassWithPorts.DisplayName" xml:space="preserve">
-    <value>Class With Ports</value>
-    <comment>DisplayName for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasPs&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ClassWithPortsHasPs/ClassWithPorts.PropertyDisplayName" xml:space="preserve">
-    <value>Ps</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasPs&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ClassWithPortsHasPs/P.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ClassWithPortsHasPs.P</value>
-    <comment>Description for DomainRole &apos;P&apos; on DomainRelationship &apos;ClassWithPortsHasPs&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ClassWithPortsHasPs/P.DisplayName" xml:space="preserve">
-    <value>P</value>
-    <comment>DisplayName for DomainRole &apos;P&apos; on DomainRelationship &apos;ClassWithPortsHasPs&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ClassWithPortsHasPs/P.PropertyDisplayName" xml:space="preserve">
-    <value>Class With Ports</value>
-    <comment>PropertyDisplayName for DomainRole &apos;P&apos; on DomainRelationship &apos;ClassWithPortsHasPs&apos;</comment>
-  </data>
   <data name="Company.MobileDSL.C.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.C</value>
     <comment>Description for DomainClass &apos;C&apos;</comment>
@@ -958,7 +926,7 @@
     <comment>DisplayName for DomainRole &apos;SourceConnectable&apos; on DomainRelationship &apos;C&apos;</comment>
   </data>
   <data name="Company.MobileDSL.C/SourceConnectable.PropertyDisplayName" xml:space="preserve">
-    <value>Parent Connections</value>
+    <value>Child Connections</value>
     <comment>PropertyDisplayName for DomainRole &apos;SourceConnectable&apos; on DomainRelationship &apos;C&apos;</comment>
   </data>
   <data name="Company.MobileDSL.C/TargetConnectable.Description" xml:space="preserve">
@@ -970,8 +938,72 @@
     <comment>DisplayName for DomainRole &apos;TargetConnectable&apos; on DomainRelationship &apos;C&apos;</comment>
   </data>
   <data name="Company.MobileDSL.C/TargetConnectable.PropertyDisplayName" xml:space="preserve">
-    <value>Child Connections</value>
+    <value>Parent Connections</value>
     <comment>PropertyDisplayName for DomainRole &apos;TargetConnectable&apos; on DomainRelationship &apos;C&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasIP.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPortsHasIP</value>
+    <comment>Description for DomainClass &apos;ClassWithPortsHasIP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasIP.DisplayName" xml:space="preserve">
+    <value>Class With Ports Has IP</value>
+    <comment>DisplayName for DomainClass &apos;ClassWithPortsHasIP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasIP/ClassWithPorts.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPortsHasIP.ClassWithPorts</value>
+    <comment>Description for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasIP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasIP/ClassWithPorts.DisplayName" xml:space="preserve">
+    <value>Class With Ports</value>
+    <comment>DisplayName for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasIP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasIP/ClassWithPorts.PropertyDisplayName" xml:space="preserve">
+    <value>IP</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasIP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasIP/IP.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPortsHasIP.IP</value>
+    <comment>Description for DomainRole &apos;IP&apos; on DomainRelationship &apos;ClassWithPortsHasIP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasIP/IP.DisplayName" xml:space="preserve">
+    <value>IP</value>
+    <comment>DisplayName for DomainRole &apos;IP&apos; on DomainRelationship &apos;ClassWithPortsHasIP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasIP/IP.PropertyDisplayName" xml:space="preserve">
+    <value>Class With Ports</value>
+    <comment>PropertyDisplayName for DomainRole &apos;IP&apos; on DomainRelationship &apos;ClassWithPortsHasIP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasOP.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPortsHasOP</value>
+    <comment>Description for DomainClass &apos;ClassWithPortsHasOP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasOP.DisplayName" xml:space="preserve">
+    <value>Class With Ports Has OP</value>
+    <comment>DisplayName for DomainClass &apos;ClassWithPortsHasOP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasOP/ClassWithPorts.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPortsHasOP.ClassWithPorts</value>
+    <comment>Description for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasOP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasOP/ClassWithPorts.DisplayName" xml:space="preserve">
+    <value>Class With Ports</value>
+    <comment>DisplayName for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasOP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasOP/ClassWithPorts.PropertyDisplayName" xml:space="preserve">
+    <value>OP</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ClassWithPorts&apos; on DomainRelationship &apos;ClassWithPortsHasOP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasOP/OP.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ClassWithPortsHasOP.OP</value>
+    <comment>Description for DomainRole &apos;OP&apos; on DomainRelationship &apos;ClassWithPortsHasOP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasOP/OP.DisplayName" xml:space="preserve">
+    <value>OP</value>
+    <comment>DisplayName for DomainRole &apos;OP&apos; on DomainRelationship &apos;ClassWithPortsHasOP&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ClassWithPortsHasOP/OP.PropertyDisplayName" xml:space="preserve">
+    <value>Class With Ports</value>
+    <comment>PropertyDisplayName for DomainRole &apos;OP&apos; on DomainRelationship &apos;ClassWithPortsHasOP&apos;</comment>
   </data>
   <data name="Company.MobileDSL.InPortShape.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.InPortShape</value>
@@ -1028,6 +1060,30 @@
   <data name="Company.MobileDSL.StateShape.DisplayName" xml:space="preserve">
     <value>State Shape</value>
     <comment>DisplayName for DomainClass &apos;StateShape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateShape/FillColor.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateShape.Fill Color</value>
+    <comment>Description for DomainProperty &apos;FillColor&apos; on DomainClass &apos;StateShape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateShape/FillColor.DisplayName" xml:space="preserve">
+    <value>Fill Color</value>
+    <comment>DisplayName for DomainProperty &apos;FillColor&apos; on DomainClass &apos;StateShape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateShape/TextColor.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateShape.Text Color</value>
+    <comment>Description for DomainProperty &apos;TextColor&apos; on DomainClass &apos;StateShape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateShape/TextColor.DisplayName" xml:space="preserve">
+    <value>Text Color</value>
+    <comment>DisplayName for DomainProperty &apos;TextColor&apos; on DomainClass &apos;StateShape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateShape/FillGradientMode.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateShape.Fill Gradient Mode</value>
+    <comment>Description for DomainProperty &apos;FillGradientMode&apos; on DomainClass &apos;StateShape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StateShape/FillGradientMode.DisplayName" xml:space="preserve">
+    <value>Fill Gradient Mode</value>
+    <comment>DisplayName for DomainProperty &apos;FillGradientMode&apos; on DomainClass &apos;StateShape&apos;</comment>
   </data>
   <data name="StateShapeNameDecoratorDefaultText" xml:space="preserve">
     <value>NameDecorator</value>
@@ -1161,14 +1217,6 @@
     <value>MobileDSL</value>
     <comment>Toolbox item tab name</comment>
   </data>
-  <data name="ControllerToolboxItem" xml:space="preserve">
-    <value>Controller</value>
-    <comment>Toolbox item name</comment>
-  </data>
-  <data name="ControllerToolboxTooltip" xml:space="preserve">
-    <value>Create a Component</value>
-    <comment>Toolbox tooltip text</comment>
-  </data>
   <data name="InPortToolboxItem" xml:space="preserve">
     <value>Input Port</value>
     <comment>Toolbox item name</comment>
@@ -1225,14 +1273,6 @@
     <value>State Connection</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="StateToolboxItem" xml:space="preserve">
-    <value>State</value>
-    <comment>Toolbox item name</comment>
-  </data>
-  <data name="StateToolboxTooltip" xml:space="preserve">
-    <value>State</value>
-    <comment>Toolbox tooltip text</comment>
-  </data>
   <data name="InPortConnectionToolboxItem" xml:space="preserve">
     <value>InPortConnection</value>
     <comment>Toolbox item name</comment>
@@ -1271,6 +1311,22 @@
   </data>
   <data name="CToolboxTooltip" xml:space="preserve">
     <value>C</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="Controller_ToolboxItem" xml:space="preserve">
+    <value>Controller_</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="Controller_ToolboxTooltip" xml:space="preserve">
+    <value>Controller_</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="State_ToolboxItem" xml:space="preserve">
+    <value>State_</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="State_ToolboxTooltip" xml:space="preserve">
+    <value>State_</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UI FormsToolboxTab" xml:space="preserve">
@@ -1490,10 +1546,6 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\OutPortImage.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
-  <data name="ControllerToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ComponentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Toolbox item image</comment>
-  </data>
   <data name="InPortToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\InPortTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
@@ -1522,10 +1574,6 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\ConnectionTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="StateToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ComponentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Toolbox item image</comment>
-  </data>
   <data name="InPortConnectionToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ConnectionTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
@@ -1544,6 +1592,14 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="CToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ConnectionTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="Controller_ToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="State_ToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="EventToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">

@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="eda229d1-bd9e-4749-b492-13c01862a56e" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+  <controllers>
+    <componentModelHasControllers Id="7024a744-fba6-4300-a562-b9b7c1fb3ef5">
+      <controller Id="c97396fb-86a5-47dd-815c-6835c467a530" name="LoginController" isFirst="false">
+        <iP>
+          <classWithPortsHasIP Id="e9a11120-64d8-46b8-a110-414b5422f34a">
+            <iP Id="0a6b3467-fa7b-468c-a250-377e022ea4e6">
+              <childConnections>
+                <c Id="2351524d-0c14-4ff7-b9dd-c56845b3eb09">
+                  <iPMoniker Id="99a66a2a-0166-41f0-adfe-695ccdad2869" />
+                </c>
+              </childConnections>
+            </iP>
+          </classWithPortsHasIP>
+        </iP>
+        <oP>
+          <classWithPortsHasOP Id="6ece5a7a-9ebc-44ee-b361-750d4bafb983">
+            <oP Id="fb0d0a5b-9102-488c-b768-270b311563bd">
+              <childConnections>
+                <c Id="bfe695ec-a7f3-4c65-ae40-5da035b714e9">
+                  <iPMoniker Id="f1249aef-55b6-4c79-9bc0-cd8b80592194" />
+                </c>
+              </childConnections>
+            </oP>
+          </classWithPortsHasOP>
+        </oP>
+        <states>
+          <controllerHasStates Id="92cf7535-977e-49ef-8727-ef6594a76dc8">
+            <state Id="298f720c-2be2-46d5-85c0-6eb846364c61" name="LoginState">
+              <iP>
+                <classWithPortsHasIP Id="a1cf72db-cab1-439a-a7b1-345ea1caf2bc">
+                  <iP Id="99a66a2a-0166-41f0-adfe-695ccdad2869">
+                    <childConnections>
+                      <c Id="bcf84184-8444-4b61-9f6e-88777680332b">
+                        <showFormMoniker Id="37e6f53b-7b73-4acf-bb27-db2b8517b705" />
+                      </c>
+                    </childConnections>
+                  </iP>
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="36f80ef0-47cd-4277-a033-94befcb03075">
+                  <oP Id="9e565b50-039e-4511-a495-3716b3213af5">
+                    <childConnections>
+                      <c Id="82ad94f3-8db0-4976-b50f-d561ec8a70cc">
+                        <oPMoniker Id="fb0d0a5b-9102-488c-b768-270b311563bd" />
+                      </c>
+                    </childConnections>
+                  </oP>
+                </classWithPortsHasOP>
+              </oP>
+              <showForms>
+                <stateHasShowForms Id="cdcfa402-6004-4ac2-aa43-2cac90de5cfb">
+                  <showForm Id="37e6f53b-7b73-4acf-bb27-db2b8517b705" name="LogInForm">
+                    <childConnections>
+                      <c Id="776c81e3-91aa-4896-b0de-524d86a42192" nextState="MainController">
+                        <oPMoniker Id="9e565b50-039e-4511-a495-3716b3213af5" />
+                      </c>
+                    </childConnections>
+                    <events>
+                      <showFormHasEvents Id="5f6e298f-2f92-4ed1-b08c-c7ae2b74a6da">
+                        <event Id="129b5e59-fcfc-4b2b-8bc0-2b43dc18f127" name="loginButtonClicked" />
+                      </showFormHasEvents>
+                    </events>
+                    <primitives>
+                      <showFormHasPrimitives Id="2fd3eaf1-6e7b-41a5-8a11-44542d1d6cd5">
+                        <input Id="7ee3dab4-6085-466c-a6bd-e053ceb1c3e1" name="loginInput" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="f1d50752-1d3f-43d6-aae9-a4a47d378f7e">
+                        <input Id="4e617cf5-d6a7-4f0c-afa8-eeffad8b1c32" name="passwordInput" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="5eb7d843-3771-465c-b4a9-0bfac946b09f">
+                        <button Id="79fe4924-c43a-4646-a47d-9a7493d0ef75" name="loginButton" />
+                      </showFormHasPrimitives>
+                    </primitives>
+                  </showForm>
+                </stateHasShowForms>
+              </showForms>
+            </state>
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+    <componentModelHasControllers Id="b95f4ff3-78a2-4116-907f-95b9cc069f30">
+      <controller Id="cd0033d7-a218-4b2d-87cf-686f30d2828c" name="MainController" isFirst="false">
+        <iP>
+          <classWithPortsHasIP Id="95dab929-04a9-42ee-9a99-adaf819d0bc2">
+            <iP Id="f1249aef-55b6-4c79-9bc0-cd8b80592194">
+              <childConnections>
+                <c Id="d1ae3311-7ec2-4f6f-b86d-89b433cadc84">
+                  <iPMoniker Id="f417e744-3236-4a17-8dfe-44cfc9b9195b" />
+                </c>
+              </childConnections>
+            </iP>
+          </classWithPortsHasIP>
+        </iP>
+        <oP>
+          <classWithPortsHasOP Id="a28efe1f-a8aa-42b2-add4-8d9d0cfb84ab">
+            <oP Id="e39c4d7c-d7b8-4640-bcc9-d07a0a589656">
+              <childConnections>
+                <c Id="2aeda3f9-3ffa-46b5-ba3a-1b2ef2c720e2">
+                  <iPMoniker Id="0a6b3467-fa7b-468c-a250-377e022ea4e6" />
+                </c>
+              </childConnections>
+            </oP>
+          </classWithPortsHasOP>
+        </oP>
+        <states>
+          <controllerHasStates Id="77076651-87bb-4555-95ea-a6e9577ae386">
+            <state Id="3090dfcc-b569-418e-91bd-45c03ed5ecdb" name="StartState">
+              <iP>
+                <classWithPortsHasIP Id="ba1690db-ab37-4cce-97ad-75727340287b">
+                  <iP Id="f417e744-3236-4a17-8dfe-44cfc9b9195b">
+                    <childConnections>
+                      <c Id="5fdde6ac-b0de-4e38-8de4-6e6d57514ae2">
+                        <showFormMoniker Id="a1f1ed18-fc0b-43ea-bc85-922e61e6df0d" />
+                      </c>
+                    </childConnections>
+                  </iP>
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="be0e7953-6b20-4710-b53b-9986cc324704">
+                  <oP Id="8fb8840d-d3e3-4f94-8eca-0a6a0ff201b4">
+                    <childConnections>
+                      <c Id="ffdacf75-81fc-44da-8c40-2595568070a8">
+                        <iPMoniker Id="8838010e-14e8-4066-938a-486238b6d4fb" />
+                      </c>
+                      <c Id="a833ad01-7032-4f5f-b33c-5963d70b3c29">
+                        <oPMoniker Id="e39c4d7c-d7b8-4640-bcc9-d07a0a589656" />
+                      </c>
+                    </childConnections>
+                  </oP>
+                </classWithPortsHasOP>
+              </oP>
+              <showForms>
+                <stateHasShowForms Id="a1746fb8-8656-40df-bff8-4bce8a0cdef1">
+                  <showForm Id="a1f1ed18-fc0b-43ea-bc85-922e61e6df0d" name="MainMenuForm">
+                    <childConnections>
+                      <c Id="6896f7c6-e84e-423f-91de-b9a1b2fb8047" nextState="CheckInState">
+                        <oPMoniker Id="8fb8840d-d3e3-4f94-8eca-0a6a0ff201b4" />
+                      </c>
+                      <c Id="494169e9-80f6-4bf0-913b-6e45bce9e774" fromEvent="logoutButtonClicked" nextState="LoginController">
+                        <oPMoniker Id="8fb8840d-d3e3-4f94-8eca-0a6a0ff201b4" />
+                      </c>
+                    </childConnections>
+                    <events>
+                      <showFormHasEvents Id="fc597e77-ac57-4509-8974-eec943f2e768">
+                        <event Id="f6a84fe7-a6be-4a5d-9d7e-9f7bd905c61a" name="checkinButtonClicked" />
+                      </showFormHasEvents>
+                      <showFormHasEvents Id="920bc24f-bada-4ce5-bf1b-acc561906d2f">
+                        <event Id="20303eb7-1f08-485b-90bf-43b64ca217c3" name="logoutButtonClicked" />
+                      </showFormHasEvents>
+                    </events>
+                    <primitives>
+                      <showFormHasPrimitives Id="d56a2f1c-7bb7-4b2d-adb1-af317e7de103">
+                        <button Id="c889639f-a5fe-487a-8866-39f814bf9779" name="checkinButton" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="065629b5-de29-43fc-89db-d7a138dc31d9">
+                        <button Id="a6752581-b950-4e58-ac0f-a1f4328d6bb9" name="logoutButton" />
+                      </showFormHasPrimitives>
+                    </primitives>
+                  </showForm>
+                </stateHasShowForms>
+              </showForms>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="4163f8ab-69d2-4624-8713-70d896703d1c">
+            <state Id="93a25e12-fa63-4f4f-895d-8d6bbd66bd53" name="CheckInState">
+              <iP>
+                <classWithPortsHasIP Id="8a966c7b-8f8b-4688-b1b7-a39176b77521">
+                  <iP Id="8838010e-14e8-4066-938a-486238b6d4fb">
+                    <childConnections>
+                      <c Id="a43c180b-0cda-4c1c-8604-18dcab570d03">
+                        <showFormMoniker Id="86502abf-a952-401b-8b01-5b3af0d8952e" />
+                      </c>
+                    </childConnections>
+                  </iP>
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="c4bdbb9f-514e-420a-8661-c1087aa009cd">
+                  <oP Id="e4891faa-95ee-4669-bebd-01269153cba1">
+                    <childConnections>
+                      <c Id="3f5ba0c4-e098-40e3-a2be-1d2af02a509f">
+                        <iPMoniker Id="f417e744-3236-4a17-8dfe-44cfc9b9195b" />
+                      </c>
+                    </childConnections>
+                  </oP>
+                </classWithPortsHasOP>
+              </oP>
+              <showForms>
+                <stateHasShowForms Id="02576a21-6e27-4e23-8dc8-7ed440e0db9e">
+                  <showForm Id="86502abf-a952-401b-8b01-5b3af0d8952e" name="CheckInForm">
+                    <childConnections>
+                      <c Id="a0798630-d5be-412c-8284-f353614b6f1f" nextState="StartState">
+                        <oPMoniker Id="e4891faa-95ee-4669-bebd-01269153cba1" />
+                      </c>
+                    </childConnections>
+                    <events>
+                      <showFormHasEvents Id="71b107b6-fea2-45c1-bafb-4ea7e20dfa99">
+                        <event Id="d3d917f0-8c12-404d-9790-2a747931d019" name="BackButtonClicked" />
+                      </showFormHasEvents>
+                    </events>
+                    <primitives>
+                      <showFormHasPrimitives Id="0f96d3d9-8db7-4d10-b92d-4ba425f7eebe">
+                        <label Id="b00c5351-102b-4bae-936b-18b96dd72c35" name="generatedKeyLbel" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="a8872b5d-a247-4c26-b06e-85381f131d93">
+                        <label Id="9bbc0c97-9227-491e-bfd8-0dee457274d8" name="KeyLabel" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="20a02180-f9ff-4d53-9b26-5d29cfa84834">
+                        <button Id="13d65c8b-97f7-4181-8e97-384d775166c2" name="BackButton" />
+                      </showFormHasPrimitives>
+                    </primitives>
+                  </showForm>
+                </stateHasShowForms>
+              </showForms>
+            </state>
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+  </controllers>
+</componentModel>

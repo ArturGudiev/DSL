@@ -29,21 +29,13 @@ namespace Company.MobileDSL
 	[VSShell::ProvideToolWindowVisibility(typeof(MobileDSLExplorerToolWindow), Constants.MobileDSLEditorFactoryId)]
 	[VSShell::ProvideStaticToolboxGroup("@MobileDSLToolboxTab;Company.MobileDSL.Dsl.dll", "Company.MobileDSL.MobileDSLToolboxTab")]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
-					"@ControllerToolboxItem;Company.MobileDSL.Dsl.dll", 
-					"Company.MobileDSL.ControllerToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"CreateComponentF1Keyword", 
-					"@ControllerToolboxBitmap;Company.MobileDSL.Dsl.dll", 
-					0xff00ff,
-					Index = 0)]
-	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@InPortToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.InPortToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"CreateInPortF1Keyword", 
 					"@InPortToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 1)]
+					Index = 0)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@OutPortToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.OutPortToolboxItem", 
@@ -51,7 +43,7 @@ namespace Company.MobileDSL
 					"CreateOutPortF1Keyword", 
 					"@OutPortToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 2)]
+					Index = 1)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@ConnectionToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.ConnectionToolboxItem", 
@@ -59,7 +51,7 @@ namespace Company.MobileDSL
 					"ConnectAssociationF1Keyword", 
 					"@ConnectionToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 3)]
+					Index = 2)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@CommentToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.CommentToolboxItem", 
@@ -67,7 +59,7 @@ namespace Company.MobileDSL
 					"ConnectCommentF1Keyword", 
 					"@CommentToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 4)]
+					Index = 3)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@CommentConnectorToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.CommentConnectorToolboxItem", 
@@ -75,7 +67,7 @@ namespace Company.MobileDSL
 					"ConnectCommentsReferenceTypesF1Keyword", 
 					"@CommentConnectorToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 5)]
+					Index = 4)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@State_oldToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.State_oldToolboxItem", 
@@ -83,7 +75,7 @@ namespace Company.MobileDSL
 					"State_old", 
 					"@State_oldToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 6)]
+					Index = 5)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@StateConnectionToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.StateConnectionToolboxItem", 
@@ -91,15 +83,7 @@ namespace Company.MobileDSL
 					"StateConnection", 
 					"@StateConnectionToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 7)]
-	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
-					"@StateToolboxItem;Company.MobileDSL.Dsl.dll", 
-					"Company.MobileDSL.StateToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"State", 
-					"@StateToolboxBitmap;Company.MobileDSL.Dsl.dll", 
-					0xff00ff,
-					Index = 8)]
+					Index = 6)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@InPortConnectionToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.InPortConnectionToolboxItem", 
@@ -107,7 +91,7 @@ namespace Company.MobileDSL
 					"InPortConnection", 
 					"@InPortConnectionToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 9)]
+					Index = 7)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@ShowFormToPortConnectionToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.ShowFormToPortConnectionToolboxItem", 
@@ -115,7 +99,7 @@ namespace Company.MobileDSL
 					"ShowFormToPortConnection", 
 					"@ShowFormToPortConnectionToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 10)]
+					Index = 8)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@IPToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.IPToolboxItem", 
@@ -123,7 +107,7 @@ namespace Company.MobileDSL
 					"IP", 
 					"@IPToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 11)]
+					Index = 9)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@OPToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.OPToolboxItem", 
@@ -131,13 +115,29 @@ namespace Company.MobileDSL
 					"OP", 
 					"@OPToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 12)]
+					Index = 10)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
 					"@CToolboxItem;Company.MobileDSL.Dsl.dll", 
 					"Company.MobileDSL.CToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"C", 
 					"@CToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 11)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
+					"@Controller_ToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.Controller_ToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Controller_", 
+					"@Controller_ToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 12)]
+	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
+					"@State_ToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.State_ToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"State_", 
+					"@State_ToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
 					Index = 13)]
 	[VSShell::ProvideStaticToolboxGroup("@UI FormsToolboxTab;Company.MobileDSL.Dsl.dll", "Company.MobileDSL.UI FormsToolboxTab")]

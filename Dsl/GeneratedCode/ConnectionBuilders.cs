@@ -737,9 +737,6 @@ namespace Company.MobileDSL
 				{
 					if (candidateTarget is global::Company.MobileDSL.Connectable)
 					{
-						global::Company.MobileDSL.Connectable sourceConnectable = (global::Company.MobileDSL.Connectable)candidateSource;
-						global::Company.MobileDSL.Connectable targetConnectable = (global::Company.MobileDSL.Connectable)candidateTarget;
-						if(targetConnectable == null || sourceConnectable == null || global::Company.MobileDSL.C.GetLinks(sourceConnectable, targetConnectable).Count > 0) return false;
 						return true;
 					}
 				}

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mobileDSLDiagram dslVersion="1.0.0.0" Id="28f4b8f1-f66a-4d87-bce8-b595b15bc98e" absoluteBounds="0, 0, 11, 8.5" name="e1">
+  <componentModelMoniker name="/" />
+  <nestedChildShapes>
+    <controllerShape Id="3e41b00f-52e2-4240-87c4-589cac2e7a0b" absoluteBounds="0.75, 0.5, 9.375, 4.5">
+      <controllerMoniker name="//Controller1" />
+      <relativeChildShapes>
+        <iPShape Id="12ff5b80-d559-4018-bc7e-ae7e5f6af74e" absoluteBounds="1.3125, 0.4, 0.2, 0.2">
+          <iPMoniker Id="c2c2c94d-cfba-4cc7-9118-760117d1d218" />
+        </iPShape>
+      </relativeChildShapes>
+    </controllerShape>
+    <stateShape Id="597c07d7-1e8c-4e85-9504-bde8bc43f7ff" absoluteBounds="1.75, 1.125, 2.375, 3.625">
+      <stateMoniker name="//Controller1/State1" />
+      <relativeChildShapes>
+        <iPShape Id="4ba380bf-d304-4fd3-9485-704ec5523944" absoluteBounds="4.025, 1.46875, 0.2, 0.20000000000000018">
+          <iPMoniker Id="15e6c020-2918-4463-a86e-a9bdbad72292" />
+        </iPShape>
+        <oPShape Id="d802731c-f4f6-4a8b-b1d0-3f7e0052ec43" absoluteBounds="4.025, 2.65625, 0.2, 0.20000000000000018">
+          <oPMoniker Id="fc9b072e-3134-40dd-a44a-19369144d270" />
+        </oPShape>
+      </relativeChildShapes>
+    </stateShape>
+    <cConnector Id="467763e0-1927-4227-bf47-2ee437895935" edgePoints="[(1.4125 : 0.6); (1.4125 : 1.56875); (4.025 : 1.56875)]" fixedFrom="Caller" fixedTo="Caller">
+      <cMoniker Id="b8581035-dcd8-4960-aeef-62e6e90c004d" />
+      <relativeChildShapes />
+      <nodes>
+        <iPShapeMoniker Id="12ff5b80-d559-4018-bc7e-ae7e5f6af74e" />
+        <iPShapeMoniker Id="4ba380bf-d304-4fd3-9485-704ec5523944" />
+      </nodes>
+    </cConnector>
+    <compartmentShape1 Id="8e8df247-ba37-403a-9db4-52487a87332d" absoluteBounds="2, 2.5, 1.5, 1.618779296875">
+      <showFormMoniker Id="4fc2d2d2-3653-46ce-9890-d4fb3e98e1e8" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa7e3448-4915-4548-817b-1df272047804" absoluteBounds="2.015, 3.51, 1.4700000000000002, 0.2493896484375" name="UIEventsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d96a7ac6-9d96-4039-bd70-9d4a1baa4eff" absoluteBounds="2.015, 3.7693896484375, 1.4700000000000002, 0.2493896484375" name="UIPrimitives" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </compartmentShape1>
+    <stateShape Id="c579b734-c363-4980-b95a-68a3b26e5602" absoluteBounds="5.875, 1.125, 3.375, 3.625">
+      <stateMoniker name="//Controller1/State2" />
+      <relativeChildShapes>
+        <iPShape Id="70d4801c-9b30-41b7-ac6a-e5275271890b" absoluteBounds="5.775, 3.59375, 0.2, 0.2">
+          <iPMoniker Id="0d75ca49-94a7-4e64-b0df-8257ae986910" />
+        </iPShape>
+        <oPShape Id="ca6d7090-eb70-4469-8d78-e8e3338da060" absoluteBounds="5.775, 2.09375, 0.2, 0.2">
+          <oPMoniker Id="76a2a822-8850-4fb1-97c7-319d77fbe063" />
+        </oPShape>
+      </relativeChildShapes>
+    </stateShape>
+    <compartmentShape1 Id="192797bb-48a5-4cfd-b188-fabb3650ad36" absoluteBounds="6.875, 2.5, 1.5, 1.6187792968749992">
+      <showFormMoniker Id="476ab037-bed9-4645-95a7-f1b003da4eca" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fdc2ee50-6eea-4b62-b6e6-12f39dcbce2b" absoluteBounds="6.89, 3.51, 1.4700000000000002, 0.2493896484375" name="UIEventsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e8384f48-54a6-4d34-b15e-f0fa04afaf58" absoluteBounds="6.89, 3.7693896484374996, 1.4700000000000002, 0.2493896484375" name="UIPrimitives" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </compartmentShape1>
+    <cConnector Id="5e94e66b-c140-4fac-b226-27f9acbf8ed2" edgePoints="[(4.025 : 1.56875); (2.75 : 1.56875); (2.75 : 2.5)]" fixedFrom="Caller" fixedTo="NotFixed">
+      <cMoniker Id="405b3b1d-03dd-4142-8494-52357b7c9cff" />
+      <relativeChildShapes />
+      <nodes>
+        <iPShapeMoniker Id="4ba380bf-d304-4fd3-9485-704ec5523944" />
+        <compartmentShape1Moniker Id="8e8df247-ba37-403a-9db4-52487a87332d" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="be777efa-3404-45c8-b416-654d97d0c067" edgePoints="[(3.5 : 3.3093896484375); (3.875 : 3.3093896484375); (3.875 : 2.75625); (4.025 : 2.75625)]" fixedFrom="NotFixed" fixedTo="Caller">
+      <cMoniker Id="3944baa3-474d-460b-828c-f11e9ed74225" />
+      <relativeChildShapes />
+      <nodes>
+        <compartmentShape1Moniker Id="8e8df247-ba37-403a-9db4-52487a87332d" />
+        <oPShapeMoniker Id="d802731c-f4f6-4a8b-b1d0-3f7e0052ec43" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="644ebe39-661f-4ff2-a143-c694b5876a27" edgePoints="[(4.225 : 2.75625); (4.6 : 2.75625); (4.6 : 3.69375); (5.775 : 3.69375)]" fixedFrom="Caller" fixedTo="Caller">
+      <cMoniker Id="5ad11ce3-3ede-4321-96d7-58c8a43c400b" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="d802731c-f4f6-4a8b-b1d0-3f7e0052ec43" />
+        <iPShapeMoniker Id="70d4801c-9b30-41b7-ac6a-e5275271890b" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="add12b6c-7a99-4a1d-9e10-622cb4f4279c" edgePoints="[(5.975 : 3.69375); (6.15 : 3.69375); (6.15 : 3.3093896484375); (6.875 : 3.3093896484375)]" fixedFrom="Caller" fixedTo="NotFixed">
+      <cMoniker Id="17c5d2ec-494f-4a1c-a5c8-340206f2105a" />
+      <relativeChildShapes />
+      <nodes>
+        <iPShapeMoniker Id="70d4801c-9b30-41b7-ac6a-e5275271890b" />
+        <compartmentShape1Moniker Id="192797bb-48a5-4cfd-b188-fabb3650ad36" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="ec24f87b-3d20-4396-93e8-b9fe27204b68" edgePoints="[(7.625 : 2.5); (7.625 : 2.19375); (5.975 : 2.19375)]" fixedFrom="NotFixed" fixedTo="Caller">
+      <cMoniker Id="9aa3b51b-e966-4eef-90dd-0e356cc2b408" />
+      <relativeChildShapes />
+      <nodes>
+        <compartmentShape1Moniker Id="192797bb-48a5-4cfd-b188-fabb3650ad36" />
+        <oPShapeMoniker Id="ca6d7090-eb70-4469-8d78-e8e3338da060" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="07ef0108-3993-4bb0-91dc-d9002db1486e" edgePoints="[(5.775 : 2.19375); (5.4 : 2.19375); (5.4 : 1.56875); (4.225 : 1.56875)]" fixedFrom="Caller" fixedTo="Caller">
+      <cMoniker Id="d8053ad2-e15f-44ef-9b43-1e9196376d17" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="ca6d7090-eb70-4469-8d78-e8e3338da060" />
+        <iPShapeMoniker Id="4ba380bf-d304-4fd3-9485-704ec5523944" />
+      </nodes>
+    </cConnector>
+  </nestedChildShapes>
+</mobileDSLDiagram>

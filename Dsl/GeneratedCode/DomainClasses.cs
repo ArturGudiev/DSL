@@ -1464,18 +1464,41 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region Ps opposite domain role accessor
-		
+		#region IP opposite domain role accessor
 		/// <summary>
-		/// Gets a list of Ps.
-		/// Description for Company.MobileDSL.ClassWithPortsHasPs.ClassWithPorts
+		/// Gets or sets IP.
+		/// Description for Company.MobileDSL.ClassWithPortsHasIP.ClassWithPorts
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<P> Ps
+		public virtual IP IP
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<P>, P>(global::Company.MobileDSL.ClassWithPortsHasPs.ClassWithPortsDomainRoleId);
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasIP.ClassWithPortsDomainRoleId) as IP;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasIP.ClassWithPortsDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region OP opposite domain role accessor
+		/// <summary>
+		/// Gets or sets OP.
+		/// Description for Company.MobileDSL.ClassWithPortsHasOP.ClassWithPorts
+		/// </summary>
+		public virtual OP OP
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasOP.ClassWithPortsDomainRoleId) as OP;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasOP.ClassWithPortsDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -1499,8 +1522,23 @@ namespace Company.MobileDSL
 			{
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.P.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.IP.DomainClassId)) 
 				{
+					// Check that creating a link with this path doesn't cause multiplicity overflow: ClassWithPortsHasIP.IP
+					if (this.IP != null)
+					{
+						return false;
+					}
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.OP.DomainClassId)) 
+				{
+					// Check that creating a link with this path doesn't cause multiplicity overflow: ClassWithPortsHasOP.OP
+					if (this.OP != null)
+					{
+						return false;
+					}
 					return true;
 				}
 				
@@ -1533,20 +1571,29 @@ namespace Company.MobileDSL
 			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
 		
 				
-			global::Company.MobileDSL.P sourceP1 = sourceElement as global::Company.MobileDSL.P;
-			if (sourceP1 != null)
+			global::Company.MobileDSL.IP sourceIP1 = sourceElement as global::Company.MobileDSL.IP;
+			if (sourceIP1 != null)
 			{
-				// Create link for path ClassWithPortsHasPs.Ps
-				this.Ps.Add(sourceP1);
+				// Create link for path ClassWithPortsHasIP.IP
+				this.IP = sourceIP1;
 
 				return;
 			}
 				
-			global::Company.MobileDSL.Port sourcePort2 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort2 != null)
+			global::Company.MobileDSL.OP sourceOP2 = sourceElement as global::Company.MobileDSL.OP;
+			if (sourceOP2 != null)
+			{
+				// Create link for path ClassWithPortsHasOP.OP
+				this.OP = sourceOP2;
+
+				return;
+			}
+				
+			global::Company.MobileDSL.Port sourcePort3 = sourceElement as global::Company.MobileDSL.Port;
+			if (sourcePort3 != null)
 			{
 				// Create link for path ClassWithPortsHasPorts.Ports
-				this.Ports.Add(sourcePort2);
+				this.Ports.Add(sourcePort3);
 
 				return;
 			}
@@ -1573,26 +1620,40 @@ namespace Company.MobileDSL
 		{
 			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
 				
-			global::Company.MobileDSL.P sourceP1 = sourceElement as global::Company.MobileDSL.P;
-			if (sourceP1 != null)
+			global::Company.MobileDSL.IP sourceIP1 = sourceElement as global::Company.MobileDSL.IP;
+			if (sourceIP1 != null)
 			{
-				// Delete link for path ClassWithPortsHasPs.Ps
+				// Delete link for path ClassWithPortsHasIP.IP
 				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ClassWithPortsHasPs.GetLinks((global::Company.MobileDSL.ClassWithPorts)this, sourceP1))
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ClassWithPortsHasIP.GetLinks((global::Company.MobileDSL.ClassWithPorts)this, sourceIP1))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.ClassWithPortsHasPs.ClassWithPortsDomainRoleId, global::Company.MobileDSL.ClassWithPortsHasPs.PDomainRoleId);
+					link.Delete(global::Company.MobileDSL.ClassWithPortsHasIP.ClassWithPortsDomainRoleId, global::Company.MobileDSL.ClassWithPortsHasIP.IPDomainRoleId);
 				}
 
 				return;
 			}
 				
-			global::Company.MobileDSL.Port sourcePort2 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort2 != null)
+			global::Company.MobileDSL.OP sourceOP2 = sourceElement as global::Company.MobileDSL.OP;
+			if (sourceOP2 != null)
+			{
+				// Delete link for path ClassWithPortsHasOP.OP
+				
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ClassWithPortsHasOP.GetLinks((global::Company.MobileDSL.ClassWithPorts)this, sourceOP2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.MobileDSL.ClassWithPortsHasOP.ClassWithPortsDomainRoleId, global::Company.MobileDSL.ClassWithPortsHasOP.OPDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Company.MobileDSL.Port sourcePort3 = sourceElement as global::Company.MobileDSL.Port;
+			if (sourcePort3 != null)
 			{
 				// Delete link for path ClassWithPortsHasPorts.Ports
 				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ClassWithPortsHasPorts.GetLinks((global::Company.MobileDSL.ClassWithPorts)this, sourcePort2))
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ClassWithPortsHasPorts.GetLinks((global::Company.MobileDSL.ClassWithPorts)this, sourcePort3))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPortsDomainRoleId, global::Company.MobileDSL.ClassWithPortsHasPorts.PortDomainRoleId);
@@ -2302,13 +2363,13 @@ namespace Company.MobileDSL
 		{
 		}
 		#endregion
-		#region ParentConnections opposite domain role accessor
+		#region ChildConnections opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of ParentConnections.
+		/// Gets a list of ChildConnections.
 		/// Description for Company.MobileDSL.C.SourceConnectable
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<Connectable> ParentConnections
+		public virtual DslModeling::LinkedElementCollection<Connectable> ChildConnections
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
@@ -2317,13 +2378,13 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region ChildConnections opposite domain role accessor
+		#region ParentConnections opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of ChildConnections.
+		/// Gets a list of ParentConnections.
 		/// Description for Company.MobileDSL.C.TargetConnectable
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<Connectable> ChildConnections
+		public virtual DslModeling::LinkedElementCollection<Connectable> ParentConnections
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
@@ -2450,25 +2511,6 @@ namespace Company.MobileDSL
 		}
 		
 		#endregion
-		#region ClassWithPorts opposite domain role accessor
-		/// <summary>
-		/// Gets or sets ClassWithPorts.
-		/// Description for Company.MobileDSL.ClassWithPortsHasPs.P
-		/// </summary>
-		public virtual ClassWithPorts ClassWithPorts
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasPs.PDomainRoleId) as ClassWithPorts;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasPs.PDomainRoleId, value);
-			}
-		}
-		#endregion
 	}
 }
 namespace Company.MobileDSL
@@ -2510,6 +2552,25 @@ namespace Company.MobileDSL
 		{
 		}
 		#endregion
+		#region ClassWithPorts opposite domain role accessor
+		/// <summary>
+		/// Gets or sets ClassWithPorts.
+		/// Description for Company.MobileDSL.ClassWithPortsHasIP.IP
+		/// </summary>
+		public virtual ClassWithPorts ClassWithPorts
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasIP.IPDomainRoleId) as ClassWithPorts;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasIP.IPDomainRoleId, value);
+			}
+		}
+		#endregion
 	}
 }
 namespace Company.MobileDSL
@@ -2549,6 +2610,25 @@ namespace Company.MobileDSL
 		public OP(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
+		}
+		#endregion
+		#region ClassWithPorts opposite domain role accessor
+		/// <summary>
+		/// Gets or sets ClassWithPorts.
+		/// Description for Company.MobileDSL.ClassWithPortsHasOP.OP
+		/// </summary>
+		public virtual ClassWithPorts ClassWithPorts
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasOP.OPDomainRoleId) as ClassWithPorts;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasOP.OPDomainRoleId, value);
+			}
 		}
 		#endregion
 	}

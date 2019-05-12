@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ef38dcda-5457-4fd4-a327-aae6699a85ec" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+  <controllers>
+    <componentModelHasControllers Id="204b4a43-ddee-480b-ac9c-80a48ac03f50">
+      <controller Id="671db5d0-e3f1-45c1-a2ad-9404fa53f28b" name="Controller1" isFirst="false">
+        <iP>
+          <classWithPortsHasIP Id="808c75c9-fb76-40ae-852e-48a94d308997">
+            <iP Id="c2c2c94d-cfba-4cc7-9118-760117d1d218" name="CIP">
+              <childConnections>
+                <c Id="b8581035-dcd8-4960-aeef-62e6e90c004d">
+                  <iPMoniker Id="15e6c020-2918-4463-a86e-a9bdbad72292" />
+                </c>
+              </childConnections>
+            </iP>
+          </classWithPortsHasIP>
+        </iP>
+        <states>
+          <controllerHasStates Id="689fa809-9972-4107-8c1f-9ddcd711f77e">
+            <state Id="874d7aec-b9f1-43f5-a53d-cfcf5c56f464" name="State1">
+              <iP>
+                <classWithPortsHasIP Id="f3589347-d4cf-4b01-bbd6-f59bd7b04cc5">
+                  <iP Id="15e6c020-2918-4463-a86e-a9bdbad72292" name="SIP">
+                    <childConnections>
+                      <c Id="405b3b1d-03dd-4142-8494-52357b7c9cff">
+                        <showFormMoniker Id="4fc2d2d2-3653-46ce-9890-d4fb3e98e1e8" />
+                      </c>
+                    </childConnections>
+                  </iP>
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="0465cdf6-5e3a-4d90-ac9e-99cebc249ad3">
+                  <oP Id="fc9b072e-3134-40dd-a44a-19369144d270">
+                    <childConnections>
+                      <c Id="5ad11ce3-3ede-4321-96d7-58c8a43c400b">
+                        <iPMoniker Id="0d75ca49-94a7-4e64-b0df-8257ae986910" />
+                      </c>
+                    </childConnections>
+                  </oP>
+                </classWithPortsHasOP>
+              </oP>
+              <showForms>
+                <stateHasShowForms Id="11879c7d-53ec-4a0b-9542-cfd4e32c67ac">
+                  <showForm Id="4fc2d2d2-3653-46ce-9890-d4fb3e98e1e8" name="Form1">
+                    <childConnections>
+                      <c Id="3944baa3-474d-460b-828c-f11e9ed74225">
+                        <oPMoniker Id="fc9b072e-3134-40dd-a44a-19369144d270" />
+                      </c>
+                    </childConnections>
+                  </showForm>
+                </stateHasShowForms>
+              </showForms>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="76201176-26b1-4537-973f-f16421b72f9d">
+            <state Id="1d8096d6-0d8e-410b-8047-2a0667165103" name="State2">
+              <iP>
+                <classWithPortsHasIP Id="a4c39b16-2128-4b69-b0a0-42431ce67248">
+                  <iP Id="0d75ca49-94a7-4e64-b0df-8257ae986910" name="SIP2">
+                    <childConnections>
+                      <c Id="17c5d2ec-494f-4a1c-a5c8-340206f2105a">
+                        <showFormMoniker Id="476ab037-bed9-4645-95a7-f1b003da4eca" />
+                      </c>
+                    </childConnections>
+                  </iP>
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="632c0feb-f3a2-4e8a-800c-94cddd6d0202">
+                  <oP Id="76a2a822-8850-4fb1-97c7-319d77fbe063">
+                    <childConnections>
+                      <c Id="d8053ad2-e15f-44ef-9b43-1e9196376d17">
+                        <iPMoniker Id="15e6c020-2918-4463-a86e-a9bdbad72292" />
+                      </c>
+                    </childConnections>
+                  </oP>
+                </classWithPortsHasOP>
+              </oP>
+              <showForms>
+                <stateHasShowForms Id="269eb473-62aa-4fd2-b2c1-f9538ec5b1d1">
+                  <showForm Id="476ab037-bed9-4645-95a7-f1b003da4eca" name="Form2">
+                    <childConnections>
+                      <c Id="9aa3b51b-e966-4eef-90dd-0e356cc2b408">
+                        <oPMoniker Id="76a2a822-8850-4fb1-97c7-319d77fbe063" />
+                      </c>
+                    </childConnections>
+                  </showForm>
+                </stateHasShowForms>
+              </showForms>
+            </state>
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+  </controllers>
+</componentModel>

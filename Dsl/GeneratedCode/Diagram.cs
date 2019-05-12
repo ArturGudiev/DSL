@@ -922,14 +922,14 @@ namespace Company.MobileDSL
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Company.MobileDSL.ClassWithPorts GetParentForIP( global::Company.MobileDSL.P root )
+			public static global::Company.MobileDSL.ClassWithPorts GetParentForIP( global::Company.MobileDSL.IP root )
 			{
 				// Segments 0 and 1
 				global::Company.MobileDSL.ClassWithPorts result = root.ClassWithPorts;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Company.MobileDSL.ClassWithPorts GetParentForOP( global::Company.MobileDSL.P root )
+			public static global::Company.MobileDSL.ClassWithPorts GetParentForOP( global::Company.MobileDSL.OP root )
 			{
 				// Segments 0 and 1
 				global::Company.MobileDSL.ClassWithPorts result = root.ClassWithPorts;

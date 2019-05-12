@@ -1,6 +1,6 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
 <#@ output extension=".cs" #>
-<#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../QC/controller/e1.mdsl'"  #>
+<#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../train.mdsl'"  #>
 //Generated material. Generating code in C#.
 
 <# foreach (Controller controller in this.ComponentModel.Controllers) { #>
@@ -12,11 +12,17 @@
             <#= state.Name #>,
       <#}#>
     }
-    private <#=controller.Name#>State controllerState ; //get first state
+    private <#=controller.Name#>State controllerState =  <#=controller.Name#>State.<#getMainState(controller);#>; 
+
+	
 
 <#}#>
 
 }
 
-
+<#+  //=======================================================  
+private void getMainState(Controller controller) 
+	{
+	IP ip = controller.IP.ChildConnections.ToArray()[0] as IP ;
+	#><#= ip.ClassWithPorts.Name#><#+}#>
 

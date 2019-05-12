@@ -1,55 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0694217e-bc4e-49cf-bdf9-19eba2bc63cc" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ef38dcda-5457-4fd4-a327-aae6699a85ec" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
   <controllers>
-    <componentModelHasControllers Id="1e46121a-81e3-47a9-97e2-fc8054e85ed1">
-      <controller Id="10d9e1c8-d8d3-4b35-ae10-36931e6b92b2" name="Controller1" isFirst="false">
-        <ps>
-          <classWithPortsHasPs Id="3a231e83-09e5-49e5-bd0f-350d65f02359">
-            <iP Id="88853e71-33ae-4aa0-8cf8-f724ec2a77c6">
-              <parentConnections>
-                <c Id="b685f0f3-29da-40d3-9b13-1ed18679c123">
-                  <iPMoniker Id="dbb2ce76-6eec-48d3-8193-840352b7f4c0" />
+    <componentModelHasControllers Id="e9ae2aad-337f-4d83-bda4-9fcc68d8881a">
+      <controller Id="e1ad57d7-6246-4ab5-9676-fe04ee09f5a3" name="Controller1" isFirst="false">
+        <iP>
+          <classWithPortsHasIP Id="7ee9f372-66d0-4b4c-ab0a-b84eb75ecec8">
+            <iP Id="89b3d295-2883-438c-82e3-1d79ff9180c9" name="Controller1IP" />
+          </classWithPortsHasIP>
+        </iP>
+        <oP>
+          <classWithPortsHasOP Id="c10e2ee5-c4fa-49f9-8a77-8637dc6ce2ab">
+            <oP Id="5a5ad9ec-c6c3-46bf-b159-5e9bb6da7fca">
+              <childConnections>
+                <c Id="808ee290-7b25-4ac2-aa60-8e2408fcf10e">
+                  <iPMoniker Id="105c69cf-da3b-474a-944a-a989fedb6ec0" />
                 </c>
-              </parentConnections>
-            </iP>
-          </classWithPortsHasPs>
-          <classWithPortsHasPs Id="04b15863-dd67-448b-ab42-f131cfefef90">
-            <oP Id="6541eedd-4027-467f-8760-e61d2db51d40" />
-          </classWithPortsHasPs>
-        </ps>
+              </childConnections>
+            </oP>
+          </classWithPortsHasOP>
+        </oP>
         <states>
-          <controllerHasStates Id="d63ce2f0-bfdb-4a2a-b685-428e6fab9b34">
-            <state Id="e985a042-ece8-47af-ac10-461a4b32d53c" name="State1">
-              <ps>
-                <classWithPortsHasPs Id="804faaa1-f947-497d-9700-5c8d1354b629">
-                  <iP Id="dbb2ce76-6eec-48d3-8193-840352b7f4c0" />
-                </classWithPortsHasPs>
-                <classWithPortsHasPs Id="5cbbd306-d862-4eb7-bbdc-75393d6f917d">
-                  <oP Id="043b7ba9-ef13-489e-ad53-c5f6066f2040">
-                    <parentConnections>
-                      <c Id="e7b3d4c2-7694-48a8-87e0-4ec6d34733dc">
-                        <iPMoniker Id="a26636ca-a844-41a0-a209-2481c3f81138" />
+          <controllerHasStates Id="abbd83ba-59af-4866-b0b2-f2272ee79694">
+            <state Id="b8b117e4-8d7d-41ad-baae-5a1bb0d9c11f" name="State1">
+              <iP>
+                <classWithPortsHasIP Id="8dd0964d-76f0-440f-ad30-2216f42e9235">
+                  <iP Id="105c69cf-da3b-474a-944a-a989fedb6ec0">
+                    <childConnections>
+                      <c Id="725ed406-3b6a-4ccc-99e6-e442a36735ba">
+                        <showFormMoniker Id="e42f0ac4-c3d0-4d45-aebf-05c56dc1ce88" />
                       </c>
-                    </parentConnections>
+                    </childConnections>
+                  </iP>
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="a6a3e195-620c-4498-baa0-71d0e4eeb22c">
+                  <oP Id="e159e81e-21e5-4c86-9c64-85816598c2e4">
+                    <childConnections>
+                      <c Id="a008d374-9006-454f-9ea0-9285365c0ed5">
+                        <oPMoniker Id="db8469d2-7911-47a6-bbfb-718f89509691" />
+                      </c>
+                    </childConnections>
                   </oP>
-                </classWithPortsHasPs>
-              </ps>
+                </classWithPortsHasOP>
+              </oP>
               <showForms>
-                <stateHasShowForms Id="8dbb37f9-b877-4d72-bf69-f8b40b11b419">
-                  <showForm Id="154d169a-ba76-4814-b928-43cc53d6be7b" name="Form1">
-                    <parentConnections>
-                      <c Id="d31e84e4-451a-488c-a339-938020a4afce" nextState="State2">
-                        <oPMoniker Id="043b7ba9-ef13-489e-ad53-c5f6066f2040" />
+                <stateHasShowForms Id="42ef0bee-d54d-4765-99a6-f792f08223ac">
+                  <showForm Id="e42f0ac4-c3d0-4d45-aebf-05c56dc1ce88" name="Form1">
+                    <childConnections>
+                      <c Id="b13e720d-9259-463e-8288-da90c4752b53">
+                        <oPMoniker Id="e159e81e-21e5-4c86-9c64-85816598c2e4" />
                       </c>
-                    </parentConnections>
+                    </childConnections>
                     <events>
-                      <showFormHasEvents Id="828b5cd0-6f5c-405b-8ec0-aba079608ec9">
-                        <event Id="5898e865-7a4e-4b24-95ab-86f3d327f8d6" name="Button1Clicked" primitiveName="Button1" />
+                      <showFormHasEvents Id="99a8f8e2-94b2-408d-a9a4-3e0a49b83dde">
+                        <event Id="830b51fa-03cc-4172-be6c-5579225c1f19" name="Button1Clicked" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
-                      <showFormHasPrimitives Id="987cc864-345d-4f6d-85e1-e68f571312cd">
-                        <button Id="4c56840e-a35d-4526-be9e-837f3aa1860d" name="Button1" />
+                      <showFormHasPrimitives Id="253c9ca2-0293-4b96-b842-015f693fab32">
+                        <button Id="6909b660-910d-4903-839c-3f9d9897ed6d" name="Button1" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>
@@ -57,44 +67,46 @@
               </showForms>
             </state>
           </controllerHasStates>
-          <controllerHasStates Id="7e380024-e004-4cee-ae1e-a6debfe1c780">
-            <state Id="722a21d1-a6da-4116-aaf4-1a8073ea3695" name="State2">
-              <ps>
-                <classWithPortsHasPs Id="f8ef031e-7115-48c5-a156-ee23ffbf377c">
-                  <iP Id="a26636ca-a844-41a0-a209-2481c3f81138">
-                    <parentConnections>
-                      <c Id="baffeca0-eb71-417c-b741-26b51836616d">
-                        <showFormMoniker Id="4aeb8f5c-4d2d-417a-8adb-eb1521c299ec" />
+          <controllerHasStates Id="4c0f3235-5dca-4d29-9e87-f16b1a5f99f4">
+            <state Id="bd701e70-f98a-4408-9d6c-e897e5ceba62" name="State2">
+              <iP>
+                <classWithPortsHasIP Id="9741c8ac-b432-41a0-bb40-6a63322cf51c">
+                  <iP Id="886961d5-cc45-4351-b16c-0a63e73b7921">
+                    <childConnections>
+                      <c Id="a4931dca-8d9d-41be-9c03-064b153988d7">
+                        <iPMoniker Id="105c69cf-da3b-474a-944a-a989fedb6ec0" />
                       </c>
-                    </parentConnections>
+                    </childConnections>
                   </iP>
-                </classWithPortsHasPs>
-                <classWithPortsHasPs Id="9a7eaeb2-4690-4d66-a049-cf2195e6a722">
-                  <oP Id="7958477b-2641-41ae-985f-7b90ff173c5a">
-                    <parentConnections>
-                      <c Id="7cbaafb4-7ed7-4369-8204-4f4467859e3e">
-                        <iPMoniker Id="dbb2ce76-6eec-48d3-8193-840352b7f4c0" />
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="eac37f72-1f7a-43c5-a39e-a649051eeff7">
+                  <oP Id="db8469d2-7911-47a6-bbfb-718f89509691">
+                    <childConnections>
+                      <c Id="649e83fd-6a0a-441a-94f5-1b97475a0f8f">
+                        <showFormMoniker Id="f1cbb109-f744-4b11-b020-30f6d7d511ba" />
                       </c>
-                    </parentConnections>
+                    </childConnections>
                   </oP>
-                </classWithPortsHasPs>
-              </ps>
+                </classWithPortsHasOP>
+              </oP>
               <showForms>
-                <stateHasShowForms Id="367f9a6d-8e19-4ac3-9b94-b53b9f868567">
-                  <showForm Id="4aeb8f5c-4d2d-417a-8adb-eb1521c299ec" name="Form2">
-                    <parentConnections>
-                      <c Id="ac4a3f08-e2c5-427c-a832-35f187650f6e" nextState="State1">
-                        <oPMoniker Id="7958477b-2641-41ae-985f-7b90ff173c5a" />
+                <stateHasShowForms Id="337e6b62-1d68-49fd-a9bb-fb6f990fbd34">
+                  <showForm Id="f1cbb109-f744-4b11-b020-30f6d7d511ba" name="Form2">
+                    <childConnections>
+                      <c Id="4442c88d-29eb-48ba-9a5f-0fda88dd7161">
+                        <iPMoniker Id="886961d5-cc45-4351-b16c-0a63e73b7921" />
                       </c>
-                    </parentConnections>
+                    </childConnections>
                     <events>
-                      <showFormHasEvents Id="91d76234-d009-477f-b482-68acbeed1a24">
-                        <event Id="c785f690-53c2-4644-a81f-e4364064aaec" name="Button2Clicked" primitiveName="Button2" />
+                      <showFormHasEvents Id="76ab5029-ef08-47bd-a73f-26d084ece0a2">
+                        <event Id="9ce7f66e-6ef0-4870-83ae-28c1de2d155e" name="Button2Clicked" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
-                      <showFormHasPrimitives Id="521362da-d53c-437f-99c0-ea36bf533c0c">
-                        <button Id="b954e698-76ae-491c-a1b3-219532cd603a" name="Button2" />
+                      <showFormHasPrimitives Id="5aab1e79-93aa-43ff-8fdd-7e8444821a5b">
+                        <button Id="01b35f7f-2997-4882-a486-863573b6572d" name="Button2" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>

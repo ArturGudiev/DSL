@@ -130,10 +130,18 @@
         </ElementMergeDirective>
         <ElementMergeDirective>
           <Index>
-            <DomainClassMoniker Name="P" />
+            <DomainClassMoniker Name="IP" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>ClassWithPortsHasPs.Ps</DomainPath>
+            <DomainPath>ClassWithPortsHasIP.IP</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="OP" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ClassWithPortsHasOP.OP</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
@@ -523,23 +531,7 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="ee05d04b-d0f3-4d78-bb40-d28818ad2d77" Description="Description for Company.MobileDSL.ClassWithPortsHasPs" Name="ClassWithPortsHasPs" DisplayName="Class With Ports Has Ps" Namespace="Company.MobileDSL" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="787afdfa-bf91-4982-a08d-8418fdc54d94" Description="Description for Company.MobileDSL.ClassWithPortsHasPs.ClassWithPorts" Name="ClassWithPorts" DisplayName="Class With Ports" PropertyName="Ps" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Ps">
-          <RolePlayer>
-            <DomainClassMoniker Name="ClassWithPorts" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="ab791f93-7b08-46a5-94ca-0ec129b5f6cb" Description="Description for Company.MobileDSL.ClassWithPortsHasPs.P" Name="P" DisplayName="P" PropertyName="ClassWithPorts" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Class With Ports">
-          <RolePlayer>
-            <DomainClassMoniker Name="P" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="3a5f4dbb-c6dc-4517-84cc-899be56dd27b" Description="Description for Company.MobileDSL.C" Name="C" DisplayName="C" Namespace="Company.MobileDSL">
+    <DomainRelationship Id="3a5f4dbb-c6dc-4517-84cc-899be56dd27b" Description="Description for Company.MobileDSL.C" Name="C" DisplayName="C" Namespace="Company.MobileDSL" AllowsDuplicates="true">
       <Properties>
         <DomainProperty Id="05c26bec-c1ce-4c13-90f9-92af6478e394" Description="Description for Company.MobileDSL.C.From Event" Name="FromEvent" DisplayName="From Event">
           <Type>
@@ -558,16 +550,48 @@
         </DomainProperty>
       </Properties>
       <Source>
-        <DomainRole Id="24ae03ea-39bb-4ed1-b150-46e8a9413ed6" Description="Description for Company.MobileDSL.C.SourceConnectable" Name="SourceConnectable" DisplayName="Source Connectable" PropertyName="ParentConnections" PropertyDisplayName="Parent Connections">
+        <DomainRole Id="24ae03ea-39bb-4ed1-b150-46e8a9413ed6" Description="Description for Company.MobileDSL.C.SourceConnectable" Name="SourceConnectable" DisplayName="Source Connectable" PropertyName="ChildConnections" PropertyDisplayName="Child Connections">
           <RolePlayer>
             <DomainClassMoniker Name="Connectable" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="70c6bff3-b71b-4c3a-8ce7-bc4e109da23b" Description="Description for Company.MobileDSL.C.TargetConnectable" Name="TargetConnectable" DisplayName="Target Connectable" PropertyName="ChildConnections" PropertyDisplayName="Child Connections">
+        <DomainRole Id="70c6bff3-b71b-4c3a-8ce7-bc4e109da23b" Description="Description for Company.MobileDSL.C.TargetConnectable" Name="TargetConnectable" DisplayName="Target Connectable" PropertyName="ParentConnections" PropertyDisplayName="Parent Connections">
           <RolePlayer>
             <DomainClassMoniker Name="Connectable" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="3626f7b0-8334-44a7-80b2-94cde3d8bc8a" Description="Description for Company.MobileDSL.ClassWithPortsHasIP" Name="ClassWithPortsHasIP" DisplayName="Class With Ports Has IP" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="f96088ba-ff45-4e1c-8055-7419430f4c66" Description="Description for Company.MobileDSL.ClassWithPortsHasIP.ClassWithPorts" Name="ClassWithPorts" DisplayName="Class With Ports" PropertyName="IP" Multiplicity="ZeroOne" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="IP">
+          <RolePlayer>
+            <DomainClassMoniker Name="ClassWithPorts" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="4702e8ba-e740-4b54-8e82-a09023bd6111" Description="Description for Company.MobileDSL.ClassWithPortsHasIP.IP" Name="IP" DisplayName="IP" PropertyName="ClassWithPorts" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Class With Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="IP" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="72965b1b-c4ff-4c97-aca3-85eb974d3128" Description="Description for Company.MobileDSL.ClassWithPortsHasOP" Name="ClassWithPortsHasOP" DisplayName="Class With Ports Has OP" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="d7e90e04-0c45-480d-ac02-3adc604eafc0" Description="Description for Company.MobileDSL.ClassWithPortsHasOP.ClassWithPorts" Name="ClassWithPorts" DisplayName="Class With Ports" PropertyName="OP" Multiplicity="ZeroOne" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="OP">
+          <RolePlayer>
+            <DomainClassMoniker Name="ClassWithPorts" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="d22da28f-d0ba-416e-afa6-fda35273b3e6" Description="Description for Company.MobileDSL.ClassWithPortsHasOP.OP" Name="OP" DisplayName="OP" PropertyName="ClassWithPorts" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Class With Ports">
+          <RolePlayer>
+            <DomainClassMoniker Name="OP" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -589,6 +613,8 @@
     <ExternalType Name="Guid" Namespace="System" />
     <ExternalType Name="Boolean" Namespace="System" />
     <ExternalType Name="Char" Namespace="System" />
+    <ExternalType Name="Color" Namespace="System.Drawing" />
+    <ExternalType Name="LinearGradientMode" Namespace="System.Drawing.Drawing2D" />
   </Types>
   <Shapes>
     <Port Id="1b3b54f4-4883-46d6-8d60-9f4690cac957" Description="Description for Company.MobileDSL.InPortShape" Name="InPortShape" DisplayName="In Port Shape" Namespace="Company.MobileDSL" FixedTooltipText="In Port Shape" InitialWidth="0.2" InitialHeight="0.2" OutlineThickness="0.01" Geometry="Rectangle">
@@ -616,7 +642,24 @@
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <GeometryShape Id="7cc0d58f-c7f1-44ae-89b0-722bf7b7abd6" Description="Description for Company.MobileDSL.StateShape" Name="StateShape" DisplayName="State Shape" Namespace="Company.MobileDSL" FixedTooltipText="State Shape" InitialHeight="1" Geometry="Rectangle">
+    <GeometryShape Id="7cc0d58f-c7f1-44ae-89b0-722bf7b7abd6" Description="Description for Company.MobileDSL.StateShape" Name="StateShape" DisplayName="State Shape" Namespace="Company.MobileDSL" FixedTooltipText="State Shape" ExposesTextColor="true" InitialHeight="1" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="Rectangle">
+      <Properties>
+        <DomainProperty Id="93dc990d-1722-4778-be3c-e8234744631e" Description="Description for Company.MobileDSL.StateShape.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
+          <Type>
+            <ExternalTypeMoniker Name="/System.Drawing/Color" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="30261d0b-da44-493e-9904-3dc9b8f2fdb7" Description="Description for Company.MobileDSL.StateShape.Text Color" Name="TextColor" DisplayName="Text Color" Kind="CustomStorage">
+          <Type>
+            <ExternalTypeMoniker Name="/System.Drawing/Color" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="a03c1f19-bc62-4b0f-bb14-78bcc26891e6" Description="Description for Company.MobileDSL.StateShape.Fill Gradient Mode" Name="FillGradientMode" DisplayName="Fill Gradient Mode" Kind="CustomStorage">
+          <Type>
+            <ExternalTypeMoniker Name="/System.Drawing.Drawing2D/LinearGradientMode" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
       </ShapeHasDecorators>
@@ -819,6 +862,17 @@
       </XmlClassData>
       <XmlClassData TypeName="StateShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateShapeMoniker" ElementName="stateShape" MonikerTypeName="StateShapeMoniker">
         <GeometryShapeMoniker Name="StateShape" />
+        <ElementData>
+          <XmlPropertyData XmlName="fillColor">
+            <DomainPropertyMoniker Name="StateShape/FillColor" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="textColor">
+            <DomainPropertyMoniker Name="StateShape/TextColor" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="fillGradientMode">
+            <DomainPropertyMoniker Name="StateShape/FillGradientMode" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ClassWithPorts" MonikerAttributeName="" SerializeId="true" MonikerElementName="classWithPortsMoniker" ElementName="classWithPorts" MonikerTypeName="ClassWithPortsMoniker">
         <DomainClassMoniker Name="ClassWithPorts" />
@@ -826,8 +880,11 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="ports">
             <DomainRelationshipMoniker Name="ClassWithPortsHasPorts" />
           </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="ps">
-            <DomainRelationshipMoniker Name="ClassWithPortsHasPs" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="iP">
+            <DomainRelationshipMoniker Name="ClassWithPortsHasIP" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="oP">
+            <DomainRelationshipMoniker Name="ClassWithPortsHasOP" />
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
@@ -905,7 +962,7 @@
       <XmlClassData TypeName="Connectable" MonikerAttributeName="" SerializeId="true" MonikerElementName="connectableMoniker" ElementName="connectable" MonikerTypeName="ConnectableMoniker">
         <DomainClassMoniker Name="Connectable" />
         <ElementData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="parentConnections">
+          <XmlRelationshipData UseFullForm="true" RoleElementName="childConnections">
             <DomainRelationshipMoniker Name="C" />
           </XmlRelationshipData>
         </ElementData>
@@ -923,9 +980,6 @@
       </XmlClassData>
       <XmlClassData TypeName="OP" MonikerAttributeName="" SerializeId="true" MonikerElementName="oPMoniker" ElementName="oP" MonikerTypeName="OPMoniker">
         <DomainClassMoniker Name="OP" />
-      </XmlClassData>
-      <XmlClassData TypeName="ClassWithPortsHasPs" MonikerAttributeName="" SerializeId="true" MonikerElementName="classWithPortsHasPsMoniker" ElementName="classWithPortsHasPs" MonikerTypeName="ClassWithPortsHasPsMoniker">
-        <DomainRelationshipMoniker Name="ClassWithPortsHasPs" />
       </XmlClassData>
       <XmlClassData TypeName="IPShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="iPShapeMoniker" ElementName="iPShape" MonikerTypeName="IPShapeMoniker">
         <PortMoniker Name="IPShape" />
@@ -992,6 +1046,12 @@
             <DomainPropertyMoniker Name="Input/Text" />
           </XmlPropertyData>
         </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ClassWithPortsHasIP" MonikerAttributeName="" SerializeId="true" MonikerElementName="classWithPortsHasIPMoniker" ElementName="classWithPortsHasIP" MonikerTypeName="ClassWithPortsHasIPMoniker">
+        <DomainRelationshipMoniker Name="ClassWithPortsHasIP" />
+      </XmlClassData>
+      <XmlClassData TypeName="ClassWithPortsHasOP" MonikerAttributeName="" SerializeId="true" MonikerElementName="classWithPortsHasOPMoniker" ElementName="classWithPortsHasOP" MonikerTypeName="ClassWithPortsHasOPMoniker">
+        <DomainRelationshipMoniker Name="ClassWithPortsHasOP" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -1231,14 +1291,14 @@
       <ShapeMap>
         <DomainClassMoniker Name="IP" />
         <ParentElementPath>
-          <DomainPath>ClassWithPortsHasPs.ClassWithPorts/!ClassWithPorts</DomainPath>
+          <DomainPath>ClassWithPortsHasIP.ClassWithPorts/!ClassWithPorts</DomainPath>
         </ParentElementPath>
         <PortMoniker Name="IPShape" />
       </ShapeMap>
       <ShapeMap>
         <DomainClassMoniker Name="OP" />
         <ParentElementPath>
-          <DomainPath>ClassWithPortsHasPs.ClassWithPorts/!ClassWithPorts</DomainPath>
+          <DomainPath>ClassWithPortsHasOP.ClassWithPorts/!ClassWithPorts</DomainPath>
         </ParentElementPath>
         <PortMoniker Name="OPShape" />
       </ShapeMap>
@@ -1326,9 +1386,6 @@
       <XmlSerializationBehaviorMoniker Name="ComponentsSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="MobileDSL">
-      <ElementTool Name="Controller" ToolboxIcon="Resources\ComponentTool.bmp" Caption="Controller" Tooltip="Create a Component" HelpKeyword="CreateComponentF1Keyword">
-        <DomainClassMoniker Name="Controller" />
-      </ElementTool>
       <ElementTool Name="InPort" ToolboxIcon="Resources\InPortTool.bmp" Caption="Input Port" Tooltip="Add an Input Port to a Component." HelpKeyword="CreateInPortF1Keyword">
         <DomainClassMoniker Name="InPort" />
       </ElementTool>
@@ -1350,9 +1407,6 @@
       <ConnectionTool Name="StateConnection" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="StateConnection" Tooltip="State Connection" HelpKeyword="StateConnection">
         <ConnectionBuilderMoniker Name="MobileDSL/State_old2ReferencesPreviousStatesBuilder" />
       </ConnectionTool>
-      <ElementTool Name="State" ToolboxIcon="Resources\ComponentTool.bmp" Caption="State" Tooltip="State" HelpKeyword="State">
-        <DomainClassMoniker Name="State" />
-      </ElementTool>
       <ConnectionTool Name="InPortConnection" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="InPortConnection" Tooltip="In Port Connection" HelpKeyword="InPortConnection">
         <ConnectionBuilderMoniker Name="MobileDSL/InPortReferencesShowFormsBuilder" />
       </ConnectionTool>
@@ -1368,6 +1422,12 @@
       <ConnectionTool Name="C" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="C" Tooltip="C" HelpKeyword="C">
         <ConnectionBuilderMoniker Name="MobileDSL/CBuilder" />
       </ConnectionTool>
+      <ElementTool Name="Controller_" ToolboxIcon="Resources\example.bmp" Caption="Controller_" Tooltip="Controller_" HelpKeyword="Controller_">
+        <DomainClassMoniker Name="Controller" />
+      </ElementTool>
+      <ElementTool Name="State_" ToolboxIcon="Resources\example.bmp" Caption="State_" Tooltip="State_" HelpKeyword="State_">
+        <DomainClassMoniker Name="State" />
+      </ElementTool>
     </ToolboxTab>
     <ToolboxTab TabText="UI Forms">
       <ElementTool Name="Event" ToolboxIcon="Resources\flash2.bmp" Caption="Event" Tooltip="Event" HelpKeyword="Event">

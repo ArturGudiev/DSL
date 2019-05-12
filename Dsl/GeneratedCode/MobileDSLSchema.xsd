@@ -459,16 +459,31 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: ClassWithPortsHasPs -->
-          <xsd:element name="ps" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ClassWithPortsHasIP -->
+          <xsd:element name="iP" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of ClassWithPortsHasPs</xsd:documentation>
+              <xsd:documentation>Instance of ClassWithPortsHasIP</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="classWithPortsHasPs" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="classWithPortsHasIP" minOccurs="0" maxOccurs="1">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of ClassWithPortsHasPs needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of ClassWithPortsHasIP needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: ClassWithPortsHasOP -->
+          <xsd:element name="oP" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instance of ClassWithPortsHasOP</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="classWithPortsHasOP" minOccurs="0" maxOccurs="1">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ClassWithPortsHasOP needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -665,7 +680,7 @@
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
           <!-- Relationship: C -->
-          <xsd:element name="parentConnections" minOccurs="0" maxOccurs="1">
+          <xsd:element name="childConnections" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>Instances of C</xsd:documentation>
             </xsd:annotation>
@@ -1497,46 +1512,6 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ClassWithPortsHasPs -->
-  <xsd:element name="classWithPortsHasPs" type="ClassWithPortsHasPs" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ClassWithPortsHasPs">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end P -->
-          <xsd:element ref="p" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ClassWithPortsHasPs Moniker -->
-  <xsd:element name="classWithPortsHasPsMoniker" type="ClassWithPortsHasPsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ClassWithPortsHasPsMoniker">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for ClassWithPortsHasPs instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
   <!-- C -->
   <xsd:element name="c" type="C" substitutionGroup="core:modelElement" />
   <xsd:complexType name="C">
@@ -1571,6 +1546,86 @@
   <xsd:complexType name="CMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for C instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassWithPortsHasIP -->
+  <xsd:element name="classWithPortsHasIP" type="ClassWithPortsHasIP" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ClassWithPortsHasIP">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end IP -->
+          <xsd:element ref="iP" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassWithPortsHasIP Moniker -->
+  <xsd:element name="classWithPortsHasIPMoniker" type="ClassWithPortsHasIPMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ClassWithPortsHasIPMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ClassWithPortsHasIP instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassWithPortsHasOP -->
+  <xsd:element name="classWithPortsHasOP" type="ClassWithPortsHasOP" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ClassWithPortsHasOP">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end OP -->
+          <xsd:element ref="oP" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassWithPortsHasOP Moniker -->
+  <xsd:element name="classWithPortsHasOPMoniker" type="ClassWithPortsHasOPMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ClassWithPortsHasOPMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ClassWithPortsHasOP instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

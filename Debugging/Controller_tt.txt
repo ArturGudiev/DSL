@@ -1,0 +1,74 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".cs" #>
+<#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../QC/controller/e1.mdsl'"  #>
+//Generated material. Generating code in C#.
+using System;
+using Ubiq.Graphics;
+using System.Collections.Generic;
+namespace Application0{
+  public abstract class Controller
+    {
+        protected Screen Screen;
+        protected Application0 app;
+
+        public Controller(Application0 app)
+        {
+            this.app = app;
+            this.Screen = app.Screen;
+        }
+        public abstract void action();
+    }
+
+<# foreach (Controller controller in this.ComponentModel.Controllers) { #>
+
+	public class <#= controller.Name #>  : Controller{ 
+
+
+	 public static <#= controller.Name #> getInstance(Application app)
+        {
+            if (instance == null)
+                instance = new <#= controller.Name #>(app);
+            return instance;
+        }
+
+
+    enum <#= controller.Name #>State { 
+      <# foreach (State state in controller.States) { #>
+            <#= state.Name #>, // .<#getNextStates(state);#>
+
+      <#}#>
+    }
+    private <#=controller.Name#>State controllerState = <#=controller.Name#>State.<#getMainState(controller);#>;
+
+
+      <# foreach (Port port in controller.Ports){  
+      	OutPort source = port as OutPort;
+		    if (source != null) {#> 
+         public void call<#=port.Name#>(){
+         <#foreach (Connection link in Connection.GetLinksToTargets(source)){#>
+          <#= link.Target.Controller.Name #>.call<#= link.Target.Name #>();
+			   <#}#>
+        }
+        <#} else {#>  
+        public void call<#=port.Name#>(){
+          this.app.currentController = <#=controller.Name#>.getInstance(this.app);
+        }
+        <#
+          }
+      }
+      #>
+}
+<#}#>
+}
+
+<#+  //=======================================================  
+private void getMainState(Controller controller)  
+{foreach (State state in controller.States)
+        {if(state.isFirstState){#><#=state.Name#><#+}}}#>
+<#+  //=======================================================  
+private void getNextStates(State state)  {
+  foreach (State nextState in state.NextStates) { #>
+      <#=nextState.Name#><#+
+  } 
+}
+#>

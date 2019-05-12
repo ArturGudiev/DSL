@@ -1,66 +1,77 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
 <#@ output extension=".cs" #>
-<#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../Sample.mdsl'"  #>
+<#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../train.mdsl'"  #>
 //Generated material. Generating code in C#.
-using System;
-using Ubiq.Graphics;
-using System.Collections.Generic;
-namespace Application0{
-  public abstract class Controller
-    {
-        protected Screen Screen;
-        protected Application0 app;
-
-        public Controller(Application0 app)
-        {
-            this.app = app;
-            this.Screen = app.Screen;
-        }
-        public abstract void action();
-    }
 
 <# foreach (Controller controller in this.ComponentModel.Controllers) { #>
 
 	public class <#= controller.Name #>  : Controller{ 
 
-
-    enum <#= controller.Name #>State { 
+	enum <#= controller.Name #>State { 
       <# foreach (State state in controller.States) { #>
-            <#= state.Name #>, // .<#getNextStates(state);#>
-
+            <#= state.Name #>,
       <#}#>
     }
-    private <#=controller.Name#>State controllerState = <#=controller.Name#>State.<#getMainState(controller);#>;
+  private <#=controller.Name#>State controllerState =  <#=controller.Name#>State.<#getMainState(controller);#>;
 
+ 	public override void action(){          
+  	<#makeSwitchStatement(controller);#>
+	}
 
-      <# foreach (Port port in controller.Ports){  
-      	OutPort source = port as OutPort;
-		    if (source != null) {#> 
-         public void call<#=port.Name#>(){
-         <#foreach (Connection link in Connection.GetLinksToTargets(source)){#>
-          <#= link.Target.Controller.Name #>.call<#= link.Target.Name #>();
-			   <#}#>
-        }
-        <#} else {#>  
-        public void call<#=port.Name#>(){
-          this.app.currentController = <#=controller.Name#>.getInstance(this.app);
-        }
-        <#
-          }
-      }
-      #>
-}
-<#}#>
+	<# foreach (State state in controller.States) { #> 
+//--------------------------------------------------
+	  <# foreach (ShowForm form in state.ShowForms) { #> 
+        private void show<#= form.Name #>(){}
+      <#}#>
+      <#compileRunState(state);#>
+	
+    <#}#>
+	<#}#>
 }
 
+
 <#+  //=======================================================  
-private void getMainState(Controller controller)  
-{foreach (State state in controller.States)
-        {if(state.isFirstState){#><#=state.Name#><#+}}}#>
+private void getMainState(Controller controller){
+	IP ip = controller.IP.ChildConnections.ToArray()[0] as IP ;
+	#><#= ip.ClassWithPorts.Name#><#+}#>
+
 <#+  //=======================================================  
-private void getNextStates(State state)  {
-  foreach (State nextState in state.NextStates) { #>
-      <#=nextState.Name#><#+
-  } 
+private void makeSwitchStatement(Controller controller)  
+{#>
+switch(controllerState){
+<#+  
+	foreach (State state in controller.States)
+        {#> 
+case <#=controller.Name#>State.<#=state.Name#>: 
+run<#=state.Name#>();
+break;
+<#+}#>
+}
+<#+}#>
+
+<#+  //=======================================================  
+private void compileRunState(State state) {
+#> 
+    private void run<#= state.Name#>(){
+	<#+
+	Connectable firstElement = getChild(state.IP, 0); 
+	if( isShowForm(firstElement)) {
+		ShowForm showForm = state.IP.ChildConnections.ToArray()[0] as ShowForm;
+	#>
+		 show<#= showForm.Name#>();
+	<#+}else{#>
+		bbb
+	<#+}
+#>
+		}
+<#+}#>
+
+<#+
+private bool isShowForm(Connectable connectable) {
+	return connectable.GetType().ToString().Contains("ShowForm");
+}
+
+private Connectable getChild(Connectable connectable, int index){
+	return connectable.ChildConnections.ToArray()[index];
 }
 #>
