@@ -25,20 +25,20 @@ break;
 	 
 //--------------------------------------------------
 	   
-        private void showChooseStationForm(){}
+				 private void showChooseStationForm(){}         
              
     private void runStartState(){
-			 showChooseStationForm();
-			}
+	showChooseStationForm();	}
+
 	
      
 //--------------------------------------------------
 	   
-        private void showShowScheduleForm(){}
+				 private void showShowScheduleForm(){}         
              
     private void runShowState(){
-			 showShowScheduleForm();
-			}
+	showShowScheduleForm();	}
+
 	
     	}
 

@@ -21,7 +21,8 @@
 	<# foreach (State state in controller.States) { #> 
 //--------------------------------------------------
 	  <# foreach (ShowForm form in state.ShowForms) { #> 
-        private void show<#= form.Name #>(){}
+				<#compileShowFormFunction(form);#>
+        
       <#}#>
       <#compileRunState(state);#>
 	
@@ -48,29 +49,38 @@ break;
 <#+}#>
 }
 <#+}#>
-
 <#+  //=======================================================  
+private void compileShowFormFunction(ShowForm form) {
+
+	#> private void show<#= form.Name #>(){} <#+
+
+}//$$$ compileShowFormFunction
+//=======================================================  
 private void compileRunState(State state) {
 #> 
     private void run<#= state.Name#>(){
 	<#+
 	Connectable firstElement = getChild(state.IP, 0); 
-	if( isShowForm(firstElement)) {
-		ShowForm showForm = state.IP.ChildConnections.ToArray()[0] as ShowForm;
-	#>
-		 show<#= showForm.Name#>();
-	<#+}else{#>
-		bbb
-	<#+}
-#>
-		}
-<#+}#>
+	
+	generate(firstElement);#>
+	}
 
-<#+
+<#+}//$$$ compileRunState
+
+//============================================================
+private void generate(Connectable el){
+	if(isShowForm(el)){
+		ShowForm showForm = el as ShowForm;
+		#>show<#= showForm.Name#>();<#+
+	}
+}
+
+//============================================================
 private bool isShowForm(Connectable connectable) {
 	return connectable.GetType().ToString().Contains("ShowForm");
 }
 
+//============================================================
 private Connectable getChild(Connectable connectable, int index){
 	return connectable.ChildConnections.ToArray()[index];
 }
