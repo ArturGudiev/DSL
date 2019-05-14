@@ -97,6 +97,15 @@ private Connectable getChild(Connectable connectable, int index){
 	return connectable.ChildConnections.ToArray()[index];
 }
 
-
+//=======================================================  
+private void primitiveType(Primitive prim)  
+{  #>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.Button)) {#>Button<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.Label)) {#>TextBlock<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.Input)) {#>StackPanel<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.ComboBox)) {#>DropBox<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.StackPanel)) {#>StackPanel<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.ListBox)) {#>ListBox<#+}#>
+<#+}
 
 #>
