@@ -27,14 +27,7 @@ break;
 	   
 				 private void showChooseStationForm(){
 		
-		    						FromLabel; //Company.MobileDSL.Label
-											ToLabel; //Company.MobileDSL.Label
-											LeftComboBox; //Company.MobileDSL.ComboBox
-											RightComboBox; //Company.MobileDSL.ComboBox
-											LabelPanel; //Company.MobileDSL.StackPanel
-											StackPanel2; //Company.MobileDSL.StackPanel
-											ShowButton; //Company.MobileDSL.Button
-						}         
+		    						FromLabel; //Company.MobileDSL.Label TextBlock											ToLabel; //Company.MobileDSL.Label TextBlock											LeftComboBox; //Company.MobileDSL.ComboBox DropBox											RightComboBox; //Company.MobileDSL.ComboBox DropBox											LabelPanel; //Company.MobileDSL.StackPanel StackPanel											StackPanel2; //Company.MobileDSL.StackPanel StackPanel											ShowButton; //Company.MobileDSL.Button Button						}         
              
     private void runStartState(){
 	showChooseStationForm();	}
@@ -45,10 +38,7 @@ break;
 	   
 				 private void showShowScheduleForm(){
 		
-		    						Title; //Company.MobileDSL.Label
-											ListBox; //Company.MobileDSL.ListBox
-											BackButton; //Company.MobileDSL.Button
-						}         
+		    						Title; //Company.MobileDSL.Label TextBlock											ListBox; //Company.MobileDSL.ListBox ListBox											BackButton; //Company.MobileDSL.Button Button						}         
              
     private void runShowState(){
 	showShowScheduleForm();	}

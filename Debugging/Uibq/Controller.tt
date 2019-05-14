@@ -64,7 +64,7 @@ private void compileShowFormFunction(ShowForm form) {
 
 //=============== Primitive Generation ===================  
 private void generatePrimitive(Primitive primitive) {#>
-	<#= primitive.Name #>; //<#= primitive.GetType() #>
+	<#= primitive.Name #>; //<#= primitive.GetType() #> <#+ primitiveType(primitive);#>
 <#+
 }
 //=======================================================  
