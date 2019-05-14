@@ -1,0 +1,101 @@
+[33mcommit 85537e8f23202e794c56a8b32b709fef651827ea[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Mon May 13 10:03:26 2019 +0300
+
+    Add function generate(Connectable)
+
+[33mcommit f5f10100261ee368cd1d1d872e8a9d5c125f09a0[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sun May 12 23:14:26 2019 +0300
+
+    Before adding generate(Element)
+
+[33mcommit dfd5f4c85418d9972a1d793decbdcb0dc9379b13[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Fri May 10 11:31:47 2019 +0300
+
+    Before splitting connection to Ports on InPort and OutPort
+
+[33mcommit d5c600b64f3986f1a7c2acf0399f87893ee79626[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Fri May 10 09:37:31 2019 +0300
+
+    Add primitive classes
+
+[33mcommit 98f0359117e0beb8a2845dfc28c5b1377da544c3[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Fri May 10 09:09:56 2019 +0300
+
+    Add data property to the link connection
+
+[33mcommit 6a8eab327efb99ffb221a1096ae957a1cd761e28[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Fri May 10 02:02:27 2019 +0300
+
+    Finish connectable class
+
+[33mcommit 6f37cb260dda9eeec66063e3689648fb931b713e[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Wed May 8 10:13:52 2019 +0300
+
+    After adding and verifying connection properties
+
+[33mcommit 897ee19ef98b6bd9ba880b9467145f8595ba2b7c[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sun May 5 13:58:20 2019 +0300
+
+    Added button
+
+[33mcommit 97194f426613e75933b42f0886676797f0bbe94a[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sun May 5 13:49:36 2019 +0300
+
+    Do a lot for sample1 without buttons. Only primitives
+
+[33mcommit 256de8cfd8f50392e9360aaa0d5a47b0ee81a675[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sun May 5 12:10:22 2019 +0300
+
+    Joined ShowForm, Event and Primitives components
+
+[33mcommit afeac09a187e7d3dad123e333883d040c4c28bbd[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sun May 5 10:29:23 2019 +0300
+
+    Finally
+
+[33mcommit 395aca29cfa457664939d1a82c3743108d0c755a[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sun May 5 10:01:17 2019 +0300
+
+    Delete StatePort
+
+[33mcommit c8a096c8f23a7e5d36396581cebe1b6c3a6c6682[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sun May 5 09:51:40 2019 +0300
+
+    Delete generalization
+
+[33mcommit e54683aadc3aea7d8c226d928a90aa60058b7861[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sat May 4 20:16:42 2019 +0300
+
+    Rename state_old to state_old2
+
+[33mcommit c5fc7f57dd5a2c724e368b967324fe6ccd85f6f9[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sat May 4 20:07:32 2019 +0300
+
+    Before trying to merge inheritance with ports
+
+[33mcommit 1a71e28d486669d2b653ec70a7487eb62da12a16[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sat Mar 23 13:27:47 2019 +0300
+
+    Add project files.
+
+[33mcommit c8020e1d6921e521f4b7f264de6c7b7c2f67bec2[m
+Author: Gudiev, Artur <Artur.Gudiev@emc.com>
+Date:   Sat Mar 23 13:27:38 2019 +0300
+
+    Add .gitignore and .gitattributes.
