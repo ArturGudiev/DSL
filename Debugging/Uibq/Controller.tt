@@ -35,9 +35,9 @@
 private void getMainState(Controller controller){
 	IP ip = controller.IP.ChildConnections.ToArray()[0] as IP ;
 	#><#= ip.ClassWithPorts.Name#><#+
-}#>
+}
 
-<#+//=======================================================  
+  //=======================================================  
 private void makeSwitchStatement(Controller controller)  {#>
 switch(controllerState){
 <#+  
@@ -48,8 +48,8 @@ run<#=state.Name#>();
 break;
 <#+}#>
 }
-<#+}#>
-<#+//====== ShowForm function generation  ================  
+<#+}
+//====== ShowForm function generation  ================  
 private void compileShowFormFunction(ShowForm form) {
 
 	#> private void show<#= form.Name #>(){
@@ -61,17 +61,14 @@ private void compileShowFormFunction(ShowForm form) {
 	} <#+ // ### private void Show
 
 }//$$$ compileShowFormFunction
-#>
-<#+//=============== Primitive Generation ===================  
-private void generatePrimitive(Primitive primitive) {
-//switch(primitive.GetType())
-	
-#>
+
+//=============== Primitive Generation ===================  
+private void generatePrimitive(Primitive primitive) {#>
 	<#= primitive.Name #>; //<#= primitive.GetType() #>
 <#+
-}#>
+}
 //=======================================================  
-<#+private void compileRunState(State state) {
+private void compileRunState(State state) {
 #> 
     private void run<#= state.Name#>(){
 	<#+
@@ -81,8 +78,8 @@ private void generatePrimitive(Primitive primitive) {
 	}
 
 <#+}//$$$ compileRunState
-#>
-<#+//============================================================
+
+//============================================================
 private void generate(Connectable el){
 	if(isShowForm(el)){
 		ShowForm showForm = el as ShowForm;
@@ -99,5 +96,4 @@ private bool isShowForm(Connectable connectable) {
 private Connectable getChild(Connectable connectable, int index){
 	return connectable.ChildConnections.ToArray()[index];
 }
-
 #>
