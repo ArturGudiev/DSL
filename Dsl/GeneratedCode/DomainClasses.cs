@@ -2805,20 +2805,20 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainClass ComboBox
-	/// Description for Company.MobileDSL.ComboBox
+	/// DomainClass DropBox
+	/// Description for Company.MobileDSL.DropBox
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.ComboBox.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.ComboBox.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.MobileDSL.DropBox.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.DropBox.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("a99f9383-f7ca-41c3-8d17-b9e2c7b69df4")]
-	public partial class ComboBox : Primitive
+	public partial class DropBox : Primitive
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ComboBox domain class Id.
+		/// DropBox domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xa99f9383, 0xf7ca, 0x41c3, 0x8d, 0x17, 0xb9, 0xe2, 0xc7, 0xb6, 0x9d, 0xf4);
 		/// <summary>
@@ -2826,7 +2826,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ComboBox(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public DropBox(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -2836,7 +2836,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ComboBox(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public DropBox(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -2855,10 +2855,10 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// Gets or sets the value of Items domain property.
-		/// Description for Company.MobileDSL.ComboBox.Items
+		/// Description for Company.MobileDSL.DropBox.Items
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ComboBox/Items.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ComboBox/Items.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.DropBox/Items.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.DropBox/Items.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("a2949787-a41c-4dc5-a614-a1119fe866ae")]
 		public global::System.String Items
 		{
@@ -2874,19 +2874,19 @@ namespace Company.MobileDSL
 			}
 		}
 		/// <summary>
-		/// Value handler for the ComboBox.Items domain property.
+		/// Value handler for the DropBox.Items domain property.
 		/// </summary>
-		internal sealed partial class ItemsPropertyHandler : DslModeling::DomainPropertyValueHandler<ComboBox, global::System.String>
+		internal sealed partial class ItemsPropertyHandler : DslModeling::DomainPropertyValueHandler<DropBox, global::System.String>
 		{
 			private ItemsPropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the ComboBox.Items domain property value handler.
+			/// Gets the singleton instance of the DropBox.Items domain property value handler.
 			/// </summary>
 			public static readonly ItemsPropertyHandler Instance = new ItemsPropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the ComboBox.Items domain property.
+			/// Gets the Id of the DropBox.Items domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -2902,7 +2902,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(ComboBox element)
+			public override sealed global::System.String GetValue(DropBox element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				return element.itemsPropertyStorage;
@@ -2913,7 +2913,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(ComboBox element, global::System.String newValue)
+			public override sealed void SetValue(DropBox element, global::System.String newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -3306,6 +3306,93 @@ namespace Company.MobileDSL
 				{
 					ValueChanging(element, oldValue, newValue);
 					element.textPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region InputMode domain property code
+		
+		/// <summary>
+		/// InputMode domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid InputModeDomainPropertyId = new global::System.Guid(0x25cb7972, 0xa76c, 0x46d2, 0x8a, 0xd9, 0xd1, 0x0e, 0xc3, 0x76, 0x63, 0xd8);
+		
+		/// <summary>
+		/// Storage for InputMode
+		/// </summary>
+		private global::System.String inputModePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of InputMode domain property.
+		/// Description for Company.MobileDSL.Input.Input Mode
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.Input/InputMode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.Input/InputMode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("25cb7972-a76c-46d2-8ad9-d10ec37663d8")]
+		public global::System.String InputMode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return inputModePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				InputModePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Input.InputMode domain property.
+		/// </summary>
+		internal sealed partial class InputModePropertyHandler : DslModeling::DomainPropertyValueHandler<Input, global::System.String>
+		{
+			private InputModePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Input.InputMode domain property value handler.
+			/// </summary>
+			public static readonly InputModePropertyHandler Instance = new InputModePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Input.InputMode domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return InputModeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Input element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.inputModePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Input element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.inputModePropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}

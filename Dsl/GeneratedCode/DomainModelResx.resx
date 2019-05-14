@@ -365,21 +365,21 @@
     <value>Text</value>
     <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;Label&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ComboBox.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ComboBox</value>
-    <comment>Description for DomainClass &apos;ComboBox&apos;</comment>
+  <data name="Company.MobileDSL.DropBox.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.DropBox</value>
+    <comment>Description for DomainClass &apos;DropBox&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ComboBox.DisplayName" xml:space="preserve">
-    <value>Combo Box</value>
-    <comment>DisplayName for DomainClass &apos;ComboBox&apos;</comment>
+  <data name="Company.MobileDSL.DropBox.DisplayName" xml:space="preserve">
+    <value>Drop Box</value>
+    <comment>DisplayName for DomainClass &apos;DropBox&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ComboBox/Items.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ComboBox.Items</value>
-    <comment>Description for DomainProperty &apos;Items&apos; on DomainClass &apos;ComboBox&apos;</comment>
+  <data name="Company.MobileDSL.DropBox/Items.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.DropBox.Items</value>
+    <comment>Description for DomainProperty &apos;Items&apos; on DomainClass &apos;DropBox&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ComboBox/Items.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.DropBox/Items.DisplayName" xml:space="preserve">
     <value>Items</value>
-    <comment>DisplayName for DomainProperty &apos;Items&apos; on DomainClass &apos;ComboBox&apos;</comment>
+    <comment>DisplayName for DomainProperty &apos;Items&apos; on DomainClass &apos;DropBox&apos;</comment>
   </data>
   <data name="Company.MobileDSL.ListBox.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.ListBox</value>
@@ -428,6 +428,14 @@
   <data name="Company.MobileDSL.Input/Text.DisplayName" xml:space="preserve">
     <value>Text</value>
     <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;Input&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Input/InputMode.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Input.Input Mode</value>
+    <comment>Description for DomainProperty &apos;InputMode&apos; on DomainClass &apos;Input&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Input/InputMode.DisplayName" xml:space="preserve">
+    <value>Input Mode</value>
+    <comment>DisplayName for DomainProperty &apos;InputMode&apos; on DomainClass &apos;Input&apos;</comment>
   </data>
   <data name="Company.MobileDSL.Connection.Description" xml:space="preserve">
     <value></value>
@@ -1373,12 +1381,12 @@
     <value>Label</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="ComboBoxToolboxItem" xml:space="preserve">
-    <value>ComboBox</value>
+  <data name="DropBoxToolboxItem" xml:space="preserve">
+    <value>DropBox</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="ComboBoxToolboxTooltip" xml:space="preserve">
-    <value>Combo Box</value>
+  <data name="DropBoxToolboxTooltip" xml:space="preserve">
+    <value>Drop Box</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="ListBoxToolboxItem" xml:space="preserve">
@@ -1622,7 +1630,7 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="ComboBoxToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="DropBoxToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

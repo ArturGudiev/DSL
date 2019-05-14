@@ -241,12 +241,12 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
-    <DomainClass Id="a99f9383-f7ca-41c3-8d17-b9e2c7b69df4" Description="Description for Company.MobileDSL.ComboBox" Name="ComboBox" DisplayName="Combo Box" Namespace="Company.MobileDSL">
+    <DomainClass Id="a99f9383-f7ca-41c3-8d17-b9e2c7b69df4" Description="Description for Company.MobileDSL.DropBox" Name="DropBox" DisplayName="Drop Box" Namespace="Company.MobileDSL">
       <BaseClass>
         <DomainClassMoniker Name="Primitive" />
       </BaseClass>
       <Properties>
-        <DomainProperty Id="a2949787-a41c-4dc5-a614-a1119fe866ae" Description="Description for Company.MobileDSL.ComboBox.Items" Name="Items" DisplayName="Items">
+        <DomainProperty Id="a2949787-a41c-4dc5-a614-a1119fe866ae" Description="Description for Company.MobileDSL.DropBox.Items" Name="Items" DisplayName="Items">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -283,6 +283,11 @@
       </BaseClass>
       <Properties>
         <DomainProperty Id="554a36b7-b740-45ad-b41c-dde1a563956e" Description="Description for Company.MobileDSL.Input.Text" Name="Text" DisplayName="Text">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="25cb7972-a76c-46d2-8ad9-d10ec37663d8" Description="Description for Company.MobileDSL.Input.Input Mode" Name="InputMode" DisplayName="Input Mode">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -1015,11 +1020,11 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="ComboBox" MonikerAttributeName="" SerializeId="true" MonikerElementName="comboBoxMoniker" ElementName="comboBox" MonikerTypeName="ComboBoxMoniker">
-        <DomainClassMoniker Name="ComboBox" />
+      <XmlClassData TypeName="DropBox" MonikerAttributeName="" SerializeId="true" MonikerElementName="dropBoxMoniker" ElementName="dropBox" MonikerTypeName="DropBoxMoniker">
+        <DomainClassMoniker Name="DropBox" />
         <ElementData>
           <XmlPropertyData XmlName="items">
-            <DomainPropertyMoniker Name="ComboBox/Items" />
+            <DomainPropertyMoniker Name="DropBox/Items" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -1044,6 +1049,9 @@
         <ElementData>
           <XmlPropertyData XmlName="text">
             <DomainPropertyMoniker Name="Input/Text" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="inputMode">
+            <DomainPropertyMoniker Name="Input/InputMode" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -1445,8 +1453,8 @@
       <ElementTool Name="Label" ToolboxIcon="Resources\example.bmp" Caption="Label" Tooltip="Label" HelpKeyword="Label">
         <DomainClassMoniker Name="Label" />
       </ElementTool>
-      <ElementTool Name="ComboBox" ToolboxIcon="Resources\example.bmp" Caption="ComboBox" Tooltip="Combo Box" HelpKeyword="ComboBox">
-        <DomainClassMoniker Name="ComboBox" />
+      <ElementTool Name="DropBox" ToolboxIcon="Resources\example.bmp" Caption="DropBox" Tooltip="Drop Box" HelpKeyword="DropBox">
+        <DomainClassMoniker Name="DropBox" />
       </ElementTool>
       <ElementTool Name="ListBox" ToolboxIcon="Resources\example.bmp" Caption="ListBox" Tooltip="List Box" HelpKeyword="ListBox">
         <DomainClassMoniker Name="ListBox" />

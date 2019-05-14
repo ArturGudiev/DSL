@@ -87,7 +87,7 @@ namespace Company.MobileDSL
 				typeof(OP),
 				typeof(DLink),
 				typeof(Label),
-				typeof(ComboBox),
+				typeof(DropBox),
 				typeof(ListBox),
 				typeof(StackPanel),
 				typeof(Input),
@@ -152,10 +152,11 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(Button), "Text", Button.TextDomainPropertyId, typeof(Button.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(P), "Name", P.NameDomainPropertyId, typeof(P.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Label), "Text", Label.TextDomainPropertyId, typeof(Label.TextPropertyHandler)),
-				new DomainMemberInfo(typeof(ComboBox), "Items", ComboBox.ItemsDomainPropertyId, typeof(ComboBox.ItemsPropertyHandler)),
+				new DomainMemberInfo(typeof(DropBox), "Items", DropBox.ItemsDomainPropertyId, typeof(DropBox.ItemsPropertyHandler)),
 				new DomainMemberInfo(typeof(ListBox), "Items", ListBox.ItemsDomainPropertyId, typeof(ListBox.ItemsPropertyHandler)),
 				new DomainMemberInfo(typeof(StackPanel), "Orientation", StackPanel.OrientationDomainPropertyId, typeof(StackPanel.OrientationPropertyHandler)),
 				new DomainMemberInfo(typeof(Input), "Text", Input.TextDomainPropertyId, typeof(Input.TextPropertyHandler)),
+				new DomainMemberInfo(typeof(Input), "InputMode", Input.InputModeDomainPropertyId, typeof(Input.InputModePropertyHandler)),
 				new DomainMemberInfo(typeof(Connection), "SourceRoleName", Connection.SourceRoleNameDomainPropertyId, typeof(Connection.SourceRoleNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Connection), "TargetRoleName", Connection.TargetRoleNameDomainPropertyId, typeof(Connection.TargetRoleNamePropertyHandler)),
 				new DomainMemberInfo(typeof(State_old2ReferencesPreviousStates), "condition", State_old2ReferencesPreviousStates.conditionDomainPropertyId, typeof(State_old2ReferencesPreviousStates.conditionPropertyHandler)),
@@ -246,7 +247,7 @@ namespace Company.MobileDSL
 				createElementMap.Add(typeof(OP), 12);
 				createElementMap.Add(typeof(DLink), 13);
 				createElementMap.Add(typeof(Label), 14);
-				createElementMap.Add(typeof(ComboBox), 15);
+				createElementMap.Add(typeof(DropBox), 15);
 				createElementMap.Add(typeof(ListBox), 16);
 				createElementMap.Add(typeof(StackPanel), 17);
 				createElementMap.Add(typeof(Input), 18);
@@ -294,7 +295,7 @@ namespace Company.MobileDSL
 				case 12: return new OP(partition, propertyAssignments);
 				case 13: return new DLink(partition, propertyAssignments);
 				case 14: return new Label(partition, propertyAssignments);
-				case 15: return new ComboBox(partition, propertyAssignments);
+				case 15: return new DropBox(partition, propertyAssignments);
 				case 16: return new ListBox(partition, propertyAssignments);
 				case 17: return new StackPanel(partition, propertyAssignments);
 				case 18: return new Input(partition, propertyAssignments);

@@ -483,18 +483,18 @@ namespace Company.MobileDSL
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Company.MobileDSL.ComboBoxToolboxItem":
-					// Add ComboBox shape tool.
+				case "Company.MobileDSL.DropBoxToolboxItem":
+					// Add DropBox shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.MobileDSL.ComboBoxToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.MobileDSL.DropBoxToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						6, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("ComboBoxToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ComboBoxToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("DropBoxToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("DropBoxToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.MobileDSL.UI FormsToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("UI FormsToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"ComboBox", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("ComboBoxToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::Company.MobileDSL.ComboBox.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						"DropBox", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("DropBoxToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Company.MobileDSL.DropBox.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});

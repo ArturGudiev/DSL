@@ -76,7 +76,7 @@ private void generatePrimitive(Primitive primitive) {#>
     Padding = new Thickness(Screen.NormalFontSize), 
     WrapContent = true, 
     Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
-    Text = "SSSSSSSSSS"
+    Text = "<#= ((Company.MobileDSL.Button)primitive).Text #>"
 }; 
 			<#+
 			break;
@@ -123,9 +123,8 @@ private void primitiveType(Primitive prim)
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.Button)) {#>Button<#+}#>
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.Label)) {#>TextBlock<#+}#>
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.Input)) {#>StackPanel<#+}#>
-<#+ if(prim.GetType() == typeof(Company.MobileDSL.ComboBox)) {#>DropBox<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.DropBox)) {#>DropBox<#+}#>
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.StackPanel)) {#>StackPanel<#+}#>
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.ListBox)) {#>ListBox<#+}#>
 <#+}
-
 #>

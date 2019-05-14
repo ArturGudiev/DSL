@@ -866,9 +866,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ComboBox -->
-  <xsd:element name="comboBox" type="ComboBox" substitutionGroup="primitive" />
-  <xsd:complexType name="ComboBox">
+  <!-- DropBox -->
+  <xsd:element name="dropBox" type="DropBox" substitutionGroup="primitive" />
+  <xsd:complexType name="DropBox">
     <xsd:complexContent>
       <xsd:extension base="Primitive">
         <!-- Id -->
@@ -883,11 +883,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ComboBox Moniker -->
-  <xsd:element name="comboBoxMoniker" type="ComboBoxMoniker" substitutionGroup="primitiveMoniker" />
-  <xsd:complexType name="ComboBoxMoniker">
+  <!-- DropBox Moniker -->
+  <xsd:element name="dropBoxMoniker" type="DropBoxMoniker" substitutionGroup="primitiveMoniker" />
+  <xsd:complexType name="DropBoxMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ComboBox instance.</xsd:documentation>
+      <xsd:documentation>Moniker for DropBox instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="PrimitiveMoniker">
@@ -966,6 +966,8 @@
         </xsd:attribute>
         <!-- Property: Text -->
         <xsd:attribute name="text" type="xsd:string" />
+        <!-- Property: InputMode -->
+        <xsd:attribute name="inputMode" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

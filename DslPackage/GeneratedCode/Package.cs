@@ -182,11 +182,11 @@ namespace Company.MobileDSL
 					0xff00ff,
 					Index = 18)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",
-					"@ComboBoxToolboxItem;Company.MobileDSL.Dsl.dll", 
-					"Company.MobileDSL.ComboBoxToolboxItem", 
+					"@DropBoxToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.DropBoxToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"ComboBox", 
-					"@ComboBoxToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					"DropBox", 
+					"@DropBoxToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
 					Index = 19)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.UI FormsToolboxTab",

@@ -59,12 +59,6 @@
                       <showFormHasPrimitives Id="bef2c0a5-b362-4b7e-a53c-2fbec9847718">
                         <label Id="ebfc7855-8e18-4f3d-9fdc-04f8bfdec4db" name="ToLabel" />
                       </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="08291eb7-36d3-4c4d-ab70-9ff9bbc4cca1">
-                        <comboBox Id="0c173d23-3427-43da-842c-3fd4aec2fb3f" name="LeftComboBox" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="1b4f3c82-ffa7-4598-95bc-2164cc3e1c42">
-                        <comboBox Id="ec6d013b-a86a-4978-839c-05c56c19b31f" name="RightComboBox" />
-                      </showFormHasPrimitives>
                       <showFormHasPrimitives Id="72f7ab09-1fe2-4a65-8d1a-3ba6d702ceec">
                         <stackPanel Id="2d942ca7-69a3-4644-81c2-a3909f2fb112" name="LabelPanel" />
                       </showFormHasPrimitives>
@@ -72,7 +66,13 @@
                         <stackPanel Id="6cddc8cd-351a-41b7-a965-3360501794e8" name="StackPanel2" />
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="7e2c123f-6732-4573-970d-5953cc17a754">
-                        <button Id="8c236866-a71a-4d4d-a1df-e046c5bb8183" name="ShowButton" />
+                        <button Id="8c236866-a71a-4d4d-a1df-e046c5bb8183" name="ShowButton" text="AAAA" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="70329067-a36b-40e5-8830-17bba50e622f">
+                        <dropBox Id="d4bcb662-39d3-4c0a-bf3c-9e41b25b1678" name="LeftDropBox" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="b3a3817f-3319-465e-94be-ee9441c08441">
+                        <dropBox Id="f5bc68d0-973d-44ec-bcf9-d8abcdf2605a" name="RightDropBox" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>

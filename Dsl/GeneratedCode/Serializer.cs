@@ -13581,15 +13581,15 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// Serializer ComboBoxSerializer for DomainClass ComboBox.
+	/// Serializer DropBoxSerializer for DomainClass DropBox.
 	/// </summary>
-	public partial class ComboBoxSerializer : PrimitiveSerializer
+	public partial class DropBoxSerializer : PrimitiveSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// ComboBoxSerializer Constructor
+		/// DropBoxSerializer Constructor
 		/// </summary>
-		public ComboBoxSerializer ()
+		public DropBoxSerializer ()
 			: base ()
 		{
 		}
@@ -13615,25 +13615,25 @@ namespace Company.MobileDSL
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of ComboBox.
+		/// This is the XML tag name used to serialize an instance of DropBox.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"comboBox"; }
+			get { return @"dropBox"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of ComboBox.
+		/// This is the XML tag name used to serialize a monikerized instance of DropBox.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"comboBoxMoniker"; }
+			get { return @"dropBoxMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of ComboBox in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of DropBox in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -13644,16 +13644,16 @@ namespace Company.MobileDSL
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one ComboBox instance from XML.
+		/// Public Read() method that deserializes one DropBox instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the ComboBox element that is about to be deserialized. 
+		/// of the DropBox element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory ComboBox instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory DropBox instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -13711,7 +13711,7 @@ namespace Company.MobileDSL
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory ComboBox instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory DropBox instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -13719,8 +13719,8 @@ namespace Company.MobileDSL
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			ComboBox instanceOfComboBox = element as ComboBox;
-			global::System.Diagnostics.Debug.Assert(instanceOfComboBox != null, "Expecting an instance of ComboBox");
+			DropBox instanceOfDropBox = element as DropBox;
+			global::System.Diagnostics.Debug.Assert(instanceOfDropBox != null, "Expecting an instance of DropBox");
 	
 			// Items
 			if (!serializationContext.Result.Failed)
@@ -13731,7 +13731,7 @@ namespace Company.MobileDSL
 					global::System.String valueOfItems;
 					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribItems, out valueOfItems))
 					{
-						instanceOfComboBox.Items = valueOfItems;
+						instanceOfDropBox.Items = valueOfItems;
 					}
 					else
 					{	// Invalid property value, ignored.
@@ -13743,8 +13743,8 @@ namespace Company.MobileDSL
 	
 		#region TryCreateInstance
 		/// <summary>
-		/// This method creates a correct instance of ComboBox based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized ComboBox, a new ComboBox instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of DropBox based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized DropBox, a new DropBox instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -13754,7 +13754,7 @@ namespace Company.MobileDSL
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created ComboBox instance, or null if the reader is not pointing to a serialized ComboBox instance.</returns>
+		/// <returns>Created DropBox instance, or null if the reader is not pointing to a serialized DropBox instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -13774,18 +13774,18 @@ namespace Company.MobileDSL
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "ComboBox" instance.
+				{	// New "DropBox" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "ComboBox".
+				{	// Check for derived classes of "DropBox".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class instance.
-						ComboBoxSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as ComboBoxSerializer;
+						DropBoxSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as DropBoxSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -13796,8 +13796,8 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// This method creates an instance of ComboBox based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of ComboBox.
+		/// This method creates an instance of DropBox based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of DropBox.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -13805,8 +13805,8 @@ namespace Company.MobileDSL
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new ComboBox instance should be created.</param>	
-		/// <returns>Created ComboBox instance.</returns>
+		/// <param name="partition">Partition in which new DropBox instance should be created.</param>	
+		/// <returns>Created DropBox instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -13822,7 +13822,7 @@ namespace Company.MobileDSL
 				{
 					id = new global::System.Guid (idStr);
 				}
-				return new ComboBox(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
+				return new DropBox(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
 			}
 			catch (global::System.ArgumentNullException /* anEx */)
 			{	
@@ -13840,12 +13840,12 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from ComboBox, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from DropBox, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from ComboBox.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from DropBox.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -13854,7 +13854,7 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(ComboBox.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(DropBox.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -13886,7 +13886,7 @@ namespace Company.MobileDSL
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including ComboBox itself) instance of ComboBox based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including DropBox itself) instance of DropBox based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -13920,18 +13920,18 @@ namespace Company.MobileDSL
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "ComboBox" moniker instance.
+				{	// New "DropBox" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "ComboBox".
+				{	// Check for derived classes of "DropBox".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						ComboBoxSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as ComboBoxSerializer;
+						DropBoxSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as DropBoxSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -13942,7 +13942,7 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of ComboBox based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of DropBox based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -13965,7 +13965,7 @@ namespace Company.MobileDSL
 			}
 			DslModeling::DomainRelationshipXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(relDomainClassId) as DslModeling::DomainRelationshipXmlSerializer;
 			global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for DomainRelationship with Id " + relDomainClassId + "!");
-			DslModeling::Moniker result = relSerializer.MonikerizeReference(serializationContext, sourceRolePlayer, ComboBox.DomainClassId, monikerString, partition.Store);
+			DslModeling::Moniker result = relSerializer.MonikerizeReference(serializationContext, sourceRolePlayer, DropBox.DomainClassId, monikerString, partition.Store);
 			// Set location info if possible.
 			result.Location = serializationContext.Location;
 			global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -13978,12 +13978,12 @@ namespace Company.MobileDSL
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from ComboBox, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from DropBox, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from ComboBox.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from DropBox.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -13992,7 +13992,7 @@ namespace Company.MobileDSL
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(ComboBox.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(DropBox.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -14018,13 +14018,13 @@ namespace Company.MobileDSL
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized ComboBox instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized DropBox instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">ComboBox instance to be monikerized.</param>
+		/// <param name="element">DropBox instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the ComboBox instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the ComboBox instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the DropBox instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the DropBox instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -14053,10 +14053,10 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one ComboBox instance into XML.
+		/// Public Write() method that serializes one DropBox instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">ComboBox instance to be serialized.</param>
+		/// <param name="element">DropBox instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -14117,7 +14117,7 @@ namespace Company.MobileDSL
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">ComboBox instance to be serialized.</param>
+		/// <param name="element">DropBox instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -14125,13 +14125,13 @@ namespace Company.MobileDSL
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			ComboBox instanceOfComboBox = element as ComboBox;
-			global::System.Diagnostics.Debug.Assert(instanceOfComboBox != null, "Expecting an instance of ComboBox");
+			DropBox instanceOfDropBox = element as DropBox;
+			global::System.Diagnostics.Debug.Assert(instanceOfDropBox != null, "Expecting an instance of DropBox");
 	
 			// Items
 			if (!serializationContext.Result.Failed)
 			{
-				global::System.String propValue = instanceOfComboBox.Items;
+				global::System.String propValue = instanceOfDropBox.Items;
 				if (!serializationContext.Result.Failed)
 				{
 					if (!string.IsNullOrEmpty(propValue))
@@ -14144,11 +14144,11 @@ namespace Company.MobileDSL
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given ComboBox instance.
+		/// This method calculates a moniker to a given DropBox instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">ComboBox instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the ComboBox instance.</returns>
+		/// <param name="element">DropBox instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the DropBox instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -14160,8 +14160,8 @@ namespace Company.MobileDSL
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			ComboBox instance = element as ComboBox;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of ComboBox!");
+			DropBox instance = element as DropBox;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of DropBox!");
 	
 			string key = instance.Name;
 			string containerMoniker = null;
@@ -14192,7 +14192,7 @@ namespace Company.MobileDSL
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">ComboBox instance to get moniker qualifier from.</param>
+		/// <param name="element">DropBox instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -14208,8 +14208,8 @@ namespace Company.MobileDSL
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			ComboBox instance = element as ComboBox;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of ComboBox!");
+			DropBox instance = element as DropBox;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of DropBox!");
 			DslModeling::ModelElement container = instance.ShowForm;
 			if(container != null)
 			{
@@ -15683,6 +15683,23 @@ namespace Company.MobileDSL
 					}
 				}
 			}
+			// InputMode
+			if (!serializationContext.Result.Failed)
+			{
+				string attribInputMode = MobileDSLSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "inputMode");
+				if (attribInputMode != null)
+				{
+					global::System.String valueOfInputMode;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribInputMode, out valueOfInputMode))
+					{
+						instanceOfInput.InputMode = valueOfInputMode;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "inputMode", typeof(global::System.String), attribInputMode);
+					}
+				}
+			}
 		}
 	
 		#region TryCreateInstance
@@ -16080,6 +16097,17 @@ namespace Company.MobileDSL
 				{
 					if (!string.IsNullOrEmpty(propValue))
 						MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "text", propValue);
+	
+				}
+			}
+			// InputMode
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfInput.InputMode;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "inputMode", propValue);
 	
 				}
 			}
@@ -38612,7 +38640,7 @@ namespace Company.MobileDSL
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(OP.DomainClassId, typeof(OPSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(DLink.DomainClassId, typeof(DLinkSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(Label.DomainClassId, typeof(LabelSerializer)));
-					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ComboBox.DomainClassId, typeof(ComboBoxSerializer)));
+					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(DropBox.DomainClassId, typeof(DropBoxSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ListBox.DomainClassId, typeof(ListBoxSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(StackPanel.DomainClassId, typeof(StackPanelSerializer)));
 					ComponentsSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(Input.DomainClassId, typeof(InputSerializer)));
