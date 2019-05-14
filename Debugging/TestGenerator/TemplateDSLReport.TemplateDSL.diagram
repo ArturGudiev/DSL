@@ -2,7 +2,7 @@
 <templateDSLDiagram dslVersion="1.0.0.0" Id="fe4f0b4b-b5aa-4e10-8b46-893ad358015b" absoluteBounds="0, 0, 11, 8.5" name="TemplateDSLReport">
   <componentModelMoniker name="/" />
   <nestedChildShapes>
-    <forEachShape Id="1c06eddb-27c2-489f-9b93-51a7d430a8db" absoluteBounds="4.25, 2.25, 1.5, 0.5">
+    <forEachShape Id="1c06eddb-27c2-489f-9b93-51a7d430a8db" absoluteBounds="1.375, 1.875, 1.5, 0.5">
       <loopMoniker Id="9c7ff59e-6825-4a59-9852-f7b1048aefeb" />
       <relativeChildShapes />
     </forEachShape>

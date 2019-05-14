@@ -64,7 +64,27 @@ private void compileShowFormFunction(ShowForm form) {
 
 //=============== Primitive Generation ===================  
 private void generatePrimitive(Primitive primitive) {#>
-	<#= primitive.Name #>; //<#= primitive.GetType() #> <#+ primitiveType(primitive);#>
+	<#+ primitiveType(primitive);#>  <#= primitive.Name #> = <#+ 
+	switch(primitive.GetType().ToString()){
+		case "Company.MobileDSL.Button": 
+			#>
+		new Button{
+    VerticalAlignment = VerticalAlignment.Center, 
+    HorizontalAlignment = HorizontalAlignment.Center, 
+    Background = new SolidColorBrush(Colors.Gray), 
+    Foreground = new SolidColorBrush(Colors.Black), 
+    Padding = new Thickness(Screen.NormalFontSize), 
+    WrapContent = true, 
+    Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
+    Text = "SSSSSSSSSS"
+}; 
+			<#+
+			break;
+		default:
+			#>333;<#+WriteLine(""); 
+			break;
+	}
+#>
 <#+
 }
 //=======================================================  
