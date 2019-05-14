@@ -1,0 +1,100 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".tt" #>
+<#@ TemplateDSL processor="TemplateDSLDirectiveProcessor" requires="fileName='TemplateDSLReport.TemplateDSL'"  #>
+
+\<#  
+<# 
+	bool beforeFunctions = true;
+	foreach (Loop fe in this.ComponentModel.Loops) { 
+		if(!fe.isFirst){continue;}
+		generateLoop(fe);
+	}
+	beforeFunctions = false;
+#>
+\#> 
+
+\<#+
+<# foreach (Function f in this.ComponentModel.Functions) {#>
+	private <#= f.ReturnType #> <#= f.Name #>(<#= f.Parameters #>){ 
+		<# if( f.InnerElement != null ) { 
+		generate(f.InnerElement); 
+		}  #> 
+	} 
+<#}#>
+\#>
+
+<#+  //=======================================================  
+private void generateLoop(Loop fe) {#>
+    foreach ( <#= fe.LeftPart #> in <#= fe.Container #> ) {
+		<#+ if(fe.InnerElement != null) {generate(fe.InnerElement);} #>
+	}
+<#+}#>
+
+<#+  //=======================================================  
+private void generateEvalBlock(EvaluationBlock eBlock) {
+	if(!isFunction(getParent(eBlock))){
+		#> \#>\<#= <#= eBlock.text #> \#>\<# 
+			<#+
+	} else {
+		#> \#>\<#= <#= eBlock.text #> \#>\<#+ 
+		<#+
+	} 
+#>
+<#+}#>
+<#+  //=======================================================  
+private void generateTextBlock(TextBlock tBlock) {
+	if(!isFunction(getParent(tBlock))  ){
+		#> \#><#= tBlock.text #> \<# 
+			<#+
+	}else{
+		#> \#><#= tBlock.text #> \<#+ 
+		<#+
+	}
+}#>
+<#+  //=======================================================  
+private void generateBlock(Block block) {
+	if(!isFunction(getParent(block))  ){
+		#> \#> <#= block.text #>  \<# 
+			<#+
+	}else{
+		#> \#> <#= block.text #>  \<#+ 
+		<#+
+	}
+}#>
+<#+  //=======================================================  
+private Connectable getParent(Connectable el) {
+	Connectable cur = el; 
+	while(cur.Parent != null || cur.Previous != null){
+		if(cur.Parent != null) cur = cur.Parent;
+		else cur = cur.Previous;
+	}
+	return cur; 
+	}
+#>
+<#+  //=======================================================  
+private bool isFunction(Connectable el) {
+	return el.GetType().ToString() == "Company.TemplateDSL.Function" ; 
+}
+#>
+<#+  //=======================================================  
+private void generate(Connectable con) {
+    String type = con.GetType().ToString(); 
+	switch(type){
+		case "Company.TemplateDSL.EvaluationBlock": 
+			generateEvalBlock(con as EvaluationBlock);
+			break;
+		case "Company.TemplateDSL.Loop": 
+			generateLoop(con as Loop);
+			break;
+		case "Company.TemplateDSL.Block": 
+			generateBlock(con as Block);
+			break;
+		case "Company.TemplateDSL.TextBlock": 
+			generateTextBlock(con as TextBlock);
+			break;
+	}
+	if(con.Next != null){
+		generate(con.Next);
+	}
+	#>
+<#+}#>

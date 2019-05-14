@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="81b92f9a-366e-4937-9822-98655edff22d" name="" xmlns="http://schemas.microsoft.com/dsltools/TemplateDSL">
+  <loops>
+    <componentModelHasLoops Id="02765cd6-dc25-4e30-83f2-9e3922c466f1">
+      <loop Id="9c7ff59e-6825-4a59-9852-f7b1048aefeb" leftPart="b" container="a" isFirst="true" />
+    </componentModelHasLoops>
+  </loops>
+</componentModel>

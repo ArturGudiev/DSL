@@ -39,6 +39,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestGenerator\gen1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gen1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TestGenerator\test2.cs">
       <DependentUpon>test2.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -56,6 +61,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="TestGenerator\gen.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>gen1.tt</LastGenOutput>
+    </None>
     <None Include="..\Dsl\GeneratedCode\MobileDSLSchema.xsd">
       <Link>MobileDSLSchema.xsd</Link>
       <SubType>Designer</SubType>
@@ -90,6 +99,10 @@
     <None Include="Auth.mdsl.diagram">
       <DependentUpon>Auth.mdsl</DependentUpon>
     </None>
+    <None Include="TestGenerator\TemplateDSLReport.TemplateDSL" />
+    <None Include="TestGenerator\TemplateDSLReport.TemplateDSL.diagram">
+      <DependentUpon>TemplateDSLReport.TemplateDSL</DependentUpon>
+    </None>
     <None Include="train.mdsl" />
     <None Include="train.mdsl.diagram">
       <DependentUpon>train.mdsl</DependentUpon>
@@ -110,6 +123,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MobileDSLReportVB.tt</DependentUpon>
+    </Content>
+    <Content Include="TestGenerator\gen1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gen.tt</DependentUpon>
+      <LastGenOutput>gen1.cs</LastGenOutput>
     </Content>
     <None Include="TestGenerator\test2.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
