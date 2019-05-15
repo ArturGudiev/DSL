@@ -75,7 +75,8 @@ break;
                 Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize),           
                 ItemList =  new List<string>("a=b=c".Split('=')),
 };
-											var panel = {Children = {new Cell{Content = FromLabel} ,
+							ShowButton. Clicked += (sender, args) => {}; 
+					 				var panel = {Children = {new Cell{Content = FromLabel} ,
 				new Cell{Content = ToLabel} ,
 				new Cell{Content = LabelPanel} ,
 				new Cell{Content = DropBoxPanel} ,
@@ -128,7 +129,8 @@ break;
     Font = new Font(new FontFamily("Arial"), 12),
     InputMode = Ubiq.Graphics.InputMode.Text,
     Text = ""};
-											var panel = {Children = {new Cell{Content = Title} ,
+							BackButton. Clicked += (sender, args) => {}; 
+					 				var panel = {Children = {new Cell{Content = Title} ,
 				new Cell{Content = ListBox} ,
 				new Cell{Content = BackButton} ,
 				new Cell{Content = Input1} ,

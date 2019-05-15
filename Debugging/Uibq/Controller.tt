@@ -61,7 +61,11 @@ private void compileShowFormFunction(ShowForm form) {
 					<#+
 				} //foreach
 
-		
+				foreach ( Event ev in form.Events ) {
+  	 			#><#= ev.PrimitiveName #>. <#= ev.Type #> += (sender, args) => {}; 
+					 <#+			
+				}
+
 				#>
 				var panel = {Children = {<#+ foreach(Primitive pr in form.Primitives){newCell(pr.Name, ','); } #> },};
 				Screen.Content = panel;
