@@ -43,10 +43,12 @@ break;
                 Foreground = new SolidColorBrush(Colors.Black),
                 Text = "T"
 }							;
-													StackPanel  LabelPanel =  new StackPanel{ Children = {new Cell{Content = LabelPanelLeft}, new Cell{Content = LabelPanelRight},}, Orientation = Orientation.Horizontal};
-		FromLabel;ToLabel ggg
-													StackPanel  DropBoxPanel =  new StackPanel{ Children = {new Cell{Content = DropBoxPanelLeft}, new Cell{Content = DropBoxPanelRight},}, Orientation = Orientation.Horizontal};
-		LeftDropBox;RightDropBox ggg
+													StackPanel  LabelPanel =  new StackPanel{ Orientation = Orientation.Horizontal, Children = {new Cell{Content = FromLabel} ,
+				new Cell{Content = ToLabel} ,
+				 }, }; 
+													StackPanel  DropBoxPanel =  new StackPanel{ Orientation = Orientation.Horizontal, Children = {new Cell{Content = LeftDropBox} ,
+				new Cell{Content = RightDropBox} ,
+				 }, }; 
 													Button  ShowButton = 							new Button{
 							VerticalAlignment = VerticalAlignment.Center, 
 							HorizontalAlignment = HorizontalAlignment.Center, 
@@ -73,7 +75,17 @@ break;
                 Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize),           
                 ItemList =  new List<string>("a=b=c".Split('=')),
 };
-								}         
+											var panel = {Children = {new Cell{Content = FromLabel} ,
+				new Cell{Content = ToLabel} ,
+				new Cell{Content = LabelPanel} ,
+				new Cell{Content = DropBoxPanel} ,
+				new Cell{Content = ShowButton} ,
+				new Cell{Content = LeftDropBox} ,
+				new Cell{Content = RightDropBox} ,
+				 },};
+				Screen.Content = panel;
+
+	}         
              
     private void runStartState(){
 	showChooseStationForm();	}
@@ -105,7 +117,25 @@ break;
 							Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
 							Text = ""
 					}; 
-									}         
+														Input  Input1 = 							new Input{
+    VerticalAlignment = VerticalAlignment.Center, 
+    HorizontalAlignment = HorizontalAlignment.Center, 
+    Background = new SolidColorBrush(Colors.White), 
+    Foreground = new SolidColorBrush(Colors.Black), 
+    Padding = new Thickness(Screen.NormalFontSize), 
+    WrapContent = true,
+    Width = 150,
+    Font = new Font(new FontFamily("Arial"), 12),
+    InputMode = Ubiq.Graphics.InputMode.Text,
+    Text = ""};
+											var panel = {Children = {new Cell{Content = Title} ,
+				new Cell{Content = ListBox} ,
+				new Cell{Content = BackButton} ,
+				new Cell{Content = Input1} ,
+				 },};
+				Screen.Content = panel;
+
+	}         
              
     private void runShowState(){
 	showShowScheduleForm();	}

@@ -1,7 +1,8 @@
 ﻿
 <#  
-    foreach ( b in a ) {
-			}
+    foreach ( Event ev in form.Events ) {
+		 #><#= event.PrimitiveName #>. <#= event.Type #> = {} <# 
+				}
 #> 
 
 <#+

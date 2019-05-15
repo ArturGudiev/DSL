@@ -8361,6 +8361,23 @@ namespace Company.MobileDSL
 					}
 				}
 			}
+			// Type
+			if (!serializationContext.Result.Failed)
+			{
+				string attribType = MobileDSLSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "type");
+				if (attribType != null)
+				{
+					global::System.String valueOfType;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribType, out valueOfType))
+					{
+						instanceOfEvent.Type = valueOfType;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "type", typeof(global::System.String), attribType);
+					}
+				}
+			}
 		}
 	
 		#region TryCreateInstance
@@ -8761,6 +8778,17 @@ namespace Company.MobileDSL
 	
 				}
 			}
+			// Type
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfEvent.Type;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "type", propValue);
+	
+				}
+			}
 		}
 		#endregion
 	
@@ -8940,7 +8968,7 @@ namespace Company.MobileDSL
 			#endregion
 			
 			// Read properties serialized as XML attributes.
-			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+			ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
 			// Read nested XML elements.
 			if (!serializationContext.Result.Failed)
@@ -8972,6 +9000,44 @@ namespace Company.MobileDSL
 			DslModeling::SerializationUtilities.Skip(reader);
 		}
 		
+	
+		/// <summary>
+		/// This method deserializes all properties that are serialized as XML attributes.
+		/// </summary>
+		/// <remarks>
+		/// Because this method only handles properties serialized as XML attributes, the passed-in reader shouldn't be moved inside this method.
+		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory Primitive instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+	
+			Primitive instanceOfPrimitive = element as Primitive;
+			global::System.Diagnostics.Debug.Assert(instanceOfPrimitive != null, "Expecting an instance of Primitive");
+	
+			// Parent
+			if (!serializationContext.Result.Failed)
+			{
+				string attribParent = MobileDSLSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "parent");
+				if (attribParent != null)
+				{
+					global::System.String valueOfParent;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribParent, out valueOfParent))
+					{
+						instanceOfPrimitive.Parent = valueOfParent;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "parent", typeof(global::System.String), attribParent);
+					}
+				}
+			}
+		}
 	
 		#region TryCreateInstance
 		/// <summary>
@@ -9328,7 +9394,7 @@ namespace Company.MobileDSL
 			// Write out element Id.
 			writer.WriteAttributeString("Id", element.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture));
 	
-			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+			WritePropertiesAsAttributes(serializationContext, element, writer);
 	
 			// Write out any extension data if this is the root element
 			if (rootElementSettings != null && !serializationContext.Result.Failed)
@@ -9343,6 +9409,34 @@ namespace Company.MobileDSL
 			}
 	
 			writer.WriteEndElement();
+		}
+	
+		/// <summary>
+		/// Write all properties that need to be serialized as XML attributes.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">Primitive instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param> 
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			Primitive instanceOfPrimitive = element as Primitive;
+			global::System.Diagnostics.Debug.Assert(instanceOfPrimitive != null, "Expecting an instance of Primitive");
+	
+			// Parent
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfPrimitive.Parent;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "parent", propValue);
+	
+				}
+			}
 		}
 		#endregion
 	
@@ -16134,9 +16228,10 @@ namespace Company.MobileDSL
 				global::System.String propValue = instanceOfInput.InputMode;
 				if (!serializationContext.Result.Failed)
 				{
-					if (!string.IsNullOrEmpty(propValue))
+					if (propValue != null && (serializationContext.WriteOptionalPropertiesWithDefaultValue || string.CompareOrdinal(propValue, "Text") != 0))
+					{	// No need to write the value out if it's the same as default value.
 						MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "inputMode", propValue);
-	
+					}
 				}
 			}
 		}

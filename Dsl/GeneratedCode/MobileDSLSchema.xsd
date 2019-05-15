@@ -601,6 +601,8 @@
         </xsd:attribute>
         <!-- Property: PrimitiveName -->
         <xsd:attribute name="primitiveName" type="xsd:string" />
+        <!-- Property: Type -->
+        <xsd:attribute name="type" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -628,6 +630,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Parent -->
+        <xsd:attribute name="parent" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

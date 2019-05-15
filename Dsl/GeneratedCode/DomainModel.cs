@@ -149,6 +149,8 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(State_old2), "isFirstState", State_old2.isFirstStateDomainPropertyId, typeof(State_old2.isFirstStatePropertyHandler)),
 				new DomainMemberInfo(typeof(ShowForm), "Name", ShowForm.NameDomainPropertyId, typeof(ShowForm.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Event), "PrimitiveName", Event.PrimitiveNameDomainPropertyId, typeof(Event.PrimitiveNamePropertyHandler)),
+				new DomainMemberInfo(typeof(Event), "Type", Event.TypeDomainPropertyId, typeof(Event.TypePropertyHandler)),
+				new DomainMemberInfo(typeof(Primitive), "Parent", Primitive.ParentDomainPropertyId, typeof(Primitive.ParentPropertyHandler)),
 				new DomainMemberInfo(typeof(Button), "Text", Button.TextDomainPropertyId, typeof(Button.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(P), "Name", P.NameDomainPropertyId, typeof(P.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Label), "Text", Label.TextDomainPropertyId, typeof(Label.TextPropertyHandler)),

@@ -49,15 +49,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Uibq\Controller1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controller.tt</DependentUpon>
+    </Compile>
     <Compile Include="Uibq\UserSection.cs">
       <DependentUpon>UserSection.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Uibq\Controller.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Controller.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -141,7 +141,7 @@
     </None>
     <None Include="Uibq\Controller.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Controller.cs</LastGenOutput>
+      <LastGenOutput>Controller1.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

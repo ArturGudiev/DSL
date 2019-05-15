@@ -2125,6 +2125,93 @@ namespace Company.MobileDSL
 		}
 		
 		#endregion
+		#region Type domain property code
+		
+		/// <summary>
+		/// Type domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TypeDomainPropertyId = new global::System.Guid(0xd9cbe32a, 0xca0f, 0x4428, 0xac, 0x5c, 0x9b, 0x4e, 0xeb, 0x68, 0x35, 0x75);
+		
+		/// <summary>
+		/// Storage for Type
+		/// </summary>
+		private global::System.String typePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Type domain property.
+		/// Description for Company.MobileDSL.Event.Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.Event/Type.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.Event/Type.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d9cbe32a-ca0f-4428-ac5c-9b4eeb683575")]
+		public global::System.String Type
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return typePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Event.Type domain property.
+		/// </summary>
+		internal sealed partial class TypePropertyHandler : DslModeling::DomainPropertyValueHandler<Event, global::System.String>
+		{
+			private TypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Event.Type domain property value handler.
+			/// </summary>
+			public static readonly TypePropertyHandler Instance = new TypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Event.Type domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Event element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.typePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Event element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.typePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region ShowForm opposite domain role accessor
 		/// <summary>
 		/// Gets or sets ShowForm.
@@ -2184,6 +2271,93 @@ namespace Company.MobileDSL
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region Parent domain property code
+		
+		/// <summary>
+		/// Parent domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ParentDomainPropertyId = new global::System.Guid(0xd3b39729, 0xf3f9, 0x4030, 0x8e, 0x85, 0x7f, 0xc0, 0x17, 0x2d, 0x81, 0xa9);
+		
+		/// <summary>
+		/// Storage for Parent
+		/// </summary>
+		private global::System.String parentPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Parent domain property.
+		/// Description for Company.MobileDSL.Primitive.Parent
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.Primitive/Parent.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.Primitive/Parent.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d3b39729-f3f9-4030-8e85-7fc0172d81a9")]
+		public global::System.String Parent
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return parentPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ParentPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Primitive.Parent domain property.
+		/// </summary>
+		internal sealed partial class ParentPropertyHandler : DslModeling::DomainPropertyValueHandler<Primitive, global::System.String>
+		{
+			private ParentPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Primitive.Parent domain property value handler.
+			/// </summary>
+			public static readonly ParentPropertyHandler Instance = new ParentPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Primitive.Parent domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ParentDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Primitive element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.parentPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Primitive element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.parentPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 		#region ShowForm opposite domain role accessor
 		/// <summary>
@@ -3409,7 +3583,7 @@ namespace Company.MobileDSL
 		/// <summary>
 		/// Storage for InputMode
 		/// </summary>
-		private global::System.String inputModePropertyStorage = string.Empty;
+		private global::System.String inputModePropertyStorage = "Text";
 		
 		/// <summary>
 		/// Gets or sets the value of InputMode domain property.
@@ -3417,6 +3591,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		[DslDesign::DisplayNameResource("Company.MobileDSL.Input/InputMode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("Company.MobileDSL.Input/InputMode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue("Text")]
 		[DslModeling::DomainObjectId("25cb7972-a76c-46d2-8ad9-d10ec37663d8")]
 		public global::System.String InputMode
 		{

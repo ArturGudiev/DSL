@@ -54,10 +54,18 @@ private void compileShowFormFunction(ShowForm form) {
 
 	#> private void show<#= form.Name #>(){
 		
-		    <#+ foreach (Primitive pr in form.Primitives) {#>
+		    <#+ foreach (Primitive pr in form.Primitives) {
+					//if(pr.Parent != ""){ continue; }
+				#>
 					<#+generatePrimitive(pr);#>
 					<#+
-				} //foreach#>
+				} //foreach
+
+		
+				#>
+				var panel = {Children = {<#+ foreach(Primitive pr in form.Primitives){newCell(pr.Name, ','); } #> },};
+				Screen.Content = panel;
+
 	} <#+ // ### private void Show
 
 }//$$$ compileShowFormFunction
@@ -104,6 +112,21 @@ private void generatePrimitive(Primitive primitive) {#>
 };
 		<#+ 
 			break;
+		case "Company.MobileDSL.Input":
+		#>
+							new Input{
+    VerticalAlignment = VerticalAlignment.Center, 
+    HorizontalAlignment = HorizontalAlignment.Center, 
+    Background = new SolidColorBrush(Colors.White), 
+    Foreground = new SolidColorBrush(Colors.Black), 
+    Padding = new Thickness(Screen.NormalFontSize), 
+    WrapContent = true,
+    Width = 150,
+    Font = new Font(new FontFamily("Arial"), 12),
+    InputMode = Ubiq.Graphics.InputMode.<#=((Company.MobileDSL.Input)primitive).InputMode#>,
+    Text = ""};
+		<#+ 
+			break;
 		case "Company.MobileDSL.ListBox":
 		#>
 							new ListBox{
@@ -112,8 +135,8 @@ private void generatePrimitive(Primitive primitive) {#>
 		<#+ 
 			break;
 		case "Company.MobileDSL.StackPanel":
-		#> new StackPanel{ Children = {new Cell{Content = <#=primitive.Name#>Left}, new Cell{Content = <#=primitive.Name#>Right},}, Orientation = Orientation.Horizontal};
-		<#= ((Company.MobileDSL.StackPanel)primitive).Items #> ggg
+		string[] items = ((Company.MobileDSL.StackPanel)primitive).Items.Split(';');
+		#> new StackPanel{ Orientation = Orientation.Horizontal, Children = {<#+ foreach(string str in items){newCell(str, ','); } #> }, }; 
 		<#+ 
 			break;
 		default:
@@ -153,12 +176,18 @@ private Connectable getChild(Connectable connectable, int index){
 	return connectable.ChildConnections.ToArray()[index];
 }
 
+//=============== new Cell generation for StackPanel Children ====
+private void newCell(string str, char c){
+	#>new Cell{Content = <#= str #>} <#= c #>
+				<#+ 
+}
+
 //=======================================================  
 private void primitiveType(Primitive prim)  
 {  #>
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.Button)) {#>Button<#+}#>
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.Label)) {#>TextBlock<#+}#>
-<#+ if(prim.GetType() == typeof(Company.MobileDSL.Input)) {#>StackPanel<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.Input)) {#>Input<#+}#>
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.DropBox)) {#>DropBox<#+}#>
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.StackPanel)) {#>StackPanel<#+}#>
 <#+ if(prim.GetType() == typeof(Company.MobileDSL.ListBox)) {#>ListBox<#+}#>

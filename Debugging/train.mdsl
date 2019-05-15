@@ -49,7 +49,7 @@
                     </childConnections>
                     <events>
                       <showFormHasEvents Id="81a1532d-40a2-4469-b78c-5e92ffd07882">
-                        <event Id="82f0c816-b3b6-433e-97af-a60f922aa382" name="ShowButtonClicked" primitiveName="ShowButton" />
+                        <event Id="82f0c816-b3b6-433e-97af-a60f922aa382" name="ShowButtonClicked" primitiveName="ShowButton" type="Clicked" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
@@ -114,7 +114,7 @@
                     </childConnections>
                     <events>
                       <showFormHasEvents Id="ff021df5-2336-4f32-a9fc-f5b04d455090">
-                        <event Id="20786947-a080-4368-a3df-fd1cd4054c48" name="BackButtonClicked" />
+                        <event Id="20786947-a080-4368-a3df-fd1cd4054c48" name="BackButtonClicked" primitiveName="BackButton" type="Clicked" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
@@ -126,6 +126,9 @@
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="24eb6376-def9-4fa7-ba8a-3467207ab3d9">
                         <button Id="af8bd0bf-1637-4275-8d5c-6e7ee3bcb122" name="BackButton" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="c4b4e958-3f7d-41c4-9e15-59b49c5ad5bb">
+                        <input Id="5f763f67-055f-4272-9898-f92bc284d090" name="Input1" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>

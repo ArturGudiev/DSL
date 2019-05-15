@@ -277,6 +277,14 @@
     <value>Primitive Name</value>
     <comment>DisplayName for DomainProperty &apos;PrimitiveName&apos; on DomainClass &apos;Event&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.Event/Type.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Event.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;Event&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Event/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;Event&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.Primitive.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.Primitive</value>
     <comment>Description for DomainClass &apos;Primitive&apos;</comment>
@@ -284,6 +292,14 @@
   <data name="Company.MobileDSL.Primitive.DisplayName" xml:space="preserve">
     <value>Primitive</value>
     <comment>DisplayName for DomainClass &apos;Primitive&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Primitive/Parent.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Primitive.Parent</value>
+    <comment>Description for DomainProperty &apos;Parent&apos; on DomainClass &apos;Primitive&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Primitive/Parent.DisplayName" xml:space="preserve">
+    <value>Parent</value>
+    <comment>DisplayName for DomainProperty &apos;Parent&apos; on DomainClass &apos;Primitive&apos;</comment>
   </data>
   <data name="Company.MobileDSL.Button.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.Button</value>

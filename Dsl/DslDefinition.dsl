@@ -186,12 +186,24 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="d9cbe32a-ca0f-4428-ac5c-9b4eeb683575" Description="Description for Company.MobileDSL.Event.Type" Name="Type" DisplayName="Type">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="b26e8379-0ad9-4800-8dd8-0570ed78c99e" Description="Description for Company.MobileDSL.Primitive" Name="Primitive" DisplayName="Primitive" Namespace="Company.MobileDSL">
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="d3b39729-f3f9-4030-8e85-7fc0172d81a9" Description="Description for Company.MobileDSL.Primitive.Parent" Name="Parent" DisplayName="Parent">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
     <DomainClass Id="2cd5ac2a-a515-4672-a062-bac6b88fce79" Description="Description for Company.MobileDSL.Button" Name="Button" DisplayName="Button" Namespace="Company.MobileDSL">
       <BaseClass>
@@ -292,7 +304,7 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="25cb7972-a76c-46d2-8ad9-d10ec37663d8" Description="Description for Company.MobileDSL.Input.Input Mode" Name="InputMode" DisplayName="Input Mode">
+        <DomainProperty Id="25cb7972-a76c-46d2-8ad9-d10ec37663d8" Description="Description for Company.MobileDSL.Input.Input Mode" Name="InputMode" DisplayName="Input Mode" DefaultValue="Text">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -933,6 +945,9 @@
           <XmlPropertyData XmlName="primitiveName">
             <DomainPropertyMoniker Name="Event/PrimitiveName" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="type">
+            <DomainPropertyMoniker Name="Event/Type" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ShowFormHasPrimitives" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormHasPrimitivesMoniker" ElementName="showFormHasPrimitives" MonikerTypeName="ShowFormHasPrimitivesMoniker">
@@ -940,6 +955,11 @@
       </XmlClassData>
       <XmlClassData TypeName="Primitive" MonikerAttributeName="" SerializeId="true" MonikerElementName="primitiveMoniker" ElementName="primitive" MonikerTypeName="PrimitiveMoniker">
         <DomainClassMoniker Name="Primitive" />
+        <ElementData>
+          <XmlPropertyData XmlName="parent">
+            <DomainPropertyMoniker Name="Primitive/Parent" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="InPortReferencesShowForms" MonikerAttributeName="" SerializeId="true" MonikerElementName="inPortReferencesShowFormsMoniker" ElementName="inPortReferencesShowForms" MonikerTypeName="InPortReferencesShowFormsMoniker">
         <DomainRelationshipMoniker Name="InPortReferencesShowForms" />
