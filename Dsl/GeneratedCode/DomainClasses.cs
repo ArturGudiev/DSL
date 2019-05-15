@@ -3184,6 +3184,93 @@ namespace Company.MobileDSL
 		}
 		
 		#endregion
+		#region Items domain property code
+		
+		/// <summary>
+		/// Items domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ItemsDomainPropertyId = new global::System.Guid(0xcfbc9d7a, 0xb773, 0x46d5, 0x88, 0x03, 0xcf, 0xde, 0x2f, 0xb4, 0x69, 0x44);
+		
+		/// <summary>
+		/// Storage for Items
+		/// </summary>
+		private global::System.String itemsPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Items domain property.
+		/// Description for Company.MobileDSL.StackPanel.Items
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StackPanel/Items.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StackPanel/Items.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("cfbc9d7a-b773-46d5-8803-cfde2fb46944")]
+		public global::System.String Items
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return itemsPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ItemsPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the StackPanel.Items domain property.
+		/// </summary>
+		internal sealed partial class ItemsPropertyHandler : DslModeling::DomainPropertyValueHandler<StackPanel, global::System.String>
+		{
+			private ItemsPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the StackPanel.Items domain property value handler.
+			/// </summary>
+			public static readonly ItemsPropertyHandler Instance = new ItemsPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the StackPanel.Items domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ItemsDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(StackPanel element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.itemsPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(StackPanel element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.itemsPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 	}
 }
 namespace Company.MobileDSL

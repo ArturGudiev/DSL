@@ -15035,6 +15035,23 @@ namespace Company.MobileDSL
 					}
 				}
 			}
+			// Items
+			if (!serializationContext.Result.Failed)
+			{
+				string attribItems = MobileDSLSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "items");
+				if (attribItems != null)
+				{
+					global::System.String valueOfItems;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribItems, out valueOfItems))
+					{
+						instanceOfStackPanel.Items = valueOfItems;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "items", typeof(global::System.String), attribItems);
+					}
+				}
+			}
 		}
 	
 		#region TryCreateInstance
@@ -15432,6 +15449,17 @@ namespace Company.MobileDSL
 				{
 					if (!string.IsNullOrEmpty(propValue))
 						MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "orientation", propValue);
+	
+				}
+			}
+			// Items
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfStackPanel.Items;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "items", propValue);
 	
 				}
 			}

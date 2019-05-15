@@ -68,20 +68,56 @@ private void generatePrimitive(Primitive primitive) {#>
 	switch(primitive.GetType().ToString()){
 		case "Company.MobileDSL.Button": 
 			#>
-		new Button{
-    VerticalAlignment = VerticalAlignment.Center, 
-    HorizontalAlignment = HorizontalAlignment.Center, 
-    Background = new SolidColorBrush(Colors.Gray), 
-    Foreground = new SolidColorBrush(Colors.Black), 
-    Padding = new Thickness(Screen.NormalFontSize), 
-    WrapContent = true, 
-    Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
-    Text = "<#= ((Company.MobileDSL.Button)primitive).Text #>"
-}; 
+							new Button{
+							VerticalAlignment = VerticalAlignment.Center, 
+							HorizontalAlignment = HorizontalAlignment.Center, 
+							Background = new SolidColorBrush(Colors.Gray), 
+							Foreground = new SolidColorBrush(Colors.Black), 
+							Padding = new Thickness(Screen.NormalFontSize), 
+							WrapContent = true, 
+							Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
+							Text = "<#= ((Company.MobileDSL.Button)primitive).Text #>"
+					}; 
 			<#+
 			break;
+		case "Company.MobileDSL.Label":
+		#>
+							new TextBlock{
+                VerticalAlignment = VerticalAlignment.Center, 
+                HorizontalAlignment = HorizontalAlignment.Center, 
+                WrapContent = true, 
+                Font = new Font(new FontFamily("Arial"), 16),
+                Foreground = new SolidColorBrush(Colors.Black),
+                Text = "<#=((Company.MobileDSL.Label)primitive).Text#>"
+}							;
+		<#+ 
+			break;
+		case "Company.MobileDSL.DropBox":
+		#>
+							new DropBox{
+                VerticalAlignment = VerticalAlignment.Center,           
+                HorizontalAlignment = HorizontalAlignment.Center,       
+                Padding = new Thickness(Screen.NormalFontSize),        
+                WrapContent = true,                                     
+                Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize),           
+                ItemList =  new List<string>("<#=((Company.MobileDSL.DropBox)primitive).Items#>".Split('=')),
+};
+		<#+ 
+			break;
+		case "Company.MobileDSL.ListBox":
+		#>
+							new ListBox{
+                 Children = {}, 
+};
+		<#+ 
+			break;
+		case "Company.MobileDSL.StackPanel":
+		#> new StackPanel{ Children = {new Cell{Content = <#=primitive.Name#>Left}, new Cell{Content = <#=primitive.Name#>Right},}, Orientation = Orientation.Horizontal};
+		<#= ((Company.MobileDSL.StackPanel)primitive).Items #> ggg
+		<#+ 
+			break;
 		default:
-			#>333;<#+WriteLine(""); 
+			#>// No such element<#+WriteLine(""); 
 			break;
 	}
 #>

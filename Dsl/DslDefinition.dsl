@@ -275,6 +275,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="cfbc9d7a-b773-46d5-8803-cfde2fb46944" Description="Description for Company.MobileDSL.StackPanel.Items" Name="Items" DisplayName="Items">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="872613ae-9407-4d6c-966a-9dd050af480c" Description="Description for Company.MobileDSL.Input" Name="Input" DisplayName="Input" Namespace="Company.MobileDSL">
@@ -1041,6 +1046,9 @@
         <ElementData>
           <XmlPropertyData XmlName="orientation">
             <DomainPropertyMoniker Name="StackPanel/Orientation" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="items">
+            <DomainPropertyMoniker Name="StackPanel/Items" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>

@@ -937,6 +937,8 @@
         </xsd:attribute>
         <!-- Property: Orientation -->
         <xsd:attribute name="orientation" type="xsd:string" />
+        <!-- Property: Items -->
+        <xsd:attribute name="items" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

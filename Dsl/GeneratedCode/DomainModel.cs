@@ -155,6 +155,7 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(DropBox), "Items", DropBox.ItemsDomainPropertyId, typeof(DropBox.ItemsPropertyHandler)),
 				new DomainMemberInfo(typeof(ListBox), "Items", ListBox.ItemsDomainPropertyId, typeof(ListBox.ItemsPropertyHandler)),
 				new DomainMemberInfo(typeof(StackPanel), "Orientation", StackPanel.OrientationDomainPropertyId, typeof(StackPanel.OrientationPropertyHandler)),
+				new DomainMemberInfo(typeof(StackPanel), "Items", StackPanel.ItemsDomainPropertyId, typeof(StackPanel.ItemsPropertyHandler)),
 				new DomainMemberInfo(typeof(Input), "Text", Input.TextDomainPropertyId, typeof(Input.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(Input), "InputMode", Input.InputModeDomainPropertyId, typeof(Input.InputModePropertyHandler)),
 				new DomainMemberInfo(typeof(Connection), "SourceRoleName", Connection.SourceRoleNameDomainPropertyId, typeof(Connection.SourceRoleNamePropertyHandler)),

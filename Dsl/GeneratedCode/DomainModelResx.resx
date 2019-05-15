@@ -413,6 +413,14 @@
     <value>Orientation</value>
     <comment>DisplayName for DomainProperty &apos;Orientation&apos; on DomainClass &apos;StackPanel&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.StackPanel/Items.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StackPanel.Items</value>
+    <comment>Description for DomainProperty &apos;Items&apos; on DomainClass &apos;StackPanel&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StackPanel/Items.DisplayName" xml:space="preserve">
+    <value>Items</value>
+    <comment>DisplayName for DomainProperty &apos;Items&apos; on DomainClass &apos;StackPanel&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.Input.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.Input</value>
     <comment>Description for DomainClass &apos;Input&apos;</comment>
