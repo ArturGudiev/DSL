@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="eda229d1-bd9e-4749-b492-13c01862a56e" name="BackButton" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+  <controllers>
+    <componentModelHasControllers Id="f738dd89-d8a2-4f9d-8328-acb9487cead3">
+      <controller Id="89971e52-3f93-4c89-aeb6-d741c3bcb5ba" name="MainController" isFirst="false">
+        <iP>
+          <classWithPortsHasIP Id="76a82087-6f02-4735-a05f-dfe8232249a1">
+            <iP Id="cc69a92c-d51d-4b96-ad4d-0b08e9304c81">
+              <childConnections>
+                <c Id="54c25108-19f7-4e68-afc2-d95d8019fc2e">
+                  <iPMoniker Id="29a16405-2f47-4f66-87c6-0ccd0aeecccc" />
+                </c>
+              </childConnections>
+            </iP>
+          </classWithPortsHasIP>
+        </iP>
+        <states>
+          <controllerHasStates Id="8d4fd093-a117-4fdc-a5e6-7a0d476d06d4">
+            <state Id="a1221c0f-4f76-4bf9-b56b-16a4a0102418" name="State1" />
+          </controllerHasStates>
+          <controllerHasStates Id="bde3acfd-d636-4501-b519-ddc909279615">
+            <state Id="159d78f7-dba5-4515-8b0a-9e6822d4a80d" name="State2">
+              <iP>
+                <classWithPortsHasIP Id="da6ce7d9-c190-4af9-a629-5b355035ac14">
+                  <iP Id="29a16405-2f47-4f66-87c6-0ccd0aeecccc" />
+                </classWithPortsHasIP>
+              </iP>
+            </state>
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+    <componentModelHasControllers Id="83ecbb7e-a074-4d13-b5f3-67c40d4fc38b">
+      <controller Id="de8f5e02-3add-4665-8eed-c3851b8604ff" name="SecondController" isFirst="false">
+        <iP>
+          <classWithPortsHasIP Id="a1483f8d-de86-480a-af8b-adf16a2e0063">
+            <iP Id="a76ad2c3-c769-4e32-99ac-f781f412eb31">
+              <childConnections>
+                <c Id="9de7557a-4b68-4c3c-9569-6db86268ee49">
+                  <iPMoniker Id="b0b2be56-184d-45ee-8ddd-25e73735ca13" />
+                </c>
+              </childConnections>
+            </iP>
+          </classWithPortsHasIP>
+        </iP>
+        <states>
+          <controllerHasStates Id="2912d965-e6c6-44ab-b24e-c1758f91fa39">
+            <state Id="cde2e266-79fd-4cef-a1ff-a70617b610ca" name="State3" />
+          </controllerHasStates>
+          <controllerHasStates Id="773d89b2-24be-4720-8af7-dbe6248acaec">
+            <state Id="520c1c56-81e9-4656-9a8e-0dc05edc6431" name="State4">
+              <iP>
+                <classWithPortsHasIP Id="5fa6226b-a8da-4efb-8ee3-d66c97233b04">
+                  <iP Id="b0b2be56-184d-45ee-8ddd-25e73735ca13" />
+                </classWithPortsHasIP>
+              </iP>
+            </state>
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+  </controllers>
+</componentModel>

@@ -1,0 +1,11 @@
+﻿
+<#  
+#> 
+
+<#+
+	private State getFirstState(Controller controller){ 
+		  C.getLinksToChildConnections(controller.IP)   
+		 
+	} 
+#>
+

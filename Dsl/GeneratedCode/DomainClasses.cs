@@ -2726,12 +2726,12 @@ namespace Company.MobileDSL
 		{
 		}
 		#endregion
-		#region ClassWithPorts opposite domain role accessor
+		#region Parent opposite domain role accessor
 		/// <summary>
-		/// Gets or sets ClassWithPorts.
+		/// Gets or sets Parent.
 		/// Description for Company.MobileDSL.ClassWithPortsHasIP.IP
 		/// </summary>
-		public virtual ClassWithPorts ClassWithPorts
+		public virtual ClassWithPorts Parent
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
@@ -2786,12 +2786,12 @@ namespace Company.MobileDSL
 		{
 		}
 		#endregion
-		#region ClassWithPorts opposite domain role accessor
+		#region Parent opposite domain role accessor
 		/// <summary>
-		/// Gets or sets ClassWithPorts.
+		/// Gets or sets Parent.
 		/// Description for Company.MobileDSL.ClassWithPortsHasOP.OP
 		/// </summary>
-		public virtual ClassWithPorts ClassWithPorts
+		public virtual ClassWithPorts Parent
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get

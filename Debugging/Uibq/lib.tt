@@ -1,0 +1,94 @@
+﻿	<#+
+//=====================================================================
+private State getMainState(Controller controller){
+	IP ip = controller.IP.ChildConnections.ToArray()[0] as IP ;
+	return ip.Parent as State;
+}
+//=====================================================================
+//=============== Primitive Generation ===================  
+private void generatePrimitive(Primitive primitive) {#>
+	<#+ primitiveType(primitive);#>  <#= primitive.Name #> = <#+ 
+	switch(primitive.GetType().ToString()){
+		case "Company.MobileDSL.Button": 
+			#>
+							new Button{
+							VerticalAlignment = VerticalAlignment.Center, 
+							HorizontalAlignment = HorizontalAlignment.Center, 
+							Background = new SolidColorBrush(Colors.Gray), 
+							Foreground = new SolidColorBrush(Colors.Black), 
+							Padding = new Thickness(Screen.NormalFontSize), 
+							WrapContent = true, 
+							Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
+							Text = "<#= ((Company.MobileDSL.Button)primitive).Text #>"
+					}; 
+			<#+
+			break;
+		case "Company.MobileDSL.Label":
+		#>
+							new TextBlock{
+                VerticalAlignment = VerticalAlignment.Center, 
+                HorizontalAlignment = HorizontalAlignment.Center, 
+                WrapContent = true, 
+                Font = new Font(new FontFamily("Arial"), 16),
+                Foreground = new SolidColorBrush(Colors.Black),
+                Text = "<#=((Company.MobileDSL.Label)primitive).Text#>"
+}							;
+		<#+ 
+			break;
+		case "Company.MobileDSL.DropBox":
+		#>
+							new DropBox{
+                VerticalAlignment = VerticalAlignment.Center,           
+                HorizontalAlignment = HorizontalAlignment.Center,       
+                Padding = new Thickness(Screen.NormalFontSize),        
+                WrapContent = true,                                     
+                Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize),           
+                ItemList =  new List<string>("<#=((Company.MobileDSL.DropBox)primitive).Items#>".Split('=')),
+};
+		<#+ 
+			break;
+		case "Company.MobileDSL.Input":
+		#>
+							new Input{
+    VerticalAlignment = VerticalAlignment.Center, 
+    HorizontalAlignment = HorizontalAlignment.Center, 
+    Background = new SolidColorBrush(Colors.White), 
+    Foreground = new SolidColorBrush(Colors.Black), 
+    Padding = new Thickness(Screen.NormalFontSize), 
+    WrapContent = true,
+    Width = 150,
+    Font = new Font(new FontFamily("Arial"), 12),
+    InputMode = Ubiq.Graphics.InputMode.<#=((Company.MobileDSL.Input)primitive).InputMode#>,
+    Text = ""};
+		<#+ 
+			break;
+		case "Company.MobileDSL.ListBox":
+		#>
+							new ListBox{
+                 Children = {}, 
+};
+		<#+ 
+			break;
+		case "Company.MobileDSL.StackPanel":
+		string[] items = ((Company.MobileDSL.StackPanel)primitive).Items.Split(';');
+		#> new StackPanel{ Orientation = Orientation.Horizontal, Children = {<#+ foreach(string str in items){newCell(str, ','); } #> }, }; 
+		<#+ 
+			break;
+		default:
+			#>// No such element<#+WriteLine(""); 
+			break;
+	}
+#>
+<#+
+}
+//======================================================================================
+private void primitiveType(Primitive prim)  
+{  #>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.Button)) {#>Button<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.Label)) {#>TextBlock<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.Input)) {#>Input<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.DropBox)) {#>DropBox<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.StackPanel)) {#>StackPanel<#+}#>
+<#+ if(prim.GetType() == typeof(Company.MobileDSL.ListBox)) {#>ListBox<#+}#>
+<#+}
+#>

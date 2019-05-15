@@ -54,10 +54,10 @@ private void generateTextBlock(TextBlock tBlock) {
 <#+  //=======================================================  
 private void generateBlock(Block block) {
 	if(!isFunction(getParent(block))  ){
-		#> \#> <#= block.text #>  \<# 
+		#>  <#= block.text #>  
 			<#+
 	}else{
-		#> \#> <#= block.text #>  \<#+ 
+		#>  <#= block.text #>   
 		<#+
 	}
 }#>

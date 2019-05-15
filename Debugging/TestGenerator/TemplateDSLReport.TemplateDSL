@@ -1,48 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="81b92f9a-366e-4937-9822-98655edff22d" name="" xmlns="http://schemas.microsoft.com/dsltools/TemplateDSL">
-  <loops>
-    <componentModelHasLoops Id="02765cd6-dc25-4e30-83f2-9e3922c466f1">
-      <loop Id="9c7ff59e-6825-4a59-9852-f7b1048aefeb" leftPart="Event ev" container="form.Events" isFirst="true">
+  <functions>
+    <componentModelHasFunctions Id="1f8e7ebe-4a99-4a1d-b717-0ea624e0ba91">
+      <function Id="dc8fdff0-43ac-4c91-b55d-309770810182" name="getFirstState" parameters="Controller controller" returnType="State" isFirst="false">
         <innerElement>
-          <connectableContainsChild Id="5464e6a6-b3ed-489f-9fd0-341da9ec9aeb">
-            <evaluationBlockMoniker Id="91381559-9835-441d-a133-9bf56dc3f937" />
+          <connectableContainsChild Id="1caa6202-cfd0-438d-a8b4-b3aea3b0ce59">
+            <blockMoniker Id="22219f0c-0964-4c85-8c7f-e54b1f00d4a3" />
           </connectableContainsChild>
         </innerElement>
-      </loop>
-    </componentModelHasLoops>
-  </loops>
-  <evaluationBlocked>
-    <componentModelHasEvaluationBlocked Id="a8ad53d2-6078-41fa-87ad-41caca15b92b">
-      <evaluationBlock Id="91381559-9835-441d-a133-9bf56dc3f937" text="event.PrimitiveName">
-        <next>
-          <connectableLinkedWithConnectable Id="5cfb41b7-ef31-4d2e-a9cc-58ae1ac75e83">
-            <textBlockMoniker Id="bd1a09ec-af39-4d35-ba6e-de3c2213ca2a" />
-          </connectableLinkedWithConnectable>
-        </next>
-      </evaluationBlock>
-    </componentModelHasEvaluationBlocked>
-    <componentModelHasEvaluationBlocked Id="a9a4991f-b136-4263-82ec-60e92032aa03">
-      <evaluationBlock Id="e488316e-d177-4c6d-bdb3-94d74960d69a" text="event.Type">
-        <next>
-          <connectableLinkedWithConnectable Id="ceed0c04-a644-48b6-8123-5dc42c30e7d6">
-            <textBlockMoniker Id="421fe4f4-506f-49c1-a029-2ec06c16acc5" />
-          </connectableLinkedWithConnectable>
-        </next>
-      </evaluationBlock>
-    </componentModelHasEvaluationBlocked>
-  </evaluationBlocked>
-  <textBlocked>
-    <componentModelHasTextBlocked Id="c6b0f643-b668-4527-a8cd-3e71d41faa1a">
-      <textBlock Id="bd1a09ec-af39-4d35-ba6e-de3c2213ca2a" text=".">
-        <next>
-          <connectableLinkedWithConnectable Id="70ba5977-6ff1-4089-a5c4-1a4d2a211739">
-            <evaluationBlockMoniker Id="e488316e-d177-4c6d-bdb3-94d74960d69a" />
-          </connectableLinkedWithConnectable>
-        </next>
-      </textBlock>
-    </componentModelHasTextBlocked>
-    <componentModelHasTextBlocked Id="b7d32218-f96b-4862-9649-67c2601b4ca3">
-      <textBlock Id="421fe4f4-506f-49c1-a029-2ec06c16acc5" text=" = {}" />
-    </componentModelHasTextBlocked>
-  </textBlocked>
+      </function>
+    </componentModelHasFunctions>
+  </functions>
+  <blocks>
+    <componentModelHasBlocks Id="d98660e0-9283-4185-be63-de0a9f9e7e39">
+      <block Id="22219f0c-0964-4c85-8c7f-e54b1f00d4a3" text="C.getLinksToChildConnections(controller.IP)" />
+    </componentModelHasBlocks>
+  </blocks>
 </componentModel>

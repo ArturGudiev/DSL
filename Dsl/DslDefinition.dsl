@@ -570,6 +570,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="d30db48b-9edb-466d-a2dd-2b278ca5017c" Description="Description for Company.MobileDSL.C.Next Controller" Name="NextController" DisplayName="Next Controller">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
       <Source>
         <DomainRole Id="24ae03ea-39bb-4ed1-b150-46e8a9413ed6" Description="Description for Company.MobileDSL.C.SourceConnectable" Name="SourceConnectable" DisplayName="Source Connectable" PropertyName="ChildConnections" PropertyDisplayName="Child Connections">
@@ -595,7 +600,7 @@
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="4702e8ba-e740-4b54-8e82-a09023bd6111" Description="Description for Company.MobileDSL.ClassWithPortsHasIP.IP" Name="IP" DisplayName="IP" PropertyName="ClassWithPorts" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Class With Ports">
+        <DomainRole Id="4702e8ba-e740-4b54-8e82-a09023bd6111" Description="Description for Company.MobileDSL.ClassWithPortsHasIP.IP" Name="IP" DisplayName="IP" PropertyName="Parent" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Parent">
           <RolePlayer>
             <DomainClassMoniker Name="IP" />
           </RolePlayer>
@@ -611,7 +616,7 @@
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="d22da28f-d0ba-416e-afa6-fda35273b3e6" Description="Description for Company.MobileDSL.ClassWithPortsHasOP.OP" Name="OP" DisplayName="OP" PropertyName="ClassWithPorts" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Class With Ports">
+        <DomainRole Id="d22da28f-d0ba-416e-afa6-fda35273b3e6" Description="Description for Company.MobileDSL.ClassWithPortsHasOP.OP" Name="OP" DisplayName="OP" PropertyName="Parent" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Parent">
           <RolePlayer>
             <DomainClassMoniker Name="OP" />
           </RolePlayer>
@@ -686,7 +691,19 @@
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <CompartmentShape Id="cb5171d3-7ac6-479c-b7ce-d1474ea444eb" Description="Description for Company.MobileDSL.CompartmentShape1" Name="CompartmentShape1" DisplayName="Compartment Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Compartment Shape1" InitialHeight="1" Geometry="Rectangle">
+    <CompartmentShape Id="cb5171d3-7ac6-479c-b7ce-d1474ea444eb" Description="Description for Company.MobileDSL.CompartmentShape1" Name="CompartmentShape1" DisplayName="Compartment Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Compartment Shape1" ExposesTextColor="true" InitialHeight="1" ExposesFillColorAsProperty="true" Geometry="Rectangle">
+      <Properties>
+        <DomainProperty Id="3a08e898-fd53-46b0-b7d6-2aebd4de2386" Description="Description for Company.MobileDSL.CompartmentShape1.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
+          <Type>
+            <ExternalTypeMoniker Name="/System.Drawing/Color" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="3ec43e43-753f-4bf3-a47c-0001a2f99569" Description="Description for Company.MobileDSL.CompartmentShape1.Text Color" Name="TextColor" DisplayName="Text Color" Kind="CustomStorage">
+          <Type>
+            <ExternalTypeMoniker Name="/System.Drawing/Color" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
       </ShapeHasDecorators>
@@ -726,11 +743,14 @@
       </ConnectorHasDecorators>
     </Connector>
     <Connector Id="61d3f54d-7cb2-4808-906d-997c06378aff" Description="Description for Company.MobileDSL.CConnector" Name="CConnector" DisplayName="CConnector" Namespace="Company.MobileDSL" FixedTooltipText="CConnector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
-      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
+      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
         <TextDecorator Name="NextStateDecorator" DisplayName="Next State Decorator" DefaultText="NextStateDecorator" />
       </ConnectorHasDecorators>
       <ConnectorHasDecorators Position="SourceBottom" OffsetFromShape="0" OffsetFromLine="0">
         <TextDecorator Name="DataLinkDecorator" DisplayName="Data Link Decorator" DefaultText="DataLinkDecorator" />
+      </ConnectorHasDecorators>
+      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
+        <TextDecorator Name="NextControllerDecorator" DisplayName="Next Controller Decorator" DefaultText="NextControllerDecorator" />
       </ConnectorHasDecorators>
     </Connector>
   </Connectors>
@@ -935,6 +955,14 @@
       </XmlClassData>
       <XmlClassData TypeName="CompartmentShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="compartmentShape1Moniker" ElementName="compartmentShape1" MonikerTypeName="CompartmentShape1Moniker">
         <CompartmentShapeMoniker Name="CompartmentShape1" />
+        <ElementData>
+          <XmlPropertyData XmlName="fillColor">
+            <DomainPropertyMoniker Name="CompartmentShape1/FillColor" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="textColor">
+            <DomainPropertyMoniker Name="CompartmentShape1/TextColor" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ShowFormHasEvents" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormHasEventsMoniker" ElementName="showFormHasEvents" MonikerTypeName="ShowFormHasEventsMoniker">
         <DomainRelationshipMoniker Name="ShowFormHasEvents" />
@@ -1028,6 +1056,9 @@
           </XmlPropertyData>
           <XmlPropertyData XmlName="data">
             <DomainPropertyMoniker Name="C/Data" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="nextController">
+            <DomainPropertyMoniker Name="C/NextController" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -1327,14 +1358,14 @@
       <ShapeMap>
         <DomainClassMoniker Name="IP" />
         <ParentElementPath>
-          <DomainPath>ClassWithPortsHasIP.ClassWithPorts/!ClassWithPorts</DomainPath>
+          <DomainPath>ClassWithPortsHasIP.Parent/!ClassWithPorts</DomainPath>
         </ParentElementPath>
         <PortMoniker Name="IPShape" />
       </ShapeMap>
       <ShapeMap>
         <DomainClassMoniker Name="OP" />
         <ParentElementPath>
-          <DomainPath>ClassWithPortsHasOP.ClassWithPorts/!ClassWithPorts</DomainPath>
+          <DomainPath>ClassWithPortsHasOP.Parent/!ClassWithPorts</DomainPath>
         </ParentElementPath>
         <PortMoniker Name="OPShape" />
       </ShapeMap>
@@ -1408,6 +1439,14 @@
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="C/Data" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="CConnector/NextControllerDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="C/NextController" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>

@@ -1,0 +1,42 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".cs" #>
+<#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../Volunteer.mdsl'"  #>
+<#@ import namespace="System.Reflection" #>
+<#@ include file="lib.tt"#>
+//Generated material. Generating code in C#.
+
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+<# 
+		Controller controller = getControllerByName("SecondController");
+		State state = getMainState2(controller);
+		#><#= state.Name #><#+
+
+#>
+
+<#+
+//=================================================================================
+	private Controller getControllerByName(string controllerName){ 
+		foreach ( Controller controller in this.ComponentModel.Controllers ) {
+		  if(controller.Name == controllerName)return controller;   
+			}
+		return null;
+	} 
+//============================================================================
+	private State getStateByName(Controller controller, string stateName){ 
+		foreach ( State state in controller.States ) {
+		  if(state.Name == stateName)return state;   
+		}
+  	return null;   
+	} 
+//============================================================================
+	private State getMainState(Controller controller){
+	IP ip = controller.IP.ChildConnections.ToArray()[0] as IP ;
+	return ip.Parent as State;
+}
+//============================================================================
+private void printProperties(Type t){
+	foreach ( PropertyInfo pInfo in t.GetProperties() ) {
+								#><#= pInfo.Name #> ||| <#+ 
+							}
+}
+#>

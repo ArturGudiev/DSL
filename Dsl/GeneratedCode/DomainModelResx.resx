@@ -949,6 +949,14 @@
     <value>Data</value>
     <comment>DisplayName for DomainProperty &apos;Data&apos; on DomainClass &apos;C&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.C/NextController.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.C.Next Controller</value>
+    <comment>Description for DomainProperty &apos;NextController&apos; on DomainClass &apos;C&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.C/NextController.DisplayName" xml:space="preserve">
+    <value>Next Controller</value>
+    <comment>DisplayName for DomainProperty &apos;NextController&apos; on DomainClass &apos;C&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.C/SourceConnectable.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.C.SourceConnectable</value>
     <comment>Description for DomainRole &apos;SourceConnectable&apos; on DomainRelationship &apos;C&apos;</comment>
@@ -1002,7 +1010,7 @@
     <comment>DisplayName for DomainRole &apos;IP&apos; on DomainRelationship &apos;ClassWithPortsHasIP&apos;</comment>
   </data>
   <data name="Company.MobileDSL.ClassWithPortsHasIP/IP.PropertyDisplayName" xml:space="preserve">
-    <value>Class With Ports</value>
+    <value>Parent</value>
     <comment>PropertyDisplayName for DomainRole &apos;IP&apos; on DomainRelationship &apos;ClassWithPortsHasIP&apos;</comment>
   </data>
   <data name="Company.MobileDSL.ClassWithPortsHasOP.Description" xml:space="preserve">
@@ -1034,7 +1042,7 @@
     <comment>DisplayName for DomainRole &apos;OP&apos; on DomainRelationship &apos;ClassWithPortsHasOP&apos;</comment>
   </data>
   <data name="Company.MobileDSL.ClassWithPortsHasOP/OP.PropertyDisplayName" xml:space="preserve">
-    <value>Class With Ports</value>
+    <value>Parent</value>
     <comment>PropertyDisplayName for DomainRole &apos;OP&apos; on DomainRelationship &apos;ClassWithPortsHasOP&apos;</comment>
   </data>
   <data name="Company.MobileDSL.InPortShape.Description" xml:space="preserve">
@@ -1128,6 +1136,22 @@
   <data name="Company.MobileDSL.CompartmentShape1.DisplayName" xml:space="preserve">
     <value>Compartment Shape1</value>
     <comment>DisplayName for DomainClass &apos;CompartmentShape1&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.CompartmentShape1/FillColor.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.CompartmentShape1.Fill Color</value>
+    <comment>Description for DomainProperty &apos;FillColor&apos; on DomainClass &apos;CompartmentShape1&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.CompartmentShape1/FillColor.DisplayName" xml:space="preserve">
+    <value>Fill Color</value>
+    <comment>DisplayName for DomainProperty &apos;FillColor&apos; on DomainClass &apos;CompartmentShape1&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.CompartmentShape1/TextColor.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.CompartmentShape1.Text Color</value>
+    <comment>Description for DomainProperty &apos;TextColor&apos; on DomainClass &apos;CompartmentShape1&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.CompartmentShape1/TextColor.DisplayName" xml:space="preserve">
+    <value>Text Color</value>
+    <comment>DisplayName for DomainProperty &apos;TextColor&apos; on DomainClass &apos;CompartmentShape1&apos;</comment>
   </data>
   <data name="CompartmentShape1UIEventsCompartmentTitle" xml:space="preserve">
     <value></value>
@@ -1227,6 +1251,10 @@
   </data>
   <data name="CConnectorDataLinkDecoratorDefaultText" xml:space="preserve">
     <value>DataLinkDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="CConnectorNextControllerDecoratorDefaultText" xml:space="preserve">
+    <value>NextControllerDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="FormatList" xml:space="preserve">

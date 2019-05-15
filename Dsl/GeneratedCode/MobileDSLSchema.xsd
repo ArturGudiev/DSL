@@ -1545,6 +1545,8 @@
         <xsd:attribute name="nextState" type="xsd:string" />
         <!-- Property: Data -->
         <xsd:attribute name="data" type="xsd:string" />
+        <!-- Property: NextController -->
+        <xsd:attribute name="nextController" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

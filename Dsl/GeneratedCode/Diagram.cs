@@ -556,6 +556,9 @@ namespace Company.MobileDSL
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.C.DataDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "DataLinkDecorator").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.C.NextControllerDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NextControllerDecorator").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -925,14 +928,14 @@ namespace Company.MobileDSL
 			public static global::Company.MobileDSL.ClassWithPorts GetParentForIP( global::Company.MobileDSL.IP root )
 			{
 				// Segments 0 and 1
-				global::Company.MobileDSL.ClassWithPorts result = root.ClassWithPorts;
+				global::Company.MobileDSL.ClassWithPorts result = root.Parent;
 				if ( result == null ) return null;
 				return result;
 			}
 			public static global::Company.MobileDSL.ClassWithPorts GetParentForOP( global::Company.MobileDSL.OP root )
 			{
 				// Segments 0 and 1
-				global::Company.MobileDSL.ClassWithPorts result = root.ClassWithPorts;
+				global::Company.MobileDSL.ClassWithPorts result = root.Parent;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -1361,6 +1364,14 @@ namespace Company.MobileDSL
 				else if (e.DomainProperty.Id == global::Company.MobileDSL.C.DataDomainPropertyId)
 				{
 					DslDiagrams::Decorator decorator = global::Company.MobileDSL.CConnector.FindCConnectorDecorator("DataLinkDecorator");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.C.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.C.NextControllerDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.CConnector.FindCConnectorDecorator("NextControllerDecorator");
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.C.DomainClassId);

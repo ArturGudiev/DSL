@@ -43,13 +43,19 @@
                 <stateHasShowForms Id="c1991ba9-e300-4feb-9a43-9803d5347354">
                   <showForm Id="8c5dafcf-fc02-409b-964a-f30c7fdb923a" name="ChooseStationForm">
                     <childConnections>
-                      <c Id="3f43cb44-7ae7-4f2f-965c-0f35aaf73ed0" nextState="ShowState">
+                      <c Id="3f43cb44-7ae7-4f2f-965c-0f35aaf73ed0" fromEvent="ShowButtonClicked" nextState="ShowState">
+                        <oPMoniker Id="9309095d-40ae-4dc4-8211-f46f89427ba6" />
+                      </c>
+                      <c Id="08dfbf3f-7be3-4a55-bf8c-704936c83111" fromEvent="LeftDropBoxClicked" nextController="SecondController">
                         <oPMoniker Id="9309095d-40ae-4dc4-8211-f46f89427ba6" />
                       </c>
                     </childConnections>
                     <events>
                       <showFormHasEvents Id="81a1532d-40a2-4469-b78c-5e92ffd07882">
                         <event Id="82f0c816-b3b6-433e-97af-a60f922aa382" name="ShowButtonClicked" primitiveName="ShowButton" type="Clicked" />
+                      </showFormHasEvents>
+                      <showFormHasEvents Id="aba78783-9d3f-4ca5-9be6-9d2b8b574db0">
+                        <event Id="d7648511-a1d2-416d-9426-c8cfd9815eca" name="LeftDropBoxClicked" primitiveName="LeftDropBox" type="Clicked" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
