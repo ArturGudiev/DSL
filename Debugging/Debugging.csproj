@@ -114,6 +114,10 @@
       <DependentUpon>TemplateDSLReport.TemplateDSL</DependentUpon>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Volunteer - Copy.mdsl" />
+    <None Include="Volunteer - Copy.mdsl.diagram">
+      <DependentUpon>Volunteer - Copy.mdsl</DependentUpon>
+    </None>
     <None Include="Volunteer.mdsl" />
     <None Include="Volunteer.mdsl.diagram">
       <DependentUpon>Volunteer.mdsl</DependentUpon>
