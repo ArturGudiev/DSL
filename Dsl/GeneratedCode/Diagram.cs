@@ -1310,6 +1310,7 @@ namespace Company.MobileDSL
 		/// A rule which fires when data mapped to outer text decorators has changed,
 		/// so we can update the decorator host's bounds.
 		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.NamedElement), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Connection), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.State_old2ReferencesPreviousStates), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormReferencesOutPorts), InitiallyDisabled=true)]
@@ -1321,7 +1322,15 @@ namespace Company.MobileDSL
 			{
 				if(e == null) throw new global::System.ArgumentNullException("e");
 				
-				if (e.DomainProperty.Id == global::Company.MobileDSL.Connection.SourceRoleNameDomainPropertyId)
+				if (e.DomainProperty.Id == global::Company.MobileDSL.NamedElement.NameDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.ControllerShape.FindControllerShapeDecorator("Name");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.Controller.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.Connection.SourceRoleNameDomainPropertyId)
 				{
 					DslDiagrams::Decorator decorator = global::Company.MobileDSL.AssociationLink.FindAssociationLinkDecorator("SourceRoleName");
 					if(decorator != null)

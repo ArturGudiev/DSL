@@ -603,6 +603,12 @@ namespace Company.MobileDSL
 			backgroundBrush.Color = global::System.Drawing.Color.FromArgb(255, 227, 226, 231);
 			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
 		
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 10/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
 		}
 		
 		/// <summary>
@@ -634,15 +640,6 @@ namespace Company.MobileDSL
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
-			field1.DefaultText = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("ControllerShapeNameDefaultText");
-			field1.DefaultFocusable = true;
-			field1.DefaultAutoSize = true;
-			field1.AnchoringBehavior.MinimumHeightInLines = 1;
-			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field1);
-			
 		}
 		
 		/// <summary>
@@ -654,8 +651,15 @@ namespace Company.MobileDSL
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("ControllerShapeNameDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterTopCenter, DslDiagrams::PointD.Empty, true);
 			decorators.Add(decorator1);
 				
 		}
@@ -1274,6 +1278,22 @@ namespace Company.MobileDSL
 		#endregion
 		#region Shape styles
 		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 10/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+		}
+		
+		/// <summary>
 		/// Indicates whether this shape displays a background gradient.
 		/// </summary>
 		public override bool HasBackgroundGradient
@@ -1380,6 +1400,7 @@ namespace Company.MobileDSL
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
 			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
 			shapeFields.Add(field1);
 			
 		}
@@ -1832,6 +1853,22 @@ namespace Company.MobileDSL
 		#endregion
 		#region Shape styles
 		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 10/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+		}
+		
+		/// <summary>
 		/// Indicates whether this shape displays a background gradient.
 		/// </summary>
 		public override bool HasBackgroundGradient
@@ -1842,6 +1879,8 @@ namespace Company.MobileDSL
 			}
 		}
 		
+		private global::System.Drawing.Drawing2D.LinearGradientMode fillGradientMode = global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+		
 		/// <summary>
 		/// Indicates the direction of the gradient.
 		/// </summary>
@@ -1849,7 +1888,7 @@ namespace Company.MobileDSL
 		{
 			get
 			{
-				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+				return this.fillGradientMode;
 			}
 		}
 		#endregion
@@ -1904,6 +1943,23 @@ namespace Company.MobileDSL
 			this.Invalidate();
 		}
 		
+		/// <summary>
+		/// Custom storage for domain property FillGradientMode.
+		/// </summary>
+		private global::System.Drawing.Drawing2D.LinearGradientMode GetFillGradientModeValue()
+		{
+			return this.fillGradientMode;
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property FillGradientMode.
+		/// </summary>
+		private void SetFillGradientModeValue(global::System.Drawing.Drawing2D.LinearGradientMode newValue)
+		{
+			this.fillGradientMode = newValue;
+			this.Invalidate();
+		}
+		
 		#endregion
 		#region Decorators
 		/// <summary>
@@ -1919,6 +1975,7 @@ namespace Company.MobileDSL
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
 			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
 			shapeFields.Add(field1);
 			
 		}
@@ -1995,20 +2052,32 @@ namespace Company.MobileDSL
 					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
 				}
 				{
+					DslDiagrams::FontSettings titleFont = new DslDiagrams::FontSettings();
+					titleFont.Style =  global::System.Drawing.FontStyle.Regular ;
+					titleFont.Size = 10/72.0F;
+					DslDiagrams::FontSettings itemFont = new DslDiagrams::FontSettings();
+					itemFont.Style =  global::System.Drawing.FontStyle.Bold ;
+					itemFont.Size = 10/72.0F;
 					string title = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("CompartmentShape1UIEventsCompartmentTitle");
 					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("UIEventsCompartment", title, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
-						null, null,
+						titleFont, itemFont,
 						false);
 					compartmentDescriptions[localCompartmentsOffset+0] = descriptor;
 				}
 				{
+					DslDiagrams::FontSettings titleFont = new DslDiagrams::FontSettings();
+					titleFont.Style =  global::System.Drawing.FontStyle.Regular ;
+					titleFont.Size = 10/72.0F;
+					DslDiagrams::FontSettings itemFont = new DslDiagrams::FontSettings();
+					itemFont.Style =  global::System.Drawing.FontStyle.Bold ;
+					itemFont.Size = 10/72.0F;
 					string title = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("CompartmentShape1UIPrimitivesTitle");
 					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("UIPrimitives", title, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
-						null, null,
+						titleFont, itemFont,
 						false);
 					compartmentDescriptions[localCompartmentsOffset+1] = descriptor;
 				}
@@ -2310,6 +2379,95 @@ namespace Company.MobileDSL
 					// set to CustomStorage. Please provide the SetTextColorValue()
 					// method on the domain class.
 					element.SetTextColorValue(newValue);
+					ValueChanged(element, oldValue, GetValue(element));
+				}
+			}
+		}
+		
+		#endregion
+		#region FillGradientMode domain property code
+		
+		/// <summary>
+		/// FillGradientMode domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid FillGradientModeDomainPropertyId = new global::System.Guid(0x0a37e6f3, 0xe8f3, 0x4984, 0x9d, 0x27, 0x88, 0x7d, 0xdd, 0x92, 0x91, 0xa7);
+		
+		/// <summary>
+		/// Gets or sets the value of FillGradientMode domain property.
+		/// Description for Company.MobileDSL.CompartmentShape1.Fill Gradient Mode
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.CompartmentShape1/FillGradientMode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.CompartmentShape1/FillGradientMode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
+		[DslModeling::DomainObjectId("0a37e6f3-e8f3-4984-9d27-887ddd9291a7")]
+		public global::System.Drawing.Drawing2D.LinearGradientMode FillGradientMode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return FillGradientModePropertyHandler.Instance.GetValue(this);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				FillGradientModePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the CompartmentShape1.FillGradientMode domain property.
+		/// </summary>
+		internal sealed partial class FillGradientModePropertyHandler : DslModeling::DomainPropertyValueHandler<CompartmentShape1, global::System.Drawing.Drawing2D.LinearGradientMode>
+		{
+			private FillGradientModePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the CompartmentShape1.FillGradientMode domain property value handler.
+			/// </summary>
+			public static readonly FillGradientModePropertyHandler Instance = new FillGradientModePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the CompartmentShape1.FillGradientMode domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return FillGradientModeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Drawing.Drawing2D.LinearGradientMode GetValue(CompartmentShape1 element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for FillGradientMode because its Kind is
+				// set to CustomStorage. Please provide the GetFillGradientModeValue()
+				// method on the domain class.
+				return element.GetFillGradientModeValue();
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(CompartmentShape1 element, global::System.Drawing.Drawing2D.LinearGradientMode newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Drawing.Drawing2D.LinearGradientMode oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					// There is no storage for FillGradientMode because its Kind is
+					// set to CustomStorage. Please provide the SetFillGradientModeValue()
+					// method on the domain class.
+					element.SetFillGradientModeValue(newValue);
 					ValueChanged(element, oldValue, GetValue(element));
 				}
 			}

@@ -655,8 +655,8 @@
       </ShapeHasDecorators>
     </Port>
     <GeometryShape Id="8e6c22d8-c000-4e24-86bf-5aaaba4a36aa" Description="" Name="ControllerShape" DisplayName="Controller Shape" Namespace="Company.MobileDSL" FixedTooltipText="Controller Shape" FillColor="227, 226, 231" OutlineColor="113, 111, 110" InitialHeight="0.5" OutlineThickness="0.01" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="EntityShapeNameDecorator" />
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="EntityShapeNameDecorator" FontStyle="Bold" FontSize="10" />
       </ShapeHasDecorators>
     </GeometryShape>
     <GeometryShape Id="e22cd1e1-94a1-4630-9bcd-d03eda132d24" Description="" Name="CommentBoxShape" DisplayName="Comment Box Shape" Namespace="Company.MobileDSL" FixedTooltipText="Comment Box Shape" FillColor="255, 255, 204" OutlineColor="204, 204, 102" InitialHeight="0.3" OutlineThickness="0.01" FillGradientMode="None" Geometry="Rectangle">
@@ -688,10 +688,10 @@
         </DomainProperty>
       </Properties>
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
+        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="10" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <CompartmentShape Id="cb5171d3-7ac6-479c-b7ce-d1474ea444eb" Description="Description for Company.MobileDSL.CompartmentShape1" Name="CompartmentShape1" DisplayName="Compartment Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Compartment Shape1" ExposesTextColor="true" InitialHeight="1" ExposesFillColorAsProperty="true" Geometry="Rectangle">
+    <CompartmentShape Id="cb5171d3-7ac6-479c-b7ce-d1474ea444eb" Description="Description for Company.MobileDSL.CompartmentShape1" Name="CompartmentShape1" DisplayName="Compartment Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Compartment Shape1" ExposesTextColor="true" InitialHeight="1" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="Rectangle">
       <Properties>
         <DomainProperty Id="3a08e898-fd53-46b0-b7d6-2aebd4de2386" Description="Description for Company.MobileDSL.CompartmentShape1.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
           <Type>
@@ -703,12 +703,17 @@
             <ExternalTypeMoniker Name="/System.Drawing/Color" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="0a37e6f3-e8f3-4984-9d27-887ddd9291a7" Description="Description for Company.MobileDSL.CompartmentShape1.Fill Gradient Mode" Name="FillGradientMode" DisplayName="Fill Gradient Mode" Kind="CustomStorage">
+          <Type>
+            <ExternalTypeMoniker Name="/System.Drawing.Drawing2D/LinearGradientMode" />
+          </Type>
+        </DomainProperty>
       </Properties>
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
+        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="10" />
       </ShapeHasDecorators>
-      <Compartment Name="UIEventsCompartment" />
-      <Compartment Name="UIPrimitives" />
+      <Compartment Name="UIEventsCompartment" TitleFontSize="10" EntryFontStyle="Bold" EntryFontSize="10" />
+      <Compartment Name="UIPrimitives" TitleFontSize="10" EntryFontStyle="Bold" EntryFontSize="10" />
     </CompartmentShape>
     <Port Id="f83602a3-02ae-4c1a-aa76-5d5782f998f4" Description="Description for Company.MobileDSL.IPShape" Name="IPShape" DisplayName="IPShape" Namespace="Company.MobileDSL" FixedTooltipText="IPShape" InitialWidth="0.2" InitialHeight="0.2" Geometry="Rectangle">
       <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
@@ -742,15 +747,22 @@
         <TextDecorator Name="nextStateDecorator" DisplayName="Next State Decorator" DefaultText="nextStateDecorator" />
       </ConnectorHasDecorators>
     </Connector>
-    <Connector Id="61d3f54d-7cb2-4808-906d-997c06378aff" Description="Description for Company.MobileDSL.CConnector" Name="CConnector" DisplayName="CConnector" Namespace="Company.MobileDSL" FixedTooltipText="CConnector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
+    <Connector Id="61d3f54d-7cb2-4808-906d-997c06378aff" Description="Description for Company.MobileDSL.CConnector" Name="CConnector" DisplayName="CConnector" Namespace="Company.MobileDSL" FixedTooltipText="CConnector" ExposesTextColor="true" Color="113, 111, 110" TargetEndStyle="FilledArrow" Thickness="0.02">
+      <Properties>
+        <DomainProperty Id="9ec89f49-65e1-4d3c-a55f-cf73785a1656" Description="Description for Company.MobileDSL.CConnector.Text Color" Name="TextColor" DisplayName="Text Color" Kind="CustomStorage">
+          <Type>
+            <ExternalTypeMoniker Name="/System.Drawing/Color" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
-        <TextDecorator Name="NextStateDecorator" DisplayName="Next State Decorator" DefaultText="NextStateDecorator" />
+        <TextDecorator Name="NextStateDecorator" DisplayName="Next State Decorator" DefaultText="NextStateDecorator" FontStyle="Bold" FontSize="10" />
       </ConnectorHasDecorators>
       <ConnectorHasDecorators Position="SourceBottom" OffsetFromShape="0" OffsetFromLine="0">
-        <TextDecorator Name="DataLinkDecorator" DisplayName="Data Link Decorator" DefaultText="DataLinkDecorator" />
+        <TextDecorator Name="DataLinkDecorator" DisplayName="Data Link Decorator" DefaultText="DataLinkDecorator" FontStyle="Bold" FontSize="10" />
       </ConnectorHasDecorators>
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
-        <TextDecorator Name="NextControllerDecorator" DisplayName="Next Controller Decorator" DefaultText="NextControllerDecorator" />
+        <TextDecorator Name="NextControllerDecorator" DisplayName="Next Controller Decorator" DefaultText="NextControllerDecorator" FontStyle="Bold" FontSize="10" />
       </ConnectorHasDecorators>
     </Connector>
   </Connectors>
@@ -962,6 +974,9 @@
           <XmlPropertyData XmlName="textColor">
             <DomainPropertyMoniker Name="CompartmentShape1/TextColor" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="fillGradientMode">
+            <DomainPropertyMoniker Name="CompartmentShape1/FillGradientMode" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ShowFormHasEvents" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormHasEventsMoniker" ElementName="showFormHasEvents" MonikerTypeName="ShowFormHasEventsMoniker">
@@ -1064,6 +1079,11 @@
       </XmlClassData>
       <XmlClassData TypeName="CConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="cConnectorMoniker" ElementName="cConnector" MonikerTypeName="CConnectorMoniker">
         <ConnectorMoniker Name="CConnector" />
+        <ElementData>
+          <XmlPropertyData XmlName="textColor">
+            <DomainPropertyMoniker Name="CConnector/TextColor" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="DLink" MonikerAttributeName="" SerializeId="true" MonikerElementName="dLinkMoniker" ElementName="dLink" MonikerTypeName="DLinkMoniker">
         <DomainClassMoniker Name="DLink" />

@@ -1153,6 +1153,14 @@
     <value>Text Color</value>
     <comment>DisplayName for DomainProperty &apos;TextColor&apos; on DomainClass &apos;CompartmentShape1&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.CompartmentShape1/FillGradientMode.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.CompartmentShape1.Fill Gradient Mode</value>
+    <comment>Description for DomainProperty &apos;FillGradientMode&apos; on DomainClass &apos;CompartmentShape1&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.CompartmentShape1/FillGradientMode.DisplayName" xml:space="preserve">
+    <value>Fill Gradient Mode</value>
+    <comment>DisplayName for DomainProperty &apos;FillGradientMode&apos; on DomainClass &apos;CompartmentShape1&apos;</comment>
+  </data>
   <data name="CompartmentShape1UIEventsCompartmentTitle" xml:space="preserve">
     <value></value>
     <comment>Compartment title</comment>
@@ -1244,6 +1252,14 @@
   <data name="Company.MobileDSL.CConnector.DisplayName" xml:space="preserve">
     <value>CConnector</value>
     <comment>DisplayName for DomainClass &apos;CConnector&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.CConnector/TextColor.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.CConnector.Text Color</value>
+    <comment>Description for DomainProperty &apos;TextColor&apos; on DomainClass &apos;CConnector&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.CConnector/TextColor.DisplayName" xml:space="preserve">
+    <value>Text Color</value>
+    <comment>DisplayName for DomainProperty &apos;TextColor&apos; on DomainClass &apos;CConnector&apos;</comment>
   </data>
   <data name="CConnectorNextStateDecoratorDefaultText" xml:space="preserve">
     <value>NextStateDecorator</value>

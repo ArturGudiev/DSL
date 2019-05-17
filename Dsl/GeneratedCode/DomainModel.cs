@@ -169,11 +169,13 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(C), "NextState", C.NextStateDomainPropertyId, typeof(C.NextStatePropertyHandler)),
 				new DomainMemberInfo(typeof(C), "Data", C.DataDomainPropertyId, typeof(C.DataPropertyHandler)),
 				new DomainMemberInfo(typeof(C), "NextController", C.NextControllerDomainPropertyId, typeof(C.NextControllerPropertyHandler)),
+				new DomainMemberInfo(typeof(CConnector), "TextColor", CConnector.TextColorDomainPropertyId, typeof(CConnector.TextColorPropertyHandler)),
 				new DomainMemberInfo(typeof(StateShape), "FillColor", StateShape.FillColorDomainPropertyId, typeof(StateShape.FillColorPropertyHandler)),
 				new DomainMemberInfo(typeof(StateShape), "TextColor", StateShape.TextColorDomainPropertyId, typeof(StateShape.TextColorPropertyHandler)),
 				new DomainMemberInfo(typeof(StateShape), "FillGradientMode", StateShape.FillGradientModeDomainPropertyId, typeof(StateShape.FillGradientModePropertyHandler)),
 				new DomainMemberInfo(typeof(CompartmentShape1), "FillColor", CompartmentShape1.FillColorDomainPropertyId, typeof(CompartmentShape1.FillColorPropertyHandler)),
 				new DomainMemberInfo(typeof(CompartmentShape1), "TextColor", CompartmentShape1.TextColorDomainPropertyId, typeof(CompartmentShape1.TextColorPropertyHandler)),
+				new DomainMemberInfo(typeof(CompartmentShape1), "FillGradientMode", CompartmentShape1.FillGradientModeDomainPropertyId, typeof(CompartmentShape1.FillGradientModePropertyHandler)),
 			};
 		}
 		/// <summary>

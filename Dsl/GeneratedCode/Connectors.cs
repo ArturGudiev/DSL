@@ -1007,12 +1007,18 @@ namespace Company.MobileDSL
 			DslDiagrams::PenSettings linePen = new DslDiagrams::PenSettings();
 			linePen.Color = global::System.Drawing.Color.FromArgb(255, 113, 111, 110);
 			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ConnectionLineDecorator, linePen);
-			linePen.Width = 0.01f;
+			linePen.Width = 0.02f;
 			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ConnectionLine, linePen);
 			DslDiagrams::BrushSettings lineBrush = new DslDiagrams::BrushSettings();
 			lineBrush.Color = global::System.Drawing.Color.FromArgb(255, 113, 111, 110);
 			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ConnectionLineDecorator, lineBrush);
 			
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 10/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
 		}
 		
 		/// <summary>
@@ -1021,9 +1027,36 @@ namespace Company.MobileDSL
 		protected override void InitializeInstanceResources()
 		{
 			base.InitializeInstanceResources();
-			this.SetDecorators(null, new DslDiagrams::SizeD(0.1,0.1), DslDiagrams::LinkDecorator.DecoratorEmptyArrow, new DslDiagrams::SizeD(0.1,0.1), false);
+			this.SetDecorators(null, new DslDiagrams::SizeD(0.1,0.1), DslDiagrams::LinkDecorator.DecoratorFilledArrow, new DslDiagrams::SizeD(0.1,0.1), false);
 		}
 		
+		#endregion
+		
+		#region Custom storage for connector properties that appear in the property grid
+		/// <summary>
+		/// Custom storage for domain property TextColor.
+		/// </summary>
+		private global::System.Drawing.Color GetTextColorValue()
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeText);
+			if(settings != null && settings.IsOverridden(DslDiagrams::BrushSettingsFlags.Color))
+			{
+				return settings.Color;
+			}
+			return global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Black);
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property TextColor.
+		/// </summary>
+		private void SetTextColorValue(global::System.Drawing.Color newValue)
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeText);
+			if(settings == null) settings = new DslDiagrams::BrushSettings();
+			settings.Color = newValue;
+			this.StyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeText, settings);
+			this.Invalidate();
+		}
 		#endregion
 		
 		#region Decorators
@@ -1051,6 +1084,7 @@ namespace Company.MobileDSL
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
 			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
 			DslDiagrams::Decorator decorator1 = new DslDiagrams::ConnectorDecorator(field1, DslDiagrams::ConnectorDecoratorPosition.SourceTop, DslDiagrams::PointD.Empty, true);
 			decorators.Add(decorator1);
 				
@@ -1061,6 +1095,7 @@ namespace Company.MobileDSL
 			field2.AnchoringBehavior.MinimumHeightInLines = 1;
 			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field2.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
 			DslDiagrams::Decorator decorator2 = new DslDiagrams::ConnectorDecorator(field2, DslDiagrams::ConnectorDecoratorPosition.SourceBottom, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator2);
 				
@@ -1071,6 +1106,7 @@ namespace Company.MobileDSL
 			field3.AnchoringBehavior.MinimumHeightInLines = 1;
 			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field3.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
 			DslDiagrams::Decorator decorator3 = new DslDiagrams::ConnectorDecorator(field3, DslDiagrams::ConnectorDecoratorPosition.SourceTop, DslDiagrams::PointD.Empty, true);
 			decorators.Add(decorator3);
 				
@@ -1103,6 +1139,95 @@ namespace Company.MobileDSL
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region TextColor domain property code
+		
+		/// <summary>
+		/// TextColor domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TextColorDomainPropertyId = new global::System.Guid(0x9ec89f49, 0x65e1, 0x4d3c, 0xa5, 0x5f, 0xcf, 0x73, 0x78, 0x5a, 0x16, 0x56);
+		
+		/// <summary>
+		/// Gets or sets the value of TextColor domain property.
+		/// Description for Company.MobileDSL.CConnector.Text Color
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.CConnector/TextColor.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.CConnector/TextColor.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
+		[DslModeling::DomainObjectId("9ec89f49-65e1-4d3c-a55f-cf73785a1656")]
+		public global::System.Drawing.Color TextColor
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return TextColorPropertyHandler.Instance.GetValue(this);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TextColorPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the CConnector.TextColor domain property.
+		/// </summary>
+		internal sealed partial class TextColorPropertyHandler : DslModeling::DomainPropertyValueHandler<CConnector, global::System.Drawing.Color>
+		{
+			private TextColorPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the CConnector.TextColor domain property value handler.
+			/// </summary>
+			public static readonly TextColorPropertyHandler Instance = new TextColorPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the CConnector.TextColor domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TextColorDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Drawing.Color GetValue(CConnector element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for TextColor because its Kind is
+				// set to CustomStorage. Please provide the GetTextColorValue()
+				// method on the domain class.
+				return element.GetTextColorValue();
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(CConnector element, global::System.Drawing.Color newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Drawing.Color oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					// There is no storage for TextColor because its Kind is
+					// set to CustomStorage. Please provide the SetTextColorValue()
+					// method on the domain class.
+					element.SetTextColorValue(newValue);
+					ValueChanged(element, oldValue, GetValue(element));
+				}
+			}
+		}
+		
 		#endregion
 	}
 }
