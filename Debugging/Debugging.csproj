@@ -71,6 +71,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Game - Copy.mdsl" />
+    <None Include="Game - Copy.mdsl.diagram">
+      <DependentUpon>Game - Copy.mdsl</DependentUpon>
+    </None>
+    <None Include="Game.mdsl" />
+    <None Include="Game.mdsl.diagram">
+      <DependentUpon>Game.mdsl</DependentUpon>
+    </None>
     <None Include="TestGenerator\t4gen.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>t4gen1.tt</LastGenOutput>
@@ -132,7 +140,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controller_tt.txt" />
     <Content Include="MobileDSLReport.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

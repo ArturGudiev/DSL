@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="eda229d1-bd9e-4749-b492-13c01862a56e" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+  <controllers>
+    <componentModelHasControllers Id="ee485e0a-ecc3-4e87-9f5a-c624ac7a5226">
+      <controller Id="6fbf2aa4-d099-463a-90e0-a2aebfbd341a" name="LoginController" isFirst="false">
+        <iP>
+          <classWithPortsHasIP Id="505991fc-c35f-4e9e-850f-1f21a89b9194">
+            <iP Id="2d72be65-bc40-44e0-ae2e-38f9b0155bc4">
+              <childConnections>
+                <c Id="4bf616c6-5683-42ac-a824-eba4109f9eca">
+                  <iPMoniker Id="515f7fed-447a-4951-84c6-7e67fcb5cb6d" />
+                </c>
+              </childConnections>
+            </iP>
+          </classWithPortsHasIP>
+        </iP>
+        <oP>
+          <classWithPortsHasOP Id="a473566f-a0a7-4b5d-8b3c-ef72d9166d26">
+            <oP Id="a2c7006d-91f8-4224-a95e-31da7137e2e0">
+              <childConnections>
+                <c Id="42d483bb-c103-47b6-96b2-8490eb8b6cf7" data="UserName">
+                  <iPMoniker Id="0eb121ae-73d0-45c4-9370-e376d209239b" />
+                </c>
+              </childConnections>
+            </oP>
+          </classWithPortsHasOP>
+        </oP>
+        <states>
+          <controllerHasStates Id="22576936-44ec-427c-a127-7d3c72c36755">
+            <state Id="36d18bf7-5687-47b2-9b1e-0f9ceb0c6e63" name="Login">
+              <iP>
+                <classWithPortsHasIP Id="186191c3-db01-49fa-bac1-e66b4b4783d1">
+                  <iP Id="515f7fed-447a-4951-84c6-7e67fcb5cb6d" />
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="ec85f5f2-e944-407f-bbad-e13d368be333">
+                  <oP Id="658ff88a-e0cd-482f-95cc-717c1a738762">
+                    <childConnections>
+                      <c Id="01ab7842-43e9-468b-8c6a-bd6b300034c6">
+                        <oPMoniker Id="a2c7006d-91f8-4224-a95e-31da7137e2e0" />
+                      </c>
+                    </childConnections>
+                  </oP>
+                </classWithPortsHasOP>
+              </oP>
+              <targetStated>
+                <stateReferencesTargetStated Id="fcbb5c75-9cd7-49e8-9f69-514cf6e99f26">
+                  <stateMoniker name="//LoginController/Register" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="9610cec7-d521-4520-a8ed-06f5e83f6fcb">
+            <state Id="ea49ea94-07cf-4a42-9a3b-bae284c699c0" name="Register">
+              <targetStated>
+                <stateReferencesTargetStated Id="e7fb27b1-3f5f-4af7-9ef7-85920af945db">
+                  <stateMoniker name="//LoginController/Login" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+    <componentModelHasControllers Id="bb4e36d1-ce53-4927-b2e9-c3c919308415">
+      <controller Id="f234cb2d-3c99-4250-9fbc-ab48b7ee4fc0" name="UserListController" isFirst="false">
+        <iP>
+          <classWithPortsHasIP Id="1550ad5a-2124-4f37-83ba-4de20e5e6dc7">
+            <iP Id="0eb121ae-73d0-45c4-9370-e376d209239b">
+              <childConnections>
+                <c Id="a01cb646-d115-4d3c-b25c-cfd0c88b0c90">
+                  <iPMoniker Id="91405314-d517-4fc7-8641-7c3b6bbfe284" />
+                </c>
+              </childConnections>
+            </iP>
+          </classWithPortsHasIP>
+        </iP>
+        <oP>
+          <classWithPortsHasOP Id="2b7900bf-5856-4e4b-bd35-27e85201104a">
+            <oP Id="a92a8041-c33d-425f-a188-5cc9174b699c">
+              <childConnections>
+                <c Id="1418d4b0-3bbf-420f-b963-03cece67a1a0" data="PeerName">
+                  <iPMoniker Id="807cc0b6-eeea-4119-9ea2-db0775039afb" />
+                </c>
+              </childConnections>
+            </oP>
+          </classWithPortsHasOP>
+        </oP>
+        <states>
+          <controllerHasStates Id="8be7eeac-d94e-4d03-9313-1ff058673848">
+            <state Id="b3ad38a3-1153-4731-b89b-9f298d0f3ee0" name="UserList">
+              <iP>
+                <classWithPortsHasIP Id="3488e907-c1c0-4a1d-8001-c70c0406481c">
+                  <iP Id="91405314-d517-4fc7-8641-7c3b6bbfe284" />
+                </classWithPortsHasIP>
+              </iP>
+              <targetStated>
+                <stateReferencesTargetStated Id="2c75ee7b-09eb-4902-a877-a2efeb9e7781">
+                  <stateMoniker name="//UserListController/InviteUser" />
+                </stateReferencesTargetStated>
+                <stateReferencesTargetStated Id="91a9a5e9-723b-49c3-9ccd-0404fde5c884">
+                  <stateMoniker name="//UserListController/NewInvitation" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="281e3b90-d09e-44a4-97f2-a6c6f61ef6eb">
+            <state Id="04d26f07-1b03-4bb7-a2f4-d44252d4fc04" name="NewInvitation">
+              <oP>
+                <classWithPortsHasOP Id="2a4ebd05-55f9-494b-9692-3aedcf0823c0">
+                  <oP Id="ac112799-567e-46d0-9a25-637392208001">
+                    <childConnections>
+                      <c Id="2f673ea9-7c2c-4fa9-8b9d-1d9c1ae19d94">
+                        <oPMoniker Id="a92a8041-c33d-425f-a188-5cc9174b699c" />
+                      </c>
+                    </childConnections>
+                  </oP>
+                </classWithPortsHasOP>
+              </oP>
+              <targetStated>
+                <stateReferencesTargetStated Id="e64caa6b-b1cb-46ca-98f2-e0f0c226d1ec">
+                  <stateMoniker name="//UserListController/UserList" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="36286b34-9340-48c1-9062-c8c1d7b26698">
+            <state Id="5cd01232-4e8b-4e66-a396-5a1c412e137d" name="InviteUser">
+              <targetStated>
+                <stateReferencesTargetStated Id="2bf5a2c7-73e0-4913-85ac-1fcfc48e13e0">
+                  <stateMoniker name="//UserListController/UserList" />
+                </stateReferencesTargetStated>
+                <stateReferencesTargetStated Id="b0c1a8c7-462e-4857-b3c7-5daaee29a08f">
+                  <stateMoniker name="//UserListController/WaitingForAnswer" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="ebad19c9-a5b7-4acc-96d0-23bef2acb1e3">
+            <state Id="16e66ba4-e568-4807-8d49-2203cd083524" name="WaitingForAnswer">
+              <oP>
+                <classWithPortsHasOP Id="353f23d7-2902-40d8-b272-5c4049aba11d">
+                  <oP Id="4943f7dd-5c57-497f-9291-1b8eb125e52b">
+                    <childConnections>
+                      <c Id="be397e10-c996-4774-b2a7-9a5589767514" nextState="PeerName">
+                        <oPMoniker Id="a92a8041-c33d-425f-a188-5cc9174b699c" />
+                      </c>
+                    </childConnections>
+                  </oP>
+                </classWithPortsHasOP>
+              </oP>
+              <targetStated>
+                <stateReferencesTargetStated Id="5564491f-38af-40ef-81f5-26a1e81a2ee9">
+                  <stateMoniker name="//UserListController/UserList" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+    <componentModelHasControllers Id="998f718d-6f2d-42b7-8569-16f9b426f369">
+      <controller Id="6618b4c8-9aca-458e-92a0-6086d99cbb88" name="GameProcessController" isFirst="false">
+        <iP>
+          <classWithPortsHasIP Id="983bf37b-0c54-4523-97bf-7971bc28de60">
+            <iP Id="807cc0b6-eeea-4119-9ea2-db0775039afb">
+              <childConnections>
+                <c Id="4d2f2318-200a-4bbb-a688-af38f0ffbbab">
+                  <iPMoniker Id="9954c372-79e6-4767-9007-e17d28031be7" />
+                </c>
+              </childConnections>
+            </iP>
+          </classWithPortsHasIP>
+        </iP>
+        <oP>
+          <classWithPortsHasOP Id="65e90698-b938-487f-add1-1835c95ecfd1">
+            <oP Id="6982c3be-4db7-43cc-acf0-5ff808019590">
+              <childConnections>
+                <c Id="8d3fa4bc-9cf6-497f-8594-83d0737001fd">
+                  <iPMoniker Id="0eb121ae-73d0-45c4-9370-e376d209239b" />
+                </c>
+              </childConnections>
+            </oP>
+          </classWithPortsHasOP>
+        </oP>
+        <states>
+          <controllerHasStates Id="57f528c4-fa9e-4899-9dce-d46fa6673b7c">
+            <state Id="dd1719d3-f305-4d84-8d0a-8a2622db4a9e" name="InitGame">
+              <iP>
+                <classWithPortsHasIP Id="e21c86ae-f168-4e38-9c12-521cfcf8cdc5">
+                  <iP Id="9954c372-79e6-4767-9007-e17d28031be7" />
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="ab2838db-96fd-45e9-b916-cbe6f3b6c312">
+                  <oP Id="a878ad8e-ac82-41cf-837a-7eb67adffc32">
+                    <childConnections>
+                      <c Id="6eebde10-4d89-4232-8fc4-ee65cff71fcc">
+                        <oPMoniker Id="6982c3be-4db7-43cc-acf0-5ff808019590" />
+                      </c>
+                    </childConnections>
+                  </oP>
+                </classWithPortsHasOP>
+              </oP>
+              <targetStated>
+                <stateReferencesTargetStated Id="37e7f893-ded8-420c-9c1a-957fb72f16b7">
+                  <stateMoniker name="//GameProcessController/ProcessGame" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="ff742ec4-2099-4eb4-a87a-9cb5973bcc17">
+            <state Id="f768aa44-c357-4032-aecf-861b66871cad" name="GameComplete">
+              <targetStated>
+                <stateReferencesTargetStated Id="54554903-6c79-45a3-9798-03842c745d2e">
+                  <stateMoniker name="//GameProcessController/InitGame" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="b47673bb-35f5-40c3-97cd-938472ab0892">
+            <state Id="aa48fbf3-f7c4-49ee-9ce6-3a100d676753" name="CancelGame">
+              <targetStated>
+                <stateReferencesTargetStated Id="dfe49b4b-b636-4c94-97e6-3122aaec9cca">
+                  <stateMoniker name="//GameProcessController/InitGame" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="361f2812-09d4-4d5a-82cf-2458dbbd0f37">
+            <state Id="c0e5bcdc-d48c-4ea5-bb8f-b3ea162151a0" name="ProcessGame">
+              <targetStated>
+                <stateReferencesTargetStated Id="08cdc66b-c43a-419a-9e5d-bf62a5bb42b4">
+                  <stateMoniker name="//GameProcessController/CancelGame" />
+                </stateReferencesTargetStated>
+                <stateReferencesTargetStated Id="a7c56b38-2efe-45d8-ac9b-ac03fb4679db">
+                  <stateMoniker name="//GameProcessController/GameComplete" />
+                </stateReferencesTargetStated>
+              </targetStated>
+            </state>
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+  </controllers>
+</componentModel>

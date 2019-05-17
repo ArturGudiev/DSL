@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mobileDSLDiagram dslVersion="1.0.0.0" Id="8e55289d-eb9b-4d3f-aa3d-a38f0c133afa" absoluteBounds="0, 0, 11, 14.5" name="Test">
+  <componentModelMoniker name="/" />
+  <nestedChildShapes>
+    <controllerShape Id="6612e06b-7e7e-4737-93e6-26cf529b4496" absoluteBounds="2.25, 0.5, 4.875, 3.625">
+      <controllerMoniker name="//LoginController" />
+      <relativeChildShapes>
+        <iPShape Id="6821551e-e51e-4365-988a-92e83a4d80e8" absoluteBounds="4.5625, 0.4, 0.2, 0.2">
+          <iPMoniker Id="2d72be65-bc40-44e0-ae2e-38f9b0155bc4" />
+        </iPShape>
+        <oPShape Id="3d3d3717-b6bf-4870-a7c4-e0ebd0010a2f" absoluteBounds="7.025, 3.5, 0.2, 0.2">
+          <oPMoniker Id="a2c7006d-91f8-4224-a95e-31da7137e2e0" />
+        </oPShape>
+      </relativeChildShapes>
+    </controllerShape>
+    <controllerShape Id="337681ab-e68c-464c-896d-89fba0c1776e" absoluteBounds="1.875, 4.75, 5.625, 4">
+      <controllerMoniker name="//UserListController" />
+      <relativeChildShapes>
+        <iPShape Id="55f31efb-f488-4c98-a028-ff8bef616e93" absoluteBounds="7.4, 4.90625, 0.2, 0.2">
+          <iPMoniker Id="0eb121ae-73d0-45c4-9370-e376d209239b" />
+        </iPShape>
+        <oPShape Id="679d050f-497a-4dbb-812e-be1ce55c7066" absoluteBounds="4.875, 8.65, 0.2, 0.2">
+          <oPMoniker Id="a92a8041-c33d-425f-a188-5cc9174b699c" />
+        </oPShape>
+      </relativeChildShapes>
+    </controllerShape>
+    <controllerShape Id="225c9ced-60f7-45cc-9793-c85777ea69fe" absoluteBounds="2, 9.5, 6.375, 4.75">
+      <controllerMoniker name="//GameProcessController" />
+      <relativeChildShapes>
+        <iPShape Id="92e0ab29-3a3c-4277-9fac-c38cc3ac3376" absoluteBounds="4.875, 9.4, 0.2, 0.2">
+          <iPMoniker Id="807cc0b6-eeea-4119-9ea2-db0775039afb" />
+        </iPShape>
+        <oPShape Id="2aadf1a2-3c6e-43d9-a0ff-1b8cc46d9dcf" absoluteBounds="5.28125, 9.4, 0.2, 0.2">
+          <oPMoniker Id="6982c3be-4db7-43cc-acf0-5ff808019590" />
+        </oPShape>
+      </relativeChildShapes>
+    </controllerShape>
+    <stateShape Id="f6e20eee-dbd7-40db-b6e3-053824b85647" absoluteBounds="5.125, 0.75, 1.5, 1.25" fillColor="Lime" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//LoginController/LoginState" />
+      <relativeChildShapes>
+        <iPShape Id="97641dea-1dc2-4970-a88f-f4ebfc49a7d6" absoluteBounds="5.025, 1.03125, 0.2, 0.2">
+          <iPMoniker Id="515f7fed-447a-4951-84c6-7e67fcb5cb6d" />
+        </iPShape>
+        <oPShape Id="5df3948d-e906-45b2-ad9c-e6daad7bf98d" absoluteBounds="5.53125, 1.9, 0.2, 0.2">
+          <oPMoniker Id="658ff88a-e0cd-482f-95cc-717c1a738762" />
+        </oPShape>
+      </relativeChildShapes>
+    </stateShape>
+    <stateShape Id="97d31a90-2ba1-45f0-8fd3-4e606fde6d7d" absoluteBounds="2.375, 2.5, 1.625, 1" fillColor="White" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//LoginController/RegisterState" />
+      <relativeChildShapes>
+        <iPShape Id="4b23f3bc-65f8-415d-a099-59e77cf0696e" absoluteBounds="3.9, 2.875, 0.2, 0.2">
+          <iPMoniker Id="2a9b7e1d-4aa3-42ce-9a54-5e26444498dc" />
+        </iPShape>
+        <oPShape Id="80c5e481-a3f2-478d-9b03-2bfdf3f98f04" absoluteBounds="3.4375, 2.4, 0.2, 0.2">
+          <oPMoniker Id="78885470-3355-42fc-8ebf-29f3adc368b2" />
+        </oPShape>
+      </relativeChildShapes>
+    </stateShape>
+    <stateShape Id="f65f5b9b-3075-415d-93d8-f4440b1f4cce" absoluteBounds="4.125, 5.25, 1.25, 0.75" fillColor="Lime" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//UserListController/UserList" />
+      <relativeChildShapes>
+        <iPShape Id="37666df8-526d-4de1-b0a0-97b80012a2ac" absoluteBounds="4.8125, 5.15, 0.2, 0.2">
+          <iPMoniker Id="91405314-d517-4fc7-8641-7c3b6bbfe284" />
+        </iPShape>
+      </relativeChildShapes>
+    </stateShape>
+    <stateShape Id="00c4aec3-e2c8-4fad-a213-47aaa5571069" absoluteBounds="5.75, 6.25, 1.5, 0.75" fillColor="White" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//UserListController/NewInvitation" />
+      <relativeChildShapes>
+        <oPShape Id="493809f8-46a1-4692-a78b-c5bd63396f46" absoluteBounds="6.71875, 6.9, 0.2, 0.2">
+          <oPMoniker Id="ac112799-567e-46d0-9a25-637392208001" />
+        </oPShape>
+      </relativeChildShapes>
+    </stateShape>
+    <stateShape Id="63d956a5-ac4b-4ea5-82d1-96b4c19b72e2" absoluteBounds="2.25, 6.25, 1.5, 0.75" fillColor="White" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//UserListController/InviteUser" />
+    </stateShape>
+    <stateShape Id="5f5c8fc9-ce91-46f0-9362-6832398e74d1" absoluteBounds="2.375, 7.375, 1.5, 0.75" fillColor="White" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//UserListController/WaitingForAnswer" />
+      <relativeChildShapes>
+        <oPShape Id="3e7202f5-1ba9-47c5-a342-9c368b154af4" absoluteBounds="3.0625, 8.025, 0.2, 0.2">
+          <oPMoniker Id="4943f7dd-5c57-497f-9291-1b8eb125e52b" />
+        </oPShape>
+      </relativeChildShapes>
+    </stateShape>
+    <stateShape Id="e41df0c5-2a65-4466-b2a8-0bbcbb6f08a9" absoluteBounds="4.125, 10, 1.625, 1" fillColor="Lime" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//GameProcessController/InitGame" />
+      <relativeChildShapes>
+        <iPShape Id="7b8b80a4-9ba1-4394-87b8-c7a7bff56380" absoluteBounds="4.875, 9.9, 0.2, 0.2">
+          <iPMoniker Id="9954c372-79e6-4767-9007-e17d28031be7" />
+        </iPShape>
+        <oPShape Id="99886346-fc66-49e7-b86c-14f37fae3740" absoluteBounds="5.28125, 9.9, 0.2, 0.2">
+          <oPMoniker Id="a878ad8e-ac82-41cf-837a-7eb67adffc32" />
+        </oPShape>
+      </relativeChildShapes>
+    </stateShape>
+    <stateShape Id="28e5d337-c77a-4ee0-8548-1630edebef91" absoluteBounds="6.25, 11.125, 1.5, 1" fillColor="White" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//GameProcessController/GameComplete" />
+    </stateShape>
+    <stateShape Id="5d458c8f-5f6b-415e-855e-9b00ef178654" absoluteBounds="2.375, 11.25, 1.5, 1" fillColor="White" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//GameProcessController/CancelGame" />
+    </stateShape>
+    <stateShape Id="c9f693e6-e593-4b43-9e2f-fe865c6bbc72" absoluteBounds="4.25, 12.5, 1.5, 1" fillColor="White" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//GameProcessController/ProcessGame" />
+    </stateShape>
+    <cConnector Id="eb17b066-b444-4192-8235-4fb15ee9168a" edgePoints="[(4.6625 : 0.6); (4.6625 : 1.13125); (5.025 : 1.13125)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="4bf616c6-5683-42ac-a824-eba4109f9eca" />
+      <relativeChildShapes />
+      <nodes>
+        <iPShapeMoniker Id="6821551e-e51e-4365-988a-92e83a4d80e8" />
+        <iPShapeMoniker Id="97641dea-1dc2-4970-a88f-f4ebfc49a7d6" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="cfde6f1a-ca1a-4da4-a6f7-7e04bd13bdaa" edgePoints="[(5.63125 : 2.1); (5.63125 : 3.6); (7.025 : 3.6)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="01ab7842-43e9-468b-8c6a-bd6b300034c6" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="5df3948d-e906-45b2-ad9c-e6daad7bf98d" />
+        <oPShapeMoniker Id="3d3d3717-b6bf-4870-a7c4-e0ebd0010a2f" />
+      </nodes>
+    </cConnector>
+    <stateRefState Id="92dd7c0e-f6f2-4b86-ad70-3dfe61d43b7a" edgePoints="[(4.125 : 5.625); (3.27439024390244 : 5.625); (3.27439024390244 : 6.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="2c75ee7b-09eb-4902-a877-a2efeb9e7781" />
+      <nodes>
+        <stateShapeMoniker Id="f65f5b9b-3075-415d-93d8-f4440b1f4cce" />
+        <stateShapeMoniker Id="63d956a5-ac4b-4ea5-82d1-96b4c19b72e2" />
+      </nodes>
+    </stateRefState>
+    <stateRefState Id="f2a40c14-3114-4cc7-8ab2-d5d6983287ca" edgePoints="[(4.75 : 6); (4.75 : 6.625); (5.75 : 6.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="91a9a5e9-723b-49c3-9ccd-0404fde5c884" />
+      <nodes>
+        <stateShapeMoniker Id="f65f5b9b-3075-415d-93d8-f4440b1f4cce" />
+        <stateShapeMoniker Id="00c4aec3-e2c8-4fad-a213-47aaa5571069" />
+      </nodes>
+    </stateRefState>
+    <stateRefState Id="c577c3ad-4c06-409d-8466-3ff56d6a7492" edgePoints="[(6.5 : 6.25); (6.5 : 5.625); (5.375 : 5.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="e64caa6b-b1cb-46ca-98f2-e0f0c226d1ec" />
+      <nodes>
+        <stateShapeMoniker Id="00c4aec3-e2c8-4fad-a213-47aaa5571069" />
+        <stateShapeMoniker Id="f65f5b9b-3075-415d-93d8-f4440b1f4cce" />
+      </nodes>
+    </stateRefState>
+    <stateRefState Id="1d53a26f-6493-443d-ac54-cea80c862849" edgePoints="[(3.51219512195122 : 6.25); (3.51219512195122 : 5.8125); (4.125 : 5.8125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="2bf5a2c7-73e0-4913-85ac-1fcfc48e13e0" />
+      <nodes>
+        <stateShapeMoniker Id="63d956a5-ac4b-4ea5-82d1-96b4c19b72e2" />
+        <stateShapeMoniker Id="f65f5b9b-3075-415d-93d8-f4440b1f4cce" />
+      </nodes>
+    </stateRefState>
+    <stateRefState Id="003bc0f0-2421-40e1-a517-198ef481922f" edgePoints="[(3.0625 : 7); (3.0625 : 7.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="b0c1a8c7-462e-4857-b3c7-5daaee29a08f" />
+      <nodes>
+        <stateShapeMoniker Id="63d956a5-ac4b-4ea5-82d1-96b4c19b72e2" />
+        <stateShapeMoniker Id="5f5c8fc9-ce91-46f0-9362-6832398e74d1" />
+      </nodes>
+    </stateRefState>
+    <stateRefState Id="6cc1d65d-4127-4789-9f68-f7a9dfc44d33" edgePoints="[(3.875 : 7.7734375); (4.4375 : 7.7734375); (4.4375 : 6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="5564491f-38af-40ef-81f5-26a1e81a2ee9" />
+      <nodes>
+        <stateShapeMoniker Id="5f5c8fc9-ce91-46f0-9362-6832398e74d1" />
+        <stateShapeMoniker Id="f65f5b9b-3075-415d-93d8-f4440b1f4cce" />
+      </nodes>
+    </stateRefState>
+    <cConnector Id="f110f860-73bf-458e-add6-ba77037c849b" edgePoints="[(3.1625 : 8.225); (3.1625 : 8.475); (4.975 : 8.475); (4.975 : 8.65)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="be397e10-c996-4774-b2a7-9a5589767514" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="3e7202f5-1ba9-47c5-a342-9c368b154af4" />
+        <oPShapeMoniker Id="679d050f-497a-4dbb-812e-be1ce55c7066" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="99a8227d-7bed-479c-aca0-83b2267d2113" edgePoints="[(6.81875 : 7.1); (6.81875 : 8.475); (4.975 : 8.475); (4.975 : 8.65)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="2f673ea9-7c2c-4fa9-8b9d-1d9c1ae19d94" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="493809f8-46a1-4692-a78b-c5bd63396f46" />
+        <oPShapeMoniker Id="679d050f-497a-4dbb-812e-be1ce55c7066" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="7c65c719-ae44-4ce9-b725-b3638ba23455" edgePoints="[(7.4 : 5.00625); (4.9125 : 5.00625); (4.9125 : 5.15)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="a01cb646-d115-4d3c-b25c-cfd0c88b0c90" />
+      <relativeChildShapes />
+      <nodes>
+        <iPShapeMoniker Id="55f31efb-f488-4c98-a028-ff8bef616e93" />
+        <iPShapeMoniker Id="37666df8-526d-4de1-b0a0-97b80012a2ac" />
+      </nodes>
+    </cConnector>
+    <stateRefState Id="d90e1b80-4491-4f44-a6f1-1cdc1f588734" edgePoints="[(4.9375 : 11); (4.9375 : 12.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="37e7f893-ded8-420c-9c1a-957fb72f16b7" />
+      <nodes>
+        <stateShapeMoniker Id="e41df0c5-2a65-4466-b2a8-0bbcbb6f08a9" />
+        <stateShapeMoniker Id="c9f693e6-e593-4b43-9e2f-fe865c6bbc72" />
+      </nodes>
+    </stateRefState>
+    <stateRefState Id="d89f2043-c167-4197-8e2d-ee0841e85b68" edgePoints="[(4.25 : 13); (3.125 : 13); (3.125 : 12.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="08cdc66b-c43a-419a-9e5d-bf62a5bb42b4" />
+      <nodes>
+        <stateShapeMoniker Id="c9f693e6-e593-4b43-9e2f-fe865c6bbc72" />
+        <stateShapeMoniker Id="5d458c8f-5f6b-415e-855e-9b00ef178654" />
+      </nodes>
+    </stateRefState>
+    <stateRefState Id="c0746539-694c-4edd-84b9-dcbe6935d7eb" edgePoints="[(3.125 : 11.25); (3.125 : 10.5); (4.125 : 10.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="dfe49b4b-b636-4c94-97e6-3122aaec9cca" />
+      <nodes>
+        <stateShapeMoniker Id="5d458c8f-5f6b-415e-855e-9b00ef178654" />
+        <stateShapeMoniker Id="e41df0c5-2a65-4466-b2a8-0bbcbb6f08a9" />
+      </nodes>
+    </stateRefState>
+    <stateRefState Id="bbf09db7-2c3e-4534-a7eb-12a13dba08ec" edgePoints="[(5.75 : 13); (6.93518518518519 : 13); (6.93518518518519 : 12.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="a7c56b38-2efe-45d8-ac9b-ac03fb4679db" />
+      <nodes>
+        <stateShapeMoniker Id="c9f693e6-e593-4b43-9e2f-fe865c6bbc72" />
+        <stateShapeMoniker Id="28e5d337-c77a-4ee0-8548-1630edebef91" />
+      </nodes>
+    </stateRefState>
+    <stateRefState Id="48511cc6-b522-4645-a720-c358843bcf67" edgePoints="[(7 : 11.125); (7 : 10.5); (5.625 : 10.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <stateReferencesTargetStatedMoniker Id="54554903-6c79-45a3-9798-03842c745d2e" />
+      <nodes>
+        <stateShapeMoniker Id="28e5d337-c77a-4ee0-8548-1630edebef91" />
+        <stateShapeMoniker Id="e41df0c5-2a65-4466-b2a8-0bbcbb6f08a9" />
+      </nodes>
+    </stateRefState>
+    <cConnector Id="9aa83252-8b88-446f-b70a-45183f1933cb" edgePoints="[(4.975 : 9.6); (4.975 : 9.9)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="4d2f2318-200a-4bbb-a688-af38f0ffbbab" />
+      <relativeChildShapes />
+      <nodes>
+        <iPShapeMoniker Id="92e0ab29-3a3c-4277-9fac-c38cc3ac3376" />
+        <iPShapeMoniker Id="7b8b80a4-9ba1-4394-87b8-c7a7bff56380" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="06d14800-4381-4c73-88d0-ad3125c08027" edgePoints="[(5.375 : 9.9); (5.375 : 9.775); (5.38125 : 9.775); (5.38125 : 9.6)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="6eebde10-4d89-4232-8fc4-ee65cff71fcc" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="99886346-fc66-49e7-b86c-14f37fae3740" />
+        <oPShapeMoniker Id="2aadf1a2-3c6e-43d9-a0ff-1b8cc46d9dcf" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="e383c8b6-0e82-4271-a018-6f40c310498b" edgePoints="[(4.975 : 8.85); (4.975 : 9.4)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="1418d4b0-3bbf-420f-b963-03cece67a1a0" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="679d050f-497a-4dbb-812e-be1ce55c7066" />
+        <iPShapeMoniker Id="92e0ab29-3a3c-4277-9fac-c38cc3ac3376" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="d08185b0-36de-473a-a600-8d6c6d35e434" edgePoints="[(5.38125 : 9.4); (5.38125 : 9.125); (7.975 : 9.125); (7.975 : 5.00625); (7.6 : 5.00625)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="8d3fa4bc-9cf6-497f-8594-83d0737001fd" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="2aadf1a2-3c6e-43d9-a0ff-1b8cc46d9dcf" />
+        <iPShapeMoniker Id="55f31efb-f488-4c98-a028-ff8bef616e93" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="a25bed55-6d16-4fe9-9f61-0c7dcda4bd6e" edgePoints="[(5.63125 : 2.1); (5.63125 : 2.975); (4.1 : 2.975)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="1171a06d-3b1c-4591-98b2-b045ce704ec3" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="5df3948d-e906-45b2-ad9c-e6daad7bf98d" />
+        <iPShapeMoniker Id="4b23f3bc-65f8-415d-a099-59e77cf0696e" />
+      </nodes>
+    </cConnector>
+    <cConnector Id="f6a96af5-1bb4-4134-8a48-25657baec021" edgePoints="[(3.5375 : 2.4); (3.5375 : 1.13125); (5.025 : 1.13125)]" fixedFrom="Caller" fixedTo="Caller" textColor="Black" color="113, 111, 110">
+      <cMoniker Id="ced35fea-dba5-423c-9688-4a7b4b6cff03" />
+      <relativeChildShapes />
+      <nodes>
+        <oPShapeMoniker Id="80c5e481-a3f2-478d-9b03-2bfdf3f98f04" />
+        <iPShapeMoniker Id="97641dea-1dc2-4970-a88f-f4ebfc49a7d6" />
+      </nodes>
+    </cConnector>
+  </nestedChildShapes>
+</mobileDSLDiagram>

@@ -565,21 +565,6 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region States2 opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of States2.
-		/// Description for Company.MobileDSL.ControllerHasStates2.Controller
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<State_old2> States2
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<State_old2>, State_old2>(global::Company.MobileDSL.ControllerHasStates2.ControllerDomainRoleId);
-			}
-		}
-		#endregion
 		#region States opposite domain role accessor
 		
 		/// <summary>
@@ -619,11 +604,6 @@ namespace Company.MobileDSL
 				{
 					return true;
 				}
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.State_old2.DomainClassId)) 
-				{
-					return true;
-				}
 			}
 			return base.CanMerge(rootElement, elementGroupPrototype);
 		}
@@ -654,15 +634,6 @@ namespace Company.MobileDSL
 			{
 				// Create link for path ControllerHasStates.States
 				this.States.Add(sourceState1);
-
-				return;
-			}
-				
-			global::Company.MobileDSL.State_old2 sourceState_old22 = sourceElement as global::Company.MobileDSL.State_old2;
-			if (sourceState_old22 != null)
-			{
-				// Create link for path ControllerHasStates2.States2
-				this.States2.Add(sourceState_old22);
 
 				return;
 			}
@@ -702,210 +673,8 @@ namespace Company.MobileDSL
 
 				return;
 			}
-				
-			global::Company.MobileDSL.State_old2 sourceState_old22 = sourceElement as global::Company.MobileDSL.State_old2;
-			if (sourceState_old22 != null)
-			{
-				// Delete link for path ControllerHasStates2.States2
-				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ControllerHasStates2.GetLinks((global::Company.MobileDSL.Controller)this, sourceState_old22))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.ControllerHasStates2.ControllerDomainRoleId, global::Company.MobileDSL.ControllerHasStates2.State_old2DomainRoleId);
-				}
-
-				return;
-			}
 			// Fall through to base class if this class hasn't handled the unmerge.
 			base.MergeDisconnect(sourceElement);
-		}
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
-	/// DomainClass Port
-	/// Description for Company.MobileDSL.Port
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.Port.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.Port.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("11ad2be7-4a6f-4090-b8c9-29388fbc1406")]
-	public abstract partial class Port : DslModeling::ModelElement
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// Port domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x11ad2be7, 0x4a6f, 0x4090, 0xb8, 0xc9, 0x29, 0x38, 0x8f, 0xbc, 0x14, 0x06);
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		protected Port(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region ClassWithPorts opposite domain role accessor
-		/// <summary>
-		/// Gets or sets ClassWithPorts.
-		/// Description for Company.MobileDSL.ClassWithPortsHasPorts.Port
-		/// </summary>
-		public virtual ClassWithPorts ClassWithPorts
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasPorts.PortDomainRoleId) as ClassWithPorts;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ClassWithPortsHasPorts.PortDomainRoleId, value);
-			}
-		}
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
-	/// DomainClass InPort
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.InPort.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.InPort.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("1fe64f7d-f422-4778-8f00-f111d94e9d10")]
-	public partial class InPort : Port
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// InPort domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1fe64f7d, 0xf422, 0x4778, 0x8f, 0x00, 0xf1, 0x11, 0xd9, 0x4e, 0x9d, 0x10);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public InPort(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public InPort(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region Sources opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of Sources.
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<OutPort> Sources
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<OutPort>, OutPort>(global::Company.MobileDSL.Connection.TargetDomainRoleId);
-			}
-		}
-		#endregion
-		#region ShowForms opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of ShowForms.
-		/// Description for Company.MobileDSL.InPortReferencesShowForms.InPort
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ShowForm> ShowForms
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ShowForm>, ShowForm>(global::Company.MobileDSL.InPortReferencesShowForms.InPortDomainRoleId);
-			}
-		}
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
-	/// DomainClass OutPort
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.OutPort.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.OutPort.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("71899fcc-9a47-4fed-a025-7fc91b6a8ecd")]
-	public partial class OutPort : Port
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// OutPort domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x71899fcc, 0x9a47, 0x4fed, 0xa0, 0x25, 0x7f, 0xc9, 0x1b, 0x6a, 0x8e, 0xcd);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public OutPort(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public OutPort(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region Targets opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of Targets.
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<InPort> Targets
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<InPort>, InPort>(global::Company.MobileDSL.Connection.SourceDomainRoleId);
-			}
-		}
-		#endregion
-		#region ShowFormed opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of ShowFormed.
-		/// Description for Company.MobileDSL.ShowFormReferencesOutPorts.OutPort
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ShowForm> ShowFormed
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ShowForm>, ShowForm>(global::Company.MobileDSL.ShowFormReferencesOutPorts.OutPortDomainRoleId);
-			}
 		}
 		#endregion
 	}
@@ -1072,185 +841,6 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainClass State_old2
-	/// Description for Company.MobileDSL.State_old2
-	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.State_old2.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.State_old2.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("9d18e10e-3276-4fd5-9993-78854d051ee0")]
-	public partial class State_old2 : NamedElement
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// State_old2 domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x9d18e10e, 0x3276, 0x4fd5, 0x99, 0x93, 0x78, 0x85, 0x4d, 0x05, 0x1e, 0xe0);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public State_old2(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public State_old2(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region isFirstState domain property code
-		
-		/// <summary>
-		/// isFirstState domain property Id.
-		/// </summary>
-		public static readonly global::System.Guid isFirstStateDomainPropertyId = new global::System.Guid(0xcf27c57d, 0xf48f, 0x4dd8, 0x8d, 0x37, 0xbf, 0xa1, 0x72, 0x0f, 0xdd, 0x86);
-		
-		/// <summary>
-		/// Storage for isFirstState
-		/// </summary>
-		private global::System.Boolean isFirstStatePropertyStorage;
-		
-		/// <summary>
-		/// Gets or sets the value of isFirstState domain property.
-		/// Description for Company.MobileDSL.State_old2.Is First State
-		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.State_old2/isFirstState.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.State_old2/isFirstState.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("cf27c57d-f48f-4dd8-8d37-bfa1720fdd86")]
-		public global::System.Boolean isFirstState
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return isFirstStatePropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				isFirstStatePropertyHandler.Instance.SetValue(this, value);
-			}
-		}
-		/// <summary>
-		/// Value handler for the State_old2.isFirstState domain property.
-		/// </summary>
-		internal sealed partial class isFirstStatePropertyHandler : DslModeling::DomainPropertyValueHandler<State_old2, global::System.Boolean>
-		{
-			private isFirstStatePropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the State_old2.isFirstState domain property value handler.
-			/// </summary>
-			public static readonly isFirstStatePropertyHandler Instance = new isFirstStatePropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the State_old2.isFirstState domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
-			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return isFirstStateDomainPropertyId;
-				}
-			}
-			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed global::System.Boolean GetValue(State_old2 element)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.isFirstStatePropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(State_old2 element, global::System.Boolean newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				global::System.Boolean oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.isFirstStatePropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
-		}
-		
-		#endregion
-		#region Controller opposite domain role accessor
-		/// <summary>
-		/// Gets or sets Controller.
-		/// Description for Company.MobileDSL.ControllerHasStates2.State_old2
-		/// </summary>
-		public virtual Controller Controller
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.ControllerHasStates2.State_old2DomainRoleId) as Controller;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.ControllerHasStates2.State_old2DomainRoleId, value);
-			}
-		}
-		#endregion
-		#region PreviousStates opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of PreviousStates.
-		/// Description for
-		/// Company.MobileDSL.State_old2ReferencesPreviousStates.SourceState_old2
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<State_old2> PreviousStates
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<State_old2>, State_old2>(global::Company.MobileDSL.State_old2ReferencesPreviousStates.SourceState_old2DomainRoleId);
-			}
-		}
-		#endregion
-		#region NextStates opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of NextStates.
-		/// Description for
-		/// Company.MobileDSL.State_old2ReferencesPreviousStates.TargetState_old2
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<State_old2> NextStates
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<State_old2>, State_old2>(global::Company.MobileDSL.State_old2ReferencesPreviousStates.TargetState_old2DomainRoleId);
-			}
-		}
-		#endregion
-	}
-}
-namespace Company.MobileDSL
-{
-	/// <summary>
 	/// DomainClass State
 	/// Description for Company.MobileDSL.State
 	/// </summary>
@@ -1318,6 +908,51 @@ namespace Company.MobileDSL
 			get
 			{
 				return GetRoleCollection<DslModeling::LinkedElementCollection<ShowForm>, ShowForm>(global::Company.MobileDSL.StateHasShowForms.StateDomainRoleId);
+			}
+		}
+		#endregion
+		#region TargetStated opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of TargetStated.
+		/// Description for Company.MobileDSL.StateReferencesTargetStated.SourceState
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<State> TargetStated
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<State>, State>(global::Company.MobileDSL.StateReferencesTargetStated.SourceStateDomainRoleId);
+			}
+		}
+		#endregion
+		#region SourceStated opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of SourceStated.
+		/// Description for Company.MobileDSL.StateReferencesTargetStated.TargetState
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<State> SourceStated
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<State>, State>(global::Company.MobileDSL.StateReferencesTargetStated.TargetStateDomainRoleId);
+			}
+		}
+		#endregion
+		#region Ps opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Ps.
+		/// Description for Company.MobileDSL.StateReferencesPs.State
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<P> Ps
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<P>, P>(global::Company.MobileDSL.StateReferencesPs.StateDomainRoleId);
 			}
 		}
 		#endregion
@@ -1449,21 +1084,6 @@ namespace Company.MobileDSL
 		{
 		}
 		#endregion
-		#region Ports opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of Ports.
-		/// Description for Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPorts
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<Port> Ports
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Port>, Port>(global::Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPortsDomainRoleId);
-			}
-		}
-		#endregion
 		#region IP opposite domain role accessor
 		/// <summary>
 		/// Gets or sets IP.
@@ -1541,11 +1161,6 @@ namespace Company.MobileDSL
 					}
 					return true;
 				}
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.Port.DomainClassId)) 
-				{
-					return true;
-				}
 			}
 			return base.CanMerge(rootElement, elementGroupPrototype);
 		}
@@ -1585,15 +1200,6 @@ namespace Company.MobileDSL
 			{
 				// Create link for path ClassWithPortsHasOP.OP
 				this.OP = sourceOP2;
-
-				return;
-			}
-				
-			global::Company.MobileDSL.Port sourcePort3 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort3 != null)
-			{
-				// Create link for path ClassWithPortsHasPorts.Ports
-				this.Ports.Add(sourcePort3);
 
 				return;
 			}
@@ -1643,20 +1249,6 @@ namespace Company.MobileDSL
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Company.MobileDSL.ClassWithPortsHasOP.ClassWithPortsDomainRoleId, global::Company.MobileDSL.ClassWithPortsHasOP.OPDomainRoleId);
-				}
-
-				return;
-			}
-				
-			global::Company.MobileDSL.Port sourcePort3 = sourceElement as global::Company.MobileDSL.Port;
-			if (sourcePort3 != null)
-			{
-				// Delete link for path ClassWithPortsHasPorts.Ports
-				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.ClassWithPortsHasPorts.GetLinks((global::Company.MobileDSL.ClassWithPorts)this, sourcePort3))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.ClassWithPortsHasPorts.ClassWithPortsDomainRoleId, global::Company.MobileDSL.ClassWithPortsHasPorts.PortDomainRoleId);
 				}
 
 				return;
@@ -1839,36 +1431,6 @@ namespace Company.MobileDSL
 			get
 			{
 				return GetRoleCollection<DslModeling::LinkedElementCollection<Primitive>, Primitive>(global::Company.MobileDSL.ShowFormHasPrimitives.ShowFormDomainRoleId);
-			}
-		}
-		#endregion
-		#region InPorts opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of InPorts.
-		/// Description for Company.MobileDSL.InPortReferencesShowForms.ShowForm
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<InPort> InPorts
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<InPort>, InPort>(global::Company.MobileDSL.InPortReferencesShowForms.ShowFormDomainRoleId);
-			}
-		}
-		#endregion
-		#region OutPorts opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of OutPorts.
-		/// Description for Company.MobileDSL.ShowFormReferencesOutPorts.ShowForm
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<OutPort> OutPorts
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<OutPort>, OutPort>(global::Company.MobileDSL.ShowFormReferencesOutPorts.ShowFormDomainRoleId);
 			}
 		}
 		#endregion
@@ -2684,6 +2246,21 @@ namespace Company.MobileDSL
 			}
 		}
 		
+		#endregion
+		#region Stated opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Stated.
+		/// Description for Company.MobileDSL.StateReferencesPs.P
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<State> Stated
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<State>, State>(global::Company.MobileDSL.StateReferencesPs.PDomainRoleId);
+			}
+		}
 		#endregion
 	}
 }
