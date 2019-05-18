@@ -956,6 +956,66 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
+		#region ConditionBlocked opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of ConditionBlocked.
+		/// Description for Company.MobileDSL.StateHasConditionBlocked.State
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<ConditionBlock> ConditionBlocked
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ConditionBlock>, ConditionBlock>(global::Company.MobileDSL.StateHasConditionBlocked.StateDomainRoleId);
+			}
+		}
+		#endregion
+		#region ServiceCalled opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of ServiceCalled.
+		/// Description for Company.MobileDSL.StateHasServiceCalled.State
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<ServiceCall> ServiceCalled
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ServiceCall>, ServiceCall>(global::Company.MobileDSL.StateHasServiceCalled.StateDomainRoleId);
+			}
+		}
+		#endregion
+		#region AppCoded opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of AppCoded.
+		/// Description for Company.MobileDSL.StateHasAppCoded.State
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<AppCode> AppCoded
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<AppCode>, AppCode>(global::Company.MobileDSL.StateHasAppCoded.StateDomainRoleId);
+			}
+		}
+		#endregion
+		#region UIDataLinks opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of UIDataLinks.
+		/// Description for Company.MobileDSL.StateHasUIDataLinks.State
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<UIDLink> UIDataLinks
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<UIDLink>, UIDLink>(global::Company.MobileDSL.StateHasUIDataLinks.StateDomainRoleId);
+			}
+		}
+		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -977,6 +1037,26 @@ namespace Company.MobileDSL
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.ShowForm.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.ConditionBlock.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.ServiceCall.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.AppCode.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.UIDLink.DomainClassId)) 
 				{
 					return true;
 				}
@@ -1013,6 +1093,42 @@ namespace Company.MobileDSL
 
 				return;
 			}
+				
+			global::Company.MobileDSL.ConditionBlock sourceConditionBlock2 = sourceElement as global::Company.MobileDSL.ConditionBlock;
+			if (sourceConditionBlock2 != null)
+			{
+				// Create link for path StateHasConditionBlocked.ConditionBlocked
+				this.ConditionBlocked.Add(sourceConditionBlock2);
+
+				return;
+			}
+				
+			global::Company.MobileDSL.ServiceCall sourceServiceCall3 = sourceElement as global::Company.MobileDSL.ServiceCall;
+			if (sourceServiceCall3 != null)
+			{
+				// Create link for path StateHasServiceCalled.ServiceCalled
+				this.ServiceCalled.Add(sourceServiceCall3);
+
+				return;
+			}
+				
+			global::Company.MobileDSL.AppCode sourceAppCode4 = sourceElement as global::Company.MobileDSL.AppCode;
+			if (sourceAppCode4 != null)
+			{
+				// Create link for path StateHasAppCoded.AppCoded
+				this.AppCoded.Add(sourceAppCode4);
+
+				return;
+			}
+				
+			global::Company.MobileDSL.UIDLink sourceUIDLink5 = sourceElement as global::Company.MobileDSL.UIDLink;
+			if (sourceUIDLink5 != null)
+			{
+				// Create link for path StateHasUIDataLinks.UIDataLinks
+				this.UIDataLinks.Add(sourceUIDLink5);
+
+				return;
+			}
 		
 			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
 			// during a "Paste".
@@ -1045,6 +1161,62 @@ namespace Company.MobileDSL
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Company.MobileDSL.StateHasShowForms.StateDomainRoleId, global::Company.MobileDSL.StateHasShowForms.ShowFormDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Company.MobileDSL.ConditionBlock sourceConditionBlock2 = sourceElement as global::Company.MobileDSL.ConditionBlock;
+			if (sourceConditionBlock2 != null)
+			{
+				// Delete link for path StateHasConditionBlocked.ConditionBlocked
+				
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasConditionBlocked.GetLinks((global::Company.MobileDSL.State)this, sourceConditionBlock2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.MobileDSL.StateHasConditionBlocked.StateDomainRoleId, global::Company.MobileDSL.StateHasConditionBlocked.ConditionBlockDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Company.MobileDSL.ServiceCall sourceServiceCall3 = sourceElement as global::Company.MobileDSL.ServiceCall;
+			if (sourceServiceCall3 != null)
+			{
+				// Delete link for path StateHasServiceCalled.ServiceCalled
+				
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasServiceCalled.GetLinks((global::Company.MobileDSL.State)this, sourceServiceCall3))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.MobileDSL.StateHasServiceCalled.StateDomainRoleId, global::Company.MobileDSL.StateHasServiceCalled.ServiceCallDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Company.MobileDSL.AppCode sourceAppCode4 = sourceElement as global::Company.MobileDSL.AppCode;
+			if (sourceAppCode4 != null)
+			{
+				// Delete link for path StateHasAppCoded.AppCoded
+				
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasAppCoded.GetLinks((global::Company.MobileDSL.State)this, sourceAppCode4))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.MobileDSL.StateHasAppCoded.StateDomainRoleId, global::Company.MobileDSL.StateHasAppCoded.AppCodeDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Company.MobileDSL.UIDLink sourceUIDLink5 = sourceElement as global::Company.MobileDSL.UIDLink;
+			if (sourceUIDLink5 != null)
+			{
+				// Delete link for path StateHasUIDataLinks.UIDataLinks
+				
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasUIDataLinks.GetLinks((global::Company.MobileDSL.State)this, sourceUIDLink5))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.MobileDSL.StateHasUIDataLinks.StateDomainRoleId, global::Company.MobileDSL.StateHasUIDataLinks.UIDLinkDomainRoleId);
 				}
 
 				return;
@@ -3237,6 +3409,1071 @@ namespace Company.MobileDSL
 			}
 		}
 		
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass ConditionBlock
+	/// Description for Company.MobileDSL.ConditionBlock
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ConditionBlock.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ConditionBlock.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("486f6ab7-a708-4e77-a2a5-f06d30cf60b7")]
+	public partial class ConditionBlock : Connectable
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ConditionBlock domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x486f6ab7, 0xa708, 0x4e77, 0xa2, 0xa5, 0xf0, 0x6d, 0x30, 0xcf, 0x60, 0xb7);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ConditionBlock(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ConditionBlock(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Text domain property code
+		
+		/// <summary>
+		/// Text domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TextDomainPropertyId = new global::System.Guid(0xbaad2556, 0x78ea, 0x4d73, 0xb8, 0x9b, 0xfe, 0x58, 0x8d, 0x39, 0x22, 0x55);
+		
+		/// <summary>
+		/// Storage for Text
+		/// </summary>
+		private global::System.String textPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Text domain property.
+		/// Description for Company.MobileDSL.ConditionBlock.Text
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ConditionBlock/Text.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ConditionBlock/Text.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("baad2556-78ea-4d73-b89b-fe588d392255")]
+		public global::System.String Text
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return textPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TextPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ConditionBlock.Text domain property.
+		/// </summary>
+		internal sealed partial class TextPropertyHandler : DslModeling::DomainPropertyValueHandler<ConditionBlock, global::System.String>
+		{
+			private TextPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ConditionBlock.Text domain property value handler.
+			/// </summary>
+			public static readonly TextPropertyHandler Instance = new TextPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ConditionBlock.Text domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TextDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ConditionBlock element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.textPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ConditionBlock element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.textPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region State opposite domain role accessor
+		/// <summary>
+		/// Gets or sets State.
+		/// Description for Company.MobileDSL.StateHasConditionBlocked.ConditionBlock
+		/// </summary>
+		public virtual State State
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasConditionBlocked.ConditionBlockDomainRoleId) as State;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasConditionBlocked.ConditionBlockDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass ServiceCall
+	/// Description for Company.MobileDSL.ServiceCall
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ServiceCall.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ServiceCall.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("39c4fa2a-edef-4f2d-9368-ec0b596dfbc9")]
+	public partial class ServiceCall : Connectable
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ServiceCall domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x39c4fa2a, 0xedef, 0x4f2d, 0x93, 0x68, 0xec, 0x0b, 0x59, 0x6d, 0xfb, 0xc9);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ServiceCall(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ServiceCall(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ServiceName domain property code
+		
+		/// <summary>
+		/// ServiceName domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ServiceNameDomainPropertyId = new global::System.Guid(0xa0cbaa78, 0x6734, 0x4686, 0xa1, 0x9c, 0x4c, 0xc3, 0x6f, 0xdf, 0x8b, 0x9d);
+		
+		/// <summary>
+		/// Storage for ServiceName
+		/// </summary>
+		private global::System.String serviceNamePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ServiceName domain property.
+		/// Description for Company.MobileDSL.ServiceCall.Service Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ServiceCall/ServiceName.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ServiceCall/ServiceName.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("a0cbaa78-6734-4686-a19c-4cc36fdf8b9d")]
+		public global::System.String ServiceName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return serviceNamePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ServiceNamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ServiceCall.ServiceName domain property.
+		/// </summary>
+		internal sealed partial class ServiceNamePropertyHandler : DslModeling::DomainPropertyValueHandler<ServiceCall, global::System.String>
+		{
+			private ServiceNamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ServiceCall.ServiceName domain property value handler.
+			/// </summary>
+			public static readonly ServiceNamePropertyHandler Instance = new ServiceNamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ServiceCall.ServiceName domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ServiceNameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ServiceCall element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.serviceNamePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ServiceCall element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.serviceNamePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ServiceMethod domain property code
+		
+		/// <summary>
+		/// ServiceMethod domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ServiceMethodDomainPropertyId = new global::System.Guid(0x0a1278ef, 0x8e49, 0x4082, 0x89, 0xdc, 0x01, 0x16, 0x89, 0xbb, 0xb5, 0xc8);
+		
+		/// <summary>
+		/// Storage for ServiceMethod
+		/// </summary>
+		private global::System.String serviceMethodPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ServiceMethod domain property.
+		/// Description for Company.MobileDSL.ServiceCall.Service Method
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ServiceCall/ServiceMethod.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ServiceCall/ServiceMethod.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("0a1278ef-8e49-4082-89dc-011689bbb5c8")]
+		public global::System.String ServiceMethod
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return serviceMethodPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ServiceMethodPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ServiceCall.ServiceMethod domain property.
+		/// </summary>
+		internal sealed partial class ServiceMethodPropertyHandler : DslModeling::DomainPropertyValueHandler<ServiceCall, global::System.String>
+		{
+			private ServiceMethodPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ServiceCall.ServiceMethod domain property value handler.
+			/// </summary>
+			public static readonly ServiceMethodPropertyHandler Instance = new ServiceMethodPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ServiceCall.ServiceMethod domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ServiceMethodDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ServiceCall element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.serviceMethodPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ServiceCall element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.serviceMethodPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region State opposite domain role accessor
+		/// <summary>
+		/// Gets or sets State.
+		/// Description for Company.MobileDSL.StateHasServiceCalled.ServiceCall
+		/// </summary>
+		public virtual State State
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasServiceCalled.ServiceCallDomainRoleId) as State;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasServiceCalled.ServiceCallDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass AppCode
+	/// Description for Company.MobileDSL.AppCode
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.AppCode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.AppCode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("7dc40445-4b7d-4d59-85f8-eba93a590532")]
+	public partial class AppCode : Connectable
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// AppCode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7dc40445, 0x4b7d, 0x4d59, 0x85, 0xf8, 0xeb, 0xa9, 0x3a, 0x59, 0x05, 0x32);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AppCode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AppCode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Name domain property code
+		
+		/// <summary>
+		/// Name domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0x8572ac9b, 0x0687, 0x4c77, 0x88, 0x33, 0x61, 0x17, 0x32, 0x2d, 0x61, 0x2a);
+		
+		/// <summary>
+		/// Storage for Name
+		/// </summary>
+		private global::System.String namePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Name domain property.
+		/// Description for Company.MobileDSL.AppCode.Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.AppCode/Name.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.AppCode/Name.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("8572ac9b-0687-4c77-8833-6117322d612a")]
+		public global::System.String Name
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return namePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the AppCode.Name domain property.
+		/// </summary>
+		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<AppCode, global::System.String>
+		{
+			private NamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the AppCode.Name domain property value handler.
+			/// </summary>
+			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the AppCode.Name domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(AppCode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.namePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(AppCode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.namePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ReturnType domain property code
+		
+		/// <summary>
+		/// ReturnType domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ReturnTypeDomainPropertyId = new global::System.Guid(0x3cb2b0c8, 0x0d79, 0x46c6, 0xbd, 0x2d, 0x60, 0x4f, 0x62, 0xb1, 0x9f, 0x7b);
+		
+		/// <summary>
+		/// Storage for ReturnType
+		/// </summary>
+		private global::System.String returnTypePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ReturnType domain property.
+		/// Description for Company.MobileDSL.AppCode.Return Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.AppCode/ReturnType.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.AppCode/ReturnType.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("3cb2b0c8-0d79-46c6-bd2d-604f62b19f7b")]
+		public global::System.String ReturnType
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return returnTypePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ReturnTypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the AppCode.ReturnType domain property.
+		/// </summary>
+		internal sealed partial class ReturnTypePropertyHandler : DslModeling::DomainPropertyValueHandler<AppCode, global::System.String>
+		{
+			private ReturnTypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the AppCode.ReturnType domain property value handler.
+			/// </summary>
+			public static readonly ReturnTypePropertyHandler Instance = new ReturnTypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the AppCode.ReturnType domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ReturnTypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(AppCode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.returnTypePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(AppCode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.returnTypePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region State opposite domain role accessor
+		/// <summary>
+		/// Gets or sets State.
+		/// Description for Company.MobileDSL.StateHasAppCoded.AppCode
+		/// </summary>
+		public virtual State State
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasAppCoded.AppCodeDomainRoleId) as State;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasAppCoded.AppCodeDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region StringCodes opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of StringCodes.
+		/// Description for Company.MobileDSL.AppCodeHasStringCodes.AppCode
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<StringCode> StringCodes
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<StringCode>, StringCode>(global::Company.MobileDSL.AppCodeHasStringCodes.AppCodeDomainRoleId);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.StringCode.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::Company.MobileDSL.StringCode sourceStringCode1 = sourceElement as global::Company.MobileDSL.StringCode;
+			if (sourceStringCode1 != null)
+			{
+				// Create link for path AppCodeHasStringCodes.StringCodes
+				this.StringCodes.Add(sourceStringCode1);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::Company.MobileDSL.StringCode sourceStringCode1 = sourceElement as global::Company.MobileDSL.StringCode;
+			if (sourceStringCode1 != null)
+			{
+				// Delete link for path AppCodeHasStringCodes.StringCodes
+				
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.AppCodeHasStringCodes.GetLinks((global::Company.MobileDSL.AppCode)this, sourceStringCode1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.MobileDSL.AppCodeHasStringCodes.AppCodeDomainRoleId, global::Company.MobileDSL.AppCodeHasStringCodes.StringCodeDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass StringCode
+	/// Description for Company.MobileDSL.StringCode
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.StringCode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.StringCode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("f3ec95ee-4bda-4281-b2f8-4e1341898512")]
+	public partial class StringCode : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// StringCode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf3ec95ee, 0x4bda, 0x4281, 0xb2, 0xf8, 0x4e, 0x13, 0x41, 0x89, 0x85, 0x12);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public StringCode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public StringCode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Text domain property code
+		
+		/// <summary>
+		/// Text domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TextDomainPropertyId = new global::System.Guid(0xdef80564, 0xde84, 0x4ced, 0x88, 0x46, 0x19, 0xf3, 0xac, 0x25, 0x29, 0xc6);
+		
+		/// <summary>
+		/// Storage for Text
+		/// </summary>
+		private global::System.String textPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Text domain property.
+		/// Description for Company.MobileDSL.StringCode.Text
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StringCode/Text.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StringCode/Text.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("def80564-de84-4ced-8846-19f3ac2529c6")]
+		public global::System.String Text
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return textPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TextPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the StringCode.Text domain property.
+		/// </summary>
+		internal sealed partial class TextPropertyHandler : DslModeling::DomainPropertyValueHandler<StringCode, global::System.String>
+		{
+			private TextPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the StringCode.Text domain property value handler.
+			/// </summary>
+			public static readonly TextPropertyHandler Instance = new TextPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the StringCode.Text domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TextDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(StringCode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.textPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(StringCode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.textPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region AppCode opposite domain role accessor
+		/// <summary>
+		/// Gets or sets AppCode.
+		/// Description for Company.MobileDSL.AppCodeHasStringCodes.StringCode
+		/// </summary>
+		public virtual AppCode AppCode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.AppCodeHasStringCodes.StringCodeDomainRoleId) as AppCode;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.AppCodeHasStringCodes.StringCodeDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region UIDLink opposite domain role accessor
+		/// <summary>
+		/// Gets or sets UIDLink.
+		/// Description for Company.MobileDSL.UIDLinkHasStringCodes.StringCode
+		/// </summary>
+		public virtual UIDLink UIDLink
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.UIDLinkHasStringCodes.StringCodeDomainRoleId) as UIDLink;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.UIDLinkHasStringCodes.StringCodeDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass UIDLink
+	/// Description for Company.MobileDSL.UIDLink
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.UIDLink.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.UIDLink.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("86e993a1-1784-40e1-becc-1fd29557b63a")]
+	public partial class UIDLink : Connectable
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// UIDLink domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x86e993a1, 0x1784, 0x40e1, 0xbe, 0xcc, 0x1f, 0xd2, 0x95, 0x57, 0xb6, 0x3a);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public UIDLink(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public UIDLink(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region State opposite domain role accessor
+		/// <summary>
+		/// Gets or sets State.
+		/// Description for Company.MobileDSL.StateHasUIDataLinks.UIDLink
+		/// </summary>
+		public virtual State State
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasUIDataLinks.UIDLinkDomainRoleId) as State;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasUIDataLinks.UIDLinkDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region StringCodes opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of StringCodes.
+		/// Description for Company.MobileDSL.UIDLinkHasStringCodes.UIDLink
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<StringCode> StringCodes
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<StringCode>, StringCode>(global::Company.MobileDSL.UIDLinkHasStringCodes.UIDLinkDomainRoleId);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.StringCode.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::Company.MobileDSL.StringCode sourceStringCode1 = sourceElement as global::Company.MobileDSL.StringCode;
+			if (sourceStringCode1 != null)
+			{
+				// Create link for path UIDLinkHasStringCodes.StringCodes
+				this.StringCodes.Add(sourceStringCode1);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::Company.MobileDSL.StringCode sourceStringCode1 = sourceElement as global::Company.MobileDSL.StringCode;
+			if (sourceStringCode1 != null)
+			{
+				// Delete link for path UIDLinkHasStringCodes.StringCodes
+				
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.UIDLinkHasStringCodes.GetLinks((global::Company.MobileDSL.UIDLink)this, sourceStringCode1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.MobileDSL.UIDLinkHasStringCodes.UIDLinkDomainRoleId, global::Company.MobileDSL.UIDLinkHasStringCodes.StringCodeDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
 		#endregion
 	}
 }

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mobileDSLDiagram dslVersion="1.0.0.0" Id="8e55289d-eb9b-4d3f-aa3d-a38f0c133afa" absoluteBounds="0, 0, 11, 8.5" name="Test">
+  <componentModelMoniker name="/" />
+  <nestedChildShapes>
+    <controllerShape Id="221b45e1-fa5b-4eda-a737-67bd1d24a245" absoluteBounds="2, 2, 5, 4.25">
+      <controllerMoniker name="//Controller1" />
+    </controllerShape>
+    <stateShape Id="6b237f09-90a3-446b-b509-07327cf495d9" absoluteBounds="8.5, 3.75, 1.5, 1" fillColor="White" textColor="Black" fillGradientMode="Horizontal">
+      <stateMoniker name="//Controller1/State1" />
+    </stateShape>
+  </nestedChildShapes>
+</mobileDSLDiagram>

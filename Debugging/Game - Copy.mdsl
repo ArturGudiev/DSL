@@ -21,7 +21,7 @@
         </oP>
         <states>
           <controllerHasStates Id="22576936-44ec-427c-a127-7d3c72c36755">
-            <state Id="36d18bf7-5687-47b2-9b1e-0f9ceb0c6e63" name="LoginState">
+            <state Id="36d18bf7-5687-47b2-9b1e-0f9ceb0c6e63" name="LoginState2">
               <iP>
                 <classWithPortsHasIP Id="186191c3-db01-49fa-bac1-e66b4b4783d1">
                   <iP Id="515f7fed-447a-4951-84c6-7e67fcb5cb6d" />
@@ -41,6 +41,16 @@
                   </oP>
                 </classWithPortsHasOP>
               </oP>
+              <conditionBlocked>
+                <stateHasConditionBlocked Id="ed81b48e-f571-4e51-b0a6-81b4af3ae47b">
+                  <conditionBlock Id="30acf8b1-8f20-4cc3-b9c7-018718002440" />
+                </stateHasConditionBlocked>
+              </conditionBlocked>
+              <serviceCalled>
+                <stateHasServiceCalled Id="3d83311d-6ec5-4e79-821d-a68d6bbfaa95">
+                  <serviceCall Id="01283462-a720-4fbe-845f-49e8b3c287e1" />
+                </stateHasServiceCalled>
+              </serviceCalled>
             </state>
           </controllerHasStates>
           <controllerHasStates Id="9610cec7-d521-4520-a8ed-06f5e83f6fcb">
@@ -61,6 +71,151 @@
                   </oP>
                 </classWithPortsHasOP>
               </oP>
+            </state>
+          </controllerHasStates>
+          <controllerHasStates Id="15dda63a-e17c-4977-9b98-9be6bb3afcc5">
+            <state Id="84d7d3ad-f9d1-4e13-b01b-144c1966dd97" name="LoginState">
+              <iP>
+                <classWithPortsHasIP Id="9789dd3c-2e65-43c0-bfa9-72e8c5b83e95">
+                  <iP Id="b25c6b23-24b3-4fca-aa39-3827168040d4">
+                    <childConnections>
+                      <c Id="dcf49199-c442-48bf-93b6-b7accef89efb">
+                        <showFormMoniker Id="efaa9fb3-ad1a-47cb-a86a-8a58622deb11" />
+                      </c>
+                    </childConnections>
+                  </iP>
+                </classWithPortsHasIP>
+              </iP>
+              <oP>
+                <classWithPortsHasOP Id="a51b3712-c3f6-45ab-83d9-096d20a85315">
+                  <oP Id="42ce35ed-7437-4567-8777-163329608da8" />
+                </classWithPortsHasOP>
+              </oP>
+              <showForms>
+                <stateHasShowForms Id="734eb49d-617f-4fac-b514-59f3959a75f2">
+                  <showForm Id="efaa9fb3-ad1a-47cb-a86a-8a58622deb11">
+                    <childConnections>
+                      <c Id="bc1e978c-6ffe-4849-9940-46d72b0716dc" data="userName, password">
+                        <appCodeMoniker Id="da09ac44-e807-4b83-9371-b1c0a8901420" />
+                      </c>
+                      <c Id="c2729f1d-84f6-4e60-b3dc-bb6401584e17">
+                        <oPMoniker Id="42ce35ed-7437-4567-8777-163329608da8" />
+                      </c>
+                    </childConnections>
+                    <events>
+                      <showFormHasEvents Id="bf56219e-eb0a-485a-8d21-01fd6498a5f9">
+                        <event Id="944d647d-7ba8-42aa-95ad-d2a3b501821f" name="loginButtonClicked" />
+                      </showFormHasEvents>
+                      <showFormHasEvents Id="3f9a416a-c5e5-4d73-ae8f-d726dbc44637">
+                        <event Id="c902caed-fd25-4c34-8926-9db8096d3774" name="RegisterButtonClicked" />
+                      </showFormHasEvents>
+                    </events>
+                    <primitives>
+                      <showFormHasPrimitives Id="bbd70b61-c93a-4947-88e4-bba5efbc608c">
+                        <input Id="8d54a344-7f24-4c67-b268-f9beaaaddc9c" name="userName" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="c04a2057-9067-4b33-bca0-d3a2653cf2e2">
+                        <input Id="ac870d08-8fd3-4a82-a149-c72113cae53b" name="password" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="9fd610eb-9fcd-41d9-82e3-06312c8d1cb0">
+                        <button Id="1db3aaf2-4b1e-48fc-a581-5d51fca74bc5" name="loginButton" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="56b9eebc-9cb7-4162-86c7-68b45c7434c9">
+                        <label Id="bd4dd329-1832-47a6-8d44-e2bbd826af5b" name="message" />
+                      </showFormHasPrimitives>
+                    </primitives>
+                  </showForm>
+                </stateHasShowForms>
+              </showForms>
+              <conditionBlocked>
+                <stateHasConditionBlocked Id="5cb2a8bb-3815-46c8-8a65-a4efbc00ddb2">
+                  <conditionBlock Id="e8be280f-cd35-4bd9-8b0b-e10808541d06" text="dataValid">
+                    <childConnections>
+                      <c Id="5fcf8597-9dff-4cf7-ad19-eb4c9571a3ed" data="True">
+                        <serviceCallMoniker Id="533bd266-9ba4-4981-8975-138bd4eb59cd" />
+                      </c>
+                      <c Id="20b725b3-9044-439a-963e-47a211daccf1" data="False">
+                        <uIDLinkMoniker Id="20b43f29-a6fa-4182-aebc-635d991e7d6a" />
+                      </c>
+                    </childConnections>
+                  </conditionBlock>
+                </stateHasConditionBlocked>
+                <stateHasConditionBlocked Id="cff3c3f1-471b-4cf0-a52e-c67681e2275d">
+                  <conditionBlock Id="de131052-65dc-4f21-a922-057ae1bead2a" text="LoginSuccess">
+                    <childConnections>
+                      <c Id="11233050-6f24-4c91-a5a7-79034d253f3d" data="True">
+                        <oPMoniker Id="42ce35ed-7437-4567-8777-163329608da8" />
+                      </c>
+                      <c Id="1e8342b2-5fe9-4993-9f47-398bb8f3fd1e" data="False">
+                        <uIDLinkMoniker Id="502b5305-7bac-438f-8c85-419d36a8bd4c" />
+                      </c>
+                    </childConnections>
+                  </conditionBlock>
+                </stateHasConditionBlocked>
+              </conditionBlocked>
+              <serviceCalled>
+                <stateHasServiceCalled Id="520d26d4-0ad1-4258-a59c-56146346a0f5">
+                  <serviceCall Id="533bd266-9ba4-4981-8975-138bd4eb59cd" serviceName="AuthSvc" serviceMethod="Login">
+                    <childConnections>
+                      <c Id="2a3e1802-b9da-47c6-93a8-da5225cc9499">
+                        <conditionBlockMoniker Id="de131052-65dc-4f21-a922-057ae1bead2a" />
+                      </c>
+                    </childConnections>
+                  </serviceCall>
+                </stateHasServiceCalled>
+              </serviceCalled>
+              <appCoded>
+                <stateHasAppCoded Id="5d82b19f-db5d-4474-988f-7bd2336738c0">
+                  <appCode Id="da09ac44-e807-4b83-9371-b1c0a8901420" name="Validate" returnType="bool">
+                    <childConnections>
+                      <c Id="f98fcf3d-8eb6-45eb-b10e-0c921081ce71" data="dataValid">
+                        <conditionBlockMoniker Id="e8be280f-cd35-4bd9-8b0b-e10808541d06" />
+                      </c>
+                    </childConnections>
+                    <stringCodes>
+                      <appCodeHasStringCodes Id="64dc26a9-b00c-4880-9a76-e0cb2c052c0d">
+                        <stringCode Id="84ff2f28-a381-4010-beca-8828c1f77c23" text="Validate (string userName){" />
+                      </appCodeHasStringCodes>
+                      <appCodeHasStringCodes Id="5512feb5-39ec-40ea-9d29-0c6061bbd406">
+                        <stringCode Id="fa303a21-2123-4e61-8919-283248723476" text="      return userName.isNullOrEmpty();" />
+                      </appCodeHasStringCodes>
+                      <appCodeHasStringCodes Id="e598c90d-878f-4f65-b009-40ea208746cd">
+                        <stringCode Id="1e15fce0-7777-48c8-98e4-1fac0435300d" text="}" />
+                      </appCodeHasStringCodes>
+                    </stringCodes>
+                  </appCode>
+                </stateHasAppCoded>
+              </appCoded>
+              <uIDataLinks>
+                <stateHasUIDataLinks Id="6b024f9f-424e-4200-9edf-b13b7742cd82">
+                  <uIDLink Id="502b5305-7bac-438f-8c85-419d36a8bd4c">
+                    <childConnections>
+                      <c Id="05e69f96-7962-42e6-a19d-ad5012a88379">
+                        <showFormMoniker Id="efaa9fb3-ad1a-47cb-a86a-8a58622deb11" />
+                      </c>
+                    </childConnections>
+                    <stringCodes>
+                      <uIDLinkHasStringCodes Id="0bb8ece3-0bc1-4356-bf13-6fd9e9d4a3dc">
+                        <stringCode Id="dcf1c890-5987-4df0-9dd2-fbeaff8c9c08" text="message = &quot;Sorry, Login Failed&quot;" />
+                      </uIDLinkHasStringCodes>
+                    </stringCodes>
+                  </uIDLink>
+                </stateHasUIDataLinks>
+                <stateHasUIDataLinks Id="776f58b5-0756-4f3b-9e86-8bba7cccaa32">
+                  <uIDLink Id="20b43f29-a6fa-4182-aebc-635d991e7d6a">
+                    <childConnections>
+                      <c Id="b7359cc3-00d3-462c-8bc4-54144d23b02d">
+                        <showFormMoniker Id="efaa9fb3-ad1a-47cb-a86a-8a58622deb11" />
+                      </c>
+                    </childConnections>
+                    <stringCodes>
+                      <uIDLinkHasStringCodes Id="887efabb-e72b-479c-83eb-07b4dfdb308d">
+                        <stringCode Id="3fc31636-6b91-44fd-b2f5-d34ad18f270d" text="message = &quot;Enter valid credentials&quot;" />
+                      </uIDLinkHasStringCodes>
+                    </stringCodes>
+                  </uIDLink>
+                </stateHasUIDataLinks>
+              </uIDataLinks>
             </state>
           </controllerHasStates>
         </states>

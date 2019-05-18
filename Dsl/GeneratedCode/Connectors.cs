@@ -984,7 +984,7 @@ namespace Company.MobileDSL
 			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
 			field2.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
-			DslDiagrams::Decorator decorator2 = new DslDiagrams::ConnectorDecorator(field2, DslDiagrams::ConnectorDecoratorPosition.SourceBottom, DslDiagrams::PointD.Empty, true);
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ConnectorDecorator(field2, DslDiagrams::ConnectorDecoratorPosition.SourceBottom, new DslDiagrams::PointD(0.4, 0), true);
 			decorators.Add(decorator2);
 				
 			DslDiagrams::TextField field3 = new DslDiagrams::TextField("NextControllerDecorator");

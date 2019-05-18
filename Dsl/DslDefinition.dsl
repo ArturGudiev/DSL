@@ -84,10 +84,34 @@
         </ElementMergeDirective>
         <ElementMergeDirective>
           <Index>
-            <DomainClassMoniker Name="DomainClass1" />
+            <DomainClassMoniker Name="ConditionBlock" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>StateHasDomainClass1.DomainClass1</DomainPath>
+            <DomainPath>StateHasConditionBlocked.ConditionBlocked</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="ServiceCall" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>StateHasServiceCalled.ServiceCalled</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="AppCode" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>StateHasAppCoded.AppCoded</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="UIDLink" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>StateHasUIDataLinks.UIDataLinks</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
@@ -280,7 +304,86 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
-    <DomainClass Id="486f6ab7-a708-4e77-a2a5-f06d30cf60b7" Description="Description for Company.MobileDSL.DomainClass1" Name="DomainClass1" DisplayName="Domain Class1" Namespace="Company.MobileDSL" />
+    <DomainClass Id="486f6ab7-a708-4e77-a2a5-f06d30cf60b7" Description="Description for Company.MobileDSL.ConditionBlock" Name="ConditionBlock" DisplayName="Condition Block" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Connectable" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="baad2556-78ea-4d73-b89b-fe588d392255" Description="Description for Company.MobileDSL.ConditionBlock.Text" Name="Text" DisplayName="Text">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="39c4fa2a-edef-4f2d-9368-ec0b596dfbc9" Description="Description for Company.MobileDSL.ServiceCall" Name="ServiceCall" DisplayName="Service Call" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Connectable" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="a0cbaa78-6734-4686-a19c-4cc36fdf8b9d" Description="Description for Company.MobileDSL.ServiceCall.Service Name" Name="ServiceName" DisplayName="Service Name">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="0a1278ef-8e49-4082-89dc-011689bbb5c8" Description="Description for Company.MobileDSL.ServiceCall.Service Method" Name="ServiceMethod" DisplayName="Service Method">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="7dc40445-4b7d-4d59-85f8-eba93a590532" Description="Description for Company.MobileDSL.AppCode" Name="AppCode" DisplayName="App Code" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Connectable" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="8572ac9b-0687-4c77-8833-6117322d612a" Description="Description for Company.MobileDSL.AppCode.Name" Name="Name" DisplayName="Name">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="3cb2b0c8-0d79-46c6-bd2d-604f62b19f7b" Description="Description for Company.MobileDSL.AppCode.Return Type" Name="ReturnType" DisplayName="Return Type">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="StringCode" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>AppCodeHasStringCodes.StringCodes</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="f3ec95ee-4bda-4281-b2f8-4e1341898512" Description="Description for Company.MobileDSL.StringCode" Name="StringCode" DisplayName="String Code" Namespace="Company.MobileDSL">
+      <Properties>
+        <DomainProperty Id="def80564-de84-4ced-8846-19f3ac2529c6" Description="Description for Company.MobileDSL.StringCode.Text" Name="Text" DisplayName="Text">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="86e993a1-1784-40e1-becc-1fd29557b63a" Description="Description for Company.MobileDSL.UIDLink" Name="UIDLink" DisplayName="UIDLink" Namespace="Company.MobileDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Connectable" />
+      </BaseClass>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="StringCode" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>UIDLinkHasStringCodes.StringCodes</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="f25156b7-0076-4d44-a97e-631de018a1ac" Description="" Name="ComponentModelHasComments" DisplayName="Component Model Has Comments" Namespace="Company.MobileDSL" IsEmbedding="true">
@@ -497,18 +600,98 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="12b71c63-b289-4765-92ee-dcdd1f7a58c6" Description="Description for Company.MobileDSL.StateHasDomainClass1" Name="StateHasDomainClass1" DisplayName="State Has Domain Class1" Namespace="Company.MobileDSL" IsEmbedding="true">
+    <DomainRelationship Id="12b71c63-b289-4765-92ee-dcdd1f7a58c6" Description="Description for Company.MobileDSL.StateHasConditionBlocked" Name="StateHasConditionBlocked" DisplayName="State Has Condition Blocked" Namespace="Company.MobileDSL" IsEmbedding="true">
       <Source>
-        <DomainRole Id="18380384-6a3f-42e6-8a6e-ddf71200915f" Description="Description for Company.MobileDSL.StateHasDomainClass1.State" Name="State" DisplayName="State" PropertyName="DomainClass1" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Domain Class1">
+        <DomainRole Id="18380384-6a3f-42e6-8a6e-ddf71200915f" Description="Description for Company.MobileDSL.StateHasConditionBlocked.State" Name="State" DisplayName="State" PropertyName="ConditionBlocked" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Condition Blocked">
           <RolePlayer>
             <DomainClassMoniker Name="State" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="eb2a76d0-9fbb-48e6-83cf-96655f949775" Description="Description for Company.MobileDSL.StateHasDomainClass1.DomainClass1" Name="DomainClass1" DisplayName="Domain Class1" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
+        <DomainRole Id="eb2a76d0-9fbb-48e6-83cf-96655f949775" Description="Description for Company.MobileDSL.StateHasConditionBlocked.ConditionBlock" Name="ConditionBlock" DisplayName="Condition Block" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
           <RolePlayer>
-            <DomainClassMoniker Name="DomainClass1" />
+            <DomainClassMoniker Name="ConditionBlock" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="fb603010-b3d3-493c-870d-8321e2460494" Description="Description for Company.MobileDSL.StateHasServiceCalled" Name="StateHasServiceCalled" DisplayName="State Has Service Called" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="94b6179a-cee1-4783-835a-8e306159231c" Description="Description for Company.MobileDSL.StateHasServiceCalled.State" Name="State" DisplayName="State" PropertyName="ServiceCalled" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Service Called">
+          <RolePlayer>
+            <DomainClassMoniker Name="State" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="4c37c80a-21ee-427f-878a-65d5e284f6ff" Description="Description for Company.MobileDSL.StateHasServiceCalled.ServiceCall" Name="ServiceCall" DisplayName="Service Call" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
+          <RolePlayer>
+            <DomainClassMoniker Name="ServiceCall" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="828d9c19-dd32-4250-8a48-f0879ecf6ea6" Description="Description for Company.MobileDSL.StateHasAppCoded" Name="StateHasAppCoded" DisplayName="State Has App Coded" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="347d72bc-2cbd-43dd-bfa3-fbc5a0f8b6bd" Description="Description for Company.MobileDSL.StateHasAppCoded.State" Name="State" DisplayName="State" PropertyName="AppCoded" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="App Coded">
+          <RolePlayer>
+            <DomainClassMoniker Name="State" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="a2f2e80f-ece7-42fb-8fdc-c509d74ddbb5" Description="Description for Company.MobileDSL.StateHasAppCoded.AppCode" Name="AppCode" DisplayName="App Code" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
+          <RolePlayer>
+            <DomainClassMoniker Name="AppCode" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="ba486b5b-77ac-4fac-8c02-d69e5f0c037e" Description="Description for Company.MobileDSL.AppCodeHasStringCodes" Name="AppCodeHasStringCodes" DisplayName="App Code Has String Codes" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="b8ce55cc-3c59-4327-a456-99561fb87352" Description="Description for Company.MobileDSL.AppCodeHasStringCodes.AppCode" Name="AppCode" DisplayName="App Code" PropertyName="StringCodes" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="String Codes">
+          <RolePlayer>
+            <DomainClassMoniker Name="AppCode" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="d6e0eec0-3ac3-46a7-bc29-ae664be76ff7" Description="Description for Company.MobileDSL.AppCodeHasStringCodes.StringCode" Name="StringCode" DisplayName="String Code" PropertyName="AppCode" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="App Code">
+          <RolePlayer>
+            <DomainClassMoniker Name="StringCode" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="97bf79b1-baeb-44ea-9c65-b541bb1b75a5" Description="Description for Company.MobileDSL.StateHasUIDataLinks" Name="StateHasUIDataLinks" DisplayName="State Has UIData Links" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="8047e71b-bc0b-494e-ac24-c69a8df25160" Description="Description for Company.MobileDSL.StateHasUIDataLinks.State" Name="State" DisplayName="State" PropertyName="UIDataLinks" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="UIData Links">
+          <RolePlayer>
+            <DomainClassMoniker Name="State" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="d4e81697-20f7-4782-8deb-4c0469dfbf5b" Description="Description for Company.MobileDSL.StateHasUIDataLinks.UIDLink" Name="UIDLink" DisplayName="UIDLink" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
+          <RolePlayer>
+            <DomainClassMoniker Name="UIDLink" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="703aa994-e761-4de3-a4ce-9a026e5d2413" Description="Description for Company.MobileDSL.UIDLinkHasStringCodes" Name="UIDLinkHasStringCodes" DisplayName="UIDLink Has String Codes" Namespace="Company.MobileDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="55ca1bcf-13ff-43de-86bb-ad7b2abbebfb" Description="Description for Company.MobileDSL.UIDLinkHasStringCodes.UIDLink" Name="UIDLink" DisplayName="UIDLink" PropertyName="StringCodes" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="String Codes">
+          <RolePlayer>
+            <DomainClassMoniker Name="UIDLink" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="a7652db4-ab79-4e9f-9d1a-9c12a4d9acdb" Description="Description for Company.MobileDSL.UIDLinkHasStringCodes.StringCode" Name="StringCode" DisplayName="String Code" PropertyName="UIDLink" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="UIDLink">
+          <RolePlayer>
+            <DomainClassMoniker Name="StringCode" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -566,19 +749,19 @@
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="10" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <CompartmentShape Id="cb5171d3-7ac6-479c-b7ce-d1474ea444eb" Description="Description for Company.MobileDSL.CompartmentShape1" Name="CompartmentShape1" DisplayName="Compartment Shape1" Namespace="Company.MobileDSL" FixedTooltipText="Compartment Shape1" ExposesTextColor="true" InitialHeight="1" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="Rectangle">
+    <CompartmentShape Id="cb5171d3-7ac6-479c-b7ce-d1474ea444eb" Description="Description for Company.MobileDSL.ShowFormShape" Name="ShowFormShape" DisplayName="Show Form Shape" Namespace="Company.MobileDSL" FixedTooltipText="Show Form Shape" ExposesTextColor="true" InitialHeight="1" ExposesFillColorAsProperty="true" ExposesFillGradientMode="true" Geometry="Rectangle">
       <Properties>
-        <DomainProperty Id="3a08e898-fd53-46b0-b7d6-2aebd4de2386" Description="Description for Company.MobileDSL.CompartmentShape1.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
+        <DomainProperty Id="3a08e898-fd53-46b0-b7d6-2aebd4de2386" Description="Description for Company.MobileDSL.ShowFormShape.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
           <Type>
             <ExternalTypeMoniker Name="/System.Drawing/Color" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="3ec43e43-753f-4bf3-a47c-0001a2f99569" Description="Description for Company.MobileDSL.CompartmentShape1.Text Color" Name="TextColor" DisplayName="Text Color" Kind="CustomStorage">
+        <DomainProperty Id="3ec43e43-753f-4bf3-a47c-0001a2f99569" Description="Description for Company.MobileDSL.ShowFormShape.Text Color" Name="TextColor" DisplayName="Text Color" Kind="CustomStorage">
           <Type>
             <ExternalTypeMoniker Name="/System.Drawing/Color" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="0a37e6f3-e8f3-4984-9d27-887ddd9291a7" Description="Description for Company.MobileDSL.CompartmentShape1.Fill Gradient Mode" Name="FillGradientMode" DisplayName="Fill Gradient Mode" Kind="CustomStorage">
+        <DomainProperty Id="0a37e6f3-e8f3-4984-9d27-887ddd9291a7" Description="Description for Company.MobileDSL.ShowFormShape.Fill Gradient Mode" Name="FillGradientMode" DisplayName="Fill Gradient Mode" Kind="CustomStorage">
           <Type>
             <ExternalTypeMoniker Name="/System.Drawing.Drawing2D/LinearGradientMode" />
           </Type>
@@ -586,6 +769,9 @@
       </Properties>
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="10" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
+        <IconDecorator Name="ShowFormLabel" DisplayName="Show Form Label" DefaultIcon="Resources\ShowForm1.png" />
       </ShapeHasDecorators>
       <Compartment Name="UIEventsCompartment" TitleFontSize="10" EntryFontStyle="Bold" EntryFontSize="10" />
       <Compartment Name="UIPrimitives" TitleFontSize="10" EntryFontStyle="Bold" EntryFontSize="10" />
@@ -600,6 +786,54 @@
         <IconDecorator Name="Image" DisplayName="Image" DefaultIcon="Resources\OutPortImage.bmp" />
       </ShapeHasDecorators>
     </Port>
+    <ImageShape Id="4970f161-0bbe-461b-90bd-74ad4426d9c9" Description="Description for Company.MobileDSL.ConditionBlockShape" Name="ConditionBlockShape" DisplayName="Condition Block Shape" Namespace="Company.MobileDSL" FixedTooltipText="Condition Block Shape" InitialWidth="1.2" InitialHeight="0.86" ExposesFillColorAsProperty="true" Image="Resources\rhombus2.png">
+      <Properties>
+        <DomainProperty Id="aaf9bd0e-9c88-4eeb-afd6-9ffdfc8ff5e4" Description="Description for Company.MobileDSL.ConditionBlockShape.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
+          <Type>
+            <ExternalTypeMoniker Name="/System.Drawing/Color" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
+        <TextDecorator Name="Condition" DisplayName="Condition" DefaultText="Condition" FontStyle="Bold" FontSize="10" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="48dfec5c-baeb-4a75-b198-a7bcc0440cc4" Description="Description for Company.MobileDSL.ServiceCallShape" Name="ServiceCallShape" DisplayName="Service Call Shape" Namespace="Company.MobileDSL" FixedTooltipText="Service Call Shape" InitialWidth="1.3" InitialHeight="0.55" Image="Resources\ServiceCall2.png">
+      <ShapeHasDecorators Position="OuterTopLeft" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
+        <TextDecorator Name="ServiceName" DisplayName="Service Name" DefaultText="ServiceName" FontStyle="Bold" FontSize="10" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="OuterTopRight" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
+        <TextDecorator Name="ServiceMethod" DisplayName="Service Method" DefaultText="ServiceMethod" FontStyle="Bold" FontSize="10" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <CompartmentShape Id="8ac88d88-6719-4bac-a4a3-1915a5f6a05a" Description="Description for Company.MobileDSL.AppCodeShape" Name="AppCodeShape" DisplayName="App Code Shape" Namespace="Company.MobileDSL" FixedTooltipText="App Code Shape" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" FontStyle="Bold" FontSize="10" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="ReturnType" DisplayName="Return Type" DefaultText="ReturnType" FontStyle="Bold" FontSize="10" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
+        <IconDecorator Name="AddCodeLabel" DisplayName="Add Code Label" DefaultIcon="Resources\AppCode1.png" />
+      </ShapeHasDecorators>
+      <Compartment Name="Code" EntryFontStyle="Bold" EntryFontSize="10" />
+    </CompartmentShape>
+    <CompartmentShape Id="8b9681ec-30b1-4d80-af29-d4c6368aab39" Description="Description for Company.MobileDSL.UIDataLink" Name="UIDataLink" DisplayName="UIData Link" Namespace="Company.MobileDSL" FixedTooltipText="UIData Link" InitialHeight="1" Geometry="Rectangle">
+      <Properties>
+        <DomainProperty Id="9dc1359e-f751-4722-b62a-0b24b5cb0c81" Description="Description for Company.MobileDSL.UIDataLink.Label" Name="Label" DisplayName="Label">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
+        <IconDecorator Name="UIDataLink" DisplayName="UIData Link" DefaultIcon="Resources\UIDataLink.png" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="LabelDecorator" DisplayName="Label Decorator" DefaultText="" FontStyle="Bold" FontSize="12" />
+      </ShapeHasDecorators>
+      <Compartment Name="Code" EntryFontStyle="Bold" EntryFontSize="10" />
+    </CompartmentShape>
   </Shapes>
   <Connectors>
     <Connector Id="66d5ac35-32f5-41a3-8eb2-a96e59751133" Description="" Name="AssociationLink" DisplayName="Association Link" Namespace="Company.MobileDSL" FixedTooltipText="Association Link" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -637,7 +871,7 @@
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
         <TextDecorator Name="NextStateDecorator" DisplayName="Next State Decorator" DefaultText="NextStateDecorator" FontStyle="Bold" FontSize="10" />
       </ConnectorHasDecorators>
-      <ConnectorHasDecorators Position="SourceBottom" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
+      <ConnectorHasDecorators Position="SourceBottom" OffsetFromShape="0.4" OffsetFromLine="0" isMoveable="true">
         <TextDecorator Name="DataLinkDecorator" DisplayName="Data Link Decorator" DefaultText="DataLinkDecorator" FontStyle="Bold" FontSize="10" />
       </ConnectorHasDecorators>
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
@@ -745,8 +979,17 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="ps">
             <DomainRelationshipMoniker Name="StateReferencesPs" />
           </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="domainClass1">
-            <DomainRelationshipMoniker Name="StateHasDomainClass1" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="conditionBlocked">
+            <DomainRelationshipMoniker Name="StateHasConditionBlocked" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="serviceCalled">
+            <DomainRelationshipMoniker Name="StateHasServiceCalled" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="appCoded">
+            <DomainRelationshipMoniker Name="StateHasAppCoded" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="uIDataLinks">
+            <DomainRelationshipMoniker Name="StateHasUIDataLinks" />
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
@@ -792,17 +1035,17 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="CompartmentShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="compartmentShape1Moniker" ElementName="compartmentShape1" MonikerTypeName="CompartmentShape1Moniker">
-        <CompartmentShapeMoniker Name="CompartmentShape1" />
+      <XmlClassData TypeName="ShowFormShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="showFormShapeMoniker" ElementName="showFormShape" MonikerTypeName="ShowFormShapeMoniker">
+        <CompartmentShapeMoniker Name="ShowFormShape" />
         <ElementData>
           <XmlPropertyData XmlName="fillColor">
-            <DomainPropertyMoniker Name="CompartmentShape1/FillColor" />
+            <DomainPropertyMoniker Name="ShowFormShape/FillColor" />
           </XmlPropertyData>
           <XmlPropertyData XmlName="textColor">
-            <DomainPropertyMoniker Name="CompartmentShape1/TextColor" />
+            <DomainPropertyMoniker Name="ShowFormShape/TextColor" />
           </XmlPropertyData>
           <XmlPropertyData XmlName="fillGradientMode">
-            <DomainPropertyMoniker Name="CompartmentShape1/FillGradientMode" />
+            <DomainPropertyMoniker Name="ShowFormShape/FillGradientMode" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -967,11 +1210,94 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="StateHasDomainClass1" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasDomainClass1Moniker" ElementName="stateHasDomainClass1" MonikerTypeName="StateHasDomainClass1Moniker">
-        <DomainRelationshipMoniker Name="StateHasDomainClass1" />
+      <XmlClassData TypeName="StateHasConditionBlocked" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasConditionBlockedMoniker" ElementName="stateHasConditionBlocked" MonikerTypeName="StateHasConditionBlockedMoniker">
+        <DomainRelationshipMoniker Name="StateHasConditionBlocked" />
       </XmlClassData>
-      <XmlClassData TypeName="DomainClass1" MonikerAttributeName="" SerializeId="true" MonikerElementName="domainClass1Moniker" ElementName="domainClass1" MonikerTypeName="DomainClass1Moniker">
-        <DomainClassMoniker Name="DomainClass1" />
+      <XmlClassData TypeName="ConditionBlock" MonikerAttributeName="" SerializeId="true" MonikerElementName="conditionBlockMoniker" ElementName="conditionBlock" MonikerTypeName="ConditionBlockMoniker">
+        <DomainClassMoniker Name="ConditionBlock" />
+        <ElementData>
+          <XmlPropertyData XmlName="text">
+            <DomainPropertyMoniker Name="ConditionBlock/Text" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ConditionBlockShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="conditionBlockShapeMoniker" ElementName="conditionBlockShape" MonikerTypeName="ConditionBlockShapeMoniker">
+        <ImageShapeMoniker Name="ConditionBlockShape" />
+        <ElementData>
+          <XmlPropertyData XmlName="fillColor">
+            <DomainPropertyMoniker Name="ConditionBlockShape/FillColor" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="StateHasServiceCalled" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasServiceCalledMoniker" ElementName="stateHasServiceCalled" MonikerTypeName="StateHasServiceCalledMoniker">
+        <DomainRelationshipMoniker Name="StateHasServiceCalled" />
+      </XmlClassData>
+      <XmlClassData TypeName="ServiceCall" MonikerAttributeName="" SerializeId="true" MonikerElementName="serviceCallMoniker" ElementName="serviceCall" MonikerTypeName="ServiceCallMoniker">
+        <DomainClassMoniker Name="ServiceCall" />
+        <ElementData>
+          <XmlPropertyData XmlName="serviceName">
+            <DomainPropertyMoniker Name="ServiceCall/ServiceName" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="serviceMethod">
+            <DomainPropertyMoniker Name="ServiceCall/ServiceMethod" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ServiceCallShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="serviceCallShapeMoniker" ElementName="serviceCallShape" MonikerTypeName="ServiceCallShapeMoniker">
+        <ImageShapeMoniker Name="ServiceCallShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="StateHasAppCoded" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasAppCodedMoniker" ElementName="stateHasAppCoded" MonikerTypeName="StateHasAppCodedMoniker">
+        <DomainRelationshipMoniker Name="StateHasAppCoded" />
+      </XmlClassData>
+      <XmlClassData TypeName="AppCode" MonikerAttributeName="" SerializeId="true" MonikerElementName="appCodeMoniker" ElementName="appCode" MonikerTypeName="AppCodeMoniker">
+        <DomainClassMoniker Name="AppCode" />
+        <ElementData>
+          <XmlPropertyData XmlName="name">
+            <DomainPropertyMoniker Name="AppCode/Name" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="returnType">
+            <DomainPropertyMoniker Name="AppCode/ReturnType" />
+          </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="stringCodes">
+            <DomainRelationshipMoniker Name="AppCodeHasStringCodes" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="AppCodeShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="appCodeShapeMoniker" ElementName="appCodeShape" MonikerTypeName="AppCodeShapeMoniker">
+        <CompartmentShapeMoniker Name="AppCodeShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="AppCodeHasStringCodes" MonikerAttributeName="" SerializeId="true" MonikerElementName="appCodeHasStringCodesMoniker" ElementName="appCodeHasStringCodes" MonikerTypeName="AppCodeHasStringCodesMoniker">
+        <DomainRelationshipMoniker Name="AppCodeHasStringCodes" />
+      </XmlClassData>
+      <XmlClassData TypeName="StringCode" MonikerAttributeName="" SerializeId="true" MonikerElementName="stringCodeMoniker" ElementName="stringCode" MonikerTypeName="StringCodeMoniker">
+        <DomainClassMoniker Name="StringCode" />
+        <ElementData>
+          <XmlPropertyData XmlName="text">
+            <DomainPropertyMoniker Name="StringCode/Text" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="StateHasUIDataLinks" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasUIDataLinksMoniker" ElementName="stateHasUIDataLinks" MonikerTypeName="StateHasUIDataLinksMoniker">
+        <DomainRelationshipMoniker Name="StateHasUIDataLinks" />
+      </XmlClassData>
+      <XmlClassData TypeName="UIDLink" MonikerAttributeName="" SerializeId="true" MonikerElementName="uIDLinkMoniker" ElementName="uIDLink" MonikerTypeName="UIDLinkMoniker">
+        <DomainClassMoniker Name="UIDLink" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="stringCodes">
+            <DomainRelationshipMoniker Name="UIDLinkHasStringCodes" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="UIDLinkHasStringCodes" MonikerAttributeName="" SerializeId="true" MonikerElementName="uIDLinkHasStringCodesMoniker" ElementName="uIDLinkHasStringCodes" MonikerTypeName="UIDLinkHasStringCodesMoniker">
+        <DomainRelationshipMoniker Name="UIDLinkHasStringCodes" />
+      </XmlClassData>
+      <XmlClassData TypeName="UIDataLink" MonikerAttributeName="" SerializeId="true" MonikerElementName="uIDataLinkMoniker" ElementName="uIDataLink" MonikerTypeName="UIDataLinkMoniker">
+        <CompartmentShapeMoniker Name="UIDataLink" />
+        <ElementData>
+          <XmlPropertyData XmlName="label">
+            <DomainPropertyMoniker Name="UIDataLink/Label" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -1110,16 +1436,16 @@
           <DomainPath>StateHasShowForms.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="CompartmentShape1/NameDecorator" />
+          <TextDecoratorMoniker Name="ShowFormShape/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="ShowForm/Name" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <CompartmentShapeMoniker Name="CompartmentShape1" />
+        <CompartmentShapeMoniker Name="ShowFormShape" />
         <CompartmentMap>
-          <CompartmentMoniker Name="CompartmentShape1/UIEventsCompartment" />
+          <CompartmentMoniker Name="ShowFormShape/UIEventsCompartment" />
           <ElementsDisplayed>
             <DomainPath>ShowFormHasEvents.Events/!Event</DomainPath>
           </ElementsDisplayed>
@@ -1130,7 +1456,7 @@
           </PropertyDisplayed>
         </CompartmentMap>
         <CompartmentMap>
-          <CompartmentMoniker Name="CompartmentShape1/UIPrimitives" />
+          <CompartmentMoniker Name="ShowFormShape/UIPrimitives" />
           <ElementsDisplayed>
             <DomainPath>ShowFormHasPrimitives.Primitives/!Primitive</DomainPath>
           </ElementsDisplayed>
@@ -1155,6 +1481,104 @@
         </ParentElementPath>
         <PortMoniker Name="OPShape" />
       </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="ConditionBlock" />
+        <ParentElementPath>
+          <DomainPath>StateHasConditionBlocked.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ConditionBlockShape/Condition" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="ConditionBlock/Text" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="ConditionBlockShape" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="ServiceCall" />
+        <ParentElementPath>
+          <DomainPath>StateHasServiceCalled.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ServiceCallShape/ServiceMethod" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="ServiceCall/ServiceMethod" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ServiceCallShape/ServiceName" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="ServiceCall/ServiceName" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="ServiceCallShape" />
+      </ShapeMap>
+      <CompartmentShapeMap>
+        <DomainClassMoniker Name="AppCode" />
+        <ParentElementPath>
+          <DomainPath>StateHasAppCoded.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="AppCodeShape/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AppCode/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="AppCodeShape/ReturnType" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AppCode/ReturnType" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <CompartmentShapeMoniker Name="AppCodeShape" />
+        <CompartmentMap>
+          <CompartmentMoniker Name="AppCodeShape/Code" />
+          <ElementsDisplayed>
+            <DomainPath>AppCodeHasStringCodes.StringCodes/!StringCode</DomainPath>
+          </ElementsDisplayed>
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="StringCode/Text" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </CompartmentMap>
+      </CompartmentShapeMap>
+      <CompartmentShapeMap>
+        <DomainClassMoniker Name="UIDLink" />
+        <ParentElementPath>
+          <DomainPath>StateHasUIDataLinks.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="UIDataLink/LabelDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="UIDataLink/Label" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <CompartmentShapeMoniker Name="UIDataLink" />
+        <CompartmentMap>
+          <CompartmentMoniker Name="UIDataLink/Code" />
+          <ElementsDisplayed>
+            <DomainPath>UIDLinkHasStringCodes.StringCodes/!StringCode</DomainPath>
+          </ElementsDisplayed>
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="StringCode/Text" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </CompartmentMap>
+      </CompartmentShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -1235,6 +1659,21 @@
       <ConnectionTool Name="StoS" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="StoS" Tooltip="Sto S" HelpKeyword="StoS">
         <ConnectionBuilderMoniker Name="MobileDSL/StateReferencesTargetStatedBuilder" />
       </ConnectionTool>
+      <ElementTool Name="Condition" ToolboxIcon="Resources\example.bmp" Caption="Condition" Tooltip="Condition" HelpKeyword="Condition">
+        <DomainClassMoniker Name="ConditionBlock" />
+      </ElementTool>
+      <ElementTool Name="ServiceCall" ToolboxIcon="Resources\example.bmp" Caption="ServiceCall" Tooltip="Service Call" HelpKeyword="ServiceCall">
+        <DomainClassMoniker Name="ServiceCall" />
+      </ElementTool>
+      <ElementTool Name="AppCode" ToolboxIcon="Resources\example.bmp" Caption="AppCode" Tooltip="App Code" HelpKeyword="AppCode">
+        <DomainClassMoniker Name="AppCode" />
+      </ElementTool>
+      <ElementTool Name="String" ToolboxIcon="Resources\example.bmp" Caption="String" Tooltip="String" HelpKeyword="String">
+        <DomainClassMoniker Name="StringCode" />
+      </ElementTool>
+      <ElementTool Name="UIDataLink" ToolboxIcon="Resources\example.bmp" Caption="UIDataLink" Tooltip="UIData Link" HelpKeyword="UIDataLink">
+        <DomainClassMoniker Name="UIDLink" />
+      </ElementTool>
     </ToolboxTab>
     <ToolboxTab TabText="UI Forms">
       <ElementTool Name="Event" ToolboxIcon="Resources\flash2.bmp" Caption="Event" Tooltip="Event" HelpKeyword="Event">

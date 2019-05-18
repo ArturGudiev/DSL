@@ -71,6 +71,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="LoginController.mdsl" />
+    <None Include="LoginController.mdsl.diagram">
+      <DependentUpon>LoginController.mdsl</DependentUpon>
+    </None>
     <None Include="Game - Copy.mdsl" />
     <None Include="Game - Copy.mdsl.diagram">
       <DependentUpon>Game - Copy.mdsl</DependentUpon>

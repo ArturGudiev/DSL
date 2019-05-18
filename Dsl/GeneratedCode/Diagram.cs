@@ -331,7 +331,31 @@ namespace Company.MobileDSL
 			}
 			if(element is global::Company.MobileDSL.ShowForm)
 			{
-				global::Company.MobileDSL.CompartmentShape1 newShape = new global::Company.MobileDSL.CompartmentShape1(this.Partition);
+				global::Company.MobileDSL.ShowFormShape newShape = new global::Company.MobileDSL.ShowFormShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.MobileDSL.ConditionBlock)
+			{
+				global::Company.MobileDSL.ConditionBlockShape newShape = new global::Company.MobileDSL.ConditionBlockShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.MobileDSL.ServiceCall)
+			{
+				global::Company.MobileDSL.ServiceCallShape newShape = new global::Company.MobileDSL.ServiceCallShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.MobileDSL.AppCode)
+			{
+				global::Company.MobileDSL.AppCodeShape newShape = new global::Company.MobileDSL.AppCodeShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.MobileDSL.UIDLink)
+			{
+				global::Company.MobileDSL.UIDataLink newShape = new global::Company.MobileDSL.UIDataLink(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -370,7 +394,11 @@ namespace Company.MobileDSL
 			global::Company.MobileDSL.ControllerShape.DecoratorsInitialized += ControllerShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.CommentBoxShape.DecoratorsInitialized += CommentBoxShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.StateShape.DecoratorsInitialized += StateShapeDecoratorMap.OnDecoratorsInitialized;
-			global::Company.MobileDSL.CompartmentShape1.DecoratorsInitialized += CompartmentShape1DecoratorMap.OnDecoratorsInitialized;
+			global::Company.MobileDSL.ShowFormShape.DecoratorsInitialized += ShowFormShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Company.MobileDSL.ConditionBlockShape.DecoratorsInitialized += ConditionBlockShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Company.MobileDSL.ServiceCallShape.DecoratorsInitialized += ServiceCallShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Company.MobileDSL.AppCodeShape.DecoratorsInitialized += AppCodeShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Company.MobileDSL.UIDataLink.DecoratorsInitialized += UIDataLinkDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.CConnector.DecoratorsInitialized += CConnectorDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.StateRefState.DecoratorsInitialized += StateRefStateDecoratorMap.OnDecoratorsInitialized;
 		}
@@ -430,12 +458,12 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// Class containing decorator path traversal methods for CompartmentShape1.
+		/// Class containing decorator path traversal methods for ShowFormShape.
 		/// </summary>
-		internal static partial class CompartmentShape1DecoratorMap
+		internal static partial class ShowFormShapeDecoratorMap
 		{
 			/// <summary>
-			/// Event handler called when decorator initialization is complete for CompartmentShape1.  Adds decorator mappings for this shape or connector.
+			/// Event handler called when decorator initialization is complete for ShowFormShape.  Adds decorator mappings for this shape or connector.
 			/// </summary>
 			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
 			{
@@ -444,6 +472,85 @@ namespace Company.MobileDSL
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.ShowForm.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for ConditionBlockShape.
+		/// </summary>
+		internal static partial class ConditionBlockShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for ConditionBlockShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.ConditionBlock.TextDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Condition").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for ServiceCallShape.
+		/// </summary>
+		internal static partial class ServiceCallShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for ServiceCallShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.ServiceCall.ServiceMethodDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "ServiceMethod").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.ServiceCall.ServiceNameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "ServiceName").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for AppCodeShape.
+		/// </summary>
+		internal static partial class AppCodeShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for AppCodeShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.AppCode.NameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.AppCode.ReturnTypeDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "ReturnType").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for UIDataLink.
+		/// </summary>
+		internal static partial class UIDataLinkDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for UIDataLink.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.UIDataLink.LabelDomainPropertyId);
+				propertyInfo.IsShapeProperty = true;
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "LabelDecorator").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -677,6 +784,10 @@ namespace Company.MobileDSL
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.IP), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.OP), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowForm), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ConditionBlock), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ServiceCall), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.AppCode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.UIDLink), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Comment), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.C), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
@@ -715,6 +826,22 @@ namespace Company.MobileDSL
 				if(childElement is global::Company.MobileDSL.ShowForm)
 				{
 					parentElement = GetParentForShowForm((global::Company.MobileDSL.ShowForm)childElement);
+				} else
+				if(childElement is global::Company.MobileDSL.ConditionBlock)
+				{
+					parentElement = GetParentForConditionBlock((global::Company.MobileDSL.ConditionBlock)childElement);
+				} else
+				if(childElement is global::Company.MobileDSL.ServiceCall)
+				{
+					parentElement = GetParentForServiceCall((global::Company.MobileDSL.ServiceCall)childElement);
+				} else
+				if(childElement is global::Company.MobileDSL.AppCode)
+				{
+					parentElement = GetParentForAppCode((global::Company.MobileDSL.AppCode)childElement);
+				} else
+				if(childElement is global::Company.MobileDSL.UIDLink)
+				{
+					parentElement = GetParentForUIDLink((global::Company.MobileDSL.UIDLink)childElement);
 				} else
 				if(childElement is global::Company.MobileDSL.Comment)
 				{
@@ -777,6 +904,58 @@ namespace Company.MobileDSL
 			{
 				// Segments 0 and 1
 				global::Company.MobileDSL.ClassWithPorts result = root.Parent;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.MobileDSL.ComponentModel GetParentForConditionBlock( global::Company.MobileDSL.ConditionBlock root )
+			{
+				// Segments 0 and 1
+				global::Company.MobileDSL.State root2 = root.State;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.MobileDSL.Controller root4 = root2.Controller;
+				if ( root4 == null ) return null;
+				// Segments 4 and 5
+				global::Company.MobileDSL.ComponentModel result = root4.ComponentModel;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.MobileDSL.ComponentModel GetParentForServiceCall( global::Company.MobileDSL.ServiceCall root )
+			{
+				// Segments 0 and 1
+				global::Company.MobileDSL.State root2 = root.State;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.MobileDSL.Controller root4 = root2.Controller;
+				if ( root4 == null ) return null;
+				// Segments 4 and 5
+				global::Company.MobileDSL.ComponentModel result = root4.ComponentModel;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.MobileDSL.ComponentModel GetParentForAppCode( global::Company.MobileDSL.AppCode root )
+			{
+				// Segments 0 and 1
+				global::Company.MobileDSL.State root2 = root.State;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.MobileDSL.Controller root4 = root2.Controller;
+				if ( root4 == null ) return null;
+				// Segments 4 and 5
+				global::Company.MobileDSL.ComponentModel result = root4.ComponentModel;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.MobileDSL.ComponentModel GetParentForUIDLink( global::Company.MobileDSL.UIDLink root )
+			{
+				// Segments 0 and 1
+				global::Company.MobileDSL.State root2 = root.State;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.MobileDSL.Controller root4 = root2.Controller;
+				if ( root4 == null ) return null;
+				// Segments 4 and 5
+				global::Company.MobileDSL.ComponentModel result = root4.ComponentModel;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -870,6 +1049,8 @@ namespace Company.MobileDSL
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasEvents), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasPrimitives), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.AppCodeHasStringCodes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.UIDLinkHasStringCodes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemAddRule : DslModeling::AddRule
 		{
 			/// <summary>
@@ -888,42 +1069,80 @@ namespace Company.MobileDSL
 					return;
 				if(e.ModelElement is global::Company.MobileDSL.ShowFormHasEvents)
 				{
-					global::System.Collections.IEnumerable elements = GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink((global::Company.MobileDSL.ShowFormHasEvents)e.ModelElement);
-					UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+					global::System.Collections.IEnumerable elements = GetShowFormForShowFormShapeUIEventsCompartmentFromLastLink((global::Company.MobileDSL.ShowFormHasEvents)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIEventsCompartment", repaintOnly);
 				}
 				if(e.ModelElement is global::Company.MobileDSL.ShowFormHasPrimitives)
 				{
-					global::System.Collections.IEnumerable elements = GetShowFormForCompartmentShape1UIPrimitivesFromLastLink((global::Company.MobileDSL.ShowFormHasPrimitives)e.ModelElement);
-					UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+					global::System.Collections.IEnumerable elements = GetShowFormForShowFormShapeUIPrimitivesFromLastLink((global::Company.MobileDSL.ShowFormHasPrimitives)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIPrimitives", repaintOnly);
+				}
+				if(e.ModelElement is global::Company.MobileDSL.AppCodeHasStringCodes)
+				{
+					global::System.Collections.IEnumerable elements = GetAppCodeForAppCodeShapeCodeFromLastLink((global::Company.MobileDSL.AppCodeHasStringCodes)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::Company.MobileDSL.AppCodeShape), "Code", repaintOnly);
+				}
+				if(e.ModelElement is global::Company.MobileDSL.UIDLinkHasStringCodes)
+				{
+					global::System.Collections.IEnumerable elements = GetUIDLinkForUIDataLinkCodeFromLastLink((global::Company.MobileDSL.UIDLinkHasStringCodes)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::Company.MobileDSL.UIDataLink), "Code", repaintOnly);
 				}
 			}
 			
 			#region static DomainPath traversal methods to get the list of compartments to update
-			internal static global::System.Collections.ICollection GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink(global::Company.MobileDSL.ShowFormHasEvents root)
+			internal static global::System.Collections.ICollection GetShowFormForShowFormShapeUIEventsCompartmentFromLastLink(global::Company.MobileDSL.ShowFormHasEvents root)
 			{
 				// Segment 0
 				global::Company.MobileDSL.ShowForm result = root.ShowForm;
 				if ( result == null ) return new DslModeling::ModelElement[0];
 				return new DslModeling::ModelElement[] {result};
 			}
-			internal static global::System.Collections.ICollection GetShowFormForCompartmentShape1UIEventsCompartment(global::Company.MobileDSL.Event root)
+			internal static global::System.Collections.ICollection GetShowFormForShowFormShapeUIEventsCompartment(global::Company.MobileDSL.Event root)
 			{
 				// Segments 1 and 0
 				global::Company.MobileDSL.ShowForm result = root.ShowForm;
 				if ( result == null ) return new DslModeling::ModelElement[0];
 				return new DslModeling::ModelElement[] {result};
 			}
-			internal static global::System.Collections.ICollection GetShowFormForCompartmentShape1UIPrimitivesFromLastLink(global::Company.MobileDSL.ShowFormHasPrimitives root)
+			internal static global::System.Collections.ICollection GetShowFormForShowFormShapeUIPrimitivesFromLastLink(global::Company.MobileDSL.ShowFormHasPrimitives root)
 			{
 				// Segment 0
 				global::Company.MobileDSL.ShowForm result = root.ShowForm;
 				if ( result == null ) return new DslModeling::ModelElement[0];
 				return new DslModeling::ModelElement[] {result};
 			}
-			internal static global::System.Collections.ICollection GetShowFormForCompartmentShape1UIPrimitives(global::Company.MobileDSL.Primitive root)
+			internal static global::System.Collections.ICollection GetShowFormForShowFormShapeUIPrimitives(global::Company.MobileDSL.Primitive root)
 			{
 				// Segments 1 and 0
 				global::Company.MobileDSL.ShowForm result = root.ShowForm;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetAppCodeForAppCodeShapeCodeFromLastLink(global::Company.MobileDSL.AppCodeHasStringCodes root)
+			{
+				// Segment 0
+				global::Company.MobileDSL.AppCode result = root.AppCode;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetAppCodeForAppCodeShapeCode(global::Company.MobileDSL.StringCode root)
+			{
+				// Segments 1 and 0
+				global::Company.MobileDSL.AppCode result = root.AppCode;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetUIDLinkForUIDataLinkCodeFromLastLink(global::Company.MobileDSL.UIDLinkHasStringCodes root)
+			{
+				// Segment 0
+				global::Company.MobileDSL.UIDLink result = root.UIDLink;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetUIDLinkForUIDataLinkCode(global::Company.MobileDSL.StringCode root)
+			{
+				// Segments 1 and 0
+				global::Company.MobileDSL.UIDLink result = root.UIDLink;
 				if ( result == null ) return new DslModeling::ModelElement[0];
 				return new DslModeling::ModelElement[] {result};
 			}
@@ -974,6 +1193,8 @@ namespace Company.MobileDSL
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasEvents), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasPrimitives), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.AppCodeHasStringCodes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.UIDLinkHasStringCodes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemDeleteRule : DslModeling::DeleteRule
 		{
 			/// <summary>
@@ -990,13 +1211,23 @@ namespace Company.MobileDSL
 				if(e==null) throw new global::System.ArgumentNullException("e");
 				if(e.ModelElement is global::Company.MobileDSL.ShowFormHasEvents)
 				{
-					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink((global::Company.MobileDSL.ShowFormHasEvents)e.ModelElement);
-					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIEventsCompartmentFromLastLink((global::Company.MobileDSL.ShowFormHasEvents)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIEventsCompartment", repaintOnly);
 				}
 				if(e.ModelElement is global::Company.MobileDSL.ShowFormHasPrimitives)
 				{
-					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitivesFromLastLink((global::Company.MobileDSL.ShowFormHasPrimitives)e.ModelElement);
-					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIPrimitivesFromLastLink((global::Company.MobileDSL.ShowFormHasPrimitives)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIPrimitives", repaintOnly);
+				}
+				if(e.ModelElement is global::Company.MobileDSL.AppCodeHasStringCodes)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetAppCodeForAppCodeShapeCodeFromLastLink((global::Company.MobileDSL.AppCodeHasStringCodes)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.AppCodeShape), "Code", repaintOnly);
+				}
+				if(e.ModelElement is global::Company.MobileDSL.UIDLinkHasStringCodes)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetUIDLinkForUIDataLinkCodeFromLastLink((global::Company.MobileDSL.UIDLinkHasStringCodes)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.UIDataLink), "Code", repaintOnly);
 				}
 			}
 		}
@@ -1006,6 +1237,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Event), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Primitive), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.StringCode), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemChangeRule : DslModeling::ChangeRule 
 		{
 			/// <summary>
@@ -1022,13 +1254,23 @@ namespace Company.MobileDSL
 				if(e==null) throw new global::System.ArgumentNullException("e");
 				if(e.ModelElement is global::Company.MobileDSL.Event && e.DomainProperty.Id == global::Company.MobileDSL.Event.NameDomainPropertyId)
 				{
-					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartment((global::Company.MobileDSL.Event)e.ModelElement);
-					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIEventsCompartment((global::Company.MobileDSL.Event)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIEventsCompartment", repaintOnly);
 				}
 				if(e.ModelElement is global::Company.MobileDSL.Primitive && e.DomainProperty.Id == global::Company.MobileDSL.Primitive.NameDomainPropertyId)
 				{
-					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitives((global::Company.MobileDSL.Primitive)e.ModelElement);
-					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIPrimitives((global::Company.MobileDSL.Primitive)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIPrimitives", repaintOnly);
+				}
+				if(e.ModelElement is global::Company.MobileDSL.StringCode && e.DomainProperty.Id == global::Company.MobileDSL.StringCode.TextDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetAppCodeForAppCodeShapeCode((global::Company.MobileDSL.StringCode)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.AppCodeShape), "Code", repaintOnly);
+				}
+				if(e.ModelElement is global::Company.MobileDSL.StringCode && e.DomainProperty.Id == global::Company.MobileDSL.StringCode.TextDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetUIDLinkForUIDataLinkCode((global::Company.MobileDSL.StringCode)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.UIDataLink), "Code", repaintOnly);
 				}
 			}
 		}
@@ -1038,6 +1280,8 @@ namespace Company.MobileDSL
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasEvents), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasPrimitives), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.AppCodeHasStringCodes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.UIDLinkHasStringCodes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemRolePlayerChangeRule : DslModeling::RolePlayerChangeRule 
 		{
 			/// <summary>
@@ -1056,13 +1300,13 @@ namespace Company.MobileDSL
 				{
 					if(e.DomainRole.IsSource)
 					{
-						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink((global::Company.MobileDSL.Event)e.OldRolePlayer);
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIEventsCompartmentFromLastLink((global::Company.MobileDSL.Event)e.OldRolePlayer);
 						//foreach(DslModeling::ModelElement element in oldElements)
 						//{
 						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
 						//	foreach(DslDiagrams::PresentationElement pel in pels)
 						//	{
-						//		global::Company.MobileDSL.CompartmentShape1 compartmentShape = pel as global::Company.MobileDSL.CompartmentShape1;
+						//		global::Company.MobileDSL.ShowFormShape compartmentShape = pel as global::Company.MobileDSL.ShowFormShape;
 						//		if(compartmentShape != null)
 						//		{
 						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
@@ -1070,26 +1314,26 @@ namespace Company.MobileDSL
 						//	}
 						//}
 						
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartmentFromLastLink((global::Company.MobileDSL.ShowFormHasEvents)e.ElementLink);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIEventsCompartmentFromLastLink((global::Company.MobileDSL.ShowFormHasEvents)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIEventsCompartment", repaintOnly);
 					}
 					else 
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartment((global::Company.MobileDSL.Event)e.NewRolePlayer);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIEventsCompartment((global::Company.MobileDSL.Event)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIEventsCompartment", repaintOnly);
 					}
 				}
 				if(typeof(global::Company.MobileDSL.ShowFormHasPrimitives).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
 				{
 					if(e.DomainRole.IsSource)
 					{
-						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitivesFromLastLink((global::Company.MobileDSL.Primitive)e.OldRolePlayer);
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIPrimitivesFromLastLink((global::Company.MobileDSL.Primitive)e.OldRolePlayer);
 						//foreach(DslModeling::ModelElement element in oldElements)
 						//{
 						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
 						//	foreach(DslDiagrams::PresentationElement pel in pels)
 						//	{
-						//		global::Company.MobileDSL.CompartmentShape1 compartmentShape = pel as global::Company.MobileDSL.CompartmentShape1;
+						//		global::Company.MobileDSL.ShowFormShape compartmentShape = pel as global::Company.MobileDSL.ShowFormShape;
 						//		if(compartmentShape != null)
 						//		{
 						//			compartmentShape.GetCompartmentMappings()[1].InitializeCompartmentShape(compartmentShape);
@@ -1097,13 +1341,67 @@ namespace Company.MobileDSL
 						//	}
 						//}
 						
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitivesFromLastLink((global::Company.MobileDSL.ShowFormHasPrimitives)e.ElementLink);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIPrimitivesFromLastLink((global::Company.MobileDSL.ShowFormHasPrimitives)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIPrimitives", repaintOnly);
 					}
 					else 
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitives((global::Company.MobileDSL.Primitive)e.NewRolePlayer);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIPrimitives((global::Company.MobileDSL.Primitive)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIPrimitives", repaintOnly);
+					}
+				}
+				if(typeof(global::Company.MobileDSL.AppCodeHasStringCodes).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetAppCodeForAppCodeShapeCodeFromLastLink((global::Company.MobileDSL.StringCode)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::Company.MobileDSL.AppCodeShape compartmentShape = pel as global::Company.MobileDSL.AppCodeShape;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetAppCodeForAppCodeShapeCodeFromLastLink((global::Company.MobileDSL.AppCodeHasStringCodes)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.AppCodeShape), "Code", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetAppCodeForAppCodeShapeCode((global::Company.MobileDSL.StringCode)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.AppCodeShape), "Code", repaintOnly);
+					}
+				}
+				if(typeof(global::Company.MobileDSL.UIDLinkHasStringCodes).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetUIDLinkForUIDataLinkCodeFromLastLink((global::Company.MobileDSL.StringCode)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::Company.MobileDSL.UIDataLink compartmentShape = pel as global::Company.MobileDSL.UIDataLink;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetUIDLinkForUIDataLinkCodeFromLastLink((global::Company.MobileDSL.UIDLinkHasStringCodes)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.UIDataLink), "Code", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetUIDLinkForUIDataLinkCode((global::Company.MobileDSL.StringCode)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.UIDataLink), "Code", repaintOnly);
 					}
 				}
 			}
@@ -1114,6 +1412,8 @@ namespace Company.MobileDSL
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasEvents), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowFormHasPrimitives), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.AppCodeHasStringCodes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.UIDLinkHasStringCodes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemRolePlayerPositionChangeRule : DslModeling::RolePlayerPositionChangeRule 
 		{
 			/// <summary>
@@ -1132,16 +1432,32 @@ namespace Company.MobileDSL
 				{
 					if(!e.CounterpartDomainRole.IsSource)
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIEventsCompartment((global::Company.MobileDSL.Event)e.CounterpartRolePlayer);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIEventsCompartment", repaintOnly);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIEventsCompartment((global::Company.MobileDSL.Event)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIEventsCompartment", repaintOnly);
 					}
 				}
 				if(typeof(global::Company.MobileDSL.ShowFormHasPrimitives).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
 				{
 					if(!e.CounterpartDomainRole.IsSource)
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForCompartmentShape1UIPrimitives((global::Company.MobileDSL.Primitive)e.CounterpartRolePlayer);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.CompartmentShape1), "UIPrimitives", repaintOnly);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetShowFormForShowFormShapeUIPrimitives((global::Company.MobileDSL.Primitive)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.ShowFormShape), "UIPrimitives", repaintOnly);
+					}
+				}
+				if(typeof(global::Company.MobileDSL.AppCodeHasStringCodes).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetAppCodeForAppCodeShapeCode((global::Company.MobileDSL.StringCode)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.AppCodeShape), "Code", repaintOnly);
+					}
+				}
+				if(typeof(global::Company.MobileDSL.UIDLinkHasStringCodes).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetUIDLinkForUIDataLinkCode((global::Company.MobileDSL.StringCode)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::Company.MobileDSL.UIDataLink), "Code", repaintOnly);
 					}
 				}
 			}
@@ -1151,6 +1467,8 @@ namespace Company.MobileDSL
 		/// A rule which fires when data mapped to outer text decorators has changed,
 		/// so we can update the decorator host's bounds.
 		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ConditionBlock), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ServiceCall), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.C), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.StateRefState), InitiallyDisabled=true)]
 		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
@@ -1160,7 +1478,31 @@ namespace Company.MobileDSL
 			{
 				if(e == null) throw new global::System.ArgumentNullException("e");
 				
-				if (e.DomainProperty.Id == global::Company.MobileDSL.C.NextStateDomainPropertyId)
+				if (e.DomainProperty.Id == global::Company.MobileDSL.ConditionBlock.TextDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.ConditionBlockShape.FindConditionBlockShapeDecorator("Condition");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.ConditionBlock.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.ServiceCall.ServiceMethodDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.ServiceCallShape.FindServiceCallShapeDecorator("ServiceMethod");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.ServiceCall.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.ServiceCall.ServiceNameDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.ServiceCallShape.FindServiceCallShapeDecorator("ServiceName");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.ServiceCall.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.C.NextStateDomainPropertyId)
 				{
 					DslDiagrams::Decorator decorator = global::Company.MobileDSL.CConnector.FindCConnectorDecorator("NextStateDecorator");
 					if(decorator != null)

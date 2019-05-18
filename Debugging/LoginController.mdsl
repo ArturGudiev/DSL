@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="eda229d1-bd9e-4749-b492-13c01862a56e" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+  <controllers>
+    <componentModelHasControllers Id="8efda9be-4ec6-474d-bc98-f575a42bb8bb">
+      <controller Id="69e72c2e-d34c-46fe-9df9-654057000ebe" name="Controller1" isFirst="false">
+        <states>
+          <controllerHasStates Id="410f8215-7cee-4539-8a2c-c57f24c635db">
+            <state Id="c62cbefe-a92a-43e5-89d4-707a5014887e" name="State1" />
+          </controllerHasStates>
+        </states>
+      </controller>
+    </componentModelHasControllers>
+  </controllers>
+</componentModel>

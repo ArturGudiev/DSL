@@ -1077,15 +1077,15 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainClass CompartmentShape1
-	/// Description for Company.MobileDSL.CompartmentShape1
+	/// DomainClass ShowFormShape
+	/// Description for Company.MobileDSL.ShowFormShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.CompartmentShape1.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.CompartmentShape1.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormShape.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormShape.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("cb5171d3-7ac6-479c-b7ce-d1474ea444eb")]
-	public partial class CompartmentShape1 : DslDiagrams::CompartmentShape
+	public partial class ShowFormShape : DslDiagrams::CompartmentShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -1150,9 +1150,9 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with CompartmentShape1.
+		/// Finds a decorator associated with ShowFormShape.
 		/// </summary>
-		public static DslDiagrams::Decorator FindCompartmentShape1Decorator(string decoratorName)
+		public static DslDiagrams::Decorator FindShowFormShapeDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -1308,7 +1308,7 @@ namespace Company.MobileDSL
 		{
 			base.InitializeShapeFields(shapeFields);
 			DslDiagrams::TextField field1 = new DslDiagrams::TextField("NameDecorator");
-			field1.DefaultText = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("CompartmentShape1NameDecoratorDefaultText");
+			field1.DefaultText = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("ShowFormShapeNameDecoratorDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -1331,6 +1331,11 @@ namespace Company.MobileDSL
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "NameDecorator");
 			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
+				
+			DslDiagrams::ImageField field2 = new DslDiagrams::ImageField("ShowFormLabel");
+			field2.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetObject("ShowFormShapeShowFormLabelDefaultImage"));
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.OuterTopCenter, DslDiagrams::PointD.Empty, true);
+			decorators.Add(decorator2);
 				
 		}
 		
@@ -1397,7 +1402,7 @@ namespace Company.MobileDSL
 					DslDiagrams::FontSettings itemFont = new DslDiagrams::FontSettings();
 					itemFont.Style =  global::System.Drawing.FontStyle.Bold ;
 					itemFont.Size = 10/72.0F;
-					string title = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("CompartmentShape1UIEventsCompartmentTitle");
+					string title = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("ShowFormShapeUIEventsCompartmentTitle");
 					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("UIEventsCompartment", title, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
@@ -1412,7 +1417,7 @@ namespace Company.MobileDSL
 					DslDiagrams::FontSettings itemFont = new DslDiagrams::FontSettings();
 					itemFont.Style =  global::System.Drawing.FontStyle.Bold ;
 					itemFont.Size = 10/72.0F;
-					string title = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("CompartmentShape1UIPrimitivesTitle");
+					string title = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("ShowFormShapeUIPrimitivesTitle");
 					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("UIPrimitives", title, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
 						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
@@ -1422,7 +1427,7 @@ namespace Company.MobileDSL
 				}
 			}
 			
-			return CompartmentShape1.compartmentDescriptions;
+			return ShowFormShape.compartmentDescriptions;
 		}
 		
 		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
@@ -1523,7 +1528,7 @@ namespace Company.MobileDSL
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// CompartmentShape1 domain class Id.
+		/// ShowFormShape domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xcb5171d3, 0x7ac6, 0x479c, 0xb7, 0xce, 0xd1, 0x47, 0x4e, 0xa4, 0x44, 0xeb);
 		/// <summary>
@@ -1531,7 +1536,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CompartmentShape1(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ShowFormShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -1541,7 +1546,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CompartmentShape1(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ShowFormShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -1555,10 +1560,10 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// Gets or sets the value of FillColor domain property.
-		/// Description for Company.MobileDSL.CompartmentShape1.Fill Color
+		/// Description for Company.MobileDSL.ShowFormShape.Fill Color
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.CompartmentShape1/FillColor.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.CompartmentShape1/FillColor.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormShape/FillColor.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormShape/FillColor.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
 		[DslModeling::DomainObjectId("3a08e898-fd53-46b0-b7d6-2aebd4de2386")]
 		public global::System.Drawing.Color FillColor
@@ -1575,19 +1580,19 @@ namespace Company.MobileDSL
 			}
 		}
 		/// <summary>
-		/// Value handler for the CompartmentShape1.FillColor domain property.
+		/// Value handler for the ShowFormShape.FillColor domain property.
 		/// </summary>
-		internal sealed partial class FillColorPropertyHandler : DslModeling::DomainPropertyValueHandler<CompartmentShape1, global::System.Drawing.Color>
+		internal sealed partial class FillColorPropertyHandler : DslModeling::DomainPropertyValueHandler<ShowFormShape, global::System.Drawing.Color>
 		{
 			private FillColorPropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the CompartmentShape1.FillColor domain property value handler.
+			/// Gets the singleton instance of the ShowFormShape.FillColor domain property value handler.
 			/// </summary>
 			public static readonly FillColorPropertyHandler Instance = new FillColorPropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the CompartmentShape1.FillColor domain property.
+			/// Gets the Id of the ShowFormShape.FillColor domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -1603,7 +1608,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.Drawing.Color GetValue(CompartmentShape1 element)
+			public override sealed global::System.Drawing.Color GetValue(ShowFormShape element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				// There is no storage for FillColor because its Kind is
@@ -1617,7 +1622,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(CompartmentShape1 element, global::System.Drawing.Color newValue)
+			public override sealed void SetValue(ShowFormShape element, global::System.Drawing.Color newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -1644,10 +1649,10 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// Gets or sets the value of TextColor domain property.
-		/// Description for Company.MobileDSL.CompartmentShape1.Text Color
+		/// Description for Company.MobileDSL.ShowFormShape.Text Color
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.CompartmentShape1/TextColor.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.CompartmentShape1/TextColor.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormShape/TextColor.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormShape/TextColor.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
 		[DslModeling::DomainObjectId("3ec43e43-753f-4bf3-a47c-0001a2f99569")]
 		public global::System.Drawing.Color TextColor
@@ -1664,19 +1669,19 @@ namespace Company.MobileDSL
 			}
 		}
 		/// <summary>
-		/// Value handler for the CompartmentShape1.TextColor domain property.
+		/// Value handler for the ShowFormShape.TextColor domain property.
 		/// </summary>
-		internal sealed partial class TextColorPropertyHandler : DslModeling::DomainPropertyValueHandler<CompartmentShape1, global::System.Drawing.Color>
+		internal sealed partial class TextColorPropertyHandler : DslModeling::DomainPropertyValueHandler<ShowFormShape, global::System.Drawing.Color>
 		{
 			private TextColorPropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the CompartmentShape1.TextColor domain property value handler.
+			/// Gets the singleton instance of the ShowFormShape.TextColor domain property value handler.
 			/// </summary>
 			public static readonly TextColorPropertyHandler Instance = new TextColorPropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the CompartmentShape1.TextColor domain property.
+			/// Gets the Id of the ShowFormShape.TextColor domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -1692,7 +1697,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.Drawing.Color GetValue(CompartmentShape1 element)
+			public override sealed global::System.Drawing.Color GetValue(ShowFormShape element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				// There is no storage for TextColor because its Kind is
@@ -1706,7 +1711,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(CompartmentShape1 element, global::System.Drawing.Color newValue)
+			public override sealed void SetValue(ShowFormShape element, global::System.Drawing.Color newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -1733,10 +1738,10 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// Gets or sets the value of FillGradientMode domain property.
-		/// Description for Company.MobileDSL.CompartmentShape1.Fill Gradient Mode
+		/// Description for Company.MobileDSL.ShowFormShape.Fill Gradient Mode
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.CompartmentShape1/FillGradientMode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.CompartmentShape1/FillGradientMode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ShowFormShape/FillGradientMode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ShowFormShape/FillGradientMode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
 		[DslModeling::DomainObjectId("0a37e6f3-e8f3-4984-9d27-887ddd9291a7")]
 		public global::System.Drawing.Drawing2D.LinearGradientMode FillGradientMode
@@ -1753,19 +1758,19 @@ namespace Company.MobileDSL
 			}
 		}
 		/// <summary>
-		/// Value handler for the CompartmentShape1.FillGradientMode domain property.
+		/// Value handler for the ShowFormShape.FillGradientMode domain property.
 		/// </summary>
-		internal sealed partial class FillGradientModePropertyHandler : DslModeling::DomainPropertyValueHandler<CompartmentShape1, global::System.Drawing.Drawing2D.LinearGradientMode>
+		internal sealed partial class FillGradientModePropertyHandler : DslModeling::DomainPropertyValueHandler<ShowFormShape, global::System.Drawing.Drawing2D.LinearGradientMode>
 		{
 			private FillGradientModePropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the CompartmentShape1.FillGradientMode domain property value handler.
+			/// Gets the singleton instance of the ShowFormShape.FillGradientMode domain property value handler.
 			/// </summary>
 			public static readonly FillGradientModePropertyHandler Instance = new FillGradientModePropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the CompartmentShape1.FillGradientMode domain property.
+			/// Gets the Id of the ShowFormShape.FillGradientMode domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -1781,7 +1786,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.Drawing.Drawing2D.LinearGradientMode GetValue(CompartmentShape1 element)
+			public override sealed global::System.Drawing.Drawing2D.LinearGradientMode GetValue(ShowFormShape element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				// There is no storage for FillGradientMode because its Kind is
@@ -1795,7 +1800,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(CompartmentShape1 element, global::System.Drawing.Drawing2D.LinearGradientMode newValue)
+			public override sealed void SetValue(ShowFormShape element, global::System.Drawing.Drawing2D.LinearGradientMode newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -2272,6 +2277,1432 @@ namespace Company.MobileDSL
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass ConditionBlockShape
+	/// Description for Company.MobileDSL.ConditionBlockShape
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ConditionBlockShape.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ConditionBlockShape.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("4970f161-0bbe-461b-90bd-74ad4426d9c9")]
+	public partial class ConditionBlockShape : DslDiagrams::ImageShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with ConditionBlockShape.
+		/// </summary>
+		public static DslDiagrams::Decorator FindConditionBlockShapeDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.2, 0.86);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 10/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+		}
+		
+		#endregion
+		#region Custom storage for shape properties that appear in the property grid
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private global::System.Drawing.Color GetFillColorValue()
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeBackground);
+			if(settings != null && settings.IsOverridden(DslDiagrams::BrushSettingsFlags.Color))
+			{
+				return settings.Color;
+			}
+			return global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White);
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private void SetFillColorValue(global::System.Drawing.Color newValue)
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeBackground);
+			if(settings == null) settings = new DslDiagrams::BrushSettings();
+			settings.Color = newValue;
+			this.StyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, settings);
+			this.Invalidate();
+		}
+		
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Condition");
+			field1.DefaultText = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("ConditionBlockShapeConditionDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterTopCenter, DslDiagrams::PointD.Empty, true);
+			decorators.Add(decorator1);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		/// <summary>
+		/// Provide the specific Image for this Shape class
+		/// </summary>
+		protected override global::System.Drawing.Image Image
+		{
+			get
+			{
+				global::System.Resources.ResourceManager resourceManager = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager;
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ConditionBlockShapeImage"));
+			}
+		}
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ConditionBlockShape domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4970f161, 0x0bbe, 0x461b, 0x90, 0xbd, 0x74, 0xad, 0x44, 0x26, 0xd9, 0xc9);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ConditionBlockShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ConditionBlockShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region FillColor domain property code
+		
+		/// <summary>
+		/// FillColor domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid FillColorDomainPropertyId = new global::System.Guid(0xaaf9bd0e, 0x9c88, 0x4eeb, 0xaf, 0xd6, 0x9f, 0xfd, 0xfc, 0x8f, 0xf5, 0xe4);
+		
+		/// <summary>
+		/// Gets or sets the value of FillColor domain property.
+		/// Description for Company.MobileDSL.ConditionBlockShape.Fill Color
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ConditionBlockShape/FillColor.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ConditionBlockShape/FillColor.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
+		[DslModeling::DomainObjectId("aaf9bd0e-9c88-4eeb-afd6-9ffdfc8ff5e4")]
+		public global::System.Drawing.Color FillColor
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return FillColorPropertyHandler.Instance.GetValue(this);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				FillColorPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ConditionBlockShape.FillColor domain property.
+		/// </summary>
+		internal sealed partial class FillColorPropertyHandler : DslModeling::DomainPropertyValueHandler<ConditionBlockShape, global::System.Drawing.Color>
+		{
+			private FillColorPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ConditionBlockShape.FillColor domain property value handler.
+			/// </summary>
+			public static readonly FillColorPropertyHandler Instance = new FillColorPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ConditionBlockShape.FillColor domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return FillColorDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Drawing.Color GetValue(ConditionBlockShape element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for FillColor because its Kind is
+				// set to CustomStorage. Please provide the GetFillColorValue()
+				// method on the domain class.
+				return element.GetFillColorValue();
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ConditionBlockShape element, global::System.Drawing.Color newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Drawing.Color oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					// There is no storage for FillColor because its Kind is
+					// set to CustomStorage. Please provide the SetFillColorValue()
+					// method on the domain class.
+					element.SetFillColorValue(newValue);
+					ValueChanged(element, oldValue, GetValue(element));
+				}
+			}
+		}
+		
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass ServiceCallShape
+	/// Description for Company.MobileDSL.ServiceCallShape
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ServiceCallShape.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ServiceCallShape.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("48dfec5c-baeb-4a75-b198-a7bcc0440cc4")]
+	public partial class ServiceCallShape : DslDiagrams::ImageShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with ServiceCallShape.
+		/// </summary>
+		public static DslDiagrams::Decorator FindServiceCallShapeDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.3, 0.55);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 10/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+		}
+		
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("ServiceName");
+			field1.DefaultText = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("ServiceCallShapeServiceNameDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterTopLeft, DslDiagrams::PointD.Empty, true);
+			decorators.Add(decorator1);
+				
+			DslDiagrams::TextField field2 = new DslDiagrams::TextField("ServiceMethod");
+			field2.DefaultText = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("ServiceCallShapeServiceMethodDefaultText");
+			field2.DefaultFocusable = true;
+			field2.DefaultAutoSize = true;
+			field2.AnchoringBehavior.MinimumHeightInLines = 1;
+			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field2.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.OuterTopRight, DslDiagrams::PointD.Empty, true);
+			decorators.Add(decorator2);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		/// <summary>
+		/// Provide the specific Image for this Shape class
+		/// </summary>
+		protected override global::System.Drawing.Image Image
+		{
+			get
+			{
+				global::System.Resources.ResourceManager resourceManager = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager;
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ServiceCallShapeImage"));
+			}
+		}
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ServiceCallShape domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x48dfec5c, 0xbaeb, 0x4a75, 0xb1, 0x98, 0xa7, 0xbc, 0xc0, 0x44, 0x0c, 0xc4);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ServiceCallShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ServiceCallShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass AppCodeShape
+	/// Description for Company.MobileDSL.AppCodeShape
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.AppCodeShape.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.AppCodeShape.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("8ac88d88-6719-4bac-a4a3-1915a5f6a05a")]
+	public partial class AppCodeShape : DslDiagrams::CompartmentShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with AppCodeShape.
+		/// </summary>
+		public static DslDiagrams::Decorator FindAppCodeShapeDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.5, 1);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 10/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+		}
+		
+		/// <summary>
+		/// Indicates whether this shape displays a background gradient.
+		/// </summary>
+		public override bool HasBackgroundGradient
+		{
+			get
+			{
+				return true;
+			}
+		}
+		
+		/// <summary>
+		/// Indicates the direction of the gradient.
+		/// </summary>
+		public override global::System.Drawing.Drawing2D.LinearGradientMode BackgroundGradientMode
+		{
+			get
+			{
+				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+			}
+		}
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("AppCodeShapeNameDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
+			shapeFields.Add(field1);
+			
+			DslDiagrams::TextField field2 = new DslDiagrams::TextField("ReturnType");
+			field2.DefaultText = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("AppCodeShapeReturnTypeDefaultText");
+			field2.DefaultFocusable = true;
+			field2.DefaultAutoSize = true;
+			field2.AnchoringBehavior.MinimumHeightInLines = 1;
+			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field2.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
+			shapeFields.Add(field2);
+			
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ReturnType");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator2);
+				
+			DslDiagrams::ImageField field3 = new DslDiagrams::ImageField("AddCodeLabel");
+			field3.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetObject("AppCodeShapeAddCodeLabelDefaultImage"));
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.OuterTopCenter, DslDiagrams::PointD.Empty, true);
+			decorators.Add(decorator3);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		#region CompartmentShape code
+		/// <summary>
+		/// Returns a value indicating whether compartment header should be visible if there is only one of them.
+		/// </summary>
+		public override bool IsSingleCompartmentHeaderVisible
+		{
+			get { return true; }
+		}
+		
+		private static DslDiagrams::CompartmentDescription[] compartmentDescriptions;
+		
+		/// <summary>
+		/// Gets an array of CompartmentDescription for all compartments shown on this shape
+		/// (including compartments defined on base shapes).
+		/// </summary>
+		/// <returns></returns>
+		public override DslDiagrams::CompartmentDescription[] GetCompartmentDescriptions()
+		{
+			if(compartmentDescriptions == null)
+			{
+				// Initialize the array of compartment descriptions if we haven't done so already. 
+				// First we get any compartment descriptions in base shapes, and add on any compartments
+				// that are defined on this shape. 
+				DslDiagrams::CompartmentDescription[] baseCompartmentDescriptions = base.GetCompartmentDescriptions();
+				
+				int localCompartmentsOffset = 0;
+				if(baseCompartmentDescriptions!=null)
+				{
+					localCompartmentsOffset = baseCompartmentDescriptions.Length;
+				}
+				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[1+localCompartmentsOffset];
+				
+				if(baseCompartmentDescriptions!=null)
+				{
+					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
+				}
+				{
+					DslDiagrams::FontSettings itemFont = new DslDiagrams::FontSettings();
+					itemFont.Style =  global::System.Drawing.FontStyle.Bold ;
+					itemFont.Size = 10/72.0F;
+					string title = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("AppCodeShapeCodeTitle");
+					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("Code", title, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
+						null, itemFont,
+						false);
+					compartmentDescriptions[localCompartmentsOffset+0] = descriptor;
+				}
+			}
+			
+			return AppCodeShape.compartmentDescriptions;
+		}
+		
+		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
+		
+		/// <summary>
+		/// Gets an array of CompartmentMappings for all compartments displayed on this shape
+		/// (including compartment maps defined on base shapes). 
+		/// </summary>
+		/// <param name="melType">The type of the DomainClass that this shape is mapped to</param>
+		/// <returns></returns>
+		protected override DslDiagrams::CompartmentMapping[] GetCompartmentMappings(global::System.Type melType)
+		{
+			if(melType==null) throw new global::System.ArgumentNullException("melType");
+			
+			if(compartmentMappings==null)
+			{
+				// Initialize the table of compartment mappings if we haven't done so already. 
+				// The table contains an array of CompartmentMapping for every Type that this
+				// shape can be mapped to. 
+				compartmentMappings = new global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]>();
+				{
+					// First we get the mappings defined for the base shape, and add on any mappings defined for this
+					// shape. 
+					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::Company.MobileDSL.AppCode));
+					int localCompartmentMappingsOffset = 0;
+					if(baseMappings!=null)
+					{
+						localCompartmentMappingsOffset = baseMappings.Length;
+					}
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[1+localCompartmentMappingsOffset];
+					
+					if(baseMappings!=null)
+					{
+						baseMappings.CopyTo(mappings, 0);
+					}
+					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
+																				"Code", 
+																				global::Company.MobileDSL.StringCode.TextDomainPropertyId, 
+																				global::Company.MobileDSL.StringCode.DomainClassId, 
+																				GetElementsFromAppCodeForCode,
+																				null,
+																				null,
+																				null);
+					compartmentMappings.Add(typeof(global::Company.MobileDSL.AppCode), mappings);
+				}
+			}
+			
+			// See if we can find the mapping being requested directly in the table. 
+			DslDiagrams::CompartmentMapping[] returnValue;
+			if(compartmentMappings.TryGetValue(melType, out returnValue))
+			{
+				return returnValue;
+			}
+			
+			// If not, loop through the types in the table, and find the 'most derived' base
+			// class of melType. 
+			global::System.Type selectedMappedType = null;
+			foreach(global::System.Type mappedType in compartmentMappings.Keys)
+			{
+				if(mappedType.IsAssignableFrom(melType) && (selectedMappedType==null || selectedMappedType.IsAssignableFrom(mappedType)))
+				{
+					selectedMappedType = mappedType;
+				}
+			}
+			if(selectedMappedType!=null)
+			{
+				return compartmentMappings[selectedMappedType];
+			}
+			return new DslDiagrams::CompartmentMapping[] {};
+		}
+		
+			#region DomainPath traversal methods to get the list of elements to display in a compartment.
+			internal static global::System.Collections.IList GetElementsFromAppCodeForCode(DslModeling::ModelElement rootElement)
+			{
+				global::Company.MobileDSL.AppCode root = (global::Company.MobileDSL.AppCode)rootElement;
+					// Segments 0 and 1
+					DslModeling::LinkedElementCollection<global::Company.MobileDSL.StringCode> result = root.StringCodes;
+				return result;
+			}
+			#endregion
+		
+		#endregion
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// AppCodeShape domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x8ac88d88, 0x6719, 0x4bac, 0xa4, 0xa3, 0x19, 0x15, 0xa5, 0xf6, 0xa0, 0x5a);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AppCodeShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AppCodeShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.MobileDSL
+{
+	/// <summary>
+	/// DomainClass UIDataLink
+	/// Description for Company.MobileDSL.UIDataLink
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.MobileDSL.UIDataLink.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.UIDataLink.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("8b9681ec-30b1-4d80-af29-d4c6368aab39")]
+	public partial class UIDataLink : DslDiagrams::CompartmentShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with UIDataLink.
+		/// </summary>
+		public static DslDiagrams::Decorator FindUIDataLinkDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.5, 1);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 12/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold12"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+		}
+		
+		/// <summary>
+		/// Indicates whether this shape displays a background gradient.
+		/// </summary>
+		public override bool HasBackgroundGradient
+		{
+			get
+			{
+				return true;
+			}
+		}
+		
+		/// <summary>
+		/// Indicates the direction of the gradient.
+		/// </summary>
+		public override global::System.Drawing.Drawing2D.LinearGradientMode BackgroundGradientMode
+		{
+			get
+			{
+				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+			}
+		}
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("LabelDecorator");
+			field1.DefaultText = string.Empty;
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold12");			
+			shapeFields.Add(field1);
+			
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::ImageField field1 = new DslDiagrams::ImageField("UIDataLink");
+			field1.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetObject("UIDataLinkUIDataLinkDefaultImage"));
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterTopCenter, DslDiagrams::PointD.Empty, true);
+			decorators.Add(decorator1);
+				
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "LabelDecorator");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator2);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		#region CompartmentShape code
+		/// <summary>
+		/// Returns a value indicating whether compartment header should be visible if there is only one of them.
+		/// </summary>
+		public override bool IsSingleCompartmentHeaderVisible
+		{
+			get { return true; }
+		}
+		
+		private static DslDiagrams::CompartmentDescription[] compartmentDescriptions;
+		
+		/// <summary>
+		/// Gets an array of CompartmentDescription for all compartments shown on this shape
+		/// (including compartments defined on base shapes).
+		/// </summary>
+		/// <returns></returns>
+		public override DslDiagrams::CompartmentDescription[] GetCompartmentDescriptions()
+		{
+			if(compartmentDescriptions == null)
+			{
+				// Initialize the array of compartment descriptions if we haven't done so already. 
+				// First we get any compartment descriptions in base shapes, and add on any compartments
+				// that are defined on this shape. 
+				DslDiagrams::CompartmentDescription[] baseCompartmentDescriptions = base.GetCompartmentDescriptions();
+				
+				int localCompartmentsOffset = 0;
+				if(baseCompartmentDescriptions!=null)
+				{
+					localCompartmentsOffset = baseCompartmentDescriptions.Length;
+				}
+				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[1+localCompartmentsOffset];
+				
+				if(baseCompartmentDescriptions!=null)
+				{
+					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
+				}
+				{
+					DslDiagrams::FontSettings itemFont = new DslDiagrams::FontSettings();
+					itemFont.Style =  global::System.Drawing.FontStyle.Bold ;
+					itemFont.Size = 10/72.0F;
+					string title = global::Company.MobileDSL.MobileDSLDomainModel.SingletonResourceManager.GetString("UIDataLinkCodeTitle");
+					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("Code", title, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
+						null, itemFont,
+						false);
+					compartmentDescriptions[localCompartmentsOffset+0] = descriptor;
+				}
+			}
+			
+			return UIDataLink.compartmentDescriptions;
+		}
+		
+		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
+		
+		/// <summary>
+		/// Gets an array of CompartmentMappings for all compartments displayed on this shape
+		/// (including compartment maps defined on base shapes). 
+		/// </summary>
+		/// <param name="melType">The type of the DomainClass that this shape is mapped to</param>
+		/// <returns></returns>
+		protected override DslDiagrams::CompartmentMapping[] GetCompartmentMappings(global::System.Type melType)
+		{
+			if(melType==null) throw new global::System.ArgumentNullException("melType");
+			
+			if(compartmentMappings==null)
+			{
+				// Initialize the table of compartment mappings if we haven't done so already. 
+				// The table contains an array of CompartmentMapping for every Type that this
+				// shape can be mapped to. 
+				compartmentMappings = new global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]>();
+				{
+					// First we get the mappings defined for the base shape, and add on any mappings defined for this
+					// shape. 
+					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::Company.MobileDSL.UIDLink));
+					int localCompartmentMappingsOffset = 0;
+					if(baseMappings!=null)
+					{
+						localCompartmentMappingsOffset = baseMappings.Length;
+					}
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[1+localCompartmentMappingsOffset];
+					
+					if(baseMappings!=null)
+					{
+						baseMappings.CopyTo(mappings, 0);
+					}
+					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
+																				"Code", 
+																				global::Company.MobileDSL.StringCode.TextDomainPropertyId, 
+																				global::Company.MobileDSL.StringCode.DomainClassId, 
+																				GetElementsFromUIDLinkForCode,
+																				null,
+																				null,
+																				null);
+					compartmentMappings.Add(typeof(global::Company.MobileDSL.UIDLink), mappings);
+				}
+			}
+			
+			// See if we can find the mapping being requested directly in the table. 
+			DslDiagrams::CompartmentMapping[] returnValue;
+			if(compartmentMappings.TryGetValue(melType, out returnValue))
+			{
+				return returnValue;
+			}
+			
+			// If not, loop through the types in the table, and find the 'most derived' base
+			// class of melType. 
+			global::System.Type selectedMappedType = null;
+			foreach(global::System.Type mappedType in compartmentMappings.Keys)
+			{
+				if(mappedType.IsAssignableFrom(melType) && (selectedMappedType==null || selectedMappedType.IsAssignableFrom(mappedType)))
+				{
+					selectedMappedType = mappedType;
+				}
+			}
+			if(selectedMappedType!=null)
+			{
+				return compartmentMappings[selectedMappedType];
+			}
+			return new DslDiagrams::CompartmentMapping[] {};
+		}
+		
+			#region DomainPath traversal methods to get the list of elements to display in a compartment.
+			internal static global::System.Collections.IList GetElementsFromUIDLinkForCode(DslModeling::ModelElement rootElement)
+			{
+				global::Company.MobileDSL.UIDLink root = (global::Company.MobileDSL.UIDLink)rootElement;
+					// Segments 0 and 1
+					DslModeling::LinkedElementCollection<global::Company.MobileDSL.StringCode> result = root.StringCodes;
+				return result;
+			}
+			#endregion
+		
+		#endregion
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// UIDataLink domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x8b9681ec, 0x30b1, 0x4d80, 0xaf, 0x29, 0xd4, 0xc6, 0x36, 0x8a, 0xab, 0x39);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public UIDataLink(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public UIDataLink(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Label domain property code
+		
+		/// <summary>
+		/// Label domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid LabelDomainPropertyId = new global::System.Guid(0x9dc1359e, 0xf751, 0x4722, 0xb6, 0x2a, 0x0b, 0x24, 0xb5, 0xcb, 0x0c, 0x81);
+		
+		/// <summary>
+		/// Storage for Label
+		/// </summary>
+		private global::System.String labelPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Label domain property.
+		/// Description for Company.MobileDSL.UIDataLink.Label
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.UIDataLink/Label.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.UIDataLink/Label.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("9dc1359e-f751-4722-b62a-0b24b5cb0c81")]
+		public global::System.String Label
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return labelPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				LabelPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the UIDataLink.Label domain property.
+		/// </summary>
+		internal sealed partial class LabelPropertyHandler : DslModeling::DomainPropertyValueHandler<UIDataLink, global::System.String>
+		{
+			private LabelPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the UIDataLink.Label domain property value handler.
+			/// </summary>
+			public static readonly LabelPropertyHandler Instance = new LabelPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the UIDataLink.Label domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return LabelDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(UIDataLink element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.labelPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(UIDataLink element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.labelPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 	}
 }

@@ -2,14 +2,14 @@
 <templateDSLDiagram dslVersion="1.0.0.0" Id="fe4f0b4b-b5aa-4e10-8b46-893ad358015b" absoluteBounds="0, 0, 11, 8.5" name="TemplateDSLReport">
   <componentModelMoniker name="/" />
   <nestedChildShapes>
-    <functionShape Id="c560c934-241e-4c36-a571-15d615922b4e" absoluteBounds="1.625, 1.125, 1.5, 1">
+    <functionShape Id="c560c934-241e-4c36-a571-15d615922b4e" absoluteBounds="1.875, 1.375, 1.5, 1">
       <functionMoniker Id="dc8fdff0-43ac-4c91-b55d-309770810182" />
       <relativeChildShapes />
     </functionShape>
     <standardShape Id="73cf26de-34d7-41f6-aab4-74189e34322f" absoluteBounds="4.75, 3, 3.125, 1">
       <blockMoniker Id="22219f0c-0964-4c85-8c7f-e54b1f00d4a3" />
     </standardShape>
-    <containConnection Id="5e1d4293-c5ec-4580-bd28-f3ca67dab05a" edgePoints="[(2.375 : 2.125); (2.375 : 3.5); (4.75 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <containConnection Id="5e1d4293-c5ec-4580-bd28-f3ca67dab05a" edgePoints="[(3.375 : 1.875); (6.3125 : 1.875); (6.3125 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <connectableContainsChildMoniker Id="1caa6202-cfd0-438d-a8b4-b3aea3b0ce59" />
       <nodes>
         <functionShapeMoniker Id="c560c934-241e-4c36-a571-15d615922b4e" />

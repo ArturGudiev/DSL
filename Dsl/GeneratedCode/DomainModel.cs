@@ -87,6 +87,11 @@ namespace Company.MobileDSL
 				typeof(ListBox),
 				typeof(StackPanel),
 				typeof(Input),
+				typeof(ConditionBlock),
+				typeof(ServiceCall),
+				typeof(AppCode),
+				typeof(StringCode),
+				typeof(UIDLink),
 				typeof(ComponentModelHasComments),
 				typeof(ComponentModelHasControllers),
 				typeof(CommentReferencesSubjects),
@@ -99,6 +104,12 @@ namespace Company.MobileDSL
 				typeof(ClassWithPortsHasOP),
 				typeof(StateReferencesTargetStated),
 				typeof(StateReferencesPs),
+				typeof(StateHasConditionBlocked),
+				typeof(StateHasServiceCalled),
+				typeof(StateHasAppCoded),
+				typeof(AppCodeHasStringCodes),
+				typeof(StateHasUIDataLinks),
+				typeof(UIDLinkHasStringCodes),
 				typeof(MobileDSLDiagram),
 				typeof(AssociationLink),
 				typeof(CommentLink),
@@ -109,7 +120,11 @@ namespace Company.MobileDSL
 				typeof(ControllerShape),
 				typeof(CommentBoxShape),
 				typeof(StateShape),
-				typeof(CompartmentShape1),
+				typeof(ShowFormShape),
+				typeof(AppCodeShape),
+				typeof(UIDataLink),
+				typeof(ConditionBlockShape),
+				typeof(ServiceCallShape),
 				typeof(IPShape),
 				typeof(OPShape),
 				typeof(global::Company.MobileDSL.FixUpDiagram),
@@ -148,6 +163,12 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(StackPanel), "Items", StackPanel.ItemsDomainPropertyId, typeof(StackPanel.ItemsPropertyHandler)),
 				new DomainMemberInfo(typeof(Input), "Text", Input.TextDomainPropertyId, typeof(Input.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(Input), "InputMode", Input.InputModeDomainPropertyId, typeof(Input.InputModePropertyHandler)),
+				new DomainMemberInfo(typeof(ConditionBlock), "Text", ConditionBlock.TextDomainPropertyId, typeof(ConditionBlock.TextPropertyHandler)),
+				new DomainMemberInfo(typeof(ServiceCall), "ServiceName", ServiceCall.ServiceNameDomainPropertyId, typeof(ServiceCall.ServiceNamePropertyHandler)),
+				new DomainMemberInfo(typeof(ServiceCall), "ServiceMethod", ServiceCall.ServiceMethodDomainPropertyId, typeof(ServiceCall.ServiceMethodPropertyHandler)),
+				new DomainMemberInfo(typeof(AppCode), "Name", AppCode.NameDomainPropertyId, typeof(AppCode.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(AppCode), "ReturnType", AppCode.ReturnTypeDomainPropertyId, typeof(AppCode.ReturnTypePropertyHandler)),
+				new DomainMemberInfo(typeof(StringCode), "Text", StringCode.TextDomainPropertyId, typeof(StringCode.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(C), "FromEvent", C.FromEventDomainPropertyId, typeof(C.FromEventPropertyHandler)),
 				new DomainMemberInfo(typeof(C), "NextState", C.NextStateDomainPropertyId, typeof(C.NextStatePropertyHandler)),
 				new DomainMemberInfo(typeof(C), "Data", C.DataDomainPropertyId, typeof(C.DataPropertyHandler)),
@@ -158,9 +179,11 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(StateShape), "FillColor", StateShape.FillColorDomainPropertyId, typeof(StateShape.FillColorPropertyHandler)),
 				new DomainMemberInfo(typeof(StateShape), "TextColor", StateShape.TextColorDomainPropertyId, typeof(StateShape.TextColorPropertyHandler)),
 				new DomainMemberInfo(typeof(StateShape), "FillGradientMode", StateShape.FillGradientModeDomainPropertyId, typeof(StateShape.FillGradientModePropertyHandler)),
-				new DomainMemberInfo(typeof(CompartmentShape1), "FillColor", CompartmentShape1.FillColorDomainPropertyId, typeof(CompartmentShape1.FillColorPropertyHandler)),
-				new DomainMemberInfo(typeof(CompartmentShape1), "TextColor", CompartmentShape1.TextColorDomainPropertyId, typeof(CompartmentShape1.TextColorPropertyHandler)),
-				new DomainMemberInfo(typeof(CompartmentShape1), "FillGradientMode", CompartmentShape1.FillGradientModeDomainPropertyId, typeof(CompartmentShape1.FillGradientModePropertyHandler)),
+				new DomainMemberInfo(typeof(ShowFormShape), "FillColor", ShowFormShape.FillColorDomainPropertyId, typeof(ShowFormShape.FillColorPropertyHandler)),
+				new DomainMemberInfo(typeof(ShowFormShape), "TextColor", ShowFormShape.TextColorDomainPropertyId, typeof(ShowFormShape.TextColorPropertyHandler)),
+				new DomainMemberInfo(typeof(ShowFormShape), "FillGradientMode", ShowFormShape.FillGradientModeDomainPropertyId, typeof(ShowFormShape.FillGradientModePropertyHandler)),
+				new DomainMemberInfo(typeof(UIDataLink), "Label", UIDataLink.LabelDomainPropertyId, typeof(UIDataLink.LabelPropertyHandler)),
+				new DomainMemberInfo(typeof(ConditionBlockShape), "FillColor", ConditionBlockShape.FillColorDomainPropertyId, typeof(ConditionBlockShape.FillColorPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -195,6 +218,18 @@ namespace Company.MobileDSL
 				new DomainRolePlayerInfo(typeof(StateReferencesTargetStated), "TargetState", StateReferencesTargetStated.TargetStateDomainRoleId),
 				new DomainRolePlayerInfo(typeof(StateReferencesPs), "State", StateReferencesPs.StateDomainRoleId),
 				new DomainRolePlayerInfo(typeof(StateReferencesPs), "P", StateReferencesPs.PDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasConditionBlocked), "State", StateHasConditionBlocked.StateDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasConditionBlocked), "ConditionBlock", StateHasConditionBlocked.ConditionBlockDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasServiceCalled), "State", StateHasServiceCalled.StateDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasServiceCalled), "ServiceCall", StateHasServiceCalled.ServiceCallDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasAppCoded), "State", StateHasAppCoded.StateDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasAppCoded), "AppCode", StateHasAppCoded.AppCodeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(AppCodeHasStringCodes), "AppCode", AppCodeHasStringCodes.AppCodeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(AppCodeHasStringCodes), "StringCode", AppCodeHasStringCodes.StringCodeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasUIDataLinks), "State", StateHasUIDataLinks.StateDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasUIDataLinks), "UIDLink", StateHasUIDataLinks.UIDLinkDomainRoleId),
+				new DomainRolePlayerInfo(typeof(UIDLinkHasStringCodes), "UIDLink", UIDLinkHasStringCodes.UIDLinkDomainRoleId),
+				new DomainRolePlayerInfo(typeof(UIDLinkHasStringCodes), "StringCode", UIDLinkHasStringCodes.StringCodeDomainRoleId),
 			};
 		}
 		#endregion
@@ -216,7 +251,7 @@ namespace Company.MobileDSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(33);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(42);
 				createElementMap.Add(typeof(ComponentModel), 0);
 				createElementMap.Add(typeof(Controller), 1);
 				createElementMap.Add(typeof(Comment), 2);
@@ -233,19 +268,28 @@ namespace Company.MobileDSL
 				createElementMap.Add(typeof(ListBox), 13);
 				createElementMap.Add(typeof(StackPanel), 14);
 				createElementMap.Add(typeof(Input), 15);
-				createElementMap.Add(typeof(MobileDSLDiagram), 16);
-				createElementMap.Add(typeof(AssociationLink), 17);
-				createElementMap.Add(typeof(CommentLink), 18);
-				createElementMap.Add(typeof(StateConnector), 19);
-				createElementMap.Add(typeof(ShowFormToPortConnection), 20);
-				createElementMap.Add(typeof(CConnector), 21);
-				createElementMap.Add(typeof(StateRefState), 22);
-				createElementMap.Add(typeof(ControllerShape), 23);
-				createElementMap.Add(typeof(CommentBoxShape), 24);
-				createElementMap.Add(typeof(StateShape), 25);
-				createElementMap.Add(typeof(CompartmentShape1), 26);
-				createElementMap.Add(typeof(IPShape), 27);
-				createElementMap.Add(typeof(OPShape), 28);
+				createElementMap.Add(typeof(ConditionBlock), 16);
+				createElementMap.Add(typeof(ServiceCall), 17);
+				createElementMap.Add(typeof(AppCode), 18);
+				createElementMap.Add(typeof(StringCode), 19);
+				createElementMap.Add(typeof(UIDLink), 20);
+				createElementMap.Add(typeof(MobileDSLDiagram), 21);
+				createElementMap.Add(typeof(AssociationLink), 22);
+				createElementMap.Add(typeof(CommentLink), 23);
+				createElementMap.Add(typeof(StateConnector), 24);
+				createElementMap.Add(typeof(ShowFormToPortConnection), 25);
+				createElementMap.Add(typeof(CConnector), 26);
+				createElementMap.Add(typeof(StateRefState), 27);
+				createElementMap.Add(typeof(ControllerShape), 28);
+				createElementMap.Add(typeof(CommentBoxShape), 29);
+				createElementMap.Add(typeof(StateShape), 30);
+				createElementMap.Add(typeof(ShowFormShape), 31);
+				createElementMap.Add(typeof(AppCodeShape), 32);
+				createElementMap.Add(typeof(UIDataLink), 33);
+				createElementMap.Add(typeof(ConditionBlockShape), 34);
+				createElementMap.Add(typeof(ServiceCallShape), 35);
+				createElementMap.Add(typeof(IPShape), 36);
+				createElementMap.Add(typeof(OPShape), 37);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -275,19 +319,28 @@ namespace Company.MobileDSL
 				case 13: return new ListBox(partition, propertyAssignments);
 				case 14: return new StackPanel(partition, propertyAssignments);
 				case 15: return new Input(partition, propertyAssignments);
-				case 16: return new MobileDSLDiagram(partition, propertyAssignments);
-				case 17: return new AssociationLink(partition, propertyAssignments);
-				case 18: return new CommentLink(partition, propertyAssignments);
-				case 19: return new StateConnector(partition, propertyAssignments);
-				case 20: return new ShowFormToPortConnection(partition, propertyAssignments);
-				case 21: return new CConnector(partition, propertyAssignments);
-				case 22: return new StateRefState(partition, propertyAssignments);
-				case 23: return new ControllerShape(partition, propertyAssignments);
-				case 24: return new CommentBoxShape(partition, propertyAssignments);
-				case 25: return new StateShape(partition, propertyAssignments);
-				case 26: return new CompartmentShape1(partition, propertyAssignments);
-				case 27: return new IPShape(partition, propertyAssignments);
-				case 28: return new OPShape(partition, propertyAssignments);
+				case 16: return new ConditionBlock(partition, propertyAssignments);
+				case 17: return new ServiceCall(partition, propertyAssignments);
+				case 18: return new AppCode(partition, propertyAssignments);
+				case 19: return new StringCode(partition, propertyAssignments);
+				case 20: return new UIDLink(partition, propertyAssignments);
+				case 21: return new MobileDSLDiagram(partition, propertyAssignments);
+				case 22: return new AssociationLink(partition, propertyAssignments);
+				case 23: return new CommentLink(partition, propertyAssignments);
+				case 24: return new StateConnector(partition, propertyAssignments);
+				case 25: return new ShowFormToPortConnection(partition, propertyAssignments);
+				case 26: return new CConnector(partition, propertyAssignments);
+				case 27: return new StateRefState(partition, propertyAssignments);
+				case 28: return new ControllerShape(partition, propertyAssignments);
+				case 29: return new CommentBoxShape(partition, propertyAssignments);
+				case 30: return new StateShape(partition, propertyAssignments);
+				case 31: return new ShowFormShape(partition, propertyAssignments);
+				case 32: return new AppCodeShape(partition, propertyAssignments);
+				case 33: return new UIDataLink(partition, propertyAssignments);
+				case 34: return new ConditionBlockShape(partition, propertyAssignments);
+				case 35: return new ServiceCallShape(partition, propertyAssignments);
+				case 36: return new IPShape(partition, propertyAssignments);
+				case 37: return new OPShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -310,7 +363,7 @@ namespace Company.MobileDSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(12);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(18);
 				createElementLinkMap.Add(typeof(ComponentModelHasComments), 0);
 				createElementLinkMap.Add(typeof(ComponentModelHasControllers), 1);
 				createElementLinkMap.Add(typeof(CommentReferencesSubjects), 2);
@@ -323,6 +376,12 @@ namespace Company.MobileDSL
 				createElementLinkMap.Add(typeof(ClassWithPortsHasOP), 9);
 				createElementLinkMap.Add(typeof(StateReferencesTargetStated), 10);
 				createElementLinkMap.Add(typeof(StateReferencesPs), 11);
+				createElementLinkMap.Add(typeof(StateHasConditionBlocked), 12);
+				createElementLinkMap.Add(typeof(StateHasServiceCalled), 13);
+				createElementLinkMap.Add(typeof(StateHasAppCoded), 14);
+				createElementLinkMap.Add(typeof(AppCodeHasStringCodes), 15);
+				createElementLinkMap.Add(typeof(StateHasUIDataLinks), 16);
+				createElementLinkMap.Add(typeof(UIDLinkHasStringCodes), 17);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -349,6 +408,12 @@ namespace Company.MobileDSL
 				case 9: return new ClassWithPortsHasOP(partition, roleAssignments, propertyAssignments);
 				case 10: return new StateReferencesTargetStated(partition, roleAssignments, propertyAssignments);
 				case 11: return new StateReferencesPs(partition, roleAssignments, propertyAssignments);
+				case 12: return new StateHasConditionBlocked(partition, roleAssignments, propertyAssignments);
+				case 13: return new StateHasServiceCalled(partition, roleAssignments, propertyAssignments);
+				case 14: return new StateHasAppCoded(partition, roleAssignments, propertyAssignments);
+				case 15: return new AppCodeHasStringCodes(partition, roleAssignments, propertyAssignments);
+				case 16: return new StateHasUIDataLinks(partition, roleAssignments, propertyAssignments);
+				case 17: return new UIDLinkHasStringCodes(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -537,6 +602,12 @@ namespace Company.MobileDSL
 			DomainRoles.Add(global::Company.MobileDSL.ShowFormHasPrimitives.PrimitiveDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.ClassWithPortsHasIP.IPDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.ClassWithPortsHasOP.OPDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.StateHasConditionBlocked.ConditionBlockDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.StateHasServiceCalled.ServiceCallDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.StateHasAppCoded.AppCodeDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.AppCodeHasStringCodes.StringCodeDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.StateHasUIDataLinks.UIDLinkDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.UIDLinkHasStringCodes.StringCodeDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>
