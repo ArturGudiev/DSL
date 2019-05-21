@@ -1,11 +1,9 @@
 ﻿
 <#  
+    foreach ( Primitive pr in primitive.ShowForm.primitives ) {
+			}
 #> 
 
 <#+
-	private State getFirstState(Controller controller){ 
-		  C.getLinksToChildConnections(controller.IP)   
-		 
-	} 
 #>
-
+l

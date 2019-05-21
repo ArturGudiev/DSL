@@ -32,7 +32,7 @@
                 <classWithPortsHasOP Id="23f3b0ed-8aa7-4889-9dc5-8bd0a903c5fb">
                   <oP Id="9309095d-40ae-4dc4-8211-f46f89427ba6">
                     <childConnections>
-                      <c Id="cd6053ab-da17-478c-b8ae-75d3833a1396">
+                      <c Id="7b22f766-9714-4418-8b5f-074e6d6228c8">
                         <iPMoniker Id="3b429298-d9b7-4c3f-96b2-5d3957e21b27" />
                       </c>
                     </childConnections>
@@ -43,10 +43,7 @@
                 <stateHasShowForms Id="c1991ba9-e300-4feb-9a43-9803d5347354">
                   <showForm Id="8c5dafcf-fc02-409b-964a-f30c7fdb923a" name="ChooseStationForm">
                     <childConnections>
-                      <c Id="3f43cb44-7ae7-4f2f-965c-0f35aaf73ed0" fromEvent="ShowButtonClicked" nextState="ShowState">
-                        <oPMoniker Id="9309095d-40ae-4dc4-8211-f46f89427ba6" />
-                      </c>
-                      <c Id="08dfbf3f-7be3-4a55-bf8c-704936c83111" fromEvent="LeftDropBoxClicked" nextController="SecondController">
+                      <c Id="913dba53-02b6-447b-a30c-aa7839956145" fromEvent="ShowButtonClicked" nextState="ShowState">
                         <oPMoniker Id="9309095d-40ae-4dc4-8211-f46f89427ba6" />
                       </c>
                     </childConnections>
@@ -54,16 +51,13 @@
                       <showFormHasEvents Id="81a1532d-40a2-4469-b78c-5e92ffd07882">
                         <event Id="82f0c816-b3b6-433e-97af-a60f922aa382" name="ShowButtonClicked" primitiveName="ShowButton" type="Clicked" />
                       </showFormHasEvents>
-                      <showFormHasEvents Id="aba78783-9d3f-4ca5-9be6-9d2b8b574db0">
-                        <event Id="d7648511-a1d2-416d-9426-c8cfd9815eca" name="LeftDropBoxClicked" primitiveName="LeftDropBox" type="Clicked" />
-                      </showFormHasEvents>
                     </events>
                     <primitives>
                       <showFormHasPrimitives Id="06c5ba0f-db4f-496c-afb0-22601b2a7d47">
-                        <label Id="35f5148d-99e9-4e62-b416-52bcaaee7b7e" name="FromLabel" text="F" />
+                        <label Id="35f5148d-99e9-4e62-b416-52bcaaee7b7e" name="FromLabel" parent="LabelPanel" text="F" />
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="bef2c0a5-b362-4b7e-a53c-2fbec9847718">
-                        <label Id="ebfc7855-8e18-4f3d-9fdc-04f8bfdec4db" name="ToLabel" text="T" />
+                        <label Id="ebfc7855-8e18-4f3d-9fdc-04f8bfdec4db" name="ToLabel" parent="LabelPanel" text="T" />
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="72f7ab09-1fe2-4a65-8d1a-3ba6d702ceec">
                         <stackPanel Id="2d942ca7-69a3-4644-81c2-a3909f2fb112" name="LabelPanel" items="FromLabel;ToLabel" />
@@ -75,10 +69,10 @@
                         <button Id="8c236866-a71a-4d4d-a1df-e046c5bb8183" name="ShowButton" text="AAAA" />
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="70329067-a36b-40e5-8830-17bba50e622f">
-                        <dropBox Id="d4bcb662-39d3-4c0a-bf3c-9e41b25b1678" name="LeftDropBox" items="e=f=g" />
+                        <dropBox Id="d4bcb662-39d3-4c0a-bf3c-9e41b25b1678" name="LeftDropBox" parent="DropBoxPanel" items="e=f=g" />
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="b3a3817f-3319-465e-94be-ee9441c08441">
-                        <dropBox Id="f5bc68d0-973d-44ec-bcf9-d8abcdf2605a" name="RightDropBox" items="a=b=c" />
+                        <dropBox Id="f5bc68d0-973d-44ec-bcf9-d8abcdf2605a" name="RightDropBox" parent="DropBoxPanel" items="a=b=c" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>
@@ -103,7 +97,7 @@
                 <classWithPortsHasOP Id="e739a90a-5fc1-4665-8abc-d03493aaa312">
                   <oP Id="6cda4260-dd7f-47d8-9d9a-d5fc4035a3f8">
                     <childConnections>
-                      <c Id="2b50cfe9-52b6-4b0a-8c5d-99a9cbfc2e3f">
+                      <c Id="588c2653-2a15-4c84-b5ed-43faf213c7af">
                         <iPMoniker Id="4cce208a-cb93-4f03-b189-6692d8d388ae" />
                       </c>
                     </childConnections>
@@ -114,7 +108,7 @@
                 <stateHasShowForms Id="559c29a2-a3f3-4ca2-a83c-a7314303764c">
                   <showForm Id="c607124c-01bf-4d9e-9f0b-e9916b670839" name="ShowScheduleForm">
                     <childConnections>
-                      <c Id="62fa7b1d-f3bc-4c0c-b94a-9add8a0a1a21" nextState="StartState">
+                      <c Id="44434fe6-fceb-4ff3-8b9e-62ad1f910cb4" fromEvent="BackButtonClicked" nextState="StartState">
                         <oPMoniker Id="6cda4260-dd7f-47d8-9d9a-d5fc4035a3f8" />
                       </c>
                     </childConnections>
@@ -132,9 +126,6 @@
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="24eb6376-def9-4fa7-ba8a-3467207ab3d9">
                         <button Id="af8bd0bf-1637-4275-8d5c-6e7ee3bcb122" name="BackButton" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="c4b4e958-3f7d-41c4-9e15-59b49c5ad5bb">
-                        <input Id="5f763f67-055f-4272-9898-f92bc284d090" name="Input1" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>

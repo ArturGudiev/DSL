@@ -33,13 +33,13 @@
 }
 
 
-<#+  //=======================================================  
+<#+	// 1 =======================================================  
 private void insertMainState(Controller controller){
 	IP ip = controller.IP.ChildConnections.ToArray()[0] as IP ;
 	#><#= ip.Parent.Name#><#+
 }
 
-  //=======================================================  
+  	// 2 =======================================================  
 private void makeSwitchStatement(Controller controller)  {#>
 switch(controllerState){
 <#+  
@@ -51,7 +51,7 @@ break;
 <#+}#>
 }
 <#+}
-//====== ShowForm function generation  ================  
+//	3====== ShowForm function generation  ================  
 private void compileShowFormFunction(ShowForm form) {
 
 	#> private void show<#= form.Name #>(){
@@ -75,7 +75,7 @@ private void compileShowFormFunction(ShowForm form) {
 				}
 
 				#>
-				var panel = {Children = {<#+ foreach(Primitive pr in form.Primitives){newCell(pr.Name, ','); } #> },};
+				var panel = {Children = {<#+ foreach(Primitive pr in form.Primitives){if(pr.Parent == "" )newCell(pr.Name, ','); } #> },};
 				Screen.Content = panel;
 
 	} <#+ // ### private void Show

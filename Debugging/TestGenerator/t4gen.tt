@@ -22,7 +22,7 @@
 	} 
 <#}#>
 \#>
-
+l
 <#+  //=======================================================  
 private void generateLoop(Loop fe) {#>
     foreach ( <#= fe.LeftPart #> in <#= fe.Container #> ) {

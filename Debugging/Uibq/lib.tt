@@ -71,7 +71,8 @@ private void generatePrimitive(Primitive primitive) {#>
 			break;
 		case "Company.MobileDSL.StackPanel":
 		string[] items = ((Company.MobileDSL.StackPanel)primitive).Items.Split(';');
-		#> new StackPanel{ Orientation = Orientation.Horizontal, Children = {<#+ foreach(string str in items){newCell(str, ','); } #> }, }; 
+		#> new StackPanel{ Orientation = Orientation.Horizontal, Children = 
+		{<#+ foreach(string str in items){newCell(str, ','); } #> }, }; 
 		<#+ 
 			break;
 		default:

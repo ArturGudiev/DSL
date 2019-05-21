@@ -1,19 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="81b92f9a-366e-4937-9822-98655edff22d" name="" xmlns="http://schemas.microsoft.com/dsltools/TemplateDSL">
-  <functions>
-    <componentModelHasFunctions Id="1f8e7ebe-4a99-4a1d-b717-0ea624e0ba91">
-      <function Id="dc8fdff0-43ac-4c91-b55d-309770810182" name="getFirstState" parameters="Controller controller" returnType="State" isFirst="false">
-        <innerElement>
-          <connectableContainsChild Id="1caa6202-cfd0-438d-a8b4-b3aea3b0ce59">
-            <blockMoniker Id="22219f0c-0964-4c85-8c7f-e54b1f00d4a3" />
-          </connectableContainsChild>
-        </innerElement>
-      </function>
-    </componentModelHasFunctions>
-  </functions>
+  <loops>
+    <componentModelHasLoops Id="11c499f0-4b78-404e-ac21-42427139d517">
+      <loop Id="a12d6b1a-80c6-4294-8273-c50c00237129" leftPart="Primitive pr" container="primitive.ShowForm.primitives" isFirst="true" />
+    </componentModelHasLoops>
+  </loops>
   <blocks>
-    <componentModelHasBlocks Id="d98660e0-9283-4185-be63-de0a9f9e7e39">
-      <block Id="22219f0c-0964-4c85-8c7f-e54b1f00d4a3" text="C.getLinksToChildConnections(controller.IP)" />
+    <componentModelHasBlocks Id="c06a320f-e449-45a4-b342-beb89814fa52">
+      <block Id="1b1e5518-5a1f-4e82-8599-e9be73f2f5b6" text="if(pr.Parent == primitive.Name" />
     </componentModelHasBlocks>
   </blocks>
 </componentModel>
