@@ -57,10 +57,7 @@ public class MainController : Controller
             Children =
         {new Cell{Content = FromLabel} ,
                 new Cell{Content = ToLabel} ,
-
-
-
-                },
+                 },
         };
         StackPanel DropBoxPanel = new StackPanel
         {
@@ -68,10 +65,7 @@ public class MainController : Controller
             Children =
         {new Cell{Content = LeftDropBox} ,
                 new Cell{Content = RightDropBox} ,
-
-
-
-                },
+                 },
         };
         Button ShowButton = new Button
         {
@@ -135,10 +129,7 @@ public class MainController : Controller
             Foreground = new SolidColorBrush(Colors.Black),
             Text = "AAA"
         };
-        ListBox ListBox = new ListBox
-        {
-            Children = { },
-        };
+        ListBox ListBox = new ListBox { Children = { }, };
         Button BackButton = new Button
         {
             VerticalAlignment = VerticalAlignment.Center,

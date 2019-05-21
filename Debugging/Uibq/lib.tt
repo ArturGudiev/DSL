@@ -5,6 +5,20 @@ private State getMainState(Controller controller){
 	return ip.Parent as State;
 }
 //=====================================================================
+private void generateListBox(ListBox listBox){
+	#> new ListBox{ Children = {}, }; 
+	<#+ 
+}
+//=====================================================================
+private void generateStackPanel(StackPanel stackPanel){
+		#> new StackPanel{ Orientation = Orientation.Horizontal, Children = 
+		{<#+ foreach(Primitive pr in stackPanel.ShowForm.Primitives){
+				if(pr.Parent != stackPanel.Name) continue;
+				newCell(pr.Name, ','); 
+			} #> }, }; 
+		<#+ 
+}
+//=====================================================================
 //=============== Primitive Generation ===================  
 private void generatePrimitive(Primitive primitive) {#>
 	<#+ primitiveType(primitive);#>  <#= primitive.Name #> = <#+ 
@@ -63,21 +77,12 @@ private void generatePrimitive(Primitive primitive) {#>
 		<#+ 
 			break;
 		case "Company.MobileDSL.ListBox":
-		#>
-							new ListBox{
-                 Children = {}, 
-};
-		<#+ 
+			ListBox listBox = (Company.MobileDSL.ListBox)primitive;
+			generateListBox(listBox);
 			break;
 		case "Company.MobileDSL.StackPanel":
-		StackPanel sPanel = (Company.MobileDSL.StackPanel)primitive;
-		string[] items = sPanel.Items.Split(';');
-		#> new StackPanel{ Orientation = Orientation.Horizontal, Children = 
-		{<#+ foreach(Primitive pr in sPanel.ShowForm.Primitives){
-				if(pr.Parent != sPanel.Name) continue;
-				newCell(pr.Name, ','); 
-			} #> }, }; 
-		<#+ 
+			StackPanel sPanel = (Company.MobileDSL.StackPanel)primitive;
+			generateStackPanel(sPanel);
 			break;
 		default:
 			#>// No such element<#+WriteLine(""); 
