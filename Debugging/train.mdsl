@@ -21,8 +21,8 @@
                 <classWithPortsHasIP Id="4437e814-80e0-48c0-b3b9-86d556335f4d">
                   <iP Id="4cce208a-cb93-4f03-b189-6692d8d388ae">
                     <childConnections>
-                      <c Id="b1194ff5-1dbc-40d1-8937-07a7612566dd">
-                        <showFormMoniker Id="8c5dafcf-fc02-409b-964a-f30c7fdb923a" />
+                      <c Id="61afb297-43a3-4daa-af6e-c39251f39c35">
+                        <serviceCallMoniker Id="1e1052e4-96ec-413b-a8d4-b11f2c285ae1" />
                       </c>
                     </childConnections>
                   </iP>
@@ -49,24 +49,18 @@
                     </childConnections>
                     <events>
                       <showFormHasEvents Id="81a1532d-40a2-4469-b78c-5e92ffd07882">
-                        <event Id="82f0c816-b3b6-433e-97af-a60f922aa382" name="ShowButtonClicked" primitiveName="ShowButton" type="Clicked" />
+                        <event Id="82f0c816-b3b6-433e-97af-a60f922aa382" name="ShowButtonClicked" primitiveName="ShowButton" type="Pressed" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
                       <showFormHasPrimitives Id="06c5ba0f-db4f-496c-afb0-22601b2a7d47">
-                        <label Id="35f5148d-99e9-4e62-b416-52bcaaee7b7e" name="FromLabel" parent="LabelPanel" text="F" />
+                        <label Id="35f5148d-99e9-4e62-b416-52bcaaee7b7e" name="FromLabel" parent="LabelPanel" text="Откуда" color="White" />
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="bef2c0a5-b362-4b7e-a53c-2fbec9847718">
-                        <label Id="ebfc7855-8e18-4f3d-9fdc-04f8bfdec4db" name="ToLabel" parent="LabelPanel" text="T" />
+                        <label Id="ebfc7855-8e18-4f3d-9fdc-04f8bfdec4db" name="ToLabel" parent="LabelPanel" text="Куда" color="White" />
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="72f7ab09-1fe2-4a65-8d1a-3ba6d702ceec">
                         <stackPanel Id="2d942ca7-69a3-4644-81c2-a3909f2fb112" name="LabelPanel" items="FromLabel;ToLabel" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="a0e6b65d-93ef-46d3-bd56-906924086bbf">
-                        <stackPanel Id="6cddc8cd-351a-41b7-a965-3360501794e8" name="DropBoxPanel" items="LeftDropBox;RightDropBox" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="7e2c123f-6732-4573-970d-5953cc17a754">
-                        <button Id="8c236866-a71a-4d4d-a1df-e046c5bb8183" name="ShowButton" text="AAAA" />
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="70329067-a36b-40e5-8830-17bba50e622f">
                         <dropBox Id="d4bcb662-39d3-4c0a-bf3c-9e41b25b1678" name="LeftDropBox" parent="DropBoxPanel" items="e=f=g" />
@@ -74,10 +68,46 @@
                       <showFormHasPrimitives Id="b3a3817f-3319-465e-94be-ee9441c08441">
                         <dropBox Id="f5bc68d0-973d-44ec-bcf9-d8abcdf2605a" name="RightDropBox" parent="DropBoxPanel" items="a=b=c" />
                       </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="11941ad4-f949-4aa9-9371-04906c634987">
+                        <stackPanel Id="ca16a926-44b9-481e-9704-b96620cb3b17" name="DropBoxPanel" items="LeftDropBox;RightDropBox" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="d15112b3-d77e-4756-a9e8-e5cb24a45690">
+                        <button Id="3695f7f4-192e-4ec5-8fbc-0ad47b911922" name="ShowButton" text="Show Schedule" />
+                      </showFormHasPrimitives>
                     </primitives>
                   </showForm>
                 </stateHasShowForms>
               </showForms>
+              <serviceCalled>
+                <stateHasServiceCalled Id="07a1a00f-fab2-4f6e-8adc-c1327def6663">
+                  <serviceCall Id="1e1052e4-96ec-413b-a8d4-b11f2c285ae1" serviceName="ScheduleService" serviceMethod="getStations">
+                    <childConnections>
+                      <c Id="370b3fad-9123-409d-8924-2c178bd333d1" data="stations">
+                        <uIDLinkMoniker Id="f0ddd707-a291-4b9b-bc8f-e1a2be1694c2" />
+                      </c>
+                    </childConnections>
+                  </serviceCall>
+                </stateHasServiceCalled>
+              </serviceCalled>
+              <uIDataLinks>
+                <stateHasUIDataLinks Id="e88e8091-6b32-4c38-9739-f1ae8b45e0e8">
+                  <uIDLink Id="f0ddd707-a291-4b9b-bc8f-e1a2be1694c2">
+                    <childConnections>
+                      <c Id="acc31017-8f27-49d2-b972-ee11c17c29ec">
+                        <showFormMoniker Id="8c5dafcf-fc02-409b-964a-f30c7fdb923a" />
+                      </c>
+                    </childConnections>
+                    <stringCodes>
+                      <uIDLinkHasStringCodes Id="99cbe4a4-33bc-456b-8cce-7d33b4d1d256">
+                        <stringCode Id="d11d7d54-c004-412f-9de8-60d131ab1175" text="LeftDropBox=stations" />
+                      </uIDLinkHasStringCodes>
+                      <uIDLinkHasStringCodes Id="f44e7c48-d701-439f-a64a-e26f0848948f">
+                        <stringCode Id="eff68f28-6ade-43ac-90d7-31445b9c9c40" text="RightDropBox=stations" />
+                      </uIDLinkHasStringCodes>
+                    </stringCodes>
+                  </uIDLink>
+                </stateHasUIDataLinks>
+              </uIDataLinks>
             </state>
           </controllerHasStates>
           <controllerHasStates Id="f4f1f0d2-6b23-48e0-bf8c-ea022d01f146">
@@ -114,7 +144,7 @@
                     </childConnections>
                     <events>
                       <showFormHasEvents Id="ff021df5-2336-4f32-a9fc-f5b04d455090">
-                        <event Id="20786947-a080-4368-a3df-fd1cd4054c48" name="BackButtonClicked" primitiveName="BackButton" type="Clicked" />
+                        <event Id="20786947-a080-4368-a3df-fd1cd4054c48" name="BackButtonClicked" primitiveName="BackButton" type="Pressed" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
@@ -125,7 +155,10 @@
                         <listBox Id="edd56a71-5db3-4796-aa19-1afe814da1a4" name="ListBox" />
                       </showFormHasPrimitives>
                       <showFormHasPrimitives Id="24eb6376-def9-4fa7-ba8a-3467207ab3d9">
-                        <button Id="af8bd0bf-1637-4275-8d5c-6e7ee3bcb122" name="BackButton" />
+                        <button Id="af8bd0bf-1637-4275-8d5c-6e7ee3bcb122" name="BackButton" text="Back" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="1465219a-cb66-456b-aef8-1ab852e350b6">
+                        <input Id="14160149-06d6-4a0f-a3ca-16ae993bf2cd" name="Input1" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>

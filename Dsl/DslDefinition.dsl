@@ -244,6 +244,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="85c22353-ec1d-4737-9468-0a7c5e5fe5d4" Description="Description for Company.MobileDSL.Label.Color" Name="Color" DisplayName="Color">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="a99f9383-f7ca-41c3-8d17-b9e2c7b69df4" Description="Description for Company.MobileDSL.DropBox" Name="DropBox" DisplayName="Drop Box" Namespace="Company.MobileDSL">
@@ -1149,6 +1154,9 @@
         <ElementData>
           <XmlPropertyData XmlName="text">
             <DomainPropertyMoniker Name="Label/Text" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="color">
+            <DomainPropertyMoniker Name="Label/Color" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>

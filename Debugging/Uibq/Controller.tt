@@ -2,8 +2,12 @@
 <#@ output extension=".cs" #>
 <#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../train.mdsl'"  #>
 <#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Drawing" #>
+<#@ import namespace="System.Collections.ObjectModel" #>
 <#@ include file="lib.tt"#>
 //Generated material. Generating code in C#.
+
+using System.Collections.Generic;
 
 <# foreach (Controller controller in this.ComponentModel.Controllers) { #>
 
@@ -24,10 +28,8 @@
 //--------------------------------------------------
 	  <# foreach (ShowForm form in state.ShowForms) { #> 
 				<#compileShowFormFunction(form);#>
-        
       <#}#>
       <#compileRunState(state);#>
-	
     <#}#>
 	<#}#>
 }
@@ -54,7 +56,7 @@ break;
 //	3====== ShowForm function generation  ================  
 private void compileShowFormFunction(ShowForm form) {
 
-	#> private void show<#= form.Name #>(){
+	#> private void show<#= form.Name #>(Dictionary<string, object> dict){
 			
 		    <#+ 
 				 foreach (Primitive pr in form.Primitives) {
@@ -73,9 +75,8 @@ private void compileShowFormFunction(ShowForm form) {
 					 }; 
 					 <#+			
 				}
-
 				#>
-				var panel = {Children = {<#+ foreach(Primitive pr in form.Primitives){if(pr.Parent == "" )newCell(pr.Name, ','); } #> },};
+				var panel = new StackPanel {Children = {<#+ foreach(Primitive pr in form.Primitives){if(pr.Parent == "" )newCell(pr.Name, ','); } #> },};
 				Screen.Content = panel;
 
 	} <#+ // ### private void Show
@@ -118,15 +119,57 @@ private void compileRunState(State state) {
 
 //============================================================
 private void generate(Connectable el){
-	if(isShowForm(el)){
-		ShowForm showForm = el as ShowForm;
-		#>show<#= showForm.Name#>();<#+
+	switch(el.GetType().ToString()){
+		
+		case "Company.MobileDSL.ShowForm": 
+			ShowForm showForm = el as ShowForm;
+			#>show<#= showForm.Name#>();<#+
+			break;
+
+		case "Company.MobileDSL.ServiceCall": 
+			ServiceCall svcCall = el as ServiceCall;
+			var connections = C.GetLinksToChildConnections(el);
+			C conn = getElement(connections, 0);#>
+			var <#= conn.Data #> = <#=svcCall.ServiceName#>.<#=svcCall.ServiceMethod#>(); 
+			<#+ generate(getFirstChild(el));	
+			break;
+		
+		case "Company.MobileDSL.UIDLink": 
+		  #> Dictionary<string, object> dict = new Dictionary<string,object>(); <#+
+			UIDLink dLink = el as UIDLink;
+			foreach (StringCode str in dLink.StringCodes) { 
+					var arr = str.Text.Split('=');
+					#> dict["<#=arr[0]#>"]=<#=arr[1]#>; 
+					<#+
+			}
+			ShowForm nextForm = getFirstChild(el) as ShowForm;
+			#>show<#= nextForm.Name#>(dict);<#+
+			break; 
 	}
 }
-
+//=========================================================================
+private Connectable getFirstChild(Connectable el){
+	return getChild(el, 0);
+}
+//=========================================================================
+private ReadOnlyCollection<C> getConnections(Connectable el){
+	return  C.GetLinksToChildConnections(el);
+}
+//=========================================================================
+private C getElement(ReadOnlyCollection<C> coll, int index){
+	int i = 0; 
+	foreach (C c in coll) {  
+      if(i++ == index) return c;
+	}
+	return  null;
+}
 //============================================================
 private bool isShowForm(Connectable connectable) {
 	return connectable.GetType().ToString().Contains("ShowForm");
+}
+
+private bool isServiceCall(Connectable connectable){
+	return connectable.GetType().ToString().Contains("ServiceCall");
 }
 
 //============================================================

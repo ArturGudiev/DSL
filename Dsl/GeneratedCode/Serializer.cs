@@ -10711,6 +10711,23 @@ namespace Company.MobileDSL
 					}
 				}
 			}
+			// Color
+			if (!serializationContext.Result.Failed)
+			{
+				string attribColor = MobileDSLSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "color");
+				if (attribColor != null)
+				{
+					global::System.String valueOfColor;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribColor, out valueOfColor))
+					{
+						instanceOfLabel.Color = valueOfColor;
+					}
+					else
+					{	// Invalid property value, ignored.
+						ComponentsSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "color", typeof(global::System.String), attribColor);
+					}
+				}
+			}
 		}
 	
 		#region TryCreateInstance
@@ -11108,6 +11125,17 @@ namespace Company.MobileDSL
 				{
 					if (!string.IsNullOrEmpty(propValue))
 						MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "text", propValue);
+	
+				}
+			}
+			// Color
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfLabel.Color;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						MobileDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "color", propValue);
 	
 				}
 			}

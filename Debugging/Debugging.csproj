@@ -64,6 +64,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Controller.tt</DependentUpon>
     </Compile>
+    <Compile Include="Uibq\Application.cs">
+      <DependentUpon>Application.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Uibq\UserSection.cs">
       <DependentUpon>UserSection.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -75,12 +80,12 @@
     <None Include="LoginController.mdsl.diagram">
       <DependentUpon>LoginController.mdsl</DependentUpon>
     </None>
-    <None Include="Game - Copy.mdsl" />
-    <None Include="Game - Copy.mdsl.diagram">
+    <None Include="z_some\Game - Copy.mdsl" />
+    <None Include="z_some\Game - Copy.mdsl.diagram">
       <DependentUpon>Game - Copy.mdsl</DependentUpon>
     </None>
-    <None Include="Game.mdsl" />
-    <None Include="Game.mdsl.diagram">
+    <None Include="z_some\Game.mdsl" />
+    <None Include="z_some\Game.mdsl.diagram">
       <DependentUpon>Game.mdsl</DependentUpon>
     </None>
     <None Include="TestGenerator\t4gen.tt">
@@ -111,10 +116,10 @@
     <None Include="QC\controller\3controllers.mdsl.diagram">
       <DependentUpon>3controllers.mdsl</DependentUpon>
     </None>
-    <None Include="Sample.mdsl">
+    <None Include="z_some\Sample.mdsl">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Sample.mdsl.diagram">
+    <None Include="z_some\Sample.mdsl.diagram">
       <DependentUpon>Sample.mdsl</DependentUpon>
     </None>
     <None Include="Auth.mdsl" />
@@ -126,10 +131,6 @@
       <DependentUpon>TemplateDSLReport.TemplateDSL</DependentUpon>
       <SubType>Designer</SubType>
     </None>
-    <None Include="train - Copy.mdsl" />
-    <None Include="train - Copy.mdsl.diagram">
-      <DependentUpon>train - Copy.mdsl</DependentUpon>
-    </None>
     <None Include="Volunteer.mdsl" />
     <None Include="Volunteer.mdsl.diagram">
       <DependentUpon>Volunteer.mdsl</DependentUpon>
@@ -138,8 +139,8 @@
     <None Include="train.mdsl.diagram">
       <DependentUpon>train.mdsl</DependentUpon>
     </None>
-    <None Include="Test.mdsl" />
-    <None Include="Test.mdsl.diagram">
+    <None Include="z_some\Test.mdsl" />
+    <None Include="z_some\Test.mdsl.diagram">
       <DependentUpon>Test.mdsl</DependentUpon>
     </None>
   </ItemGroup>
@@ -161,6 +162,10 @@
       <DependentUpon>t4gen.tt</DependentUpon>
       <LastGenOutput>t4gen1.cs</LastGenOutput>
     </Content>
+    <None Include="Uibq\Application.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Application.cs</LastGenOutput>
+    </None>
     <None Include="Uibq\lib.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>lib.cs</LastGenOutput>

@@ -733,6 +733,8 @@
         </xsd:attribute>
         <!-- Property: Text -->
         <xsd:attribute name="text" type="xsd:string" />
+        <!-- Property: Color -->
+        <xsd:attribute name="color" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

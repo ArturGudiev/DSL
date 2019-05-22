@@ -341,6 +341,14 @@
     <value>Text</value>
     <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;Label&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.Label/Color.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.Label.Color</value>
+    <comment>Description for DomainProperty &apos;Color&apos; on DomainClass &apos;Label&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.Label/Color.DisplayName" xml:space="preserve">
+    <value>Color</value>
+    <comment>DisplayName for DomainProperty &apos;Color&apos; on DomainClass &apos;Label&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.DropBox.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.DropBox</value>
     <comment>Description for DomainClass &apos;DropBox&apos;</comment>

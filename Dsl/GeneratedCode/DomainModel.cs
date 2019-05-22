@@ -157,6 +157,7 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(Button), "Text", Button.TextDomainPropertyId, typeof(Button.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(P), "Name", P.NameDomainPropertyId, typeof(P.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Label), "Text", Label.TextDomainPropertyId, typeof(Label.TextPropertyHandler)),
+				new DomainMemberInfo(typeof(Label), "Color", Label.ColorDomainPropertyId, typeof(Label.ColorPropertyHandler)),
 				new DomainMemberInfo(typeof(DropBox), "Items", DropBox.ItemsDomainPropertyId, typeof(DropBox.ItemsPropertyHandler)),
 				new DomainMemberInfo(typeof(ListBox), "Items", ListBox.ItemsDomainPropertyId, typeof(ListBox.ItemsPropertyHandler)),
 				new DomainMemberInfo(typeof(StackPanel), "Orientation", StackPanel.OrientationDomainPropertyId, typeof(StackPanel.OrientationPropertyHandler)),

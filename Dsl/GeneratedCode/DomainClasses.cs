@@ -2723,6 +2723,93 @@ namespace Company.MobileDSL
 		}
 		
 		#endregion
+		#region Color domain property code
+		
+		/// <summary>
+		/// Color domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ColorDomainPropertyId = new global::System.Guid(0x85c22353, 0xec1d, 0x4737, 0x94, 0x68, 0x0a, 0x7c, 0x5e, 0x5f, 0xe5, 0xd4);
+		
+		/// <summary>
+		/// Storage for Color
+		/// </summary>
+		private global::System.String colorPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Color domain property.
+		/// Description for Company.MobileDSL.Label.Color
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.Label/Color.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.Label/Color.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("85c22353-ec1d-4737-9468-0a7c5e5fe5d4")]
+		public global::System.String Color
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return colorPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ColorPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Label.Color domain property.
+		/// </summary>
+		internal sealed partial class ColorPropertyHandler : DslModeling::DomainPropertyValueHandler<Label, global::System.String>
+		{
+			private ColorPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Label.Color domain property value handler.
+			/// </summary>
+			public static readonly ColorPropertyHandler Instance = new ColorPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Label.Color domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ColorDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Label element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.colorPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Label element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.colorPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 	}
 }
 namespace Company.MobileDSL

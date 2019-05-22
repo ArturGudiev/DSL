@@ -1,4 +1,6 @@
-﻿	<#+
+﻿	<#@ import namespace="System.Drawing" #>
+	
+	<#+
 //=====================================================================
 private State getMainState(Controller controller){
 	IP ip = controller.IP.ChildConnections.ToArray()[0] as IP ;
@@ -10,59 +12,23 @@ private void generateListBox(ListBox listBox){
 	<#+ 
 }
 //=====================================================================
-private void generateStackPanel(StackPanel stackPanel){
-		#> new StackPanel{ Orientation = Orientation.Horizontal, Children = 
-		{<#+ foreach(Primitive pr in stackPanel.ShowForm.Primitives){
-				if(pr.Parent != stackPanel.Name) continue;
-				newCell(pr.Name, ','); 
-			} #> }, }; 
-		<#+ 
+private void generateButton(Button btn){
+				#>
+			new Button{
+			VerticalAlignment = VerticalAlignment.Center, 
+			HorizontalAlignment = HorizontalAlignment.Center, 
+			Background = new SolidColorBrush(Colors.Gray), 
+			Foreground = new SolidColorBrush(Colors.Black), 
+			Padding = new Thickness(Screen.NormalFontSize), 
+			WrapContent = true, 
+			Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
+			Text = dict.Contains("<#=btn.Name#>") ? dict["<#=btn.Name#>"] : "<#=btn.Text#>",
+	}; 
+			<#+
 }
 //=====================================================================
-//=============== Primitive Generation ===================  
-private void generatePrimitive(Primitive primitive) {#>
-	<#+ primitiveType(primitive);#>  <#= primitive.Name #> = <#+ 
-	switch(primitive.GetType().ToString()){
-		case "Company.MobileDSL.Button": 
-			#>
-							new Button{
-							VerticalAlignment = VerticalAlignment.Center, 
-							HorizontalAlignment = HorizontalAlignment.Center, 
-							Background = new SolidColorBrush(Colors.Gray), 
-							Foreground = new SolidColorBrush(Colors.Black), 
-							Padding = new Thickness(Screen.NormalFontSize), 
-							WrapContent = true, 
-							Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
-							Text = "<#= ((Company.MobileDSL.Button)primitive).Text #>"
-					}; 
-			<#+
-			break;
-		case "Company.MobileDSL.Label":
-		#>
-							new TextBlock{
-                VerticalAlignment = VerticalAlignment.Center, 
-                HorizontalAlignment = HorizontalAlignment.Center, 
-                WrapContent = true, 
-                Font = new Font(new FontFamily("Arial"), 16),
-                Foreground = new SolidColorBrush(Colors.Black),
-                Text = "<#=((Company.MobileDSL.Label)primitive).Text#>"
-}							;
-		<#+ 
-			break;
-		case "Company.MobileDSL.DropBox":
-		#>
-							new DropBox{
-                VerticalAlignment = VerticalAlignment.Center,           
-                HorizontalAlignment = HorizontalAlignment.Center,       
-                Padding = new Thickness(Screen.NormalFontSize),        
-                WrapContent = true,                                     
-                Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize),           
-                ItemList =  new List<string>("<#=((Company.MobileDSL.DropBox)primitive).Items#>".Split('=')),
-};
-		<#+ 
-			break;
-		case "Company.MobileDSL.Input":
-		#>
+private void generateInput(Input input){
+	#>
 							new Input{
     VerticalAlignment = VerticalAlignment.Center, 
     HorizontalAlignment = HorizontalAlignment.Center, 
@@ -72,9 +38,66 @@ private void generatePrimitive(Primitive primitive) {#>
     WrapContent = true,
     Width = 150,
     Font = new Font(new FontFamily("Arial"), 12),
-    InputMode = Ubiq.Graphics.InputMode.<#=((Company.MobileDSL.Input)primitive).InputMode#>,
-    Text = ""};
+    InputMode = Ubiq.Graphics.InputMode.<#=input.InputMode#>,
+    Text = "",};
 		<#+ 
+}
+//=====================================================================
+private void generateDropBox(DropBox dropBox){
+	#>
+							new DropBox{
+                VerticalAlignment = VerticalAlignment.Center,           
+                HorizontalAlignment = HorizontalAlignment.Center,       
+                Padding = new Thickness(Screen.NormalFontSize),        
+                WrapContent = true,                                     
+                Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize),           
+				ItemList = dict.Contains("<#=dropBox.Name#>") ? dict["<#=dropBox.Name#>"] : new List<string>("<#=dropBox.Items#>".Split('=')),
+,
+};
+		<#+ 
+}
+//=====================================================================
+private void generateStackPanel(StackPanel stackPanel){
+		#> new StackPanel{ Orientation = Orientation.Horizontal, Children = 
+		{<#+ foreach(Primitive pr in stackPanel.ShowForm.Primitives){
+				if(pr.Parent != stackPanel.Name) continue;
+				newCell(pr.Name, ','); 
+			} #> }, }; 
+		<#+ 
+}
+//=====================================================================
+private void generateLabel(Label label){
+		#>
+				new TextBlock{
+                VerticalAlignment = VerticalAlignment.Center, 
+                HorizontalAlignment = HorizontalAlignment.Center, 
+                WrapContent = true, 
+                Font = new Font(new FontFamily("Arial"), 16),
+                Foreground = new SolidColorBrush(Colors.<#=label.Color#>),
+                Text = dict.Contains("<#=label.Name#>") ? dict["<#=label.Name#>"] : "<#=label.Text#>",
+		};
+		<#+ 
+}
+//=====================================================================
+//=============== Primitive Generation ===================  
+private void generatePrimitive(Primitive primitive) {
+	primitiveType(primitive); #> <#= primitive.Name #> = <#+ 
+	switch(primitive.GetType().ToString()){
+		case "Company.MobileDSL.Button": 
+			Button button = (Company.MobileDSL.Button)primitive;
+			generateButton(button);
+			break;
+		case "Company.MobileDSL.Label":
+			Label label = (Company.MobileDSL.Label)primitive;
+			generateLabel(label);
+			break;
+		case "Company.MobileDSL.DropBox":
+			DropBox dropBox = (Company.MobileDSL.DropBox)primitive;
+			generateDropBox(dropBox);
+			break;
+		case "Company.MobileDSL.Input":
+			Input input = (Company.MobileDSL.Input)primitive;
+			generateInput(input);
 			break;
 		case "Company.MobileDSL.ListBox":
 			ListBox listBox = (Company.MobileDSL.ListBox)primitive;
