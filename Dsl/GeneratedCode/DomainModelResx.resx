@@ -429,21 +429,21 @@
     <value>Input Mode</value>
     <comment>DisplayName for DomainProperty &apos;InputMode&apos; on DomainClass &apos;Input&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ConditionBlock.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ConditionBlock</value>
-    <comment>Description for DomainClass &apos;ConditionBlock&apos;</comment>
+  <data name="Company.MobileDSL.ConditionalBlock.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ConditionalBlock</value>
+    <comment>Description for DomainClass &apos;ConditionalBlock&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ConditionBlock.DisplayName" xml:space="preserve">
-    <value>Condition Block</value>
-    <comment>DisplayName for DomainClass &apos;ConditionBlock&apos;</comment>
+  <data name="Company.MobileDSL.ConditionalBlock.DisplayName" xml:space="preserve">
+    <value>Conditional Block</value>
+    <comment>DisplayName for DomainClass &apos;ConditionalBlock&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ConditionBlock/Text.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ConditionBlock.Text</value>
-    <comment>Description for DomainProperty &apos;Text&apos; on DomainClass &apos;ConditionBlock&apos;</comment>
+  <data name="Company.MobileDSL.ConditionalBlock/Text.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ConditionalBlock.Text</value>
+    <comment>Description for DomainProperty &apos;Text&apos; on DomainClass &apos;ConditionalBlock&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ConditionBlock/Text.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.ConditionalBlock/Text.DisplayName" xml:space="preserve">
     <value>Text</value>
-    <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;ConditionBlock&apos;</comment>
+    <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;ConditionalBlock&apos;</comment>
   </data>
   <data name="Company.MobileDSL.ServiceCall.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.ServiceCall</value>
@@ -509,6 +509,14 @@
     <value>Text</value>
     <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;StringCode&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.StringCode/isDictKey.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StringCode.Is Dict Key</value>
+    <comment>Description for DomainProperty &apos;isDictKey&apos; on DomainClass &apos;StringCode&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.StringCode/isDictKey.DisplayName" xml:space="preserve">
+    <value>Is Dict Key</value>
+    <comment>DisplayName for DomainProperty &apos;isDictKey&apos; on DomainClass &apos;StringCode&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.UIDLink.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.UIDLink</value>
     <comment>Description for DomainClass &apos;UIDLink&apos;</comment>
@@ -516,6 +524,14 @@
   <data name="Company.MobileDSL.UIDLink.DisplayName" xml:space="preserve">
     <value>UIDLink</value>
     <comment>DisplayName for DomainClass &apos;UIDLink&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.UIDLink/Invisibles.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.UIDLink.Invisibles</value>
+    <comment>Description for DomainProperty &apos;Invisibles&apos; on DomainClass &apos;UIDLink&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.UIDLink/Invisibles.DisplayName" xml:space="preserve">
+    <value>Invisibles</value>
+    <comment>DisplayName for DomainProperty &apos;Invisibles&apos; on DomainClass &apos;UIDLink&apos;</comment>
   </data>
   <data name="Company.MobileDSL.ComponentModelHasComments.Description" xml:space="preserve">
     <value></value>
@@ -781,6 +797,14 @@
     <value>Next Controller</value>
     <comment>DisplayName for DomainProperty &apos;NextController&apos; on DomainClass &apos;C&apos;</comment>
   </data>
+  <data name="Company.MobileDSL.C/Case.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.C.Case</value>
+    <comment>Description for DomainProperty &apos;Case&apos; on DomainClass &apos;C&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.C/Case.DisplayName" xml:space="preserve">
+    <value>Case</value>
+    <comment>DisplayName for DomainProperty &apos;Case&apos; on DomainClass &apos;C&apos;</comment>
+  </data>
   <data name="Company.MobileDSL.C/SourceConnectable.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.C.SourceConnectable</value>
     <comment>Description for DomainRole &apos;SourceConnectable&apos; on DomainRelationship &apos;C&apos;</comment>
@@ -933,101 +957,101 @@
     <value>Stated</value>
     <comment>PropertyDisplayName for DomainRole &apos;P&apos; on DomainRelationship &apos;StateReferencesPs&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasConditionBlocked.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasConditionBlocked</value>
-    <comment>Description for DomainClass &apos;StateHasConditionBlocked&apos;</comment>
+  <data name="Company.MobileDSL.StateHasConditionalBlocks.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasConditionalBlocks</value>
+    <comment>Description for DomainClass &apos;StateHasConditionalBlocks&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasConditionBlocked.DisplayName" xml:space="preserve">
-    <value>State Has Condition Blocked</value>
-    <comment>DisplayName for DomainClass &apos;StateHasConditionBlocked&apos;</comment>
+  <data name="Company.MobileDSL.StateHasConditionalBlocks.DisplayName" xml:space="preserve">
+    <value>State Has Conditional Blocks</value>
+    <comment>DisplayName for DomainClass &apos;StateHasConditionalBlocks&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasConditionBlocked/State.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasConditionBlocked.State</value>
-    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasConditionBlocked&apos;</comment>
+  <data name="Company.MobileDSL.StateHasConditionalBlocks/State.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasConditionalBlocks.State</value>
+    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasConditionalBlocks&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasConditionBlocked/State.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.StateHasConditionalBlocks/State.DisplayName" xml:space="preserve">
     <value>State</value>
-    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasConditionBlocked&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasConditionalBlocks&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasConditionBlocked/State.PropertyDisplayName" xml:space="preserve">
-    <value>Condition Blocked</value>
-    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasConditionBlocked&apos;</comment>
+  <data name="Company.MobileDSL.StateHasConditionalBlocks/State.PropertyDisplayName" xml:space="preserve">
+    <value>Conditional Blocks</value>
+    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasConditionalBlocks&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasConditionBlocked/ConditionBlock.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasConditionBlocked.ConditionBlock</value>
-    <comment>Description for DomainRole &apos;ConditionBlock&apos; on DomainRelationship &apos;StateHasConditionBlocked&apos;</comment>
+  <data name="Company.MobileDSL.StateHasConditionalBlocks/ConditionalBlock.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasConditionalBlocks.ConditionalBlock</value>
+    <comment>Description for DomainRole &apos;ConditionalBlock&apos; on DomainRelationship &apos;StateHasConditionalBlocks&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasConditionBlocked/ConditionBlock.DisplayName" xml:space="preserve">
-    <value>Condition Block</value>
-    <comment>DisplayName for DomainRole &apos;ConditionBlock&apos; on DomainRelationship &apos;StateHasConditionBlocked&apos;</comment>
+  <data name="Company.MobileDSL.StateHasConditionalBlocks/ConditionalBlock.DisplayName" xml:space="preserve">
+    <value>Conditional Block</value>
+    <comment>DisplayName for DomainRole &apos;ConditionalBlock&apos; on DomainRelationship &apos;StateHasConditionalBlocks&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasConditionBlocked/ConditionBlock.PropertyDisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.StateHasConditionalBlocks/ConditionalBlock.PropertyDisplayName" xml:space="preserve">
     <value>State</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ConditionBlock&apos; on DomainRelationship &apos;StateHasConditionBlocked&apos;</comment>
+    <comment>PropertyDisplayName for DomainRole &apos;ConditionalBlock&apos; on DomainRelationship &apos;StateHasConditionalBlocks&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasServiceCalled.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasServiceCalled</value>
-    <comment>Description for DomainClass &apos;StateHasServiceCalled&apos;</comment>
+  <data name="Company.MobileDSL.StateHasServiceCalls.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasServiceCalls</value>
+    <comment>Description for DomainClass &apos;StateHasServiceCalls&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasServiceCalled.DisplayName" xml:space="preserve">
-    <value>State Has Service Called</value>
-    <comment>DisplayName for DomainClass &apos;StateHasServiceCalled&apos;</comment>
+  <data name="Company.MobileDSL.StateHasServiceCalls.DisplayName" xml:space="preserve">
+    <value>State Has Service Calls</value>
+    <comment>DisplayName for DomainClass &apos;StateHasServiceCalls&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasServiceCalled/State.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasServiceCalled.State</value>
-    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasServiceCalled&apos;</comment>
+  <data name="Company.MobileDSL.StateHasServiceCalls/State.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasServiceCalls.State</value>
+    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasServiceCalls&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasServiceCalled/State.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.StateHasServiceCalls/State.DisplayName" xml:space="preserve">
     <value>State</value>
-    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasServiceCalled&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasServiceCalls&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasServiceCalled/State.PropertyDisplayName" xml:space="preserve">
-    <value>Service Called</value>
-    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasServiceCalled&apos;</comment>
+  <data name="Company.MobileDSL.StateHasServiceCalls/State.PropertyDisplayName" xml:space="preserve">
+    <value>Service Calls</value>
+    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasServiceCalls&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasServiceCalled/ServiceCall.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasServiceCalled.ServiceCall</value>
-    <comment>Description for DomainRole &apos;ServiceCall&apos; on DomainRelationship &apos;StateHasServiceCalled&apos;</comment>
+  <data name="Company.MobileDSL.StateHasServiceCalls/ServiceCall.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasServiceCalls.ServiceCall</value>
+    <comment>Description for DomainRole &apos;ServiceCall&apos; on DomainRelationship &apos;StateHasServiceCalls&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasServiceCalled/ServiceCall.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.StateHasServiceCalls/ServiceCall.DisplayName" xml:space="preserve">
     <value>Service Call</value>
-    <comment>DisplayName for DomainRole &apos;ServiceCall&apos; on DomainRelationship &apos;StateHasServiceCalled&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;ServiceCall&apos; on DomainRelationship &apos;StateHasServiceCalls&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasServiceCalled/ServiceCall.PropertyDisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.StateHasServiceCalls/ServiceCall.PropertyDisplayName" xml:space="preserve">
     <value>State</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ServiceCall&apos; on DomainRelationship &apos;StateHasServiceCalled&apos;</comment>
+    <comment>PropertyDisplayName for DomainRole &apos;ServiceCall&apos; on DomainRelationship &apos;StateHasServiceCalls&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasAppCoded.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasAppCoded</value>
-    <comment>Description for DomainClass &apos;StateHasAppCoded&apos;</comment>
+  <data name="Company.MobileDSL.StateHasAppCodes.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasAppCodes</value>
+    <comment>Description for DomainClass &apos;StateHasAppCodes&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasAppCoded.DisplayName" xml:space="preserve">
-    <value>State Has App Coded</value>
-    <comment>DisplayName for DomainClass &apos;StateHasAppCoded&apos;</comment>
+  <data name="Company.MobileDSL.StateHasAppCodes.DisplayName" xml:space="preserve">
+    <value>State Has App Codes</value>
+    <comment>DisplayName for DomainClass &apos;StateHasAppCodes&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasAppCoded/State.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasAppCoded.State</value>
-    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasAppCoded&apos;</comment>
+  <data name="Company.MobileDSL.StateHasAppCodes/State.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasAppCodes.State</value>
+    <comment>Description for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasAppCodes&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasAppCoded/State.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.StateHasAppCodes/State.DisplayName" xml:space="preserve">
     <value>State</value>
-    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasAppCoded&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasAppCodes&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasAppCoded/State.PropertyDisplayName" xml:space="preserve">
-    <value>App Coded</value>
-    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasAppCoded&apos;</comment>
+  <data name="Company.MobileDSL.StateHasAppCodes/State.PropertyDisplayName" xml:space="preserve">
+    <value>App Codes</value>
+    <comment>PropertyDisplayName for DomainRole &apos;State&apos; on DomainRelationship &apos;StateHasAppCodes&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasAppCoded/AppCode.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.StateHasAppCoded.AppCode</value>
-    <comment>Description for DomainRole &apos;AppCode&apos; on DomainRelationship &apos;StateHasAppCoded&apos;</comment>
+  <data name="Company.MobileDSL.StateHasAppCodes/AppCode.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.StateHasAppCodes.AppCode</value>
+    <comment>Description for DomainRole &apos;AppCode&apos; on DomainRelationship &apos;StateHasAppCodes&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasAppCoded/AppCode.DisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.StateHasAppCodes/AppCode.DisplayName" xml:space="preserve">
     <value>App Code</value>
-    <comment>DisplayName for DomainRole &apos;AppCode&apos; on DomainRelationship &apos;StateHasAppCoded&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;AppCode&apos; on DomainRelationship &apos;StateHasAppCodes&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.StateHasAppCoded/AppCode.PropertyDisplayName" xml:space="preserve">
+  <data name="Company.MobileDSL.StateHasAppCodes/AppCode.PropertyDisplayName" xml:space="preserve">
     <value>State</value>
-    <comment>PropertyDisplayName for DomainRole &apos;AppCode&apos; on DomainRelationship &apos;StateHasAppCoded&apos;</comment>
+    <comment>PropertyDisplayName for DomainRole &apos;AppCode&apos; on DomainRelationship &apos;StateHasAppCodes&apos;</comment>
   </data>
   <data name="Company.MobileDSL.AppCodeHasStringCodes.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.AppCodeHasStringCodes</value>
@@ -1241,26 +1265,6 @@
     <value>OPShape</value>
     <comment>DisplayName for DomainClass &apos;OPShape&apos;</comment>
   </data>
-  <data name="Company.MobileDSL.ConditionBlockShape.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ConditionBlockShape</value>
-    <comment>Description for DomainClass &apos;ConditionBlockShape&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ConditionBlockShape.DisplayName" xml:space="preserve">
-    <value>Condition Block Shape</value>
-    <comment>DisplayName for DomainClass &apos;ConditionBlockShape&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ConditionBlockShape/FillColor.Description" xml:space="preserve">
-    <value>Description for Company.MobileDSL.ConditionBlockShape.Fill Color</value>
-    <comment>Description for DomainProperty &apos;FillColor&apos; on DomainClass &apos;ConditionBlockShape&apos;</comment>
-  </data>
-  <data name="Company.MobileDSL.ConditionBlockShape/FillColor.DisplayName" xml:space="preserve">
-    <value>Fill Color</value>
-    <comment>DisplayName for DomainProperty &apos;FillColor&apos; on DomainClass &apos;ConditionBlockShape&apos;</comment>
-  </data>
-  <data name="ConditionBlockShapeConditionDefaultText" xml:space="preserve">
-    <value>Condition</value>
-    <comment>Text decorator default text</comment>
-  </data>
   <data name="Company.MobileDSL.ServiceCallShape.Description" xml:space="preserve">
     <value>Description for Company.MobileDSL.ServiceCallShape</value>
     <comment>Description for DomainClass &apos;ServiceCallShape&apos;</comment>
@@ -1316,6 +1320,26 @@
   <data name="UIDataLinkCodeTitle" xml:space="preserve">
     <value></value>
     <comment>Compartment title</comment>
+  </data>
+  <data name="Company.MobileDSL.ConditionalBlock2Shape.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ConditionalBlock2Shape</value>
+    <comment>Description for DomainClass &apos;ConditionalBlock2Shape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ConditionalBlock2Shape.DisplayName" xml:space="preserve">
+    <value>Conditional Block2 Shape</value>
+    <comment>DisplayName for DomainClass &apos;ConditionalBlock2Shape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ConditionalBlock2Shape/FillColor.Description" xml:space="preserve">
+    <value>Description for Company.MobileDSL.ConditionalBlock2Shape.Fill Color</value>
+    <comment>Description for DomainProperty &apos;FillColor&apos; on DomainClass &apos;ConditionalBlock2Shape&apos;</comment>
+  </data>
+  <data name="Company.MobileDSL.ConditionalBlock2Shape/FillColor.DisplayName" xml:space="preserve">
+    <value>Fill Color</value>
+    <comment>DisplayName for DomainProperty &apos;FillColor&apos; on DomainClass &apos;ConditionalBlock2Shape&apos;</comment>
+  </data>
+  <data name="ConditionalBlock2ShapeConditionDefaultText" xml:space="preserve">
+    <value>Condition</value>
+    <comment>Text decorator default text</comment>
   </data>
   <data name="Company.MobileDSL.AssociationLink.Description" xml:space="preserve">
     <value></value>
@@ -1399,6 +1423,10 @@
   </data>
   <data name="CConnectorNextControllerDecoratorDefaultText" xml:space="preserve">
     <value>NextControllerDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="CConnectorCaseDecoratorDefaultText" xml:space="preserve">
+    <value>CaseDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="Company.MobileDSL.StateRefState.Description" xml:space="preserve">
@@ -1505,12 +1533,12 @@
     <value>Sto S</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="ConditionToolboxItem" xml:space="preserve">
-    <value>Condition</value>
+  <data name="ConditionalBlockToolboxItem" xml:space="preserve">
+    <value>ConditionalBlock</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="ConditionToolboxTooltip" xml:space="preserve">
-    <value>Condition</value>
+  <data name="ConditionalBlockToolboxTooltip" xml:space="preserve">
+    <value>Conditional Block</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="ServiceCallToolboxItem" xml:space="preserve">
@@ -1758,10 +1786,6 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\OutPortImage.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
-  <data name="ConditionBlockShapeImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\rhombus2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>ConditionBlockShape shape image</comment>
-  </data>
   <data name="ServiceCallShapeImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ServiceCall2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>ServiceCallShape shape image</comment>
@@ -1773,6 +1797,10 @@ A DomainClass can be serialized as a moniker only if
   <data name="UIDataLinkUIDataLinkDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\UIDataLink.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
+  </data>
+  <data name="ConditionalBlock2ShapeImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\rhombus2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>ConditionalBlock2Shape shape image</comment>
   </data>
   <data name="CommentToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\CommentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1806,7 +1834,7 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\ConnectionTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="ConditionToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="ConditionalBlockToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\example.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

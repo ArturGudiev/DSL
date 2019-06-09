@@ -335,12 +335,6 @@ namespace Company.MobileDSL
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Company.MobileDSL.ConditionBlock)
-			{
-				global::Company.MobileDSL.ConditionBlockShape newShape = new global::Company.MobileDSL.ConditionBlockShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::Company.MobileDSL.ServiceCall)
 			{
 				global::Company.MobileDSL.ServiceCallShape newShape = new global::Company.MobileDSL.ServiceCallShape(this.Partition);
@@ -356,6 +350,12 @@ namespace Company.MobileDSL
 			if(element is global::Company.MobileDSL.UIDLink)
 			{
 				global::Company.MobileDSL.UIDataLink newShape = new global::Company.MobileDSL.UIDataLink(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.MobileDSL.ConditionalBlock)
+			{
+				global::Company.MobileDSL.ConditionalBlock2Shape newShape = new global::Company.MobileDSL.ConditionalBlock2Shape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -395,10 +395,10 @@ namespace Company.MobileDSL
 			global::Company.MobileDSL.CommentBoxShape.DecoratorsInitialized += CommentBoxShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.StateShape.DecoratorsInitialized += StateShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.ShowFormShape.DecoratorsInitialized += ShowFormShapeDecoratorMap.OnDecoratorsInitialized;
-			global::Company.MobileDSL.ConditionBlockShape.DecoratorsInitialized += ConditionBlockShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.ServiceCallShape.DecoratorsInitialized += ServiceCallShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.AppCodeShape.DecoratorsInitialized += AppCodeShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.UIDataLink.DecoratorsInitialized += UIDataLinkDecoratorMap.OnDecoratorsInitialized;
+			global::Company.MobileDSL.ConditionalBlock2Shape.DecoratorsInitialized += ConditionalBlock2ShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.CConnector.DecoratorsInitialized += CConnectorDecoratorMap.OnDecoratorsInitialized;
 			global::Company.MobileDSL.StateRefState.DecoratorsInitialized += StateRefStateDecoratorMap.OnDecoratorsInitialized;
 		}
@@ -476,24 +476,6 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
-		/// Class containing decorator path traversal methods for ConditionBlockShape.
-		/// </summary>
-		internal static partial class ConditionBlockShapeDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for ConditionBlockShape.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.ConditionBlock.TextDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Condition").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
 		/// Class containing decorator path traversal methods for ServiceCallShape.
 		/// </summary>
 		internal static partial class ServiceCallShapeDecoratorMap
@@ -555,6 +537,24 @@ namespace Company.MobileDSL
 		}
 		
 		/// <summary>
+		/// Class containing decorator path traversal methods for ConditionalBlock2Shape.
+		/// </summary>
+		internal static partial class ConditionalBlock2ShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for ConditionalBlock2Shape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.ConditionalBlock.TextDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Condition").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
 		/// Class containing decorator path traversal methods for CConnector.
 		/// </summary>
 		internal static partial class CConnectorDecoratorMap
@@ -575,6 +575,9 @@ namespace Company.MobileDSL
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.C.NextControllerDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NextControllerDecorator").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.MobileDSL.C.CaseDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "CaseDecorator").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -784,10 +787,10 @@ namespace Company.MobileDSL
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.IP), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.OP), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ShowForm), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ConditionBlock), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ServiceCall), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.AppCode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.UIDLink), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ConditionalBlock), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.Comment), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.C), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
@@ -827,10 +830,6 @@ namespace Company.MobileDSL
 				{
 					parentElement = GetParentForShowForm((global::Company.MobileDSL.ShowForm)childElement);
 				} else
-				if(childElement is global::Company.MobileDSL.ConditionBlock)
-				{
-					parentElement = GetParentForConditionBlock((global::Company.MobileDSL.ConditionBlock)childElement);
-				} else
 				if(childElement is global::Company.MobileDSL.ServiceCall)
 				{
 					parentElement = GetParentForServiceCall((global::Company.MobileDSL.ServiceCall)childElement);
@@ -842,6 +841,10 @@ namespace Company.MobileDSL
 				if(childElement is global::Company.MobileDSL.UIDLink)
 				{
 					parentElement = GetParentForUIDLink((global::Company.MobileDSL.UIDLink)childElement);
+				} else
+				if(childElement is global::Company.MobileDSL.ConditionalBlock)
+				{
+					parentElement = GetParentForConditionalBlock((global::Company.MobileDSL.ConditionalBlock)childElement);
 				} else
 				if(childElement is global::Company.MobileDSL.Comment)
 				{
@@ -907,19 +910,6 @@ namespace Company.MobileDSL
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Company.MobileDSL.ComponentModel GetParentForConditionBlock( global::Company.MobileDSL.ConditionBlock root )
-			{
-				// Segments 0 and 1
-				global::Company.MobileDSL.State root2 = root.State;
-				if ( root2 == null ) return null;
-				// Segments 2 and 3
-				global::Company.MobileDSL.Controller root4 = root2.Controller;
-				if ( root4 == null ) return null;
-				// Segments 4 and 5
-				global::Company.MobileDSL.ComponentModel result = root4.ComponentModel;
-				if ( result == null ) return null;
-				return result;
-			}
 			public static global::Company.MobileDSL.ComponentModel GetParentForServiceCall( global::Company.MobileDSL.ServiceCall root )
 			{
 				// Segments 0 and 1
@@ -947,6 +937,19 @@ namespace Company.MobileDSL
 				return result;
 			}
 			public static global::Company.MobileDSL.ComponentModel GetParentForUIDLink( global::Company.MobileDSL.UIDLink root )
+			{
+				// Segments 0 and 1
+				global::Company.MobileDSL.State root2 = root.State;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.MobileDSL.Controller root4 = root2.Controller;
+				if ( root4 == null ) return null;
+				// Segments 4 and 5
+				global::Company.MobileDSL.ComponentModel result = root4.ComponentModel;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.MobileDSL.ComponentModel GetParentForConditionalBlock( global::Company.MobileDSL.ConditionalBlock root )
 			{
 				// Segments 0 and 1
 				global::Company.MobileDSL.State root2 = root.State;
@@ -1467,8 +1470,9 @@ namespace Company.MobileDSL
 		/// A rule which fires when data mapped to outer text decorators has changed,
 		/// so we can update the decorator host's bounds.
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ConditionBlock), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ServiceCall), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.AppCode), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.ConditionalBlock), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.C), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.MobileDSL.StateRefState), InitiallyDisabled=true)]
 		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
@@ -1478,15 +1482,7 @@ namespace Company.MobileDSL
 			{
 				if(e == null) throw new global::System.ArgumentNullException("e");
 				
-				if (e.DomainProperty.Id == global::Company.MobileDSL.ConditionBlock.TextDomainPropertyId)
-				{
-					DslDiagrams::Decorator decorator = global::Company.MobileDSL.ConditionBlockShape.FindConditionBlockShapeDecorator("Condition");
-					if(decorator != null)
-					{
-						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.ConditionBlock.DomainClassId);
-					}
-				}
-				else if (e.DomainProperty.Id == global::Company.MobileDSL.ServiceCall.ServiceMethodDomainPropertyId)
+				if (e.DomainProperty.Id == global::Company.MobileDSL.ServiceCall.ServiceMethodDomainPropertyId)
 				{
 					DslDiagrams::Decorator decorator = global::Company.MobileDSL.ServiceCallShape.FindServiceCallShapeDecorator("ServiceMethod");
 					if(decorator != null)
@@ -1500,6 +1496,30 @@ namespace Company.MobileDSL
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.ServiceCall.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.AppCode.NameDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.AppCodeShape.FindAppCodeShapeDecorator("Name");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.AppCode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.AppCode.ReturnTypeDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.AppCodeShape.FindAppCodeShapeDecorator("ReturnType");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.AppCode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.ConditionalBlock.TextDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.ConditionalBlock2Shape.FindConditionalBlock2ShapeDecorator("Condition");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.ConditionalBlock.DomainClassId);
 					}
 				}
 				else if (e.DomainProperty.Id == global::Company.MobileDSL.C.NextStateDomainPropertyId)
@@ -1521,6 +1541,14 @@ namespace Company.MobileDSL
 				else if (e.DomainProperty.Id == global::Company.MobileDSL.C.NextControllerDomainPropertyId)
 				{
 					DslDiagrams::Decorator decorator = global::Company.MobileDSL.CConnector.FindCConnectorDecorator("NextControllerDecorator");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.C.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Company.MobileDSL.C.CaseDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Company.MobileDSL.CConnector.FindCConnectorDecorator("CaseDecorator");
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Company.MobileDSL.C.DomainClassId);

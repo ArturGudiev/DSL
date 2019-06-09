@@ -2159,6 +2159,93 @@ namespace Company.MobileDSL
 		}
 		
 		#endregion
+		#region Case domain property code
+		
+		/// <summary>
+		/// Case domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid CaseDomainPropertyId = new global::System.Guid(0xe1d60fa2, 0x7275, 0x4168, 0x92, 0xff, 0x02, 0xeb, 0x35, 0x37, 0xd6, 0xb0);
+		
+		/// <summary>
+		/// Storage for Case
+		/// </summary>
+		private global::System.String casePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Case domain property.
+		/// Description for Company.MobileDSL.C.Case
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.C/Case.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.C/Case.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("e1d60fa2-7275-4168-92ff-02eb3537d6b0")]
+		public global::System.String Case
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return casePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				CasePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the C.Case domain property.
+		/// </summary>
+		internal sealed partial class CasePropertyHandler : DslModeling::DomainPropertyValueHandler<C, global::System.String>
+		{
+			private CasePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the C.Case domain property value handler.
+			/// </summary>
+			public static readonly CasePropertyHandler Instance = new CasePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the C.Case domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return CaseDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(C element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.casePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(C element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.casePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region SourceConnectable link accessor
 		/// <summary>
 		/// Get the list of C links to a Connectable.
@@ -3163,33 +3250,33 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainRelationship StateHasConditionBlocked
-	/// Description for Company.MobileDSL.StateHasConditionBlocked
+	/// DomainRelationship StateHasConditionalBlocks
+	/// Description for Company.MobileDSL.StateHasConditionalBlocks
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasConditionBlocked.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.StateHasConditionBlocked.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasConditionalBlocks.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.StateHasConditionalBlocks.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
 	[DslModeling::DomainObjectId("12b71c63-b289-4765-92ee-dcdd1f7a58c6")]
-	public partial class StateHasConditionBlocked : DslModeling::ElementLink
+	public partial class StateHasConditionalBlocks : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// StateHasConditionBlocked domain class Id.
+		/// StateHasConditionalBlocks domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x12b71c63, 0xb289, 0x4765, 0x92, 0xee, 0xdc, 0xdd, 0x1f, 0x7a, 0x58, 0xc6);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a StateHasConditionBlocked link in the same Partition as the given State
+		/// Creates a StateHasConditionalBlocks link in the same Partition as the given State
 		/// </summary>
 		/// <param name="source">State to use as the source of the relationship.</param>
-		/// <param name="target">ConditionBlock to use as the target of the relationship.</param>
-		public StateHasConditionBlocked(State source, ConditionBlock target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(StateHasConditionBlocked.StateDomainRoleId, source), new DslModeling::RoleAssignment(StateHasConditionBlocked.ConditionBlockDomainRoleId, target)}, null)
+		/// <param name="target">ConditionalBlock to use as the target of the relationship.</param>
+		public StateHasConditionalBlocks(State source, ConditionalBlock target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(StateHasConditionalBlocks.StateDomainRoleId, source), new DslModeling::RoleAssignment(StateHasConditionalBlocks.ConditionalBlockDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -3198,7 +3285,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public StateHasConditionBlocked(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public StateHasConditionalBlocks(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -3209,7 +3296,7 @@ namespace Company.MobileDSL
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public StateHasConditionBlocked(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public StateHasConditionalBlocks(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -3219,7 +3306,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public StateHasConditionBlocked(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public StateHasConditionalBlocks(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -3230,7 +3317,7 @@ namespace Company.MobileDSL
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public StateHasConditionBlocked(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public StateHasConditionalBlocks(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -3244,11 +3331,11 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// DomainRole State
-		/// Description for Company.MobileDSL.StateHasConditionBlocked.State
+		/// Description for Company.MobileDSL.StateHasConditionalBlocks.State
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasConditionBlocked/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasConditionBlocked/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ConditionBlocked", PropertyDisplayNameKey="Company.MobileDSL.StateHasConditionBlocked/State.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasConditionalBlocks/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasConditionalBlocks/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ConditionalBlocks", PropertyDisplayNameKey="Company.MobileDSL.StateHasConditionalBlocks/State.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("18380384-6a3f-42e6-8a6e-ddf71200915f")]
 		public virtual State State
 		{
@@ -3265,15 +3352,15 @@ namespace Company.MobileDSL
 		}
 				
 		#endregion
-		#region Static methods to access State of a ConditionBlock
+		#region Static methods to access State of a ConditionalBlock
 		/// <summary>
 		/// Gets State.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static State GetState(ConditionBlock element)
+		public static State GetState(ConditionalBlock element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ConditionBlockDomainRoleId) as State;
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ConditionalBlockDomainRoleId) as State;
 		}
 		
 		/// <summary>
@@ -3281,73 +3368,73 @@ namespace Company.MobileDSL
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetState(ConditionBlock element, State newState)
+		public static void SetState(ConditionalBlock element, State newState)
 		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, ConditionBlockDomainRoleId, newState);
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ConditionalBlockDomainRoleId, newState);
 		}
 		#endregion
-		#region ConditionBlock domain role code
+		#region ConditionalBlock domain role code
 		
 		/// <summary>
-		/// ConditionBlock domain role Id.
+		/// ConditionalBlock domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid ConditionBlockDomainRoleId = new global::System.Guid(0xeb2a76d0, 0x9fbb, 0x48e6, 0x83, 0xcf, 0x96, 0x65, 0x5f, 0x94, 0x97, 0x75);
+		public static readonly global::System.Guid ConditionalBlockDomainRoleId = new global::System.Guid(0xeb2a76d0, 0x9fbb, 0x48e6, 0x83, 0xcf, 0x96, 0x65, 0x5f, 0x94, 0x97, 0x75);
 		
 		/// <summary>
-		/// DomainRole ConditionBlock
-		/// Description for Company.MobileDSL.StateHasConditionBlocked.ConditionBlock
+		/// DomainRole ConditionalBlock
+		/// Description for Company.MobileDSL.StateHasConditionalBlocks.ConditionalBlock
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasConditionBlocked/ConditionBlock.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasConditionBlocked/ConditionBlock.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "State", PropertyDisplayNameKey="Company.MobileDSL.StateHasConditionBlocked/ConditionBlock.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasConditionalBlocks/ConditionalBlock.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasConditionalBlocks/ConditionalBlock.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "State", PropertyDisplayNameKey="Company.MobileDSL.StateHasConditionalBlocks/ConditionalBlock.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
 		[DslModeling::DomainObjectId("eb2a76d0-9fbb-48e6-83cf-96655f949775")]
-		public virtual ConditionBlock ConditionBlock
+		public virtual ConditionalBlock ConditionalBlock
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (ConditionBlock)DslModeling::DomainRoleInfo.GetRolePlayer(this, ConditionBlockDomainRoleId);
+				return (ConditionalBlock)DslModeling::DomainRoleInfo.GetRolePlayer(this, ConditionalBlockDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ConditionBlockDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ConditionalBlockDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access ConditionBlocked of a State
+		#region Static methods to access ConditionalBlocks of a State
 		/// <summary>
-		/// Gets a list of ConditionBlocked.
+		/// Gets a list of ConditionalBlocks.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ConditionBlock> GetConditionBlocked(State element)
+		public static DslModeling::LinkedElementCollection<ConditionalBlock> GetConditionalBlocks(State element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<ConditionBlock>, ConditionBlock>(element, StateDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<ConditionalBlock>, ConditionalBlock>(element, StateDomainRoleId);
 		}
 		#endregion
 		#region State link accessor
 		/// <summary>
-		/// Get the list of StateHasConditionBlocked links to a State.
+		/// Get the list of StateHasConditionalBlocks links to a State.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasConditionBlocked> GetLinksToConditionBlocked ( global::Company.MobileDSL.State stateInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasConditionalBlocks> GetLinksToConditionalBlocks ( global::Company.MobileDSL.State stateInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasConditionBlocked>(stateInstance, global::Company.MobileDSL.StateHasConditionBlocked.StateDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasConditionalBlocks>(stateInstance, global::Company.MobileDSL.StateHasConditionalBlocks.StateDomainRoleId);
 		}
 		#endregion
-		#region ConditionBlock link accessor
+		#region ConditionalBlock link accessor
 		/// <summary>
-		/// Get the StateHasConditionBlocked link to a ConditionBlock.
+		/// Get the StateHasConditionalBlocks link to a ConditionalBlock.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.StateHasConditionBlocked GetLinkToState (global::Company.MobileDSL.ConditionBlock conditionBlockInstance)
+		public static global::Company.MobileDSL.StateHasConditionalBlocks GetLinkToState (global::Company.MobileDSL.ConditionalBlock conditionalBlockInstance)
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasConditionBlocked> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasConditionBlocked>(conditionBlockInstance, global::Company.MobileDSL.StateHasConditionBlocked.ConditionBlockDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of ConditionBlock not obeyed.");
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasConditionalBlocks> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasConditionalBlocks>(conditionalBlockInstance, global::Company.MobileDSL.StateHasConditionalBlocks.ConditionalBlockDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of ConditionalBlock not obeyed.");
 			if ( links.Count == 0 )
 			{
 				return null;
@@ -3358,20 +3445,20 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region StateHasConditionBlocked instance accessors
+		#region StateHasConditionalBlocks instance accessors
 		
 		/// <summary>
-		/// Get any StateHasConditionBlocked links between a given State and a ConditionBlock.
+		/// Get any StateHasConditionalBlocks links between a given State and a ConditionalBlock.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasConditionBlocked> GetLinks( global::Company.MobileDSL.State source, global::Company.MobileDSL.ConditionBlock target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasConditionalBlocks> GetLinks( global::Company.MobileDSL.State source, global::Company.MobileDSL.ConditionalBlock target )
 		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasConditionBlocked> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasConditionBlocked>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasConditionBlocked> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasConditionBlocked>(source, global::Company.MobileDSL.StateHasConditionBlocked.StateDomainRoleId);
-			foreach ( global::Company.MobileDSL.StateHasConditionBlocked link in links )
+			global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasConditionalBlocks> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasConditionalBlocks>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasConditionalBlocks> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasConditionalBlocks>(source, global::Company.MobileDSL.StateHasConditionalBlocks.StateDomainRoleId);
+			foreach ( global::Company.MobileDSL.StateHasConditionalBlocks link in links )
 			{
-				if ( target.Equals(link.ConditionBlock) )
+				if ( target.Equals(link.ConditionalBlock) )
 				{
 					outLinks.Add(link);
 				}
@@ -3379,16 +3466,16 @@ namespace Company.MobileDSL
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one StateHasConditionBlocked link between a given Stateand a ConditionBlock.
+		/// Get the one StateHasConditionalBlocks link between a given Stateand a ConditionalBlock.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.StateHasConditionBlocked GetLink( global::Company.MobileDSL.State source, global::Company.MobileDSL.ConditionBlock target )
+		public static global::Company.MobileDSL.StateHasConditionalBlocks GetLink( global::Company.MobileDSL.State source, global::Company.MobileDSL.ConditionalBlock target )
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasConditionBlocked> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasConditionBlocked>(source, global::Company.MobileDSL.StateHasConditionBlocked.StateDomainRoleId);
-			foreach ( global::Company.MobileDSL.StateHasConditionBlocked link in links )
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasConditionalBlocks> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasConditionalBlocks>(source, global::Company.MobileDSL.StateHasConditionalBlocks.StateDomainRoleId);
+			foreach ( global::Company.MobileDSL.StateHasConditionalBlocks link in links )
 			{
-				if ( target.Equals(link.ConditionBlock) )
+				if ( target.Equals(link.ConditionalBlock) )
 				{
 					return link;
 				}
@@ -3402,33 +3489,33 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainRelationship StateHasServiceCalled
-	/// Description for Company.MobileDSL.StateHasServiceCalled
+	/// DomainRelationship StateHasServiceCalls
+	/// Description for Company.MobileDSL.StateHasServiceCalls
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasServiceCalled.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.StateHasServiceCalled.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasServiceCalls.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.StateHasServiceCalls.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
 	[DslModeling::DomainObjectId("fb603010-b3d3-493c-870d-8321e2460494")]
-	public partial class StateHasServiceCalled : DslModeling::ElementLink
+	public partial class StateHasServiceCalls : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// StateHasServiceCalled domain class Id.
+		/// StateHasServiceCalls domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xfb603010, 0xb3d3, 0x493c, 0x87, 0x0d, 0x83, 0x21, 0xe2, 0x46, 0x04, 0x94);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a StateHasServiceCalled link in the same Partition as the given State
+		/// Creates a StateHasServiceCalls link in the same Partition as the given State
 		/// </summary>
 		/// <param name="source">State to use as the source of the relationship.</param>
 		/// <param name="target">ServiceCall to use as the target of the relationship.</param>
-		public StateHasServiceCalled(State source, ServiceCall target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(StateHasServiceCalled.StateDomainRoleId, source), new DslModeling::RoleAssignment(StateHasServiceCalled.ServiceCallDomainRoleId, target)}, null)
+		public StateHasServiceCalls(State source, ServiceCall target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(StateHasServiceCalls.StateDomainRoleId, source), new DslModeling::RoleAssignment(StateHasServiceCalls.ServiceCallDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -3437,7 +3524,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public StateHasServiceCalled(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public StateHasServiceCalls(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -3448,7 +3535,7 @@ namespace Company.MobileDSL
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public StateHasServiceCalled(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public StateHasServiceCalls(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -3458,7 +3545,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public StateHasServiceCalled(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public StateHasServiceCalls(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -3469,7 +3556,7 @@ namespace Company.MobileDSL
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public StateHasServiceCalled(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public StateHasServiceCalls(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -3483,11 +3570,11 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// DomainRole State
-		/// Description for Company.MobileDSL.StateHasServiceCalled.State
+		/// Description for Company.MobileDSL.StateHasServiceCalls.State
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasServiceCalled/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasServiceCalled/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ServiceCalled", PropertyDisplayNameKey="Company.MobileDSL.StateHasServiceCalled/State.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasServiceCalls/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasServiceCalls/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ServiceCalls", PropertyDisplayNameKey="Company.MobileDSL.StateHasServiceCalls/State.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("94b6179a-cee1-4783-835a-8e306159231c")]
 		public virtual State State
 		{
@@ -3534,11 +3621,11 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// DomainRole ServiceCall
-		/// Description for Company.MobileDSL.StateHasServiceCalled.ServiceCall
+		/// Description for Company.MobileDSL.StateHasServiceCalls.ServiceCall
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasServiceCalled/ServiceCall.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasServiceCalled/ServiceCall.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "State", PropertyDisplayNameKey="Company.MobileDSL.StateHasServiceCalled/ServiceCall.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasServiceCalls/ServiceCall.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasServiceCalls/ServiceCall.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "State", PropertyDisplayNameKey="Company.MobileDSL.StateHasServiceCalls/ServiceCall.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
 		[DslModeling::DomainObjectId("4c37c80a-21ee-427f-878a-65d5e284f6ff")]
 		public virtual ServiceCall ServiceCall
 		{
@@ -3555,37 +3642,37 @@ namespace Company.MobileDSL
 		}
 				
 		#endregion
-		#region Static methods to access ServiceCalled of a State
+		#region Static methods to access ServiceCalls of a State
 		/// <summary>
-		/// Gets a list of ServiceCalled.
+		/// Gets a list of ServiceCalls.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ServiceCall> GetServiceCalled(State element)
+		public static DslModeling::LinkedElementCollection<ServiceCall> GetServiceCalls(State element)
 		{
 			return GetRoleCollection<DslModeling::LinkedElementCollection<ServiceCall>, ServiceCall>(element, StateDomainRoleId);
 		}
 		#endregion
 		#region State link accessor
 		/// <summary>
-		/// Get the list of StateHasServiceCalled links to a State.
+		/// Get the list of StateHasServiceCalls links to a State.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasServiceCalled> GetLinksToServiceCalled ( global::Company.MobileDSL.State stateInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasServiceCalls> GetLinksToServiceCalls ( global::Company.MobileDSL.State stateInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasServiceCalled>(stateInstance, global::Company.MobileDSL.StateHasServiceCalled.StateDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasServiceCalls>(stateInstance, global::Company.MobileDSL.StateHasServiceCalls.StateDomainRoleId);
 		}
 		#endregion
 		#region ServiceCall link accessor
 		/// <summary>
-		/// Get the StateHasServiceCalled link to a ServiceCall.
+		/// Get the StateHasServiceCalls link to a ServiceCall.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.StateHasServiceCalled GetLinkToState (global::Company.MobileDSL.ServiceCall serviceCallInstance)
+		public static global::Company.MobileDSL.StateHasServiceCalls GetLinkToState (global::Company.MobileDSL.ServiceCall serviceCallInstance)
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasServiceCalled> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasServiceCalled>(serviceCallInstance, global::Company.MobileDSL.StateHasServiceCalled.ServiceCallDomainRoleId);
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasServiceCalls> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasServiceCalls>(serviceCallInstance, global::Company.MobileDSL.StateHasServiceCalls.ServiceCallDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of ServiceCall not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -3597,18 +3684,18 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region StateHasServiceCalled instance accessors
+		#region StateHasServiceCalls instance accessors
 		
 		/// <summary>
-		/// Get any StateHasServiceCalled links between a given State and a ServiceCall.
+		/// Get any StateHasServiceCalls links between a given State and a ServiceCall.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasServiceCalled> GetLinks( global::Company.MobileDSL.State source, global::Company.MobileDSL.ServiceCall target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasServiceCalls> GetLinks( global::Company.MobileDSL.State source, global::Company.MobileDSL.ServiceCall target )
 		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasServiceCalled> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasServiceCalled>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasServiceCalled> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasServiceCalled>(source, global::Company.MobileDSL.StateHasServiceCalled.StateDomainRoleId);
-			foreach ( global::Company.MobileDSL.StateHasServiceCalled link in links )
+			global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasServiceCalls> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasServiceCalls>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasServiceCalls> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasServiceCalls>(source, global::Company.MobileDSL.StateHasServiceCalls.StateDomainRoleId);
+			foreach ( global::Company.MobileDSL.StateHasServiceCalls link in links )
 			{
 				if ( target.Equals(link.ServiceCall) )
 				{
@@ -3618,14 +3705,14 @@ namespace Company.MobileDSL
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one StateHasServiceCalled link between a given Stateand a ServiceCall.
+		/// Get the one StateHasServiceCalls link between a given Stateand a ServiceCall.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.StateHasServiceCalled GetLink( global::Company.MobileDSL.State source, global::Company.MobileDSL.ServiceCall target )
+		public static global::Company.MobileDSL.StateHasServiceCalls GetLink( global::Company.MobileDSL.State source, global::Company.MobileDSL.ServiceCall target )
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasServiceCalled> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasServiceCalled>(source, global::Company.MobileDSL.StateHasServiceCalled.StateDomainRoleId);
-			foreach ( global::Company.MobileDSL.StateHasServiceCalled link in links )
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasServiceCalls> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasServiceCalls>(source, global::Company.MobileDSL.StateHasServiceCalls.StateDomainRoleId);
+			foreach ( global::Company.MobileDSL.StateHasServiceCalls link in links )
 			{
 				if ( target.Equals(link.ServiceCall) )
 				{
@@ -3641,33 +3728,33 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainRelationship StateHasAppCoded
-	/// Description for Company.MobileDSL.StateHasAppCoded
+	/// DomainRelationship StateHasAppCodes
+	/// Description for Company.MobileDSL.StateHasAppCodes
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasAppCoded.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.StateHasAppCoded.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasAppCodes.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.StateHasAppCodes.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
 	[DslModeling::DomainObjectId("828d9c19-dd32-4250-8a48-f0879ecf6ea6")]
-	public partial class StateHasAppCoded : DslModeling::ElementLink
+	public partial class StateHasAppCodes : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// StateHasAppCoded domain class Id.
+		/// StateHasAppCodes domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x828d9c19, 0xdd32, 0x4250, 0x8a, 0x48, 0xf0, 0x87, 0x9e, 0xcf, 0x6e, 0xa6);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a StateHasAppCoded link in the same Partition as the given State
+		/// Creates a StateHasAppCodes link in the same Partition as the given State
 		/// </summary>
 		/// <param name="source">State to use as the source of the relationship.</param>
 		/// <param name="target">AppCode to use as the target of the relationship.</param>
-		public StateHasAppCoded(State source, AppCode target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(StateHasAppCoded.StateDomainRoleId, source), new DslModeling::RoleAssignment(StateHasAppCoded.AppCodeDomainRoleId, target)}, null)
+		public StateHasAppCodes(State source, AppCode target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(StateHasAppCodes.StateDomainRoleId, source), new DslModeling::RoleAssignment(StateHasAppCodes.AppCodeDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -3676,7 +3763,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public StateHasAppCoded(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public StateHasAppCodes(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -3687,7 +3774,7 @@ namespace Company.MobileDSL
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public StateHasAppCoded(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public StateHasAppCodes(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -3697,7 +3784,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public StateHasAppCoded(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public StateHasAppCodes(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -3708,7 +3795,7 @@ namespace Company.MobileDSL
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public StateHasAppCoded(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public StateHasAppCodes(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -3722,11 +3809,11 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// DomainRole State
-		/// Description for Company.MobileDSL.StateHasAppCoded.State
+		/// Description for Company.MobileDSL.StateHasAppCodes.State
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasAppCoded/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasAppCoded/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "AppCoded", PropertyDisplayNameKey="Company.MobileDSL.StateHasAppCoded/State.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasAppCodes/State.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasAppCodes/State.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "AppCodes", PropertyDisplayNameKey="Company.MobileDSL.StateHasAppCodes/State.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("347d72bc-2cbd-43dd-bfa3-fbc5a0f8b6bd")]
 		public virtual State State
 		{
@@ -3773,11 +3860,11 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// DomainRole AppCode
-		/// Description for Company.MobileDSL.StateHasAppCoded.AppCode
+		/// Description for Company.MobileDSL.StateHasAppCodes.AppCode
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasAppCoded/AppCode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasAppCoded/AppCode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "State", PropertyDisplayNameKey="Company.MobileDSL.StateHasAppCoded/AppCode.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StateHasAppCodes/AppCode.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StateHasAppCodes/AppCode.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "State", PropertyDisplayNameKey="Company.MobileDSL.StateHasAppCodes/AppCode.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
 		[DslModeling::DomainObjectId("a2f2e80f-ece7-42fb-8fdc-c509d74ddbb5")]
 		public virtual AppCode AppCode
 		{
@@ -3794,37 +3881,37 @@ namespace Company.MobileDSL
 		}
 				
 		#endregion
-		#region Static methods to access AppCoded of a State
+		#region Static methods to access AppCodes of a State
 		/// <summary>
-		/// Gets a list of AppCoded.
+		/// Gets a list of AppCodes.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<AppCode> GetAppCoded(State element)
+		public static DslModeling::LinkedElementCollection<AppCode> GetAppCodes(State element)
 		{
 			return GetRoleCollection<DslModeling::LinkedElementCollection<AppCode>, AppCode>(element, StateDomainRoleId);
 		}
 		#endregion
 		#region State link accessor
 		/// <summary>
-		/// Get the list of StateHasAppCoded links to a State.
+		/// Get the list of StateHasAppCodes links to a State.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasAppCoded> GetLinksToAppCoded ( global::Company.MobileDSL.State stateInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasAppCodes> GetLinksToAppCodes ( global::Company.MobileDSL.State stateInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasAppCoded>(stateInstance, global::Company.MobileDSL.StateHasAppCoded.StateDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasAppCodes>(stateInstance, global::Company.MobileDSL.StateHasAppCodes.StateDomainRoleId);
 		}
 		#endregion
 		#region AppCode link accessor
 		/// <summary>
-		/// Get the StateHasAppCoded link to a AppCode.
+		/// Get the StateHasAppCodes link to a AppCode.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.StateHasAppCoded GetLinkToState (global::Company.MobileDSL.AppCode appCodeInstance)
+		public static global::Company.MobileDSL.StateHasAppCodes GetLinkToState (global::Company.MobileDSL.AppCode appCodeInstance)
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasAppCoded> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasAppCoded>(appCodeInstance, global::Company.MobileDSL.StateHasAppCoded.AppCodeDomainRoleId);
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasAppCodes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasAppCodes>(appCodeInstance, global::Company.MobileDSL.StateHasAppCodes.AppCodeDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of AppCode not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -3836,18 +3923,18 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region StateHasAppCoded instance accessors
+		#region StateHasAppCodes instance accessors
 		
 		/// <summary>
-		/// Get any StateHasAppCoded links between a given State and a AppCode.
+		/// Get any StateHasAppCodes links between a given State and a AppCode.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasAppCoded> GetLinks( global::Company.MobileDSL.State source, global::Company.MobileDSL.AppCode target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.MobileDSL.StateHasAppCodes> GetLinks( global::Company.MobileDSL.State source, global::Company.MobileDSL.AppCode target )
 		{
-			global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasAppCoded> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasAppCoded>();
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasAppCoded> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasAppCoded>(source, global::Company.MobileDSL.StateHasAppCoded.StateDomainRoleId);
-			foreach ( global::Company.MobileDSL.StateHasAppCoded link in links )
+			global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasAppCodes> outLinks = new global::System.Collections.Generic.List<global::Company.MobileDSL.StateHasAppCodes>();
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasAppCodes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasAppCodes>(source, global::Company.MobileDSL.StateHasAppCodes.StateDomainRoleId);
+			foreach ( global::Company.MobileDSL.StateHasAppCodes link in links )
 			{
 				if ( target.Equals(link.AppCode) )
 				{
@@ -3857,14 +3944,14 @@ namespace Company.MobileDSL
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one StateHasAppCoded link between a given Stateand a AppCode.
+		/// Get the one StateHasAppCodes link between a given Stateand a AppCode.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.MobileDSL.StateHasAppCoded GetLink( global::Company.MobileDSL.State source, global::Company.MobileDSL.AppCode target )
+		public static global::Company.MobileDSL.StateHasAppCodes GetLink( global::Company.MobileDSL.State source, global::Company.MobileDSL.AppCode target )
 		{
-			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasAppCoded> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasAppCoded>(source, global::Company.MobileDSL.StateHasAppCoded.StateDomainRoleId);
-			foreach ( global::Company.MobileDSL.StateHasAppCoded link in links )
+			global::System.Collections.Generic.IList<global::Company.MobileDSL.StateHasAppCodes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.MobileDSL.StateHasAppCodes>(source, global::Company.MobileDSL.StateHasAppCodes.StateDomainRoleId);
+			foreach ( global::Company.MobileDSL.StateHasAppCodes link in links )
 			{
 				if ( target.Equals(link.AppCode) )
 				{

@@ -1,108 +1,154 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="eda229d1-bd9e-4749-b492-13c01862a56e" name="BackButton" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="496d81cc-80b6-4f09-bc04-669b278cbea9" name="" xmlns="http://schemas.microsoft.com/dsltools/MobileDSL">
   <controllers>
-    <componentModelHasControllers Id="f738dd89-d8a2-4f9d-8328-acb9487cead3">
-      <controller Id="89971e52-3f93-4c89-aeb6-d741c3bcb5ba" name="MainController" isFirst="false">
+    <componentModelHasControllers Id="1ce4b1d8-33fa-4711-9635-d84523cbf9c9">
+      <controller Id="e3aa4708-f0b6-4b1d-a203-e988609800e1" name="MainController" isFirst="true">
         <iP>
-          <classWithPortsHasIP Id="76a82087-6f02-4735-a05f-dfe8232249a1">
-            <iP Id="cc69a92c-d51d-4b96-ad4d-0b08e9304c81">
+          <classWithPortsHasIP Id="f7cebad2-4c21-4092-b973-2fc2a86bc6ec">
+            <iP Id="ba60de08-7758-4e61-9b01-4e237fe8cfca">
               <childConnections>
-                <c Id="0cbbfd9e-3df5-405c-9341-91ad0ebce43f">
-                  <iPMoniker Id="4cce208a-cb93-4f03-b189-6692d8d388ae" />
+                <c Id="433b28ce-28e8-44b9-9dfa-ccf78daef1ac">
+                  <iPMoniker Id="68ddffc2-8760-492c-97cc-361777c19fc9" />
                 </c>
               </childConnections>
             </iP>
           </classWithPortsHasIP>
         </iP>
         <states>
-          <controllerHasStates Id="f0652a2c-f94b-4130-b782-01ab8ca46d35">
-            <state Id="e9b755a1-6829-4ef1-8b7c-60d6c5f0e596" name="StartState">
+          <controllerHasStates Id="5d3f31ce-9865-45e5-9f5c-2906d64ebc62">
+            <state Id="93cb989c-6d9f-42f3-86f3-1894421cdefc" name="StartState">
               <iP>
-                <classWithPortsHasIP Id="4437e814-80e0-48c0-b3b9-86d556335f4d">
-                  <iP Id="4cce208a-cb93-4f03-b189-6692d8d388ae">
+                <classWithPortsHasIP Id="a67ea331-f3ab-4d0d-bf10-d0b7ac772274">
+                  <iP Id="68ddffc2-8760-492c-97cc-361777c19fc9">
                     <childConnections>
-                      <c Id="61afb297-43a3-4daa-af6e-c39251f39c35">
-                        <serviceCallMoniker Id="1e1052e4-96ec-413b-a8d4-b11f2c285ae1" />
+                      <c Id="445742ea-c870-4566-8dc3-76496455b55f">
+                        <serviceCallMoniker Id="57aec226-9a9e-4e78-874f-cdaa0285e8b2" />
                       </c>
                     </childConnections>
                   </iP>
                 </classWithPortsHasIP>
               </iP>
               <oP>
-                <classWithPortsHasOP Id="23f3b0ed-8aa7-4889-9dc5-8bd0a903c5fb">
-                  <oP Id="9309095d-40ae-4dc4-8211-f46f89427ba6">
+                <classWithPortsHasOP Id="392609b2-993e-4748-8115-a3aaab40532d">
+                  <oP Id="66cff92c-b2e0-4db5-983d-ad5c749a6395">
                     <childConnections>
-                      <c Id="7b22f766-9714-4418-8b5f-074e6d6228c8">
-                        <iPMoniker Id="3b429298-d9b7-4c3f-96b2-5d3957e21b27" />
+                      <c Id="648ce72b-46fd-4be1-847c-88a9ffdc7845">
+                        <iPMoniker Id="a2b38cb2-145b-45b5-a067-9f1c7fe58e06" />
                       </c>
                     </childConnections>
                   </oP>
                 </classWithPortsHasOP>
               </oP>
               <showForms>
-                <stateHasShowForms Id="c1991ba9-e300-4feb-9a43-9803d5347354">
-                  <showForm Id="8c5dafcf-fc02-409b-964a-f30c7fdb923a" name="ChooseStationForm">
+                <stateHasShowForms Id="b973036c-19d9-4ecb-ba57-81f490bdb159">
+                  <showForm Id="a03190ce-8a34-4860-9875-a90e120eeb98" name="ChooseStationForm">
                     <childConnections>
-                      <c Id="913dba53-02b6-447b-a30c-aa7839956145" fromEvent="ShowButtonClicked" nextState="ShowState">
-                        <oPMoniker Id="9309095d-40ae-4dc4-8211-f46f89427ba6" />
+                      <c Id="86bf367a-e491-45f9-a984-8b8b94f8ac47" fromEvent="ShowButtonPressed" data="LeftDropBox, RightDropBox">
+                        <serviceCallMoniker Id="28ac389d-7606-498b-bace-445ed10579cf" />
                       </c>
                     </childConnections>
                     <events>
-                      <showFormHasEvents Id="81a1532d-40a2-4469-b78c-5e92ffd07882">
-                        <event Id="82f0c816-b3b6-433e-97af-a60f922aa382" name="ShowButtonClicked" primitiveName="ShowButton" type="Pressed" />
+                      <showFormHasEvents Id="361003bf-da72-4242-8a7c-587b00c0c695">
+                        <event Id="3f54b791-acbe-4911-a952-9cf20803d3c5" name="ShowButtonPressed" primitiveName="ShowButton" type="Pressed" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
-                      <showFormHasPrimitives Id="06c5ba0f-db4f-496c-afb0-22601b2a7d47">
-                        <label Id="35f5148d-99e9-4e62-b416-52bcaaee7b7e" name="FromLabel" parent="LabelPanel" text="Откуда" color="White" />
+                      <showFormHasPrimitives Id="2835ef5e-4e23-4ebf-9e72-4a5bc38bca82">
+                        <label Id="7b7f2dca-82c8-4b95-abb0-2297135526dd" name="MessageLabel" text="Choose Station" />
                       </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="bef2c0a5-b362-4b7e-a53c-2fbec9847718">
-                        <label Id="ebfc7855-8e18-4f3d-9fdc-04f8bfdec4db" name="ToLabel" parent="LabelPanel" text="Куда" color="White" />
+                      <showFormHasPrimitives Id="0a58485b-9d20-4417-b6ec-8574286dccdd">
+                        <label Id="8e17876b-ae49-44f9-a292-ae9d6ca6ff87" name="FromLabel" parent="LabelStackPanel" text="Откуда" />
                       </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="72f7ab09-1fe2-4a65-8d1a-3ba6d702ceec">
-                        <stackPanel Id="2d942ca7-69a3-4644-81c2-a3909f2fb112" name="LabelPanel" items="FromLabel;ToLabel" />
+                      <showFormHasPrimitives Id="25ea00d4-27c0-40f1-bb37-8c7d6c020bb2">
+                        <label Id="a66564fd-ae7e-4290-851f-599d08ca4e92" name="ToLabel" parent="LabelStackPanel" text="Куда" />
                       </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="70329067-a36b-40e5-8830-17bba50e622f">
-                        <dropBox Id="d4bcb662-39d3-4c0a-bf3c-9e41b25b1678" name="LeftDropBox" parent="DropBoxPanel" items="e=f=g" />
+                      <showFormHasPrimitives Id="26329a28-6da7-4b9d-916b-a8d15a5f27d0">
+                        <stackPanel Id="393f8a8c-e3e8-4528-9205-85a5c722a9c4" name="LabelStackPanel" />
                       </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="b3a3817f-3319-465e-94be-ee9441c08441">
-                        <dropBox Id="f5bc68d0-973d-44ec-bcf9-d8abcdf2605a" name="RightDropBox" parent="DropBoxPanel" items="a=b=c" />
+                      <showFormHasPrimitives Id="4d0382bd-498f-4d9c-853c-37f724ea8026">
+                        <dropBox Id="62efccdb-87a1-4809-9f76-b10bc29db965" name="LeftDropBox" parent="DropBoxPanel" />
                       </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="11941ad4-f949-4aa9-9371-04906c634987">
-                        <stackPanel Id="ca16a926-44b9-481e-9704-b96620cb3b17" name="DropBoxPanel" items="LeftDropBox;RightDropBox" />
+                      <showFormHasPrimitives Id="2eda580b-7f6b-406f-a8df-1cfb08bcd7cf">
+                        <dropBox Id="83ac7624-6046-4e65-ba19-3846476f5a98" name="RightDropBox" parent="DropBoxPanel" />
                       </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="d15112b3-d77e-4756-a9e8-e5cb24a45690">
-                        <button Id="3695f7f4-192e-4ec5-8fbc-0ad47b911922" name="ShowButton" text="Show Schedule" />
+                      <showFormHasPrimitives Id="f5239ba2-1917-438e-9e18-33a5d27e9ea7">
+                        <stackPanel Id="883b5c70-0c47-44d6-a46b-b0429f1f79e2" name="DropBoxPanel" />
+                      </showFormHasPrimitives>
+                      <showFormHasPrimitives Id="d8c1801a-11f7-4f33-a10e-5222f7947146">
+                        <button Id="4fe8fa35-7729-477b-b3c3-ee41976d59b1" name="ShowButton" text="Показать расписание" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>
                 </stateHasShowForms>
               </showForms>
-              <serviceCalled>
-                <stateHasServiceCalled Id="07a1a00f-fab2-4f6e-8adc-c1327def6663">
-                  <serviceCall Id="1e1052e4-96ec-413b-a8d4-b11f2c285ae1" serviceName="ScheduleService" serviceMethod="getStations">
+              <conditionalBlocks>
+                <stateHasConditionalBlocks Id="3a05cc30-57c5-4661-a536-a126b2d89312">
+                  <conditionalBlock Id="fcfed56f-a9f0-4256-81fd-1af10660ba8b" text="isValid==true">
                     <childConnections>
-                      <c Id="370b3fad-9123-409d-8924-2c178bd333d1" data="stations">
-                        <uIDLinkMoniker Id="f0ddd707-a291-4b9b-bc8f-e1a2be1694c2" />
+                      <c Id="74717ec9-e7c1-4bf2-a8dc-bf76ac0082d1" nextState="State2" data="LeftDropBox, RightDropBox" case="True">
+                        <oPMoniker Id="66cff92c-b2e0-4db5-983d-ad5c749a6395" />
+                      </c>
+                      <c Id="10a29c20-dd8c-49e9-8e62-d3a399d61faa" case="False">
+                        <uIDLinkMoniker Id="29421b9c-73e6-4699-b54e-1ae70f196b3b" />
+                      </c>
+                    </childConnections>
+                  </conditionalBlock>
+                </stateHasConditionalBlocks>
+              </conditionalBlocks>
+              <serviceCalls>
+                <stateHasServiceCalls Id="23ee40d4-1c62-4d4f-836a-d0a1f5fc7d7b">
+                  <serviceCall Id="57aec226-9a9e-4e78-874f-cdaa0285e8b2" serviceName="ScheduleSvc" serviceMethod="getStations">
+                    <childConnections>
+                      <c Id="c80bc34e-4ef2-4d25-a53a-661c348e850b" data="stations">
+                        <uIDLinkMoniker Id="d98a6e8a-8a16-4611-ac6e-31219e03b54c" />
                       </c>
                     </childConnections>
                   </serviceCall>
-                </stateHasServiceCalled>
-              </serviceCalled>
-              <uIDataLinks>
-                <stateHasUIDataLinks Id="e88e8091-6b32-4c38-9739-f1ae8b45e0e8">
-                  <uIDLink Id="f0ddd707-a291-4b9b-bc8f-e1a2be1694c2">
+                </stateHasServiceCalls>
+                <stateHasServiceCalls Id="1efb1ea0-e99a-42c2-b1fd-f38eea61b6ac">
+                  <serviceCall Id="28ac389d-7606-498b-bace-445ed10579cf" serviceName="ValidationSvc" serviceMethod="Validate">
                     <childConnections>
-                      <c Id="acc31017-8f27-49d2-b972-ee11c17c29ec">
-                        <showFormMoniker Id="8c5dafcf-fc02-409b-964a-f30c7fdb923a" />
+                      <c Id="0f66266d-17a3-4968-bd76-add51d7a2d01" data="isValid">
+                        <conditionalBlockMoniker Id="fcfed56f-a9f0-4256-81fd-1af10660ba8b" />
+                      </c>
+                    </childConnections>
+                  </serviceCall>
+                </stateHasServiceCalls>
+              </serviceCalls>
+              <uIDataLinks>
+                <stateHasUIDataLinks Id="44eb73dc-40c3-4ea9-a453-38a80d039641">
+                  <uIDLink Id="d98a6e8a-8a16-4611-ac6e-31219e03b54c" invisibles="MessageLabel">
+                    <childConnections>
+                      <c Id="b546abc2-b1fb-4ad4-b7a2-cf1688cd5c94">
+                        <showFormMoniker Id="a03190ce-8a34-4860-9875-a90e120eeb98" />
                       </c>
                     </childConnections>
                     <stringCodes>
-                      <uIDLinkHasStringCodes Id="99cbe4a4-33bc-456b-8cce-7d33b4d1d256">
-                        <stringCode Id="d11d7d54-c004-412f-9de8-60d131ab1175" text="LeftDropBox=stations" />
+                      <uIDLinkHasStringCodes Id="0ba23d26-b695-4462-a37e-abc615972383">
+                        <stringCode Id="eb53221d-537f-49cf-81cd-906254adb078" text="LeftDropBox=stations" isDictKey="false" />
                       </uIDLinkHasStringCodes>
-                      <uIDLinkHasStringCodes Id="f44e7c48-d701-439f-a64a-e26f0848948f">
-                        <stringCode Id="eff68f28-6ade-43ac-90d7-31445b9c9c40" text="RightDropBox=stations" />
+                      <uIDLinkHasStringCodes Id="f34849c3-1698-4c3b-b1e3-3adfc5b19b06">
+                        <stringCode Id="10b2c47e-7d48-4da6-9391-774038b639e2" text="RightDropBox=stations" isDictKey="false" />
+                      </uIDLinkHasStringCodes>
+                    </stringCodes>
+                  </uIDLink>
+                </stateHasUIDataLinks>
+                <stateHasUIDataLinks Id="3108682c-f373-4193-a5bb-fd88c89d92eb">
+                  <uIDLink Id="29421b9c-73e6-4699-b54e-1ae70f196b3b">
+                    <childConnections>
+                      <c Id="37be0e98-32d7-4774-b88b-865ae9a2f3f9">
+                        <showFormMoniker Id="a03190ce-8a34-4860-9875-a90e120eeb98" />
+                      </c>
+                    </childConnections>
+                    <stringCodes>
+                      <uIDLinkHasStringCodes Id="5bdf0df9-a7cd-4810-8c6f-faa4ef14a3e4">
+                        <stringCode Id="d92f5c97-51c9-484e-98b1-55488f20d6d6" text="LeftDropBox=stations" isDictKey="true" />
+                      </uIDLinkHasStringCodes>
+                      <uIDLinkHasStringCodes Id="45bee16b-fe22-4a14-bb06-4275c00f5e72">
+                        <stringCode Id="018f6847-49cd-431b-9e3a-4e31f7cba6d0" text="RightDropBox=stations" isDictKey="true" />
+                      </uIDLinkHasStringCodes>
+                      <uIDLinkHasStringCodes Id="a04373e2-6da2-42ed-8622-d6e8ef954775">
+                        <stringCode Id="56ce94ad-e9bc-43ac-af83-b2e5db817869" text="MessageLabel=&quot;Wrong stations&quot;" isDictKey="false" />
                       </uIDLinkHasStringCodes>
                     </stringCodes>
                   </uIDLink>
@@ -110,60 +156,84 @@
               </uIDataLinks>
             </state>
           </controllerHasStates>
-          <controllerHasStates Id="f4f1f0d2-6b23-48e0-bf8c-ea022d01f146">
-            <state Id="6256fc3b-9f6d-44c3-85c9-7b524131d815" name="ShowState">
+          <controllerHasStates Id="e1cdc5ca-ff4d-4e04-915a-f8d672248829">
+            <state Id="2d5f0e78-61cd-4f09-80a9-a7ab3a39b672" name="ShowStationsState">
               <iP>
-                <classWithPortsHasIP Id="e8f3d036-8d30-4692-bbff-c22662f28d69">
-                  <iP Id="3b429298-d9b7-4c3f-96b2-5d3957e21b27">
+                <classWithPortsHasIP Id="707b7f12-aa06-42f1-bb9f-09541d2f9d55">
+                  <iP Id="a2b38cb2-145b-45b5-a067-9f1c7fe58e06">
                     <childConnections>
-                      <c Id="092100d4-79c8-43f5-8ae2-f9ab5c0cbcca">
-                        <showFormMoniker Id="c607124c-01bf-4d9e-9f0b-e9916b670839" />
+                      <c Id="8e25e42d-ade1-4373-ba2a-5f9850b66131" data="LeftDropBox, RightDropBox">
+                        <serviceCallMoniker Id="43b012bc-10d3-4737-9301-77188857719c" />
                       </c>
                     </childConnections>
                   </iP>
                 </classWithPortsHasIP>
               </iP>
               <oP>
-                <classWithPortsHasOP Id="e739a90a-5fc1-4665-8abc-d03493aaa312">
-                  <oP Id="6cda4260-dd7f-47d8-9d9a-d5fc4035a3f8">
+                <classWithPortsHasOP Id="8b91ce3e-3038-4d21-8c42-f7c554fee564">
+                  <oP Id="343558cf-f69c-4744-8abc-e2976b6c7590">
                     <childConnections>
-                      <c Id="588c2653-2a15-4c84-b5ed-43faf213c7af">
-                        <iPMoniker Id="4cce208a-cb93-4f03-b189-6692d8d388ae" />
+                      <c Id="bb4d6770-ee15-45ab-8de0-4b92d49f70db">
+                        <iPMoniker Id="68ddffc2-8760-492c-97cc-361777c19fc9" />
                       </c>
                     </childConnections>
                   </oP>
                 </classWithPortsHasOP>
               </oP>
               <showForms>
-                <stateHasShowForms Id="559c29a2-a3f3-4ca2-a83c-a7314303764c">
-                  <showForm Id="c607124c-01bf-4d9e-9f0b-e9916b670839" name="ShowScheduleForm">
+                <stateHasShowForms Id="1bde391a-ac1f-4b9e-9d5c-74c2e5729292">
+                  <showForm Id="92453b20-4955-48ac-972e-4b05128d906a" name="ShowScheduleForm">
                     <childConnections>
-                      <c Id="44434fe6-fceb-4ff3-8b9e-62ad1f910cb4" fromEvent="BackButtonClicked" nextState="StartState">
-                        <oPMoniker Id="6cda4260-dd7f-47d8-9d9a-d5fc4035a3f8" />
+                      <c Id="e2fb5581-86ef-4699-85df-879789c2a0a4" nextState="StartState">
+                        <oPMoniker Id="343558cf-f69c-4744-8abc-e2976b6c7590" />
                       </c>
                     </childConnections>
                     <events>
-                      <showFormHasEvents Id="ff021df5-2336-4f32-a9fc-f5b04d455090">
-                        <event Id="20786947-a080-4368-a3df-fd1cd4054c48" name="BackButtonClicked" primitiveName="BackButton" type="Pressed" />
+                      <showFormHasEvents Id="4c05713e-586c-4e90-afed-957c79bd6741">
+                        <event Id="df7a9e47-eed3-4ffe-b048-21d3d6a5b13e" name="BackButtonPressed" />
                       </showFormHasEvents>
                     </events>
                     <primitives>
-                      <showFormHasPrimitives Id="005c7d21-52ef-4e06-8042-1b10200497a1">
-                        <label Id="dcfb789e-95ee-4fb8-afcf-7a2904c14c1e" name="Title" text="AAA" />
+                      <showFormHasPrimitives Id="5d66bb18-ee47-4691-abed-ca920a38d797">
+                        <label Id="d7fbee31-bc32-4ade-a602-fc24a5ad5324" name="Title" />
                       </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="4beeba9a-8026-46c2-8209-51121ab332de">
-                        <listBox Id="edd56a71-5db3-4796-aa19-1afe814da1a4" name="ListBox" />
+                      <showFormHasPrimitives Id="16e0cc60-91d8-4630-a610-5a0175e2b0d5">
+                        <listBox Id="0a1d5363-7564-4216-9330-0384dd64ffc5" name="Schedule" />
                       </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="24eb6376-def9-4fa7-ba8a-3467207ab3d9">
-                        <button Id="af8bd0bf-1637-4275-8d5c-6e7ee3bcb122" name="BackButton" text="Back" />
-                      </showFormHasPrimitives>
-                      <showFormHasPrimitives Id="1465219a-cb66-456b-aef8-1ab852e350b6">
-                        <input Id="14160149-06d6-4a0f-a3ca-16ae993bf2cd" name="Input1" />
+                      <showFormHasPrimitives Id="56e0ff1d-e4cf-4598-9a43-ac56fd64a04e">
+                        <button Id="67f253c5-63f1-4786-a8e3-f95a89b01c9e" name="BackButton" />
                       </showFormHasPrimitives>
                     </primitives>
                   </showForm>
                 </stateHasShowForms>
               </showForms>
+              <serviceCalls>
+                <stateHasServiceCalls Id="b0ea948b-8f30-49d2-97fe-fc51d5f5210a">
+                  <serviceCall Id="43b012bc-10d3-4737-9301-77188857719c" serviceName="ScheduleSvc" serviceMethod="getSchedule">
+                    <childConnections>
+                      <c Id="e2e174e1-6c3a-4257-a3aa-2de2922acbb2" data="scheduleList">
+                        <uIDLinkMoniker Id="4605e082-fc7a-4260-9229-6a29304d00a8" />
+                      </c>
+                    </childConnections>
+                  </serviceCall>
+                </stateHasServiceCalls>
+              </serviceCalls>
+              <uIDataLinks>
+                <stateHasUIDataLinks Id="d155fac4-ac81-47c2-8dda-c69046df5155">
+                  <uIDLink Id="4605e082-fc7a-4260-9229-6a29304d00a8">
+                    <childConnections>
+                      <c Id="5cf1eebc-3cca-46e5-a417-9fba1f230420">
+                        <showFormMoniker Id="92453b20-4955-48ac-972e-4b05128d906a" />
+                      </c>
+                    </childConnections>
+                    <stringCodes>
+                      <uIDLinkHasStringCodes Id="7ef7728c-8fa6-4915-a884-620d1e3c4bee">
+                        <stringCode Id="61b8cf9a-a9e7-44a9-8aa2-918728d35b38" text="Schedule=scheduleList" isDictKey="false" />
+                      </uIDLinkHasStringCodes>
+                    </stringCodes>
+                  </uIDLink>
+                </stateHasUIDataLinks>
+              </uIDataLinks>
             </state>
           </controllerHasStates>
         </states>

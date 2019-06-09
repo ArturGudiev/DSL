@@ -1,151 +1,145 @@
-﻿		
-	
-//Generated material. Generating code in C#.
+﻿		//Generated material. Generating code in C#.
 
-using System.Collections.Generic;
+		using System.Collections.Generic;
 
+		public class Controller1 : Controller {
 
-	public class MainController  : Controller{ 
+			enum Controller1State {
+				State1,
+				State2,
+			}
+			private Controller1State controllerState = Controller1State.State1;
 
-	enum MainControllerState { 
-                  StartState,
-                  ShowState,
-          }
-  private MainControllerState controllerState =  MainControllerState.StartState;
+			public override void action () {
+				switch (controllerState) {
 
- 	public override void action(){          
-  	switch(controllerState){
- 
-case MainControllerState.StartState: 
-runStartState();
-break;
- 
-case MainControllerState.ShowState: 
-runShowState();
-break;
-}
-	}
+					case Controller1State.State1:
+						runState1 ();
+						break;
 
-	 
-//--------------------------------------------------
-	   
-				 private void showChooseStationForm(Dictionary<string, object> dict){
-			
-		    					TextBlock FromLabel = 				new TextBlock{
-                VerticalAlignment = VerticalAlignment.Center, 
-                HorizontalAlignment = HorizontalAlignment.Center, 
-                WrapContent = true, 
-                Font = new Font(new FontFamily("Arial"), 16),
-                Foreground = new SolidColorBrush(Colors.White),
-                Text = dict.Contains("FromLabel") ? dict["FromLabel"] : "Откуда",
-		};
-												TextBlock ToLabel = 				new TextBlock{
-                VerticalAlignment = VerticalAlignment.Center, 
-                HorizontalAlignment = HorizontalAlignment.Center, 
-                WrapContent = true, 
-                Font = new Font(new FontFamily("Arial"), 16),
-                Foreground = new SolidColorBrush(Colors.White),
-                Text = dict.Contains("ToLabel") ? dict["ToLabel"] : "Куда",
-		};
-												StackPanel LabelPanel =  new StackPanel{ Orientation = Orientation.Horizontal, Children = 
-		{new Cell{Content = FromLabel} ,
-				new Cell{Content = ToLabel} ,
-				 }, }; 
-												DropBox LeftDropBox = 							new DropBox{
-                VerticalAlignment = VerticalAlignment.Center,           
-                HorizontalAlignment = HorizontalAlignment.Center,       
-                Padding = new Thickness(Screen.NormalFontSize),        
-                WrapContent = true,                                     
-                Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize),           
-				ItemList = dict.Contains("LeftDropBox") ? dict["LeftDropBox"] : new List<string>("e=f=g".Split('=')),
-,
-};
-												DropBox RightDropBox = 							new DropBox{
-                VerticalAlignment = VerticalAlignment.Center,           
-                HorizontalAlignment = HorizontalAlignment.Center,       
-                Padding = new Thickness(Screen.NormalFontSize),        
-                WrapContent = true,                                     
-                Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize),           
-				ItemList = dict.Contains("RightDropBox") ? dict["RightDropBox"] : new List<string>("a=b=c".Split('=')),
-,
-};
-												StackPanel DropBoxPanel =  new StackPanel{ Orientation = Orientation.Horizontal, Children = 
-		{new Cell{Content = LeftDropBox} ,
-				new Cell{Content = RightDropBox} ,
-				 }, }; 
-												Button ShowButton = 			new Button{
-			VerticalAlignment = VerticalAlignment.Center, 
-			HorizontalAlignment = HorizontalAlignment.Center, 
-			Background = new SolidColorBrush(Colors.Gray), 
-			Foreground = new SolidColorBrush(Colors.Black), 
-			Padding = new Thickness(Screen.NormalFontSize), 
-			WrapContent = true, 
-			Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
-			Text = dict.Contains("ShowButton") ? dict["ShowButton"] : "Show Schedule",
-	}; 
-								ShowButton. Pressed += (sender, args) => {
-					 	 controllerState = MainControllerState.ShowState; 					 }; 
-					 				var panel = new StackPanel {Children = {new Cell{Content = LabelPanel} ,
-				new Cell{Content = DropBoxPanel} ,
-				new Cell{Content = ShowButton} ,
-				 },};
+					case Controller1State.State2:
+						runState2 ();
+						break;
+				}
+			}
+
+			//--------------------------------------------------
+
+			private void showChooseStationForm (Dictionary<string, object> dict) {
+				TextBlock MessageLabel = new TextBlock {
+					Visibility = dict["Invisibles"].Contains ("MessageLabel") ? Visibility.Hidden : Visibility.Visible;
+					VerticalAlignment = VerticalAlignment.Center,
+						HorizontalAlignment = HorizontalAlignment.Center,
+						WrapContent = true,
+						Font = new Font (new FontFamily ("Arial"), 16),
+						Foreground = new SolidColorBrush (Colors.),
+						Text = dict.Contains ("MessageLabel") ? dict["MessageLabel"] : "Choose Station",
+				};
+				TextBlock FromLabel = new TextBlock {
+					Visibility = dict["Invisibles"].Contains ("FromLabel") ? Visibility.Hidden : Visibility.Visible;
+					VerticalAlignment = VerticalAlignment.Center,
+						HorizontalAlignment = HorizontalAlignment.Center,
+						WrapContent = true,
+						Font = new Font (new FontFamily ("Arial"), 16),
+						Foreground = new SolidColorBrush (Colors.),
+						Text = dict.Contains ("FromLabel") ? dict["FromLabel"] : "Откуда",
+				};
+				TextBlock ToLabel = new TextBlock {
+					Visibility = dict["Invisibles"].Contains ("ToLabel") ? Visibility.Hidden : Visibility.Visible;
+					VerticalAlignment = VerticalAlignment.Center,
+						HorizontalAlignment = HorizontalAlignment.Center,
+						WrapContent = true,
+						Font = new Font (new FontFamily ("Arial"), 16),
+						Foreground = new SolidColorBrush (Colors.),
+						Text = dict.Contains ("ToLabel") ? dict["ToLabel"] : "Куда",
+				};
+				StackPanel LabelStackPanel = new StackPanel {
+					Visibility = dict["Invisibles"].Contains ("LabelStackPanel") ? Visibility.Hidden : Visibility.Visible;
+					Orientation = Orientation.Horizontal, Children = {
+						new Cell { Content = FromLabel },
+						new Cell { Content = ToLabel },
+					},
+				};
+				DropBox LeftDropBox = new DropBox {
+					Visibility = dict["Invisibles"].Contains ("LeftDropBox") ? Visibility.Hidden : Visibility.Visible;
+					VerticalAlignment = VerticalAlignment.Center,
+						HorizontalAlignment = HorizontalAlignment.Center,
+						Padding = new Thickness (Screen.NormalFontSize),
+						WrapContent = true,
+						Font = new Font (new FontFamily ("Arial"), 0.5 * Screen.LargeFontSize),
+						ItemList = dict.Contains ("LeftDropBox") ? dict["LeftDropBox"] : new List<string> ("".Split ('=')), ,
+				};
+				DropBox RightDropBox = new DropBox {
+					Visibility = dict["Invisibles"].Contains ("RightDropBox") ? Visibility.Hidden : Visibility.Visible;
+					VerticalAlignment = VerticalAlignment.Center,
+						HorizontalAlignment = HorizontalAlignment.Center,
+						Padding = new Thickness (Screen.NormalFontSize),
+						WrapContent = true,
+						Font = new Font (new FontFamily ("Arial"), 0.5 * Screen.LargeFontSize),
+						ItemList = dict.Contains ("RightDropBox") ? dict["RightDropBox"] : new List<string> ("".Split ('=')), ,
+				};
+				StackPanel DropBoxPanel = new StackPanel {
+					Visibility = dict["Invisibles"].Contains ("DropBoxPanel") ? Visibility.Hidden : Visibility.Visible;
+					Orientation = Orientation.Horizontal, Children = {
+						new Cell { Content = LeftDropBox },
+						new Cell { Content = RightDropBox },
+					},
+				};
+				Button ShowButton = new Button {
+					Visibility = dict["Invisibles"].Contains ("ShowButton") ? Visibility.Hidden : Visibility.Visible;
+					VerticalAlignment = VerticalAlignment.Center,
+						HorizontalAlignment = HorizontalAlignment.Center,
+						Background = new SolidColorBrush (Colors.Gray),
+						Foreground = new SolidColorBrush (Colors.Black),
+						Padding = new Thickness (Screen.NormalFontSize),
+						WrapContent = true,
+						Font = new Font (new FontFamily ("Arial"), 0.5 * Screen.LargeFontSize),
+						Text = dict.Contains ("ShowButton") ? dict["ShowButton"] : "Показать расписание",
+				};
+				ShowButton.Pressed += (sender, args) => {
+					var isValid = ValidationService.Validate (LeftDropBox, RightDropBox);
+					if (isValid == true) {
+						controllerState = Controller1State.State2;
+					} else {
+
+						Dictionary<string, object> newDict = new Dictionary<string, object> ();
+						newDict["Invisibles"] = "";
+						newDict["LeftDropBox"] = dict["stations"];
+						newDict["RightDropBox"] = dict["stations"];
+						newDict["MessageLabel"] = "Wrong stations";
+						showChooseStationForm (newDict);
+					}
+				};
+				var panel = new StackPanel {
+					Children = {
+						new Cell { Content = MessageLabel },
+						new Cell { Content = LabelStackPanel },
+						new Cell { Content = DropBoxPanel },
+						new Cell { Content = ShowButton },
+					},
+				};
 				Screen.Content = panel;
 
-	}              
-    private void runStartState(){
-				var stations = ScheduleService.getStations(); 
-			 Dictionary<string, object> dict = new Dictionary<string,object>();  dict["LeftDropBox"]=stations; 
-					 dict["RightDropBox"]=stations; 
-					showChooseStationForm(dict);	}
+			}
+			private void runState1 () {
+				var stations = ScheduleService.getStations ();
 
-     
-//--------------------------------------------------
-	   
-				 private void showShowScheduleForm(Dictionary<string, object> dict){
-			
-		    					TextBlock Title = 				new TextBlock{
-                VerticalAlignment = VerticalAlignment.Center, 
-                HorizontalAlignment = HorizontalAlignment.Center, 
-                WrapContent = true, 
-                Font = new Font(new FontFamily("Arial"), 16),
-                Foreground = new SolidColorBrush(Colors.),
-                Text = dict.Contains("Title") ? dict["Title"] : "AAA",
-		};
-												ListBox ListBox =  new ListBox{ Children = {}, }; 
-											Button BackButton = 			new Button{
-			VerticalAlignment = VerticalAlignment.Center, 
-			HorizontalAlignment = HorizontalAlignment.Center, 
-			Background = new SolidColorBrush(Colors.Gray), 
-			Foreground = new SolidColorBrush(Colors.Black), 
-			Padding = new Thickness(Screen.NormalFontSize), 
-			WrapContent = true, 
-			Font = new Font(new FontFamily("Arial"), 0.5 * Screen.LargeFontSize), 
-			Text = dict.Contains("BackButton") ? dict["BackButton"] : "Back",
-	}; 
-													Input Input1 = 							new Input{
-    VerticalAlignment = VerticalAlignment.Center, 
-    HorizontalAlignment = HorizontalAlignment.Center, 
-    Background = new SolidColorBrush(Colors.White), 
-    Foreground = new SolidColorBrush(Colors.Black), 
-    Padding = new Thickness(Screen.NormalFontSize), 
-    WrapContent = true,
-    Width = 150,
-    Font = new Font(new FontFamily("Arial"), 12),
-    InputMode = Ubiq.Graphics.InputMode.Text,
-    Text = "",};
-							BackButton. Pressed += (sender, args) => {
-					 	 controllerState = MainControllerState.StartState; 					 }; 
-					 				var panel = new StackPanel {Children = {new Cell{Content = Title} ,
-				new Cell{Content = ListBox} ,
-				new Cell{Content = BackButton} ,
-				new Cell{Content = Input1} ,
-				 },};
+				Dictionary<string, object> newDict = new Dictionary<string, object> ();
+				newDict["Invisibles"] = "MessageLabel";
+				newDict["LeftDropBox"] = stations;
+				newDict["RightDropBox"] = stations;
+				showChooseStationForm (newDict);
+			}
+
+			//--------------------------------------------------
+
+			private void showState2Form (Dictionary<string, object> dict) {
+				var panel = new StackPanel { Children = { }, };
 				Screen.Content = panel;
 
-	}              
-    private void runShowState(){
-	showShowScheduleForm();	}
+			}
+			private void runState2 () {
+				showState2Form ();
+			}
 
-    	}
-
-
+		}

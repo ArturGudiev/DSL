@@ -80,7 +80,21 @@
     <None Include="LoginController.mdsl.diagram">
       <DependentUpon>LoginController.mdsl</DependentUpon>
     </None>
-    <None Include="z_some\Game - Copy.mdsl" />
+    <None Include="train - Copy.mdsl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="train - Copy.mdsl.diagram">
+      <DependentUpon>train - Copy.mdsl</DependentUpon>
+    </None>
+    <None Include="train.mdsl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="train.mdsl.diagram">
+      <DependentUpon>train.mdsl</DependentUpon>
+    </None>
+    <None Include="z_some\Game - Copy.mdsl">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="z_some\Game - Copy.mdsl.diagram">
       <DependentUpon>Game - Copy.mdsl</DependentUpon>
     </None>
@@ -134,10 +148,6 @@
     <None Include="Volunteer.mdsl" />
     <None Include="Volunteer.mdsl.diagram">
       <DependentUpon>Volunteer.mdsl</DependentUpon>
-    </None>
-    <None Include="train.mdsl" />
-    <None Include="train.mdsl.diagram">
-      <DependentUpon>train.mdsl</DependentUpon>
     </None>
     <None Include="z_some\Test.mdsl" />
     <None Include="z_some\Test.mdsl.diagram">

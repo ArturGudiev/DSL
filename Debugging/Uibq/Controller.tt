@@ -18,14 +18,14 @@ using System.Collections.Generic;
             <#= state.Name #>,
       <#}#>
     }
-  private <#=controller.Name#>State controllerState =  <#=controller.Name#>State.<#insertMainState(controller);#>;
+  private <#=controller.Name#>State controllerState =  
+						<#=controller.Name#>State.<#insertMainState(controller);#>;
 
  	public override void action(){          
-  	<#makeSwitchStatement(controller);#>
+  	<#compileActionFunction(controller);#>
 	}
 
 	<# foreach (State state in controller.States) { #> 
-//--------------------------------------------------
 	  <# foreach (ShowForm form in state.ShowForms) { #> 
 				<#compileShowFormFunction(form);#>
       <#}#>
@@ -34,7 +34,6 @@ using System.Collections.Generic;
 	<#}#>
 }
 
-
 <#+	// 1 =======================================================  
 private void insertMainState(Controller controller){
 	IP ip = controller.IP.ChildConnections.ToArray()[0] as IP ;
@@ -42,7 +41,7 @@ private void insertMainState(Controller controller){
 }
 
   	// 2 =======================================================  
-private void makeSwitchStatement(Controller controller)  {#>
+private void compileActionFunction(Controller controller)  {#>
 switch(controllerState){
 <#+  
 	foreach (State state in controller.States)
@@ -57,12 +56,11 @@ break;
 private void compileShowFormFunction(ShowForm form) {
 
 	#> private void show<#= form.Name #>(Dictionary<string, object> dict){
-			
 		    <#+ 
 				 foreach (Primitive pr in form.Primitives) {
 					//if(pr.Parent != ""){ continue; }
 				#>
-					<#+generatePrimitive(pr);#>
+					<#+ generatePrimitive(pr);#>
 					<#+
 				} //foreach
 
@@ -70,19 +68,25 @@ private void compileShowFormFunction(ShowForm form) {
   	 			#><#= ev.PrimitiveName #>. <#= ev.Type #> += (sender, args) => {
 					 	<#+ foreach (C c in C.GetLinksToChildConnections(form)) {  
         			if(c.FromEvent != ev.Name){continue;}
-							connectWith(c.TargetConnectable, c);
+							//connectWith(c.TargetConnectable, c);
+							generate(c.TargetConnectable, c);
       			}#>
 					 }; 
 					 <#+			
 				}
 				#>
-				var panel = new StackPanel {Children = {<#+ foreach(Primitive pr in form.Primitives){if(pr.Parent == "" )newCell(pr.Name, ','); } #> },};
+				var panel = new StackPanel {Children = {<#+ 
+				
+				foreach(Primitive pr in form.Primitives){
+					if(pr.Parent == "")newCell(pr.Name, ','); 
+				} 
+				
+				#> },};
 				Screen.Content = panel;
 
 	} <#+ // ### private void Show
 
 }//$$$ compileShowFormFunction
-
 //=======================================================  
 private void connectWith(Connectable conn, C link) {
 	if(conn.GetType() == typeof(Company.MobileDSL.OP)){
@@ -98,27 +102,30 @@ private void connectWith(Connectable conn, C link) {
 		}
 	}
 }
-
-//========================= Print Class Properties ==============================
-private void printProperties(Type t){
-	foreach ( PropertyInfo pInfo in t.GetProperties() ) {
-								#><#= pInfo.Name #> ||| <#+ 
-							}
-}
 //=======================================================  
 private void compileRunState(State state) {
 #> 
     private void run<#= state.Name#>(){
 	<#+
-	Connectable firstElement = getChild(state.IP, 0); 
-	
-	generate(firstElement);#>
+	Connectable firstElement = getChild(state.IP, 0); //replace with getFirstChild
+	var link = getFirstLink(state.IP);
+	#>
+	<#+
+	generate(firstElement, link);#>
 	}
 
 <#+}//$$$ compileRunState
 
+//=========================================================================
+private C getLinkByCase(Connectable el, string str){
+	foreach (C l in C.GetLinksToChildConnections(el)) {
+      if (l.Case == str) return l;
+	}
+	return  null;
+}
+
 //============================================================
-private void generate(Connectable el){
+private void generate(Connectable el, C link){
 	switch(el.GetType().ToString()){
 		
 		case "Company.MobileDSL.ShowForm": 
@@ -130,56 +137,55 @@ private void generate(Connectable el){
 			ServiceCall svcCall = el as ServiceCall;
 			var connections = C.GetLinksToChildConnections(el);
 			C conn = getElement(connections, 0);#>
-			var <#= conn.Data #> = <#=svcCall.ServiceName#>.<#=svcCall.ServiceMethod#>(); 
-			<#+ generate(getFirstChild(el));	
+			var <#= conn.Data #> = <#=svcCall.ServiceName#>.<#=svcCall.ServiceMethod#>(<#=link.Data#>); 
+			<#+ generate(getFirstChild(el), getFirstLink(el));	
 			break;
 		
 		case "Company.MobileDSL.UIDLink": 
-		  #> Dictionary<string, object> dict = new Dictionary<string,object>(); <#+
-			UIDLink dLink = el as UIDLink;
-			foreach (StringCode str in dLink.StringCodes) { 
-					var arr = str.Text.Split('=');
-					#> dict["<#=arr[0]#>"]=<#=arr[1]#>; 
+			UIDLink dLink = el as UIDLink;#> 
+			Dictionary<string, object> newDict = new Dictionary<string,object>(); 
+			newDict["Invisibles"]="<#=dLink.Invisibles#>";
+			<#+
+			foreach (StringCode strCode in dLink.StringCodes) { 
+					var arr = strCode.Text.Split('=');
+					if(strCode.isDictKey != true){
+					#> newDict["<#=arr[0]#>"]=<#=arr[1]#>; 
 					<#+
+					}else{
+					#> newDict["<#=arr[0]#>"]=dict["<#=arr[1]#>"]; 
+					<#+
+					}
 			}
 			ShowForm nextForm = getFirstChild(el) as ShowForm;
-			#>show<#= nextForm.Name#>(dict);<#+
+			#>show<#= nextForm.Name#>(newDict);<#+
 			break; 
-	}
-}
-//=========================================================================
-private Connectable getFirstChild(Connectable el){
-	return getChild(el, 0);
-}
-//=========================================================================
-private ReadOnlyCollection<C> getConnections(Connectable el){
-	return  C.GetLinksToChildConnections(el);
-}
-//=========================================================================
-private C getElement(ReadOnlyCollection<C> coll, int index){
-	int i = 0; 
-	foreach (C c in coll) {  
-      if(i++ == index) return c;
-	}
-	return  null;
-}
-//============================================================
-private bool isShowForm(Connectable connectable) {
-	return connectable.GetType().ToString().Contains("ShowForm");
-}
-
-private bool isServiceCall(Connectable connectable){
-	return connectable.GetType().ToString().Contains("ServiceCall");
-}
-
-//============================================================
-private Connectable getChild(Connectable connectable, int index){
-	return connectable.ChildConnections.ToArray()[index];
-}
-
-//=============== new Cell generation for StackPanel Children ====
-private void newCell(string str, char c){
-	#>new Cell{Content = <#= str #>} <#= c #>
+		case "Company.MobileDSL.ConditionalBlock":
+			ConditionalBlock cBlock = el as ConditionalBlock;
+			#> if( <#= cBlock.Text #> ){ 
 				<#+ 
+				C trueLink = getLinkByCase(el, "True");
+				generate(trueLink.TargetConnectable, trueLink);
+				#>
+			 } else {  
+			 <#+ 
+				C falseLink = getLinkByCase(el, "False");
+				generate(falseLink.TargetConnectable, falseLink);
+				#>
+				
+			 } <#+
+			break;
+		case "Company.MobileDSL.OP":
+			OP oPort = el as OP;
+			if(link.NextController != ""){
+			#> 
+					this.app.currentController = <#=link.NextController#>.getInstance(this.app);
+					this.app.changed = true;
+			<#+
+			}else{
+				State state = oPort.Parent as State; 
+				#> controllerState = <#=state.Controller.Name#>State.<#=link.NextState#>; <#+
+			}
+			break;
+	}
 }
 #>

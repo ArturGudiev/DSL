@@ -264,46 +264,46 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: StateHasConditionBlocked -->
-          <xsd:element name="conditionBlocked" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: StateHasConditionalBlocks -->
+          <xsd:element name="conditionalBlocks" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of StateHasConditionBlocked</xsd:documentation>
+              <xsd:documentation>Instances of StateHasConditionalBlocks</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="stateHasConditionBlocked" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="stateHasConditionalBlocks" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of StateHasConditionBlocked needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of StateHasConditionalBlocks needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: StateHasServiceCalled -->
-          <xsd:element name="serviceCalled" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: StateHasServiceCalls -->
+          <xsd:element name="serviceCalls" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of StateHasServiceCalled</xsd:documentation>
+              <xsd:documentation>Instances of StateHasServiceCalls</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="stateHasServiceCalled" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="stateHasServiceCalls" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of StateHasServiceCalled needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of StateHasServiceCalls needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: StateHasAppCoded -->
-          <xsd:element name="appCoded" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: StateHasAppCodes -->
+          <xsd:element name="appCodes" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of StateHasAppCoded</xsd:documentation>
+              <xsd:documentation>Instances of StateHasAppCodes</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="stateHasAppCoded" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="stateHasAppCodes" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of StateHasAppCoded needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of StateHasAppCodes needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -871,9 +871,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ConditionBlock -->
-  <xsd:element name="conditionBlock" type="ConditionBlock" substitutionGroup="connectable" />
-  <xsd:complexType name="ConditionBlock">
+  <!-- ConditionalBlock -->
+  <xsd:element name="conditionalBlock" type="ConditionalBlock" substitutionGroup="connectable" />
+  <xsd:complexType name="ConditionalBlock">
     <xsd:complexContent>
       <xsd:extension base="Connectable">
         <!-- Id -->
@@ -888,11 +888,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ConditionBlock Moniker -->
-  <xsd:element name="conditionBlockMoniker" type="ConditionBlockMoniker" substitutionGroup="connectableMoniker" />
-  <xsd:complexType name="ConditionBlockMoniker">
+  <!-- ConditionalBlock Moniker -->
+  <xsd:element name="conditionalBlockMoniker" type="ConditionalBlockMoniker" substitutionGroup="connectableMoniker" />
+  <xsd:complexType name="ConditionalBlockMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ConditionBlock instance.</xsd:documentation>
+      <xsd:documentation>Moniker for ConditionalBlock instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="ConnectableMoniker">
@@ -992,6 +992,8 @@
         </xsd:attribute>
         <!-- Property: Text -->
         <xsd:attribute name="text" type="xsd:string" />
+        <!-- Property: isDictKey -->
+        <xsd:attribute name="isDictKey" type="xsd:boolean" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -1041,6 +1043,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Invisibles -->
+        <xsd:attribute name="invisibles" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -1364,6 +1368,8 @@
         <xsd:attribute name="data" type="xsd:string" />
         <!-- Property: NextController -->
         <xsd:attribute name="nextController" type="xsd:string" />
+        <!-- Property: Case -->
+        <xsd:attribute name="case" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -1545,14 +1551,14 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- StateHasConditionBlocked -->
-  <xsd:element name="stateHasConditionBlocked" type="StateHasConditionBlocked" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="StateHasConditionBlocked">
+  <!-- StateHasConditionalBlocks -->
+  <xsd:element name="stateHasConditionalBlocks" type="StateHasConditionalBlocks" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateHasConditionalBlocks">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end ConditionBlock -->
-          <xsd:element ref="conditionBlock" minOccurs="1" maxOccurs="1">
+          <!-- Target end ConditionalBlock -->
+          <xsd:element ref="conditionalBlock" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -1568,11 +1574,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- StateHasConditionBlocked Moniker -->
-  <xsd:element name="stateHasConditionBlockedMoniker" type="StateHasConditionBlockedMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="StateHasConditionBlockedMoniker">
+  <!-- StateHasConditionalBlocks Moniker -->
+  <xsd:element name="stateHasConditionalBlocksMoniker" type="StateHasConditionalBlocksMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateHasConditionalBlocksMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for StateHasConditionBlocked instance.</xsd:documentation>
+      <xsd:documentation>Moniker for StateHasConditionalBlocks instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -1585,9 +1591,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- StateHasServiceCalled -->
-  <xsd:element name="stateHasServiceCalled" type="StateHasServiceCalled" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="StateHasServiceCalled">
+  <!-- StateHasServiceCalls -->
+  <xsd:element name="stateHasServiceCalls" type="StateHasServiceCalls" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateHasServiceCalls">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -1608,11 +1614,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- StateHasServiceCalled Moniker -->
-  <xsd:element name="stateHasServiceCalledMoniker" type="StateHasServiceCalledMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="StateHasServiceCalledMoniker">
+  <!-- StateHasServiceCalls Moniker -->
+  <xsd:element name="stateHasServiceCallsMoniker" type="StateHasServiceCallsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateHasServiceCallsMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for StateHasServiceCalled instance.</xsd:documentation>
+      <xsd:documentation>Moniker for StateHasServiceCalls instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -1625,9 +1631,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- StateHasAppCoded -->
-  <xsd:element name="stateHasAppCoded" type="StateHasAppCoded" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="StateHasAppCoded">
+  <!-- StateHasAppCodes -->
+  <xsd:element name="stateHasAppCodes" type="StateHasAppCodes" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateHasAppCodes">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -1648,11 +1654,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- StateHasAppCoded Moniker -->
-  <xsd:element name="stateHasAppCodedMoniker" type="StateHasAppCodedMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="StateHasAppCodedMoniker">
+  <!-- StateHasAppCodes Moniker -->
+  <xsd:element name="stateHasAppCodesMoniker" type="StateHasAppCodesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateHasAppCodesMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for StateHasAppCoded instance.</xsd:documentation>
+      <xsd:documentation>Moniker for StateHasAppCodes instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

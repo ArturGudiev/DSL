@@ -289,18 +289,18 @@ namespace Company.MobileDSL
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(StoSFilterString)
 						});
 					break;
-				case "Company.MobileDSL.ConditionToolboxItem":
-					// Add Condition shape tool.
+				case "Company.MobileDSL.ConditionalBlockToolboxItem":
+					// Add ConditionalBlock shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.MobileDSL.ConditionToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.MobileDSL.ConditionalBlockToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						9, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("ConditionToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ConditionToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("ConditionalBlockToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ConditionalBlockToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.MobileDSL.MobileDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("MobileDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"Condition", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("ConditionToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::Company.MobileDSL.ConditionBlock.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						"ConditionalBlock", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ConditionalBlockToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Company.MobileDSL.ConditionalBlock.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});

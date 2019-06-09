@@ -57,6 +57,9 @@
                       <c Id="776c81e3-91aa-4896-b0de-524d86a42192" nextState="MainController">
                         <oPMoniker Id="9e565b50-039e-4511-a495-3716b3213af5" />
                       </c>
+                      <c Id="1c441795-f53f-4d25-a153-aa75a5b30590" data="login, password">
+                        <serviceCallMoniker Id="172029b5-5d57-4e48-9ea8-ea1b0cb93b9c" />
+                      </c>
                     </childConnections>
                     <events>
                       <showFormHasEvents Id="5f6e298f-2f92-4ed1-b08c-c7ae2b74a6da">
@@ -77,6 +80,11 @@
                   </showForm>
                 </stateHasShowForms>
               </showForms>
+              <serviceCalls>
+                <stateHasServiceCalls Id="0e1d0e59-3a6c-48e0-8139-1ff3b0c1edf6">
+                  <serviceCall Id="172029b5-5d57-4e48-9ea8-ea1b0cb93b9c" serviceName="LoginSvc" serviceMethod="Login" />
+                </stateHasServiceCalls>
+              </serviceCalls>
             </state>
           </controllerHasStates>
         </states>

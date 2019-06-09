@@ -84,10 +84,10 @@
         </ElementMergeDirective>
         <ElementMergeDirective>
           <Index>
-            <DomainClassMoniker Name="ConditionBlock" />
+            <DomainClassMoniker Name="ConditionalBlock" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>StateHasConditionBlocked.ConditionBlocked</DomainPath>
+            <DomainPath>StateHasConditionalBlocks.ConditionalBlocks</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
         <ElementMergeDirective>
@@ -95,7 +95,7 @@
             <DomainClassMoniker Name="ServiceCall" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>StateHasServiceCalled.ServiceCalled</DomainPath>
+            <DomainPath>StateHasServiceCalls.ServiceCalls</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
         <ElementMergeDirective>
@@ -103,7 +103,7 @@
             <DomainClassMoniker Name="AppCode" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>StateHasAppCoded.AppCoded</DomainPath>
+            <DomainPath>StateHasAppCodes.AppCodes</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
         <ElementMergeDirective>
@@ -309,12 +309,12 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
-    <DomainClass Id="486f6ab7-a708-4e77-a2a5-f06d30cf60b7" Description="Description for Company.MobileDSL.ConditionBlock" Name="ConditionBlock" DisplayName="Condition Block" Namespace="Company.MobileDSL">
+    <DomainClass Id="486f6ab7-a708-4e77-a2a5-f06d30cf60b7" Description="Description for Company.MobileDSL.ConditionalBlock" Name="ConditionalBlock" DisplayName="Conditional Block" Namespace="Company.MobileDSL">
       <BaseClass>
         <DomainClassMoniker Name="Connectable" />
       </BaseClass>
       <Properties>
-        <DomainProperty Id="baad2556-78ea-4d73-b89b-fe588d392255" Description="Description for Company.MobileDSL.ConditionBlock.Text" Name="Text" DisplayName="Text">
+        <DomainProperty Id="baad2556-78ea-4d73-b89b-fe588d392255" Description="Description for Company.MobileDSL.ConditionalBlock.Text" Name="Text" DisplayName="Text">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -372,12 +372,24 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="25ba5e10-238d-4cca-a7f2-dc4f86159e11" Description="Description for Company.MobileDSL.StringCode.Is Dict Key" Name="isDictKey" DisplayName="Is Dict Key" DefaultValue="False">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="86e993a1-1784-40e1-becc-1fd29557b63a" Description="Description for Company.MobileDSL.UIDLink" Name="UIDLink" DisplayName="UIDLink" Namespace="Company.MobileDSL">
       <BaseClass>
         <DomainClassMoniker Name="Connectable" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="f216f9b7-c862-493d-8fd3-5bf1181e4401" Description="Description for Company.MobileDSL.UIDLink.Invisibles" Name="Invisibles" DisplayName="Invisibles">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
@@ -525,6 +537,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="e1d60fa2-7275-4168-92ff-02eb3537d6b0" Description="Description for Company.MobileDSL.C.Case" Name="Case" DisplayName="Case">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
       <Source>
         <DomainRole Id="24ae03ea-39bb-4ed1-b150-46e8a9413ed6" Description="Description for Company.MobileDSL.C.SourceConnectable" Name="SourceConnectable" DisplayName="Source Connectable" PropertyName="ChildConnections" PropertyDisplayName="Child Connections">
@@ -605,48 +622,48 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="12b71c63-b289-4765-92ee-dcdd1f7a58c6" Description="Description for Company.MobileDSL.StateHasConditionBlocked" Name="StateHasConditionBlocked" DisplayName="State Has Condition Blocked" Namespace="Company.MobileDSL" IsEmbedding="true">
+    <DomainRelationship Id="12b71c63-b289-4765-92ee-dcdd1f7a58c6" Description="Description for Company.MobileDSL.StateHasConditionalBlocks" Name="StateHasConditionalBlocks" DisplayName="State Has Conditional Blocks" Namespace="Company.MobileDSL" IsEmbedding="true">
       <Source>
-        <DomainRole Id="18380384-6a3f-42e6-8a6e-ddf71200915f" Description="Description for Company.MobileDSL.StateHasConditionBlocked.State" Name="State" DisplayName="State" PropertyName="ConditionBlocked" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Condition Blocked">
+        <DomainRole Id="18380384-6a3f-42e6-8a6e-ddf71200915f" Description="Description for Company.MobileDSL.StateHasConditionalBlocks.State" Name="State" DisplayName="State" PropertyName="ConditionalBlocks" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Conditional Blocks">
           <RolePlayer>
             <DomainClassMoniker Name="State" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="eb2a76d0-9fbb-48e6-83cf-96655f949775" Description="Description for Company.MobileDSL.StateHasConditionBlocked.ConditionBlock" Name="ConditionBlock" DisplayName="Condition Block" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
+        <DomainRole Id="eb2a76d0-9fbb-48e6-83cf-96655f949775" Description="Description for Company.MobileDSL.StateHasConditionalBlocks.ConditionalBlock" Name="ConditionalBlock" DisplayName="Conditional Block" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
           <RolePlayer>
-            <DomainClassMoniker Name="ConditionBlock" />
+            <DomainClassMoniker Name="ConditionalBlock" />
           </RolePlayer>
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="fb603010-b3d3-493c-870d-8321e2460494" Description="Description for Company.MobileDSL.StateHasServiceCalled" Name="StateHasServiceCalled" DisplayName="State Has Service Called" Namespace="Company.MobileDSL" IsEmbedding="true">
+    <DomainRelationship Id="fb603010-b3d3-493c-870d-8321e2460494" Description="Description for Company.MobileDSL.StateHasServiceCalls" Name="StateHasServiceCalls" DisplayName="State Has Service Calls" Namespace="Company.MobileDSL" IsEmbedding="true">
       <Source>
-        <DomainRole Id="94b6179a-cee1-4783-835a-8e306159231c" Description="Description for Company.MobileDSL.StateHasServiceCalled.State" Name="State" DisplayName="State" PropertyName="ServiceCalled" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Service Called">
+        <DomainRole Id="94b6179a-cee1-4783-835a-8e306159231c" Description="Description for Company.MobileDSL.StateHasServiceCalls.State" Name="State" DisplayName="State" PropertyName="ServiceCalls" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Service Calls">
           <RolePlayer>
             <DomainClassMoniker Name="State" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="4c37c80a-21ee-427f-878a-65d5e284f6ff" Description="Description for Company.MobileDSL.StateHasServiceCalled.ServiceCall" Name="ServiceCall" DisplayName="Service Call" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
+        <DomainRole Id="4c37c80a-21ee-427f-878a-65d5e284f6ff" Description="Description for Company.MobileDSL.StateHasServiceCalls.ServiceCall" Name="ServiceCall" DisplayName="Service Call" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
           <RolePlayer>
             <DomainClassMoniker Name="ServiceCall" />
           </RolePlayer>
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="828d9c19-dd32-4250-8a48-f0879ecf6ea6" Description="Description for Company.MobileDSL.StateHasAppCoded" Name="StateHasAppCoded" DisplayName="State Has App Coded" Namespace="Company.MobileDSL" IsEmbedding="true">
+    <DomainRelationship Id="828d9c19-dd32-4250-8a48-f0879ecf6ea6" Description="Description for Company.MobileDSL.StateHasAppCodes" Name="StateHasAppCodes" DisplayName="State Has App Codes" Namespace="Company.MobileDSL" IsEmbedding="true">
       <Source>
-        <DomainRole Id="347d72bc-2cbd-43dd-bfa3-fbc5a0f8b6bd" Description="Description for Company.MobileDSL.StateHasAppCoded.State" Name="State" DisplayName="State" PropertyName="AppCoded" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="App Coded">
+        <DomainRole Id="347d72bc-2cbd-43dd-bfa3-fbc5a0f8b6bd" Description="Description for Company.MobileDSL.StateHasAppCodes.State" Name="State" DisplayName="State" PropertyName="AppCodes" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="App Codes">
           <RolePlayer>
             <DomainClassMoniker Name="State" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="a2f2e80f-ece7-42fb-8fdc-c509d74ddbb5" Description="Description for Company.MobileDSL.StateHasAppCoded.AppCode" Name="AppCode" DisplayName="App Code" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
+        <DomainRole Id="a2f2e80f-ece7-42fb-8fdc-c509d74ddbb5" Description="Description for Company.MobileDSL.StateHasAppCodes.AppCode" Name="AppCode" DisplayName="App Code" PropertyName="State" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="State">
           <RolePlayer>
             <DomainClassMoniker Name="AppCode" />
           </RolePlayer>
@@ -791,18 +808,6 @@
         <IconDecorator Name="Image" DisplayName="Image" DefaultIcon="Resources\OutPortImage.bmp" />
       </ShapeHasDecorators>
     </Port>
-    <ImageShape Id="4970f161-0bbe-461b-90bd-74ad4426d9c9" Description="Description for Company.MobileDSL.ConditionBlockShape" Name="ConditionBlockShape" DisplayName="Condition Block Shape" Namespace="Company.MobileDSL" FixedTooltipText="Condition Block Shape" InitialWidth="1.2" InitialHeight="0.86" ExposesFillColorAsProperty="true" Image="Resources\rhombus2.png">
-      <Properties>
-        <DomainProperty Id="aaf9bd0e-9c88-4eeb-afd6-9ffdfc8ff5e4" Description="Description for Company.MobileDSL.ConditionBlockShape.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
-          <Type>
-            <ExternalTypeMoniker Name="/System.Drawing/Color" />
-          </Type>
-        </DomainProperty>
-      </Properties>
-      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
-        <TextDecorator Name="Condition" DisplayName="Condition" DefaultText="Condition" FontStyle="Bold" FontSize="10" />
-      </ShapeHasDecorators>
-    </ImageShape>
     <ImageShape Id="48dfec5c-baeb-4a75-b198-a7bcc0440cc4" Description="Description for Company.MobileDSL.ServiceCallShape" Name="ServiceCallShape" DisplayName="Service Call Shape" Namespace="Company.MobileDSL" FixedTooltipText="Service Call Shape" InitialWidth="1.3" InitialHeight="0.55" Image="Resources\ServiceCall2.png">
       <ShapeHasDecorators Position="OuterTopLeft" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
         <TextDecorator Name="ServiceName" DisplayName="Service Name" DefaultText="ServiceName" FontStyle="Bold" FontSize="10" />
@@ -812,10 +817,10 @@
       </ShapeHasDecorators>
     </ImageShape>
     <CompartmentShape Id="8ac88d88-6719-4bac-a4a3-1915a5f6a05a" Description="Description for Company.MobileDSL.AppCodeShape" Name="AppCodeShape" DisplayName="App Code Shape" Namespace="Company.MobileDSL" FixedTooltipText="App Code Shape" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" FontStyle="Bold" FontSize="10" />
       </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+      <ShapeHasDecorators Position="OuterTopLeft" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
         <TextDecorator Name="ReturnType" DisplayName="Return Type" DefaultText="ReturnType" FontStyle="Bold" FontSize="10" />
       </ShapeHasDecorators>
       <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
@@ -839,6 +844,18 @@
       </ShapeHasDecorators>
       <Compartment Name="Code" EntryFontStyle="Bold" EntryFontSize="10" />
     </CompartmentShape>
+    <ImageShape Id="847eaf69-3198-4591-b4d2-ae9bcddc11db" Description="Description for Company.MobileDSL.ConditionalBlock2Shape" Name="ConditionalBlock2Shape" DisplayName="Conditional Block2 Shape" Namespace="Company.MobileDSL" FixedTooltipText="Conditional Block2 Shape" InitialHeight="1" ExposesFillColorAsProperty="true" Image="Resources\rhombus2.png">
+      <Properties>
+        <DomainProperty Id="e7f0a25e-aa6a-478c-b87a-a0cb34be89e0" Description="Description for Company.MobileDSL.ConditionalBlock2Shape.Fill Color" Name="FillColor" DisplayName="Fill Color" Kind="CustomStorage">
+          <Type>
+            <ExternalTypeMoniker Name="/System.Drawing/Color" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0" isMoveable="true">
+        <TextDecorator Name="Condition" DisplayName="Condition" DefaultText="Condition" FontStyle="Bold" FontSize="10" />
+      </ShapeHasDecorators>
+    </ImageShape>
   </Shapes>
   <Connectors>
     <Connector Id="66d5ac35-32f5-41a3-8eb2-a96e59751133" Description="" Name="AssociationLink" DisplayName="Association Link" Namespace="Company.MobileDSL" FixedTooltipText="Association Link" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -881,6 +898,9 @@
       </ConnectorHasDecorators>
       <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
         <TextDecorator Name="NextControllerDecorator" DisplayName="Next Controller Decorator" DefaultText="NextControllerDecorator" FontStyle="Bold" FontSize="10" />
+      </ConnectorHasDecorators>
+      <ConnectorHasDecorators Position="SourceBottom" OffsetFromShape="0" OffsetFromLine="0" isMoveable="true">
+        <TextDecorator Name="CaseDecorator" DisplayName="Case Decorator" DefaultText="CaseDecorator" FontStyle="Bold" FontSize="10" />
       </ConnectorHasDecorators>
     </Connector>
     <Connector Id="e7204971-aa7a-4860-969a-35aad5f99ea1" Description="Description for Company.MobileDSL.StateRefState" Name="StateRefState" DisplayName="State Ref State" Namespace="Company.MobileDSL" FixedTooltipText="State Ref State" TargetEndStyle="FilledArrow" Thickness="0.01">
@@ -984,14 +1004,14 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="ps">
             <DomainRelationshipMoniker Name="StateReferencesPs" />
           </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="conditionBlocked">
-            <DomainRelationshipMoniker Name="StateHasConditionBlocked" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="conditionalBlocks">
+            <DomainRelationshipMoniker Name="StateHasConditionalBlocks" />
           </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="serviceCalled">
-            <DomainRelationshipMoniker Name="StateHasServiceCalled" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="serviceCalls">
+            <DomainRelationshipMoniker Name="StateHasServiceCalls" />
           </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="appCoded">
-            <DomainRelationshipMoniker Name="StateHasAppCoded" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="appCodes">
+            <DomainRelationshipMoniker Name="StateHasAppCodes" />
           </XmlRelationshipData>
           <XmlRelationshipData UseFullForm="true" RoleElementName="uIDataLinks">
             <DomainRelationshipMoniker Name="StateHasUIDataLinks" />
@@ -1133,6 +1153,9 @@
           <XmlPropertyData XmlName="nextController">
             <DomainPropertyMoniker Name="C/NextController" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="case">
+            <DomainPropertyMoniker Name="C/Case" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="CConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="cConnectorMoniker" ElementName="cConnector" MonikerTypeName="CConnectorMoniker">
@@ -1218,27 +1241,19 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="StateHasConditionBlocked" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasConditionBlockedMoniker" ElementName="stateHasConditionBlocked" MonikerTypeName="StateHasConditionBlockedMoniker">
-        <DomainRelationshipMoniker Name="StateHasConditionBlocked" />
+      <XmlClassData TypeName="StateHasConditionalBlocks" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasConditionalBlocksMoniker" ElementName="stateHasConditionalBlocks" MonikerTypeName="StateHasConditionalBlocksMoniker">
+        <DomainRelationshipMoniker Name="StateHasConditionalBlocks" />
       </XmlClassData>
-      <XmlClassData TypeName="ConditionBlock" MonikerAttributeName="" SerializeId="true" MonikerElementName="conditionBlockMoniker" ElementName="conditionBlock" MonikerTypeName="ConditionBlockMoniker">
-        <DomainClassMoniker Name="ConditionBlock" />
+      <XmlClassData TypeName="ConditionalBlock" MonikerAttributeName="" SerializeId="true" MonikerElementName="conditionalBlockMoniker" ElementName="conditionalBlock" MonikerTypeName="ConditionalBlockMoniker">
+        <DomainClassMoniker Name="ConditionalBlock" />
         <ElementData>
           <XmlPropertyData XmlName="text">
-            <DomainPropertyMoniker Name="ConditionBlock/Text" />
+            <DomainPropertyMoniker Name="ConditionalBlock/Text" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="ConditionBlockShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="conditionBlockShapeMoniker" ElementName="conditionBlockShape" MonikerTypeName="ConditionBlockShapeMoniker">
-        <ImageShapeMoniker Name="ConditionBlockShape" />
-        <ElementData>
-          <XmlPropertyData XmlName="fillColor">
-            <DomainPropertyMoniker Name="ConditionBlockShape/FillColor" />
-          </XmlPropertyData>
-        </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="StateHasServiceCalled" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasServiceCalledMoniker" ElementName="stateHasServiceCalled" MonikerTypeName="StateHasServiceCalledMoniker">
-        <DomainRelationshipMoniker Name="StateHasServiceCalled" />
+      <XmlClassData TypeName="StateHasServiceCalls" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasServiceCallsMoniker" ElementName="stateHasServiceCalls" MonikerTypeName="StateHasServiceCallsMoniker">
+        <DomainRelationshipMoniker Name="StateHasServiceCalls" />
       </XmlClassData>
       <XmlClassData TypeName="ServiceCall" MonikerAttributeName="" SerializeId="true" MonikerElementName="serviceCallMoniker" ElementName="serviceCall" MonikerTypeName="ServiceCallMoniker">
         <DomainClassMoniker Name="ServiceCall" />
@@ -1254,8 +1269,8 @@
       <XmlClassData TypeName="ServiceCallShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="serviceCallShapeMoniker" ElementName="serviceCallShape" MonikerTypeName="ServiceCallShapeMoniker">
         <ImageShapeMoniker Name="ServiceCallShape" />
       </XmlClassData>
-      <XmlClassData TypeName="StateHasAppCoded" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasAppCodedMoniker" ElementName="stateHasAppCoded" MonikerTypeName="StateHasAppCodedMoniker">
-        <DomainRelationshipMoniker Name="StateHasAppCoded" />
+      <XmlClassData TypeName="StateHasAppCodes" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasAppCodesMoniker" ElementName="stateHasAppCodes" MonikerTypeName="StateHasAppCodesMoniker">
+        <DomainRelationshipMoniker Name="StateHasAppCodes" />
       </XmlClassData>
       <XmlClassData TypeName="AppCode" MonikerAttributeName="" SerializeId="true" MonikerElementName="appCodeMoniker" ElementName="appCode" MonikerTypeName="AppCodeMoniker">
         <DomainClassMoniker Name="AppCode" />
@@ -1283,6 +1298,9 @@
           <XmlPropertyData XmlName="text">
             <DomainPropertyMoniker Name="StringCode/Text" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="isDictKey">
+            <DomainPropertyMoniker Name="StringCode/isDictKey" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="StateHasUIDataLinks" MonikerAttributeName="" SerializeId="true" MonikerElementName="stateHasUIDataLinksMoniker" ElementName="stateHasUIDataLinks" MonikerTypeName="StateHasUIDataLinksMoniker">
@@ -1294,6 +1312,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="stringCodes">
             <DomainRelationshipMoniker Name="UIDLinkHasStringCodes" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="invisibles">
+            <DomainPropertyMoniker Name="UIDLink/Invisibles" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="UIDLinkHasStringCodes" MonikerAttributeName="" SerializeId="true" MonikerElementName="uIDLinkHasStringCodesMoniker" ElementName="uIDLinkHasStringCodes" MonikerTypeName="UIDLinkHasStringCodesMoniker">
@@ -1304,6 +1325,14 @@
         <ElementData>
           <XmlPropertyData XmlName="label">
             <DomainPropertyMoniker Name="UIDataLink/Label" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="ConditionalBlock2Shape" MonikerAttributeName="" SerializeId="true" MonikerElementName="conditionalBlock2ShapeMoniker" ElementName="conditionalBlock2Shape" MonikerTypeName="ConditionalBlock2ShapeMoniker">
+        <ImageShapeMoniker Name="ConditionalBlock2Shape" />
+        <ElementData>
+          <XmlPropertyData XmlName="fillColor">
+            <DomainPropertyMoniker Name="ConditionalBlock2Shape/FillColor" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -1490,24 +1519,9 @@
         <PortMoniker Name="OPShape" />
       </ShapeMap>
       <ShapeMap>
-        <DomainClassMoniker Name="ConditionBlock" />
-        <ParentElementPath>
-          <DomainPath>StateHasConditionBlocked.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="ConditionBlockShape/Condition" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="ConditionBlock/Text" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <ImageShapeMoniker Name="ConditionBlockShape" />
-      </ShapeMap>
-      <ShapeMap>
         <DomainClassMoniker Name="ServiceCall" />
         <ParentElementPath>
-          <DomainPath>StateHasServiceCalled.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+          <DomainPath>StateHasServiceCalls.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
           <TextDecoratorMoniker Name="ServiceCallShape/ServiceMethod" />
@@ -1530,7 +1544,7 @@
       <CompartmentShapeMap>
         <DomainClassMoniker Name="AppCode" />
         <ParentElementPath>
-          <DomainPath>StateHasAppCoded.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+          <DomainPath>StateHasAppCodes.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
           <TextDecoratorMoniker Name="AppCodeShape/Name" />
@@ -1587,6 +1601,21 @@
           </PropertyDisplayed>
         </CompartmentMap>
       </CompartmentShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="ConditionalBlock" />
+        <ParentElementPath>
+          <DomainPath>StateHasConditionalBlocks.State/!State/ControllerHasStates.Controller/!Controller/ComponentModelHasControllers.ComponentModel/!ComponentModel</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ConditionalBlock2Shape/Condition" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="ConditionalBlock/Text" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="ConditionalBlock2Shape" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -1617,6 +1646,14 @@
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="C/NextController" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="CConnector/CaseDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="C/Case" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
@@ -1667,8 +1704,8 @@
       <ConnectionTool Name="StoS" ToolboxIcon="Resources\ConnectionTool.bmp" Caption="StoS" Tooltip="Sto S" HelpKeyword="StoS">
         <ConnectionBuilderMoniker Name="MobileDSL/StateReferencesTargetStatedBuilder" />
       </ConnectionTool>
-      <ElementTool Name="Condition" ToolboxIcon="Resources\example.bmp" Caption="Condition" Tooltip="Condition" HelpKeyword="Condition">
-        <DomainClassMoniker Name="ConditionBlock" />
+      <ElementTool Name="ConditionalBlock" ToolboxIcon="Resources\example.bmp" Caption="ConditionalBlock" Tooltip="Conditional Block" HelpKeyword="ConditionalBlock">
+        <DomainClassMoniker Name="ConditionalBlock" />
       </ElementTool>
       <ElementTool Name="ServiceCall" ToolboxIcon="Resources\example.bmp" Caption="ServiceCall" Tooltip="Service Call" HelpKeyword="ServiceCall">
         <DomainClassMoniker Name="ServiceCall" />

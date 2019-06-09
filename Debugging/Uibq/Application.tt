@@ -2,14 +2,19 @@
 <#@ output extension=".cs" #>
 <#@ MobileDSL processor="MobileDSLDirectiveProcessor" requires="fileName='../train.mdsl'"  #>
 <#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Drawing" #>
 <#@ import namespace="System.Collections.ObjectModel" #>
 <#@ include file="lib.tt"#>
 
-<# foreach (Controller controller in this.ComponentModel.Controllers) { #> 
-	aaaaaa 
-<#}#>
-		
+<# 
+	List<string> l1 = new List<string>();
+	List<string> l2 = new List<string>();
+	List<string> services = getAllServiceCalls(this.ComponentModel.Controllers.ToArray());
+	WriteLine(String.Join(", ", services.ToArray()));
+
+
+#>
 
 namespace Application0
 {

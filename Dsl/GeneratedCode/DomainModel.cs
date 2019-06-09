@@ -87,7 +87,7 @@ namespace Company.MobileDSL
 				typeof(ListBox),
 				typeof(StackPanel),
 				typeof(Input),
-				typeof(ConditionBlock),
+				typeof(ConditionalBlock),
 				typeof(ServiceCall),
 				typeof(AppCode),
 				typeof(StringCode),
@@ -104,9 +104,9 @@ namespace Company.MobileDSL
 				typeof(ClassWithPortsHasOP),
 				typeof(StateReferencesTargetStated),
 				typeof(StateReferencesPs),
-				typeof(StateHasConditionBlocked),
-				typeof(StateHasServiceCalled),
-				typeof(StateHasAppCoded),
+				typeof(StateHasConditionalBlocks),
+				typeof(StateHasServiceCalls),
+				typeof(StateHasAppCodes),
 				typeof(AppCodeHasStringCodes),
 				typeof(StateHasUIDataLinks),
 				typeof(UIDLinkHasStringCodes),
@@ -123,8 +123,8 @@ namespace Company.MobileDSL
 				typeof(ShowFormShape),
 				typeof(AppCodeShape),
 				typeof(UIDataLink),
-				typeof(ConditionBlockShape),
 				typeof(ServiceCallShape),
+				typeof(ConditionalBlock2Shape),
 				typeof(IPShape),
 				typeof(OPShape),
 				typeof(global::Company.MobileDSL.FixUpDiagram),
@@ -164,16 +164,19 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(StackPanel), "Items", StackPanel.ItemsDomainPropertyId, typeof(StackPanel.ItemsPropertyHandler)),
 				new DomainMemberInfo(typeof(Input), "Text", Input.TextDomainPropertyId, typeof(Input.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(Input), "InputMode", Input.InputModeDomainPropertyId, typeof(Input.InputModePropertyHandler)),
-				new DomainMemberInfo(typeof(ConditionBlock), "Text", ConditionBlock.TextDomainPropertyId, typeof(ConditionBlock.TextPropertyHandler)),
+				new DomainMemberInfo(typeof(ConditionalBlock), "Text", ConditionalBlock.TextDomainPropertyId, typeof(ConditionalBlock.TextPropertyHandler)),
 				new DomainMemberInfo(typeof(ServiceCall), "ServiceName", ServiceCall.ServiceNameDomainPropertyId, typeof(ServiceCall.ServiceNamePropertyHandler)),
 				new DomainMemberInfo(typeof(ServiceCall), "ServiceMethod", ServiceCall.ServiceMethodDomainPropertyId, typeof(ServiceCall.ServiceMethodPropertyHandler)),
 				new DomainMemberInfo(typeof(AppCode), "Name", AppCode.NameDomainPropertyId, typeof(AppCode.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(AppCode), "ReturnType", AppCode.ReturnTypeDomainPropertyId, typeof(AppCode.ReturnTypePropertyHandler)),
 				new DomainMemberInfo(typeof(StringCode), "Text", StringCode.TextDomainPropertyId, typeof(StringCode.TextPropertyHandler)),
+				new DomainMemberInfo(typeof(StringCode), "isDictKey", StringCode.isDictKeyDomainPropertyId, typeof(StringCode.isDictKeyPropertyHandler)),
+				new DomainMemberInfo(typeof(UIDLink), "Invisibles", UIDLink.InvisiblesDomainPropertyId, typeof(UIDLink.InvisiblesPropertyHandler)),
 				new DomainMemberInfo(typeof(C), "FromEvent", C.FromEventDomainPropertyId, typeof(C.FromEventPropertyHandler)),
 				new DomainMemberInfo(typeof(C), "NextState", C.NextStateDomainPropertyId, typeof(C.NextStatePropertyHandler)),
 				new DomainMemberInfo(typeof(C), "Data", C.DataDomainPropertyId, typeof(C.DataPropertyHandler)),
 				new DomainMemberInfo(typeof(C), "NextController", C.NextControllerDomainPropertyId, typeof(C.NextControllerPropertyHandler)),
+				new DomainMemberInfo(typeof(C), "Case", C.CaseDomainPropertyId, typeof(C.CasePropertyHandler)),
 				new DomainMemberInfo(typeof(CConnector), "TextColor", CConnector.TextColorDomainPropertyId, typeof(CConnector.TextColorPropertyHandler)),
 				new DomainMemberInfo(typeof(CConnector), "Color", CConnector.ColorDomainPropertyId, typeof(CConnector.ColorPropertyHandler)),
 				new DomainMemberInfo(typeof(StateRefState), "data", StateRefState.dataDomainPropertyId, typeof(StateRefState.dataPropertyHandler)),
@@ -184,7 +187,7 @@ namespace Company.MobileDSL
 				new DomainMemberInfo(typeof(ShowFormShape), "TextColor", ShowFormShape.TextColorDomainPropertyId, typeof(ShowFormShape.TextColorPropertyHandler)),
 				new DomainMemberInfo(typeof(ShowFormShape), "FillGradientMode", ShowFormShape.FillGradientModeDomainPropertyId, typeof(ShowFormShape.FillGradientModePropertyHandler)),
 				new DomainMemberInfo(typeof(UIDataLink), "Label", UIDataLink.LabelDomainPropertyId, typeof(UIDataLink.LabelPropertyHandler)),
-				new DomainMemberInfo(typeof(ConditionBlockShape), "FillColor", ConditionBlockShape.FillColorDomainPropertyId, typeof(ConditionBlockShape.FillColorPropertyHandler)),
+				new DomainMemberInfo(typeof(ConditionalBlock2Shape), "FillColor", ConditionalBlock2Shape.FillColorDomainPropertyId, typeof(ConditionalBlock2Shape.FillColorPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -219,12 +222,12 @@ namespace Company.MobileDSL
 				new DomainRolePlayerInfo(typeof(StateReferencesTargetStated), "TargetState", StateReferencesTargetStated.TargetStateDomainRoleId),
 				new DomainRolePlayerInfo(typeof(StateReferencesPs), "State", StateReferencesPs.StateDomainRoleId),
 				new DomainRolePlayerInfo(typeof(StateReferencesPs), "P", StateReferencesPs.PDomainRoleId),
-				new DomainRolePlayerInfo(typeof(StateHasConditionBlocked), "State", StateHasConditionBlocked.StateDomainRoleId),
-				new DomainRolePlayerInfo(typeof(StateHasConditionBlocked), "ConditionBlock", StateHasConditionBlocked.ConditionBlockDomainRoleId),
-				new DomainRolePlayerInfo(typeof(StateHasServiceCalled), "State", StateHasServiceCalled.StateDomainRoleId),
-				new DomainRolePlayerInfo(typeof(StateHasServiceCalled), "ServiceCall", StateHasServiceCalled.ServiceCallDomainRoleId),
-				new DomainRolePlayerInfo(typeof(StateHasAppCoded), "State", StateHasAppCoded.StateDomainRoleId),
-				new DomainRolePlayerInfo(typeof(StateHasAppCoded), "AppCode", StateHasAppCoded.AppCodeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasConditionalBlocks), "State", StateHasConditionalBlocks.StateDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasConditionalBlocks), "ConditionalBlock", StateHasConditionalBlocks.ConditionalBlockDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasServiceCalls), "State", StateHasServiceCalls.StateDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasServiceCalls), "ServiceCall", StateHasServiceCalls.ServiceCallDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasAppCodes), "State", StateHasAppCodes.StateDomainRoleId),
+				new DomainRolePlayerInfo(typeof(StateHasAppCodes), "AppCode", StateHasAppCodes.AppCodeDomainRoleId),
 				new DomainRolePlayerInfo(typeof(AppCodeHasStringCodes), "AppCode", AppCodeHasStringCodes.AppCodeDomainRoleId),
 				new DomainRolePlayerInfo(typeof(AppCodeHasStringCodes), "StringCode", AppCodeHasStringCodes.StringCodeDomainRoleId),
 				new DomainRolePlayerInfo(typeof(StateHasUIDataLinks), "State", StateHasUIDataLinks.StateDomainRoleId),
@@ -269,7 +272,7 @@ namespace Company.MobileDSL
 				createElementMap.Add(typeof(ListBox), 13);
 				createElementMap.Add(typeof(StackPanel), 14);
 				createElementMap.Add(typeof(Input), 15);
-				createElementMap.Add(typeof(ConditionBlock), 16);
+				createElementMap.Add(typeof(ConditionalBlock), 16);
 				createElementMap.Add(typeof(ServiceCall), 17);
 				createElementMap.Add(typeof(AppCode), 18);
 				createElementMap.Add(typeof(StringCode), 19);
@@ -287,8 +290,8 @@ namespace Company.MobileDSL
 				createElementMap.Add(typeof(ShowFormShape), 31);
 				createElementMap.Add(typeof(AppCodeShape), 32);
 				createElementMap.Add(typeof(UIDataLink), 33);
-				createElementMap.Add(typeof(ConditionBlockShape), 34);
-				createElementMap.Add(typeof(ServiceCallShape), 35);
+				createElementMap.Add(typeof(ServiceCallShape), 34);
+				createElementMap.Add(typeof(ConditionalBlock2Shape), 35);
 				createElementMap.Add(typeof(IPShape), 36);
 				createElementMap.Add(typeof(OPShape), 37);
 			}
@@ -320,7 +323,7 @@ namespace Company.MobileDSL
 				case 13: return new ListBox(partition, propertyAssignments);
 				case 14: return new StackPanel(partition, propertyAssignments);
 				case 15: return new Input(partition, propertyAssignments);
-				case 16: return new ConditionBlock(partition, propertyAssignments);
+				case 16: return new ConditionalBlock(partition, propertyAssignments);
 				case 17: return new ServiceCall(partition, propertyAssignments);
 				case 18: return new AppCode(partition, propertyAssignments);
 				case 19: return new StringCode(partition, propertyAssignments);
@@ -338,8 +341,8 @@ namespace Company.MobileDSL
 				case 31: return new ShowFormShape(partition, propertyAssignments);
 				case 32: return new AppCodeShape(partition, propertyAssignments);
 				case 33: return new UIDataLink(partition, propertyAssignments);
-				case 34: return new ConditionBlockShape(partition, propertyAssignments);
-				case 35: return new ServiceCallShape(partition, propertyAssignments);
+				case 34: return new ServiceCallShape(partition, propertyAssignments);
+				case 35: return new ConditionalBlock2Shape(partition, propertyAssignments);
 				case 36: return new IPShape(partition, propertyAssignments);
 				case 37: return new OPShape(partition, propertyAssignments);
 				default: return null;
@@ -377,9 +380,9 @@ namespace Company.MobileDSL
 				createElementLinkMap.Add(typeof(ClassWithPortsHasOP), 9);
 				createElementLinkMap.Add(typeof(StateReferencesTargetStated), 10);
 				createElementLinkMap.Add(typeof(StateReferencesPs), 11);
-				createElementLinkMap.Add(typeof(StateHasConditionBlocked), 12);
-				createElementLinkMap.Add(typeof(StateHasServiceCalled), 13);
-				createElementLinkMap.Add(typeof(StateHasAppCoded), 14);
+				createElementLinkMap.Add(typeof(StateHasConditionalBlocks), 12);
+				createElementLinkMap.Add(typeof(StateHasServiceCalls), 13);
+				createElementLinkMap.Add(typeof(StateHasAppCodes), 14);
 				createElementLinkMap.Add(typeof(AppCodeHasStringCodes), 15);
 				createElementLinkMap.Add(typeof(StateHasUIDataLinks), 16);
 				createElementLinkMap.Add(typeof(UIDLinkHasStringCodes), 17);
@@ -409,9 +412,9 @@ namespace Company.MobileDSL
 				case 9: return new ClassWithPortsHasOP(partition, roleAssignments, propertyAssignments);
 				case 10: return new StateReferencesTargetStated(partition, roleAssignments, propertyAssignments);
 				case 11: return new StateReferencesPs(partition, roleAssignments, propertyAssignments);
-				case 12: return new StateHasConditionBlocked(partition, roleAssignments, propertyAssignments);
-				case 13: return new StateHasServiceCalled(partition, roleAssignments, propertyAssignments);
-				case 14: return new StateHasAppCoded(partition, roleAssignments, propertyAssignments);
+				case 12: return new StateHasConditionalBlocks(partition, roleAssignments, propertyAssignments);
+				case 13: return new StateHasServiceCalls(partition, roleAssignments, propertyAssignments);
+				case 14: return new StateHasAppCodes(partition, roleAssignments, propertyAssignments);
 				case 15: return new AppCodeHasStringCodes(partition, roleAssignments, propertyAssignments);
 				case 16: return new StateHasUIDataLinks(partition, roleAssignments, propertyAssignments);
 				case 17: return new UIDLinkHasStringCodes(partition, roleAssignments, propertyAssignments);
@@ -603,9 +606,9 @@ namespace Company.MobileDSL
 			DomainRoles.Add(global::Company.MobileDSL.ShowFormHasPrimitives.PrimitiveDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.ClassWithPortsHasIP.IPDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.ClassWithPortsHasOP.OPDomainRoleId, true);
-			DomainRoles.Add(global::Company.MobileDSL.StateHasConditionBlocked.ConditionBlockDomainRoleId, true);
-			DomainRoles.Add(global::Company.MobileDSL.StateHasServiceCalled.ServiceCallDomainRoleId, true);
-			DomainRoles.Add(global::Company.MobileDSL.StateHasAppCoded.AppCodeDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.StateHasConditionalBlocks.ConditionalBlockDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.StateHasServiceCalls.ServiceCallDomainRoleId, true);
+			DomainRoles.Add(global::Company.MobileDSL.StateHasAppCodes.AppCodeDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.AppCodeHasStringCodes.StringCodeDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.StateHasUIDataLinks.UIDLinkDomainRoleId, true);
 			DomainRoles.Add(global::Company.MobileDSL.UIDLinkHasStringCodes.StringCodeDomainRoleId, true);

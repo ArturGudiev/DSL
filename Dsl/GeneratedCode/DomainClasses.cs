@@ -956,48 +956,48 @@ namespace Company.MobileDSL
 			}
 		}
 		#endregion
-		#region ConditionBlocked opposite domain role accessor
+		#region ConditionalBlocks opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of ConditionBlocked.
-		/// Description for Company.MobileDSL.StateHasConditionBlocked.State
+		/// Gets a list of ConditionalBlocks.
+		/// Description for Company.MobileDSL.StateHasConditionalBlocks.State
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ConditionBlock> ConditionBlocked
+		public virtual DslModeling::LinkedElementCollection<ConditionalBlock> ConditionalBlocks
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ConditionBlock>, ConditionBlock>(global::Company.MobileDSL.StateHasConditionBlocked.StateDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ConditionalBlock>, ConditionalBlock>(global::Company.MobileDSL.StateHasConditionalBlocks.StateDomainRoleId);
 			}
 		}
 		#endregion
-		#region ServiceCalled opposite domain role accessor
+		#region ServiceCalls opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of ServiceCalled.
-		/// Description for Company.MobileDSL.StateHasServiceCalled.State
+		/// Gets a list of ServiceCalls.
+		/// Description for Company.MobileDSL.StateHasServiceCalls.State
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ServiceCall> ServiceCalled
+		public virtual DslModeling::LinkedElementCollection<ServiceCall> ServiceCalls
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ServiceCall>, ServiceCall>(global::Company.MobileDSL.StateHasServiceCalled.StateDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ServiceCall>, ServiceCall>(global::Company.MobileDSL.StateHasServiceCalls.StateDomainRoleId);
 			}
 		}
 		#endregion
-		#region AppCoded opposite domain role accessor
+		#region AppCodes opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of AppCoded.
-		/// Description for Company.MobileDSL.StateHasAppCoded.State
+		/// Gets a list of AppCodes.
+		/// Description for Company.MobileDSL.StateHasAppCodes.State
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<AppCode> AppCoded
+		public virtual DslModeling::LinkedElementCollection<AppCode> AppCodes
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<AppCode>, AppCode>(global::Company.MobileDSL.StateHasAppCoded.StateDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<AppCode>, AppCode>(global::Company.MobileDSL.StateHasAppCodes.StateDomainRoleId);
 			}
 		}
 		#endregion
@@ -1041,7 +1041,7 @@ namespace Company.MobileDSL
 					return true;
 				}
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.ConditionBlock.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.MobileDSL.ConditionalBlock.DomainClassId)) 
 				{
 					return true;
 				}
@@ -1094,11 +1094,11 @@ namespace Company.MobileDSL
 				return;
 			}
 				
-			global::Company.MobileDSL.ConditionBlock sourceConditionBlock2 = sourceElement as global::Company.MobileDSL.ConditionBlock;
-			if (sourceConditionBlock2 != null)
+			global::Company.MobileDSL.ConditionalBlock sourceConditionalBlock2 = sourceElement as global::Company.MobileDSL.ConditionalBlock;
+			if (sourceConditionalBlock2 != null)
 			{
-				// Create link for path StateHasConditionBlocked.ConditionBlocked
-				this.ConditionBlocked.Add(sourceConditionBlock2);
+				// Create link for path StateHasConditionalBlocks.ConditionalBlocks
+				this.ConditionalBlocks.Add(sourceConditionalBlock2);
 
 				return;
 			}
@@ -1106,8 +1106,8 @@ namespace Company.MobileDSL
 			global::Company.MobileDSL.ServiceCall sourceServiceCall3 = sourceElement as global::Company.MobileDSL.ServiceCall;
 			if (sourceServiceCall3 != null)
 			{
-				// Create link for path StateHasServiceCalled.ServiceCalled
-				this.ServiceCalled.Add(sourceServiceCall3);
+				// Create link for path StateHasServiceCalls.ServiceCalls
+				this.ServiceCalls.Add(sourceServiceCall3);
 
 				return;
 			}
@@ -1115,8 +1115,8 @@ namespace Company.MobileDSL
 			global::Company.MobileDSL.AppCode sourceAppCode4 = sourceElement as global::Company.MobileDSL.AppCode;
 			if (sourceAppCode4 != null)
 			{
-				// Create link for path StateHasAppCoded.AppCoded
-				this.AppCoded.Add(sourceAppCode4);
+				// Create link for path StateHasAppCodes.AppCodes
+				this.AppCodes.Add(sourceAppCode4);
 
 				return;
 			}
@@ -1166,15 +1166,15 @@ namespace Company.MobileDSL
 				return;
 			}
 				
-			global::Company.MobileDSL.ConditionBlock sourceConditionBlock2 = sourceElement as global::Company.MobileDSL.ConditionBlock;
-			if (sourceConditionBlock2 != null)
+			global::Company.MobileDSL.ConditionalBlock sourceConditionalBlock2 = sourceElement as global::Company.MobileDSL.ConditionalBlock;
+			if (sourceConditionalBlock2 != null)
 			{
-				// Delete link for path StateHasConditionBlocked.ConditionBlocked
+				// Delete link for path StateHasConditionalBlocks.ConditionalBlocks
 				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasConditionBlocked.GetLinks((global::Company.MobileDSL.State)this, sourceConditionBlock2))
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasConditionalBlocks.GetLinks((global::Company.MobileDSL.State)this, sourceConditionalBlock2))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.StateHasConditionBlocked.StateDomainRoleId, global::Company.MobileDSL.StateHasConditionBlocked.ConditionBlockDomainRoleId);
+					link.Delete(global::Company.MobileDSL.StateHasConditionalBlocks.StateDomainRoleId, global::Company.MobileDSL.StateHasConditionalBlocks.ConditionalBlockDomainRoleId);
 				}
 
 				return;
@@ -1183,12 +1183,12 @@ namespace Company.MobileDSL
 			global::Company.MobileDSL.ServiceCall sourceServiceCall3 = sourceElement as global::Company.MobileDSL.ServiceCall;
 			if (sourceServiceCall3 != null)
 			{
-				// Delete link for path StateHasServiceCalled.ServiceCalled
+				// Delete link for path StateHasServiceCalls.ServiceCalls
 				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasServiceCalled.GetLinks((global::Company.MobileDSL.State)this, sourceServiceCall3))
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasServiceCalls.GetLinks((global::Company.MobileDSL.State)this, sourceServiceCall3))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.StateHasServiceCalled.StateDomainRoleId, global::Company.MobileDSL.StateHasServiceCalled.ServiceCallDomainRoleId);
+					link.Delete(global::Company.MobileDSL.StateHasServiceCalls.StateDomainRoleId, global::Company.MobileDSL.StateHasServiceCalls.ServiceCallDomainRoleId);
 				}
 
 				return;
@@ -1197,12 +1197,12 @@ namespace Company.MobileDSL
 			global::Company.MobileDSL.AppCode sourceAppCode4 = sourceElement as global::Company.MobileDSL.AppCode;
 			if (sourceAppCode4 != null)
 			{
-				// Delete link for path StateHasAppCoded.AppCoded
+				// Delete link for path StateHasAppCodes.AppCodes
 				
-				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasAppCoded.GetLinks((global::Company.MobileDSL.State)this, sourceAppCode4))
+				foreach (DslModeling::ElementLink link in global::Company.MobileDSL.StateHasAppCodes.GetLinks((global::Company.MobileDSL.State)this, sourceAppCode4))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.MobileDSL.StateHasAppCoded.StateDomainRoleId, global::Company.MobileDSL.StateHasAppCoded.AppCodeDomainRoleId);
+					link.Delete(global::Company.MobileDSL.StateHasAppCodes.StateDomainRoleId, global::Company.MobileDSL.StateHasAppCodes.AppCodeDomainRoleId);
 				}
 
 				return;
@@ -3502,20 +3502,20 @@ namespace Company.MobileDSL
 namespace Company.MobileDSL
 {
 	/// <summary>
-	/// DomainClass ConditionBlock
-	/// Description for Company.MobileDSL.ConditionBlock
+	/// DomainClass ConditionalBlock
+	/// Description for Company.MobileDSL.ConditionalBlock
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.MobileDSL.ConditionBlock.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.MobileDSL.ConditionBlock.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.MobileDSL.ConditionalBlock.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.MobileDSL.ConditionalBlock.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.MobileDSL.MobileDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("486f6ab7-a708-4e77-a2a5-f06d30cf60b7")]
-	public partial class ConditionBlock : Connectable
+	public partial class ConditionalBlock : Connectable
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ConditionBlock domain class Id.
+		/// ConditionalBlock domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x486f6ab7, 0xa708, 0x4e77, 0xa2, 0xa5, 0xf0, 0x6d, 0x30, 0xcf, 0x60, 0xb7);
 		/// <summary>
@@ -3523,7 +3523,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ConditionBlock(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ConditionalBlock(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -3533,7 +3533,7 @@ namespace Company.MobileDSL
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ConditionBlock(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ConditionalBlock(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -3552,10 +3552,10 @@ namespace Company.MobileDSL
 		
 		/// <summary>
 		/// Gets or sets the value of Text domain property.
-		/// Description for Company.MobileDSL.ConditionBlock.Text
+		/// Description for Company.MobileDSL.ConditionalBlock.Text
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.MobileDSL.ConditionBlock/Text.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.MobileDSL.ConditionBlock/Text.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.MobileDSL.ConditionalBlock/Text.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.ConditionalBlock/Text.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("baad2556-78ea-4d73-b89b-fe588d392255")]
 		public global::System.String Text
 		{
@@ -3571,19 +3571,19 @@ namespace Company.MobileDSL
 			}
 		}
 		/// <summary>
-		/// Value handler for the ConditionBlock.Text domain property.
+		/// Value handler for the ConditionalBlock.Text domain property.
 		/// </summary>
-		internal sealed partial class TextPropertyHandler : DslModeling::DomainPropertyValueHandler<ConditionBlock, global::System.String>
+		internal sealed partial class TextPropertyHandler : DslModeling::DomainPropertyValueHandler<ConditionalBlock, global::System.String>
 		{
 			private TextPropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the ConditionBlock.Text domain property value handler.
+			/// Gets the singleton instance of the ConditionalBlock.Text domain property value handler.
 			/// </summary>
 			public static readonly TextPropertyHandler Instance = new TextPropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the ConditionBlock.Text domain property.
+			/// Gets the Id of the ConditionalBlock.Text domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -3599,7 +3599,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(ConditionBlock element)
+			public override sealed global::System.String GetValue(ConditionalBlock element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				return element.textPropertyStorage;
@@ -3610,7 +3610,7 @@ namespace Company.MobileDSL
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(ConditionBlock element, global::System.String newValue)
+			public override sealed void SetValue(ConditionalBlock element, global::System.String newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -3628,19 +3628,19 @@ namespace Company.MobileDSL
 		#region State opposite domain role accessor
 		/// <summary>
 		/// Gets or sets State.
-		/// Description for Company.MobileDSL.StateHasConditionBlocked.ConditionBlock
+		/// Description for Company.MobileDSL.StateHasConditionalBlocks.ConditionalBlock
 		/// </summary>
 		public virtual State State
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasConditionBlocked.ConditionBlockDomainRoleId) as State;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasConditionalBlocks.ConditionalBlockDomainRoleId) as State;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasConditionBlocked.ConditionBlockDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasConditionalBlocks.ConditionalBlockDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -3862,19 +3862,19 @@ namespace Company.MobileDSL
 		#region State opposite domain role accessor
 		/// <summary>
 		/// Gets or sets State.
-		/// Description for Company.MobileDSL.StateHasServiceCalled.ServiceCall
+		/// Description for Company.MobileDSL.StateHasServiceCalls.ServiceCall
 		/// </summary>
 		public virtual State State
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasServiceCalled.ServiceCallDomainRoleId) as State;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasServiceCalls.ServiceCallDomainRoleId) as State;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasServiceCalled.ServiceCallDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasServiceCalls.ServiceCallDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -4096,19 +4096,19 @@ namespace Company.MobileDSL
 		#region State opposite domain role accessor
 		/// <summary>
 		/// Gets or sets State.
-		/// Description for Company.MobileDSL.StateHasAppCoded.AppCode
+		/// Description for Company.MobileDSL.StateHasAppCodes.AppCode
 		/// </summary>
 		public virtual State State
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasAppCoded.AppCodeDomainRoleId) as State;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.MobileDSL.StateHasAppCodes.AppCodeDomainRoleId) as State;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasAppCoded.AppCodeDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.MobileDSL.StateHasAppCodes.AppCodeDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -4352,6 +4352,93 @@ namespace Company.MobileDSL
 		}
 		
 		#endregion
+		#region isDictKey domain property code
+		
+		/// <summary>
+		/// isDictKey domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid isDictKeyDomainPropertyId = new global::System.Guid(0x25ba5e10, 0x238d, 0x4cca, 0xa7, 0xf2, 0xdc, 0x4f, 0x86, 0x15, 0x9e, 0x11);
+		
+		/// <summary>
+		/// Storage for isDictKey
+		/// </summary>
+		private global::System.Boolean isDictKeyPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of isDictKey domain property.
+		/// Description for Company.MobileDSL.StringCode.Is Dict Key
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.StringCode/isDictKey.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.StringCode/isDictKey.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("25ba5e10-238d-4cca-a7f2-dc4f86159e11")]
+		public global::System.Boolean isDictKey
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return isDictKeyPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				isDictKeyPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the StringCode.isDictKey domain property.
+		/// </summary>
+		internal sealed partial class isDictKeyPropertyHandler : DslModeling::DomainPropertyValueHandler<StringCode, global::System.Boolean>
+		{
+			private isDictKeyPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the StringCode.isDictKey domain property value handler.
+			/// </summary>
+			public static readonly isDictKeyPropertyHandler Instance = new isDictKeyPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the StringCode.isDictKey domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return isDictKeyDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(StringCode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.isDictKeyPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(StringCode element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.isDictKeyPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region AppCode opposite domain role accessor
 		/// <summary>
 		/// Gets or sets AppCode.
@@ -4430,6 +4517,93 @@ namespace Company.MobileDSL
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region Invisibles domain property code
+		
+		/// <summary>
+		/// Invisibles domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid InvisiblesDomainPropertyId = new global::System.Guid(0xf216f9b7, 0xc862, 0x493d, 0x8f, 0xd3, 0x5b, 0xf1, 0x18, 0x1e, 0x44, 0x01);
+		
+		/// <summary>
+		/// Storage for Invisibles
+		/// </summary>
+		private global::System.String invisiblesPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Invisibles domain property.
+		/// Description for Company.MobileDSL.UIDLink.Invisibles
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.MobileDSL.UIDLink/Invisibles.DisplayName", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.MobileDSL.UIDLink/Invisibles.Description", typeof(global::Company.MobileDSL.MobileDSLDomainModel), "Company.MobileDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("f216f9b7-c862-493d-8fd3-5bf1181e4401")]
+		public global::System.String Invisibles
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return invisiblesPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				InvisiblesPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the UIDLink.Invisibles domain property.
+		/// </summary>
+		internal sealed partial class InvisiblesPropertyHandler : DslModeling::DomainPropertyValueHandler<UIDLink, global::System.String>
+		{
+			private InvisiblesPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the UIDLink.Invisibles domain property value handler.
+			/// </summary>
+			public static readonly InvisiblesPropertyHandler Instance = new InvisiblesPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the UIDLink.Invisibles domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return InvisiblesDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(UIDLink element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.invisiblesPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(UIDLink element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.invisiblesPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 		#region State opposite domain role accessor
 		/// <summary>

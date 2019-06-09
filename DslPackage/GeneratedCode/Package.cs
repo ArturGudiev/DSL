@@ -93,11 +93,11 @@ namespace Company.MobileDSL
 					0xff00ff,
 					Index = 7)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",
-					"@ConditionToolboxItem;Company.MobileDSL.Dsl.dll", 
-					"Company.MobileDSL.ConditionToolboxItem", 
+					"@ConditionalBlockToolboxItem;Company.MobileDSL.Dsl.dll", 
+					"Company.MobileDSL.ConditionalBlockToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"Condition", 
-					"@ConditionToolboxBitmap;Company.MobileDSL.Dsl.dll", 
+					"ConditionalBlock", 
+					"@ConditionalBlockToolboxBitmap;Company.MobileDSL.Dsl.dll", 
 					0xff00ff,
 					Index = 8)]
 	[VSShell::ProvideStaticToolboxItem("Company.MobileDSL.MobileDSLToolboxTab",

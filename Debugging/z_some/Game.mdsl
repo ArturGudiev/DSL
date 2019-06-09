@@ -58,6 +58,17 @@
                   <stateMoniker name="//LoginController/Login" />
                 </stateReferencesTargetStated>
               </targetStated>
+              <appCodes>
+                <stateHasAppCodes Id="79fa9637-5780-40b3-9e93-ab2533a890ff">
+                  <appCode Id="e802737e-739d-4484-85e7-befbfa7ec88d" name="isValid(List&lt;string&gt; stations)" returnType="bool">
+                    <stringCodes>
+                      <appCodeHasStringCodes Id="361b3347-f59b-4bdd-93ec-453406d13e39">
+                        <stringCode Id="fc73356e-84a4-4040-99c0-68081682f850" text="return stations != null;" isDictKey="false" />
+                      </appCodeHasStringCodes>
+                    </stringCodes>
+                  </appCode>
+                </stateHasAppCodes>
+              </appCodes>
             </state>
           </controllerHasStates>
         </states>
